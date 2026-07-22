@@ -1,0 +1,8 @@
+{
+  "releaseId": "2026-07-21T20-15-27-273Z-24061c07",
+  "generatedAt": "2026-07-21T20:15:27.273Z",
+  "source": "avtonds-ru-site static package",
+  "commit": "24061c0760a9cb7959e1a21fc9100056573e117f",
+  "branch": "codex/fix-static-gclass-route",
+  "packageTarget": "output/static-package/dist"
+}

@@ -1,0 +1,11 @@
+/api/leads https://api.avtonds.ru/api/max-page/order 200
+/api/* https://api.avtonds.ru/api/:splat 200
+/page143663496.html /premium-cars 301
+/leads /contacts 301
+/luxury /luxury-cars 301
+/old-bmw-x5-redirected-71499519 /bmw-x5-import 301
+/old-bmw-x7-redirected-71449331 /bmw-x7 301
+/old-mercedes-benz-gls-redirected-71516051 /mercedes-benz-gls-import 301
+/old-mercedes-benz-gle-redirected-71516283 /mercedes-benz-gle-import 301
+/mercedes-benz-g-class-amg /mercedes-amg-g63 301
+/old-mercedes-benz-g-class-amg-redirected-71516865 /mercedes-amg-g63 301

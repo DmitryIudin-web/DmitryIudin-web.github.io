@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="AutoNDS offer placeholder">
+  <rect width="1200" height="900" fill="#f3f5f7"/>
+  <rect x="72" y="72" width="1056" height="756" rx="18" fill="#ffffff" stroke="#dfe4ea" stroke-width="3"/>
+  <path d="M178 595h844" stroke="#dfe4ea" stroke-width="4"/>
+  <path d="M282 560l96-138c30-43 78-68 130-68h196c55 0 105 28 135 74l88 132" fill="none" stroke="#111318" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M430 354h246" stroke="#d70016" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="416" cy="602" r="64" fill="#ffffff" stroke="#111318" stroke-width="20"/>
+  <circle cx="790" cy="602" r="64" fill="#ffffff" stroke="#111318" stroke-width="20"/>
+  <circle cx="416" cy="602" r="24" fill="#d70016"/>
+  <circle cx="790" cy="602" r="24" fill="#d70016"/>
+  <text x="600" y="242" text-anchor="middle" fill="#111318" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">AST</text>
+  <text x="600" y="304" text-anchor="middle" fill="#686f7a" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">AutoNDS offer</text>
+</svg>
