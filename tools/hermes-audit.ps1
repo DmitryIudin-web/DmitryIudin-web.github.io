@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Read-only audit of the local agent tooling on a Windows workstation.
 
@@ -10,6 +10,12 @@
 
     The script only reads. It creates no files outside the report, changes no
     settings, starts and stops nothing, and needs no administrator rights.
+
+.NOTES
+    Этот файл ДОЛЖЕН сохраняться в UTF-8 С BOM. Windows PowerShell 5.1 читает
+    .ps1 без BOM в кодировке системы, отчего все кириллические строки
+    рассыпаются и скрипт перестаёт разбираться. PowerShell 7 читает UTF-8
+    и без BOM, но BOM не мешает и ему.
 
 .EXAMPLE
     powershell -ExecutionPolicy Bypass -File .\hermes-audit.ps1
@@ -27,6 +33,10 @@ param(
 )
 
 $ErrorActionPreference = 'Continue'
+
+# Консоль Windows по умолчанию не в UTF-8, из-за чего кириллица в выводе
+# превращается в мусор. Отчёт на диск это не портит, но читать на экране мешает.
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch { }
 $lines = New-Object System.Collections.Generic.List[string]
 
 function Add-Line {
