@@ -9,10 +9,23 @@ Run from the repository root:  python3 scripts/generate_sitemap.py
 """
 import pathlib
 import re
+import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://avtonds.ru"
+
+
+def git_lastmod(path: pathlib.Path) -> str:
+    """Last commit date of the file (ISO 8601), or '' when unavailable."""
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(ROOT))],
+            cwd=ROOT, capture_output=True, text=True, timeout=15,
+        ).stdout.strip()
+        return out[:10] if out else ""
+    except OSError:
+        return ""
 
 CANONICAL_RE = re.compile(r'<link\s+rel="canonical"\s+href="([^"]+)"')
 NOINDEX_RE = re.compile(r'<meta\s+name="robots"[^>]*noindex', re.IGNORECASE)
@@ -28,7 +41,7 @@ def page_url(html_path: pathlib.Path) -> str:
 
 
 def main() -> int:
-    urls = set()
+    urls: dict[str, str] = {}
     for html in sorted(ROOT.rglob("index.html")):
         rel = str(html.relative_to(ROOT))
         if rel.startswith(("frozen-assets/", "_astro/", "assets/", "scripts/", ".git")):
@@ -48,13 +61,16 @@ def main() -> int:
         # (news brand hubs -> /news/) are represented by their target.
         if canonical.rstrip("/") != expected.rstrip("/"):
             continue
-        urls.add(canonical)
+        urls[canonical] = git_lastmod(html)
 
     if len(urls) < 10:
         print(f"refusing to write suspiciously small sitemap ({len(urls)} urls)", file=sys.stderr)
         return 1
 
-    entries = "".join(f"<url><loc>{u}</loc></url>" for u in sorted(urls))
+    entries = "".join(
+        f"<url><loc>{u}</loc>" + (f"<lastmod>{d}</lastmod>" if d else "") + "</url>"
+        for u, d in sorted(urls.items())
+    )
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
