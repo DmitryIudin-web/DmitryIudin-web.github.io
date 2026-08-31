@@ -1,0 +1,372 @@
+/* AST Этап 1 «Измерение + конверсия» — стили глобальных элементов.
+   Только префиксы .ast-* / #ast-* (ограничение проекта). */
+
+/* ===== B1. Липкая панель мессенджеров ===== */
+.ast-sticky-cta {
+  position: fixed;
+  z-index: 99990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.ast-sticky-cta.ast-sticky-cta--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ast-sticky-cta a,
+.ast-sticky-cta button {
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Mobile: нижняя панель во всю ширину, высота 56px */
+.ast-sticky-cta--mobile {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 56px;
+  transform: translateY(100%);
+  box-shadow: 0 -4px 18px rgba(10, 12, 16, .18);
+}
+.ast-sticky-cta--mobile.ast-sticky-cta--visible {
+  transform: translateY(0);
+}
+.ast-sticky-cta__btn {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.1;
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ast-sticky-cta__btn svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+.ast-sticky-cta__btn--telegram {
+  background: #229ED9;
+  color: #fff;
+}
+.ast-sticky-cta__btn--whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+html.ast-sticky-cta-active body {
+  padding-bottom: 56px !important;
+}
+
+/* Desktop: плавающая кнопка справа внизу, раскрывается при наведении */
+.ast-sticky-cta--desktop {
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  transform: translateY(8px);
+}
+.ast-sticky-cta--desktop.ast-sticky-cta--visible {
+  transform: translateY(0);
+}
+.ast-sticky-cta__fab {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #229ED9;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(10, 12, 16, .28);
+}
+.ast-sticky-cta__fab svg {
+  width: 26px;
+  height: 26px;
+}
+.ast-sticky-cta__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.ast-sticky-cta--desktop:hover .ast-sticky-cta__menu,
+.ast-sticky-cta--desktop:focus-within .ast-sticky-cta__menu,
+.ast-sticky-cta--desktop.ast-sticky-cta--open .ast-sticky-cta__menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.ast-sticky-cta__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(10, 12, 16, .22);
+  white-space: nowrap;
+}
+.ast-sticky-cta__item svg {
+  width: 18px;
+  height: 18px;
+}
+.ast-sticky-cta__item--telegram { background: #229ED9; }
+.ast-sticky-cta__item--whatsapp { background: #25D366; }
+.ast-sticky-cta__item--phone { background: #14161a; }
+@media (max-width: 979px) {
+  .ast-sticky-cta--desktop { display: none; }
+}
+@media (min-width: 980px) {
+  .ast-sticky-cta--mobile { display: none; }
+  html.ast-sticky-cta-active body { padding-bottom: 0 !important; }
+}
+
+/* Если наша панель активна — не дублируем легаси-липучки */
+html.ast-sticky-cta-active .ast-sticky,
+html.ast-sticky-cta-active .ast-traffic-sticky {
+  display: none !important;
+}
+
+/* ===== B3. Квиз «Рассчитать стоимость» ===== */
+.ast-quiz-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99995;
+  background: rgba(10, 12, 16, .62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.ast-quiz-overlay.ast-quiz-overlay--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ast-quiz {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 460px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: #fff;
+  color: #14161a;
+  border-radius: 16px;
+  padding: 24px 22px 20px;
+  box-shadow: 0 20px 60px rgba(10, 12, 16, .35);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  position: relative;
+}
+.ast-quiz * { box-sizing: border-box; }
+.ast-quiz__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.ast-quiz__step-label {
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0 0 6px;
+}
+.ast-quiz__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+.ast-quiz__options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+.ast-quiz__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 13px 14px;
+  border: 1px solid #d6dae1;
+  border-radius: 10px;
+  background: #fff;
+  color: #14161a;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
+}
+.ast-quiz__option:hover,
+.ast-quiz__option:focus {
+  border-color: #14161a;
+  background: #f6f8fa;
+}
+.ast-quiz__input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d6dae1;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.ast-quiz__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background: #14161a;
+}
+.ast-quiz__btn svg { width: 18px; height: 18px; }
+.ast-quiz__btn--telegram { background: #229ED9; font-size: 16px; padding: 15px 16px; }
+.ast-quiz__btn--whatsapp { background: #25D366; }
+.ast-quiz__btn--ghost {
+  background: #fff;
+  color: #14161a;
+  border: 1px solid #d6dae1;
+}
+.ast-quiz__final {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.ast-quiz__divider {
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+  margin: 2px 0;
+}
+.ast-quiz__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 6px 0 8px;
+}
+.ast-quiz__consent input { margin-top: 2px; }
+.ast-quiz__consent a { color: inherit; text-decoration: underline; }
+.ast-quiz__note {
+  font-size: 12.5px;
+  color: #6b7280;
+  text-align: center;
+  margin: 10px 0 0;
+}
+.ast-quiz__back {
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 8px 0 0;
+  text-decoration: underline;
+}
+.ast-quiz__error {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 0 0 8px;
+  min-height: 16px;
+}
+.ast-quiz__success {
+  text-align: center;
+  padding: 12px 0;
+}
+.ast-quiz__success b {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* ===== C6. CTA в статьях ===== */
+.ast-article-cta {
+  box-sizing: border-box;
+  margin: 28px auto;
+  max-width: 760px;
+  padding: 22px 20px;
+  border-radius: 14px;
+  background: #14161a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.ast-article-cta p {
+  margin: 0 0 6px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.ast-article-cta p b { font-size: 17px; }
+.ast-article-cta__sub {
+  color: #c9ced6;
+  font-size: 14px !important;
+  margin-bottom: 14px !important;
+}
+.ast-article-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ast-article-cta__actions a,
+.ast-article-cta__actions button {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 0;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+.ast-article-cta__quiz { background: #ffffff; color: #14161a !important; }
+.ast-article-cta__telegram { background: #229ED9; }
+.ast-article-cta__hint {
+  margin: 12px 0 0 !important;
+  font-size: 12.5px !important;
+  color: #9aa1ab;
+}
+.ast-article-inline-cta {
+  display: block;
+  margin: 20px auto;
+  max-width: 760px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #14161a;
+  text-decoration: underline;
+}
