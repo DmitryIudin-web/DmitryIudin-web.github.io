@@ -17,13 +17,23 @@ SITE = "https://avtonds.ru"
 
 
 def git_lastmod(path: pathlib.Path) -> str:
-    """Last commit date of the file (ISO 8601), or '' when unavailable."""
+    """Last commit date of the file, or today for dirty/untracked files ('' if no git)."""
+    import datetime
+
+    rel = str(path.relative_to(ROOT))
+    today = datetime.date.today().isoformat()
     try:
-        out = subprocess.run(
-            ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(ROOT))],
+        dirty = subprocess.run(
+            ["git", "status", "--porcelain", "--", rel],
             cwd=ROOT, capture_output=True, text=True, timeout=15,
         ).stdout.strip()
-        return out[:10] if out else ""
+        if dirty:
+            return today
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", "--", rel],
+            cwd=ROOT, capture_output=True, text=True, timeout=15,
+        ).stdout.strip()
+        return out[:10] if out else today
     except OSError:
         return ""
 
