@@ -1,5 +1,16 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /docs/
+Disallow: /tools/
+Disallow: /scripts/
+
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+Disallow: /docs/
+Disallow: /tools/
+Disallow: /scripts/
+Clean-param: quoteId /offers
 
 Sitemap: https://avtonds.ru/sitemap-index.xml
