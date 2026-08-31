@@ -1,0 +1,59 @@
+name: SEO automation
+
+# On every push to main:
+#  1. regenerate sitemap-0.xml from page canonicals and auto-commit if it changed;
+#  2. submit changed pages to IndexNow (Yandex/Bing pick them up within minutes
+#     instead of waiting for a recrawl).
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-automation
+  cancel-in-progress: false
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Regenerate sitemap
+        run: python3 scripts/generate_sitemap.py
+
+      - name: Commit sitemap if changed
+        run: |
+          if ! git diff --quiet -- sitemap-0.xml; then
+            git config user.name "seo-automation"
+            git config user.email "actions@users.noreply.github.com"
+            git add sitemap-0.xml
+            git commit -m "chore: regenerate sitemap [skip ci]"
+            git push
+          else
+            echo "sitemap unchanged"
+          fi
+
+      - name: Collect changed pages
+        id: changed
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
+            BEFORE="$(git rev-parse HEAD~1 2>/dev/null || echo HEAD)"
+          fi
+          git diff --name-only --diff-filter=AM "$BEFORE" "${{ github.sha }}" -- '*.html' > changed.txt || true
+          echo "count=$(wc -l < changed.txt)" >> "$GITHUB_OUTPUT"
+          cat changed.txt
+
+      - name: Wait for deploy to publish
+        if: steps.changed.outputs.count != '0'
+        run: sleep 90
+
+      - name: Submit changed pages to IndexNow
+        if: steps.changed.outputs.count != '0'
+        run: xargs -a changed.txt python3 scripts/indexnow_ping.py
