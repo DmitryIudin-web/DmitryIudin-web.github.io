@@ -14,8 +14,8 @@ import sys
 
 SNIPPET = (
     b'<!-- AST conversion etap1 start -->'
-    b'<link rel="stylesheet" href="/assets/ast-conversion.css?v=20260831">'
-    b'<script src="/assets/ast-conversion.js?v=20260831" defer></script>'
+    b'<link rel="stylesheet" href="/assets/ast-conversion.css?v=20260901">'
+    b'<script src="/assets/ast-conversion.js?v=20260901" defer></script>'
     b'<!-- AST conversion etap1 end -->'
 )
 

@@ -678,6 +678,219 @@
     }
   }
 
+  // --------------------------------- C1–C5: постраничные CTA (аддитивно)
+
+  function htmlToEl(html) {
+    var tpl = document.createElement('template');
+    tpl.innerHTML = html.trim();
+    return tpl.content.firstElementChild;
+  }
+
+  function quizBtnHtml(label, extraClass) {
+    return '<button type="button" class="ast-btn ' + (extraClass || '') +
+      '" data-ast-quiz-open>' + label + '</button>';
+  }
+
+  function tgBtnHtml(label, message, extraClass) {
+    return '<a class="ast-btn ' + (extraClass || '') + '" rel="noopener" href="' +
+      telegramLink(message) + '">' + label + '</a>';
+  }
+
+  function ctaRowHtml(inner) {
+    return '<div class="ast-inner ast-cta-row" data-ast-cta-row>' + inner +
+      '<p class="ast-cta-row__hint">' + CONFIG.ctaHint + '</p></div>';
+  }
+
+  // C1. Главная: primary hero — квиз, secondary — Telegram; повтор после каталога.
+  function enhanceHome() {
+    var actions = document.querySelector('.ast-hero .ast-actions');
+    if (actions && !actions.querySelector('[data-ast-quiz-open]')) {
+      actions.insertBefore(htmlToEl(quizBtnHtml('Рассчитать стоимость под ключ')), actions.firstChild);
+      actions.appendChild(htmlToEl(tgBtnHtml('Написать в Telegram',
+        'Здравствуйте! Хочу подобрать автомобиль под заказ', 'ast-btn--ghost')));
+    }
+    var modelsSection = document.querySelector('.ast-model-entry');
+    if (modelsSection && !document.querySelector('[data-ast-cta-row="home"]')) {
+      var row = htmlToEl(ctaRowHtml(quizBtnHtml('Рассчитать стоимость под ключ')));
+      row.setAttribute('data-ast-cta-row', 'home');
+      modelsSection.parentNode.insertBefore(row, modelsSection.nextSibling);
+    }
+  }
+
+  // C2. /bezopasnaya-sdelka: primary — «Обсудить мою сделку» в Telegram,
+  // повтор после этапов оплаты, квиз внизу. FAQ и FAQPage уже есть на странице.
+  function enhanceSafeDeal() {
+    var msg = 'Здравствуйте! Интересует безопасная сделка, хочу обсудить условия';
+    var hero = document.querySelector('.ast-safe-hero .ast-actions, .ast-hero .ast-actions');
+    if (hero && !hero.querySelector('[data-ast-safe-tg]')) {
+      var btn = htmlToEl(tgBtnHtml('Обсудить мою сделку в Telegram', msg));
+      btn.setAttribute('data-ast-safe-tg', '1');
+      hero.insertBefore(btn, hero.firstChild);
+    }
+    var payment = document.getElementById('payment');
+    if (payment && !document.querySelector('[data-ast-cta-row="safe-deal"]')) {
+      var row = htmlToEl(ctaRowHtml(tgBtnHtml('Обсудить мою сделку в Telegram', msg)));
+      row.setAttribute('data-ast-cta-row', 'safe-deal');
+      payment.parentNode.insertBefore(row, payment.nextSibling);
+    }
+    var lead = document.getElementById('lead');
+    if (lead && !lead.querySelector('[data-ast-quiz-open]')) {
+      var inner = lead.querySelector('.ast-inner') || lead;
+      inner.appendChild(htmlToEl(ctaRowHtml(quizBtnHtml('Рассчитать стоимость', 'ast-btn--dark'))));
+    }
+  }
+
+  // C3. /offers и /catalog: действие на каждой карточке + строка подбора.
+  function offerEntryForLink(href) {
+    href = String(href || '');
+    var keys = Object.keys(OFFER_MAP);
+    for (var i = 0; i < keys.length; i += 1) {
+      if (keys[i] !== '/' && href.indexOf(keys[i]) > -1) {
+        return { path: keys[i], entry: OFFER_MAP[keys[i]] };
+      }
+    }
+    return null;
+  }
+
+  function enhanceShowcase() {
+    var cards = document.querySelectorAll('.ast-card, .ast-offer-card, [data-ast-offer-card]');
+    Array.prototype.forEach.call(cards, function (card) {
+      if (card.dataset.astCardCta === '1') return;
+      var actions = card.querySelector('.ast-card__actions, .ast-offer-card__actions');
+      if (!actions) return;
+      card.dataset.astCardCta = '1';
+      var link = card.querySelector('a[href]');
+      var match = offerEntryForLink(link && link.getAttribute('href'));
+      var btn = htmlToEl(quizBtnHtml('Рассчитать под ключ', 'ast-btn--dark'));
+      if (match) {
+        btn.setAttribute('data-offer', match.entry.offer || match.path.replace(/^\//, ''));
+        if (match.entry.model) btn.setAttribute('data-ast-quiz-model-preset', match.entry.model);
+      }
+      actions.appendChild(btn);
+    });
+
+    if (!document.querySelector('[data-ast-cta-row="showcase"]')) {
+      var firstCard = document.querySelector('.ast-card, .ast-offer-card');
+      var section = (firstCard && firstCard.closest('section')) ||
+        document.querySelector('#offersListView, .ast-offers-terms, .ast-section');
+      if (section) {
+        var html = '<p class="ast-cta-row__lead">Не нашли нужную комплектацию? ' +
+          'Напишите — подберём за 24 часа.</p>' +
+          tgBtnHtml('Написать в Telegram',
+            'Здравствуйте! Не нашёл нужную комплектацию, помогите подобрать', 'ast-btn--dark') +
+          quizBtnHtml('Рассчитать стоимость под ключ', 'ast-btn--ghost');
+        var below = htmlToEl(ctaRowHtml(html));
+        below.setAttribute('data-ast-cta-row', 'showcase');
+        section.parentNode.insertBefore(below, section.nextSibling);
+      }
+    }
+  }
+
+  // C4. Модельные страницы: primary «Рассчитать под мою комплектацию»,
+  // блоки «Как считается цена» и «Безопасная сделка», повтор primary в конце.
+  function enhanceModelPage() {
+    var model = pageModel();
+    var root = document.querySelector('main') || document.body;
+    root.setAttribute('data-offer', pageOffer());
+
+    var hero = document.querySelector(
+      '.ast-hero .ast-actions, .ast-model-hero .ast-actions, .ast-zeekr-hero__actions, ' +
+      '.ast-zeekr-hero .ast-actions, .ast-luxury-hero .ast-actions, ' +
+      '.ast-model-lead-section .ast-actions, .ast-model-contact-actions');
+    if (hero && !hero.querySelector('[data-ast-quiz-open]')) {
+      hero.insertBefore(htmlToEl(quizBtnHtml('Рассчитать под мою комплектацию')), hero.firstChild);
+      if (!hero.querySelector('a[href*="t.me"]')) {
+        hero.appendChild(htmlToEl(tgBtnHtml('Написать в Telegram',
+          'Здравствуйте! Интересует ' + model + ' под заказ', 'ast-btn--ghost')));
+      }
+    }
+
+    if (!document.querySelector('[data-ast-model-blocks]')) {
+      var anchor = document.querySelector('footer, .ast-footer');
+      var wrap = htmlToEl(
+        '<section class="ast-section ast-model-extra" data-ast-model-blocks>' +
+          '<div class="ast-inner">' +
+            '<div class="ast-model-extra__grid">' +
+              '<article class="ast-model-extra__card">' +
+                '<h3>Как считается цена</h3>' +
+                '<ol class="ast-model-extra__steps">' +
+                  '<li><b>Закупка и проверка</b> — автомобиль, продавец и документы проверяются до оплаты.</li>' +
+                  '<li><b>Логистика и таможня</b> — доставка и оформление до СВХ, все платежи прозрачны.</li>' +
+                  '<li><b>Под ключ</b> — полная стоимость с документами, без скрытых доплат.</li>' +
+                '</ol>' +
+                '<p class="ast-model-extra__note">Точный расчёт по вашей комплектации — за 24 часа.</p>' +
+              '</article>' +
+              '<article class="ast-model-extra__card">' +
+                '<h3>Безопасная сделка</h3>' +
+                '<ol class="ast-model-extra__steps">' +
+                  '<li>Договор и фиксация условий до оплаты.</li>' +
+                  '<li>Оплата поэтапно — под документы, а не под обещания.</li>' +
+                  '<li>Расчёт через аккредитив: деньги раскрываются после проверки.</li>' +
+                '</ol>' +
+                '<p class="ast-model-extra__note"><a href="/bezopasnaya-sdelka">Как проходит безопасная сделка — поэтапная оплата под документы</a></p>' +
+              '</article>' +
+            '</div>' +
+            '<div class="ast-cta-row" data-ast-cta-row="model">' +
+              quizBtnHtml('Рассчитать под мою комплектацию', 'ast-btn--dark') +
+              '<p class="ast-cta-row__hint">' + CONFIG.ctaHint + '</p>' +
+            '</div>' +
+          '</div>' +
+        '</section>');
+      if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(wrap, anchor);
+      else root.appendChild(wrap);
+    }
+  }
+
+  // C5. Лизинговые страницы: primary «Получить расчёт для юрлица» (квиз с
+  // предустановленным юрлицом), блок «Что получает юрлицо».
+  function enhanceLeasing() {
+    var hero = document.querySelector('.ast-hero .ast-actions');
+    if (hero && !hero.querySelector('[data-ast-quiz-open]')) {
+      hero.insertBefore(htmlToEl(quizBtnHtml('Получить расчёт для юрлица')), hero.firstChild);
+      if (!hero.querySelector('a[href*="t.me"]')) {
+        hero.appendChild(htmlToEl(tgBtnHtml('Написать в Telegram',
+          'Здравствуйте! Интересует лизинг / поставка на юрлицо', 'ast-btn--ghost')));
+      }
+    }
+    if (!document.querySelector('[data-ast-b2b-block]')) {
+      var heroSection = document.querySelector('.ast-hero') ||
+        document.querySelector('section');
+      if (heroSection && heroSection.parentNode) {
+        var block = htmlToEl(
+          '<section class="ast-section ast-model-extra" data-ast-b2b-block>' +
+            '<div class="ast-inner">' +
+              '<article class="ast-model-extra__card">' +
+                '<h3>Что получает юрлицо</h3>' +
+                '<ul class="ast-model-extra__steps">' +
+                  '<li>НДС к вычету и полный пакет документов для бухгалтерии.</li>' +
+                  '<li>ЭПТС и ЭРА-ГЛОНАСС — автомобиль готов к постановке на учёт.</li>' +
+                  '<li>Поставка до СВХ или под ключ — по задаче компании.</li>' +
+                  '<li>Договор с ООО «АСТ», оплата в рублях.</li>' +
+                '</ul>' +
+              '</article>' +
+              '<div class="ast-cta-row" data-ast-cta-row="b2b">' +
+                quizBtnHtml('Получить расчёт для юрлица', 'ast-btn--dark') +
+                '<p class="ast-cta-row__hint">' + CONFIG.ctaHint + '</p>' +
+              '</div>' +
+            '</div>' +
+          '</section>');
+        heroSection.parentNode.insertBefore(block, heroSection.nextSibling);
+      }
+    }
+  }
+
+  function enhancePages() {
+    var p = path();
+    var entry = OFFER_MAP[p] || {};
+    try {
+      if (p === '/') enhanceHome();
+      else if (p === '/bezopasnaya-sdelka' || p === '/bezopasnaya-pokupka-avto') enhanceSafeDeal();
+      else if (p === '/offers' || p === '/catalog') enhanceShowcase();
+      else if (entry.offer === 'leasing') enhanceLeasing();
+      else if (entry.model) enhanceModelPage();
+    } catch (e) {}
+  }
+
   // ------------------------------------------------------------------ запуск
 
   persistUtm();
@@ -686,6 +899,7 @@
   fetchClientId();
 
   onReady(function () {
+    enhancePages();
     decorateMessengerLinks();
     fillFormSources();
     buildSticky();
@@ -694,6 +908,7 @@
   // Контент Tilda дорисовывается асинхронно — повторяем прогон, как принято на сайте.
   [1500, 4000, 8000].forEach(function (delay) {
     setTimeout(function () {
+      enhancePages();
       decorateMessengerLinks();
       fillFormSources();
       buildArticleCta();
