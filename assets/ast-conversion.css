@@ -361,6 +361,78 @@ html.ast-sticky-cta-active .ast-traffic-sticky {
   font-size: 12.5px !important;
   color: #9aa1ab;
 }
+/* ===== C1–C5. Постраничные CTA-вставки ===== */
+.ast-cta-row {
+  box-sizing: border-box;
+  max-width: 1160px;
+  margin: 18px auto 26px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.ast-cta-row__lead {
+  flex: 1 1 100%;
+  margin: 0 0 2px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.ast-cta-row__hint {
+  flex: 1 1 100%;
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: #6b7280;
+}
+/* запасной стиль кнопок на случай страниц без базового .ast-btn */
+.ast-cta-row .ast-btn,
+.ast-model-extra .ast-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ast-model-extra {
+  padding: 34px 0;
+}
+.ast-model-extra .ast-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.ast-model-extra__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.ast-model-extra__card {
+  border: 1px solid #e2e6ec;
+  border-radius: 14px;
+  padding: 20px 20px 16px;
+  background: #fff;
+}
+.ast-model-extra__card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+.ast-model-extra__steps {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.ast-model-extra__note {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+.ast-model-extra__note a { color: inherit; }
+
 .ast-article-inline-cta {
   display: block;
   margin: 20px auto;
