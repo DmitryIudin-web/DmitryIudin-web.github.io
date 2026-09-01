@@ -30,9 +30,10 @@ jobs:
         run: |
           set -euo pipefail
           test -f volkswagen-tavendor-2026/index-source/READY
-          cat volkswagen-tavendor-2026/index-source/index.html.b64.part* \
+          cat volkswagen-tavendor-2026/index-source/index.html.gz.b64.part* \
             | tr -d '\r\n ' \
-            | base64 --decode > volkswagen-tavendor-2026/index.html
+            | base64 --decode > /tmp/tavendor-index.html.gz
+          gzip -dc /tmp/tavendor-index.html.gz > volkswagen-tavendor-2026/index.html
 
           grep -q 'Volkswagen Tavendor' volkswagen-tavendor-2026/index.html
           grep -q '5 990 000' volkswagen-tavendor-2026/index.html
