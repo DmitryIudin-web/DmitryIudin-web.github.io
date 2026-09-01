@@ -1,94 +1,55 @@
-name: Materialize Tavendor campaign payload
+name: Materialize Tavendor landing
 
 on:
   push:
     branches:
       - codex/tavendor-yandex-direct-5990
     paths:
-      - campaign-payload/READY
+      - volkswagen-tavendor-2026/index-source/READY
 
 permissions:
   contents: write
 
 concurrency:
-  group: materialize-tavendor-campaign
+  group: materialize-tavendor-landing
   cancel-in-progress: false
 
 jobs:
   materialize:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
-      - name: Checkout campaign branch
+      - name: Checkout landing branch
         uses: actions/checkout@v4
         with:
           ref: codex/tavendor-yandex-direct-5990
           fetch-depth: 0
 
-      - name: Stop cleanly when payload was already consumed
-        id: payload
-        shell: bash
-        run: |
-          if [[ -f campaign-payload/READY ]]; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Restore campaign files and binary creatives
-        if: steps.payload.outputs.present == 'true'
+      - name: Restore self-contained HTML
         shell: bash
         run: |
           set -euo pipefail
-          cat campaign-payload/tavendor-full.tar.gz.b64.part* \
+          test -f volkswagen-tavendor-2026/index-source/READY
+          cat volkswagen-tavendor-2026/index-source/index.html.b64.part* \
             | tr -d '\r\n ' \
-            | base64 --decode > /tmp/tavendor-full.tar.gz
-          tar -xzf /tmp/tavendor-full.tar.gz -C .
-          rm -rf campaign-payload volkswagen-tavendor-2026/assets-source
+            | base64 --decode > volkswagen-tavendor-2026/index.html
 
-      - name: Set up Python
-        if: steps.payload.outputs.present == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: scripts/yandex_direct/requirements.txt
+          grep -q 'Volkswagen Tavendor' volkswagen-tavendor-2026/index.html
+          grep -q '5 990 000' volkswagen-tavendor-2026/index.html
+          test "$(grep -o 'data:image/jpeg;base64,' volkswagen-tavendor-2026/index.html | wc -l)" -ge 2
+          test "$(wc -c < volkswagen-tavendor-2026/index.html)" -gt 50000
 
-      - name: Validate restored payload
-        if: steps.payload.outputs.present == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m pip install --disable-pip-version-check -r scripts/yandex_direct/requirements.txt
-          python scripts/yandex_direct/deploy_tavendor_2026.py validate
-          python -m unittest discover -s tests -v
-          python - <<'PY'
-          from pathlib import Path
-          from PIL import Image
+          rm -rf volkswagen-tavendor-2026/index-source
+          rm -rf volkswagen-tavendor-2026/assets-source
+          rm -f .github/workflows/yandex-direct-tavendor.yml
+          rm -f .github/workflows/materialize-tavendor-campaign.yml
 
-          for rel in (
-              "volkswagen-tavendor-2026/assets/white.jpg",
-              "volkswagen-tavendor-2026/assets/green.jpg",
-          ):
-              path = Path(rel)
-              assert path.exists() and path.stat().st_size > 10_000, rel
-              with Image.open(path) as image:
-                  assert image.format == "JPEG", (rel, image.format)
-                  assert min(image.size) >= 450, (rel, image.size)
-                  image.verify()
-          PY
-
-      - name: Commit generated campaign implementation
-        if: steps.payload.outputs.present == 'true'
+      - name: Commit production landing
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          if git diff --cached --quiet; then
-            echo "Nothing to commit"
-            exit 0
-          fi
-          git commit -m "Реализовать кампанию Яндекс.Директа для Tavendor [skip ci]"
+          git commit -m "Опубликовать самодостаточную посадочную Tavendor [skip ci]"
           git push origin HEAD:codex/tavendor-yandex-direct-5990
