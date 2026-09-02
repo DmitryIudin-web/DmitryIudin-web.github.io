@@ -5,11 +5,25 @@
 .DESCRIPTION
     Answers two questions that cannot be answered from a cloud session:
       1. Is there anything named "Hermes" on this machine, and what is it?
-      2. What is the actual state of the Claude Code / Codex desktop tooling,
+      2. What is the state of the Claude Code / Codex desktop tooling,
          including why the remote-control bridge is offline?
 
     The script only reads. It creates no files outside the report, changes no
     settings, starts and stops nothing, and needs no administrator rights.
+
+.NOTES
+    This file is deliberately pure ASCII - no byte above 0x7F anywhere.
+
+    An earlier version carried Russian text and failed to run: Windows
+    PowerShell 5.1 reads a .ps1 without a UTF-8 BOM in the system ANSI
+    codepage, which turned every non-ASCII literal into mojibake and broke
+    tokenisation outright. A BOM fixes that, but only for as long as nobody
+    saves the file back without one. Staying inside ASCII removes the failure
+    mode instead of guarding against it, so the script runs the same under
+    Windows PowerShell 5.1 and PowerShell 7, with or without a BOM, under any
+    system codepage.
+
+    Keep it that way: do not add non-ASCII characters to this file.
 
 .EXAMPLE
     powershell -ExecutionPolicy Bypass -File .\hermes-audit.ps1
@@ -53,66 +67,64 @@ function Add-Probe {
     Add-Line "-- $Label"
     try {
         $out = & $Probe | Out-String -Width 200
-        if ([string]::IsNullOrWhiteSpace($out)) { Add-Line '   (пусто)' }
+        if ([string]::IsNullOrWhiteSpace($out)) { Add-Line '   (empty)' }
         else { Add-Line $out.TrimEnd() }
     }
     catch {
-        Add-Line "   ОШИБКА: $($_.Exception.Message)"
+        Add-Line "   ERROR: $($_.Exception.Message)"
     }
 }
 
-Add-Line "Аудит агентов на рабочей станции"
-Add-Line "Собран: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')"
-Add-Line "Хост: $env:COMPUTERNAME    Пользователь: $env:USERNAME"
+Add-Line 'Agent audit on this workstation'
+Add-Line "Collected: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')"
+Add-Line "Host: $env:COMPUTERNAME    User: $env:USERNAME"
 
 # ---------------------------------------------------------------------------
-Add-Section 'Окружение'
+Add-Section 'Environment'
 
-Add-Probe 'Windows и PowerShell' {
+Add-Probe 'Windows and PowerShell' {
     [PSCustomObject]@{
-        OS         = (Get-CimInstance Win32_OperatingSystem).Caption
-        Build      = [Environment]::OSVersion.Version.ToString()
-        PSVersion  = $PSVersionTable.PSVersion.ToString()
-        Is64Bit    = [Environment]::Is64BitOperatingSystem
-        LastBoot   = (Get-CimInstance Win32_OperatingSystem).LastBootUpTime
+        OS        = (Get-CimInstance Win32_OperatingSystem).Caption
+        Build     = [Environment]::OSVersion.Version.ToString()
+        PSVersion = $PSVersionTable.PSVersion.ToString()
+        Is64Bit   = [Environment]::Is64BitOperatingSystem
+        LastBoot  = (Get-CimInstance Win32_OperatingSystem).LastBootUpTime
     } | Format-List
 }
 
-Add-Probe 'Права администратора' {
+Add-Probe 'Administrator rights' {
     $id = [Security.Principal.WindowsIdentity]::GetCurrent()
     $isAdmin = ([Security.Principal.WindowsPrincipal] $id).IsInRole(
         [Security.Principal.WindowsBuiltInRole]::Administrator)
-    "IsAdmin: $isAdmin  (для этого аудита права не нужны)"
+    "IsAdmin: $isAdmin  (this audit does not need them)"
 }
 
-Add-Probe 'Диски' {
+Add-Probe 'Drives' {
     Get-PSDrive -PSProvider FileSystem | Select-Object `
         Name,
-        @{ n = 'UsedGB';  e = { [math]::Round($_.Used / 1GB, 1) } },
-        @{ n = 'FreeGB';  e = { [math]::Round($_.Free / 1GB, 1) } },
-        @{ n = 'Free%';   e = {
+        @{ n = 'UsedGB'; e = { [math]::Round($_.Used / 1GB, 1) } },
+        @{ n = 'FreeGB'; e = { [math]::Round($_.Free / 1GB, 1) } },
+        @{ n = 'FreePct'; e = {
             $total = $_.Used + $_.Free
             if ($total -gt 0) { [math]::Round($_.Free / $total * 100, 1) }
         } },
         Root | Format-Table -AutoSize
 }
 
-# Установка на D: обсуждалась отдельно — фиксируем, существует ли диск вообще.
-Add-Probe 'Диск D:' {
+# Installing onto D: was discussed separately - record whether it exists.
+Add-Probe 'Drive D:' {
     if (Test-Path 'D:\') {
         $d = Get-PSDrive -Name D -ErrorAction Stop
-        "D: существует. Свободно $([math]::Round($d.Free / 1GB, 1)) ГБ."
+        "D: exists. Free: $([math]::Round($d.Free / 1GB, 1)) GB."
         Get-ChildItem 'D:\' -Force -ErrorAction SilentlyContinue |
             Select-Object Mode, LastWriteTime, Name | Format-Table -AutoSize
     }
-    else { 'D: НЕ НАЙДЕН — ставить агента на этот диск нельзя.' }
+    else { 'D: NOT FOUND - nothing can be installed there.' }
 }
 
 # ---------------------------------------------------------------------------
-Add-Section 'Поиск "Hermes" / "Гермес"'
+Add-Section 'Search for Hermes'
 
-# На Windows USERPROFILE задан всегда; запасной вариант нужен только чтобы
-# скрипт не падал при запуске под кросс-платформенным PowerShell.
 $profileDir = if ($env:USERPROFILE) { $env:USERPROFILE } else { $HOME }
 
 $roots = @('D:\', $profileDir, $env:LOCALAPPDATA, $env:APPDATA,
@@ -120,18 +132,21 @@ $roots = @('D:\', $profileDir, $env:LOCALAPPDATA, $env:APPDATA,
 $roots += $SearchRoots
 $roots = $roots | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique
 
-Add-Probe "Файлы и папки с именем hermes (корни: $($roots -join ', '))" {
+# Cyrillic "germes" is matched by escape sequence so this file stays ASCII.
+$hermesPattern = "hermes|$([char]0x0433)$([char]0x0435)$([char]0x0440)$([char]0x043C)$([char]0x0435)$([char]0x0441)"
+
+Add-Probe "Files and folders named hermes (roots: $($roots -join ', '))" {
     if (-not $roots) {
-        'НЕ ИСКАЛОСЬ: ни один корень для поиска не существует на этой машине.'
+        'NOT SEARCHED: none of the search roots exist on this machine.'
         return
     }
     $hits = foreach ($root in $roots) {
         Get-ChildItem -LiteralPath $root -Recurse -Force -Depth 4 `
                       -ErrorAction SilentlyContinue |
-            Where-Object { $_.Name -match 'hermes|гермес' } |
+            Where-Object { $_.Name -match $hermesPattern } |
             Select-Object -First 40
     }
-    if (-not $hits) { 'Ничего не найдено.' }
+    if (-not $hits) { 'Nothing found.' }
     else {
         $hits | Select-Object -First 60 Mode, LastWriteTime,
             @{ n = 'SizeKB'; e = { if ($_.PSIsContainer) { '' } else { [math]::Round($_.Length / 1KB, 1) } } },
@@ -139,7 +154,7 @@ Add-Probe "Файлы и папки с именем hermes (корни: $($roots
     }
 }
 
-Add-Probe 'Установленные программы с "hermes" в названии' {
+Add-Probe 'Installed programs with hermes in the name' {
     $keys = @(
         'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',
         'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
@@ -148,100 +163,101 @@ Add-Probe 'Установленные программы с "hermes" в назв
     $found = Get-ItemProperty $keys -ErrorAction SilentlyContinue |
         Where-Object { $_.DisplayName -match 'hermes' } |
         Select-Object DisplayName, DisplayVersion, Publisher, InstallLocation
-    if ($found) { $found | Format-List } else { 'Ничего не найдено.' }
+    if ($found) { $found | Format-List } else { 'Nothing found.' }
 }
 
-Add-Probe 'Процессы и службы с "hermes"' {
+Add-Probe 'Processes and services matching hermes' {
     $p = Get-Process -ErrorAction SilentlyContinue |
          Where-Object { $_.Name -match 'hermes' } |
          Select-Object Id, Name, @{ n = 'WS_MB'; e = { [math]::Round($_.WS / 1MB, 1) } }
     $s = Get-Service -ErrorAction SilentlyContinue |
          Where-Object { $_.Name -match 'hermes' -or $_.DisplayName -match 'hermes' } |
          Select-Object Name, DisplayName, Status, StartType
-    if ($p) { 'ПРОЦЕССЫ:'; $p | Format-Table -AutoSize } else { 'Процессов нет.' }
-    if ($s) { 'СЛУЖБЫ:';   $s | Format-Table -AutoSize } else { 'Служб нет.' }
+    if ($p) { 'PROCESSES:'; $p | Format-Table -AutoSize } else { 'No processes.' }
+    if ($s) { 'SERVICES:';  $s | Format-Table -AutoSize } else { 'No services.' }
 }
 
 # ---------------------------------------------------------------------------
 Add-Section 'Claude Code'
 
-Add-Probe 'Исполняемый файл в PATH' {
+Add-Probe 'Executable on PATH' {
     $cmd = Get-Command claude -ErrorAction SilentlyContinue
     if ($cmd) {
-        "Найден: $($cmd.Source)"
-        try { "Версия: $(& claude --version 2>&1)" } catch { "Версию получить не удалось: $($_.Exception.Message)" }
+        "Found: $($cmd.Source)"
+        try { "Version: $(& claude --version 2>&1)" }
+        catch { "Could not read version: $($_.Exception.Message)" }
     }
-    else { 'claude в PATH не найден.' }
+    else { 'claude not found on PATH.' }
 }
 
-Add-Probe 'Каталог ~/.claude' {
+Add-Probe 'Directory ~/.claude' {
     $dir = Join-Path $profileDir '.claude'
-    if (-not (Test-Path $dir)) { 'Каталог отсутствует.'; return }
+    if (-not (Test-Path $dir)) { 'Directory missing.'; return }
     Get-ChildItem $dir -Force -ErrorAction SilentlyContinue |
         Select-Object Mode, LastWriteTime,
             @{ n = 'SizeKB'; e = { if ($_.PSIsContainer) { '' } else { [math]::Round($_.Length / 1KB, 1) } } },
             Name | Format-Table -AutoSize
 }
 
-# Мост remote-control — это он лежит в основе зависших сессий.
-Add-Probe 'Процессы Node / Claude (кандидаты на мост remote-control)' {
+# The remote-control bridge is what the stalled cloud sessions are waiting on.
+Add-Probe 'Node / Claude processes (remote-control bridge candidates)' {
     $procs = Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
         Where-Object { $_.Name -match 'node|claude|bun' } |
         Select-Object ProcessId, Name,
             @{ n = 'CommandLine'; e = { if ($_.CommandLine) { $_.CommandLine.Substring(0, [Math]::Min(180, $_.CommandLine.Length)) } } }
-    if ($procs) { $procs | Format-List } else { 'Подходящих процессов не запущено.' }
+    if ($procs) { $procs | Format-List } else { 'No matching processes running.' }
 }
 
 # ---------------------------------------------------------------------------
 Add-Section 'Codex'
 
-Add-Probe 'Каталог ~/.codex' {
+Add-Probe 'Directory ~/.codex' {
     $dir = Join-Path $profileDir '.codex'
-    if (-not (Test-Path $dir)) { 'Каталог отсутствует.'; return }
+    if (-not (Test-Path $dir)) { 'Directory missing.'; return }
     Get-ChildItem $dir -Recurse -Force -Depth 2 -ErrorAction SilentlyContinue |
         Select-Object Mode, LastWriteTime,
             @{ n = 'SizeKB'; e = { if ($_.PSIsContainer) { '' } else { [math]::Round($_.Length / 1KB, 1) } } },
             FullName | Format-Table -AutoSize
 }
 
-Add-Probe 'Содержимое ~/.codex/automations' {
+Add-Probe 'Contents of ~/.codex/automations' {
     $dir = Join-Path $profileDir '.codex\automations'
-    if (-not (Test-Path $dir)) { 'Каталог отсутствует.'; return }
+    if (-not (Test-Path $dir)) { 'Directory missing.'; return }
     Get-ChildItem $dir -Recurse -File -Force -ErrorAction SilentlyContinue |
         Select-Object LastWriteTime, @{ n = 'SizeKB'; e = { [math]::Round($_.Length / 1KB, 1) } }, FullName |
         Format-Table -AutoSize
 }
 
 # ---------------------------------------------------------------------------
-Add-Section 'Планировщик заданий'
+Add-Section 'Scheduled tasks'
 
-Add-Probe 'Задачи по ключевым словам проектов' {
+Add-Probe 'Tasks matching the project keywords' {
     $tasks = Get-ScheduledTask -ErrorAction SilentlyContinue |
-        Where-Object { $_.TaskName -match 'claude|codex|hermes|гермес|ast|health|radar|digest|kontur|content' }
-    if (-not $tasks) { 'Совпадений нет.'; return }
+        Where-Object { $_.TaskName -match 'claude|codex|hermes|ast|health|radar|digest|kontur|content' }
+    if (-not $tasks) { 'No matches.'; return }
     $tasks | ForEach-Object {
         $info = Get-ScheduledTaskInfo -TaskName $_.TaskName -TaskPath $_.TaskPath -ErrorAction SilentlyContinue
         [PSCustomObject]@{
             Name       = $_.TaskName
             State      = $_.State
             LastRun    = $info.LastRunTime
-            LastResult = $info.LastTaskResult   # 0 = успех
+            LastResult = $info.LastTaskResult   # 0 = success
             NextRun    = $info.NextRunTime
         }
     } | Format-Table -AutoSize
 }
 
 # ---------------------------------------------------------------------------
-Add-Section 'Итог'
+Add-Section 'Summary'
 
 Add-Line
-Add-Line 'Разделы выше отвечают на два вопроса:'
-Add-Line '  1. Есть ли на машине что-то по имени Hermes — см. раздел поиска.'
-Add-Line '  2. Почему мост до облачных сессий не поднят — см. процессы Node/Claude.'
-Add-Line '     Если подходящих процессов нет, агент просто не запущен, и все'
-Add-Line '     ожидающие подтверждения сессии останутся заблокированными.'
+Add-Line 'The sections above answer two questions:'
+Add-Line '  1. Whether anything named Hermes exists here - see the search section.'
+Add-Line '  2. Why the bridge to the cloud sessions is down - see the Node/Claude'
+Add-Line '     process list. If no matching process is running, the agent is simply'
+Add-Line '     not started, and every session waiting for approval stays blocked.'
 Add-Line
-Add-Line 'Скрипт ничего не изменил. Пришлите этот отчёт целиком.'
+Add-Line 'This script changed nothing. Please send the whole report back.'
 Add-Line
 
 $report = $lines -join [Environment]::NewLine
@@ -249,9 +265,9 @@ Write-Output $report
 
 try {
     $report | Set-Content -LiteralPath $ReportPath -Encoding UTF8
-    Write-Output ""
-    Write-Output "Отчёт сохранён: $ReportPath"
+    Write-Output ''
+    Write-Output "Report saved to: $ReportPath"
 }
 catch {
-    Write-Warning "Не удалось записать отчёт в '$ReportPath': $($_.Exception.Message)"
+    Write-Warning "Could not write the report to '$ReportPath': $($_.Exception.Message)"
 }
