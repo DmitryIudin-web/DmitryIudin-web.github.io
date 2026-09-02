@@ -24,6 +24,42 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Make Tavendor form work on Pages
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('volkswagen-tavendor-2026/index.html')
+          html = path.read_text(encoding='utf-8')
+          marker = 'id="ast-pages-tavendor-form-fallback"'
+          if marker not in html:
+              script = r'''<script id="ast-pages-tavendor-form-fallback">
+          (function(){
+            const form=document.getElementById('tavendor-form');
+            if(!form)return;
+            form.addEventListener('submit',function(ev){
+              ev.preventDefault();
+              ev.stopImmediatePropagation();
+              if(!form.reportValidity())return;
+              const data=Object.fromEntries(new FormData(form).entries());
+              try{if(typeof ym==='function')ym(106049767,'reachGoal','tavendor_form_whatsapp',{color:data.color||'',deal:data.deal_format||''});}catch(e){}
+              const text=[
+                'Интересует Volkswagen Tavendor 2026 за 5 990 000 ₽.',
+                'Цвет: '+(data.color||'не выбран')+'.',
+                'Формат: '+(data.deal_format||'не выбран')+'.',
+                'Контакт: '+(data.contact||'')+'.',
+                data.name?'Имя: '+data.name+'.':'',
+                'Источник: '+location.href
+              ].filter(Boolean).join(' ');
+              location.href='https://wa.me/79872831255?text='+encodeURIComponent(text);
+            },true);
+          })();
+          </script>'''
+              html = html.replace('</body>', script + '\n</body>')
+              path.write_text(html, encoding='utf-8')
+          PY
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
