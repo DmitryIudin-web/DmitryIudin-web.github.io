@@ -45,14 +45,14 @@ jobs:
               const data=Object.fromEntries(new FormData(form).entries());
               try{if(typeof ym==='function')ym(106049767,'reachGoal','tavendor_form_whatsapp',{color:data.color||'',deal:data.deal_format||''});}catch(e){}
               const text=[
-                'Интересует Volkswagen Tavendor 2026 за 5 990 000 ₽.',
+                'Интересует Volkswagen Tavendor 2026 за 5 900 000 ₽.',
                 'Цвет: '+(data.color||'не выбран')+'.',
                 'Формат: '+(data.deal_format||'не выбран')+'.',
                 'Контакт: '+(data.contact||'')+'.',
                 data.name?'Имя: '+data.name+'.':'',
                 'Источник: '+location.href
               ].filter(Boolean).join(' ');
-              location.href='https://wa.me/79872831255?text='+encodeURIComponent(text);
+              location.href='https://wa.me/79170115218?text='+encodeURIComponent(text);
             },true);
           })();
           </script>'''
