@@ -228,6 +228,11 @@ html.ast-sticky-cta-active .ast-traffic-sticky {
   border-color: #14161a;
   background: #f6f8fa;
 }
+.ast-quiz__option--active {
+  border-color: #14161a;
+  background: #f2f5f8;
+  box-shadow: inset 0 0 0 1px #14161a;
+}
 .ast-quiz__input {
   width: 100%;
   padding: 12px 14px;

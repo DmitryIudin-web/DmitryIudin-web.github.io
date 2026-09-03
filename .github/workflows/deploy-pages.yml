@@ -60,6 +60,12 @@ jobs:
               path.write_text(html, encoding='utf-8')
           PY
 
+      - name: Exclude agent config from published artifact
+        # .claude/ содержит внутреннюю экономику КП (ставки, маржа).
+        # Артефакт грузится из корня (path: .) и .nojekyll не фильтрует
+        # dot-каталоги, поэтому убираем каталог до upload.
+        run: rm -rf .claude
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

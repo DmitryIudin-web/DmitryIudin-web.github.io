@@ -434,7 +434,12 @@
         '<h3 class="ast-quiz__title">Как оформляем?</h3>' +
         '<div class="ast-quiz__options">' +
         ['На физлицо', 'На юрлицо (с НДС)', 'Пока не знаю'].map(function (v) {
-          return '<button class="ast-quiz__option" type="button" data-ast-quiz-client="' + v + '">' + v + '</button>';
+          // C5: предустановленный вариант виден как выбранный, иначе предустановка
+          // ничем не проявлялась и терялась при первом же клике.
+          var on = v === s.clientType;
+          return '<button class="ast-quiz__option' + (on ? ' ast-quiz__option--active' : '') +
+            '" type="button" aria-pressed="' + (on ? 'true' : 'false') +
+            '" data-ast-quiz-client="' + v + '">' + v + '</button>';
         }).join('') + '</div>' +
         '<button class="ast-quiz__back" type="button" data-ast-quiz-back>← Назад</button>';
     } else if (s.step === 3) {
