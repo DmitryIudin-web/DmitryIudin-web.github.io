@@ -6,6 +6,8 @@
  * Блок B: липкая панель мессенджеров (B1), предзаполненные мессенджер-ссылки (B2),
  * квиз «Рассчитать стоимость» (B3).
  * Блок C: CTA-шаблон статей /news/* (C6).
+ * Директ: параметры визита из URL объявлений и цель ast_form_start
+ * (аудит отказов Яндекс.Директа от 14.05.2026, шаг 5).
  *
  * Существующие автоцели и инлайн-скрипты страниц не отключаются — новые цели
  * идут параллельно для сверки (требование A1).
@@ -62,6 +64,15 @@
     '/toyota-prado-250': { model: 'Toyota Prado 250' },
     '/zeekr-8x': { model: 'Zeekr 8X' }
   };
+
+  // Стандартные UTM — Метрика разбирает их сама.
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  // Параметры шаблонов Яндекс.Директа из URL объявлений (аудит 14.05.2026).
+  // Метрика не считает их UTM и никуда не выводит: без явной передачи отказы
+  // по utm_source_type (автотаргетинг vs. поиск) сегментировать нечем.
+  var DIRECT_KEYS = ['utm_campaign_id', 'utm_group_id', 'utm_source_type',
+    'utm_position_type', 'utm_device', 'utm_retargeting'];
+  var SOURCE_KEYS = UTM_KEYS.concat(DIRECT_KEYS);
 
   // ---------------------------------------------------------------- утилиты
 
@@ -228,6 +239,62 @@
     }
   }, true);
 
+  // --------------- Директ: параметры визита и старт формы (аудит 14.05.2026)
+
+  // Отказ — метрика уровня визита, поэтому параметрами цели он не сегментируется.
+  // Шаг 5 аудита («через 48–72 часа проверить отказы по utm_content и
+  // utm_source_type») требует именно параметров визита: отчёт
+  // «Содержание → Параметры визитов → ast_source».
+  function sourceParams() {
+    var out = {};
+    SOURCE_KEYS.forEach(function (key) {
+      var value = sessionGet('ast_' + key);
+      if (value) out[key] = value;
+    });
+    return out;
+  }
+
+  function sendVisitParams(attempt) {
+    attempt = attempt || 0;
+    var source = sourceParams();
+    // Без источника в URL параметры визита не отправляем: пустой ast_source
+    // только зашумил бы отчёт органикой и прямыми заходами.
+    if (!Object.keys(source).length) return;
+    if (typeof window.ym === 'function') {
+      source.landing_page = sessionGet('ast_landing_page') || path();
+      try { window.ym(CONFIG.metrikaId, 'params', { ast_source: source }); } catch (e) {}
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'ast_source_params', ast_source: source });
+      } catch (e) {}
+      return;
+    }
+    // Метрика на сайте грузится с задержкой — та же схема ретраев, что у A6.
+    if (attempt > 20) return;
+    setTimeout(function () { sendVisitParams(attempt + 1); }, 1500);
+  }
+
+  // Аудит: «считать не CTR, а qualified lead / form start / messenger click».
+  // Одно событие на визит — как у ast_contact (A2).
+  function trackFormStart(position, extra) {
+    if (sessionGet('ast_form_start_sent') === '1') return;
+    sessionSet('ast_form_start_sent', '1');
+    track('ast_form_start', ctaParams(position || 'inline', 'form', extra || {}));
+  }
+
+  function bindFormStart() {
+    document.addEventListener('focusin', function (event) {
+      var el = event.target;
+      if (!el || !el.closest || !el.matches) return;
+      if (!el.matches('input, textarea, select')) return;
+      if (el.type === 'hidden') return;
+      var quiz = el.closest('.ast-quiz');
+      if (quiz) { trackFormStart('quiz'); return; }
+      if (!el.closest('form.t-form, form.ast-launch-form, form[data-ast-lead-form]')) return;
+      trackFormStart(positionOf(el));
+    }, true);
+  }
+
   // ------------------------------------- отправка форм Tilda → ast_form_submit
 
   function reportFormSubmit(meta) {
@@ -280,14 +347,25 @@
 
   function persistUtm() {
     var params = new URLSearchParams(location.search);
-    var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
     var found = false;
-    keys.forEach(function (key) { if (params.get(key)) found = true; });
+    SOURCE_KEYS.forEach(function (key) { if (params.get(key)) found = true; });
     if (found) {
-      keys.forEach(function (key) { sessionSet('ast_' + key, params.get(key) || ''); });
+      SOURCE_KEYS.forEach(function (key) { sessionSet('ast_' + key, params.get(key) || ''); });
     }
     if (!sessionGet('ast_landing_page')) sessionSet('ast_landing_page', path());
     if (!sessionGet('ast_referrer')) sessionSet('ast_referrer', document.referrer || '');
+  }
+
+  // Версия текста согласия на обработку ПДн (план AST Reserve v2, п. 4.2:
+  // версия фиксируется вместе с заявкой). Формы сайта уже несут поле
+  // consent_version — рантайм только переносит это значение в формы, где поля
+  // нет, и никогда не проставляет версию, которой на странице не существует.
+  var consentVersion = '';
+  function pageConsentVersion() {
+    if (consentVersion) return consentVersion;
+    var input = document.querySelector('input[name="consent_version"]');
+    if (input && input.value) consentVersion = input.value;
+    return consentVersion;
   }
 
   function ensureHidden(form, name) {
@@ -305,7 +383,7 @@
     var clientId = sessionGet('ast_ym_client_id') || '';
     var forms = document.querySelectorAll('form.t-form, form.ast-launch-form, form[data-ast-lead-form]');
     Array.prototype.forEach.call(forms, function (form) {
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (key) {
+      SOURCE_KEYS.forEach(function (key) {
         var stored = sessionGet('ast_' + key);
         var input = ensureHidden(form, key);
         if (stored && !input.value) input.value = stored;
@@ -314,6 +392,11 @@
       if (!pageInput.value) pageInput.value = path();
       var offerInput = ensureHidden(form, 'offer');
       if (!offerInput.value) offerInput.value = pageOffer();
+      var consentValue = pageConsentVersion();
+      if (consentValue) {
+        var consentInput = ensureHidden(form, 'consent_version');
+        if (!consentInput.value) consentInput.value = consentValue;
+      }
       if (clientId) ensureHidden(form, 'ym_client_id').value = clientId;
     });
   }
@@ -618,6 +701,7 @@
     }
     quizRender();
     overlay.classList.add('ast-quiz-overlay--open');
+    trackFormStart(quizState.position, { offer: quizState.offer });
   }
 
   // Открытие квиза по data-атрибуту с любого элемента.
@@ -823,7 +907,7 @@
                   '<li><b>Логистика и таможня</b> — доставка и оформление до СВХ, все платежи прозрачны.</li>' +
                   '<li><b>Под ключ</b> — полная стоимость с документами, без скрытых доплат.</li>' +
                 '</ol>' +
-                '<p class="ast-model-extra__note">Точный расчёт по вашей комплектации — за 24 часа.</p>' +
+                '<p class="ast-model-extra__note">Предварительный расчёт по вашей комплектации — за 24 часа.</p>' +
               '</article>' +
               '<article class="ast-model-extra__card">' +
                 '<h3>Безопасная сделка</h3>' +
@@ -899,6 +983,8 @@
   // ------------------------------------------------------------------ запуск
 
   persistUtm();
+  sendVisitParams();
+  bindFormStart();
   bridgeDataLayer();
   watchTildaSuccess();
   fetchClientId();
@@ -923,6 +1009,8 @@
   window.ASTConversion = {
     config: CONFIG,
     track: track,
+    sourceParams: sourceParams,
+    consentVersion: pageConsentVersion,
     openQuiz: openQuiz,
     telegramLink: telegramLink,
     whatsappLink: whatsappLink

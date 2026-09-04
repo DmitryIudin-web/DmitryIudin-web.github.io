@@ -15,6 +15,7 @@ tracking-check этап не принимается.
 | Клик по CTA (любому) | `ast_cta_click` | ☐ создана ☐ данные идут |
 | Переход в мессенджер | `ast_messenger_open` | ☐ создана ☐ данные идут |
 | Клик по телефону | `ast_phone_click` | ☐ создана ☐ данные идут |
+| Старт заполнения формы/квиза | `ast_form_start` | ☐ создана ☐ данные идут |
 | Отправка квиза | `ast_quiz_submit` | ☐ создана ☐ данные идут |
 | Отправка формы | `ast_form_submit` | ☐ создана ☐ данные идут |
 | **AST: обращение** (главная метрика) | `ast_contact` | ☐ создана ☐ данные идут |
@@ -23,7 +24,12 @@ tracking-check этап не принимается.
 Параметры каждого события: `page`, `position` (hero / inline / sticky / footer /
 article_end), `channel` (telegram / whatsapp / phone / form / quiz), `offer`.
 Дедупликация `ast_contact`: один визит — одно событие (флаг
-`ast_contact_sent=1` в sessionStorage).
+`ast_contact_sent=1` в sessionStorage). Так же дедуплицируется
+`ast_form_start` (флаг `ast_form_start_sent=1`).
+
+Параметры визита `ast_source` (источник из URL объявлений Директа)
+смотреть в отчёте «Содержание → Параметры визитов» — см.
+`docs/direct-tracking-2026-09-03.md`.
 
 Существующие автоцели **не отключать** — остаются для сверки.
 
