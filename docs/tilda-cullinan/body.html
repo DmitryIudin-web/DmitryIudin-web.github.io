@@ -1,0 +1,776 @@
+<!-- Rolls-Royce Cullinan — код для блока «HTML-код» (T123) на странице Tilda.
+     Пути вида /assets/rolls-royce-cullinan/... заменить на адреса Tilda,
+     которые выдаст файловый менеджер после загрузки изображений. -->
+
+<!-- ===== СТИЛИ СТРАНИЦЫ. Нужны всегда ===== -->
+<style>
+:root{--rrc-bg:#0F0B14;--rrc-surface:#17121F;--rrc-ink:#F4F1EC;--rrc-muted:#A39DAB;--rrc-line:rgba(244,241,236,.12);--rrc-line-2:rgba(244,241,236,.24);--rrc-champ:#C9B79C;--rrc-red:#D71920;--rrc-red-2:#B8141B;--rrc-tg:#229ED9;--rrc-wa:#25D366;--rrc-display:"Jost","Gill Sans","Inter",Arial,sans-serif;--rrc-body:"Inter",Arial,Helvetica,sans-serif;--rrc-w:1180px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--rrc-bg)}
+body{margin:0;background:var(--rrc-bg);color:var(--rrc-ink);font-family:var(--rrc-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.rrc-wrap{width:min(var(--rrc-w),100% - 40px);margin:0 auto}
+.rrc-kicker{margin:0;font-family:var(--rrc-display);font-weight:400;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--rrc-champ)}
+h1,h2,h3{font-family:var(--rrc-display);font-weight:300;margin:0;letter-spacing:.02em}
+h2{font-size:clamp(28px,3.6vw,46px);line-height:1.12;text-transform:uppercase;letter-spacing:.08em}
+h3{font-size:22px;font-weight:400;line-height:1.3}
+.rrc-h2--sm{font-size:clamp(22px,2.4vw,28px)}
+p{margin:0}
+.rrc-lead{font-size:18px;color:var(--rrc-muted);max-width:60ch}
+.rrc-note{font-size:13px;color:var(--rrc-muted);margin-top:18px;max-width:90ch}
+.rrc-hint{font-size:13px;color:var(--rrc-muted)}
+.rrc-sec{padding:clamp(64px,8vw,120px) 0}
+.rrc-sec--flush{padding-top:0}
+.rrc-sec--surface{background:var(--rrc-surface)}
+.rrc-sec__head{display:flex;flex-direction:column;gap:14px;max-width:820px;margin-bottom:clamp(32px,4.5vw,60px)}
+.rrc-sec__head--flush,.rrc-sec__head--tight{margin-bottom:0}
+.rrc-sec__head--tight{margin-bottom:24px}
+.rrc-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:2px;font:600 15px/1 var(--rrc-body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.rrc-btn--sm{min-height:44px;padding:0 18px;font-size:13px}
+.rrc-btn--red{background:var(--rrc-red);color:#fff}
+.rrc-btn--red:hover{background:var(--rrc-red-2)}
+.rrc-btn--ghost{background:transparent;color:var(--rrc-ink);border-color:var(--rrc-line-2)}
+.rrc-btn--ghost:hover{border-color:var(--rrc-ink)}
+.rrc-btn--champ{background:transparent;color:var(--rrc-champ);border-color:rgba(201,183,156,.5)}
+.rrc-btn--champ:hover{border-color:var(--rrc-champ)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid rgba(201,183,156,.6);outline-offset:2px}
+.rrc-hdr{position:sticky;top:0;z-index:60;background:rgba(15,11,20,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rrc-line)}
+.rrc-hdr .rrc-wrap{display:flex;align-items:center;gap:28px;height:64px}
+.rrc-logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--rrc-display);letter-spacing:.18em;font-size:13px;white-space:nowrap}
+.rrc-logo__mark{width:34px;height:34px;border-radius:50%;border:1px solid var(--rrc-line-2);display:grid;place-items:center;font:600 10px var(--rrc-display);letter-spacing:.08em}
+.rrc-nav{display:flex;gap:24px;font-size:14px;color:var(--rrc-muted);flex-wrap:wrap}
+.rrc-nav a{text-decoration:none}
+.rrc-nav a:hover{color:var(--rrc-ink)}
+.rrc-hdr__right{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:14px}
+.rrc-hdr__right a{text-decoration:none;white-space:nowrap}
+.rrc-hero{position:relative;display:flex;align-items:flex-end;overflow:hidden;min-height:min(86vh,840px)}
+.rrc-hero picture,.rrc-hero img{position:absolute;inset:0;width:100%;height:100%}
+.rrc-hero img{object-fit:cover;object-position:70% 50%}
+.rrc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,11,20,.3) 0%,rgba(15,11,20,.05) 35%,rgba(15,11,20,.6) 72%,var(--rrc-bg) 100%),linear-gradient(90deg,rgba(15,11,20,.78) 0%,rgba(15,11,20,.38) 45%,rgba(15,11,20,0) 78%)}
+.rrc-hero__inner{position:relative;z-index:1;padding:112px 0 60px;display:grid;gap:20px}
+.rrc-crumbs{font-size:13px;color:var(--rrc-muted);display:flex;gap:10px;flex-wrap:wrap}
+.rrc-crumbs a{text-decoration:none}
+h1{font-size:clamp(32px,4.6vw,64px);line-height:1.06;text-transform:uppercase;letter-spacing:.05em;max-width:16ch}
+.rrc-h1__kicker{display:block;font-size:.4em;letter-spacing:.2em;color:var(--rrc-champ);margin-bottom:16px;font-weight:400}
+.rrc-hero .rrc-lead{color:rgba(244,241,236,.84)}
+.rrc-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.rrc-facts{border-top:1px solid var(--rrc-line);border-bottom:1px solid var(--rrc-line)}
+.rrc-facts__grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.rrc-fact{padding:26px 20px 26px 0;border-right:1px solid var(--rrc-line);display:grid;gap:6px;align-content:start}
+.rrc-fact+.rrc-fact{padding-left:20px}
+.rrc-fact:last-child{border-right:0}
+.rrc-fact b{font:400 19px/1.25 var(--rrc-display)}
+.rrc-fact span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rrc-champ)}
+.rrc-fact small{font-size:12px;color:var(--rrc-muted);line-height:1.45}
+.rrc-split{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center}
+.rrc-split__media{margin:0;position:relative}
+.rrc-split__media img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.rrc-split__media .rrc-split__mini{position:absolute;right:-32px;bottom:-40px;width:38%;height:auto;aspect-ratio:3/2;object-fit:cover;border:8px solid var(--rrc-bg)}
+.rrc-chapter{display:grid;gap:18px}
+.rrc-marks{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+.rrc-marks li{padding-left:22px;position:relative;color:var(--rrc-muted)}
+.rrc-marks li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:1px;background:var(--rrc-champ)}
+.rrc-marks b{color:var(--rrc-ink);font-weight:500}
+.rrc-interior{position:relative;display:flex;align-items:center;overflow:hidden;min-height:min(70vh,640px)}
+.rrc-interior img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rrc-interior::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,11,20,.88),rgba(15,11,20,.45) 52%,rgba(15,11,20,.1)),linear-gradient(0deg,var(--rrc-bg),transparent 28%,transparent 82%,var(--rrc-bg))}
+.rrc-interior .rrc-wrap{position:relative;z-index:1;padding:88px 0}
+.rrc-interior .rrc-chapter{max-width:540px}
+.rrc-macro{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-40px;position:relative;z-index:2}
+.rrc-macro figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.rrc-macro img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;align-self:start}
+.rrc-macro figcaption{font-size:13px;color:var(--rrc-muted);display:flex;gap:10px;align-items:baseline;margin-top:auto}
+.rrc-macro figcaption b{font:400 12px var(--rrc-display);letter-spacing:.16em;text-transform:uppercase;color:var(--rrc-champ);white-space:nowrap}
+.rrc-versions{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rrc-ver{background:var(--rrc-surface);border:1px solid var(--rrc-line);display:grid;grid-template-rows:auto 1fr;transition:border-color .2s}
+.rrc-ver:hover{border-color:var(--rrc-line-2)}
+.rrc-ver>img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;align-self:start}
+.rrc-ver--bb{background:linear-gradient(160deg,#120E18,#1A1420)}
+.rrc-ver__body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
+.rrc-ver h3{font-size:19px}
+.rrc-ver__sub{font-size:14px;color:var(--rrc-muted)}
+.rrc-ver dl{margin:0 0 auto;display:grid;gap:8px;font-size:14px;border-top:1px solid var(--rrc-line);padding-top:14px}
+.rrc-ver dl div{display:grid;grid-template-columns:96px 1fr;gap:12px}
+.rrc-ver dt{color:var(--rrc-muted)}
+.rrc-ver dd{margin:0}
+.rrc-ver__price{font:400 20px var(--rrc-display)}
+.rrc-ver__price small{display:block;font:400 11px var(--rrc-body);letter-spacing:.14em;text-transform:uppercase;color:var(--rrc-champ);margin-bottom:4px}
+.rrc-ver .rrc-btn{align-self:start}
+.rrc-tag{display:inline-block;font:500 11px var(--rrc-body);letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--rrc-line-2);border-radius:2px}
+.rrc-cmp{display:grid;border-top:1px solid var(--rrc-line)}
+.rrc-cmp__row{display:grid;grid-template-columns:1.1fr 1.4fr 1fr 1.4fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--rrc-line);align-items:center}
+.rrc-cmp__row--head{padding:12px 0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rrc-champ)}
+.rrc-cmp__row h3{font-size:18px}
+.rrc-cmp__row p{font-size:14px;color:var(--rrc-muted)}
+.rrc-cmp__v{font-size:14px}
+.rrc-cmp__more{font-size:13px;text-decoration:none;color:var(--rrc-champ);white-space:nowrap}
+.rrc-cmp__more:hover{color:var(--rrc-ink)}
+.rrc-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin:12px 0 0;padding:0;list-style:none}
+.rrc-steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--rrc-line-2)}
+.rrc-step{padding:0 24px 0 0;display:grid;gap:12px;align-content:start;position:relative}
+.rrc-step::before{content:"";width:19px;height:19px;border-radius:50%;background:var(--rrc-bg);border:1px solid var(--rrc-champ)}
+.rrc-sec--surface .rrc-step::before{background:var(--rrc-surface)}
+.rrc-step:first-child::before{background:var(--rrc-champ)}
+.rrc-step b{font:400 12px var(--rrc-display);letter-spacing:.18em;text-transform:uppercase;color:var(--rrc-champ)}
+.rrc-step h3{font-size:18px}
+.rrc-step p{font-size:14px;color:var(--rrc-muted)}
+.rrc-rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
+.rrc-rule{background:var(--rrc-bg);border:1px solid var(--rrc-line);padding:28px}
+.rrc-rule h3{font-size:18px;margin-bottom:14px}
+.rrc-rule ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:14px;color:var(--rrc-muted)}
+.rrc-rule li{padding-left:18px;position:relative}
+.rrc-rule li::before{content:"";position:absolute;left:0;top:.8em;width:8px;height:1px;background:var(--rrc-champ)}
+.rrc-rule--red li::before{background:var(--rrc-red)}
+.rrc-biz{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rrc-biz a{background:var(--rrc-surface);border:1px solid var(--rrc-line);padding:32px 28px;text-decoration:none;display:grid;gap:12px;align-content:start;transition:border-color .2s}
+.rrc-biz a:hover{border-color:var(--rrc-champ)}
+.rrc-biz h3{font-size:20px}
+.rrc-biz p{font-size:14px;color:var(--rrc-muted)}
+.rrc-biz__more{font-size:13px;color:var(--rrc-champ);margin-top:8px}
+.rrc-gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:12px}
+.rrc-gal img{width:100%;height:100%;object-fit:cover}
+.rrc-gal__big{grid-column:span 2;grid-row:span 2}
+.rrc-gal__tall{grid-row:span 2}
+.rrc-faq{display:grid;border-top:1px solid var(--rrc-line);max-width:900px}
+.rrc-faq details{border-bottom:1px solid var(--rrc-line)}
+.rrc-faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font:400 19px/1.35 var(--rrc-display);position:relative}
+.rrc-faq summary::-webkit-details-marker{display:none}
+.rrc-faq summary::after{content:"+";position:absolute;right:0;top:16px;font:300 28px/1 var(--rrc-display);color:var(--rrc-champ)}
+.rrc-faq details[open] summary::after{content:"–"}
+.rrc-faq details p{padding:0 0 22px;color:var(--rrc-muted);font-size:15px;max-width:70ch}
+.rrc-lead-sec{background:linear-gradient(180deg,var(--rrc-bg),#130E1A)}
+.rrc-lead-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:start}
+.rrc-promise{display:grid;gap:28px}
+.rrc-promise__list{margin:0;padding:0;list-style:none;display:grid;gap:22px}
+.rrc-promise__list li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.rrc-promise__list i{font:400 13px var(--rrc-display);letter-spacing:.14em;color:var(--rrc-champ);width:36px;height:36px;border:1px solid var(--rrc-line-2);border-radius:50%;display:grid;place-items:center;font-style:normal}
+.rrc-promise__list b{display:block;font-weight:500;margin-bottom:4px}
+.rrc-promise__list p{font-size:14px;color:var(--rrc-muted)}
+.rrc-form{background:var(--rrc-surface);border:1px solid var(--rrc-line);padding:32px;display:grid;gap:16px}
+.rrc-form__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rrc-field{display:grid;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rrc-champ)}
+.rrc-field--wide{grid-column:1/-1}
+.rrc-form input[type=text],.rrc-form input[type=tel],.rrc-form input:not([type]),.rrc-form select{width:100%;background:var(--rrc-bg);border:1px solid var(--rrc-line-2);color:var(--rrc-ink);padding:14px 16px;font:400 15px var(--rrc-body);border-radius:2px}
+.rrc-form select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--rrc-champ) 50%),linear-gradient(135deg,var(--rrc-champ) 50%,transparent 50%);background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:42px}
+.rrc-form-more{border-top:1px solid var(--rrc-line);padding-top:14px}
+.rrc-form-more summary{cursor:pointer;font-size:14px;color:var(--rrc-champ);list-style:none}
+.rrc-form-more summary::-webkit-details-marker{display:none}
+.rrc-form-more__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.rrc-consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--rrc-muted);line-height:1.5}
+.rrc-consent input{width:16px;height:16px;margin-top:3px;flex:none;accent-color:var(--rrc-champ)}
+.rrc-form__status{font-size:13px;color:var(--rrc-champ);min-height:1em}
+.rrc-form .rrc-btn--red{width:100%}
+.rrc-contact-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:13px}
+.rrc-contact-actions a{text-decoration:none;border:1px solid var(--rrc-line);padding:10px 14px;border-radius:2px;color:var(--rrc-muted)}
+.rrc-contact-actions a:hover{border-color:var(--rrc-champ);color:var(--rrc-ink)}
+.rrc-links{display:flex;gap:10px;flex-wrap:wrap}
+.rrc-links a{border:1px solid var(--rrc-line);padding:10px 16px;font-size:14px;text-decoration:none;color:var(--rrc-muted);border-radius:2px}
+.rrc-links a:hover{border-color:var(--rrc-champ);color:var(--rrc-ink)}
+.rrc-footer{border-top:1px solid var(--rrc-line);padding:48px 0 96px;font-size:14px;color:var(--rrc-muted)}
+.rrc-footer__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px;margin-bottom:24px}
+.rrc-footer b{color:var(--rrc-ink);font-weight:500;display:block;margin-bottom:8px}
+.rrc-footer a{text-decoration:none}
+.rrc-footer a:hover{color:var(--rrc-ink)}
+.rrc-footer p{line-height:1.7}
+body .ast-model-extra{background:var(--rrc-surface);padding:48px 0}
+body .ast-model-extra__card{background:var(--rrc-bg);border:1px solid var(--rrc-line);border-radius:2px;color:var(--rrc-ink)}
+body .ast-model-extra__card h3{font-family:var(--rrc-display);font-weight:400}
+body .ast-model-extra__steps{color:var(--rrc-muted)}
+body .ast-model-extra__note{color:var(--rrc-muted)}
+body .ast-model-extra__note a{color:var(--rrc-champ)}
+body .ast-cta-row__hint{color:var(--rrc-muted)}
+body .ast-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:2px;font:600 14px/1 var(--rrc-body);text-decoration:none;border:1px solid var(--rrc-line-2);background:transparent;color:var(--rrc-ink);cursor:pointer}
+body .ast-btn--dark{background:var(--rrc-red);border-color:var(--rrc-red);color:#fff}
+body .ast-btn--ghost{background:transparent;color:var(--rrc-ink)}
+body .rrc-actions .ast-btn{min-height:52px;padding:0 28px;font-size:15px}
+@media (max-width:1024px){
+.rrc-facts__grid{grid-template-columns:repeat(3,1fr)}
+.rrc-fact{padding-left:0;padding-right:18px;border-right:0;border-bottom:1px solid var(--rrc-line)}
+.rrc-fact+.rrc-fact{padding-left:0}
+.rrc-versions{grid-template-columns:1fr 1fr}
+.rrc-steps{grid-template-columns:repeat(2,1fr);gap:28px}
+.rrc-steps::before{display:none}
+.rrc-biz{grid-template-columns:1fr}
+.rrc-cmp__row{grid-template-columns:1fr 1fr;gap:10px 24px}
+.rrc-cmp__row--head{display:none}
+.rrc-gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+.rrc-nav{display:none}
+}
+@media (max-width:760px){
+.rrc-hdr__phone,.rrc-hdr__tg{display:none}
+.rrc-hero{min-height:auto}
+.rrc-hero__inner{padding:84px 0 40px}
+.rrc-hero img{object-position:64% 35%}
+.rrc-facts__grid{grid-template-columns:1fr 1fr}
+.rrc-split,.rrc-lead-grid,.rrc-rules,.rrc-form__grid,.rrc-form-more__grid{grid-template-columns:1fr}
+.rrc-split__media .rrc-split__mini{display:none}
+.rrc-interior{min-height:auto}
+.rrc-interior .rrc-wrap{padding:72px 0}
+.rrc-macro{grid-template-columns:1fr;margin-top:0}
+.rrc-versions{grid-template-columns:1fr}
+.rrc-steps{grid-template-columns:1fr}
+.rrc-footer__grid{grid-template-columns:1fr}
+.rrc-form{padding:22px}
+.rrc-actions .rrc-btn,.rrc-actions .ast-btn{width:100%}
+.rrc-footer{padding-bottom:120px}
+}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*{transition:none!important;animation:none!important}
+}
+</style>
+
+<!-- ===== НАЧАЛО НАШЕЙ ШАПКИ =====
+     Удалить весь блок до «КОНЕЦ НАШЕЙ ШАПКИ», если на странице остаётся
+     общая шапка сайта Tilda. -->
+<header class="rrc-hdr">
+<div class="rrc-wrap">
+<a class="rrc-logo" href="/"><span class="rrc-logo__mark">AST</span>AutoNDS</a>
+<nav class="rrc-nav" aria-label="Основная навигация"><a href="/catalog">Модели</a><a href="/offers">Предложения</a><a href="/leasing">Лизинг</a><a href="/bezopasnaya-sdelka">Аккредитив</a><a href="/news">Новости</a><a href="/contacts">Контакты</a></nav>
+<div class="rrc-hdr__right">
+<a class="rrc-hdr__phone" href="tel:+79872831255" data-ast-model-event="phone_click">+7 987 283-12-55</a>
+<a class="rrc-hdr__tg" href="https://t.me/ASTavtomoto" data-ast-model-event="telegram_click">Telegram</a>
+<a class="rrc-btn rrc-btn--red rrc-btn--sm" href="#lead" data-cta="cullinan_header_calc">Получить расчёт</a>
+</div>
+</div>
+</header>
+<!-- ===== КОНЕЦ НАШЕЙ ШАПКИ ===== -->
+
+<!-- ===== СОДЕРЖИМОЕ СТРАНИЦЫ. Нужно всегда ===== -->
+<main class="rrc-main">
+
+<section class="rrc-hero">
+<picture>
+<source type="image/webp" srcset="/assets/rolls-royce-cullinan/hero-exterior-3-4-960.webp 960w, /assets/rolls-royce-cullinan/hero-exterior-3-4-1600.webp 1600w" sizes="100vw">
+<img src="/assets/rolls-royce-cullinan/hero-exterior-3-4-1600.webp" alt="Rolls-Royce Cullinan Series II, вид три четверти спереди" width="1600" height="900" fetchpriority="high" decoding="async">
+</picture>
+<div class="rrc-wrap rrc-hero__inner">
+<nav class="rrc-crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span>/</span><a href="/catalog">Каталог</a><span>/</span><span>Rolls-Royce Cullinan</span></nav>
+<h1><span class="rrc-h1__kicker">Rolls-Royce · Cullinan Series II</span>Rolls-Royce Cullinan в России: поставка под заказ, Series II и Black Badge</h1>
+<p class="rrc-lead">Подбираем Cullinan Series II, Black Badge и проверенные авто с пробегом — в наличии в РФ или под заказ из ОАЭ, Европы и Кореи. Полный all-in расчёт с таможней, утильсбором и ЭПТС до внесения предоплаты.</p>
+<div class="rrc-actions">
+<a class="rrc-btn rrc-btn--red" href="#lead" data-cta="cullinan_hero_primary">Рассчитать стоимость</a>
+<a class="rrc-btn rrc-btn--ghost" href="https://t.me/ASTavtomoto" data-cta="cullinan_hero_telegram" data-ast-model-event="telegram_click">Написать в Telegram</a>
+</div>
+<p class="rrc-hint">Ответим в течение часа в рабочее время · Без предоплаты за расчёт</p>
+</div>
+</section>
+
+<section class="rrc-facts" aria-label="Ключевые характеристики">
+<div class="rrc-wrap rrc-facts__grid">
+<div class="rrc-fact"><span>Двигатель</span><b>V12 6.75 twin-turbo</b><small>Тишина, тяга и статус owner-driver или chauffeur</small></div>
+<div class="rrc-fact"><span>Мощность</span><b>571 / 600 л.с.</b><small>Series II / Black Badge — проверяем по VIN и листу опций</small></div>
+<div class="rrc-fact"><span>Разгон 0–100</span><b>5,2 / 5,0 с</b><small>Для автомобиля массой около 2,7 т это реальный ориентир сегмента</small></div>
+<div class="rrc-fact"><span>Салон</span><b>4 или 5 мест</b><small>По конфигурации: owner-driver или chauffeur</small></div>
+<div class="rrc-fact"><span>Цена, ориентир</span><b>от ~65 млн ₽ новый</b><small>от ~30 млн ₽ с пробегом · финальный all-in — после проверки VIN, инвойса и маршрута</small></div>
+<div class="rrc-fact"><span>Поставка</span><b>РФ · ОАЭ · Европа · Корея</b><small>Наличие в России или под заказ по мировым стокам</small></div>
+</div>
+</section>
+
+<section class="rrc-sec">
+<div class="rrc-wrap rrc-split">
+<figure class="rrc-split__media">
+<img src="/assets/rolls-royce-cullinan/rear-view-960.webp" srcset="/assets/rolls-royce-cullinan/rear-view-960.webp 960w, /assets/rolls-royce-cullinan/rear-view-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 55vw" alt="Rolls-Royce Cullinan Series II: решётка Pantheon и вертикальная светодиодная оптика" width="960" height="540" loading="lazy" decoding="async">
+<img class="rrc-split__mini" src="/assets/rolls-royce-cullinan/wheel-detail-960.webp" alt="Вертикальная светодиодная фара Cullinan Series II крупным планом" width="960" height="640" loading="lazy" decoding="async">
+</figure>
+<div class="rrc-chapter">
+<p class="rrc-kicker">Экстерьер · Series II</p>
+<h2>Присутствие, которое не нужно объяснять</h2>
+<p class="rrc-lead">Рестайлинг 2024 года сделал флагман строже: новая передняя оптика, решётка Pantheon с подсветкой и монолитные поверхности кузова.</p>
+<ul class="rrc-marks">
+<li><b>Решётка Pantheon с подсветкой</b> — главный визуальный признак Series II, отличающий его от первого Cullinan.</li>
+<li><b>Вертикальная светодиодная оптика</b> и новый передний бампер.</li>
+<li><b>Spirit of Ecstasy</b> на капоте и колёса 22–23 дюйма — статус читается с любого ракурса.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="rrc-interior">
+<img src="/assets/rolls-royce-cullinan/front-cabin-1600.webp" srcset="/assets/rolls-royce-cullinan/front-cabin-960.webp 960w, /assets/rolls-royce-cullinan/front-cabin-1600.webp 1600w" sizes="100vw" alt="Салон Rolls-Royce Cullinan Series II: подсвеченная панель с надписью Cullinan" width="1600" height="900" loading="lazy" decoding="async">
+<div class="rrc-wrap">
+<div class="rrc-chapter">
+<p class="rrc-kicker">Интерьер · Series II</p>
+<h2>Тишина V12 и салон представительского седана</h2>
+<p class="rrc-lead">Цифровая панель приборов и обновлённый мультимедийный комплекс SPIRIT, подсвеченная панель на стороне пассажира, новые варианты отделки. Четырёхместная конфигурация с раздельными задними креслами и перегородкой багажника — для chauffeur-сценария.</p>
+</div>
+</div>
+</section>
+<div class="rrc-wrap rrc-macro">
+<figure><img src="/assets/rolls-royce-cullinan/profile-body-960.webp" alt="Дверная карта Cullinan: перфорированная кожа, дерево и хром" width="960" height="540" loading="lazy" decoding="async"><figcaption><b>Отделка</b>Перфорированная кожа, дерево, металл — состояние проверяем до предоплаты</figcaption></figure>
+<figure><img src="/assets/rolls-royce-cullinan/trim-detail-960.webp" alt="Руль Rolls-Royce Cullinan с деревянными вставками" width="960" height="640" loading="lazy" decoding="async"><figcaption><b>Материалы</b>Оригинальность спецификации сверяем с листом опций производителя</figcaption></figure>
+<figure><img src="/assets/rolls-royce-cullinan/front-view-960.webp" alt="Rolls-Royce Cullinan Series II, вид сверху на кузов" width="960" height="540" loading="lazy" decoding="async"><figcaption><b>Кузов</b>Алюминиевые элементы — отдельная зона осмотра на следы ремонта</figcaption></figure>
+</div>
+
+<section class="rrc-sec" id="versions">
+<div class="rrc-wrap">
+<div class="rrc-sec__head">
+<p class="rrc-kicker">Версии для подбора</p>
+<h2>Какой Cullinan искать</h2>
+<p class="rrc-lead">Характеристики приведены для базовых заводских версий. Для конкретного автомобиля проверяются VIN, лист опций, продавец, инвойс, логистика и таможенные вводные.</p>
+</div>
+<div class="rrc-versions">
+<article class="rrc-ver">
+<img src="/assets/rolls-royce-cullinan/hero-exterior-3-4-960.webp" alt="Rolls-Royce Cullinan Series II" width="960" height="600" loading="lazy" decoding="async">
+<div class="rrc-ver__body">
+<p><span class="rrc-tag">2024 – н.в.</span></p>
+<h3>Cullinan Series II</h3>
+<p class="rrc-ver__sub">Актуальный флагман для owner-driver и chauffeur без компромисса по статусу.</p>
+<dl><div><dt>Двигатель</dt><dd>V12 6.75 л, 571 л.с., 850 Нм</dd></div><div><dt>Разгон 0–100</dt><dd>5,2 с</dd></div><div><dt>Трансмиссия</dt><dd>8АКПП ZF, полный привод</dd></div></dl>
+<p class="rrc-ver__price"><small>Ориентир, новый в РФ</small>от ~65–73 млн ₽</p>
+<a class="rrc-btn rrc-btn--champ rrc-btn--sm" href="#lead" data-cta="cullinan_version_series2" data-rrc-version="Rolls-Royce Cullinan: под заказ">Запросить варианты</a>
+</div>
+</article>
+<article class="rrc-ver rrc-ver--bb">
+<img src="/assets/rolls-royce-cullinan/second-row-960.webp" alt="Салон Rolls-Royce Cullinan Black Badge" width="960" height="600" loading="lazy" decoding="async">
+<div class="rrc-ver__body">
+<p><span class="rrc-tag">Black Badge</span></p>
+<h3>Cullinan Black Badge Series II</h3>
+<p class="rrc-ver__sub">Самая статусная серийная версия: 600 л.с., тёмный хром, карбон, иная настройка шасси и выхлопа.</p>
+<dl><div><dt>Двигатель</dt><dd>V12 6.75 л, 600 л.с., 900 Нм</dd></div><div><dt>Разгон 0–100</dt><dd>5,0 с</dd></div><div><dt>Проверяем</dt><dd>подлинность исполнения Black Badge</dd></div></dl>
+<p class="rrc-ver__price"><small>Ориентир, в наличии в РФ</small>от ~85 млн ₽</p>
+<a class="rrc-btn rrc-btn--champ rrc-btn--sm" href="#lead" data-cta="cullinan_version_black_badge" data-rrc-version="Rolls-Royce Cullinan: в наличии">Запросить варианты</a>
+</div>
+</article>
+<article class="rrc-ver">
+<img src="/assets/rolls-royce-cullinan/rear-view-960.webp" alt="Rolls-Royce Cullinan с пробегом" width="960" height="540" loading="lazy" decoding="async">
+<div class="rrc-ver__body">
+<p><span class="rrc-tag">2018 – 2024 · с пробегом</span></p>
+<h3>Cullinan I с пробегом</h3>
+<p class="rrc-ver__sub">Вход в модель с дисконтом 40–60% к новой; критичны история и происхождение.</p>
+<dl><div><dt>Двигатель</dt><dd>V12 6.75 л, 571 / 600 л.с.</dd></div><div><dt>Срок</dt><dd>быстрее всего — авто уже в РФ</dd></div><div><dt>Ключевой риск</dt><dd>история, пробег, документы</dd></div></dl>
+<p class="rrc-ver__price"><small>Ориентир</small>от ~26–30 млн ₽</p>
+<a class="rrc-btn rrc-btn--champ rrc-btn--sm" href="#lead" data-cta="cullinan_version_used" data-rrc-version="Rolls-Royce Cullinan: в наличии">Запросить варианты</a>
+</div>
+</article>
+<article class="rrc-ver">
+<img src="/assets/rolls-royce-cullinan/spec-condition-960.webp" alt="Spirit of Ecstasy на капоте Rolls-Royce" width="960" height="640" loading="lazy" decoding="async">
+<div class="rrc-ver__body">
+<p><span class="rrc-tag">Bespoke</span></p>
+<h3>Bespoke commission</h3>
+<p class="rrc-ver__sub">Поиск редкой конфигурации по мировым стокам, которую не купить разумно по наличию в РФ.</p>
+<dl><div><dt>География</dt><dd>ОАЭ, Европа, Корея, Китай</dd></div><div><dt>Важно</dt><dd>отдельная оценка ликвидности</dd></div><div><dt>Формат</dt><dd>под задачу клиента</dd></div></dl>
+<p class="rrc-ver__price"><small>Стоимость</small>по спецификации</p>
+<a class="rrc-btn rrc-btn--champ rrc-btn--sm" href="#lead" data-cta="cullinan_version_bespoke" data-rrc-version="Rolls-Royce Cullinan: под заказ">Обсудить спецификацию</a>
+</div>
+</article>
+</div>
+<p class="rrc-note">Характеристики приведены для базовых заводских версий. Ориентиры цен не являются офертой: финальная стоимость фиксируется после проверки VIN, инвойса, курса, логистики, таможни и утильсбора.</p>
+</div>
+</section>
+
+<section class="rrc-sec rrc-sec--flush" id="compare">
+<div class="rrc-wrap">
+<div class="rrc-sec__head">
+<p class="rrc-kicker">Сравнение с конкурентами</p>
+<h2>Когда Cullinan сильнее, а когда конкурент рациональнее</h2>
+<p class="rrc-lead">Cullinan — вершина сегмента, но не всегда рациональный выбор. По цене альтернативы дешевле в 1,5–2,5 раза, и под часть сценариев этого достаточно.</p>
+</div>
+<div class="rrc-cmp">
+<div class="rrc-cmp__row rrc-cmp__row--head"><span>Модель</span><span>Позиция</span><span>Мощность</span><span>Вывод</span><span></span></div>
+<div class="rrc-cmp__row"><h3>Bentley Bentayga</h3><p>Рациональный люкс для owner-driver: динамичнее и обычно примерно вдвое дешевле.</p><span class="rrc-cmp__v">V8 4.0 — 550 л.с.; Speed — 641 л.с.</span><p>Cullinan выигрывает в chauffeur-сценарии и статусе.</p><a class="rrc-cmp__more" href="/bentley-bentayga">Страница →</a></div>
+<div class="rrc-cmp__row"><h3>Mercedes-Maybach GLS 600</h3><p>Главный рациональный конкурент для chauffeur-сценария и корпоративного статуса.</p><span class="rrc-cmp__v">V8 4.0 + EQ Boost — 558 л.с.</span><p>Лучший задний ряд примерно за половину цены Cullinan.</p><a class="rrc-cmp__more" href="/catalog">Каталог →</a></div>
+<div class="rrc-cmp__row"><h3>Range Rover SV P615</h3><p>Люкс без манифеста: универсальность и внедорожный потенциал.</p><span class="rrc-cmp__v">V8 4.4 — 615 л.с.</span><p>Статус и историческая надёжность слабее Cullinan.</p><a class="rrc-cmp__more" href="/range-rover">Страница →</a></div>
+<div class="rrc-cmp__row"><h3>Lamborghini Urus S / Performante</h3><p>Суперкар-динамика и эмоция вместо тишины и представительского комфорта.</p><span class="rrc-cmp__v">V8 4.0 — 666 л.с.</span><p>Не конкурент, а дополнение к гаражу: пересечение только по бюджету.</p><a class="rrc-cmp__more" href="/lamborghini-urus">Страница →</a></div>
+<div class="rrc-cmp__row"><h3>Aston Martin DBX707</h3><p>Коллекционный performance-SUV с редкостью на дорогах РФ.</p><span class="rrc-cmp__v">V8 4.0 — 707 л.с.</span><p>В представительском сценарии Cullinan вне конкуренции.</p><a class="rrc-cmp__more" href="/aston-martin-dbx707">Страница →</a></div>
+</div>
+</div>
+</section>
+
+<section class="rrc-sec rrc-sec--surface">
+<div class="rrc-wrap">
+<div class="rrc-sec__head">
+<p class="rrc-kicker">Как проходит сделка</p>
+<h2>Предоплата — только после пакета проверок</h2>
+<p class="rrc-lead">Официальных поставок в РФ нет: только параллельный импорт, поэтому критичны происхождение, история и корректная таможня.</p>
+</div>
+<ol class="rrc-steps">
+<li class="rrc-step"><b>Шаг 1</b><h3>Вводные</h3><p>Версия, бюджет, город и формат сделки. В течение 1–2 рабочих дней — три сценария: Россия сейчас, поставка под заказ и альтернатива.</p></li>
+<li class="rrc-step"><b>Шаг 2</b><h3>Проверка автомобиля</h3><p>VIN и история, лист опций от производителя, сервисная история Rolls-Royce, оригинальность спецификации.</p></li>
+<li class="rrc-step"><b>Шаг 3</b><h3>Продавец и документы</h3><p>Реквизиты продавца, инвойс, комплект ключей и документов, маршрут и схема растаможки.</p></li>
+<li class="rrc-step"><b>Шаг 4</b><h3>All-in расчёт</h3><p>Цена, курс, логистика, таможня, утильсбор и ЭПТС — одним документом до предоплаты.</p></li>
+<li class="rrc-step"><b>Шаг 5</b><h3>Договор и передача</h3><p>Юридическая схема договора, оплаты, передачи и закрывающих документов. Безопасная сделка через аккредитив.</p></li>
+</ol>
+<div class="rrc-rules">
+<div class="rrc-rule"><h3>Что клиент получает до предоплаты</h3><ul><li>карточка автомобиля: VIN, год, пробег, страна, продавец, комплектация;</li><li>фото/видео и лист опций;</li><li>предварительный all-in расчёт;</li><li>схема оплаты и передачи;</li><li>риски по истории, ликвидности, цвету, документам и сроку;</li><li>сравнение с 1–2 альтернативами, если Cullinan не лучший вариант по бюджету.</li></ul></div>
+<div class="rrc-rule rrc-rule--red"><h3>Red flags по Cullinan</h3><ul><li>переделки обычной версии под Black Badge;</li><li>конверсия Series I под внешний вид Series II;</li><li>неоригинальные диски, обвесы, карбон и тёмный хром;</li><li>неполный лист опций или несоответствие Bespoke-спецификации;</li><li>повреждения кожи, дерева, карбона, потолка Starlight и заднего ряда;</li><li>следы кузовного ремонта на дорогих алюминиевых элементах;</li><li>скрученный пробег и неполная сервисная история.</li></ul></div>
+</div>
+<p class="rrc-note">Не называем финальную цену до проверки VIN, инвойса и текущего курса. Не используем серые схемы растаможки через третьи страны с занижением стоимости. Не продаём авто без проверенной истории и листа опций от производителя.</p>
+</div>
+</section>
+
+<section class="rrc-sec">
+<div class="rrc-wrap">
+<div class="rrc-sec__head">
+<p class="rrc-kicker">Для бизнеса</p>
+<h2>Юрлицо, НДС, лизинг</h2>
+</div>
+<div class="rrc-biz">
+<a href="/auto-s-nds-dlya-biznesa"><span class="rrc-kicker">Авто с НДС</span><h3>Покупка на юрлицо с НДС</h3><p>Возможность возмещения НДС зависит от схемы ввоза конкретного автомобиля и продавца. Подтверждаем до договора.</p><span class="rrc-biz__more">Авто с НДС для бизнеса →</span></a>
+<a href="/leasing"><span class="rrc-kicker">Лизинг</span><h3>Лизинг премиальных авто</h3><p>Работаем с лизинговыми компаниями; одобрение зависит от требований лизинговой компании к предмету сделки.</p><span class="rrc-biz__more">Условия лизинга →</span></a>
+<a href="/bezopasnaya-sdelka"><span class="rrc-kicker">Безопасная сделка</span><h3>Постоплата через аккредитив Сбербанка</h3><p>Деньги раскрываются продавцу только после выполнения условий договора и передачи автомобиля.</p><span class="rrc-biz__more">Как работает аккредитив →</span></a>
+</div>
+</div>
+</section>
+
+<section class="rrc-sec rrc-sec--flush">
+<div class="rrc-wrap">
+<div class="rrc-sec__head"><p class="rrc-kicker">Галерея</p><h2>Cullinan Series II в деталях</h2></div>
+<div class="rrc-gal">
+<img class="rrc-gal__big" src="/assets/rolls-royce-cullinan/hero-exterior-3-4-1600.webp" alt="Rolls-Royce Cullinan Series II, вид три четверти" width="1600" height="900" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/trim-detail-960.webp" alt="Руль Cullinan с деревянными вставками" width="960" height="640" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/rear-view-960.webp" alt="Решётка Pantheon Cullinan Series II" width="960" height="540" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/profile-body-960.webp" alt="Дверная карта Cullinan" width="960" height="540" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/spec-condition-960.webp" alt="Spirit of Ecstasy" width="960" height="640" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/front-cabin-960.webp" alt="Подсвеченная панель салона Cullinan" width="960" height="540" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/wheel-detail-960.webp" alt="Вертикальная фара Cullinan Series II" width="960" height="640" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/second-row-960.webp" alt="Салон Cullinan Black Badge" width="960" height="540" loading="lazy" decoding="async">
+<img src="/assets/rolls-royce-cullinan/front-view-960.webp" alt="Cullinan Series II, вид сверху" width="960" height="540" loading="lazy" decoding="async">
+</div>
+<p class="rrc-note">Фотографии иллюстрируют модель и зоны проверки. Конкретный автомобиль, цвет, салон, опции и состояние подтверждаются по VIN, фото/видео продавца и листу опций перед сделкой.</p>
+</div>
+</section>
+
+<section class="rrc-sec rrc-sec--surface" id="faq">
+<div class="rrc-wrap">
+<div class="rrc-sec__head"><p class="rrc-kicker">FAQ</p><h2>Частые вопросы по Cullinan</h2></div>
+<div class="rrc-faq">
+<details open><summary>Сколько стоит Rolls-Royce Cullinan в России в 2026 году?</summary><p>Ориентиры рынка: Cullinan I с пробегом — от ~26–30 млн ₽, новый Cullinan Series II в наличии — от ~65–73 млн ₽, Black Badge Series II — от ~85 млн ₽. Под заказ обычно выгоднее наличия на 5–15%. Финальный all-in считаем после проверки VIN, инвойса, курса, логистики, таможни и утильсбора — присылаем расчёт одним документом до предоплаты.</p></details>
+<details><summary>Какой срок поставки под заказ?</summary><p>Авто в РФ — сделка от нескольких дней. Из ОАЭ — ориентир 30–60 дней, из Европы — 45–90 дней с учётом логистики и оформления. Точный срок фиксируем после подтверждения конкретного автомобиля и маршрута.</p></details>
+<details><summary>Чем Series II отличается от первого Cullinan?</summary><p>Рестайлинг 2024 года: новая передняя оптика и решётка с подсветкой, цифровая панель приборов, обновлённый мультимедийный комплекс SPIRIT, новые варианты отделки салона. Механика осталась прежней — V12 6.75 л, 571 л.с. или 600 л.с. в Black Badge.</p></details>
+<details><summary>Что проверяется до оплаты?</summary><p>VIN и история, лист опций от производителя, продавец и его реквизиты, инвойс, комплектность документов, маршрут и схема растаможки, применимость НДС и лизинга, договорная схема оплаты и передачи. Предоплата — только после этого пакета проверок.</p></details>
+<details><summary>Можно ли купить на юрлицо, с НДС или в лизинг?</summary><p>Да, рассматриваем все три формата. Возможность возмещения НДС зависит от схемы ввоза конкретного автомобиля и продавца; лизинг — от требований лизинговой компании к предмету сделки. Подтверждаем по конкретному автомобилю до договора.</p></details>
+<details><summary>Почему стоит сравнить с альтернативами?</summary><p>Maybach GLS 600 закрывает chauffeur-сценарий примерно за половину цены Cullinan, Bentayga даёт люкс с лучшей управляемостью. Переплата в сегменте чаще всего возникает из-за срочности или редкого цвета. Мы показываем 2–3 сценария, чтобы решение было по фактам, а не по эмоции момента.</p></details>
+<details><summary>Что будет после заявки?</summary><p>Менеджер уточняет версию, бюджет, город и формат сделки, затем в течение 1–2 рабочих дней возвращается с тремя сценариями: автомобиль в России сейчас, поставка под заказ и рациональная альтернатива — каждый с предварительным all-in расчётом.</p></details>
+</div>
+</div>
+</section>
+
+<section class="rrc-sec rrc-lead-sec" id="lead">
+<div class="rrc-wrap rrc-lead-grid">
+<div class="rrc-promise">
+<div class="rrc-sec__head rrc-sec__head--flush">
+<p class="rrc-kicker">Заявка за 30 секунд</p>
+<h2>Получить предложение по Cullinan</h2>
+<p class="rrc-lead">Менеджер проверит рынок и вернёт не одну случайную машину, а три сценария с предварительным all-in расчётом.</p>
+</div>
+<ol class="rrc-promise__list">
+<li><i>01</i><div><b>Предварительная цена</b><p>Ориентир по конкретной модели, рынку и формату оплаты.</p></div></li>
+<li><i>02</i><div><b>Срок и маршрут</b><p>Покажем, что реально быстрее и безопаснее: Россия, поставка или альтернатива.</p></div></li>
+<li><i>03</i><div><b>Риски: VIN, продавец, документы, НДС/лизинг</b><p>До сделки отдельно проверяем то, что влияет на деньги и безопасность.</p></div></li>
+</ol>
+</div>
+<form class="rrc-form ast-launch-form" data-ast-model-form-class="ast-model-form" data-ast-model-lead-form="1" autocomplete="on" data-success="Заявка принята. Менеджер проверит вводные и подготовит 3 предварительных сценария: Россия, поставка под заказ и альтернатива." novalidate>
+<div class="rrc-form__grid">
+<label class="rrc-field rrc-field--wide">Контакт<input name="contact" required placeholder="+7... или @username" autocomplete="tel"></label>
+<label class="rrc-field">Как связаться<select name="messenger_preference"><option>телефон или мессенджер</option><option>Telegram</option><option>WhatsApp</option><option>MAX</option><option>звонок</option></select></label>
+<label class="rrc-field">Модель / версия<select name="model_version"><option>Rolls-Royce Cullinan</option><option>Rolls-Royce Cullinan: в наличии</option><option>Rolls-Royce Cullinan: под заказ</option><option>Близкая альтернатива</option></select></label>
+<label class="rrc-field">Бюджет all-in<select name="budget_band"><option value="">Выберите диапазон</option><option>до 35 млн ₽ — ранний Cullinan I с пробегом</option><option>35–60 млн ₽ — Cullinan I / свежий пробег / редкие выгодные предложения</option><option>60–90 млн ₽ — новый или почти новый Series II, зависит от страны и схемы ввоза</option><option>90+ млн ₽ — Black Badge / Bespoke / редкая спецификация</option><option>сначала сравнить рынок</option></select></label>
+<label class="rrc-field">Предпочитаемый сценарий<select name="preferred_scenario_choice"><option>owner-driver или chauffeur</option><option>в наличии</option><option>под заказ</option><option>близкая альтернатива</option></select></label>
+</div>
+<details class="rrc-form-more"><summary>Дополнить заявку: город, срок и формат сделки</summary><div class="rrc-form-more__grid">
+<label class="rrc-field">Город передачи<input name="city" placeholder="Москва, Самара, другой город"></label>
+<label class="rrc-field">Срок покупки<select name="timeline"><option>как можно быстрее</option><option>до 30 дней</option><option>1-3 месяца</option><option>сначала изучаю рынок</option></select></label>
+<label class="rrc-field">Формат сделки<select name="deal_format"><option>частная покупка</option><option>юрлицо</option><option>НДС</option><option>лизинг</option><option>trade-in</option><option>пока не знаю</option></select></label>
+</div></details>
+<input type="hidden" name="model" value="Rolls-Royce Cullinan"><input type="hidden" name="scenario" value="rolls_royce_cullinan"><input type="hidden" name="source" value="site_form"><input type="hidden" name="source_detail" value="model_page_lead"><input type="hidden" name="page_url" value=""><input type="hidden" name="selected_budget" value=""><input type="hidden" name="selected_version" value=""><input type="hidden" name="selected_scenario" value=""><input type="hidden" name="preferred_scenario" value="owner-driver или chauffeur"><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="consent_version" value="privacy-2026-05-12"><input type="hidden" name="consent_timestamp" value="">
+<label class="rrc-consent"><input type="checkbox" name="consent" required checked><span>Согласен на обработку заявки и обратную связь. Финальная цена, срок, комплектация, НДС/лизинг и продавец подтверждаются после проверки. <a href="/privacy">Политика конфиденциальности</a>.</span></label>
+<div class="rrc-form__status ast-model-form__status ast-launch-form__status" aria-live="polite"></div>
+<button class="rrc-btn rrc-btn--red" type="submit" data-cta="cullinan_form_submit">Рассчитать стоимость</button>
+<p class="rrc-hint" style="text-align:center">Ответим в течение часа в рабочее время · Без предоплаты за расчёт</p>
+<div class="rrc-contact-actions ast-model-contact-actions">
+<a href="tel:+79872831255" data-cta="cullinan_phone" data-ast-model-event="phone_click">Позвонить: +7 987 283-12-55</a>
+<a href="https://t.me/ASTavtomoto" data-cta="cullinan_telegram" data-ast-model-event="telegram_click">Написать в Telegram</a>
+<a href="https://wa.me/79872831255" data-cta="cullinan_whatsapp" data-ast-model-event="whatsapp_click">WhatsApp</a>
+</div>
+</form>
+</div>
+</section>
+
+<section class="rrc-sec rrc-sec--flush">
+<div class="rrc-wrap">
+<div class="rrc-sec__head rrc-sec__head--tight"><p class="rrc-kicker">Связанные страницы</p><h2 class="rrc-h2--sm">Куда перейти дальше</h2></div>
+<nav class="rrc-links" aria-label="Связанные страницы"><a href="/bentley-bentayga">Bentley Bentayga</a><a href="/range-rover">Range Rover</a><a href="/lamborghini-urus">Lamborghini Urus</a><a href="/aston-martin-dbx707">Aston Martin DBX707</a><a href="/catalog">Каталог моделей</a><a href="/offers">Актуальные КП</a><a href="/import">Импорт премиальных авто</a><a href="/auto-s-nds-dlya-biznesa">Авто с НДС для юрлица</a><a href="/bezopasnaya-sdelka">Безопасная сделка</a><a href="/raschet-avto-pod-klyuch">Расчёт авто под ключ</a></nav>
+</div>
+</section>
+
+<section class="rrc-sec rrc-sec--flush">
+<div class="rrc-wrap">
+<div class="rrc-sec__head rrc-sec__head--tight"><p class="rrc-kicker">Рынки поставки</p><h2 class="rrc-h2--sm">Где проверяем автомобиль под заказ</h2><p class="rrc-lead">Маршрут выбираем после проверки модели, продавца, документов и полной цены: Россия сейчас, Европа, Корея, ОАЭ или другой вариант под задачу клиента.</p></div>
+<nav class="rrc-links" aria-label="Рынки поставки"><a href="/import-avto-iz-evropy/">Авто из Европы</a><a href="/import-avto-iz-korei/">Авто из Кореи</a><a href="/import-avto-iz-oae/">Авто из ОАЭ</a><a href="/sravnenie-rynkov-premium-avto/">Сравнить рынки</a><a href="/offers">Актуальные КП</a></nav>
+</div>
+</section>
+
+</main>
+
+<!-- ===== НАЧАЛО НАШЕГО ПОДВАЛА =====
+     Удалить весь блок до «КОНЕЦ НАШЕГО ПОДВАЛА», если на странице остаётся
+     общий подвал сайта Tilda. -->
+<footer class="rrc-footer">
+<div class="rrc-wrap rrc-footer__grid">
+<div><b>ООО «АСТ» · AutoNDS</b><p>ИНН 6313553773 · ОГРН 1176313080239<br>Премиальные автомобили под заказ, авто с НДС для юрлиц, лизинг. Работаем по всей России.</p></div>
+<div><b>Офисы</b><p>Казань, Чернышевского 30Б, офис 204/1<br>Санкт-Петербург, Комсомола 1-3М<br>Самара, Лесная 23</p></div>
+<div><b>Контакты</b><p><a href="tel:+79872831255">+7 987 283-12-55</a><br><a href="https://t.me/ASTavtomoto">Telegram @ASTavtomoto</a><br><a href="https://wa.me/79872831255">WhatsApp</a><br><a href="mailto:zakaz@avtonds.ru">zakaz@avtonds.ru</a><br><a href="/privacy">Политика конфиденциальности</a></p></div>
+</div>
+<div class="rrc-wrap"><p class="rrc-note">Информация на странице не является публичной офертой. Цены, сроки, комплектации и наличие подтверждаются по конкретному коммерческому предложению после проверки документов и маршрута поставки.</p></div>
+</footer>
+<!-- ===== КОНЕЦ НАШЕГО ПОДВАЛА ===== -->
+
+<!-- ===== СЧЁТЧИК ЯНДЕКС.МЕТРИКИ =====
+     Удалить весь блок до «КОНЕЦ СЧЁТЧИКА», если счётчик 106049767 уже
+     подключён на весь сайт в настройках Tilda: иначе визиты посчитаются дважды. -->
+<!-- Yandex.Metrika counter 106049767 --><script type="text/javascript" data-tilda-cookie-type="analytics">setTimeout(function(){(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");window.mainMetrikaId='106049767';ym(window.mainMetrikaId,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,params:{__ym:{"ymCms":{"cms":"tilda","cmsVersion":"1.0","cmsCatalog":"1"}}},ecommerce:"dataLayer"});},2000);</script><noscript><div><img src="https://mc.yandex.ru/watch/106049767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- ===== КОНЕЦ СЧЁТЧИКА ===== -->
+
+<!-- ===== СКРИПТ СТРАНИЦЫ: форма, кнопки версий, события аналитики.
+     Нужен всегда ===== -->
+<script data-rrc-model-script>
+(function(){
+  "use strict";
+  var MODEL = "Rolls-Royce Cullinan";
+  var METRIKA_ID = 106049767;
+  var ENDPOINTS = ["/api/max-page/order", "https://api.avtonds.ru/api/max-page/order"];
+  var WHATSAPP = "79872831255";
+  function clean(value, max){return String(value == null ? "" : value).replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim().slice(0, max || 500);}
+  function param(name){try{return new URLSearchParams(location.search).get(name) || "";}catch(e){return "";}}
+  function pageUrl(){return location.href.split("#")[0];}
+  function emit(eventName, payload){
+    var data = Object.assign({event: eventName, model: MODEL, page_url: pageUrl()}, payload || {});
+    delete data.contact; delete data.phone; delete data.name; delete data.comment;
+    try{window.dataLayer = window.dataLayer || []; window.dataLayer.push(data);}catch(e){}
+    try{if(typeof ym === "function") ym(METRIKA_ID, "reachGoal", eventName, data);}catch(e){}
+    try{if(typeof gtag === "function") gtag("event", eventName, data);}catch(e){}
+    try{document.dispatchEvent(new CustomEvent("ast:model-analytics", {detail: data}));}catch(e){}
+  }
+  function contactLooksValid(value){
+    var contact = clean(value, 120);
+    if(!contact) return false;
+    if(/@[a-z0-9_]{4,}$/i.test(contact)) return true;
+    return contact.replace(/\D/g, "").length >= 7;
+  }
+  function orderPhoneValue(contact){
+    var value = clean(contact, 120);
+    return value.replace(/\D/g, "").length >= 7 ? value : "+70000000000";
+  }
+  function inferVersionFromBudget(value){
+    var budget = clean(value, 160);
+    if(/до 35 млн/i.test(budget)) return "Cullinan I с пробегом";
+    if(/35–60 млн/i.test(budget)) return "Cullinan I / свежий пробег";
+    if(/60–90 млн/i.test(budget)) return "Cullinan Series II";
+    if(/90\+ млн/i.test(budget)) return "Cullinan Black Badge / Bespoke";
+    if(/сначала сравнить рынок/i.test(budget)) return "сначала сравнить рынок";
+    return "";
+  }
+  function setBusy(form, busy){
+    form.querySelectorAll('button[type="submit"]').forEach(function(button){
+      button.disabled = busy;
+      button.classList.toggle("is-loading", busy);
+    });
+  }
+  function postJson(url, payload, timeoutMs){
+    var controller = window.AbortController ? new AbortController() : null;
+    var timer = controller ? window.setTimeout(function(){controller.abort();}, timeoutMs || 10000) : 0;
+    return fetch(url, {
+      method: "POST",
+      credentials: "omit",
+      mode: "cors",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined
+    }).then(function(response){
+      if(timer) window.clearTimeout(timer);
+      return response.text().then(function(text){
+        var body = {};
+        if(text){try{body = JSON.parse(text);}catch(e){body = {message: text};}}
+        if(!response.ok) throw new Error(body.message || body.error || "HTTP " + response.status);
+        return body;
+      });
+    }).catch(function(error){
+      if(timer) window.clearTimeout(timer);
+      throw error;
+    });
+  }
+  function sendToAnyEndpoint(payload){
+    return postJson(ENDPOINTS[0], payload, 9000).catch(function(){
+      return postJson(ENDPOINTS[1], payload, 9000);
+    });
+  }
+  function whatsappFallbackUrl(payload){
+    var text = [
+      "Заявка с сайта avtonds.ru по " + MODEL + ".",
+      "Контакт: " + (payload.contact || ""),
+      "Версия: " + (payload.selected_version || "не указана"),
+      "Бюджет: " + (payload.selected_budget || "не указан"),
+      "Город: " + (payload.city || "не указан"),
+      "Срок: " + (payload.timeline || "не указан"),
+      "Формат сделки: " + (payload.deal_format || "не указан"),
+      "Страница: " + payload.page_url
+    ].join(" ");
+    return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+  }
+  function syncHiddenFields(form){
+    var budget = clean((form.querySelector('[name="budget_band"]') || {}).value, 160);
+    var version = clean((form.querySelector('[name="model_version"]') || {}).value, 160) || inferVersionFromBudget(budget) || MODEL;
+    var scenario = clean((form.querySelector('[name="preferred_scenario_choice"]') || {}).value, 160) || "owner-driver или chauffeur";
+    function setValue(name, value){
+      var field = form.querySelector('[name="' + name + '"]');
+      if(field) field.value = value;
+    }
+    setValue("model", MODEL);
+    setValue("page_url", pageUrl());
+    setValue("selected_budget", budget);
+    setValue("selected_version", version);
+    setValue("selected_scenario", scenario);
+    setValue("preferred_scenario", scenario);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(function(key){
+      var field = form.querySelector('[name="' + key + '"]');
+      if(field && !field.value) field.value = param(key);
+    });
+    return {budget: budget, version: version, scenario: scenario};
+  }
+  function bindForm(){
+    var form = document.querySelector('[data-ast-model-lead-form="1"]');
+    if(!form || form.dataset.rrcBound === "1") return;
+    form.dataset.rrcBound = "1";
+    var status = form.querySelector(".rrc-form__status");
+    var started = false;
+    form.addEventListener("focusin", function(){
+      if(started) return;
+      started = true;
+      emit("form_start", {form: "model_page", source_detail: "model_page_lead"});
+    });
+    document.querySelectorAll("[data-rrc-version]").forEach(function(link){
+      link.addEventListener("click", function(){
+        var select = form.querySelector('[name="model_version"]');
+        var wanted = link.getAttribute("data-rrc-version");
+        if(select){
+          Array.prototype.forEach.call(select.options, function(option){
+            if(option.value === wanted || option.text === wanted) select.value = option.value;
+          });
+        }
+        emit("ast_cta_click", {cta: link.getAttribute("data-cta") || "version_card", version: wanted});
+      });
+    });
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+      var picked = syncHiddenFields(form);
+      var consentTs = form.querySelector('[name="consent_timestamp"]');
+      if(consentTs) consentTs.value = new Date().toISOString();
+      var data = new FormData(form);
+      var contact = clean(data.get("contact"), 120);
+      if(!contactLooksValid(contact)){
+        if(status) status.textContent = "Укажите телефон или Telegram в формате @username.";
+        emit("form_submit_error", {form: "model_page", reason: "invalid_contact"});
+        var contactField = form.querySelector('[name="contact"]');
+        if(contactField) contactField.focus();
+        return;
+      }
+      if(!form.querySelector('[name="consent"]').checked){
+        if(status) status.textContent = "Отметьте согласие на обработку заявки.";
+        return;
+      }
+      var analyticsPayload = {
+        form: "model_page",
+        model_version: picked.version,
+        selected_version: picked.version,
+        budget_band: picked.budget,
+        selected_budget: picked.budget,
+        city: clean(data.get("city"), 80),
+        timeline: clean(data.get("timeline"), 80),
+        deal_format: clean(data.get("deal_format"), 80),
+        preferred_scenario: picked.scenario,
+        selected_scenario: picked.scenario,
+        messenger_preference: clean(data.get("messenger_preference"), 80),
+        source: "site_form",
+        source_detail: "model_page_lead",
+        consent_version: clean(data.get("consent_version"), 80),
+        consent_timestamp: consentTs ? consentTs.value : ""
+      };
+      var payload = Object.assign({}, analyticsPayload, {
+        phone: orderPhoneValue(contact),
+        contact: contact,
+        name: "Заявка по " + MODEL,
+        vehicleTitle: picked.version,
+        model: MODEL,
+        page_url: pageUrl(),
+        page_path: location.pathname,
+        scenario: "model_page",
+        lead_pipeline: "model_page",
+        lead_priority: "hot",
+        lead_sla: "15min_business_hours",
+        lead_next_step: "Проверить вводные и подготовить 3 предварительных сценария: Россия, поставка под заказ и альтернатива.",
+        lead_risk_note: "Предварительный расчет до проверки VIN, продавца, инвойса, курса, логистики, документов и таможни.",
+        consent: data.get("consent") ? "yes" : "",
+        budget: picked.budget,
+        budget_range: picked.budget,
+        comment: [
+          "Заявка со страницы модели AutoNDS",
+          "Страница: " + pageUrl(),
+          "Модель/версия: " + picked.version,
+          "Бюджет all-in: " + (picked.budget || "не указан"),
+          "Город: " + (analyticsPayload.city || "не указан"),
+          "Срок: " + (analyticsPayload.timeline || "не указан"),
+          "Формат сделки: " + (analyticsPayload.deal_format || "не указан"),
+          "Сценарий: " + picked.scenario,
+          "Канал связи: " + (analyticsPayload.messenger_preference || "не указан"),
+          "Следующий шаг: подготовить 3 предварительных сценария."
+        ].join("\n")
+      });
+      ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(function(key){
+        payload[key] = clean(data.get(key), 160) || param(key);
+      });
+      setBusy(form, true);
+      if(status) status.textContent = "Передаем заявку менеджеру...";
+      sendToAnyEndpoint(payload).then(function(body){
+        if(status) status.textContent = form.getAttribute("data-success") || "Заявка принята.";
+        emit("form_submit_success", Object.assign({}, analyticsPayload, {order_id: (body && body.order && body.order.id) || ""}));
+        emit("form_submit", analyticsPayload);
+        form.reset();
+      }).catch(function(){
+        var url = whatsappFallbackUrl(payload);
+        if(status){
+          status.textContent = "Не удалось отправить заявку автоматически. Открываем WhatsApp с готовым текстом — ";
+          var link = document.createElement("a");
+          link.href = url;
+          link.rel = "noopener";
+          link.textContent = "открыть вручную";
+          status.appendChild(link);
+        }
+        emit("form_submit_error", Object.assign({}, analyticsPayload, {reason: "endpoint_unavailable", fallback: "whatsapp"}));
+        window.setTimeout(function(){window.location.href = url;}, 1800);
+      }).then(function(){
+        setBusy(form, false);
+      });
+    });
+  }
+  function bindCtaAnalytics(){
+    document.querySelectorAll("[data-cta]").forEach(function(node){
+      if(node.dataset.rrcCtaBound === "1") return;
+      node.dataset.rrcCtaBound = "1";
+      node.addEventListener("click", function(){
+        emit("ast_cta_click", {cta: node.getAttribute("data-cta") || ""});
+      });
+    });
+    document.querySelectorAll('[data-ast-model-event]').forEach(function(node){
+      if(node.dataset.rrcEventBound === "1") return;
+      node.dataset.rrcEventBound = "1";
+      node.addEventListener("click", function(){
+        emit(node.getAttribute("data-ast-model-event") === "phone_click" ? "ast_phone_click" : "ast_messenger_open", {
+          channel: node.getAttribute("data-ast-model-event") || ""
+        });
+      });
+    });
+  }
+  function start(){
+    bindForm();
+    bindCtaAnalytics();
+    emit("model_page_view", {form: "model_page"});
+  }
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", start, {once: true});
+  }else{
+    start();
+  }
+})();
+</script>
