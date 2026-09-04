@@ -23,14 +23,14 @@
 
    ```
    set METRIKA_OAUTH_TOKEN=ваш_токен
-   python scripts\metrika_goals.py
+   python scripts\metrika.py create-goals
    ```
 
-   (на macOS/Linux: `METRIKA_OAUTH_TOKEN=ваш_токен python3 scripts/metrika_goals.py`)
+   (на macOS/Linux: `METRIKA_OAUTH_TOKEN=ваш_токен python3 scripts/metrika.py create-goals`)
 
 Скрипт заведёт недостающие цели и не тронет существующие — повторный запуск
 безопасен. Посмотреть, что он собирается делать, не обращаясь к API:
-`python scripts\metrika_goals.py --dry-run`.
+`python scripts\metrika.py create-goals --dry-run`.
 
 Токен нигде не сохраняется и никому не пересылается — он живёт только в
 переменной окружения на вашей машине.

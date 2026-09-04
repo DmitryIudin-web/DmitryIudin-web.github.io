@@ -58,8 +58,9 @@
    разрезы `utm_source_type` и `utm_content`. Это и есть шаг 5 аудита;
    выполнять не раньше чем через 48–72 часа после накопления трафика.
 
-   Пункты 1 и 2 автоматизированы — `scripts/metrika.py` (`create-goal` и
-   `bounce`), нужен OAuth-токен Метрики в `METRIKA_OAUTH_TOKEN`. Запускать с
+   Пункты 1 и 2 автоматизированы — `scripts/metrika.py` (`create-goals` создаёт
+   все цели Этапа 1 включая `ast_form_start`, `bounce` строит отчёт), нужен
+   OAuth-токен Метрики в `METRIKA_OAUTH_TOKEN`. Запускать с
    машины, у которой есть сеть до `api-metrika.yandex.net`: в облачном
    окружении Claude Code с политикой «trusted network access» все домены
    Яндекса и `tilda.cc` отдают 403 на CONNECT, поэтому проверить скрипт против
