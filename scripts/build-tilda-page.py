@@ -13,6 +13,9 @@
   подключается на весь сайт отдельно, см. docs/owner-manual-steps.md).
   Маркеры «НАЧАЛО/КОНЕЦ НАШЕЙ ШАПКИ / ПОДВАЛА» и «СЧЁТЧИК ЯНДЕКС.МЕТРИКИ /
   КОНЕЦ СЧЁТЧИКА» из страницы сохраняются: по ним в Tilda удаляют дубли.
+  Блок `<style data-document-resets>` в пакет не попадает: его правила для
+  `*`, `html` и `body` применились бы ко всему документу Tilda и переопределили
+  бы фон и прокрутку в общей шапке и подвале сайта.
 
 Страница должна быть самодостаточной: без ссылок на /_astro/ и /frozen-assets/.
 Запуск из корня репозитория:  python3 scripts/build-tilda-page.py auto-iz-bishkeka
@@ -48,7 +51,9 @@ def main() -> int:
     head = html[html.find('<head>') + len('<head>'):html.find('</head>')]
     body = html[html.find('<body>') + len('<body>'):html.rfind('</body>')]
 
-    styles = STYLE_RE.findall(head)
+    # Документные сбросы остаются только в снапшоте: в блоке T123 они
+    # затронули бы весь документ Tilda, а не только эту страницу.
+    styles = [b for b in STYLE_RE.findall(head) if 'data-document-resets' not in b]
     head_clean = STYLE_RE.sub('', head)
     head_clean = TILDA_OWN_RE.sub('', head_clean)
     head_clean = re.sub(r'(\r?\n){2,}', nl, head_clean).strip()

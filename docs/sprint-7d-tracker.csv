@@ -1,0 +1,10 @@
+date,channel,segment,owner,touches,responses,qualified_leads,kp_sent,contract_discussion,signed_contracts,spend_rub,sla_misses,checkpoint_reached,blocker,next_action,next_action_at,note
+YYYY-MM-DD,warm_base,options_sent,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,"Шаблон. Нет данных — писать source_gap, а не 0"
+YYYY-MM-DD,warm_base,qualified_no_kp,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,warm_base,contract_stalled,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,warm_base,nurture_budget_1m_plus,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,warm_base,price_refused_3m,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,telegram,channel_post,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,yandex_retargeting,visitors_30d,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,yandex_retargeting,crm_audience,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
+YYYY-MM-DD,partner,partner_outreach,OWNER_PLACEHOLDER,0,0,0,0,0,0,0,0,no,,,,
