@@ -54,9 +54,13 @@ const EXTRA = [
 
 // Без этих полей заявку нельзя связать с источником и обработать по регламенту
 // (crm/lead-schema.md: источник, контакт, согласие, следующий шаг).
-const REQUIRED = ['request_id', 'source', 'source_detail', 'page_url', 'contact', 'consent_version'];
-// Эти поля определяют, можно ли посчитать CPQL по кампании и модели.
-const ATTRIBUTION = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'offer', 'page', 'ym_client_id'];
+// utm_content и utm_term тоже обязательны: без них внутри кампании не отличить
+// одно объявление от другого, а это главный вопрос при разборе платного трафика.
+const REQUIRED = ['request_id', 'source', 'source_detail', 'page_url', 'contact', 'consent_version',
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+// Поля, которые дозаполняет рантайм ast-conversion.js. В этой среде Метрика
+// заблокирована, поэтому их отсутствие локально — не дефект страницы.
+const ATTRIBUTION = ['offer', 'page', 'ym_client_id'];
 
 const UTM = 'utm_source=verify&utm_medium=cpc&utm_campaign=intake_check&utm_content=probe&utm_term=test';
 const out = path.resolve(process.env.QA_OUTPUT || 'build/verify-lead-intake');
@@ -127,14 +131,15 @@ try {
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
     const page = await context.newPage();
     const errors = [];
-    let payload = null;
+    const payloads = [];
     page.on('pageerror', e => errors.push(e.message));
     await context.route('**/*', async route => {
       const url = new URL(route.request().url());
       if (url.pathname.startsWith('/api/')) {
-        if (!payload) payload = route.request().postDataJSON();
-        // Успех, чтобы форма не уходила в каскад и не дублировала запрос.
-        return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
+        payloads.push(route.request().postDataJSON());
+        // Отвечаем ошибкой намеренно: форма сохраняет введённые данные, и вторую
+        // отправку можно сделать теми же значениями — иначе форма очистится.
+        return route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"probe"}' });
       }
       // Внешние домены (Метрика, tildacdn) в этой среде недоступны — блокируем.
       if (url.origin !== base) return route.abort();
@@ -142,15 +147,30 @@ try {
     });
 
     let note = '';
+    let repeatId = null;
     try {
       await page.goto(`${base}/${target.slug}/?${UTM}`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(400);
       await fillAndSubmit(page, target.form);
       await page.waitForTimeout(1200);
+      // Повторная отправка неизменённых данных: request_id обязан совпасть,
+      // иначе приёмник примет тот же лид дважды и менеджер получит дубль.
+      if (payloads.length) {
+        const before = payloads.length;
+        await page.locator(target.form).first()
+          .locator('button[type="submit"], input[type="submit"]').first()
+          .click({ timeout: 5000 }).catch(() => {});
+        await page.waitForTimeout(1500);
+        if (payloads.length > before) {
+          const ids = new Set(payloads.map(x => x && x.request_id).filter(Boolean));
+          repeatId = ids.size === 1 ? 'same' : 'changed';
+        }
+      }
     } catch (error) {
       note = String(error.message).split('\n')[0].slice(0, 120);
     }
 
+    const payload = payloads[0] || null;
     const keys = payload ? Object.keys(payload) : [];
     rows.push({
       slug: target.slug,
@@ -160,6 +180,7 @@ try {
       missingAttribution: payload ? ATTRIBUTION.filter(k => !payload[k]) : ATTRIBUTION,
       fieldCount: keys.length,
       jsErrors: errors.length,
+      repeatId,
       note,
       payload,
     });
@@ -172,17 +193,19 @@ try {
 
 const pad = (s, n) => String(s).padEnd(n);
 console.log('\nЧто доходит до приёмника заявок (локально, живых записей нет)\n');
-console.log(pad('страница', 28), pad('семейство', 16), pad('полей', 6), pad('нет обязательных', 34), 'нет атрибуции');
+console.log(pad('страница', 28), pad('семейство', 16), pad('полей', 6), pad('повтор', 9), pad('нет обязательных', 24), 'нет атрибуции');
 for (const r of rows) {
+  const repeat = r.repeatId === 'same' ? 'тот же id' : r.repeatId === 'changed' ? 'ДУБЛЬ!' : '—';
   console.log(
     pad(r.slug, 28), pad(r.family, 16), pad(r.submitted ? r.fieldCount : '—', 6),
-    pad(r.missingRequired.join(',') || 'нет', 34),
+    pad(repeat, 9),
+    pad(r.missingRequired.join(',') || 'нет', 24),
     r.missingAttribution.join(',') || 'нет',
     r.note ? `| ${r.note}` : '',
   );
 }
 
-const broken = rows.filter(r => !r.submitted || r.missingRequired.length);
+const broken = rows.filter(r => !r.submitted || r.missingRequired.length || r.repeatId === 'changed');
 fs.writeFileSync(path.join(out, 'intake-report.json'),
   JSON.stringify({ checkedAt: new Date().toISOString(), liveWrites: false, rows }, null, 2));
 
