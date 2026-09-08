@@ -31,7 +31,7 @@ const sourceDetail = "intent_landing_preliminary_calculation";
       `Срок: ${data.timeline || "не указан"}`,
     ].join("; ");
     const payload = {
-      request_id: `intent-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      request_id: (() => { const s = JSON.stringify(data); if (form.dataset.astReqSig !== s) { form.dataset.astReqSig = s; form.dataset.astReqId = `intent-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`; } return form.dataset.astReqId; })(),
       created_at: new Date().toISOString(),
       name: data.name || "",
       contact: data.contact,
@@ -59,6 +59,8 @@ const sourceDetail = "intent_landing_preliminary_calculation";
       utm_source: new URLSearchParams(window.location.search).get("utm_source") || "",
       utm_medium: new URLSearchParams(window.location.search).get("utm_medium") || "",
       utm_campaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
+      utm_content: new URLSearchParams(window.location.search).get("utm_content") || "",
+      utm_term: new URLSearchParams(window.location.search).get("utm_term") || "",
     };
 
     track("ast_lead_form_submit_attempt");
