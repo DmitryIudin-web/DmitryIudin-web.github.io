@@ -1,2 +1,7 @@
 __pycache__/
 build/
+.env
+.env.*
+!.env.example
+.hermes/
+.ast-kit-backups/

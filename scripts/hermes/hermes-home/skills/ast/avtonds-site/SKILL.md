@@ -1,59 +1,46 @@
 ---
 name: avtonds-site
-description: Работа с репозиторием статического сайта avtonds.ru (DmitryIudin-web.github.io) — правки страниц без порчи CRLF, sitemap, ветки claude/*, PR в main.
-version: 1.0.0
+description: Локальные правки avtonds.ru на Windows или Linux с сохранением CRLF, проверками и передачей владельцу для публикации.
+version: 1.1.0
 author: АСТ
 license: MIT
-platforms: [linux, macos]
+platforms: [windows, linux, macos]
 metadata:
   hermes:
     tags: [avtonds, site, github, seo, tilda]
-    related_skills: []
 ---
 
-# Сайт avtonds.ru — как вносить правки
+# Рабочий каталог
 
-Репозиторий: `https://github.com/DmitryIudin-web/DmitryIudin-web.github.io`,
-локальный клон на сервере: `~/work/avtonds`. Это статический экспорт Tilda/Astro
-без сборки; всё, что лежит в корне, публикуется на `https://avtonds.ru/`.
+Рабочая копия сайта: `{{WORKSPACE}}`.
+Этот путь подставляет profile.py; он также записан в ast-kit.json в HERMES_HOME.
+Не предполагай, что терминал уже открыт там. Перейди в указанную копию и прочитай AGENTS.md.
 
-Полные правила — в `AGENTS.md` в корне репозитория. Прочитай его перед первой
-правкой. Кратко:
+Репозиторий — статический сайт avtonds.ru. Всё в публикуемом корне доступно
+публично; robots.txt не защищает от скачивания. Профиль, токены, OAuth, память,
+сессии, задания и резервные копии должны оставаться вне репозитория.
 
-1. **CRLF и минифицированные строки.** Большинство `index.html` — одна очень
-   длинная строка с `\r\n`. Правь точечной заменой, читай и пиши файлы в бинарном
-   режиме или `open(path, newline='')` в Python. Диф правки одной фразы — 1–3
-   строки. Если `git diff --stat` показывает тысячи строк — откати и переделай.
-2. **Sitemap не редактировать руками.** `python3 scripts/generate_sitemap.py`
-   пересобирает `sitemap-0.xml`; GitHub Actions делает это сам после пуша в main.
-3. **Не трогать** `frozen-assets/`, `_astro/`, медиа в `assets/`. Живой рантайм —
-   только `assets/ast-conversion.js` и `assets/ast-conversion.css`.
-4. **Факты не выдумывать.** Цифры, сроки, гарантии — только те, что уже есть на
-   странице или в гайдах сайта.
-5. **Секреты в репозиторий не класть**: корень публикуется, `.claude/` исключён
-   из деплоя отдельным шагом workflow.
+# Порядок изменения
 
-## Порядок работы
+1. Проверь git status. Не переключай и не перезаписывай ветку с чужими правками.
+   Не применяй git checkout -B, reset или clean к рабочей копии.
+2. Используй отдельную ветку claude/* или codex/*. В main локально не работай.
+3. Сохраняй байтовую структуру HTML: точечные замены, newline='' или бинарный
+   режим Python. Не трогай frozen-assets, _astro и замороженное медиа.
+4. Не выдумывай цены, сроки и гарантии. Следуй фактам конкретной страницы.
+5. Выполни python scripts/generate_sitemap.py, разбери sitemap-0.xml через
+   ElementTree и выполни python scripts/sync_agent_docs.py --check.
+6. Просмотри diff и добавь только поимённо относящиеся к задаче файлы.
+   Сделай локальный commit; передай владельцу результат, проверки и хеш.
 
-```bash
-cd ~/work/avtonds
-git fetch origin main && git checkout -B claude/<тема> origin/main
-# ... правки ...
-python3 scripts/generate_sitemap.py
-python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap-0.xml')"
-python3 scripts/sync_agent_docs.py --check
-file <изменённая страница>      # должно остаться "with CRLF line terminators"
-git add -A && git commit -m "<что и зачем>"
-git push -u origin claude/<тема>
-```
+# Публикация
 
-Дальше открой pull request в `main` (draft) и пришли ссылку Дмитрию. **В `main`
-напрямую не пушить** — это запрещено и правилами репозитория, и `approvals.deny`.
+Агент не выполняет git push, gh pr merge и публикацию через API или альтернативные
+инструменты. Не меняй remote, запреты или способ вызова ради обхода политики.
+Передай commit владельцу или уполномоченной задаче Codex: они публикуют его
+отдельным действием. Локальный commit не означает доставку на сайт. CRM,
+реклама, деньги и сообщения людям также требуют отдельного разрешения.
 
-## Что где лежит
-
-- `docs/` — служебные документы (не индексируются), `scripts/` — скрипты,
-  `tools/` — утилиты. `robots.txt` их закрывает от индексации.
-- `kp/` — «КП недели» по моделям; `.claude/skills/kp-avtonds` — внутренний
-  расчёт КП со ставками и маржой, его содержимое наружу не выносить.
-- Метрика: счётчик `106049767`, цели `ast_*` описаны в `docs/owner-manual-steps.md`.
+Работа с сайтом не разрешает менять модели, расписания, память или секреты
+профиля. После обновления runtime проверяй общий профиль: неизвестные ключи
+в YAML могут сохраняться, но не исполняться старой версией Hermes.

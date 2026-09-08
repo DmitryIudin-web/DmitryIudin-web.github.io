@@ -1,0 +1,45 @@
+name: Hermes kit checks
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/hermes/**'
+      - 'docs/hermes/**'
+      - '.github/workflows/hermes-kit.yml'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+  push:
+    branches: ['claude/hermes-telegram-setup-3aeo3t']
+    paths: ['scripts/hermes/**', '.github/workflows/hermes-kit.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  profiles:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -m pip install PyYAML==6.0.3
+      - run: python -m unittest discover -s scripts/hermes/tests -v
+      - run: python scripts/sync_agent_docs.py --check
+      - if: runner.os == 'Linux'
+        run: bash scripts/hermes/tests/test_vps_scripts.sh
+
+  debian:
+    runs-on: ubuntu-24.04
+    container: debian:12
+    steps:
+      - run: apt-get update -qq && apt-get install -y -qq git ca-certificates python3 python3-yaml bash shellcheck
+      - uses: actions/checkout@v6
+      - run: python3 -m unittest discover -s scripts/hermes/tests -v
+      - run: bash -n scripts/hermes/bootstrap-vps.sh && bash -n scripts/hermes/check-vps.sh
+      - run: shellcheck --severity=warning scripts/hermes/bootstrap-vps.sh scripts/hermes/check-vps.sh
+      - run: bash scripts/hermes/tests/test_vps_scripts.sh
