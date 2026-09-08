@@ -21,7 +21,9 @@ class ProfileTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(dir=os.environ.get('HERMES_TEST_TMPDIR'))
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        # Resolve like profile.py does: Windows may hand out an 8.3 short name
+        # (C:\\Users\\RUNNER~1\\...) for TEMP, and paths must compare equal.
+        self.root = Path(self.temp.name).resolve()
         self.home = self.root / 'profile'
         self.home.mkdir()
         self.workspace = self.root / 'site with spaces'

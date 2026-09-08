@@ -15,7 +15,7 @@ POWERSHELL = shutil.which('pwsh') or (shutil.which('powershell') if os.name == '
 class WindowsConnectorTests(unittest.TestCase):
     def test_preview_and_apply_preserve_private_file_and_report_old_runtime(self):
         with tempfile.TemporaryDirectory(dir=os.environ.get('HERMES_TEST_TMPDIR')) as temporary:
-            root = Path(temporary)
+            root = Path(temporary).resolve()  # 8.3 short TEMP names on Windows
             home, runtime, workspace = root / 'profile', root / 'runtime', root / 'site'
             for path in (home, workspace, runtime / 'hermes_cli'):
                 path.mkdir(parents=True)
