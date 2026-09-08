@@ -1,0 +1,56 @@
+# ~/.hermes/config.yaml — стартовая конфигурация Hermes Agent для АСТ (avtonds.ru).
+# Ключи и токены здесь НЕ хранятся — они в ~/.hermes/.env.
+# Модель и провайдер выбираются командой `hermes model` (она сама допишет секцию model:).
+# Проверка: `hermes config check`, миграция после обновлений: `hermes config migrate`.
+
+# ---------------------------------------------------------------------------
+# Manual спрашивает владельца о распознанных опасных командах. Публикация
+# агентом запрещена отдельно. Шаблоны не заменяют права GitHub и ограничения
+# ОС. Старый runtime может игнорировать deny: обязательна проверка profile.py.
+# ---------------------------------------------------------------------------
+approvals:
+  mode: manual
+  timeout: 300
+  cron_mode: deny          # крон не получает права на опасные команды
+  single_query_mode: deny
+  unattended_mode: deny
+  deny:                    # блокируется всегда, даже в /yolo
+    - '*git*push*'
+    - '*gh*pr*merge*'
+    - '*rm -rf /home*'
+    - '*mkfs*'
+    - '*shutdown*'
+    - '*reboot*'
+
+# Рабочий каталог для шлюза и кронов: клон репозитория сайта.
+# Hermes подхватит оттуда AGENTS.md (правила репозитория: CRLF, sitemap, ветки).
+terminal:
+  backend: local
+  cwd: "~/work/avtonds"
+
+# Голосовые из Telegram: локальный faster-whisper (ставится скриптом
+# bootstrap-vps.sh). Размер модели подбирайте под сервер: small — для 2 ядра/4 ГБ,
+# medium/large-v3 — от 16 ГБ RAM. Без нагрузки на сервер: provider "groq" + GROQ_API_KEY.
+stt:
+  enabled: true
+  provider: "local"
+  language: "ru"
+  prompt: "АСТ, avtonds, Автондс, НДС, лизинг, СВХ, Cullinan, Tavendor, Tilda, Метрика, IndexNow"
+  local:
+    model: "small"           # tiny | base | small | medium | large-v3 (large — только на 16 ГБ+)
+    unload_after_idle_seconds: 300
+
+# Telegram: показывать в профиле бота "Online/Offline", реакции во время работы.
+gateway:
+  platforms:
+    telegram:
+      extra:
+        status_indicator: true
+        status_online: "🟢 На связи"
+        status_offline: "🔴 Офлайн"
+
+# Кроны: одна модель на все расписания, независимо от того, что выбрано в чате.
+# Заполните после `hermes model` (пример: provider kimi-coding).
+# cron:
+#   model: ""
+#   model_provider: ""

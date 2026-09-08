@@ -1,0 +1,72 @@
+name: Hermes kit checks
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/hermes/**'
+      - 'docs/hermes/**'
+      - '.github/workflows/hermes-kit.yml'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+  push:
+    branches: ['claude/hermes-telegram-setup-3aeo3t']
+    paths: ['scripts/hermes/**', '.github/workflows/hermes-kit.yml']
+
+permissions:
+  contents: read
+
+# Windows-runner печатает в cp1252; скрипты репозитория выводят русский текст.
+env:
+  PYTHONUTF8: '1'
+
+jobs:
+  runtime-policy:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -m pip install uv==0.11.23 PyYAML==6.0.3
+      - name: Fetch the reviewed runtime outside the public workspace
+        shell: pwsh
+        run: |
+          $runtime = Join-Path $env:RUNNER_TEMP 'hermes-runtime'
+          git init $runtime
+          git -C $runtime remote add origin https://github.com/NousResearch/hermes-agent.git
+          git -C $runtime fetch --depth 1 origin 6e2b8e070d28b1a3381a3fb290b6b8d6cce13cef
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git -C $runtime -c core.autocrlf=false checkout --detach FETCH_HEAD
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $env:UV_PROJECT_ENVIRONMENT = Join-Path $runtime 'venv'
+          uv sync --project $runtime --frozen --no-dev
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/hermes/verify-runtime.py --runtime $runtime
+
+  profiles:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -m pip install PyYAML==6.0.3
+      - run: python -m unittest discover -s scripts/hermes/tests -v
+      - run: python scripts/sync_agent_docs.py --check
+      - if: runner.os == 'Linux'
+        run: bash scripts/hermes/tests/test_vps_scripts.sh
+
+  debian:
+    runs-on: ubuntu-24.04
+    container: debian:12
+    steps:
+      - run: apt-get update -qq && apt-get install -y -qq git ca-certificates python3 python3-yaml bash shellcheck
+      - uses: actions/checkout@v6
+      - run: python3 -m unittest discover -s scripts/hermes/tests -v
+      - run: bash -n scripts/hermes/bootstrap-vps.sh && bash -n scripts/hermes/check-vps.sh
+      - run: shellcheck --severity=warning scripts/hermes/bootstrap-vps.sh scripts/hermes/check-vps.sh
+      - run: bash scripts/hermes/tests/test_vps_scripts.sh
