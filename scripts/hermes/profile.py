@@ -96,14 +96,68 @@ def _windows_dacl(path):
         kernel.LocalFree(output)
 
 
+@lru_cache(maxsize=None)
+def _canonical_sid(token):
+    """Expand an SDDL trustee (an alias such as LA, BA or SY, or S-1-...) to S-1-... form.
+
+    ConvertSecurityDescriptorToStringSecurityDescriptor abbreviates well-known
+    accounts when it renders a DACL: the built-in Administrator (RID 500) comes
+    back as LA even though whoami reported its S-1-5-21-...-500 SID. Comparing
+    canonical SIDs keeps the check meaningful on such accounts (GitHub's Windows
+    runners among them) instead of failing on the spelling.
+    """
+    import ctypes
+    from ctypes import wintypes
+    security = ctypes.WinDLL('advapi32', use_last_error=True)
+    kernel = ctypes.WinDLL('kernel32')
+    to_sid = security.ConvertStringSidToSidW
+    to_sid.argtypes = [wintypes.LPCWSTR, ctypes.POINTER(ctypes.c_void_p)]
+    to_sid.restype = wintypes.BOOL
+    to_string = security.ConvertSidToStringSidW
+    to_string.argtypes = [ctypes.c_void_p, ctypes.POINTER(wintypes.LPWSTR)]
+    to_string.restype = wintypes.BOOL
+    kernel.LocalFree.argtypes = [ctypes.c_void_p]
+    kernel.LocalFree.restype = ctypes.c_void_p
+    sid = ctypes.c_void_p()
+    if not to_sid(token, ctypes.byref(sid)):
+        return token
+    try:
+        text = wintypes.LPWSTR()
+        if not to_string(sid, ctypes.byref(text)):
+            return token
+        try:
+            return text.value
+        finally:
+            kernel.LocalFree(text)
+    finally:
+        kernel.LocalFree(sid)
+
+
+def _windows_dacl_is_private(sddl, is_dir):
+    """True when a protected DACL grants full access only to the owner and SYSTEM."""
+    if not sddl.startswith('D:P'):
+        return False
+    aces = re.findall(r'\(([^()]+)\)', sddl)
+    if not aces:
+        return False
+    inherit = 'OICI' if is_dir else ''
+    trusted = {'S-1-5-18', _canonical_sid(_windows_sid())}
+    for ace in aces:
+        fields = ace.split(';')
+        if len(fields) != 6:
+            return False
+        kind, flags, rights, _, _, trustee = fields
+        if kind != 'A' or flags != inherit or rights.upper() not in ('FA', '0X1F01FF'):
+            return False
+        if _canonical_sid(trustee) not in trusted:
+            return False
+    return True
+
+
 def _permissions_are_private(path):
     if os.name != 'nt':
         return stat.S_IMODE(path.stat().st_mode) == (0o700 if path.is_dir() else 0o600)
-    sddl = _windows_dacl(path)
-    inherit = 'OICI' if path.is_dir() else ''
-    owner = 'SY' if _windows_sid() == 'S-1-5-18' else _windows_sid()
-    expected = {f'A;{inherit};FA;;;{owner}', f'A;{inherit};FA;;;SY'}
-    return sddl.startswith('D:P') and set(re.findall(r'\(([^()]+)\)', sddl)) == expected
+    return _windows_dacl_is_private(_windows_dacl(path), path.is_dir())
 
 
 def _backup_paths(home):
@@ -147,8 +201,11 @@ def _private_permissions(path):
             raise ctypes.WinError(ctypes.get_last_error())
     finally:
         kernel.LocalFree(descriptor)
-    if not _permissions_are_private(path):
-        raise OSError('Private Windows permissions could not be verified.')
+    # SIDs and access masks only; the SDDL never contains file content.
+    sddl = _windows_dacl(path)
+    if not _windows_dacl_is_private(sddl, path.is_dir()):
+        raise OSError(f'Private Windows permissions could not be verified: DACL {sddl!r}, '
+                      f'owner SID {_windows_sid()!r}.')
 
 
 def _manifest(workspace):

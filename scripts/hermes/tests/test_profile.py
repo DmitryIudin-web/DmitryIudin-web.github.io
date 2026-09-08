@@ -3,6 +3,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import re
 import tempfile
 import subprocess
 import unittest
@@ -326,10 +327,29 @@ class ProfileTests(unittest.TestCase):
                     kernel.LocalFree(output)
                 self.assertTrue(sddl.startswith('D:P'), sddl)
                 self.assertEqual(sddl.count('(A;'), 2, sddl)
-                self.assertIn(';;;SY)', sddl)
-                self.assertIn(';;;S-1-5-', sddl)
+                # Well-known accounts render as aliases (LA for RID 500, SY for
+                # SYSTEM); compare canonical SIDs, not the spelling.
+                trustees = {profile._canonical_sid(t) for t in re.findall(r';;;([^)]+)\)', sddl)}
+                self.assertIn('S-1-5-18', trustees, sddl)
+                self.assertLessEqual(trustees, {'S-1-5-18', profile._windows_sid()}, sddl)
                 for public_sid in ('AU', 'BU', 'WD'):
                     self.assertNotIn(f';;;{public_sid})', sddl)
+
+    def test_windows_dacl_check_accepts_aliases_and_rejects_public_access(self):
+        aliases = {'LA': 'S-1-5-21-1-2-3-500', 'SY': 'S-1-5-18', 'BA': 'S-1-5-32-544'}
+        with patch.object(profile, '_windows_sid', return_value='S-1-5-21-1-2-3-500'), \
+                patch.object(profile, '_canonical_sid', side_effect=lambda t: aliases.get(t, t)):
+            private = profile._windows_dacl_is_private
+            self.assertTrue(private('D:P(A;;FA;;;LA)(A;;FA;;;SY)', False))
+            self.assertTrue(private('D:P(A;;FA;;;S-1-5-21-1-2-3-500)(A;;FA;;;SY)', False))
+            self.assertTrue(private('D:P(A;OICI;FA;;;LA)(A;OICI;FA;;;SY)', True))
+            self.assertTrue(private('D:P(A;;0x1f01ff;;;LA)(A;;FA;;;SY)', False))
+            self.assertFalse(private('D:P(A;;FA;;;LA)(A;;FA;;;SY)', True))
+            self.assertFalse(private('D:P(A;;FA;;;BA)(A;;FA;;;SY)', False))
+            self.assertFalse(private('D:(A;;FA;;;LA)(A;;FA;;;SY)', False))
+            self.assertFalse(private('D:P(A;ID;FA;;;LA)(A;;FA;;;SY)', False))
+            self.assertFalse(private('D:P(A;;FR;;;LA)(A;;FA;;;SY)', False))
+            self.assertFalse(private('D:P', False))
 
     def test_permission_failure_happens_before_writing_private_content(self):
         self.config({'provider': {'secret': 'SYNTHETIC_PRIVATE_VALUE'}})
