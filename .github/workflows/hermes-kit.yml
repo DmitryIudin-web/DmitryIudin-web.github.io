@@ -15,6 +15,10 @@ on:
 permissions:
   contents: read
 
+# Windows-runner печатает в cp1252; скрипты репозитория выводят русский текст.
+env:
+  PYTHONUTF8: '1'
+
 jobs:
   profiles:
     strategy:
