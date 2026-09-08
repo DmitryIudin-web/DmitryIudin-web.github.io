@@ -20,6 +20,29 @@ env:
   PYTHONUTF8: '1'
 
 jobs:
+  runtime-policy:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -m pip install uv==0.11.23 PyYAML==6.0.3
+      - name: Fetch the reviewed runtime outside the public workspace
+        shell: pwsh
+        run: |
+          $runtime = Join-Path $env:RUNNER_TEMP 'hermes-runtime'
+          git init $runtime
+          git -C $runtime remote add origin https://github.com/NousResearch/hermes-agent.git
+          git -C $runtime fetch --depth 1 origin 6e2b8e070d28b1a3381a3fb290b6b8d6cce13cef
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git -C $runtime -c core.autocrlf=false checkout --detach FETCH_HEAD
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $env:UV_PROJECT_ENVIRONMENT = Join-Path $runtime 'venv'
+          uv sync --project $runtime --frozen --no-dev
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/hermes/verify-runtime.py --runtime $runtime
+
   profiles:
     strategy:
       fail-fast: false
