@@ -353,6 +353,22 @@ class ProfileTests(unittest.TestCase):
             self.assertFalse(private('D:P(A;;FR;;;LA)(A;;FA;;;SY)', False))
             self.assertFalse(private('D:P', False))
 
+    @unittest.skipUnless(os.name == 'nt', 'Windows SID aliases')
+    def test_builtin_administrator_sid_alias_is_compared_by_identity(self):
+        self.config({})
+        admin_sid = profile._windows_sid().rsplit('-', 1)[0] + '-500'
+        with patch.object(profile, '_windows_sid', return_value=admin_sid), patch.object(
+                profile, '_windows_dacl', return_value='D:P(A;;FA;;;LA)(A;;FA;;;SY)'):
+            self.assertTrue(profile._permissions_are_private(self.home / 'config.yaml'))
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows SID aliases')
+    def test_admin_alias_does_not_replace_a_different_profile_owner(self):
+        self.config({})
+        user_sid = profile._windows_sid().rsplit('-', 1)[0] + '-1001'
+        with patch.object(profile, '_windows_sid', return_value=user_sid), patch.object(
+                profile, '_windows_dacl', return_value='D:P(A;;FA;;;LA)(A;;FA;;;SY)'):
+            self.assertFalse(profile._permissions_are_private(self.home / 'config.yaml'))
+
     def test_permission_failure_happens_before_writing_private_content(self):
         self.config({'provider': {'secret': 'SYNTHETIC_PRIVATE_VALUE'}})
         original = (self.home / 'config.yaml').read_bytes()
