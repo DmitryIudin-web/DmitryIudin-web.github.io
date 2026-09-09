@@ -147,6 +147,10 @@
 
   function messengerBaseText() {
     var p = path();
+    // Переопределение на уровне страницы: <body data-ast-message="…"> — для
+    // посадочных не про автомобили (например, серверное оборудование).
+    var pageMessage = document.body && document.body.getAttribute('data-ast-message');
+    if (pageMessage) return pageMessage;
     var model = pageModel();
     if (model) return 'Здравствуйте! Интересует ' + model + ' под заказ';
     if (p === '/bezopasnaya-sdelka' || p === '/bezopasnaya-pokupka-avto') {
@@ -1130,8 +1134,23 @@
     } catch (e) {}
   }
 
+  // Контакты на уровне страницы: <body data-ast-phone / -phone-display /
+  // -whatsapp>. Нужны посадочным с отдельным номером (коллтрекинг, лендинг под
+  // кампанию) — без правки общего CONFIG, который обслуживает остальные страницы.
+  function applyPageContacts() {
+    var b = document.body;
+    if (!b) return;
+    var phone = b.getAttribute('data-ast-phone');
+    var display = b.getAttribute('data-ast-phone-display');
+    var whatsapp = b.getAttribute('data-ast-whatsapp');
+    if (phone) CONFIG.phone = phone;
+    if (display) CONFIG.phoneDisplay = display;
+    if (whatsapp) CONFIG.whatsapp = whatsapp;
+  }
+
   // ------------------------------------------------------------------ запуск
 
+  applyPageContacts();
   persistUtm();
   sendVisitParams();
   bindFormStart();
