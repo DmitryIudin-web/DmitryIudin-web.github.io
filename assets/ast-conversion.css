@@ -438,6 +438,62 @@ html.ast-sticky-cta-active .ast-traffic-sticky {
 }
 .ast-model-extra__note a { color: inherit; }
 
+/* Homepage only: override the later premium-muted rule over the hero photo. */
+.ast-site-root.ast-home-conversion .ast-hero .ast-hero__lead {
+  color: #fff !important;
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  background: rgba(10, 15, 22, 0.82);
+  padding: 14px 18px;
+  border-radius: 10px;
+  line-height: 1.6;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Separate tax prices, with provenance adjacent to each number. */
+.ast-tax-prices {
+  margin: 14px 0;
+  padding-top: 12px;
+  border-top: 1px solid #d8dce2;
+  color: #232a33;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.ast-tax-prices dl { margin: 0; }
+.ast-tax-prices dl > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 0 0 12px;
+}
+.ast-tax-prices dt { font-weight: 400; }
+.ast-tax-prices dd { margin: 0; font-weight: 600; }
+.ast-tax-prices dd small {
+  display: block;
+  max-width: 200px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #4d5560;
+}
+.ast-tax-prices .ast-tax-prices__note,
+.ast-related-offer .ast-tax-price-source,
+.ast-public-offer-detail .ast-tax-price-source,
+.ast-pg-offer .ast-tax-price-source,
+.ast-pg-offer-detail .ast-tax-price-source {
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #4d5560;
+}
+.ast-public-offer-detail .detail-price .ast-tax-prices {
+  max-width: 400px;
+  text-align: left;
+}
+
 .ast-article-inline-cta {
   display: block;
   margin: 20px auto;
