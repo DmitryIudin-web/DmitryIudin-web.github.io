@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Сервер NVIDIA HGX B300 8-GPU под заказ для юрлиц | АСТ</title>
+  <meta name="description" content="Сервер 8U Supermicro SYS-822GS-NB3RT с NVIDIA HGX B300 NVL8 (8 GPU Blackwell), 2× Intel Xeon 6768P, 3 ТБ DDR5-6400 ECC, NVIDIA Enterprise Support 3 года. Поставка на юрлицо по спецификации, КП под запрос.">
+  <link rel="canonical" href="https://avtonds.ru/gpu-server-hgx-b300/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Сервер NVIDIA HGX B300 8-GPU под заказ для юрлиц">
+  <meta property="og:description" content="8U платформа Supermicro с HGX B300 NVL8: 8 GPU Blackwell, 2× Xeon 6768P, 24× 128 ГБ DDR5-6400 ECC, гарантия 3 года. Запросите КП и сроки.">
+  <meta property="og:url" content="https://avtonds.ru/gpu-server-hgx-b300/">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Product",
+        "name":"Сервер Supermicro SYS-822GS-NB3RT с NVIDIA HGX B300 NVL8 (8 GPU)",
+        "description":"8U GPU-сервер: плата X14DBG-LC, корпус CSE-GP807TS, NVIDIA HGX B300 NVL8 8-GPU, 2× Intel Xeon 6768P, 24× 128 ГБ DDR5-6400 ECC RDIMM, 2× 960 ГБ NVMe M.2, NVIDIA ConnectX-7 2×200G, TPM 2.0, NVIDIA Enterprise Support 3 года.",
+        "sku":"SYS-822GS-NB3RT",
+        "brand":{"@type":"Brand","name":"Supermicro"},
+        "url":"https://avtonds.ru/gpu-server-hgx-b300/",
+        "offers":{
+          "@type":"Offer",
+          "url":"https://avtonds.ru/gpu-server-hgx-b300/",
+          "priceCurrency":"RUB",
+          "availability":"https://schema.org/PreOrder",
+          "itemCondition":"https://schema.org/NewCondition",
+          "seller":{"@type":"Organization","name":"ООО «АСТ»","url":"https://avtonds.ru"}
+        }
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"Какая гарантия на сервер?","acceptedAnswer":{"@type":"Answer","text":"По спецификации: 3 года на работы, 3 года на запчасти, 1 год CRS по условиям limited warranty. Отдельно — NVIDIA Enterprise Support на 3 года."}},
+          {"@type":"Question","name":"Можно ли изменить конфигурацию?","acceptedAnswer":{"@type":"Answer","text":"Вариант NVMe-накопителя выбирается из трёх позиций спецификации: Micron 7450 PRO, Micron 5400 PRO или Samsung PM9A3. Другие изменения состава обсуждаются при подготовке КП."}},
+          {"@type":"Question","name":"Сервер поставляется собранным?","acceptedAnswer":{"@type":"Answer","text":"Да, в спецификацию включена сборка (позиция MC0037, Assembly Fee): платформа приходит собранной по конфигурации."}},
+          {"@type":"Question","name":"Как оформляется покупка юрлицом?","acceptedAnswer":{"@type":"Answer","text":"Договор поставки на юридическое лицо с полным комплектом документов. Состав спецификации фиксируется приложением к договору."}},
+          {"@type":"Question","name":"Что нужно, чтобы получить КП?","acceptedAnswer":{"@type":"Answer","text":"Название компании, задача (инференс, обучение, HPC), количество серверов и контакт. Менеджер уточнит детали и подготовит коммерческое предложение."}}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --bg:#0d1117;--bg-2:#121822;--panel:#161d28;--panel-2:#1b2431;--line:#28323f;--line-2:#344152;
+      --text:#e9eef5;--muted:#9aa8b8;--dim:#6f7d8f;
+      --accent:#e2a33a;--accent-ink:#1a1206;--accent-soft:rgba(226,163,58,.14);
+      --ok:#5fc48f;--max:1160px;
+      --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;color-scheme:dark}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:auto}
+    .top{position:sticky;top:0;z-index:20;background:rgba(13,17,23,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .top__inner{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.14em}
+    .brand small{font-weight:500;letter-spacing:.02em;color:var(--muted);font-size:12px}
+    .top__links{display:flex;align-items:center;gap:18px}
+    .top__phone{text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media (max-width:719px){.brand small{display:none}}
+    .top__cta{display:none}
+    @media (min-width:720px){.top__cta{display:inline-flex}}
+
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--ok);font-weight:600}
+    .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(95,196,143,.15)}
+    h1{font-size:clamp(32px,4.6vw,56px);line-height:1.06;margin:16px 0 18px;letter-spacing:-.025em;text-wrap:balance;font-weight:700}
+    h1 em{font-style:normal;color:var(--accent)}
+    h2{font-size:clamp(26px,3.2vw,38px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance;font-weight:700}
+    h3{font-size:19px;margin:0 0 8px;font-weight:600}
+    .lead{font-size:clamp(17px,1.7vw,20px);color:var(--muted);max-width:60ch;margin:0}
+    .intro{color:var(--muted);max-width:66ch;margin:0 0 28px}
+    .mono{font-family:var(--mono)}
+
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:50px;padding:0 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px;border:1px solid var(--line-2);background:var(--panel-2);color:var(--text);cursor:pointer;font-family:inherit;transition:transform .12s ease,background .12s ease}
+    .btn:hover{transform:translateY(-1px);background:#212c3b}
+    .btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .btn--primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+    .btn--primary:hover{background:#efb24a}
+    .btn--ghost{background:transparent}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .micro{margin:14px 0 0;color:var(--dim);font-size:14px;max-width:60ch}
+
+    .hero{padding:52px 0 36px;background:
+      radial-gradient(900px 420px at 80% -10%,rgba(226,163,58,.10),transparent 60%),
+      linear-gradient(180deg,var(--bg-2),var(--bg) 70%)}
+    .hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+    @media (max-width:900px){.hero__grid{grid-template-columns:1fr}}
+
+    /* Схема шасси: 8 GPU-модулей поверх платформы 8U */
+    .chassis{border:1px solid var(--line-2);border-radius:14px;background:var(--panel);padding:18px 18px 14px;box-shadow:0 30px 60px -40px rgba(0,0,0,.9)}
+    .chassis__head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;font-size:13px;color:var(--muted)}
+    .chassis__head strong{color:var(--text);font-family:var(--mono);font-weight:500;font-size:13px}
+    .gpus{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gpu{aspect-ratio:1.35;border-radius:6px;border:1px solid var(--line-2);background:linear-gradient(180deg,#232e3d,#182130);position:relative;display:grid;place-items:end start;padding:8px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+    .gpu::before{content:"";position:absolute;inset:8px 8px auto 8px;height:38%;border-radius:3px;background:repeating-linear-gradient(90deg,#2e3a4b 0 3px,#1f2937 3px 6px)}
+    .gpu::after{content:"";position:absolute;right:8px;bottom:9px;width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
+    .rails{display:grid;gap:6px;margin-top:8px}
+    .rail{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:10px;font-size:13px;padding:8px 10px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line)}
+    .rail span:first-child{font-family:var(--mono);color:var(--dim);font-size:12px}
+    .rail span:last-child{font-family:var(--mono);color:var(--text);font-variant-numeric:tabular-nums}
+    .chassis__foot{margin-top:10px;font-size:12px;color:var(--dim);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+    .facts{padding:10px 0 48px}
+    .facts__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    @media (max-width:900px){.facts__grid{grid-template-columns:repeat(2,1fr)}}
+    .fact{padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+    .fact strong{display:block;font-size:22px;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+    .fact span{color:var(--muted);font-size:14px}
+
+    .section{padding:56px 0}
+    .section--soft{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+    table{width:100%;border-collapse:collapse;min-width:760px;font-size:14px}
+    th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+    th{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);font-weight:600;background:var(--panel-2)}
+    tbody tr:last-child td{border-bottom:0}
+    td.sku{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+    td.sku small{display:block;color:var(--dim);white-space:normal;max-width:26ch}
+    td.qty{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    th.qty{text-align:right}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--panel-2);border:1px solid var(--line-2);color:var(--muted);white-space:nowrap}
+    .table-note{margin:14px 0 0;color:var(--dim);font-size:14px;max-width:70ch}
+
+    .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:900px){.cols{grid-template-columns:1fr}}
+    .col{padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+    .col p{margin:0;color:var(--muted)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+    @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.steps{grid-template-columns:1fr}}
+    .step{padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);display:grid;gap:8px}
+    .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--mono);color:var(--accent);font-size:13px}
+    .step strong{font-size:17px}
+    .step p{margin:0;color:var(--muted);font-size:15px}
+
+    .leadbox{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;align-items:start;background:var(--panel);border:1px solid var(--line-2);border-radius:16px;padding:32px}
+    @media (max-width:900px){.leadbox{grid-template-columns:1fr;padding:22px}}
+    .leadbox ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+    .leadbox li{margin:6px 0}
+    .contacts{margin-top:22px;display:grid;gap:8px;font-size:15px}
+    .contacts a{text-decoration:none;color:var(--text)}
+    .contacts span{color:var(--dim);font-size:13px;display:block}
+    form{display:grid;gap:12px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:560px){.row{grid-template-columns:1fr}}
+    label span{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select{width:100%;min-height:48px;border-radius:8px;border:1px solid var(--line-2);background:var(--bg);color:var(--text);padding:0 14px;font-size:16px;font-family:inherit}
+    select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat}
+    .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+    .consent input{width:18px;min-height:18px;height:18px;margin-top:2px;accent-color:var(--accent)}
+    .status{margin:0;min-height:1.4em;color:var(--muted);font-size:14px}
+    .status a{color:var(--accent)}
+
+    .faq details{border-top:1px solid var(--line);padding:6px 0}
+    .faq details:last-child{border-bottom:1px solid var(--line)}
+    .faq summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--accent);font-family:var(--mono);font-size:20px;line-height:1}
+    .faq details[open] summary::after{content:"–"}
+    .faq p{margin:0 0 14px;color:var(--muted);max-width:70ch}
+
+    footer{padding:28px 0 40px;color:var(--dim);font-size:13px;border-top:1px solid var(--line)}
+    footer .wrap{display:grid;gap:6px}
+  </style>
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(106049767,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+  </script>
+</head>
+<body data-page-kind="offer" data-offer="gpu-server-hgx-b300" data-ast-message="Здравствуйте! Интересует сервер NVIDIA HGX B300 8-GPU (SYS-822GS-NB3RT), нужно КП и сроки">
+  <noscript><div><img src="https://mc.yandex.ru/watch/106049767" style="position:absolute;left:-9999px" alt=""></div></noscript>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="/">AST <small>серверы и оборудование под заказ</small></a>
+      <div class="top__links">
+        <a class="top__phone" href="tel:+79872831255">+7 987 283-12-55</a>
+        <a class="btn btn--primary top__cta" href="#lead" data-gpu-goal="header_cta">Запросить КП</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <div class="eyebrow">Под заказ • Юрлицам • По спецификации</div>
+          <h1>Сервер <em>NVIDIA HGX B300</em> на 8 GPU Blackwell — поставка для юрлиц</h1>
+          <p class="lead">Платформа Supermicro 8U SYS-822GS-NB3RT: HGX B300 NVL8, два Intel Xeon 6768P, 3 ТБ DDR5-6400 ECC, гарантия 3 года и NVIDIA Enterprise Support на 3 года. Конфигурация зафиксирована в спецификации — ниже полный состав.</p>
+          <div class="actions">
+            <a class="btn btn--primary" href="#lead" data-gpu-goal="hero_primary">Запросить КП и сроки</a>
+            <a class="btn" href="https://t.me/ASTavtomoto" rel="noopener" data-gpu-goal="hero_telegram">Написать в Telegram</a>
+          </div>
+          <p class="micro">Цена и срок поставки — в коммерческом предложении под вашу задачу и количество. Без предоплаты за расчёт.</p>
+        </div>
+        <div class="chassis" aria-label="Схема состава сервера">
+          <div class="chassis__head"><strong>SYS-822GS-NB3RT</strong><span>8U • X14DBG-LC • CSE-GP807TS</span></div>
+          <div class="gpus" aria-hidden="true">
+            <div class="gpu">GPU 0</div><div class="gpu">GPU 1</div><div class="gpu">GPU 2</div><div class="gpu">GPU 3</div>
+            <div class="gpu">GPU 4</div><div class="gpu">GPU 5</div><div class="gpu">GPU 6</div><div class="gpu">GPU 7</div>
+          </div>
+          <div class="rails">
+            <div class="rail"><span>GPU</span><span>NVIDIA HGX B300 NVL8, AC</span><span>8</span></div>
+            <div class="rail"><span>CPU</span><span>Intel Xeon 6768P (GNR-SP)</span><span>2</span></div>
+            <div class="rail"><span>RAM</span><span>128 ГБ DDR5-6400 ECC RDIMM</span><span>24</span></div>
+            <div class="rail"><span>NVMe</span><span>960 ГБ M.2 SSD</span><span>2</span></div>
+            <div class="rail"><span>NIC</span><span>2×200G QSFP112 Gen5, ConnectX-7</span><span>—</span></div>
+          </div>
+          <div class="chassis__foot"><span>TPM 2.0 • SDDC Monitor • Call-Home Key</span><span>Сборка включена</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts">
+      <div class="wrap facts__grid">
+        <div class="fact"><strong>8 GPU</strong><span>NVIDIA Blackwell B300, HGX NVL8</span></div>
+        <div class="fact"><strong>3 072 ГБ</strong><span>24 × 128 ГБ DDR5-6400 ECC RDIMM</span></div>
+        <div class="fact"><strong>2 × Xeon 6768P</strong><span>Intel Granite Rapids-SP</span></div>
+        <div class="fact"><strong>3 года</strong><span>гарантия и NVIDIA Enterprise Support</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="spec">
+      <div class="wrap">
+        <h2>Полный состав поставки</h2>
+        <p class="intro">Позиции и количество на один сервер — как в спецификации поставщика. Артикулы указаны, чтобы ваш инженер мог сверить состав до запроса КП.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>№</th><th>Артикул</th><th>Описание</th><th class="qty">Кол-во</th><th>Категория</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td class="sku">SYS-822GS-NB3RT</td><td>Платформа 8U HGX B300 8-GPU, материнская плата X14DBG-LC, корпус CSE-GP807TS</td><td class="qty">1</td><td><span class="tag">Compute</span></td></tr>
+              <tr><td>2</td><td class="sku">EWCSC</td><td>Гарантия: 3 года работы, 3 года запчасти, 1 год CRS (limited warranty)</td><td class="qty">1</td><td><span class="tag">Support</span></td></tr>
+              <tr><td>3</td><td class="sku">GPU-NVHGX-B300-NVL8</td><td>NVIDIA Blackwell GPU Baseboard, HGX B300 NVL8, 8-GPU, AC</td><td class="qty">1</td><td><span class="tag">GPU</span></td></tr>
+              <tr><td>4</td><td class="sku">P4X-GNR6768P-SRVSP-XCC</td><td>Процессор Intel Xeon 6768P (GNR-SP)</td><td class="qty">2</td><td><span class="tag">CPU</span></td></tr>
+              <tr><td>5</td><td class="sku">MEM-DR512L-CL01-ER64</td><td>128 ГБ DDR5-6400 ECC RDIMM</td><td class="qty">24</td><td><span class="tag">Memory</span></td></tr>
+              <tr><td>6</td><td class="sku">HDS-MMN-MTFDKBG960TF<small>или HDS-MMT-MTFDDA7960TGA1BC, или HDS-SMNO-MZ1L2960HCJRA7</small></td><td>960 ГБ NVMe M.2 SSD — Micron 7450 PRO / Micron 5400 PRO / Samsung PM9A3 (на выбор)</td><td class="qty">2</td><td><span class="tag">Storage</span></td></tr>
+              <tr><td>7</td><td class="sku">AOC-CX7AH0078-DTZ</td><td>Сетевой адаптер 2×200G QSFP112 Gen5 (NVIDIA ConnectX-7)</td><td class="qty">уточняется</td><td><span class="tag">Network</span></td></tr>
+              <tr><td>8</td><td class="sku">SVC-SUP-ADPTR-CX7-3S</td><td>NVIDIA Enterprise Support, 3 года</td><td class="qty">2</td><td><span class="tag">Support</span></td></tr>
+              <tr><td>9</td><td class="sku">AOM-TPM-9672V-P</td><td>Модуль TPM 2.0</td><td class="qty">1</td><td><span class="tag">Security</span></td></tr>
+              <tr><td>10</td><td class="sku">SFT-SDDC-SINGLE</td><td>Лицензия SDDC Monitor</td><td class="qty">1</td><td><span class="tag">Software</span></td></tr>
+              <tr><td>11</td><td class="sku">SFT-DCMS-SYC-REY</td><td>Datacenter Management Call-Home Key</td><td class="qty">1</td><td><span class="tag">Software</span></td></tr>
+              <tr><td>12</td><td class="sku">MC0037</td><td>Сборка сервера по конфигурации (Assembly Fee)</td><td class="qty">—</td><td><span class="tag">Service</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Количество сетевых адаптеров ConnectX-7 в спецификации не зафиксировано и согласуется под вашу сеть. Даташиты на платформу и HGX B300 отправим вместе с КП.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#lead" data-gpu-goal="spec_cta">Получить КП по этой спецификации</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="tasks">
+      <div class="wrap">
+        <h2>Для каких задач берут такую конфигурацию</h2>
+        <p class="intro">Восемь GPU Blackwell в одном шасси с 3 ТБ системной памяти и двумя 200G-портами на адаптер — узел для нагрузок, где ключевой ресурс — память GPU и скорость обмена между ними.</p>
+        <div class="cols">
+          <article class="col"><h3>Инференс больших языковых моделей</h3><p>Обслуживание LLM и мультимодальных моделей в продуктиве: чат-ассистенты, поиск, генерация — с запасом по памяти под контекст и батчи.</p></article>
+          <article class="col"><h3>Обучение и дообучение моделей</h3><p>Fine-tuning и обучение собственных моделей на своих данных внутри контура компании, без передачи данных внешним облакам.</p></article>
+          <article class="col"><h3>HPC и научные расчёты</h3><p>Моделирование, обработка больших массивов данных, вычисления для исследовательских центров и вузов.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <h2>Как проходит поставка</h2>
+        <p class="intro">Порядок действий от запроса до отгрузки. Каждый этап подтверждается документами, чтобы вы видели, за что платите.</p>
+        <div class="steps">
+          <div class="step"><strong>Запрос</strong><p>Вы отправляете задачу, количество серверов и контакт — через форму, Telegram или по телефону.</p></div>
+          <div class="step"><strong>Коммерческое предложение</strong><p>Готовим КП по спецификации: состав, цена, срок, условия оплаты и документы для юрлица.</p></div>
+          <div class="step"><strong>Договор и спецификация</strong><p>Заключаем договор поставки на юрлицо. Состав фиксируется приложением-спецификацией.</p></div>
+          <div class="step"><strong>Сборка и отгрузка</strong><p>Сервер собирается по конфигурации, затем отгружается с гарантийными документами и поддержкой NVIDIA.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="lead">
+      <div class="wrap leadbox">
+        <div>
+          <div class="eyebrow">Запрос КП</div>
+          <h2>Получить коммерческое предложение</h2>
+          <p class="intro" style="margin-bottom:0">Что вернём в ответ:</p>
+          <ul>
+            <li>КП по спецификации SYS-822GS-NB3RT с HGX B300 NVL8</li>
+            <li>цену и срок под ваше количество серверов</li>
+            <li>условия оплаты и комплект документов для юрлица</li>
+            <li>даташиты на платформу и GPU-плату</li>
+          </ul>
+          <div class="contacts">
+            <a href="tel:+79872831255"><span>Телефон</span>+7 987 283-12-55</a>
+            <a href="https://t.me/ASTavtomoto" rel="noopener"><span>Telegram</span>@ASTavtomoto</a>
+            <a href="mailto:zakaz@avtonds.ru?subject=%D0%9A%D0%9F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20HGX%20B300"><span>Почта</span>zakaz@avtonds.ru</a>
+          </div>
+        </div>
+        <form id="gpu-form" action="https://api.avtonds.ru/api/max-page/order" method="post">
+          <input type="hidden" name="consent_version" value="privacy-2026-05-06">
+          <div class="row">
+            <label><span>Компания</span>
+              <input name="company" required autocomplete="organization" placeholder="ООО «Название» или проект">
+            </label>
+            <label><span>Задача</span>
+              <select name="workload">
+                <option value="Инференс LLM">Инференс LLM</option>
+                <option value="Обучение / дообучение">Обучение / дообучение</option>
+                <option value="HPC / расчёты">HPC / расчёты</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label><span>Количество серверов</span>
+              <select name="quantity">
+                <option value="1">1</option>
+                <option value="2–4">2–4</option>
+                <option value="5+">5 и больше</option>
+                <option value="Не определено">Пока не определено</option>
+              </select>
+            </label>
+            <label><span>Срок</span>
+              <select name="timeline">
+                <option value="Как можно скорее">Как можно скорее</option>
+                <option value="В этом квартале">В этом квартале</option>
+                <option value="Планируем бюджет">Планируем бюджет</option>
+              </select>
+            </label>
+          </div>
+          <label><span>Телефон, Telegram или e-mail</span>
+            <input name="contact" required autocomplete="tel" placeholder="+7… , @username или почта">
+          </label>
+          <label><span>Имя, необязательно</span>
+            <input name="name" autocomplete="name" placeholder="Как к вам обращаться">
+          </label>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>Согласен на обработку данных по <a href="/privacy">политике конфиденциальности</a>.</span></label>
+          <button class="btn btn--primary" type="submit">Запросить КП и сроки</button>
+          <p class="status" id="gpu-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2>Вопросы по поставке</h2>
+        <div class="faq">
+          <details><summary>Какая гарантия на сервер?</summary><p>По спецификации: 3 года на работы, 3 года на запчасти, 1 год CRS по условиям limited warranty. Отдельно — NVIDIA Enterprise Support на 3 года.</p></details>
+          <details><summary>Можно ли изменить конфигурацию?</summary><p>Вариант NVMe-накопителя выбирается из трёх позиций спецификации: Micron 7450 PRO, Micron 5400 PRO или Samsung PM9A3. Другие изменения состава обсуждаются при подготовке КП.</p></details>
+          <details><summary>Сервер поставляется собранным?</summary><p>Да, в спецификацию включена сборка (позиция MC0037, Assembly Fee): платформа приходит собранной по конфигурации.</p></details>
+          <details><summary>Как оформляется покупка юрлицом?</summary><p>Договор поставки на юридическое лицо с полным комплектом документов. Состав спецификации фиксируется приложением к договору.</p></details>
+          <details><summary>Что нужно, чтобы получить КП?</summary><p>Название компании, задача (инференс, обучение, HPC), количество серверов и контакт. Менеджер уточнит детали и подготовит коммерческое предложение.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>ООО «АСТ» • ИНН 6313553773 • +7 987 283-12-55 • zakaz@avtonds.ru</div>
+      <div>Информация на странице не является публичной офертой. Цена и срок поставки указываются в коммерческом предложении. NVIDIA, Supermicro, Intel, Micron и Samsung — товарные знаки их владельцев.</div>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="/assets/ast-conversion.css?v=20260901">
+  <script src="/assets/ast-conversion.js?v=20260901" defer></script>
+  <script>
+    (function(){
+      var form=document.getElementById('gpu-form');
+      var status=document.getElementById('gpu-status');
+      var MODEL='Сервер NVIDIA HGX B300 8-GPU (Supermicro SYS-822GS-NB3RT)';
+      var WA='79872831255', TG='ASTavtomoto';
+      var SOURCE_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term',
+        'utm_campaign_id','utm_group_id','utm_source_type','utm_position_type','utm_device','utm_retargeting'];
+
+      function goal(name,params){
+        try{if(typeof ym==='function')ym(106049767,'reachGoal',name,params||{});}catch(e){}
+        window.dataLayer=window.dataLayer||[];
+        window.dataLayer.push(Object.assign({event:name},params||{}));
+      }
+      // Источник: первое касание из рантайма (sessionStorage), иначе текущий URL.
+      function sourceParams(){
+        var out={};
+        try{ if(window.ASTConversion&&window.ASTConversion.sourceParams) out=window.ASTConversion.sourceParams()||{}; }catch(e){}
+        var qs=new URLSearchParams(location.search);
+        SOURCE_KEYS.forEach(function(k){ if(!out[k]) out[k]=qs.get(k)||''; });
+        return out;
+      }
+      function summary(data){
+        return [
+          'Интересует '+MODEL+'.',
+          'Компания: '+(data.company||'—')+'.',
+          'Задача: '+(data.workload||'—')+'.',
+          'Серверов: '+(data.quantity||'—')+'.',
+          'Срок: '+(data.timeline||'—')+'.',
+          'Контакт: '+(data.contact||'—')+'.',
+          data.name?'Имя: '+data.name+'.':'',
+          'Источник: '+location.href
+        ].filter(Boolean).join(' ');
+      }
+
+      document.querySelectorAll('[data-gpu-goal]').forEach(function(el){
+        el.addEventListener('click',function(){ goal('gpu_b300_cta',{action:el.dataset.gpuGoal||'click'}); });
+      });
+      form.addEventListener('focusin',function(){ goal('ast_form_start',{page:location.pathname,offer:'gpu-server-hgx-b300'}); },{once:true});
+
+      form.addEventListener('submit',async function(ev){
+        ev.preventDefault();
+        if(!form.reportValidity())return;
+        var data=Object.fromEntries(new FormData(form).entries());
+        var src=sourceParams();
+        var payload=Object.assign({
+          request_id:'gpu-b300-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),
+          created_at:new Date().toISOString(),
+          name:data.name||'',
+          contact:data.contact,
+          company:data.company,
+          model:MODEL,
+          sku:'SYS-822GS-NB3RT',
+          workload:data.workload,
+          quantity:data.quantity,
+          timeline:data.timeline,
+          page_url:location.href,
+          channel:'site_form',
+          source:'avtonds_site',
+          site_source:'avtonds.ru',
+          source_detail:'gpu_server_hgx_b300',
+          landing_variant:'gpu_b300_spec',
+          cta:'request_kp_hgx_b300',
+          segment:'it_hardware',
+          business_line:'server_supply',
+          consent:'yes',
+          consent_version:data.consent_version,
+          policy_url:location.origin+'/privacy',
+          comment:summary(data),
+          lead_next_step:'Подготовить КП по спецификации SYS-822GS-NB3RT / HGX B300 NVL8',
+          lead_risk_note:'Цену и срок не подтверждать до КП и договора'
+        },src);
+        goal('gpu_b300_form_submit_attempt',{workload:data.workload,quantity:data.quantity});
+        var button=form.querySelector('button[type=submit]');
+        button.disabled=true;status.textContent='Передаём запрос…';
+        try{
+          var response=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},credentials:'omit',body:JSON.stringify(payload)});
+          if(!response.ok)throw new Error('transport_'+response.status);
+          goal('gpu_b300_form_submit_ok',{workload:data.workload,quantity:data.quantity});
+          goal('ast_form_submit',{page:location.pathname,offer:'gpu-server-hgx-b300',channel:'form'});
+          window.dataLayer.push({event:'form_submit_success',form:'gpu_b300_spec'});
+          status.textContent='Запрос принят. Подготовим КП по спецификации и свяжемся по указанному контакту.';
+          form.reset();
+        }catch(e){
+          // Приёмный API недоступен — заявка уходит менеджеру сообщением в WhatsApp, данные не теряются.
+          goal('gpu_b300_form_submit_fallback',{workload:data.workload,quantity:data.quantity});
+          goal('ast_form_submit',{page:location.pathname,offer:'gpu-server-hgx-b300',channel:'form_whatsapp_fallback'});
+          var text=encodeURIComponent(summary(data));
+          status.innerHTML='Отправляем запрос в WhatsApp… Если окно не открылось — <a href="https://wa.me/'+WA+'?text='+text+'" rel="noopener">нажмите сюда</a> или напишите в <a href="https://t.me/'+TG+'?text='+text+'" rel="noopener">Telegram</a>.';
+          location.href='https://wa.me/'+WA+'?text='+text;
+        }finally{button.disabled=false;}
+      });
+    })();
+  </script>
+</body>
+</html>
