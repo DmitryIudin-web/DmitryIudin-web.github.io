@@ -1,0 +1,62 @@
+<!--
+  Вставить в: страница Tilda → Настройки страницы → «HTML-код для HEAD».
+  Собрано скриптом scripts/build-tilda-gpu-b300.py из gpu-server-hgx-b300/index.html —
+  вручную не править, правь исходную страницу и пересобери.
+
+  Что здесь: шрифты, разметка Schema.org (Product + FAQPage) и счётчик Метрики.
+  Title, description, canonical и Open Graph в этот файл НЕ входят —
+  их вписывают в поля SEO самой страницы Tilda:
+
+    Заголовок:  Сервер NVIDIA HGX B300 8-GPU под заказ | АСТ
+    Описание:   Сервер 8U Supermicro SYS-822GS-NB3RT с NVIDIA HGX B300 NVL8 (8 GPU Blackwell), 2× Intel Xeon 6768P, 3 ТБ DDR5-6400 ECC, NVIDIA Enterprise Support 3 года. Поставка по спецификации, КП под запрос.
+    Canonical:  https://avtonds.ru/gpu-server-hgx-b300/
+
+  Если счётчик Метрики уже подключён на уровне сайта (Настройки сайта →
+  Аналитика), блок между «НАЧАЛО СЧЁТЧИКА» и «КОНЕЦ СЧЁТЧИКА» нужно удалить,
+  иначе визиты задвоятся.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Product",
+        "name":"Сервер Supermicro SYS-822GS-NB3RT с NVIDIA HGX B300 NVL8 (8 GPU)",
+        "description":"8U GPU-сервер: плата X14DBG-LC, корпус CSE-GP807TS, NVIDIA HGX B300 NVL8 8-GPU, 2× Intel Xeon 6768P, 24× 128 ГБ DDR5-6400 ECC RDIMM, 2× 960 ГБ NVMe M.2, NVIDIA ConnectX-7 2×200G, TPM 2.0, NVIDIA Enterprise Support 3 года.",
+        "sku":"SYS-822GS-NB3RT",
+        "brand":{"@type":"Brand","name":"Supermicro"},
+        "url":"https://avtonds.ru/gpu-server-hgx-b300/",
+        "offers":{
+          "@type":"Offer",
+          "url":"https://avtonds.ru/gpu-server-hgx-b300/",
+          "priceCurrency":"RUB",
+          "availability":"https://schema.org/PreOrder",
+          "itemCondition":"https://schema.org/NewCondition",
+          "seller":{"@type":"Organization","name":"ООО «АСТ»","url":"https://avtonds.ru"}
+        }
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"Какая гарантия на сервер?","acceptedAnswer":{"@type":"Answer","text":"По спецификации: 3 года на работы, 3 года на запчасти, 1 год CRS по условиям limited warranty. Отдельно — NVIDIA Enterprise Support на 3 года."}},
+          {"@type":"Question","name":"Можно ли изменить конфигурацию?","acceptedAnswer":{"@type":"Answer","text":"Вариант NVMe-накопителя выбирается из трёх позиций спецификации: Micron 7450 PRO, Micron 5400 PRO или Samsung PM9A3. Другие изменения состава обсуждаются при подготовке КП."}},
+          {"@type":"Question","name":"Сервер поставляется собранным?","acceptedAnswer":{"@type":"Answer","text":"Да, в спецификацию включена сборка (позиция MC0037, Assembly Fee): платформа приходит собранной по конфигурации."}},
+          {"@type":"Question","name":"Как оформляется покупка?","acceptedAnswer":{"@type":"Answer","text":"Договор поставки с полным комплектом документов. Состав спецификации фиксируется приложением к договору."}},
+          {"@type":"Question","name":"Что нужно, чтобы получить КП?","acceptedAnswer":{"@type":"Answer","text":"Название компании, задача (инференс, обучение, HPC), количество серверов и контакт. Менеджер уточнит детали и подготовит коммерческое предложение."}}
+        ]
+      }
+    ]
+  }
+  </script>
+<!-- НАЧАЛО СЧЁТЧИКА МЕТРИКИ -->
+<script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(106049767,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+  </script>
+<!-- КОНЕЦ СЧЁТЧИКА МЕТРИКИ -->

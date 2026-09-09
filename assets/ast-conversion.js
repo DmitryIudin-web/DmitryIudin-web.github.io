@@ -1134,8 +1134,23 @@
     } catch (e) {}
   }
 
+  // Контакты на уровне страницы: <body data-ast-phone / -phone-display /
+  // -whatsapp>. Нужны посадочным с отдельным номером (коллтрекинг, лендинг под
+  // кампанию) — без правки общего CONFIG, который обслуживает остальные страницы.
+  function applyPageContacts() {
+    var b = document.body;
+    if (!b) return;
+    var phone = b.getAttribute('data-ast-phone');
+    var display = b.getAttribute('data-ast-phone-display');
+    var whatsapp = b.getAttribute('data-ast-whatsapp');
+    if (phone) CONFIG.phone = phone;
+    if (display) CONFIG.phoneDisplay = display;
+    if (whatsapp) CONFIG.whatsapp = whatsapp;
+  }
+
   // ------------------------------------------------------------------ запуск
 
+  applyPageContacts();
   persistUtm();
   sendVisitParams();
   bindFormStart();
