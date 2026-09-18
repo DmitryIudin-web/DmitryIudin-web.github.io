@@ -20,9 +20,9 @@
   var CONFIG = {
     metrikaId: 106049767,
     telegram: 'ASTavtomoto',
-    whatsapp: '79872831255',
-    phone: '+79872831255',
-    phoneDisplay: '+7 987 283-12-55',
+    whatsapp: '79991583458',
+    phone: '+79991583458',
+    phoneDisplay: '+7 999 158 34 58',
     privacyUrl: '/privacy',
     // Страницы без липкой панели (B1)
     stickyExcluded: ['/privacy', '/referal'],
