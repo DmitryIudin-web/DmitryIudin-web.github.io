@@ -30,6 +30,37 @@
     ctaHint: 'Ответим в течение часа в рабочее время · Без предоплаты за расчёт'
   };
 
+  // Убираем устаревший номер из Tilda-инлайн кода, который может попасть в DOM
+  // до загрузки этого общего рантайма. Это переходный слой для старых страниц.
+  function normalizeLegacyPhone() {
+    if (!document.body) return;
+    var replacements = [
+      ['+7 987 283-12-55', CONFIG.phoneDisplay],
+      ['+7 987 283 12 55', CONFIG.phoneDisplay],
+      ['987 283-12-55', '999 158 34 58'],
+      ['987 283 12 55', '999 158 34 58'],
+      ['+79872831255', CONFIG.phone],
+      ['79872831255', CONFIG.whatsapp]
+    ];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var parent = node.parentElement;
+      if (parent && /^(SCRIPT|STYLE|NOSCRIPT)$/.test(parent.tagName)) continue;
+      var text = node.nodeValue;
+      replacements.forEach(function (pair) { text = text.split(pair[0]).join(pair[1]); });
+      if (text !== node.nodeValue) node.nodeValue = text;
+    }
+    document.querySelectorAll('a, [content], [value], [data-phone]').forEach(function (el) {
+      ['href', 'content', 'value', 'data-phone'].forEach(function (name) {
+        if (!el.hasAttribute(name)) return;
+        var value = el.getAttribute(name);
+        replacements.forEach(function (pair) { value = value.split(pair[0]).join(pair[1]); });
+        el.setAttribute(name, value);
+      });
+    });
+  }
+
   // Карта оффера по маршруту: slug + человекочитаемая модель для текстов B2/B3.
   var OFFER_MAP = {
     '/bezopasnaya-sdelka': { offer: 'safe-deal' },
@@ -1140,6 +1171,7 @@
   fetchClientId();
 
   onReady(function () {
+    normalizeLegacyPhone();
     enhancePages();
     watchOfferPrices();
     decorateMessengerLinks();
@@ -1150,6 +1182,7 @@
   // Контент Tilda дорисовывается асинхронно — повторяем прогон, как принято на сайте.
   [1500, 4000, 8000].forEach(function (delay) {
     setTimeout(function () {
+      normalizeLegacyPhone();
       enhancePages();
       enhanceOfferPrices();
       decorateMessengerLinks();
