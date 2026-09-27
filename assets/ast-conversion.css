@@ -54,7 +54,7 @@
   height: 20px;
   flex: 0 0 auto;
 }
-.ast-sticky-cta__btn--telegram {
+.ast-sticky-cta__btn--request {
   background: #229ED9;
   color: #fff;
 }
@@ -127,7 +127,7 @@ html.ast-sticky-cta-active body {
   width: 18px;
   height: 18px;
 }
-.ast-sticky-cta__item--telegram { background: #229ED9; }
+.ast-sticky-cta__item--request { background: #229ED9; }
 .ast-sticky-cta__item--whatsapp { background: #25D366; }
 .ast-sticky-cta__item--phone { background: #14161a; }
 @media (max-width: 979px) {
