@@ -451,6 +451,7 @@
 
   var ICONS = {
     telegram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.6 18 20.5c-.3 1.4-1.1 1.8-2.2 1.1l-5.1-3.8-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.2 9.5-8.6c.4-.4-.1-.7-.6-.4L4.7 13 0 11.5c-1-.3-1-1 .2-1.4L19 2.8c.9-.3 2 .2 2.4 1.8z"/></svg>',
+    request: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1 2v16h10V7h-4V4H7zm2 6h6v2H9v-2zm0 4h6v2H9v-2z"/></svg>',
     whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-3.9-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .4-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 1.9 1.2 2.2 1.4.3.1.4.1.6-.1.2-.2.7-.8.8-1 .2-.3.4-.2.6-.1l1.8.8c.3.1.4.2.5.3 0 .2 0 .6-.2 1z"/></svg>',
     phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>'
   };
@@ -471,8 +472,8 @@
     mobile.setAttribute('role', 'navigation');
     mobile.setAttribute('aria-label', 'Быстрая связь');
     mobile.innerHTML =
-      '<a class="ast-sticky-cta__btn ast-sticky-cta__btn--telegram" href="' + telegramLink() + '" rel="noopener">' +
-        ICONS.telegram + '<span>Написать в Telegram</span></a>' +
+      '<a class="ast-sticky-cta__btn ast-sticky-cta__btn--request" href="/contacts#lead">' +
+        ICONS.request + '<span>Оставить заявку</span></a>' +
       '<a class="ast-sticky-cta__btn ast-sticky-cta__btn--whatsapp" href="' + whatsappLink() + '" rel="noopener">' +
         ICONS.whatsapp + '<span>WhatsApp</span></a>';
 
@@ -481,14 +482,14 @@
     desktop.setAttribute('aria-label', 'Быстрая связь');
     desktop.innerHTML =
       '<div class="ast-sticky-cta__menu">' +
-        '<a class="ast-sticky-cta__item ast-sticky-cta__item--telegram" href="' + telegramLink() + '" rel="noopener">' +
-          ICONS.telegram + '<span>Написать в Telegram</span></a>' +
+        '<a class="ast-sticky-cta__item ast-sticky-cta__item--request" href="/contacts#lead">' +
+          ICONS.request + '<span>Оставить заявку</span></a>' +
         '<a class="ast-sticky-cta__item ast-sticky-cta__item--whatsapp" href="' + whatsappLink() + '" rel="noopener">' +
           ICONS.whatsapp + '<span>Написать в WhatsApp</span></a>' +
         '<a class="ast-sticky-cta__item ast-sticky-cta__item--phone" href="tel:' + CONFIG.phone + '">' +
           ICONS.phone + '<span>Позвонить: ' + CONFIG.phoneDisplay + '</span></a>' +
       '</div>' +
-      '<button class="ast-sticky-cta__fab" type="button" aria-label="Связаться с нами">' + ICONS.telegram + '</button>';
+      '<button class="ast-sticky-cta__fab" type="button" aria-label="Связаться с нами">' + ICONS.request + '</button>';
 
     desktop.querySelector('.ast-sticky-cta__fab').addEventListener('click', function () {
       desktop.classList.toggle('ast-sticky-cta--open');
