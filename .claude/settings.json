@@ -5,6 +5,8 @@
       "Bash(python3 scripts/generate_sitemap.py)",
       "Bash(python3 scripts/sync_agent_docs.py)",
       "Bash(python3 scripts/sync_agent_docs.py --check)",
+      "Bash(python3 scripts/check.py)",
+      "Bash(python3 scripts/check.py *)",
       "Bash(python3 scripts/indexnow_ping.py *)",
       "Bash(python3 -c *)",
       "Bash(git status *)",
