@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Pre-commit: общая проверка правок для любого агента и человека.
+# Установка: bash scripts/install-hooks.sh. Обход (осознанно): git commit --no-verify
+exec python3 scripts/check.py --staged

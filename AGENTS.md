@@ -58,7 +58,7 @@
 
 ## Конвенции
 
-- Ветки: `claude/*` или `codex/*`; PR в `main` со squash-мержем.
+- Ветки: `<агент>/<задача>` (`claude/*`, `codex/*`, `cline/*`...); PR в `main` со squash-мержем.
 - В `main` напрямую не пушить (кроме автокоммитов workflow).
 - `robots.txt` закрывает `/api/`, `/docs/`, `/tools/`, `/scripts/`; для Яндекса
   задан `Clean-param: quoteId /offers` — не удалять.
@@ -69,7 +69,34 @@
   `scripts/hermes/`, инструкция — `docs/hermes/README.md`. Токены и ключи живут
   только на сервере в `~/.hermes/.env`, в репозиторий не попадают.
 
+## Работа нескольких агентов (когда кончился лимит)
+
+Репозиторий правят по очереди разные агенты: Claude Code, Codex, Cline/Roo/Kilo
+с Kimi, Qwen или DeepSeek, Copilot, локальные модели. Хуки и запреты из
+`.claude/settings.json` работают **только** в Claude Code, поэтому общая защита
+вынесена в git и CI:
+
+- `python3 scripts/check.py` — единая проверка для любого агента: замороженные
+  пути, CRLF, «страница переписана целиком», canonical/noindex, sitemap правлен
+  не руками, AGENTS.md = CLAUDE.md, шаг исключения `.claude/` в деплое,
+  `Clean-param` в robots.txt. Запускать перед каждым коммитом/push.
+- `bash scripts/install-hooks.sh` — один раз после клонирования: включает
+  pre-commit хук (`.githooks/`, тот же `check.py --staged`) и пересоздаёт
+  ignore-файлы агентов из `scripts/agent-ignore.txt`.
+- `.github/workflows/pr-checks.yml` — тот же `check.py` на каждом PR в `main`.
+  Осознанный обход — метки PR `allow-frozen` (обновление Tilda-снапшота)
+  и `allow-rewrite` (редизайн страницы).
+- `.aiderignore`, `.clineignore`, `.rooignore` и др. — не отдают провайдеру
+  `.claude/skills/kp-avtonds/` (внутренние ставки и маржа) и замороженные
+  бандлы. КП с внутренней экономикой — только Claude Code/Codex или локальная
+  модель, не через внешних дешёвых провайдеров.
+- Ветка на каждого агента: `<агент>/<задача>` (`claude/*`, `codex/*`, `cline/*`,
+  `kimi/*`...). Перед сменой агента — коммит и запись в `docs/HANDOFF.md`.
+
 ## Проверки перед push
+
+- `python3 scripts/check.py` — итог «OK» (включает пункты ниже, кроме
+  пересборки sitemap).
 
 - `python3 scripts/generate_sitemap.py` — завершится без ошибок, ~57 URL.
 - `python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap-0.xml')"`.

@@ -50,7 +50,8 @@ def page_url(html_path: pathlib.Path) -> str:
     return SITE + "/" + str(rel).replace("\\", "/")
 
 
-def main() -> int:
+def collect_urls(lastmod=git_lastmod) -> dict[str, str]:
+    """Self-canonical indexable URLs -> lastmod (used by scripts/check.py too)."""
     urls: dict[str, str] = {}
     for html in sorted(ROOT.rglob("index.html")):
         rel = str(html.relative_to(ROOT))
@@ -71,8 +72,12 @@ def main() -> int:
         # (news brand hubs -> /news/) are represented by their target.
         if canonical.rstrip("/") != expected.rstrip("/"):
             continue
-        urls[canonical] = git_lastmod(html)
+        urls[canonical] = lastmod(html)
+    return urls
 
+
+def main() -> int:
+    urls = collect_urls()
     if len(urls) < 10:
         print(f"refusing to write suspiciously small sitemap ({len(urls)} urls)", file=sys.stderr)
         return 1

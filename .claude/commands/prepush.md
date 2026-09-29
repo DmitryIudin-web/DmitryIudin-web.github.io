@@ -10,6 +10,8 @@ allowed-tools: Bash(python3 scripts/*), Bash(python3 -c *), Bash(git *), Bash(fi
 3. `python3 scripts/sync_agent_docs.py --check` — AGENTS.md совпадает с CLAUDE.md.
 4. CRLF изменённых страниц сохранён (`file` показывает «with CRLF line terminators»).
 5. `git status` — в индексе нет `frozen-assets/`, `_astro/`, `assets/`.
-6. Ветка — `claude/*` или `codex/*`, не `main`.
+6. Ветка — `<агент>/<задача>` (`claude/*`, `codex/*`...), не `main`.
+7. `python3 scripts/check.py` — итог «OK» (CRLF, замороженные пути, SEO-инварианты
+   страниц, sitemap не правлен руками; та же проверка идёт в CI на PR).
 
 Любой непройденный пункт — почини до push, а не описывай.
