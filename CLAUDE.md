@@ -80,9 +80,10 @@
   пути, CRLF, «страница переписана целиком», canonical/noindex, sitemap правлен
   не руками, AGENTS.md = CLAUDE.md, шаг исключения `.claude/` в деплое,
   `Clean-param` в robots.txt. Запускать перед каждым коммитом/push.
-- `bash scripts/install-hooks.sh` — один раз после клонирования: включает
-  pre-commit хук (`.githooks/`, тот же `check.py --staged`) и пересоздаёт
-  ignore-файлы агентов из `scripts/agent-ignore.txt`.
+- `python scripts/install_hooks.py` — один раз после клонирования (Windows,
+  macOS, Linux; в Linux/macOS — `python3`): включает pre-commit хук
+  (`.githooks/`, тот же `check.py --staged`; сам находит `python3`/`python`/`py -3`)
+  и пересоздаёт ignore-файлы агентов из `scripts/agent-ignore.txt`.
 - `.github/workflows/pr-checks.yml` — тот же `check.py` на каждом PR в `main`.
   Осознанный обход — метки PR `allow-frozen` (обновление Tilda-снапшота)
   и `allow-rewrite` (редизайн страницы).
