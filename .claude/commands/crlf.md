@@ -10,5 +10,5 @@ allowed-tools: Bash(git diff *), Bash(git status *), Bash(file *)
    вывод обязан по-прежнему содержать «with CRLF line terminators».
 3. Сравни с исходником: `git stash` не нужен — хватит `git show HEAD:<путь> | file -`.
 
-Найдёшь расхождение — откати файл (`git checkout -- <путь>`) и переделай правку
+Найдёшь расхождение — откати файл (`git checkout HEAD -- <путь>`) и переделай правку
 точечной заменой с `newline=''`.
