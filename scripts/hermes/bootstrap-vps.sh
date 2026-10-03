@@ -50,7 +50,7 @@ command -v apt-get >/dev/null || die "Скрипт рассчитан на Ubunt
 log "Системные пакеты"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
-apt-get install -y -qq git curl ca-certificates xz-utils ufw fail2ban ffmpeg ripgrep >/dev/null
+apt-get install -y -qq git curl ca-certificates xz-utils ufw fail2ban ffmpeg ripgrep sudo python3 >/dev/null
 
 log "Фаервол: закрыть всё входящее, кроме SSH ($SSH_PORT/tcp)"
 ufw --force reset >/dev/null
@@ -173,6 +173,8 @@ log "Проверка"
 run_as "hermes doctor" | tail -n 25 || true
 
 HAVE_TOKEN=$(grep -E '^TELEGRAM_BOT_TOKEN=.+' "$ENV_FILE" >/dev/null && echo 1 || echo 0)
+HAVE_ALLOWED=$(grep -E '^TELEGRAM_ALLOWED_USERS=.+' "$ENV_FILE" >/dev/null && echo 1 || echo 0)
+HAVE_TELEGRAM=$([[ $HAVE_TOKEN == 1 && $HAVE_ALLOWED == 1 ]] && echo 1 || echo 0)
 HAVE_MODEL=$(grep -qE '^(KIMI_API_KEY|OPENROUTER_API_KEY|ANTHROPIC_API_KEY)=.+' "$ENV_FILE" && echo 1 || echo 0)
 
 cat <<MSG
@@ -184,7 +186,7 @@ cat <<MSG
 
  1) Модель:        hermes model
       $( [[ $HAVE_MODEL == 1 ]] && echo "ключ уже в .env — просто выберите провайдера и модель" || echo "ключа нет: впишите KIMI_API_KEY/OPENROUTER_API_KEY в ~/.hermes/.env или войдите по подписке ChatGPT/Codex в мастере" )
- 2) Telegram:      $( [[ $HAVE_TOKEN == 1 ]] && echo "токен и allowed users уже в .env" || echo "впишите TELEGRAM_BOT_TOKEN и TELEGRAM_ALLOWED_USERS в ~/.hermes/.env (или hermes gateway setup)" )
+ 2) Telegram:      $( [[ $HAVE_TELEGRAM == 1 ]] && echo "токен и allowed users уже в .env" || echo "впишите TELEGRAM_BOT_TOKEN и TELEGRAM_ALLOWED_USERS в ~/.hermes/.env (или hermes gateway setup)" )
  3) Запуск:        hermes gateway start && hermes gateway status
  4) Логи:          journalctl --user -u hermes-gateway -f
  5) Веб-панель:    hermes dashboard   (с ноутбука: ssh -L 9119:127.0.0.1:9119 root@СЕРВЕР)
