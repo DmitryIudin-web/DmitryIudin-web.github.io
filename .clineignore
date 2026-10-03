@@ -1,6 +1,6 @@
 # Пути, которые агенты вне Claude Code не должны читать и отправлять провайдеру.
 # Канон этого списка — scripts/agent-ignore.txt; копии в .*ignore в корне
-# пересоздаёт scripts/install-hooks.sh. Проверяет scripts/check.py.
+# пересоздаёт scripts/install_hooks.py. Проверяет scripts/check.py.
 
 # Внутренняя экономика КП (себестоимость, маржа, ставки) — только Claude Code/Codex
 # или локальная модель, никаких внешних дешёвых провайдеров.

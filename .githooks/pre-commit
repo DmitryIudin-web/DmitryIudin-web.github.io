@@ -1,4 +1,18 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # Pre-commit: общая проверка правок для любого агента и человека.
-# Установка: bash scripts/install-hooks.sh. Обход (осознанно): git commit --no-verify
-exec python3 scripts/check.py --staged
+# Установка: python scripts/install_hooks.py (Windows/macOS/Linux).
+# Обход (осознанно): git commit --no-verify
+#
+# Ищем рабочий Python 3.9+: python3 (Linux/macOS), python и py -3 (Windows).
+# Кандидата запускаем по-настоящему: заглушка python3.exe из Microsoft Store
+# существует, но не работает — она будет пропущена.
+for py in python3 python "py -3"; do
+  if $py -c 'import sys; sys.exit(0 if sys.version_info >= (3, 9) else 1)' >/dev/null 2>&1; then
+    exec $py scripts/check.py --staged
+  fi
+done
+
+echo "pre-commit: не найден Python 3.9+ (пробовали python3, python, py -3)." >&2
+echo "Установите Python с python.org (галочка «Add python.exe to PATH»)" >&2
+echo "или закоммитьте осознанно: git commit --no-verify" >&2
+exit 1

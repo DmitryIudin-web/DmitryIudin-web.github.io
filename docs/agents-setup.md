@@ -12,11 +12,22 @@
 
 ## Шаг 0. Репозиторий (на каждой машине, один раз)
 
-```bash
-git checkout main && git pull
-bash scripts/install-hooks.sh     # pre-commit хук + ignore-файлы агентов
-python3 scripts/check.py          # должно быть «ИТОГ: OK»
+Команды выполнять **в папке репозитория** (в VS Code: Terminal → New Terminal
+при открытой папке проекта), а не в домашней папке.
+
+Windows (PowerShell):
+
+```powershell
+git checkout main; git pull
+python scripts/install_hooks.py   # pre-commit хук + ignore-файлы агентов
+python scripts/check.py           # должно быть «ИТОГ: OK»
 ```
+
+macOS / Linux: те же команды с `python3`.
+
+Если `python` не найден — установить Python 3.9+ с python.org с галочкой
+«Add python.exe to PATH» (заглушка из Microsoft Store не подходит).
+Хук сам ищет `python3`, `python` и `py -3`.
 
 ## Шаг 1. Основные агенты
 

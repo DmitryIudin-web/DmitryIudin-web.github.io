@@ -7,6 +7,8 @@ A page is included when:
 
 Run from the repository root:  python3 scripts/generate_sitemap.py
 """
+from __future__ import annotations
+
 import pathlib
 import re
 import subprocess
@@ -20,7 +22,7 @@ def git_lastmod(path: pathlib.Path) -> str:
     """Last commit date of the file, or today for dirty/untracked files ('' if no git)."""
     import datetime
 
-    rel = str(path.relative_to(ROOT))
+    rel = path.relative_to(ROOT).as_posix()
     today = datetime.date.today().isoformat()
     try:
         dirty = subprocess.run(
@@ -54,7 +56,7 @@ def collect_urls(lastmod=git_lastmod) -> dict[str, str]:
     """Self-canonical indexable URLs -> lastmod (used by scripts/check.py too)."""
     urls: dict[str, str] = {}
     for html in sorted(ROOT.rglob("index.html")):
-        rel = str(html.relative_to(ROOT))
+        rel = html.relative_to(ROOT).as_posix()
         if rel.startswith(("frozen-assets/", "_astro/", "assets/", "scripts/", ".git")):
             continue
         text = html.read_text(encoding="utf-8", errors="ignore")

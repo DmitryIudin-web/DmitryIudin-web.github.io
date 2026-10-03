@@ -4,7 +4,9 @@
 Заменяет чек-лист /prepush вне Claude Code и запускается в трёх местах:
 
     python3 scripts/check.py              # вручную: ветка против main + незакоммиченное
-    python3 scripts/check.py --staged     # git pre-commit хук (scripts/install-hooks.sh)
+    python3 scripts/check.py --staged     # git pre-commit хук (scripts/install_hooks.py)
+
+В Windows вместо python3 — python или py -3.
     python3 scripts/check.py --base origin/main   # CI на PR (.github/workflows/pr-checks.yml)
 
 Что проверяет (правила из CLAUDE.md):
@@ -24,6 +26,8 @@
 
 Код выхода 0 — всё чисто, 1 — есть ошибки. Файлы читаются в бинарном режиме.
 """
+from __future__ import annotations
+
 import argparse
 import os
 import re
@@ -224,6 +228,10 @@ def check_branch(t: Target, errors):
 
 
 def main() -> int:
+    # Консоль Windows (cp866/cp1251) не должна ронять проверку на «—» и «».
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="replace")
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--staged", action="store_true", help="проверять индекс против HEAD (pre-commit)")
     ap.add_argument("--base", help="база сравнения (по умолчанию merge-base с origin/main)")
