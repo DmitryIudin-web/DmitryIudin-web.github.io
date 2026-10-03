@@ -22,7 +22,7 @@
   6. AGENTS.md совпадает с CLAUDE.md.
   7. Инварианты: шаг исключения .claude/ в deploy-pages.yml,
      Clean-param в robots.txt, ignore-файлы агентов закрывают kp-avtonds.
-  8. Коммит/проверка идут не на ветке main (только локально).
+  8. Коммит идёт не в main (только в режиме --staged, т.е. в pre-commit).
 
 Код выхода 0 — всё чисто, 1 — есть ошибки. Файлы читаются в бинарном режиме.
 """
@@ -143,7 +143,7 @@ def check_structure(t: Target, changes, allow_rewrite: bool, errors, warnings):
         if b"\r\n" in old and bare_lf(old) == 0 and bare_lf(new) > 0:
             errors.append(
                 f"[crlf] {path}: файл был CRLF, теперь {bare_lf(new)} строк с LF. "
-                "Откатите (git checkout -- путь) и правьте точечно, с newline=''."
+                "Откатите (git checkout HEAD -- путь: индекс и файл) и правьте точечно, с newline=''."
             )
 
         # Страница переписана целиком? (документы и скрипты править крупно можно)
@@ -219,7 +219,9 @@ def check_invariants(t: Target, errors):
 
 
 def check_branch(t: Target, errors):
-    if os.environ.get("GITHUB_ACTIONS"):
+    # Запрещаем только коммит в main (pre-commit, --staged). Проверка на main
+    # без коммита — нормальный шаг настройки, ошибкой не считается.
+    if not t.staged or os.environ.get("GITHUB_ACTIONS"):
         return
     branch = git("rev-parse", "--abbrev-ref", "HEAD", check=False).decode().strip()
     if branch == "main":
