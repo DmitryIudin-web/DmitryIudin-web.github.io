@@ -1,0 +1,32 @@
+name: PR checks
+
+# Одна и та же проверка для правок любого агента (Claude Code, Codex, Cline,
+# Kimi, Qwen, DeepSeek...) и человека: scripts/check.py против main.
+# Осознанный обход — метки PR allow-frozen / allow-rewrite.
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Run scripts/check.py
+        env:
+          ALLOW_FROZEN: ${{ contains(github.event.pull_request.labels.*.name, 'allow-frozen') && '--allow-frozen' || '' }}
+          ALLOW_REWRITE: ${{ contains(github.event.pull_request.labels.*.name, 'allow-rewrite') && '--allow-rewrite' || '' }}
+        run: python3 scripts/check.py --base "origin/${{ github.base_ref }}" $ALLOW_FROZEN $ALLOW_REWRITE

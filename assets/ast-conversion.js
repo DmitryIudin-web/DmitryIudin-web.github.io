@@ -20,15 +20,46 @@
   var CONFIG = {
     metrikaId: 106049767,
     telegram: 'ASTavtomoto',
-    whatsapp: '79872831255',
-    phone: '+79872831255',
-    phoneDisplay: '+7 987 283-12-55',
+    whatsapp: '79991583458',
+    phone: '+79991583458',
+    phoneDisplay: '+7 999 158 34 58',
     privacyUrl: '/privacy',
     // Страницы без липкой панели (B1)
     stickyExcluded: ['/privacy', '/referal'],
     // Подпись под кнопками — словарь п. 5
     ctaHint: 'Ответим в течение часа в рабочее время · Без предоплаты за расчёт'
   };
+
+  // Убираем устаревший номер из Tilda-инлайн кода, который может попасть в DOM
+  // до загрузки этого общего рантайма. Это переходный слой для старых страниц.
+  function normalizeLegacyPhone() {
+    if (!document.body) return;
+    var replacements = [
+      ['+7 987 283-12-55', CONFIG.phoneDisplay],
+      ['+7 987 283 12 55', CONFIG.phoneDisplay],
+      ['987 283-12-55', '999 158 34 58'],
+      ['987 283 12 55', '999 158 34 58'],
+      ['+79872831255', CONFIG.phone],
+      ['79872831255', CONFIG.whatsapp]
+    ];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var parent = node.parentElement;
+      if (parent && /^(SCRIPT|STYLE|NOSCRIPT)$/.test(parent.tagName)) continue;
+      var text = node.nodeValue;
+      replacements.forEach(function (pair) { text = text.split(pair[0]).join(pair[1]); });
+      if (text !== node.nodeValue) node.nodeValue = text;
+    }
+    document.querySelectorAll('a, [content], [value], [data-phone]').forEach(function (el) {
+      ['href', 'content', 'value', 'data-phone'].forEach(function (name) {
+        if (!el.hasAttribute(name)) return;
+        var value = el.getAttribute(name);
+        replacements.forEach(function (pair) { value = value.split(pair[0]).join(pair[1]); });
+        el.setAttribute(name, value);
+      });
+    });
+  }
 
   // Карта оффера по маршруту: slug + человекочитаемая модель для текстов B2/B3.
   var OFFER_MAP = {
@@ -420,6 +451,7 @@
 
   var ICONS = {
     telegram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.6 18 20.5c-.3 1.4-1.1 1.8-2.2 1.1l-5.1-3.8-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.2 9.5-8.6c.4-.4-.1-.7-.6-.4L4.7 13 0 11.5c-1-.3-1-1 .2-1.4L19 2.8c.9-.3 2 .2 2.4 1.8z"/></svg>',
+    request: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1 2v16h10V7h-4V4H7zm2 6h6v2H9v-2zm0 4h6v2H9v-2z"/></svg>',
     whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-3.9-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .4-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 1.9 1.2 2.2 1.4.3.1.4.1.6-.1.2-.2.7-.8.8-1 .2-.3.4-.2.6-.1l1.8.8c.3.1.4.2.5.3 0 .2 0 .6-.2 1z"/></svg>',
     phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>'
   };
@@ -440,8 +472,8 @@
     mobile.setAttribute('role', 'navigation');
     mobile.setAttribute('aria-label', 'Быстрая связь');
     mobile.innerHTML =
-      '<a class="ast-sticky-cta__btn ast-sticky-cta__btn--telegram" href="' + telegramLink() + '" rel="noopener">' +
-        ICONS.telegram + '<span>Написать в Telegram</span></a>' +
+      '<a class="ast-sticky-cta__btn ast-sticky-cta__btn--request" href="/contacts#lead">' +
+        ICONS.request + '<span>Оставить заявку</span></a>' +
       '<a class="ast-sticky-cta__btn ast-sticky-cta__btn--whatsapp" href="' + whatsappLink() + '" rel="noopener">' +
         ICONS.whatsapp + '<span>WhatsApp</span></a>';
 
@@ -450,14 +482,14 @@
     desktop.setAttribute('aria-label', 'Быстрая связь');
     desktop.innerHTML =
       '<div class="ast-sticky-cta__menu">' +
-        '<a class="ast-sticky-cta__item ast-sticky-cta__item--telegram" href="' + telegramLink() + '" rel="noopener">' +
-          ICONS.telegram + '<span>Написать в Telegram</span></a>' +
+        '<a class="ast-sticky-cta__item ast-sticky-cta__item--request" href="/contacts#lead">' +
+          ICONS.request + '<span>Оставить заявку</span></a>' +
         '<a class="ast-sticky-cta__item ast-sticky-cta__item--whatsapp" href="' + whatsappLink() + '" rel="noopener">' +
           ICONS.whatsapp + '<span>Написать в WhatsApp</span></a>' +
         '<a class="ast-sticky-cta__item ast-sticky-cta__item--phone" href="tel:' + CONFIG.phone + '">' +
           ICONS.phone + '<span>Позвонить: ' + CONFIG.phoneDisplay + '</span></a>' +
       '</div>' +
-      '<button class="ast-sticky-cta__fab" type="button" aria-label="Связаться с нами">' + ICONS.telegram + '</button>';
+      '<button class="ast-sticky-cta__fab" type="button" aria-label="Связаться с нами">' + ICONS.request + '</button>';
 
     desktop.querySelector('.ast-sticky-cta__fab').addEventListener('click', function () {
       desktop.classList.toggle('ast-sticky-cta--open');
@@ -494,6 +526,7 @@
     var s = quizState;
     return 'Здравствуйте! Прошу расчёт стоимости.\n' +
       'Автомобиль: ' + (s.model || 'не выбран') + '\n' +
+      (s.offerId ? 'Предложение: ' + s.offerId + '\n' : '') +
       'Оформление: ' + (s.clientType || '—') + '\n' +
       'Срок: ' + (s.timeline || '—');
   }
@@ -510,7 +543,7 @@
         '<h3 class="ast-quiz__title">Какой автомобиль?</h3>';
       var preset = s.model || pageModel();
       html += '<input class="ast-quiz__input" type="text" data-ast-quiz-model placeholder="Марка и модель" value="' +
-        String(preset).replace(/"/g, '&quot;') + '">' +
+        String(preset).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '">' +
         '<button class="ast-quiz__btn" type="button" data-ast-quiz-next>Дальше</button>';
     } else if (s.step === 2) {
       html += '<p class="ast-quiz__step-label">Шаг 2 из 3</p>' +
@@ -571,6 +604,7 @@
       position: s.position || 'inline',
       channel: 'quiz',
       offer: s.offer || pageOffer(),
+      offer_id: s.offerId || '',
       quiz_model: s.model || '',
       quiz_client_type: s.clientType || '',
       quiz_timeline: s.timeline || '',
@@ -596,11 +630,16 @@
       set('phone', phoneValue);
       set('contact', phoneValue);
       set('model', s.model || '');
+      if (path() === '/' || s.offerId) {
+        set('offer_id', s.offerId || '');
+        set('quoteId', s.offerId || '');
+      }
       set('scenario', 'quiz');
       set('client_type', s.clientType || '');
       set('timeline', s.timeline || '');
       set('source_detail', 'ast_quiz');
       set('comment', 'Квиз avtonds.ru\nАвтомобиль: ' + (s.model || '—') +
+        (s.offerId ? '\nПредложение: ' + s.offerId : '') +
         '\nОформление: ' + (s.clientType || '—') +
         '\nСрок: ' + (s.timeline || '—') +
         '\nТелефон: ' + phoneValue);
@@ -636,6 +675,11 @@
         if (next) {
           var model = overlay.querySelector('[data-ast-quiz-model]');
           quizState.model = model ? model.value.trim() : '';
+          // Изменённая модель уже не относится к выбранному КП.
+          if (quizState.offerId && quizState.model !== quizState.offerModel) {
+            quizState.offerId = '';
+            syncHomeQuizOffer();
+          }
           quizState.step = 2;
           quizRender();
         } else if (back) {
@@ -656,6 +700,7 @@
             position: quizState.position || 'inline',
             channel: 'quiz',
             offer: quizState.offer || pageOffer(),
+            offer_id: quizState.offerId || '',
             quiz_model: quizState.model || '',
             quiz_client_type: quizState.clientType || '',
             quiz_timeline: quizState.timeline || '',
@@ -693,16 +738,47 @@
       clientType: options.clientType || '',
       timeline: '',
       offer: options.offer || pageOffer(),
+      offerId: String(options.offerId || ''),
+      offerModel: String(options.model || '').trim(),
       position: options.position || 'inline'
     };
     // C5: для лизинговых страниц шаг 2 предустановлен «На юрлицо (с НДС)».
     if (!quizState.clientType && quizState.offer === 'leasing') {
       quizState.clientType = 'На юрлицо (с НДС)';
     }
-    quizRender();
+    syncHomeQuizOffer();
     overlay.classList.add('ast-quiz-overlay--open');
+    quizRender();
     trackFormStart(quizState.position, { offer: quizState.offer });
   }
+
+  function syncHomeQuizOffer() {
+    if (path() !== '/') return;
+    // Legacy form bridges read this dataset as a fallback. Clear it for a
+    // generic quiz too, so a previous card cannot leak into the next request.
+    document.documentElement.dataset.astPendingOfferId = quizState.offerId;
+    document.documentElement.dataset.astPendingOfferTitle = quizState.offerId ? quizState.offerModel : '';
+    Array.prototype.forEach.call(document.querySelectorAll(
+      'form [name="offer_id"], form [name="quoteId"]'
+    ), function (input) { input.value = quizState.offerId; });
+  }
+
+  // The old #order workaround captures clicks on document before card handlers.
+  // Capture on window, limited to homepage offer cards, including late renders.
+  window.addEventListener('click', function (event) {
+    if (path() !== '/' || event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    var trigger = event.target && event.target.closest ? event.target.closest('[data-ast-offer-action="order"]') : null;
+    var card = trigger && trigger.closest('.ast-related-offer');
+    var heading = card && card.querySelector('h3, h2');
+    var offerId = trigger && trigger.getAttribute('data-ast-offer-id');
+    if (!heading || !offerId) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    var model = heading.textContent.trim();
+    track('ast_cta_click', ctaParams('offer_card', 'quiz', { offer_id: offerId }));
+    track('offer_order', { offer_id: offerId, scenario: 'offers' });
+    openQuiz({ model: model, offerId: offerId, position: 'offer_card' });
+  }, true);
 
   // Открытие квиза по data-атрибуту с любого элемента.
   document.addEventListener('click', function (event) {
@@ -792,6 +868,8 @@
 
   // C1. Главная: primary hero — квиз, secondary — Telegram; повтор после каталога.
   function enhanceHome() {
+    var root = document.querySelector('.ast-site-root');
+    if (root) root.classList.add('ast-home-conversion');
     var actions = document.querySelector('.ast-hero .ast-actions');
     if (actions && !actions.querySelector('[data-ast-quiz-open]')) {
       actions.insertBefore(htmlToEl(quizBtnHtml('Рассчитать стоимость под ключ')), actions.firstChild);
@@ -804,6 +882,110 @@
       row.setAttribute('data-ast-cta-row', 'home');
       modelsSection.parentNode.insertBefore(row, modelsSection.nextSibling);
     }
+  }
+
+  // Price figures in the existing feed have no stated Russian VAT basis.
+  // Only an explicit taxPricing object may supply net/gross amounts; never
+  // divide a foreign/source price by 1.22. See docs/offer-tax-pricing.md.
+  function taxPriceRows(offer) {
+    var unknown = { net: 'Уточняется', gross: 'Уточняется', known: false };
+    var tax = offer && offer.taxPricing;
+    if (!tax || tax.currency !== 'RUB' || tax.vatRate !== 22 || tax.taxRegime !== 'standard') return unknown;
+    if (tax.evidence !== 'seller_claimed' && tax.evidence !== 'document_confirmed') return unknown;
+    var evidence = {
+      seller_claimed: 'Заявлено продавцом',
+      document_confirmed: 'Подтверждено документами'
+    }[tax.evidence];
+    if (!evidence) return unknown;
+    function valid(amount) { return typeof amount === 'number' && isFinite(amount) && amount >= 0.01 && amount <= Number.MAX_SAFE_INTEGER / 122; }
+    var hasNet = tax.netAmount != null;
+    var hasGross = tax.grossAmount != null;
+    if ((!hasNet && !hasGross) || (hasNet && !valid(tax.netAmount)) || (hasGross && !valid(tax.grossAmount))) return unknown;
+    function cents(amount) { return Math.round(amount * 100); }
+    var net = hasNet ? cents(tax.netAmount) : Math.round(cents(tax.grossAmount) / 1.22);
+    var gross = hasGross ? cents(tax.grossAmount) : Math.round(net * 1.22);
+    if (hasNet && hasGross && Math.abs(gross - Math.round(net * 1.22)) > 1) return unknown;
+    function money(amount) {
+      return (amount / 100).toLocaleString('ru-RU', { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + ' ₽';
+    }
+    return {
+      net: money(net), gross: money(gross), known: true,
+      netEvidence: hasNet ? evidence : 'Расчёт от цены с НДС',
+      grossEvidence: hasGross ? evidence : 'Расчёт от цены без НДС'
+    };
+  }
+
+  function enhanceOfferPrices() {
+    if (['/', '/offers', '/catalog'].indexOf(path()) === -1) return;
+    var source = window.__astPublicOffersData;
+    var offers = Array.isArray(source) ? source : (source && source.offers) || [];
+    if (!Array.isArray(offers)) offers = [];
+    var byId = Object.create(null);
+    offers.forEach(function (offer) { if (offer && offer.id) byId[String(offer.id)] = offer; });
+    var cards = document.querySelectorAll('.ast-related-offer, #offersGrid .offer-card, #offersGrid article, ' +
+      '.ast-public-offer-detail[data-ast-offer-id], .ast-pg-offer[data-ast-offer-card], .ast-pg-offer-detail');
+    Array.prototype.forEach.call(cards, function (card) {
+      var action = card.querySelector('[data-ast-offer-id], [data-ast-order-offer]');
+      var id = card.getAttribute('data-ast-offer-id') || card.getAttribute('data-ast-offer-card') ||
+        (action && (action.getAttribute('data-ast-offer-id') || action.getAttribute('data-ast-order-offer')));
+      var rows = taxPriceRows(byId[id]);
+      var signature = JSON.stringify(rows);
+      var panel = card.querySelector('.ast-tax-prices');
+      if (panel && panel.getAttribute('data-ast-tax-value') === signature) return;
+      if (!panel) {
+        panel = document.createElement('div');
+        panel.className = 'ast-tax-prices';
+        panel.setAttribute('role', 'group');
+        panel.setAttribute('aria-label', 'Цены и НДС');
+        var actions = card.querySelector('.ast-related-offer__actions, .offer-actions, .ast-pg-offer__actions, [data-ast-order-offer]');
+        var body = card.querySelector('.ast-related-offer__body, .offer-card-body, .ast-pg-offer__body') || card;
+        var detailPrice = card.querySelector('.detail-price');
+        var galleryPrice = card.querySelector('.ast-pg-offer__body > strong, .ast-pg-offer-detail > div > h2 + p');
+        if (galleryPrice) galleryPrice.parentNode.insertBefore(panel, galleryPrice.nextSibling);
+        else if (detailPrice) detailPrice.appendChild(panel);
+        else if (actions) actions.parentNode.insertBefore(panel, actions);
+        else body.appendChild(panel);
+      }
+      panel.setAttribute('data-ast-tax-value', signature);
+      panel.innerHTML = '<dl><div><dt>Цена без НДС</dt><dd></dd></div>' +
+        '<div><dt>Цена с НДС' + (rows.known ? ' (22%)' : '') + '</dt><dd></dd></div></dl>' +
+        '<p class="ast-tax-prices__note"></p>';
+      var values = panel.querySelectorAll('dd');
+      [rows.net, rows.gross].forEach(function (value, index) {
+        values[index].textContent = value;
+        if (rows.known) {
+          var label = document.createElement('small');
+          label.textContent = index === 0 ? rows.netEvidence : rows.grossEvidence;
+          values[index].appendChild(label);
+        }
+      });
+      panel.querySelector('.ast-tax-prices__note').textContent = rows.known
+        ? 'Состав поставки и условия оплаты — в расчёте по выбранному автомобилю.'
+        : 'Налоговая база и состав цены пока не подтверждены. Уточним их в расчёте по автомобилю.';
+      var sourcePrice = card.querySelector('.ast-related-offer__price, .detail-price > strong, .ast-pg-offer__body > strong, .ast-pg-offer-detail > div > h2 + p');
+      if (sourcePrice && !card.querySelector('.ast-tax-price-source')) {
+        var sourceLabel = document.createElement('p');
+        sourceLabel.className = 'ast-tax-price-source';
+        sourceLabel.textContent = 'Цена в предложении · заявлено продавцом';
+        sourcePrice.parentNode.insertBefore(sourceLabel, sourcePrice);
+      }
+    });
+  }
+
+  function watchOfferPrices() {
+    if (['/', '/offers', '/catalog'].indexOf(path()) === -1) return;
+    enhanceOfferPrices();
+    if (!window.MutationObserver || !document.body) return;
+    var queued = false;
+    var observer = new MutationObserver(function (changes) {
+      if (queued || !changes.some(function (change) {
+        var node = change.target.nodeType === 1 ? change.target : change.target.parentElement;
+        return node && !node.closest('.ast-tax-prices, .ast-tax-price-source');
+      })) return;
+      queued = true;
+      setTimeout(function () { queued = false; enhanceOfferPrices(); }, 0);
+    });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
   // C2. /bezopasnaya-sdelka: primary — «Обсудить мою сделку» в Telegram,
@@ -990,7 +1172,9 @@
   fetchClientId();
 
   onReady(function () {
+    normalizeLegacyPhone();
     enhancePages();
+    watchOfferPrices();
     decorateMessengerLinks();
     fillFormSources();
     buildSticky();
@@ -999,7 +1183,9 @@
   // Контент Tilda дорисовывается асинхронно — повторяем прогон, как принято на сайте.
   [1500, 4000, 8000].forEach(function (delay) {
     setTimeout(function () {
+      normalizeLegacyPhone();
       enhancePages();
+      enhanceOfferPrices();
       decorateMessengerLinks();
       fillFormSources();
       buildArticleCta();
