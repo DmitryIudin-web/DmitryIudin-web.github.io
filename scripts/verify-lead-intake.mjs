@@ -36,8 +36,13 @@ try {
 }
 
 // По одной странице на каждое семейство форм; --all прогоняет весь список.
+// Семейство bishkek (`auto-iz-bishkeka`, `[data-bishkek-form]`) живёт в ветке
+// лендинга Бишкека и в этой ветке страницы нет — держать его здесь нельзя:
+// локальный сервер отдал бы 404, строка навсегда попадала бы в `broken`, и
+// команда по умолчанию не могла бы завершиться успехом, даже когда все
+// существующие формы в порядке. Проверка пропуска ниже страхует тот же случай
+// для любой страницы, которую унесут из репозитория.
 const FAMILIES = [
-  { slug: 'auto-iz-bishkeka', family: 'bishkek', form: '[data-bishkek-form]' },
   { slug: 'rolls-royce-cullinan', family: 'model_page', form: '[data-ast-model-lead-form]' },
   { slug: 'raschet-avto-pod-klyuch', family: 'intent_landing', form: '[data-intent-form]' },
   { slug: 'volkswagen-tavendor-2026', family: 'tavendor', form: '#tavendor-form' },
@@ -64,7 +69,16 @@ const ATTRIBUTION = ['offer', 'page', 'ym_client_id'];
 
 const UTM = 'utm_source=verify&utm_medium=cpc&utm_campaign=intake_check&utm_content=probe&utm_term=test';
 const out = path.resolve(process.env.QA_OUTPUT || 'build/verify-lead-intake');
-const targets = process.argv.includes('--all') ? [...FAMILIES, ...EXTRA] : FAMILIES;
+const requested = process.argv.includes('--all') ? [...FAMILIES, ...EXTRA] : FAMILIES;
+// Страница, которой нет в этой ветке, не должна ни притворяться успехом, ни
+// вечно висеть в `broken`: отделяем её явной строкой «пропущено».
+const missingPages = requested.filter(t => !fs.existsSync(path.join(t.slug, 'index.html')));
+const targets = requested.filter(t => fs.existsSync(path.join(t.slug, 'index.html')));
+if (!targets.length) {
+  console.error('ни одной из проверяемых страниц нет в репозитории: ' +
+    requested.map(t => t.slug).join(', '));
+  process.exit(2);
+}
 
 function freePort() {
   return new Promise((resolve, reject) => {
@@ -205,9 +219,15 @@ for (const r of rows) {
   );
 }
 
+for (const t of missingPages) {
+  console.log(pad(t.slug, 28), pad(t.family, 16), pad('—', 6), pad('—', 9),
+    pad('пропущено', 24), '— страницы нет в этой ветке');
+}
+
 const broken = rows.filter(r => !r.submitted || r.missingRequired.length || r.repeatId === 'changed');
 fs.writeFileSync(path.join(out, 'intake-report.json'),
-  JSON.stringify({ checkedAt: new Date().toISOString(), liveWrites: false, rows }, null, 2));
+  JSON.stringify({ checkedAt: new Date().toISOString(), liveWrites: false, rows,
+    skipped: missingPages.map(t => ({ slug: t.slug, family: t.family, reason: 'page_not_in_repo' })) }, null, 2));
 
 if (process.argv.includes('--live')) {
   const sample = rows.find(r => r.payload);
@@ -216,7 +236,21 @@ if (process.argv.includes('--live')) {
   console.log('1) Отправьте одну заявку через реальную страницу с пометкой «ТЕСТ» и телефоном +7 900 000-00-01.');
   console.log('2) Проверьте карточку в amoCRM: request_id, source_detail, utm_*, город, бюджет.');
   console.log('3) Результат впишите в docs/tracking-check-2026-09.md §2 и в файл готовности спринта.');
-  if (sample) console.log('\nОбразец payload этой формы:\n' + JSON.stringify(sample.payload, null, 2));
+  if (sample) {
+    console.log('\nОбразец payload этой формы:\n' + JSON.stringify(sample.payload, null, 2));
+    // Та же заявка одной командой — чтобы проверить приёмник без браузера.
+    // Эндпоинт берём из _redirects: /api/max-page/order проксируется на
+    // https://api.avtonds.ru/api/max-page/order. На GitHub Pages _redirects
+    // не исполняется, поэтому в curl сразу боевой адрес.
+    const shq = v => `'${String(v).replace(/'/g, `'\\''`)}'`;
+    const body = JSON.stringify(sample.payload);
+    console.log('\nИли одной командой (отправляет заявку в боевой приёмник — запускать осознанно):');
+    console.log([
+      'curl -sS -X POST https://api.avtonds.ru/api/max-page/order',
+      "  -H 'Content-Type: application/json'",
+      `  -d ${shq(body)}`,
+    ].join(' \\\n'));
+  }
 }
 
 console.log(`\nОтчёт: ${path.join(out, 'intake-report.json')}`);

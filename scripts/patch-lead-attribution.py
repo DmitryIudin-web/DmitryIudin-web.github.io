@@ -30,7 +30,10 @@
 
 `--check` ничего не пишет и возвращает 1, если остались непропатченные страницы.
 Неоднозначный якорь (встретился не один раз) — не повод угадывать: файл
-помечается SKIPPED, код возврата ненулевой.
+помечается SKIPPED, код возврата ненулевой. Так же помечается страница, у
+которой для её семейства формы не выполнено обязательное правило (`FAMILY_RULES`)
+и при этом не найден его якорь: значит, разметку переписали и патч надо
+переделывать вручную, а не считать страницу исправной.
 """
 import pathlib
 import sys
@@ -42,8 +45,23 @@ DOCUMENT_BINDING = b'document.querySelector(\'[data-ast-model-lead-form="1"]\')'
 # Здесь форма ищется внутри контейнера страницы, но лежит вне его: код мёртв.
 ROOT_BINDING = b'root.querySelector("[data-ast-model-lead-form]")'
 
+# Какие правила обязаны быть выполнены для каждого семейства форм. Нужна именно
+# карта, а не «нашёлся якорь — применили»: если якорь правила изменился при
+# ре-экспорте страницы, а маркера применённого патча нет, то без этой карты
+# правило молча пропускалось бы и файл всё равно считался `ok`. Пример:
+# intent-лендинг, у которого переписали выражение request_id, но utm-поля уже
+# на месте, — проходил `--check` без стабильного request_id.
+FAMILY_RULES = {
+    b'data-ast-model-lead-form': ('model_request_id',),
+    b'data-intent-form': ('intent_request_id', 'intent_utm'),
+    b'tavendor-form': ('tavendor_request_id',),
+}
+
 # Правило: (имя, маркер применённого патча, якорь, чем заменить якорь).
 # Во всех случаях в области видимости есть `form` и `data` — проверено по коду.
+# Каждая замена содержит собственный маркер, поэтому «маркер есть в файле»
+# равнозначно «правило выполнено» — и после патча, и если оно было выполнено
+# раньше.
 RULES = [
     (
         'model_request_id',
@@ -109,6 +127,15 @@ def patch_file(path: pathlib.Path, check_only: bool) -> str:
             continue  # правило уже применено к этому файлу
         data = data.replace(anchor, replacement.replace(b'\n', nl), 1)
         changed = True
+
+    # Якорь мог пропасть или измениться — тогда правило не применилось, и
+    # молчать об этом нельзя: страница уйдёт в прод без стабильного
+    # request_id. Ничего не пишем: полупропатченный файл хуже honest-SKIPPED.
+    marks = {name: mark for name, mark, _anchor, _replacement in RULES}
+    required = {name for marker, names in FAMILY_RULES.items()
+                if marker in data for name in names}
+    if any(marks[name] not in data for name in required):
+        return 'skipped'
 
     if changed and not check_only:
         path.write_bytes(data)
