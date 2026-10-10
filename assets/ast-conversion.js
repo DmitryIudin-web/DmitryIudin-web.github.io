@@ -1202,3 +1202,14 @@
     whatsappLink: whatsappLink
   };
 })();
+// AST unify 10.10.2026: единая форма, логотип, безопасная сделка, похожие модели. Откат: ?ast_unify=off или удалить этот блок.
+(function () {
+  try {
+    if (!/(^|\.)avtonds\.ru$/.test(location.hostname) || /[?&]ast_unify=off\b/.test(location.search) || window.__astUnifyLoader) return;
+    window.__astUnifyLoader = 1;
+    var s = document.createElement("script");
+    s.src = "https://dmitryiudin-web.github.io/assets/ast-unify.js?v=20261010";
+    s.defer = true;
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
