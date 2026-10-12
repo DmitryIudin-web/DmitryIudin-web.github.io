@@ -56,7 +56,7 @@
 
   function insert() {
     var section = document.getElementById(id);
-    if (section && section.getAttribute('data-price-scope') === marker) return true;
+    if (section && section.getAttribute('data-price-evidence') === 'observed-listings-20261012') return true;
     if (!section) {
       var anchor = anchorForPage();
       if (!anchor || !anchor.parentElement) return false;
@@ -71,7 +71,7 @@
     section.setAttribute('data-checked-at', '2026-10-12');
     section.innerHTML = '<div class="amr-inner"><span class="amr-eyebrow"></span>' +
       '<h2 id="'+id+'-title">Цены по типу покупки</h2>' +
-      '<p class="amr-meta">BMW X5 30Li, G18 · 2026 · новые или до 1 000 км</p>' +
+      '<p class="amr-meta">BMW X5 30Li, G18 · новые или до 1 000 км</p>' +
       '<div class="amr-grid">' +
       '<div class="amr-cell" data-metric="individual"><span class="amr-label">Средняя · физлицо (3)</span><strong class="amr-value">10 283 000 ₽</strong></div>' +
       '<div class="amr-cell" data-metric="business"><span class="amr-label">Средняя · юрлицо, с НДС (2)</span><strong class="amr-value">12 892 000 ₽</strong></div>' +
