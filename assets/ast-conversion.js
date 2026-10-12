@@ -1214,3 +1214,13 @@
   s.defer=true;
   document.head.appendChild(s);
 })();
+
+/* AutoNDS buyer-specific market categories, 2026-10-12. */
+(function () {
+  var prior = document.querySelector('script[src*="ast-market-prices-20261012-v2.js"]');
+  if (!prior || document.querySelector('script[src*="ast-market-price-categories-20261012.js"]')) return;
+  var s = document.createElement('script');
+  s.src = 'https://dmitryiudin-web.github.io/assets/ast-market-price-categories-20261012.js';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
