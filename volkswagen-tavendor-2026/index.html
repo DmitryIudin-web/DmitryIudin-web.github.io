@@ -264,7 +264,7 @@
         const data=Object.fromEntries(new FormData(form).entries());
         const qs=new URLSearchParams(location.search);
         const payload={
-          request_id:'tavendor-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),
+          request_id:(function(){var s=JSON.stringify(data);if(form.dataset.astReqSig!==s){form.dataset.astReqSig=s;form.dataset.astReqId='tavendor-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8);}return form.dataset.astReqId;})(),
           created_at:new Date().toISOString(),
           name:data.name||'',
           contact:data.contact,
