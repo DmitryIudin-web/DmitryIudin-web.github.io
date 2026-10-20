@@ -1,0 +1,523 @@
+<link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/tilda-scoped.css"><div id="ast-mitsubishi-oem" data-model="mitsubishi_eclipse_cross"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ECLIPSE CROSS</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
+<div class="container-wrap">
+<ul class="fadeInUp">
+<li><a class="current" href="#index" data-oem-tab="index">Обзор</a></li>
+<li><a href="#drive" data-oem-tab="drive">Динамика</a></li>
+<li><a href="#exterior" data-oem-tab="exterior">Экстерьер</a></li>
+<li><a href="#interior" data-oem-tab="interior">Интерьер</a></li>
+<li><a href="#safety" data-oem-tab="safety">Безопасность</a></li>
+<li><a href="#specifications" data-oem-tab="specifications">Характеристики</a></li>
+<li>
+<a href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/3472b5ced4b89d.pdf" target="_blank">Скачать брошюру</a>
+</li>
+</ul>
+</div>
+</div>
+<section data-oem-panel="index">
+<div class="container-fluid cars-first-div all-cars-home video_bg">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/35d93912565d56.mp4" type="video/mp4"></source>Ваш браузер не поддерживает видео HTML5.</video>
+<p class="attrage_video_lay" style="font-size: 46px; color: white;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/f098383e3a2a86.svg">
+<span>Купе-кроссовер, готовый к действию</span>
+<span class="small_text_on_video">Элегантность. Спортивный характер. Новое поколение Eclipse Cross.</span>
+</p>
+</div>
+<div class="container-fluid cars-first-div all-cars-home">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/6d81af5d25888f.webp">
+<h1 class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;">
+<span class="red">ДИНАМИКА</span>Точная управляемость и удовольствие за рулём<span class="normal-text new_font">Передовые технологии полного привода обеспечивают спортивную управляемость и новые ощущения за рулём.</span>
+<a class="learn-more-transparent" href="#drive" data-oem-tab="drive">ПОДРОБНЕЕ О ДИНАМИКЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
+</h1>
+</div>
+<div class="container-fluid cars-first-div all-cars-home">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/9b14ed96b568bd.webp.webp">
+<p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;"><span class="red">ЭКСТЕРЬЕР</span>Элегантный купе-кроссовер<span class="normal-text new_font">Смелые линии и выразительные поверхности создают характер Eclipse Cross — купе-кроссовера для дорог и новых маршрутов.</span>
+<a class="learn-more-transparent" href="#exterior" data-oem-tab="exterior">ПОДРОБНЕЕ ОБ ЭКСТЕРЬЕРЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
+</p>
+</div>
+<div class="container-fluid cars-first-div all-cars-home">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/018b1d9e858d22.webp">
+<p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;"><span class="red">ИНТЕРЬЕР</span>Элегантность и спортивный характер<span class="normal-text new_font">Горизонтальная архитектура передней панели Eclipse Cross размещает приборы и органы управления в пределах удобной досягаемости.</span>
+<a class="learn-more-transparent" href="#interior" data-oem-tab="interior">ПОДРОБНЕЕ ОБ ИНТЕРЬЕРЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
+</p>
+</div>
+<div class="container-fluid cars-first-div all-cars-home bg_black">
+<p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;"><span class="red">БЕЗОПАСНОСТЬ</span>Безопасность без компромиссов<span class="normal-text new_font">Современные системы помощи делают Eclipse Cross уверенным выбором для безопасных поездок.</span>
+<a class="learn-more-transparent" href="#safety" data-oem-tab="safety">ПОДРОБНЕЕ О БЕЗОПАСНОСТИ<span class="glyphicon glyphicon-chevron-right"></span></a>
+</p>
+<img alt="Mitsubishi Eclipse Cross" class="imge_float_right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/4e5d32f01565c3.webp">
+</div>
+<div class="disclaimer container">
+<span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
+</div>
+<div class="vat-notice container">
+<h4>Цены включают НДС</h4>С 1 января 2018 года товары и услуги в ОАЭ облагаются НДС 5%.<br>Все указанные цены включают НДС с 1 января 2018 года.<br>Подробнее о НДСhttps://www.tax.gov.ae/
+</div>
+</section><section data-oem-panel="drive" hidden>
+<div class="container main_title_new">
+<h2>Динамика</h2>
+<p>Турбодвигатель с непосредственным впрыском обеспечивает живые реакции, а постоянный полный привод — устойчивость и уверенное прохождение поворотов.</p>
+</div>
+<div class="container-fluid">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_01.webp">
+</div>
+<div class="container main_title_new" style="padding-top: 50px;">
+<p>СИСТЕМА ПОЛНОГО ПРИВОДА S-AWC</p>
+<h2>Устойчивость полного привода</h2>
+<p style="max-width: 100%;">Система постоянного полного привода управляет тягой и тормозным усилием каждого колеса. Для точного прохождения поворотов и устойчивости она объединяет AYC, ASC и ABS.</p>
+</div>
+<div class="container-fluid">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_02.webp">
+</div>
+<div class="container main_title_new" style="padding-top: 50px;">
+<h2>Подробнее о Super All Wheel Control</h2>
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black white_bg technolog_div" style="align-items: normal;">
+<div class="col-lg-4">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_03.webp">
+<p class="specs_detail1">ЛУЧШЕЕ СЦЕПЛЕНИЕ С ДОРОГОЙ</p>
+<h2 class="specs_headline">Активное управление разворачивающим моментом (AYC)</h2>
+<p class="specs_detail">Разработанная Mitsubishi система AYC улучшает прохождение поворотов, управляя тормозными усилиями на левых и правых колёсах. Это помогает сохранять контроль при резком торможении и ускорении.</p>
+</div>
+<div class="col-lg-4">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_04.webp">
+<p class="specs_detail1">УСТОЙЧИВОСТЬ В РАЗНЫХ УСЛОВИЯХ</p>
+<h2 class="specs_headline">Система курсовой устойчивости (ASC)</h2>
+<p class="specs_detail">Датчики ASC анализируют движение автомобиля. При потере устойчивости система перераспределяет тягу и тормозное усилие между колёсами для сохранения контроля.</p>
+</div>
+<div class="col-lg-4">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_05.webp">
+<p class="specs_detail1">КОНТРОЛЬ ТОРМОЖЕНИЯ</p>
+<h2 class="specs_headline">Антиблокировочная система (ABS)</h2>
+<p class="specs_detail">Антиблокировочная система предотвращает блокировку колёс при торможении, помогая сохранять сцепление с дорогой и управляемость.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid" style="margin-top: 50px;">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">ТУРБОДВИГАТЕЛЬ 1,5 Л С НЕПОСРЕДСТВЕННЫМ ВПРЫСКОМ</p>
+<h2 class="specs_headline">Отзывчивость и экономичность</h2>
+<p class="specs_detail">Бензиновый турбодвигатель 1,5 л с непосредственным впрыском обеспечивает отзывчивое ускорение и тягу, сопоставимую с двигателем 2,4 л, при более экономичном расходе топлива.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_06.webp">
+</div>
+</div>
+</div>
+<div class="container-fluid" style="margin-top: 50px;">
+<div class="container_new">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6" style="padding-left: 10px;">
+<p class="small_txt">ТРИ РЕЖИМА ДВИЖЕНИЯ</p>
+<h2 class="specs_headline">Больше тяги, когда это необходимо</h2>
+<p class="specs_detail">Селектор режимов помогает адаптировать тягу Eclipse Cross к покрытию. Выберите Normal, Gravel или Snow.</p>
+</div>
+<div class="col-lg-6"></div>
+</div>
+</div>
+</div>
+<div class="container-fluid" style="margin-top: 50px;">
+<div class="container_new">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<h2 class="specs_headline" style="padding-left: 10px;">Преимущества каждого режима движения</h2>
+</div>
+<div class="col-lg-6"></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container_new">
+<div class="equal_columns_black white_bg technolog_div" style="align-items: normal;">
+<div class="col-lg-4">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/normal_mode.webp">
+<h2 class="specs_headline">Режим Normal</h2>
+<p class="specs_detail">Для уверенной работы полного привода на разных дорогах.</p>
+</div>
+<div class="col-lg-4">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/gravel_mode.webp">
+<h2 class="specs_headline">Режим Gravel</h2>
+<p class="specs_detail">Для плавного и устойчивого движения по грунтовым дорогам.</p>
+</div>
+<div class="col-lg-4">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/snow_mode.webp">
+<h2 class="specs_headline">Режим Snow</h2>
+<p class="specs_detail">Для устойчивости и уверенности на скользкой дороге.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid top_margin_100">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">ТОЧНО НАСТРОЕННАЯ ПОДВЕСКА</p>
+<h2 class="specs_headline">Плавное и уверенное управление</h2>
+<p class="specs_detail">Подвеска Eclipse Cross настроена для плавного и устойчивого движения с сохранением комфорта.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_014_v2.webp">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container_new">
+<div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_HL_01.webp">
+<p class="small_txt">ПРОЕКЦИОННЫЙ ДИСПЛЕЙ (HUD)</p>
+<h2 class="specs_headline">Важная информация под рукой</h2>
+<p class="specs_detail">Проекционный дисплей HUD расположен над рулевым колесом. Скорость, навигация и предупреждения остаются перед глазами, позволяя следить за дорогой.</p>
+</div>
+<div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_013.webp">
+<p class="small_txt">МНОГОФУНКЦИОНАЛЬНЫЙ ДИСПЛЕЙ</p>
+<h2 class="specs_headline">Важные предупреждения вовремя</h2>
+<p class="specs_detail">Цветной информационный ЖК-дисплей между спидометром и тахометром показывает режим движения и предупреждения систем безопасности. Его расположение позволяет быстро считывать данные и следить за дорогой.</p>
+</div>
+</div>
+</div>
+<div class="disclaimer container">
+<span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
+</div>
+</section><section data-oem-panel="exterior" hidden>
+<div class="container main_title_new">
+<h2>Экстерьер</h2>
+<p>Новое поколение Eclipse Cross продолжает развитие дизайна Mitsubishi, объединяя смелые решения и внимание к качеству.</p>
+</div>
+<div class="container-fluid">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E01.webp">
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">ЭЛЕГАНТНЫЙ СИЛУЭТ КУПЕ-КРОССОВЕРА</p>
+<h2 class="specs_headline">Движение в ритме города</h2>
+<p class="specs_detail">Скульптурный клиновидный кузов Eclipse Cross напоминает атлета, готового к старту.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E02.webp">
+</div>
+</div>
+</div>
+<div class="container-fluid diff_strip">
+<div class="container_new text_right_strip">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E03.webp">
+<div class="strip_black">
+<p class="small_txt">DYNAMIC SHIELD</p>
+<h2 class="specs_headline">Сочетание защиты и динамики</h2>
+<p class="specs_detail">Выразительная передняя часть DYNAMIC SHIELD подчёркивает характер автомобиля и учитывает защиту пассажиров и пешеходов.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid top_margin_100">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">СКУЛЬПТУРНАЯ ФОРМА КУЗОВА</p>
+<h2 class="specs_headline">Устойчивость и точность управления</h2>
+<p class="specs_detail">При взгляде сзади кузов Eclipse Cross напоминает шестигранник: он расширяется посередине и сужается сверху. Такой профиль подчёркивает силу и элегантность купе-кроссовера.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E04.webp" style="width: 100%;">
+</div>
+</div>
+</div>
+<div class="container-fluid" style="margin-top: 50px;">
+<div class="container_new">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E05.webp">
+</div>
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">СВЕТОДИОДНЫЕ ФАРЫ</p>
+<h2 class="specs_headline">Современная передняя и задняя светотехника</h2>
+<p class="specs_detail">Наклонный капот подчёркивает узкие светодиодные дневные ходовые огни. Ниже расположены выразительные блоки светодиодных фар и противотуманных фонарей.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid" style="margin-top: 50px;">
+<div class="container_new">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">18-ДЮЙМОВЫЕ ЛЕГКОСПЛАВНЫЕ ДИСКИ</p>
+<h2 class="specs_headline">Выразительный завершающий штрих</h2>
+<p class="specs_detail">18-дюймовые легкосплавные диски завершают выразительный облик Eclipse Cross.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E06.webp">
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container_new">
+<div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E07.webp">
+<p class="small_txt">ПАНОРАМНАЯ КРЫША С ЭЛЕКТРОПРИВОДОМ</p>
+<h2 class="specs_headline">Наслаждайтесь каждым пейзажем</h2>
+<p class="specs_detail">Панорамная крыша наполняет салон светом и ощущением простора, открывая виды во время путешествий.</p>
+</div>
+<div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E08.webp">
+<p class="small_txt">НОВЫЙ ЦВЕТ WHITE DIAMOND</p>
+<h2 class="specs_headline">Глубокий и насыщенный белый</h2>
+<p class="specs_detail">Палитра Eclipse Cross включает новый четырёхслойный White Diamond. Глубина и блеск покрытия подчёркивают линии кузова.</p>
+</div>
+</div>
+</div>
+<div class="disclaimer container">
+<span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
+</div>
+</section><section data-oem-panel="interior" hidden>
+<div class="container main_title_new">
+<h2>Интерьер</h2>
+<p>Каждая деталь Eclipse Cross создана для комфорта и удобной связи с цифровым миром.</p>
+</div>
+<div class="container-fluid diff_strip">
+<div class="container_new text_right_strip">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_01.webp">
+<div class="strip_black">
+<p class="small_txt">ГОРИЗОНТАЛЬНАЯ АРХИТЕКТУРА</p>
+<h2 class="specs_headline">Всё подчинено водителю</h2>
+<p class="specs_detail">Горизонтальная архитектура панели позволяет управлять функциями с минимумом движений, уделяя больше внимания дороге.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid top_margin_100">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">СИДЕНЬЕ ВОДИТЕЛЯ С РАЗВИТОЙ ПОДДЕРЖКОЙ</p>
+<h2 class="specs_headline">Комфорт в любой поездке</h2>
+<p class="specs_detail">Сиденье водителя поддерживает плечи и бёдра, а мягкая центральная часть помогает пояснице. Продуманная форма сохраняет комфорт и в коротких, и в дальних поездках.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_02.webp" style="width: 100%;">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">ЧЁРНАЯ КОЖАНАЯ ОТДЕЛКА</p>
+<h2 class="specs_headline">Придайте салону индивидуальность</h2>
+<p class="specs_detail">Добавьте салону элегантности: для Eclipse Cross предусмотрена отделка чёрной кожей.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E3.webp">
+</div>
+</div>
+</div>
+<div class="container-fluid" style="margin-top: 50px;">
+<div class="container_new">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/5ca050adf9f209.webp">
+</div>
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">8-ДЮЙМОВАЯ МУЛЬТИМЕДИЙНАЯ СИСТЕМА С ПОДКЛЮЧЕНИЕМ СМАРТФОНА</p>
+<h2 class="specs_headline">На связи даже в дороге</h2>
+<p class="specs_detail">Мультимедийная система Smartphone Link Display Audio (SDA) обеспечивает удобное подключение смартфона.<br>
+<strong>Android Auto™</strong>Подключите Android-смартфон к SDA и управляйте приложениями голосом, уделяя больше внимания дороге.<br><br>
+<strong>Apple CarPlay</strong>
+<br>Подключите iPhone к SDA, чтобы через Siri пользоваться картами, музыкой, звонками и сообщениями, в том числе в дороге.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid top_margin_100">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">ОБОГРЕВ ПЕРЕДНИХ И ЗАДНИХ СИДЕНИЙ</p>
+<h2 class="specs_headline">Комфорт в холодную погоду</h2>
+<p class="specs_detail">Обогрев передних и задних сидений помогает сохранять комфорт независимо от температуры за окном.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_05.webp" style="width: 100%;">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E6.webp" style="width: 100%;">
+</div>
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">ГИБКАЯ ТРАНСФОРМАЦИЯ САЛОНА</p>
+<h2 class="specs_headline">Девять положений наклона задних сидений</h2>
+<p class="specs_detail">В Eclipse Cross достаточно места для пяти взрослых. Задние сиденья имеют девять положений наклона и продольную регулировку для дополнительного пространства ног.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid diff_strip">
+<div class="container_new text_right_strip">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_07.webp">
+<div class="strip_black">
+<p class="small_txt">ПРОСТОРНЫЙ БАГАЖНИК</p>
+<h2 class="specs_headline">Багажник объёмом 331 литр</h2>
+<p class="specs_detail">Багажник увеличен на 10% по сравнению с предыдущим Eclipse Cross: при поднятых задних сиденьях можно разместить три сумки для гольфа диаметром 9,5 дюйма или четыре чемодана.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid top_margin_100">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">СТИЛЬНЫЕ ДЕТАЛИ ИНТЕРЬЕРА</p>
+<h2 class="specs_headline">Практичные решения в салоне</h2>
+<p class="specs_detail">В салоне продуманы полезные детали: держатели бутылок в дверях, два подстаканника в центральной консоли, USB-разъём для зарядки и отделение для телефона.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_09.webp">
+</div>
+</div>
+</div>
+<div class="disclaimer container">
+<span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
+</div>
+</section><section data-oem-panel="safety" hidden>
+<div class="container main_title_new">
+<h2>Безопасность</h2>
+<p>Интеллектуальные датчики наблюдают за обстановкой и предупреждают об опасности. Современные технологии обеспечивают высокий уровень безопасности Eclipse Cross.</p>
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">СИСТЕМА СНИЖЕНИЯ ПОСЛЕДСТВИЙ ФРОНТАЛЬНОГО СТОЛКНОВЕНИЯ (FCM)</p>
+<h2 class="specs_headline">Автоматическое торможение при угрозе столкновения</h2>
+<p class="specs_detail">Камера и лазерный радар FCM наблюдают за дорогой. При угрозе фронтального столкновения система предупреждает водителя и автоматически тормозит, помогая предотвратить удар или снизить его последствия.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES2.webp" style="width: 100%;">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container_new">
+<div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES3.webp">
+<p class="small_txt">ПРЕДУПРЕЖДЕНИЕ О ВЫХОДЕ ИЗ ПОЛОСЫ (LDW)</p>
+<h2 class="specs_headline">Предупреждение о выходе из полосы</h2>
+<p class="specs_detail">Если автомобиль смещается из полосы без включённого указателя поворота, система подаёт звуковое и визуальное предупреждение.</p>
+</div>
+<div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES4.webp">
+<p class="small_txt">КОНТРОЛЬ СЛЕПЫХ ЗОН (BSW)</p>
+<h2 class="specs_headline">Контроль слепых зон</h2>
+<p class="specs_detail">Радарные датчики в заднем бампере обнаруживают автомобили в слепых зонах. Индикатор в зеркале и звуковой сигнал предупреждают водителя об опасности.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">ПРЕДУПРЕЖДЕНИЕ О ПОПЕРЕЧНОМ ДВИЖЕНИИ СЗАДИ (RCTA)</p>
+<h2 class="specs_headline">Помощь при движении задним ходом</h2>
+<p class="specs_detail">При выезде задним ходом датчики в заднем бампере обнаруживают приближающийся транспорт. Система подаёт сигнал и предупреждение на информационном дисплее.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES5.webp" style="width: 100%;">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">СИСТЕМА ПРЕДОТВРАЩЕНИЯ СЛУЧАЙНОГО УСКОРЕНИЯ (UMS)</p>
+<h2 class="specs_headline">Защита от резкого ускорения на парковке</h2>
+<p class="specs_detail">Если передние или задние датчики обнаружат препятствие, раздастся сигнал и появится предупреждение. При случайном резком нажатии на акселератор система также ограничит мощность двигателя.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES7.webp">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container_new">
+<div class="equal_columns_black white_bg">
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES8.webp">
+</div>
+<div class="col-lg-6">
+<div class="container_new">
+<p class="small_txt">АВТОМАТИЧЕСКИЙ ДАЛЬНИЙ СВЕТ (AHB)</p>
+<h2 class="specs_headline">Автоматическое переключение света</h2>
+<p class="specs_detail">AHB автоматически переключает ближний и дальний свет с учётом автомобилей впереди, позволяя держать руки на руле.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container_new">
+<div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES9.webp">
+<p class="small_txt">СЕМЬ ПОДУШЕК БЕЗОПАСНОСТИ SRS</p>
+<h2 class="specs_headline">Защита всех пассажиров</h2>
+<p class="specs_detail">Фронтальные и боковые подушки, шторки и коленная подушка водителя помогают защитить пассажиров при столкновении.</p>
+</div>
+<div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES010.webp">
+<p class="small_txt">ЗАЩИТНАЯ КОНСТРУКЦИЯ КУЗОВА RISE</p>
+<h2 class="specs_headline">Поглощение энергии удара</h2>
+<p class="specs_detail">Кузов RISE эффективно поглощает энергию удара и помогает сохранять целостность пассажирского салона при столкновении.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid top_margin_100">
+<div class="equal_columns_black">
+<div class="col-lg-6 black_bg">
+<div class="container_new">
+<p class="small_txt">ПОМОЩЬ ПРИ ТРОГАНИИ НА ПОДЪЁМЕ (HSA)</p>
+<h2 class="specs_headline">Без отката на подъёме</h2>
+<p class="specs_detail">HSA помогает предотвратить откат на крутом подъёме, удерживая тормозное усилие до двух секунд после отпускания педали тормоза.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES011.webp" style="width: 100%;">
+</div>
+</div>
+</div>
+<div class="disclaimer container">
+<span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
+</div>
+</section><section data-oem-panel="specifications" hidden>
+<div class="container-fluid specifications">
+<div class="specs-img container">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/specs/eclipse/02.jpg">
+</div>
+</div>
+<div class="disclaimer container">
+<span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
+</div>
+</section><section class="ast-oem-request" id="ast-request"><h2>Рассчитать под мою комплектацию</h2><p>Оставьте контакт. Подготовим расчёт Mitsubishi Eclipse Cross с доставкой в ваш город и проверим доступные комплектации.</p><form class="ast-oem-form" data-ast-lead-form data-model-id="mitsubishi_eclipse_cross" aria-label="Расчёт Mitsubishi Eclipse Cross"><input type="hidden" name="model" value="Mitsubishi Eclipse Cross"><input type="hidden" name="model_id" value="mitsubishi_eclipse_cross"><input type="hidden" name="brand" value="Mitsubishi"><input type="hidden" name="market" value="UAE GCC"><input type="hidden" name="landing_variant" value="oem"><input type="hidden" name="source" value="avtonds_site"><input type="hidden" name="site_source" value="avtonds.ru"><input type="hidden" name="source_detail" value="mitsubishi_eclipse_cross_oem"><input type="hidden" name="policy_url" value="https://avtonds.ru/privacy"><input type="hidden" name="consent_version" value="privacy-2026-05-12"><input type="hidden" name="comment" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign_id" value=""><input type="hidden" name="utm_group_id" value=""><input type="hidden" name="utm_source_type" value=""><input type="hidden" name="utm_position_type" value=""><input type="hidden" name="utm_device" value=""><input type="hidden" name="utm_retargeting" value=""><input type="hidden" name="yclid" value=""><label for="ast-contact">Телефон или Telegram</label><input id="ast-contact" name="contact" placeholder="+7… или @username" autocomplete="tel" required><details><summary>Указать комплектацию и пожелания</summary><div class="ast-oem-options"><div><label for="ast-trim">Комплектация</label><input id="ast-trim" name="trim" placeholder="Нужная версия или помогите выбрать"></div><div><label for="ast-color">Цвет кузова</label><input id="ast-color" name="exterior_color" placeholder="Желаемый цвет"></div><div><label for="ast-city">Город доставки</label><input id="ast-city" name="city" autocomplete="address-level2" placeholder="Ваш город"></div><div><label for="ast-deal">Формат покупки</label><select id="ast-deal" name="deal_format"><option>Частная покупка</option><option>Юрлицо с НДС</option><option>Лизинг</option></select></div></div><label for="ast-wishes">Дополнительные пожелания</label><textarea id="ast-wishes" name="oem_wishes" rows="2" placeholder="Цвет салона, бюджет, срок покупки"></textarea></details><label class="ast-oem-consent"><input type="checkbox" name="consent" value="yes" required><span>Согласен на обработку персональных данных по <a href="https://avtonds.ru/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>. ООО «АСТ», ИНН 6313553773.</span></label><button type="submit">Получить расчёт</button><p data-ast-unified-status role="status" aria-live="polite"></p></form></section><footer class="ast-oem-contacts"><div><strong>AST · Поставка автомобилей</strong><small>ООО «АСТ» · ИНН 6313553773 · ОГРН 1176313080239</small></div><div><a href="tel:+79991583458">+7 999 158-34-58</a><br><a href="mailto:zakaz@avtonds.ru">zakaz@avtonds.ru</a></div><div><a href="https://t.me/ASTavtomoto" target="_blank" rel="noopener">Telegram AST</a><br><a href="https://avtonds.ru/contacts">Все контакты</a> · <a href="https://avtonds.ru/privacy">Политика</a></div></footer><div class="ast-oem-mobile-cta"><a href="tel:+79991583458">Позвонить</a><a href="#ast-request">Получить расчёт</a></div></div><script src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/tilda-interactions.js"></script>

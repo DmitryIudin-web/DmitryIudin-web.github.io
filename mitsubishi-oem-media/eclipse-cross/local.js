@@ -1,0 +1,1 @@
+document.querySelectorAll('video').forEach(v=>{v.muted=true;v.play().catch(()=>{});new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?v.play().catch(()=>{}):v.pause()),{threshold:.15}).observe(v)});
