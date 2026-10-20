@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="mitsubishi_asx"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ASX</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
+<style data-ast-asx-annotation="20261020">#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control span,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{font:400 13px/1.55 Arial,Helvetica,sans-serif!important;color:#555!important;letter-spacing:normal!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control{display:flex!important;align-items:flex-start;gap:10px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__indicator{flex-shrink:0;margin:2px 0 0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{text-decoration:underline!important}#ast-mitsubishi-oem #bx-pager01 a:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}#ast-mitsubishi-oem #bx-pager01 a:focus-visible{outline:2px solid #333!important;outline-offset:3px}</style><link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="mitsubishi_asx"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ASX</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
 <div class="container-wrap">
 <ul class="fadeInUp">
 <li><a class="current" href="#index" data-oem-tab="index">Обзор</a></li>
@@ -11,15 +11,10 @@
 </div>
 </div>
 <section data-oem-panel="index">
-<div class="container-fluid cars-first-div all-cars-home video_bg"><button aria-label="Смотреть видео Mitsubishi ASX" class="video-poster" type="button"><img alt="Mitsubishi ASX" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/eb14a1bf35eeb6.png.webp"><span>▶ Смотреть видео</span></button>
-<iframe allow="fullscreen; picture-in-picture" allowfullscreen="1" data-src="https://www.youtube-nocookie.com/embed/GBLP8M0xXQM?rel=0" frameborder="0" height="100%" hidden="" id="mainvis_pla" loading="lazy" name="mainvis_pla" title="Mitsubishi ASX — презентация" width="100%"></iframe>
-<h1 class="heading-cars bottom-5-left-10 animate-fade-in" style="font-size: 46px; color: white;">ASX<span>Создан для приключений</span>
-</h1>
-</div>
 <div class="container-fluid cars-first-div all-cars-home" style="max-height: 850px;">
 <img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/eb14a1bf35eeb6.png.webp">
-<p class="heading-cars bottom-5-left-10 animate-fade-in" style="font-size: 46px; color: white;">ASX<span>Создан для приключений</span>
-</p>
+<h1 class="heading-cars bottom-5-left-10 animate-fade-in" style="font-size: 46px; color: white;">ASX<span>Создан для приключений</span>
+</h1>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
 <img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/5e85fdf737d856.jpg.webp">
