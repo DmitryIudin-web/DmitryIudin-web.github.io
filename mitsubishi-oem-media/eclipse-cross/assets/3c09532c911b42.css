@@ -1,0 +1,3246 @@
+/*
+ Theme Name:   Mitsubishi
+ Theme URI:    http://amcuae.com
+ Description:  Mitsubishi Theme 
+ Author:       Z CREATIVE TECH
+ Author URI:   https://zcreativetech.com
+ Template:     twentysixteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-sixteen-child
+*/
+@import url(f5274f7a18a210.css);
+
+img
+{
+   max-width: 100%;
+   height: auto;
+}
+*
+{
+    position: relative;
+    box-sizing: border-box;
+    
+}
+body, html{height: 100%; min-height: 100%;}
+.modal-header .close{
+        margin-top: 2px;
+    margin-right: 9px;
+    
+}
+.pd-l-0{
+    padding-left: 0px;
+}
+.pd-r-0 {
+    padding-right: 0px;
+}
+.p-l-15{
+    padding-left: 15px;
+}
+.modal-open .modal{
+        background: rgba(0, 0, 0, 0.8);
+}
+.modal-header{
+    padding: 0;
+    border: none;
+}
+.modal-body{
+    padding: 0;
+}
+.modal-footer{
+    padding-top: 0;
+    border: none;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.desktop_pop{
+    
+}
+.mobile_pop{
+    display: none;
+}
+div
+{
+    position: relative;
+}
+.container
+{
+    max-width: 1200px;
+    padding: 0;
+}
+.container-fluid
+{
+    padding: 0;
+}
+.container-wrap
+{
+    max-width: 1200px;
+    margin: auto;
+}
+@font-face {
+    font-family: "HelveticaNeueLTStd-Md";
+    src: url(494a60c3956bd0.otf) format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HHelveticaNeue";
+    src: url(3278826decd7bc.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HHelveticaBdCn";
+    src: url(e054f0fc412594.otf) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HHelveticaNeu-Roman";
+    src: url(9c6ad634c75b0d.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+        font-family: "MMC-Regular";
+        src: url(cb4f6666fe3c39.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+body
+{
+    padding: 0;
+    margin: 0;
+    font-family: "HelveticaNeueLTStd-Md", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.float-left {float: left;}
+.float-right {float: right;}
+.clear
+{
+    clear: both;
+}
+
+.promotion-images img:hover{cursor: move;}
+
+header
+{
+    height: 90px;
+    
+    z-index: 99;
+}
+.shadow{
+    box-shadow: rgba(0, 0, 0, 0.247059) 0px 3px 3px 0px;
+}
+.logo img{
+    padding-top: 5px;
+}
+.hidden{
+     opacity:0;
+     display: block !important;
+}
+.visible{
+     opacity:1;
+}
+.top-bar-nav ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.top-bar-nav li
+{
+    display: inline-block;
+}
+
+.promotion-single-img{
+    display: none;
+}
+.top-bar-nav li a
+{
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 1px solid #cccccc;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+.top-bar-nav li a:hover
+{
+    color: #e6252d;
+    text-decoration: none;
+}
+.top-bar-nav li:nth-child(6){
+    margin-right: 15px;
+	margin-left: 5px;
+}
+.top-bar-nav li:nth-child(6) a{
+    border-right: none;
+    
+}
+.top-bar-nav li:nth-child(3) a{
+    
+    
+}
+
+.top-bar-nav li:last-child a
+{
+    border-right: none;
+    padding-right: 0px;
+}
+.head-phone{
+    font-size: 18px;
+}
+.need-help{
+    font-size: 13px;
+    cursor: pointer;
+}
+.head-phone{
+    border: 2px solid white;
+    border-radius: 7px;
+    width: 170px;
+    background-image: url(05d08435f054f0.png.webp);
+    background-repeat: no-repeat;
+    background-position: 7%;
+    
+}
+.head-phone a{
+    font-size: 17px !important;
+}
+.need-help ul{
+    position: absolute;
+    min-width: 230px;
+    right: 0;
+    top: 27px;
+    padding-top: 0;
+    padding-bottom: 5px;
+    z-index: 999;
+    background: #bcbdc1;
+    
+}
+#helpdrop{
+    display: none;
+}
+.glyphicon-menu-up{
+    display: none;
+}
+.dropopen .glyphicon-menu-down{
+    display: none;
+}
+.dropopen .glyphicon-menu-up{
+    display: inline-block;
+    color: red;
+}
+.need-help ul li{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+}
+.need-help ul li img{
+    padding-right: 10px;
+}
+.need-help ul li{
+    display: block;
+}
+.need-help ul li img{
+    float: left;
+    max-height: 40px;
+}
+.current
+{
+    background: #e6252d !important;
+    color: white !important;
+}
+.current-force{
+    background: #e6252d;
+    color: white !important;
+}
+.no-padding {padding: 0;}
+.top-nav
+{
+    padding-top: 63px;
+    padding-left: 30px;
+}
+.top-social, .top-search
+{
+    padding-top: 60px;
+    z-index: 1;
+}
+.top-nav ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    
+}
+.top-nav ul li
+{
+    display: inline-block;
+    position: relative;
+}
+.top-nav ul li a
+{
+    display: inline-flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #555555;
+    text-decoration: none;
+}
+/* Submenu chevron indicator on desktop navigation */
+.top-nav ul li a .top-nav-arrow {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 6px;
+    line-height: 1;
+    color: #777777;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.top-nav ul li a:hover,
+.top-nav ul li:hover > a,
+.top-nav ul li a.current {
+    background: #e6252d;
+    color: white !important;
+    text-decoration: none;
+}
+.top-nav ul li a:hover .top-nav-arrow,
+.top-nav ul li:hover > a .top-nav-arrow,
+.top-nav ul li a.current .top-nav-arrow {
+    color: #ffffff;
+    transform: rotate(180deg);
+}
+.top-social i
+{
+    color: #9d9d9c;
+    font-size: 28px;
+    padding-right: 5px;
+}
+.top-social a:last-child i
+{
+    padding-right: 0px;
+}
+.top-social i:hover
+{
+    color: #e6252d;
+}
+.top-search input
+{
+    border: 1px solid #cccccc;
+    width: 200px;
+    height: 27px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+.search-submit{
+    width: 41px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    background-image: url(http://www.habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/search-icon.jpg);
+    text-indent: -10000px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+.search_page .entry-title{
+    font-size: 16px;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+.top-search img
+{
+    display: inline-block;
+    margin-bottom: 3px;
+}
+.top-nav ul.sub-menu{
+    position: absolute;
+    width: 300px;
+    min-height: 100px;
+    background: #e6252d;
+    color: white;
+    top: 22px;
+    left: 0;
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.top-nav ul li:hover .sub-menu{
+    display: block;
+}
+.top-nav .sub-menu li{
+    display: block !important;
+    
+}
+.top-nav ul.sub-menu li a{
+    display: block !important;
+    color: white !important;
+    padding: 10px 10px;
+}
+.top-nav ul.sub-menu li a:hover{
+    background: white !important;
+    color: #e6252d !important;
+}
+
+.fa-facebook:hover
+{
+    color: rgb(59, 89, 152) !important;
+}
+.fa-instagram:hover
+{
+    color: #8a3ab9 !important;
+}
+.fa-twitter:hover{
+    color: #00aced !important;
+}
+.top-phone-icon{
+    position: absolute;
+    text-align: right;
+    right: 0;
+    height: auto;
+    padding-top: 10px;
+    z-index: 2;
+}
+.top-phone-icon a{
+    padding: 10px;
+    padding-left: 24px;
+    padding-right: 20px;
+    background: #e6252d;
+    color: white;
+    display: inline-block;
+    
+    
+}
+.phone-call{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/phone-icon.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+}
+.information{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/info.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+}
+
+.car-menu{
+    background-color: #ddd;
+    display: none;
+}
+.all-models-menu{
+    
+    height: 500px;  
+    padding: 20px;
+}
+.category-title{
+    border-bottom: 1px solid #fff;
+    display: block;
+    font-size: 20px;
+}
+.category-title:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #afafaf;
+    border-top: .0625rem solid #afafaf;
+}
+.single-model{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.single-model a{
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+.single-model a:hover {
+    color: #e6252d;
+}
+.single-model button{
+    font-size: 12px;
+    padding: 3px 10px;
+    display: none;
+}
+/*.single-model:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #afafaf;
+    border-top: .0625rem solid #afafaf;
+} */
+.menu-car-title{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.menu-car-price{
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    padding-bottom: 5px;
+    color: #8a8a8a;
+}
+.single-model span{
+    display: block;
+    letter-spacing: 1px;
+    text-align: center;
+    
+}
+.single-model span strong{
+}
+.single-model img{
+    display: block;
+}
+.single-model img:hover
+{
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; 
+    transform:scale(1.1);
+    -ms-transform:scale(1.1); 
+    -moz-transform:scale(1.1); 
+    -webkit-transform:scale(1.1); 
+    -o-transform:scale(1.1); 
+}
+.new-banner{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+
+.slider
+{
+    max-width: 1800px;
+    min-height: 400px;
+    height: auto;
+    margin: auto;
+}
+nivo-directionNav
+{
+    position: absolute;
+    z-index: 999;
+    right: 150px;
+    bottom: 85px;
+}
+.nivo-controlNav
+{
+    position: absolute !important;
+    z-index: 100;
+    bottom: -5%;
+    right: 10%;
+}
+.theme-light .nivo-controlNav a
+{
+    width: 41px !important;
+    height: 40px !important;
+    
+    background:url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/slider/arrow-off.png) no-repeat !important;
+}
+.theme-light .nivo-controlNav a.active
+{
+    background:url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/slider/arrow-on.png) no-repeat !important;
+}
+.models-home
+{
+    
+    width: 100%;
+    float: left;
+    height: auto;
+}
+
+.title
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: auto;
+    width: 100%;
+    float: left;
+}
+.title img
+{
+    display: block;
+    margin: auto;
+}
+.home-models-div
+{
+    width: 100%;
+    height: 200px;
+    float: left;
+    padding: 0 50px 0 50px;
+}
+.model-div
+{
+    width: 25%;
+    float: left;
+    height: auto;
+}
+.model-div img
+{
+    display: block;
+    margin: auto;
+}
+.slick-next
+{
+    right: 0px;
+    bottom: 43%;
+    position: absolute;
+    cursor: pointer;
+}
+.slick-prev
+{
+    left: 0px;
+    bottom: 43%;
+    position: absolute;
+    cursor: pointer;
+}
+.slick-prev-promotion
+{
+    cursor: pointer;
+    display: none !important;
+}
+.slick-next-promotion
+{
+    right: 40%;
+    top: -60px;
+    position: absolute;
+    cursor: pointer;
+    display: none !important;
+}
+span.model-name
+{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+}
+span.model-price
+{
+    display: block;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 13px;
+    color: #8a8a8a;
+}
+.model-div a{
+    text-decoration: none;
+}
+.model-div a:hover{
+    text-decoration: none;
+}
+.model-div a:hover span.model-name{
+    color: #337ab7;
+    text-decoration: none;
+}
+.prmotions-home-title
+{
+    width: 100%;
+    height: 80px;
+    background: #e0121c;
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/prmotions/promotion-title1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.promotion-images
+{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.promotion-images img
+{
+    display: block;
+    margin: auto;
+}
+
+.whats-more
+{
+    width: 100%;
+    min-height: 500px;
+    background: #e2e2e2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+}
+.whats-more-div
+{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.row-2-col-1
+{
+    height: 398px;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/02.jpg) no-repeat center;
+}
+.row-2-col-2
+{
+    height: 398px;
+}
+
+.row-2-col-3
+{
+    height: 398px;
+}
+.row-2-col-2-row1
+{
+    height: 50%;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/03.jpg) no-repeat center;
+}
+.row-2-col-2-row2
+{
+    height: 50%;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/05.jpg) no-repeat center;
+}
+.row-2-col-3-row1
+{
+    height: 50%;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/04.jpg) no-repeat center;
+}
+.row-2-col-3-row2
+{
+    height: 50%;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/06.jpg) no-repeat center;
+}
+
+.whats-more-title img
+{
+    padding-top: 70px;
+    display: block;
+    margin: auto;
+}
+.row-1
+{
+    
+}
+.row-1-col-2
+{
+    height: 199px;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/01.jpg) no-repeat center;
+}
+
+.whats-more-name
+{
+    display: block;
+    position: absolute;
+    
+    width: 100%;
+    padding-left: 20px;
+    color: white;
+    
+    bottom: 0;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+    
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.whats-more-name span
+{
+    display: block;
+}
+.whats-more-name span a{
+    text-decoration: none;
+    color: white;
+}
+.whats-more-name span a:hover{
+    color: #e6252d ;
+}
+.name-title
+{
+   font-size: 17px; 
+}
+.name-text
+{
+    font-size: 12px;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.whats-more-name-mitsubishi
+{
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding-left: 40px;
+    color: white;
+    font-size: 25px;
+    bottom: 35px;
+}
+.news-events-home
+{
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    float: left;
+}
+.news-events-row
+{
+    width: 100%;
+    height: auto;
+    float: left;
+        
+}
+.news-events-row img
+{
+    display: block;
+    margin: auto;
+	max-width: 290px;
+}
+.news-title img
+{
+    display: block;
+    margin: auto;
+    padding-bottom: 50px;
+}
+.news-title{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.news-title span{
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    font-size: 45px;
+    border-bottom: 2px solid #e6252d;
+}
+.news-events-div
+{
+    width: 33.3%;
+    float: left;
+}
+.news-name
+{
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    color: #555555;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 15px;
+}
+.home-page-news .news-name{
+        max-width: 300px;
+    margin: auto;
+}
+.news-events-div a:hover{
+    text-decoration: none;
+}
+.news-date-on-single{
+    display: block;
+    padding-bottom: 20px;
+}
+.news-button
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.news-button button
+{
+    border: 1px solid #cccccc;
+    border-bottom: 0px;
+    color: #e6252d;
+    background: transparent;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.247059) 0px 3px 3px 0px;
+}
+.news-button button a{
+    color: #e6252d;
+    text-decoration: none;
+}
+.news-button a:hover{
+    color: white !important;
+    text-decoration: none;
+}
+.news-button button:hover
+{
+    background: #e6252d;
+    color: white;
+    border: 1px solid #e6252d;
+    border-bottom: 0px;
+}
+.social-title
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    
+    
+}
+.social-title img
+{
+    display: block;
+    margin: auto;
+}
+.social-title span{
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    font-size: 45px;
+    border-bottom: 2px solid #e6252d;
+    margin-bottom: 30px;
+}
+.bottom-social
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-bottom: 50px;
+}
+.bottom-social ul
+{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.bottom-social li
+{
+    display: inline-block;
+    
+}
+.bottom-social li img:hover
+{
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; 
+    transform:scale(1.1);
+    -ms-transform:scale(1.1); 
+    -moz-transform:scale(1.1); 
+    -webkit-transform:scale(1.1); 
+    -o-transform:scale(1.1); 
+}
+footer
+{
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    float: left;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/footer-bg-pattern.jpg) repeat;
+}
+.bottom-title
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+.bottom-title span
+{
+    width: 60%;
+    display: block;
+    color: #555555;
+    border-bottom: 1px solid #555555;
+    font-size: 25px;
+    margin-left: 20px;
+    
+    
+}
+.bottom-ul-title
+{
+    font-size: 18px;
+    color: white;
+    display: block;
+    
+    width: 100%;
+    float: left;
+}
+.bottom-col-1
+{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+footer ul
+{
+    margin: 0;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    padding-top: 10px;
+    
+    width: 100%;
+    float: left;
+}
+footer ul li a
+{
+    text-decoration: none;
+    color: #878787;
+}
+footer ul li a:hover
+{
+    text-decoration: underline;
+    color: white;
+}
+.footer-strip
+{
+    width: 100%;
+    min-height: 130px;
+    height: auto;
+    float: left;
+    background: #222222;
+}
+.footer-strip ul
+{
+    margin: 0;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    line-height: 130px;
+    
+}
+.footer-strip ul li 
+{
+    text-decoration: none;
+    color: #878787;
+    display: inline-block;
+    padding-right: 20px;
+}
+.footer-strip ul li a
+{
+    text-decoration: none;
+    color: #878787;
+    
+}
+.footer-strip img
+{
+    float: right;
+    padding-top: 20px;
+}
+.top-search-temp
+{
+    display: none;
+}
+.cars, .suv{
+    border-bottom: 1px solid #fff;
+}
+.cars::after, .suv::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #afafaf;
+    border-top: .0625rem solid #afafaf;
+}
+.cars-top-bar{
+    background: #555555;
+    height: 40px;
+}
+.cars-top-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cars-top-bar ul li{
+    display: inline-block;
+    float: left;
+}
+.cars-top-bar ul li:hover{
+   
+}
+.cars-top-bar ul li a{
+    display: inline-block;
+    color: white;
+    list-style-type: none;
+    border-right: 1px solid #909090;
+    padding-left: 15px;
+    padding-right: 14px;
+}
+.cars-top-bar ul li a:hover{
+    text-decoration: none;
+     background: #393838;
+    
+}
+.download_bro_ul{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    line-height: normal !important;
+    display: none;
+    background: #555555;
+}
+.download_bro_ul li{
+    display: block !important;
+    width: 100%;
+}
+.download_bro_ul li a{
+    display: block !important;
+    border: none !important;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cars-top-bar ul li:hover .download_bro_ul{
+    display: block;
+}
+.all-cars-home{
+    max-width: 1500px;
+    margin: auto;
+    max-height: 680px;
+    overflow: hidden;
+}
+.all-cars-home img{
+    display: block;
+    margin: auto;
+}
+.cars-first-div img{
+    display: block;
+    margin: auto;
+}
+.cars-first-div{
+    
+}
+.cars-first-div p{
+    max-width: 500px;
+}
+p.heading-cars{
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    left: 10%;
+    position: absolute;
+    line-height: normal;
+    z-index: 1;
+    color: white;
+    
+}
+p.top-20-left-10{
+    top: 25%;
+}
+p.top-5-left-10{
+    top: 5%;
+}
+p.bottom-5-left-10{
+    bottom: 5%;
+}
+p.top-5-right-5{
+    top: 5%;
+    right: 5% !important;
+    left: initial;
+}
+p.top-5-right-10{
+    top: 5%;
+    right: 10% !important;
+    left: initial;
+}
+p.top-20-right-10{
+    top: 20%;
+    right: 10% !important;
+    left: initial;
+}
+p.top-20-left-0{
+    top: 20%;
+    left: 0% !important;
+    right: initial;
+}
+p.top-20-right-0{
+    top: 20%;
+    right: 0% !important;
+    left: initial;
+}
+p.bottom-10-right-10{
+    bottom: 10%;
+    right: 10% !important;
+    left: initial;
+}
+.cars-first-div p span{
+    display: block;
+    font-size: 22px;
+}
+.red{
+    color: #e0121c;
+}
+span.normal-text{
+    font-size: 15px !important;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width: 350px;
+}
+a.learn-more-transparent{
+    color: white !important;
+    text-decoration: none;
+    display: inline-block;
+    background: rgba(224, 18, 28, 0.7);
+    font-size: 15px;
+    padding: 10px 25px;
+}
+a.learn-more-transparent .glyphicon{
+    display: inline-block !important;
+    font-size: 15px;
+}
+a.learn-more-transparent:hover{
+    background: #e0121c;
+}
+.titlearea01{
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.titlearea01 h2{
+    display: inline-block;
+    
+    width: 300px;
+    background: #e6252d;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.titlearea01 img{
+    display: block;
+    margin: auto;
+}
+.video-link{
+    z-index: 999;
+position: absolute;
+bottom: 10%;
+left: 10%;
+}
+.video{
+    
+max-width: 200px;
+
+}
+.exterior-highlights h2{
+    background: #555555;
+}
+.exterior-highlights img{
+    display: block;
+    margin: auto;
+}
+.exterior-highlights span{
+    display: block;
+    padding-top: 5px;
+    text-align: center;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.exterior-highlights .exterior-row div{
+    padding-bottom: 30px;
+}
+.interior{
+    max-width: 960px;
+    margin: auto;
+}
+.interior p{
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.container-performance{
+    max-width: 1440px;
+    margin: auto;
+    background-color: #000;
+    min-height: 500px;
+}
+.performance h3{
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 30px;
+}
+.performance img{
+    display: block;
+    margin: auto;
+}
+.performance p{
+    color: white;
+    max-width: 400px;
+    margin: auto;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 10px 20px;
+}
+.performance span{
+    display: block;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+.safety h3{
+    padding-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.safety img{
+    display: block;
+    margin: auto;
+}
+.safety p{
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: justify;
+}
+.safety h4{
+    display: inline-block;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+.header-image{
+    padding-bottom: 0;
+}
+.header-image img{
+    display: block;
+    margin: auto;
+}
+.inner-pages-breadcrumbs{
+    border-bottom: 1px solid #ccc;
+}
+.about-ahm{
+    min-height: 760px;
+    background: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/about/page-bg.png) no-repeat right;
+}
+.inner-page-large-heading{
+    text-align: center;
+    
+    margin: auto;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.inner-page-large-heading h1{
+    display: inline-block;
+    padding-bottom: 3px;
+    border-bottom: 4px solid #e6252d;
+    margin-bottom: 30px;
+    
+}
+.about-ahm p, .company-profile p{
+    color: #555555;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: justify;
+    font-size: 17px;
+}
+.company-profile p{
+    padding: 50px 50px;
+}
+
+.company-profile p span{
+    display: block;
+font-size: 20px;
+text-align: left;
+line-height: normal;
+font-weight: bold;
+padding-bottom: 20px;
+}
+.browser-collection-img img{
+    display: block;
+    margin: auto;
+   
+}
+.service .inner-page-large-heading{
+    text-align: left;
+}
+.service-left-content{
+    
+}
+.service-right-menu{
+    min-height: 500px;
+    border-left: 1px solid #ccc;
+    padding-left: 0;
+}
+.service-right-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.service-right-menu ul li{
+    display: block;
+}
+.service-right-menu ul li a{
+    display: block;
+    padding: 10px;
+    color: #555555;
+}
+.service-right-menu ul li a:hover{
+    text-decoration: none;
+    background: #e0121c;
+    color: white;
+}
+.arrow-before-ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-top: 25px;
+}
+.arrow-before-ul li{
+    display: block;
+    padding-bottom: 20px;
+    color: #555555;
+    font-size: 15px;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.arrow-before-ul li:before{
+    content: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/li-before.png);
+    left: -30px;
+    position: absolute;
+    top: 3px;
+}
+
+.service p{
+    color: #555555;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: justify;
+    font-size: 15px;
+    padding-right: 20px;
+}
+.service-left-content h2{
+    color: #555555;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0;
+    
+}
+.locations-row{
+   
+}
+.locations-row div{
+    
+    padding-bottom: 30px;
+}
+.locations-row p{
+    
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+.locations-row iframe{
+    margin-bottom: 20px;
+}
+.request-a-part-form .form-control{
+    border-radius: 0;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.request-a-part-form label{
+    font-weight: normal;
+}
+.request-a-part-form button {
+    border: 1px solid #cccccc;
+    border-bottom: 0px;
+    color: #e6252d;
+    background: transparent;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.247059) 0px 3px 3px 0px;
+}
+.offers{
+    padding-bottom: 100px;
+}
+main{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+}
+.offers img{
+    display: block;
+    margin: auto;
+    
+    
+}
+.offers-img-container{
+    min-height: 230px;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+    padding-top: 20px;
+}
+.offers-title{
+    display: block;
+    text-align: center;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    padding-top: 5px;
+    float: left;
+    margin-bottom: 20px;
+}
+.offers a:hover{
+    text-decoration: none;
+}
+.offers-title:hover{
+    color: #337ab7;
+    text-decoration: none;
+}
+.offers a:hover span{
+    color: #337ab7;
+    text-decoration: none;
+}
+.offer-detail-page{
+    padding-top: 50px;
+    
+}
+.offer-detail-page img{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.offer-detail-page .inner-page-large-heading{
+    width: 100%;
+    float: left;
+}
+.offer-detail-page h1{
+	margin-top: 0px;
+    text-align: left;
+    float: left;
+}
+.offer-detail-form{
+    width: 100%;
+    float: left;
+}
+.offer-detail-form label{
+    display: block;
+    padding-top: 5px;
+}
+.offer-detail-form br{
+    display: none;
+}
+.offer-detail-form p{
+    display: none;
+}
+.offer-detail-form .form-group{
+    width: 100%;
+float: left;
+}
+.offer-detail-form .form-group input, .offer-detail-form .form-group select{
+    border-radius: 0;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.offer-detail-form textarea{
+    border-radius: 0;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 150px;
+    overflow: hidden;
+    resize: none;
+}
+.sendbutton{
+    width: 150px;
+    height: 40px;
+    color: white;
+    border: 0;
+    background: #e6252d !important;
+    float: right;
+    right: 16px;
+    
+}
+.offer-detail-form .ajax-loader{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+.offer-detail-form div.wpcf7-mail-sent-ok{
+    float: left;
+    border: none;
+}
+.form-mobile{
+}
+.offer-detail-form .wpcf7-not-valid{
+    border: 1px solid red;
+}
+.offer-detail-form div.wpcf7-validation-errors{
+    float: left;
+}
+.location-heading{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.location-heading li{
+    display: inline-block;
+}
+.location-heading li a{
+    display: inline-block;
+    padding-left: 20px; 
+    padding-right: 2px;
+    padding: 10px;
+    background: #f6f6f6;
+    text-decoration: none;
+}
+.location-heading li a:hover{
+    background: #e0121c;
+    color: white;
+}
+.location-row-2{
+    background: #f6f6f6;
+    margin-top: 50px;
+}
+.location-row-2 span{
+    padding: 20px;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #b0afaf;
+    display: block;
+    text-align: center;
+}
+.location-row-data
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+.location-row-data div{
+    height: 80px;
+    display: table;
+    text-align: center;
+}
+.location-row-data span{
+    display: table-cell;
+    vertical-align: middle;
+}
+.more-details-img{
+    max-width: 125px;
+}
+span.starting-from{
+    font-size: 15px !important;
+    letter-spacing: 1px;
+}
+span.price-on-page{
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: inline !important;
+}
+.utility-div p{
+    text-align: left;
+   
+width: 100%;
+float: left;
+max-width: 100%;
+}
+.specifications h1{
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0;
+    
+}
+.specifications .lancer-logo{
+    padding-top: 20px;
+}
+.spc-center{
+    text-align: center;
+}
+.spc-middle{
+    vertical-align: middle !important;
+}
+.sub-table{
+    width: 100%;
+}
+.sub-table tr{
+    border-bottom: 1px solid #ccc !important;
+}
+.color-1{
+}
+.padd-ri{
+    display: block;
+    padding-right: 20px;
+}
+.pajero-design{
+    text-align: center;
+    background: black;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.pajero-design p{
+    max-width: 90%;
+    margin: auto;
+    padding-bottom: 10px;
+    color: #ccc;
+}
+.pajero-design h3{
+    font-family: "HelveticaNeueLTStd-Md", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+.pajero-performance h3{
+    padding-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.pajero-performance p{
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-bottom: 20px;
+    max-width: 450px;
+}
+.last-section{
+    padding-top: 30px;
+}
+.last-section div.col-lg-12{
+    padding-bottom: 20px;
+}
+.last-section img{
+    
+    
+}
+.last-section p{
+    max-width: 100%;
+    
+}
+.pajero-safety{
+    padding-top: 50px;
+    text-align: center;
+}
+.pajero-safety h1{
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.pajero-safety.cars-first-div p{
+    margin: auto;
+}
+.pajero-safety.cars-first-div span.normal-text{
+    max-width: 100%;
+}
+.pajero-tow img{
+    display: block;
+    margin: auto;
+}
+.blank-top h1{
+    display: inline-block;
+    border-bottom: 2px solid #e6252d;
+}
+.pajero-utility .slides p{
+    text-align: center;
+    
+}
+pajero:hover{
+    cursor: url(http://localhost:8080/mitsubishi/wp-content/themes/mitsubishi/images/mouse1.png), col-resize;
+}
+.montero-design p{
+    font-family: "HHelveticaNeu-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width: 300px;
+margin: auto;
+text-align: center;
+font-size: 12px;
+}
+.width700{
+    width: 700px !important;
+}
+.montero-safety p.heading-cars{
+    color: #333333;
+    text-align: center;
+color: black;
+width: 100%;
+max-width: 100%;
+left: 0;
+
+}
+.montero-safety .normal-text{
+    width: 100%;
+max-width: 500px;
+margin: auto;
+}
+
+
+
+
+
+.home .breadcrumbs-div{
+    display: none;
+}
+.breadcrumbs-div{
+    padding: 10px 10px;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#breadcrumbs{
+    list-style:none;
+    margin:0;
+    padding: 0;
+    overflow:hidden;
+    font-size:14px;
+}
+#breadcrumbs li a{
+    color: #979797;
+}  
+#breadcrumbs li{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:15px;
+    color: #979797;
+}
+#breadcrumbs li strong{
+    font-weight: normal;
+}
+  
+#breadcrumbs .separator{
+    font-size:14px;
+    
+    color:#ccc;
+}
+car:hover{
+    
+}
+.threesixty_images li img{
+    cursor: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/rotate.png), col-resize;
+    
+}
+div.threesixty.pajerosixty{
+    max-width: 900px;
+    margin: auto;
+}
+
+
+
+.specs-img img{
+    display: block;
+    margin: auto;
+    
+}
+
+
+
+.form-button{
+    border: 1px solid #cccccc;
+    border-bottom: 0px;
+    color: #e6252d;
+    background: transparent;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.247059) 0px 3px 3px 0px;
+    
+    width: 200px;
+    float: right;
+}
+.news-outer{
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 310px;
+    max-height: 310px;
+    overflow: hidden;
+    
+}
+.news-date-on-home-div{
+        font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 5px;
+    color: #555555;
+}
+.news-outer a{
+        display: block;
+    width: 100%;
+    float: left;
+    height: 100%;
+}
+.news-outer a:hover{
+    text-decoration: none;
+}
+.news-outer .news-title{
+    display: block;
+    padding-top: 10px;
+    text-align: left;
+    padding-bottom: 10px;
+    color: #555555;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.news-outer img{
+    display: block;
+    width: 100%;    
+}
+.right-side-offer-area img{
+	width: 1px; height: 1px; border: none !important; padding: 0px !important;
+}
+.news-bottom{
+    width: 100%;
+}
+.news-bottom{
+    padding-top: 5px;
+    margin-bottom: 80px;
+}
+.news-bottom .news-date{
+    display: inline-block;
+    float: left;
+    color: #555555;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.news-bottom .news-read-more{
+    display: inline-block;
+    float: right;
+    color: red;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.news-bottom .news-read-more a{
+    color: red;
+    text-decoration: none;
+}
+
+
+
+.calculator-full
+{
+    width: 100%;
+    height: auto;
+    background: #f2f3f4;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    float: left;
+}
+.finance-div{
+    background: #f2f3f4;
+}
+.calculator-full span
+{
+    padding-top: 50px;
+    display: block;
+}
+.calculator-full b, strong, th, label {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.calculator label {
+    color: #6b6e7d;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+font-weight: 600;
+}
+.grey-lighter {
+    color: #474a54;
+    background: #f2f3f4;
+}
+.calculator .form
+{
+    width: 50%;
+    float: left;
+    padding: 3%;
+}
+.results {
+    width: 50%;
+    float: left;
+    padding: 4%;
+    
+    overflow: auto;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+.results p
+{
+    
+}
+
+.calculator input[type="text"] {
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 140%;
+    border: 0;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: 200;
+
+}
+.test-drive-form input, .test-drive-form select, .test-drive-form textarea{
+    border-radius: 0;
+}
+.offer-single-dp{
+    
+}
+.top-bar-nav{
+    background: #555555;;
+    color: white;
+}
+.disclaimer{
+    
+    padding-top: 50px;
+    padding-bottom: 20px;
+    
+}
+.disclaimer span{
+    display: block;
+    font-size: 13px;
+    color: red;
+}
+.vat-notice{
+	display:none;
+    margin-top: 50px;
+}
+#truck-main{
+    max-width: 855px;
+    margin: auto;
+}
+.rosa-content{
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.rosa-content p{
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+.price-notice{
+    padding-bottom: 20px;
+    font-size: 13px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.form-top-msg{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.all-forms-area{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.form-top-msg p{
+    max-width: 700px; margin: auto; padding-bottom: 30px;
+}
+.news-single-page{
+    padding-bottom: 100px;
+}
+.news-single-page h2{
+    padding-bottom: 10px;
+	padding-right:20%;
+}
+.news-single-page img{
+    float: left;
+    margin-right: 30px;
+    max-width: 500px;
+}
+.news-single-page strong{
+	font-weight: 600;
+    font-size: 19px;
+}
+.news-single-page p{
+	font-size: 14px;
+    font-weight: 100;
+    font-family: sans-serif;
+    text-align: justify;
+}
+.rosa-content1{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.rosa-ul{
+    font-family: "HHelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wpcf7-validation-errors{
+    float: left;
+}
+.wpcf7-not-valid{
+    border-color: red;
+}
+.wpcf7-mail-sent-ok{
+    float: left;
+    padding: 10px !important;
+    text-align: center;
+    width: 100%;
+    border: none !important;
+    color: green;
+    font-size: 20px;
+}
+.special-page{
+    padding-bottom: 100px;
+}
+.search_result_top_heading h1{
+    font-size: 25px;
+}
+.search_result_top_heading h1 span{
+    color: red;
+    text-decoration: underline;
+}
+.sendbutton {
+    width: 150px !important;
+    height: 40px !important;
+    color: white !important;
+    border: 0 !important;
+    background: #e6252d !important;
+    float: right !important;
+    right: 0px;
+    border-radius: 0;
+    font-family: HHelveticaNeu-Roman !important;
+}
+div.wpcf7-mail-sent-ng{
+    float: left;
+}
+.test-drive-form .form-group, .requestaservice .form-group, .request-a-part-form .form-group, .requestaquote .form-group, .feedbackform .form-group{
+    width: 100%;
+    float: left;
+}
+.requestaquote .form-control, .feedbackform .form-control{
+    border-radius: 0px;
+}
+#MOVIE .video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    max-width: 100%;
+}
+#MOVIE .video iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 87% !important;
+}
+#MOVIE .btn_play_movie a {
+    background: rgba(0, 0, 0, 0.45);
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+#MOVIE .btn_play_movie a .btn_play {
+    position: absolute;
+    bottom: 50px;
+    right: 160px;
+}
+#MOVIE .btn_play_movie a .btn_play {
+    position: absolute;
+    bottom: 50px;
+    right: 160px;
+}
+#MOVIE {
+    height: 48vw;
+    max-height: 690px;
+    position: relative;
+}
+
+.asx_new_colors a#CL01{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_01.png) !important;
+}
+.asx_new_colors a#CL02{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_02.png) !important;
+}
+.asx_new_colors a#CL03{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_03.png) !important;
+}
+.asx_new_colors a#CL04{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_04.png) !important;
+}
+.asx_new_colors a#CL05{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_05.png) !important;
+}
+.asx_new_colors a#CL06{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_06.png) !important;
+}
+.asx_new_colors a#CL07{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_07.png) !important;
+}
+
+.l200_new .design #Mainvis #bx-pager01 a#CL00 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_00.png) !important;
+}
+.l200_new .design #Mainvis #bx-pager01 a#CL01 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_01.png) !important;
+}
+.l200_new .design #Mainvis #bx-pager01 a#CL02 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_02.png) !important;
+}
+.l200_new .design #Mainvis #bx-pager01 a#CL03 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_03.png) !important;
+}
+.l200_new .design #Mainvis #bx-pager01 a#CL04 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_04.png) !important;
+}
+.l200_new .design #Mainvis #bx-pager01 a#CL05 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_05.png) !important;
+}
+.new_tag:after{
+    content: "NEW";
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    margin-left: 0.25em;
+    padding: 1px 5px;
+    background-color: #e60012;
+    color: #fff;
+    vertical-align: middle;
+}
+.gre_txt{
+    color: #666;
+    padding-bottom: 10px;
+}
+.boorder_botom{
+    border-bottom: 1px solid #ccc;
+}
+.l200_tabs{
+    margin-top: 50px;
+}
+.l200_tabs .nav-tabs{
+    text-align: center;
+    border-bottom: 3px solid red;
+}
+
+.l200_tabs .nav-tabs>li{
+    float: none;
+    margin-bottom: -1px;
+    display: inline-block;
+    border: none;
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0px;
+}
+.l200_tabs .nav-tabs>li>a{
+    color: #000;
+    text-decoration: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border-radius: 0;
+    padding: 20px;
+    font-size: 16px;
+    border: none !important;
+    background-color: #eee;
+    min-width: 225px;
+}
+.l200_tabs .nav-tabs>li>a:hover{
+    background-color: #e90000;
+    color: #FFF;
+}
+.l200_tabs .nav-tabs>li.active>a{
+    background-color: #e90000;
+    color: #FFF;
+    
+}
+span.txt_cen_span{
+    text-align: center;
+    display: block;
+}
+.bottom_ul_tab{
+    margin-top: 80px;
+    margin-bottom: 100px;
+    border-top: 3px solid red;
+    border-bottom: 0px !important;
+    width: 100%;
+    float: left;
+}
+.video-link-internal img{
+    text-align: left;
+    float: left;
+}
+.dive_mode_p p{
+    padding: 0px !important;
+}
+.small-itlaic{
+    color: #666666;
+    font-size: 12px;
+    display: block;
+    
+}
+.outlander .design #Mainvis #bx-pager01 a.color00{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_00.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color01{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_01.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color02{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_02.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color03{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_03.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color04{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_04.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color05{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_05.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color06{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_06.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color07{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_07.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color08{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_08.png);
+}
+.outlander .design #Mainvis #bx-pager01 a.color09{
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_09.png);
+}
+
+.monter_design_colors a#CL01 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_00.png) !important;
+}
+.monter_design_colors a#CL02 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_01.png) !important;
+}
+.monter_design_colors a#CL03 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_02.png) !important;
+}
+.monter_design_colors a#CL04 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_03.png) !important;
+}
+.monter_design_colors a#CL05 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_04.png) !important;
+}
+.monter_design_colors a#CL06 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_05.png) !important;
+}
+.monter_design_colors a#CL07 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_06.png) !important;
+}
+.monter_design_colors a#CL08 {
+    background-image: url(https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_07.png) !important;
+}
+.montero-new-gallery-area .slides img{
+    width: 100%;
+    max-width: none;
+}
+.montero-new-gallery-area .phev-carousel-thumbs .flex-active-slide{
+    border: 2px solid red;
+}
+.montero-new-gallery-area .phev-carousel-thumbs li{
+    margin: 10px;
+    width: 117px !important;
+}
+#carousel_exterior .flex-direction-nav{
+    display: none !important;
+}
+#carousel_interior .flex-direction-nav{
+    display: none !important;
+}
+
+.design .interior .phev-carousel-thumbs{
+    width: 100% !important;
+}
+.design .interior #flexslider_phev {
+    position: relative;
+    padding-bottom: 27px;
+}
+.design .gallery-lancer #carousel_phev {
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+}
+.design .interior #carousel_phev .slides li {
+    height: 96px;
+    cursor: pointer;
+}
+.design .interior #carousel_phev .slides li img {
+    height: 85px;
+    border: solid 3px #fff;
+    margin-right: 14px;
+    display: inline-block;
+}
+.col-5-custom{
+    width: 20%;
+    float: left;
+}
+.img_no_float img{
+    float: none;
+}
+.box_text {
+    
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.box_text div:nth-child(1) {
+    padding-right: 15px;
+}
+.small_text {
+    font-size: 12px;
+    font-weight: normal;
+}
+.l_text {
+    font-size: 22px;
+    font-weight: bold;
+}
+.video_bg{
+    max-height: 810px;
+    height: 810px;
+}
+.video_bg iframe{
+    z-index: -1;
+}
+.video_bg .video-link-internal{
+    background: rgba(0, 0, 0, 0.45);
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.video_bg .video-link-internal img{
+    display: block;
+    margin: auto;
+    float: none;
+    bottom: 50px;
+    position: absolute;
+    right: 50px;
+}
+.inline_float_left{
+    display: inline-block;
+    float: left;
+}   
+.outlander_utlity_audio_tit{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.android_note{
+    color: #666;
+    font-size: 11px;
+    font-style: italic;
+    list-style-type: square;
+}
+label{display: block;}
+.error{color: red; font-weight: 100;}
+section.error-404.not-found{
+    max-width: 1200px;
+    margin: auto;
+}
+@media only screen and (max-width: 1200px)
+{
+    .logo {padding-left: 10px;}
+    .top-search, .top-bar-nav {padding-right: 10px;}
+    .slider
+    {
+        min-height: 300px;
+    }
+    .video_bg{
+        max-height: 675px;
+        height: 675px;
+    }
+}
+@media only screen and (max-width: 1050px)
+{
+    .video_bg{
+        max-height: 525px;
+        height: 525px;
+    }
+    .top-search-temp
+    {
+        display: block;
+    }
+    .top-search-temp-off
+    {
+        display: none;
+    }
+    header
+    {
+        width: 100%;
+        height: auto;
+        float: left;
+        padding-bottom: 10px;
+    }
+    .top-menu-full
+    {
+        width: 100%;
+    }
+    .cars-top-bar{
+        height: 80px;
+        line-height: normal;
+    }
+}
+@media only screen and (max-width: 768px)
+{
+    .video_bg{
+        max-height: 285px;
+        height: 285px;
+    }
+    .offer-detail-form{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .pd-l-0, .pd-r-0, .p-l-15{
+        padding: initial;
+    }
+    .margin_b_15_mob{
+        margin-bottom: 15px;
+    }
+    .desktop_pop{
+        display: none;
+    }
+    .mobile_pop{
+        display: block;
+    }
+    .top-bar-nav{
+        display: none !important;
+    }
+    .special-page{
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
+    .special-page h1{
+        margin-left: 20px;
+        font-size: 22px;
+    }
+    .sendbutton{
+        right: 0;
+    }
+    .special-form{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .whats-more{
+        display: none !important;
+    }
+    .whats-more-div img
+    {
+        display: block;
+        margin: auto;
+    }
+    .footer-strip ul
+    {
+        line-height: normal;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .footer-strip img
+    {
+        float: none;
+        display: block;
+        margin: auto;
+    }
+    header
+    {
+        display: none !important;
+    }
+    .top-bar-nav ul
+    {
+        text-align: center;
+    }
+    .top-search, .top-social
+    {
+        
+        width: 50%;
+    }
+    .logo
+    {
+        display: none !important;
+    }
+    .slider
+    {
+        min-height: 100px;
+    }
+    .head-phone{
+        width: auto;
+        
+    }
+    li.head-phone a{
+        display: block;
+        text-align: right;
+        margin: 0;
+    }
+    .social-title span{
+        font-size: 22px;
+    }
+    .social-title{
+        padding-bottom: 0px;
+    }
+    .offers-img-container{
+        min-height: 100px;
+    }
+    .news-events-div{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .service p{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .offer-single-dp{
+        min-height: inherit !important;
+    }
+    .theme-light .nivo-controlNav a{
+        width: 20px !important;
+        height: 20px !important;
+        background-size: contain !important;
+    }
+    .theme-light .nivo-controlNav a.active{
+        width: 20px !important;
+        height: 20px !important;
+        background-size: contain !important;
+    }
+    .all-cars-home{
+        width: 100%;
+        float: left;
+        max-height: initial;
+    }
+    .disclaimer, .vat-notice{
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+            font-size: 12px;
+    }
+    .vat-notice{
+        margin-top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .cars-top-bar{
+        width: 100%;
+        float: left;
+        height: auto;
+        text-align: center;
+    }
+    .cars-top-bar ul{
+        line-height: 35px;
+    }
+    .cars-top-bar ul li{
+        float: none;
+    }
+    .cars-top-bar ul li a{
+        font-size: 12px;
+        font-family: "MMC-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 12px;
+    }
+    .video-link{
+        display: none;
+    }
+    .cars-first-div p{
+        max-width: 100%;
+    }
+    p.heading-cars{
+        font-family: "HHelveticaBdCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px !important;
+        left: auto;
+        position: relative;
+        line-height: normal;
+        z-index: 1;
+        color: #fff !important;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        margin-bottom: 0;
+        font-family: "MMC-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        float: left;
+        width: 100%;
+    }
+    .cars-first-div p span{
+        
+    }
+    span.starting-from{
+        font-size: 15px !important;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        
+    }
+    span.price-on-page{
+        padding-left: 0px;
+        display: block !important;
+        background: transparent;
+        padding-bottom: 0px;
+    }
+    span.normal-text{
+        max-width: 100% !important;
+        color: #fff !important;
+    }
+    p.heading-cars .red{
+        margin-bottom: 10px;
+    }
+    a.learn-more-transparent{
+        margin-top: 10px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    a.learn-more-transparent .glyphicon{
+            font-size: 12px;
+    }
+    p.top-20-left-10, p.bottom-10-right-10, p.top-20-right-10, p.top-5-right-10, p.top-5-left-10, p.bottom-5-left-10, p.top-5-right-5{
+        top: auto !important;
+        bottom: auto !important;
+        right: auto !important;
+        left: auto !important;
+    }
+    .eclipse-div{
+        width: 100%;
+        min-height: 300px !important;
+    }
+    .design #Mainvis{
+        width: 100%;
+        float: left;
+    }
+    .interior p{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .exterior-highlights .exterior-row div{
+        min-height: 198px;
+    }
+    .design, .exterior-highlights, .container-performance, .safety, .specifications{
+        width: 100%;
+        float: left;
+    }
+    .container-performance, .safety{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container-performance .col-xs-6{
+        padding: 0px;
+    }
+    .page-template-lancer-performance .container-fluid, .page-template-lancer-utility .container-fluid, .page-template-lancer-specifications .container-fluid, .page-template-attrage-design .container-fluid{
+        width: 100%;
+        float: left;
+    }
+    .footer_100, .container-fluid, .content-area, .site-content, .site-main{
+        width: 100%;
+        float: left;
+    }
+    .safety h3{
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    .safety .col-xs-6{
+        width: 100%;
+    }
+    
+    .offers{
+        padding-bottom: 0px;
+    }
+    .offer-detail-page{
+        padding-top: 0px;
+    }
+    .offer-detail-page img{
+        padding: 0px;
+        border: none;
+    }
+    .offer-detail-page .inner-page-large-heading{
+        margin-top: 10px;
+        padding-left: 15px;
+    }
+    .inner-page-large-heading h1{
+        font-size: 25px !important;
+        margin: 0;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        
+    }
+    div.wpcf7-validation-errors{
+        border: 2px solid red;
+    }
+    .test-drive, .service{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .service .service-left-content{
+        padding: 0px;
+    }
+    .service .service-left-content p{
+        padding: 0px;
+    }
+    .news-single-page h2{
+        
+        font-size: 18px;
+    }
+    .news-date-on-single{
+        
+    }
+    .news-single-page{
+        padding-left: 15px; padding-right: 15px;
+        padding-bottom: 0px;
+    }
+    .news-single-page strong{
+        font-size: 14px;
+    }
+    .news-single-page img{
+        max-width: 100%;
+    }
+    footer{
+        padding-bottom: 20px;
+    }
+    footer .bottom-col-1{
+        margin-bottom: 20px;
+    }
+    footer .bottom-col-1 .col-xs-3{
+        width: 33%;
+    }
+    .search_page{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .location-row-data div{
+        display: block;
+        font-size: 11px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .location-row-data span{
+        display: block;
+    }
+    .more-details-img{
+        max-width: 100%;
+    }
+    .location-row-2 span{
+        padding: 3px;
+        font-size: 14px;
+    }
+    .location-heading{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .location-heading li a{
+        padding: 6px;
+    }
+    .location-row-2{
+        margin-top: 20px;
+    }
+    .inner-page-large-heading > h2{
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .breadcrumbs-div{
+        display: none;
+    }
+}
+@media only screen and (max-width: 575px)
+{
+    .top-search-temp
+    {
+        display: none;
+    }
+    .models-home .title{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .models-home .title img{
+        max-width: 320px;
+    }
+    .slick-prev{
+        left: 10px;
+    }
+    .slick-next{
+        right: 10px;
+    }
+    .home-models-div{
+        height: auto;
+        padding-bottom: 30px;
+    }
+    .prmotions-home-title{
+        height: 35px;
+        background-size: 55%;
+    }
+    .news-title span{
+        font-size: 22px;
+    }
+    .news-events-home{
+        padding-top: 20px;
+    }
+    .news-title{
+        padding-bottom: 20px;
+    }
+    .about-ahm{
+        background: none;
+    }
+}
+
+.model-div a img {max-width:275px;width:275px;}
+#service-list-offer{
+        justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+    margin: 15px 0;
+    display: block !important;
+}
+#service-list-offer li{list-style:none;font-weight:bold;}
+
+/* ==========================================================================
+   MODERN UNIFIED MOBILE HEADER & HERO SECTION
+   ========================================================================== */
+
+/* Desktop defaults: Hide mobile header bar and mobile-only nav items */
+.mmc-mobile-header-bar {
+    display: none;
+}
+
+.mmc-mobile-only-nav-item,
+.top-nav .mmc-mobile-only-nav-item {
+    display: none !important;
+}
+
+/* Mobile & Tablet Styles (Viewport <= 991px) */
+@media screen and (max-width: 991px) {
+    /* Reveal mobile-only navigation elements in the drawer */
+    .mmc-mobile-only-nav-item {
+        display: block !important;
+    }
+
+    /* Hide desktop headers, clutter, and unneeded spacers */
+    .top-bar-nav,
+    header.shadow,
+    .top-search-temp,
+    .new_menu {
+        display: none !important;
+    }
+
+    /* Modern Unified Mobile Header Bar */
+    .mmc-mobile-header-bar {
+        display: block;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        z-index: 10000;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid #ebebee;
+        transition: all 0.3s ease;
+    }
+
+    .mmc-mobile-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 16px;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* Mobile Brand Logo */
+    .mmc-mobile-logo {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+
+    .mmc-mobile-logo img {
+        height: 48px;
+        width: auto;
+        max-width: 155px;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Action Buttons: Phone, WhatsApp, Hamburger Menu */
+    .mmc-mobile-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mmc-action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-decoration: none !important;
+        font-size: 16px;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .mmc-phone-btn {
+        background: #f4f4f6;
+        color: #222222 !important;
+        border: 1px solid #e2e2e5;
+    }
+
+    .mmc-phone-btn:hover,
+    .mmc-phone-btn:active {
+        background: #e6252d;
+        color: #ffffff !important;
+        border-color: #e6252d;
+    }
+
+    .mmc-whatsapp-btn {
+        background: #25d366;
+        color: #ffffff !important;
+        border: 1px solid #20bd5a;
+    }
+
+    .mmc-whatsapp-btn:hover,
+    .mmc-whatsapp-btn:active {
+        background: #1eb857;
+        color: #ffffff !important;
+        transform: scale(1.05);
+    }
+
+    /* Modern Mobile Navigation Drawer Styles */
+    .mmc-mobile-hamburger {
+        background: #e6252d;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        padding: 0;
+        box-shadow: 0 2px 6px rgba(230, 37, 45, 0.3);
+        transition: background 0.2s ease;
+    }
+
+    .mmc-mobile-hamburger:hover,
+    .mmc-mobile-hamburger:active {
+        background: #cc1d24;
+    }
+
+    .mmc-hamburger-line {
+        width: 20px;
+        height: 2px;
+        background: #ffffff;
+        border-radius: 2px;
+        transition: all 0.2s ease;
+    }
+}
+
+/* Slide-Over Drawer Backdrop Overlay */
+.mmc-drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 99999;
+}
+
+.mmc-drawer-backdrop.mmc-backdrop-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Slide-Over Drawer Sheet */
+.mmc-drawer-sheet {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 86vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 100000;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mmc-drawer-sheet.mmc-drawer-open {
+    transform: translateX(0);
+}
+
+.mmc-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f2;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.mmc-drawer-brand img {
+    max-height: 42px;
+    width: auto;
+    display: block;
+}
+
+.mmc-drawer-close-btn {
+    background: #f4f4f6;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mmc-drawer-close-btn:hover {
+    background: #e6252d;
+    color: #ffffff;
+}
+
+.mmc-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0 30px;
+}
+
+.mmc-drawer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mmc-drawer-menu > li {
+    border-bottom: 1px solid #f4f4f6;
+}
+
+.mmc-drawer-link {
+    display: block;
+    padding: 14px 24px;
+    color: #111111;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none !important;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mmc-drawer-link:hover,
+.mmc-drawer-link:active {
+    background: #f9f9fb;
+    color: #e6252d;
+}
+
+.mmc-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.mmc-accordion-header:hover {
+    background: #f9f9fb;
+}
+
+.mmc-drawer-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #111111;
+}
+
+.mmc-accordion-toggle {
+    background: none;
+    border: none;
+    padding: 4px;
+    font-size: 14px;
+    color: #777777;
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.mmc-has-accordion.mmc-accordion-open .mmc-accordion-toggle i {
+    transform: rotate(180deg);
+    color: #e6252d;
+}
+
+.mmc-accordion-content {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: #fafafa;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mmc-has-accordion.mmc-accordion-open .mmc-accordion-content {
+    max-height: 800px;
+    padding: 6px 0;
+    border-top: 1px solid #eeeeee;
+}
+
+.mmc-accordion-content li a {
+    display: block;
+    padding: 10px 24px 10px 36px;
+    font-size: 14px;
+    color: #444444;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mmc-accordion-content li a:hover,
+.mmc-accordion-content li a:active {
+    color: #e6252d;
+    background: #f0f0f3;
+}
+
+body.mmc-drawer-active {
+    overflow: hidden !important;
+}
+
+@media screen and (max-width: 480px) {
+    .mmc-mobile-header-container {
+        padding: 8px 12px;
+    }
+
+    .mmc-mobile-logo img {
+        height: 42px;
+        max-width: 135px;
+    }
+
+    .mmc-action-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+}
