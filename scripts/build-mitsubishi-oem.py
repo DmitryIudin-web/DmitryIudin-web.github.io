@@ -13,6 +13,16 @@ MODELS = {
     'eclipse-cross': ('Eclipse Cross', [('index','Обзор'),('drive','Динамика'),('exterior','Экстерьер'),('interior','Интерьер'),('safety','Безопасность'),('specifications','Характеристики')]),
 }
 
+# Persist the CDN migration without restoring removed elements on later builds.
+cdn_manifest_path = ROOT / 'scripts/mitsubishi-tilda-media.json'
+CDN_MANIFEST = json.loads(cdn_manifest_path.read_text()) if cdn_manifest_path.is_file() else {}
+CDN_URLS = {entry['original_url']: entry['cdn_url'] for entry in CDN_MANIFEST.get('assets', [])}
+
+def on_tilda_cdn(text):
+    for original, replacement in CDN_URLS.items():
+        text = text.replace(original, replacement)
+    return text
+
 def absolute_url(value, path, slug):
     if not value or value.startswith(('data:', 'http:', 'https:', '//', '#')):
         return value
@@ -130,6 +140,7 @@ for slug,(model,pages) in MODELS.items():
         elif href.startswith('assets/'):a.set('href',absolute_url(href,directory/'index.html',slug))
     nav=etree.tostring(nav_doc,encoding='unicode',method='html')
     stylesheet=scope_css('\n'.join(css))+FORM_CSS+'\n'+(ROOT/'scripts/mitsubishi-native-form.css').read_text()
+    stylesheet = on_tilda_cdn(stylesheet)
     (directory/'tilda-scoped.css').write_text(stylesheet)
     fields={'model':'Mitsubishi '+model,'model_id':'mitsubishi_'+slug.replace('-','_'),'brand':'Mitsubishi','market':'UAE GCC','landing_variant':'oem','source':'avtonds_site','site_source':'avtonds.ru','source_detail':'mitsubishi_'+slug.replace('-','_')+'_oem','policy_url':'https://avtonds.ru/privacy','consent_version':'privacy-2026-05-12','comment':''}
     fields.update({k:'' for k in ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_campaign_id','utm_group_id','utm_source_type','utm_position_type','utm_device','utm_retargeting','yclid']})
@@ -143,6 +154,12 @@ for slug,(model,pages) in MODELS.items():
     fragment=f'<link rel="stylesheet" href="{HOST}/{slug}/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="{fields["model_id"]}">'+header+nav+''.join(panels)+form+footer+'</div>'+f'<script src="{HOST}/{slug}/tilda-interactions.js?v=20261020-4"></script>'
     if slug == 'asx':
         fragment = '<style data-ast-asx-annotation="20261020">'+ASX_ANNOTATION_CSS+'</style>'+fragment
+    fragment = on_tilda_cdn(fragment)
+    storage = CDN_MANIFEST.get('storage_records', {}).get(slug, [])
+    if storage:
+        fragment = '<style>'+','.join('#'+record for record in storage)+'{display:none!important}</style>'+fragment
+    if CDN_URLS:
+        fragment = fragment.replace('v=20261020-4', 'v=20261020-cdn1')
     (directory/'tilda-fragment.txt').write_text(fragment)
     out=ROOT/('mitsubishi-'+slug);out.mkdir(exist_ok=True)
     canonical='https://avtonds.ru/mitsubishi-'+slug

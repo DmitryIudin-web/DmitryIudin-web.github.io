@@ -1,4 +1,4 @@
-<style data-ast-asx-annotation="20261020">#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control span,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{font:400 13px/1.55 Arial,Helvetica,sans-serif!important;color:#555!important;letter-spacing:normal!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control{display:flex!important;align-items:flex-start;gap:10px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__indicator{flex-shrink:0;margin:2px 0 0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{text-decoration:underline!important}#ast-mitsubishi-oem #bx-pager01 a:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}#ast-mitsubishi-oem #bx-pager01 a:focus-visible{outline:2px solid #333!important;outline-offset:3px}</style><link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="mitsubishi_asx"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ASX</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
+<style>#rec4976668001,#rec4977541301{display:none!important}</style><style data-ast-asx-annotation="20261020">#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control span,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{font:400 13px/1.55 Arial,Helvetica,sans-serif!important;color:#555!important;letter-spacing:normal!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control{display:flex!important;align-items:flex-start;gap:10px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__indicator{flex-shrink:0;margin:2px 0 0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{text-decoration:underline!important}#ast-mitsubishi-oem #bx-pager01 a:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}#ast-mitsubishi-oem #bx-pager01 a:focus-visible{outline:2px solid #333!important;outline-offset:3px}</style><link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/tilda-scoped.css?v=20261020-cdn1"><div id="ast-mitsubishi-oem" data-model="mitsubishi_asx"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ASX</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
 <div class="container-wrap">
 <ul class="fadeInUp">
 <li><a class="current" href="#index" data-oem-tab="index">Обзор</a></li>
@@ -12,33 +12,33 @@
 </div>
 <section data-oem-panel="index">
 <div class="container-fluid cars-first-div all-cars-home" style="max-height: 850px;">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/eb14a1bf35eeb6.png.webp">
+<img loading="lazy" src="https://static.tildacdn.com/tild3164-6434-4363-b561-616636633232/media-080.webp">
 <h1 class="heading-cars bottom-5-left-10 animate-fade-in" style="font-size: 46px; color: white;">ASX<span>Создан для приключений</span>
 </h1>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/5e85fdf737d856.jpg.webp">
+<img class="float-right" loading="lazy" src="https://static.tildacdn.com/tild6630-3062-4532-a136-626662313638/media-029.webp">
 <p class="heading-cars top-20-left-0 animate-fade-in" style="color: #000;">
 <span class="red">ДИЗАЙН</span>
 <a class="learn-more-transparent" href="#design" data-oem-tab="design">ПОДРОБНЕЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img class="float-left" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/70f162bafcbab1.jpg.webp">
+<img class="float-left" loading="lazy" src="https://static.tildacdn.com/tild3732-3034-4233-a136-366666653232/media-032.webp">
 <p class="heading-cars top-20-right-0 animate-fade-in" style="color: #000;">
 <span class="red">ДИНАМИКА</span>
 <a class="learn-more-transparent" href="#performance" data-oem-tab="performance">ПОДРОБНЕЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/e898a9b984c741.jpg.webp">
+<img class="float-right" loading="lazy" src="https://static.tildacdn.com/tild3263-3331-4535-b430-366562366231/media-077.webp">
 <p class="heading-cars top-20-left-0 animate-fade-in" style="color: #000;">
 <span class="red">БЕЗОПАСНОСТЬ</span>
 <a class="learn-more-transparent" href="#safety" data-oem-tab="safety">ПОДРОБНЕЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img class="float-left" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c657d170985d83.jpg.webp">
+<img class="float-left" loading="lazy" src="https://static.tildacdn.com/tild3036-3531-4434-a466-393937303362/media-068.webp">
 <p class="heading-cars top-20-right-0 animate-fade-in" style="color: #000;">
 <span class="red">ПРАКТИЧНОСТЬ</span>
 <a class="learn-more-transparent" href="#utility" data-oem-tab="utility">ПОДРОБНЕЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -49,49 +49,49 @@
 <section id="Mainvis">
 <div id="Mainvis_inner">
 <div class="titlearea01" style="margin-bottom: 50px;">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9e9c8002c1032e.png.webp">
+<img loading="lazy" src="https://static.tildacdn.com/tild3332-6533-4430-b765-653866626337/media-052.webp">
 <h2>ЭКСТЕРЬЕР</h2>
 </div>
 <ul class="bxslider01 cFix" style="width: auto; position: relative;">
 <li>
 <figure>
-<img alt="Red Diamond" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c42f0224991204.jpg.webp">
+<img alt="Red Diamond" loading="lazy" src="https://static.tildacdn.com/tild3861-3734-4134-b765-643639363337/media-066.webp">
 <figcaption>Красный бриллиант</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<img alt="Sporty Blue (Lightning Blue Mica)" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/e8da4753c38629.jpg.webp">
+<img alt="Sporty Blue (Lightning Blue Mica)" loading="lazy" src="https://static.tildacdn.com/tild6537-3134-4730-b535-316133656464/media-078.webp">
 <figcaption>Спортивный синий металлик</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<img alt="Titanium Gray Metallic" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/8ea5cec30f9335.jpg.webp">
+<img alt="Titanium Gray Metallic" loading="lazy" src="https://static.tildacdn.com/tild3233-3534-4730-a265-343234373131/media-044.webp">
 <figcaption>Титановый серый металлик</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<img alt="Sterling Silver Metallic" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f6fbd1b1814377.jpg.webp">
+<img alt="Sterling Silver Metallic" loading="lazy" src="https://static.tildacdn.com/tild6339-6336-4436-b465-653034316631/media-086.webp">
 <figcaption>Серебристый металлик</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<img alt="White Pearl" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9630c685cf012e.jpg.webp">
+<img alt="White Pearl" loading="lazy" src="https://static.tildacdn.com/tild3062-3861-4438-b037-356534333635/media-048.webp">
 <figcaption>Белый перламутр</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<img alt="White Solid" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/264b862c822f8e.jpg.webp">
+<img alt="White Solid" loading="lazy" src="https://static.tildacdn.com/tild3663-3137-4032-a535-336563353035/media-016.webp">
 <figcaption>Белый</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<img alt="Black Mica" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/04afa81fe83bfb.jpg.webp">
+<img alt="Black Mica" loading="lazy" src="https://static.tildacdn.com/tild3633-6661-4566-b365-633966336237/media-001.webp">
 <figcaption>Чёрный металлик</figcaption>
 </figure>
 </li>
@@ -118,12 +118,12 @@
 </div>
 <div class="container-fluid" style="background: #eeeeee; padding: 20px; padding-bottom: 50px;">
 <div class="cars-first-div all-cars-home">
-<img alt="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/60962cce2fdcfa.jpg.webp">
+<img alt="" loading="lazy" src="https://static.tildacdn.com/tild6261-3063-4931-a461-303635636439/media-030.webp">
 </div>
 </div>
 </section><section data-oem-panel="performance" hidden>
 <div class="container-fluid cars-first-div all-cars-home" style="max-height: 850px;">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c3ba7f37197970.jpg.webp">
+<img loading="lazy" src="https://static.tildacdn.com/tild6337-3834-4537-b733-623839373731/media-065.webp">
 <p class="heading-cars top-5-right-10 animate-fade-in" style="font-size: 46px; color: #ff3b56;">ДИНАМИКА</p>
 </div>
 <div class="container">
@@ -147,7 +147,7 @@
 </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0e46a519dacce9.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3833-3235-4433-b532-636463396538/media-007.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -161,7 +161,7 @@
                             </p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/1b089dc6f1f2b8.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3439-6465-4439-a537-383034313565/media-011.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -174,7 +174,7 @@
 <p style="padding-bottom: 0px;">Выбирайте один из трёх режимов движения в зависимости от дорожных условий и стиля вождения.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/d2b0fe428d6a37.jpg.webp">
+<img class="float-right" loading="lazy" src="https://static.tildacdn.com/tild6365-3835-4630-b634-353563633638/media-071.webp">
 </div>
 </div>
 </div>
@@ -187,7 +187,7 @@
 <p style="padding-bottom: 0px;">Двигатель объёмом 2,0 л обеспечивает уверенную тягу в поездках. Технология MIVEC сочетает мощность, экономичность и экологические характеристики.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9d09c64011c341.jpg.webp">
+<img class="float-right" loading="lazy" src="https://static.tildacdn.com/tild3864-3731-4736-b434-333061363738/media-051.webp">
 </div>
 </div>
 </div>
@@ -201,7 +201,7 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px;">Примечание: подрулевые переключатели доступны только в версиях с CVT.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/77f9e2b2a8c4cc.jpg.webp">
+<img class="float-right" loading="lazy" src="https://static.tildacdn.com/tild6130-6362-4466-b236-306364306336/media-035.webp">
 </div>
 </div>
 </div>
@@ -214,7 +214,7 @@
 <p style="padding-bottom: 0px;">Датчики системы ASC отслеживают движение автомобиля и боковое скольжение. Управляя тягой двигателя и тормозными усилиями на отдельных колёсах, система помогает сохранять устойчивость.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img class="float-right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f64a18fda3a216.jpg.webp">
+<img class="float-right" loading="lazy" src="https://static.tildacdn.com/tild6635-3034-4636-b339-356338313632/media-085.webp">
 </div>
 </div>
 </div>
@@ -233,7 +233,7 @@
 </div>
 </section><section data-oem-panel="safety" hidden>
 <div class="container-fluid cars-first-div all-cars-home" style="max-height: 850px;">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0d17f15f1014da.jpg.webp">
+<img loading="lazy" src="https://static.tildacdn.com/tild6463-3135-4533-b436-663332333863/media-006.webp">
 <p class="heading-cars top-5-right-10 animate-fade-in" style="font-size: 46px; color: #ff3b56;">БЕЗОПАСНОСТЬ</p>
 </div>
 <div class="container">
@@ -247,7 +247,7 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px; padding-bottom: 0px;">Примечание: возможности обнаружения и контроля систем BSW/LCA являются вспомогательными: они не предупреждают об автомобилях в слепых зонах во всех ситуациях. Не полагайтесь исключительно на эти системы при вождении. Их работа может нарушаться в зависимости от дорожного движения, погоды, состояния дорожного покрытия и наличия препятствий. Водитель полностью отвечает за безопасное управление. Изображения радиолокационных волн приведены только для иллюстрации и не отражают фактическую работу датчиков. Дополнительная информация приведена в руководстве по эксплуатации.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/fc52ced22e24f7.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6338-3036-4235-b338-326165343935/media-089.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -261,7 +261,7 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px; padding-bottom: 0px;">Примечание: не полагайтесь исключительно на эту систему — в определённых условиях она может не обнаруживать все движущиеся автомобили. Водитель полностью отвечает за безопасное управление. Изображения радиолокационных волн приведены только для иллюстрации и не отражают фактическую работу датчиков. Дополнительная информация приведена в руководстве по эксплуатации.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/d662b0c380e767.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3730-6331-4035-a235-313735616132/media-072.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -286,7 +286,7 @@
 <p style="padding-bottom: 0px;">Т-образные задние фонари подчёркивают устойчивый облик автомобиля. Стоп-сигналы загораются независимо для лучшей заметности.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/549d68c9737c40.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6333-3264-4164-a136-323264366132/media-026.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -299,13 +299,13 @@
 <p style="padding-bottom: 0px;">L-образные дневные ходовые огни придают передней части спортивный характер. Противотуманные фары объединены с указателями поворота.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/71dafaa9ebe0b0.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6332-6132-4962-b761-383235353732/media-033.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
 <div class="row">
 <div class="safety col-lg-12">
-<h3>7-AIRBAG SYSTEM SRS AIRBAG <img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/5aa94a2e5a6912.png.webp" style="display: inline-block; margin-left: 20px;float: none;"></h3>
+<h3>7-AIRBAG SYSTEM SRS AIRBAG <img loading="lazy" src="https://static.tildacdn.com/tild3239-6232-4538-b339-633532323632/media-028.webp" style="display: inline-block; margin-left: 20px;float: none;"></h3>
 </div>
 <div class="safety col-lg-12">
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -313,7 +313,7 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px; padding-bottom: 0px;">Примечание: система из семи подушек безопасности предлагается как опция. Оборудование может отличаться от изображённого. Подушки являются частью дополнительной удерживающей системы SRS. Чтобы уменьшить риск травмы при срабатывании подушки, всегда пристёгивайтесь, сидите прямо по центру сиденья и не прислоняйтесь к двери. Дети в возрасте 12 лет и младше должны находиться на заднем сиденье в соответствующих детских удерживающих устройствах. Никогда не устанавливайте на переднем сиденье детское кресло против хода движения. Дополнительная информация приведена в руководстве по эксплуатации и инструкции детского кресла.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0566eadede6ca9.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3833-3234-4534-b662-353933633233/media-002.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -326,7 +326,7 @@
 <p style="padding-bottom: 0px;">Цветное изображение с камеры и направляющие линии помогают контролировать пространство позади автомобиля.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/e80f9c53e381e9.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6430-3134-4666-b333-303066336163/media-076.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -340,7 +340,7 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px; padding-bottom: 0px;">Примечание: HSA не заменяет безопасное управление. На крутых дорогах не полагайтесь исключительно на эту функцию. Автомобиль может откатиться назад при значительной нагрузке на педаль тормоза либо на очень крутой или скользкой дороге. Функция не предназначена для удержания автомобиля на подъёме более двух секунд. Не используйте её вместо нажатия педали тормоза для удержания автомобиля неподвижным. Дополнительная информация приведена в руководстве по эксплуатации.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ebbba42ec0a788.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6235-3336-4436-b730-393334393034/media-081.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -372,7 +372,7 @@
 </div>
 </section><section data-oem-panel="utility" hidden>
 <div class="container-fluid cars-first-div all-cars-home" style="max-height: 850px;">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ccccd3611f5f2b.jpg.webp">
+<img loading="lazy" src="https://static.tildacdn.com/tild6136-6436-4735-a138-376164336166/media-070.webp">
 <p class="heading-cars top-5-right-10 animate-fade-in" style="font-size: 46px; color: #ff3b56;">ПРАКТИЧНОСТЬ</p>
 </div>
 <div class="container">
@@ -389,7 +389,7 @@
                             </p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/199f6842c6b590.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6366-6438-4261-b335-643664343838/media-010.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -402,7 +402,7 @@
 <p style="padding-bottom: 0px;">Кнопки разблокировки позволяют легко сложить спинки задних сидений для перевозки крупных и нестандартных предметов.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/39adaddaaa3966.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3565-3338-4161-b566-343737646631/media-020.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -415,7 +415,7 @@
 <p style="padding-bottom: 0px;">Рейлинги сочетают практичность со спортивным обликом и подчёркивают линии крыши ASX.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c3abba27cd0831.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3338-6333-4531-a366-383935383861/media-064.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -428,7 +428,7 @@
 <p style="padding-bottom: 0px;">Панорамная стеклянная крыша открывает обзор во всех направлениях. Вечером её подчёркивает светодиодная подсветка.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9660c75e5aadc4.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3638-3465-4261-a666-393162666165/media-049.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -441,7 +441,7 @@
 <p style="padding-bottom: 0px;">Центральный отсек позволяет удобно разместить небольшие вещи.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/429e6e8897e5e0.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3432-3038-4064-b734-306137643139/media-024.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -466,13 +466,13 @@
 <p style="padding-bottom: 0px;">Мультимедиа SDA позволяет использовать карты, музыку и звонки через совместимый смартфон, включая голосовое управление.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/6f9b732f110aa1.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6662-3665-4666-b962-333765363665/media-031.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
 <div class="row">
 <div class="safety col-lg-12">
-<h3>Apple CarPlay <img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/796f92834179c6.png.webp" style="max-width: 150px; display: inline-block; margin-left: 20px; float: none;"></h3>
+<h3>Apple CarPlay <img loading="lazy" src="https://static.tildacdn.com/tild6136-3362-4564-b161-666364353039/media-038.webp" style="max-width: 150px; display: inline-block; margin-left: 20px; float: none;"></h3>
 </div>
 <div class="safety col-lg-12">
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -483,13 +483,13 @@
                             </p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/7433750e126da9.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3466-6434-4565-b161-666261343661/media-034.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
 <div class="row">
 <div class="safety col-lg-12">
-<h3>Android Auto <img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/924bf721e39a64.png.webp" style="max-width: 150px; display: inline-block; margin-left: 20px; float: none;"></h3>
+<h3>Android Auto <img loading="lazy" src="https://static.tildacdn.com/tild3137-6533-4231-b134-636434316531/media-046.webp" style="max-width: 150px; display: inline-block; margin-left: 20px; float: none;"></h3>
 </div>
 <div class="safety col-lg-12">
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -502,7 +502,7 @@
                             </p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ea0b79931f4e1b.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3662-3166-4535-b662-313730616437/media-079.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -516,7 +516,7 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px; padding-bottom: 0px;">Примечание: Rockford Fosgate® и связанные логотипы — зарегистрированные товарные знаки Rockford Corporation в США и других странах. DTS Neural Surround™ — товарный знак DTS, Inc.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/91dff8088702ae.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild3762-3436-4166-a435-396639303362/media-045.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
@@ -530,9 +530,9 @@
 <p style="color: #666; width: 100%; float: left; font-size: 11px; font-style: italic; margin-top: 0px; padding-bottom: 0px;">Примечание: словесное обозначение Bluetooth® и логотипы являются зарегистрированными товарными знаками Bluetooth SIG, Inc. Mitsubishi Motors Corporation использует их по лицензии.</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-<img loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/b463e56ec363c9.jpg.webp" style="display: block; margin: auto; float: none;">
+<img loading="lazy" src="https://static.tildacdn.com/tild6165-3764-4433-b637-636131366433/media-059.webp" style="display: block; margin: auto; float: none;">
 </div>
 </div>
 </div>
 </div>
-</section><section class="ast-oem-request" id="ast-request"><h2>Рассчитать под мою комплектацию</h2><p>Оставьте контакт. Подготовим расчёт Mitsubishi ASX с доставкой в ваш город и проверим доступные комплектации.</p><form class="ast-oem-form" data-ast-lead-form data-model-id="mitsubishi_asx" aria-label="Расчёт Mitsubishi ASX"><input type="hidden" name="model" value="Mitsubishi ASX"><input type="hidden" name="model_id" value="mitsubishi_asx"><input type="hidden" name="brand" value="Mitsubishi"><input type="hidden" name="market" value="UAE GCC"><input type="hidden" name="landing_variant" value="oem"><input type="hidden" name="source" value="avtonds_site"><input type="hidden" name="site_source" value="avtonds.ru"><input type="hidden" name="source_detail" value="mitsubishi_asx_oem"><input type="hidden" name="policy_url" value="https://avtonds.ru/privacy"><input type="hidden" name="consent_version" value="privacy-2026-05-12"><input type="hidden" name="comment" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign_id" value=""><input type="hidden" name="utm_group_id" value=""><input type="hidden" name="utm_source_type" value=""><input type="hidden" name="utm_position_type" value=""><input type="hidden" name="utm_device" value=""><input type="hidden" name="utm_retargeting" value=""><input type="hidden" name="yclid" value=""><label for="ast-contact">Телефон или Telegram</label><input id="ast-contact" name="contact" placeholder="+7… или @username" autocomplete="tel" required><details><summary>Указать комплектацию и пожелания</summary><div class="ast-oem-options"><div><label for="ast-trim">Комплектация</label><input id="ast-trim" name="trim" placeholder="Нужная версия или помогите выбрать"></div><div><label for="ast-color">Цвет кузова</label><input id="ast-color" name="exterior_color" placeholder="Желаемый цвет"></div><div><label for="ast-city">Город доставки</label><input id="ast-city" name="city" autocomplete="address-level2" placeholder="Ваш город"></div><div><label for="ast-deal">Формат покупки</label><select id="ast-deal" name="deal_format"><option>Частная покупка</option><option>Юрлицо с НДС</option><option>Лизинг</option></select></div></div><label for="ast-wishes">Дополнительные пожелания</label><textarea id="ast-wishes" name="oem_wishes" rows="2" placeholder="Цвет салона, бюджет, срок покупки"></textarea></details><label class="ast-oem-consent"><input type="checkbox" name="consent" value="yes" required><span>Согласен на обработку персональных данных по <a href="https://avtonds.ru/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>. ООО «АСТ», ИНН 6313553773.</span></label><button type="submit">Получить расчёт</button><p data-ast-unified-status role="status" aria-live="polite"></p></form></section><footer class="ast-oem-contacts"><div><strong>AST · Поставка автомобилей</strong><small>ООО «АСТ» · ИНН 6313553773 · ОГРН 1176313080239</small></div><div><a href="tel:+79991583458">+7 999 158-34-58</a><br><a href="mailto:zakaz@avtonds.ru">zakaz@avtonds.ru</a></div><div><a href="https://t.me/ASTavtomoto" target="_blank" rel="noopener">Telegram AST</a><br><a href="https://avtonds.ru/contacts">Все контакты</a> · <a href="https://avtonds.ru/privacy">Политика</a></div></footer><div class="ast-oem-mobile-cta"><a href="tel:+79991583458">Позвонить</a><a href="#ast-request">Получить расчёт</a></div></div><script src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/tilda-interactions.js?v=20261020-4"></script>
+</section><section class="ast-oem-request" id="ast-request"><h2>Рассчитать под мою комплектацию</h2><p>Оставьте контакт. Подготовим расчёт Mitsubishi ASX с доставкой в ваш город и проверим доступные комплектации.</p><form class="ast-oem-form" data-ast-lead-form data-model-id="mitsubishi_asx" aria-label="Расчёт Mitsubishi ASX"><input type="hidden" name="model" value="Mitsubishi ASX"><input type="hidden" name="model_id" value="mitsubishi_asx"><input type="hidden" name="brand" value="Mitsubishi"><input type="hidden" name="market" value="UAE GCC"><input type="hidden" name="landing_variant" value="oem"><input type="hidden" name="source" value="avtonds_site"><input type="hidden" name="site_source" value="avtonds.ru"><input type="hidden" name="source_detail" value="mitsubishi_asx_oem"><input type="hidden" name="policy_url" value="https://avtonds.ru/privacy"><input type="hidden" name="consent_version" value="privacy-2026-05-12"><input type="hidden" name="comment" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign_id" value=""><input type="hidden" name="utm_group_id" value=""><input type="hidden" name="utm_source_type" value=""><input type="hidden" name="utm_position_type" value=""><input type="hidden" name="utm_device" value=""><input type="hidden" name="utm_retargeting" value=""><input type="hidden" name="yclid" value=""><label for="ast-contact">Телефон или Telegram</label><input id="ast-contact" name="contact" placeholder="+7… или @username" autocomplete="tel" required><details><summary>Указать комплектацию и пожелания</summary><div class="ast-oem-options"><div><label for="ast-trim">Комплектация</label><input id="ast-trim" name="trim" placeholder="Нужная версия или помогите выбрать"></div><div><label for="ast-color">Цвет кузова</label><input id="ast-color" name="exterior_color" placeholder="Желаемый цвет"></div><div><label for="ast-city">Город доставки</label><input id="ast-city" name="city" autocomplete="address-level2" placeholder="Ваш город"></div><div><label for="ast-deal">Формат покупки</label><select id="ast-deal" name="deal_format"><option>Частная покупка</option><option>Юрлицо с НДС</option><option>Лизинг</option></select></div></div><label for="ast-wishes">Дополнительные пожелания</label><textarea id="ast-wishes" name="oem_wishes" rows="2" placeholder="Цвет салона, бюджет, срок покупки"></textarea></details><label class="ast-oem-consent"><input type="checkbox" name="consent" value="yes" required><span>Согласен на обработку персональных данных по <a href="https://avtonds.ru/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>. ООО «АСТ», ИНН 6313553773.</span></label><button type="submit">Получить расчёт</button><p data-ast-unified-status role="status" aria-live="polite"></p></form></section><footer class="ast-oem-contacts"><div><strong>AST · Поставка автомобилей</strong><small>ООО «АСТ» · ИНН 6313553773 · ОГРН 1176313080239</small></div><div><a href="tel:+79991583458">+7 999 158-34-58</a><br><a href="mailto:zakaz@avtonds.ru">zakaz@avtonds.ru</a></div><div><a href="https://t.me/ASTavtomoto" target="_blank" rel="noopener">Telegram AST</a><br><a href="https://avtonds.ru/contacts">Все контакты</a> · <a href="https://avtonds.ru/privacy">Политика</a></div></footer><div class="ast-oem-mobile-cta"><a href="tel:+79991583458">Позвонить</a><a href="#ast-request">Получить расчёт</a></div></div><script src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/tilda-interactions.js?v=20261020-cdn1"></script>

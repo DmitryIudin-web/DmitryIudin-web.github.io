@@ -1,0 +1,1118 @@
+{
+  "version": "2026-10-20",
+  "image_count": 179,
+  "video_count": 1,
+  "storage_records": {
+    "asx": [
+      "rec4976668001",
+      "rec4977541301"
+    ],
+    "eclipse-cross": []
+  },
+  "assets": [
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/01c66ce1eca78c.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6562-6331-4735-b633-366639303136/media-000.webp",
+      "source_sha256": "0edbe0d8da25f0900bf4de7079c49cdcb6588c3c9c5804d736b4816bc964fa6b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/04afa81fe83bfb.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3633-6661-4566-b365-633966336237/media-001.webp",
+      "source_sha256": "ad01815587983c24cebd718ceda9f7bd7ae4835f4ff3299e7d401cca1bb6c45b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0566eadede6ca9.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3833-3234-4534-b662-353933633233/media-002.webp",
+      "source_sha256": "5bc4d0e8fc7068628a4e115a510358222400014ae3da924c0798000f9888cebf",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/05d08435f054f0.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3065-3664-4534-a131-333463356566/media-003.webp",
+      "source_sha256": "af9b6e25c52f45b4f3001e6c261a2434f27eb29d374b25b63ae4f23b5ebf888a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0c5e6eefcf9dce.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3532-3336-4135-a232-626430663066/media-004.webp",
+      "source_sha256": "a6e298dbe89775a7357ba4a1fb5360cf7aafcdf86c679a75f35d187f8e8901bc",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0c6b2d495d3fa8.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3537-3738-4462-b938-626636383038/media-005.webp",
+      "source_sha256": "6795ee4fa08e79277665937f0130df6b3d434f8929d47bd66fb70c7cd7da0707",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0d17f15f1014da.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6463-3135-4533-b436-663332333863/media-006.webp",
+      "source_sha256": "b690a12c79994c1b8fd81cb8b95e99be3342232cad8fb60afcfc51b9f28678ea",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/0e46a519dacce9.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3833-3235-4433-b532-636463396538/media-007.webp",
+      "source_sha256": "08811c9384665e88a78ae4edfb0cd9e4cac0a8ff4822d086fd6974dd04fc5590",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/12fa8d3b973a45.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3461-3130-4436-a435-616562646566/media-008.webp",
+      "source_sha256": "d994f895cb0d80388dfafc1861338fed78d3c0dbfdb9ed9a7ecf3f197d7e3beb",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/1676d500ef3afb.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6565-3635-4539-a334-353939363336/media-009.webp",
+      "source_sha256": "e88ff57ad5d5e4d337fcf2d1bbcaa0cd3922265cb0d1baebbac5cd20e898a4f1",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/199f6842c6b590.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6366-6438-4261-b335-643664343838/media-010.webp",
+      "source_sha256": "c1beb80fecd15f2591b0c43b9066b37f7e4d3f8f9cddf42727030755637243fa",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/1b089dc6f1f2b8.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3439-6465-4439-a537-383034313565/media-011.webp",
+      "source_sha256": "b20778b5cf3c2ab01cc1645511d8cbb03dc3aa56e36004daffc533dfc6f975f4",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/1c81b7ad768d6c.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6365-3061-4965-b766-346662333531/media-012.webp",
+      "source_sha256": "bd070c2d25f552efe02e2056d3c8613f40332a31a5348dac9fb50280c7e2e3da",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/1d514d36c751c1.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6430-6333-4738-a537-326266333461/media-013.webp",
+      "source_sha256": "cb8805c13d4ebf7b0377ecb05bfe102c40eb6c5321ee6421d0e30f2917021637",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/1fd1252e207320.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6161-3266-4635-a364-323963613336/media-014.webp",
+      "source_sha256": "7cfff496aa75389b9c400b5f6b9df8149ac715b589d5bf65f022cefcf3042e1b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/24b4a473de55c2.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3666-3562-4331-b662-623663393166/media-015.webp",
+      "source_sha256": "99fa1003ceb9086f2bbd4bd67e01a383c32a15240e5090e6907f0154b42adb2f",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/264b862c822f8e.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3663-3137-4032-a535-336563353035/media-016.webp",
+      "source_sha256": "53e7151ba230f22e0058f3f26ef636567ae995295cf82e0d469cbd4c5d8b9dd0",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/27e1571784b5d1.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3066-6131-4462-b738-353537656362/media-017.webp",
+      "source_sha256": "6b2efc8beceff78431e65362cf2d7702ab2b49658fb910e92e32f158d12bb9e0",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/301694c0154acb.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3238-3834-4438-a236-313865386530/media-018.webp",
+      "source_sha256": "366b0d8732f59c481dafbd06cc625be33e5dcc37325794ef542d979d27e33bdd",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/378775b0f7a3d0.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3230-6461-4437-a432-356466343733/media-019.webp",
+      "source_sha256": "576db9381ba6758afe07cecd1209f0acc4be168c1a3e42d658a602ac62f58547",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/39adaddaaa3966.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3565-3338-4161-b566-343737646631/media-020.webp",
+      "source_sha256": "5779d96200a434aeb051aad605a3703d6ec4d3a5856ad98ff806c7b0cb3e729e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/3a411c0099a2b2.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3536-3561-4363-b131-353964323132/media-021.webp",
+      "source_sha256": "3a3c90a99b22b73440ac6042a42a6c72e61c4a7f776493401b535dfe67051b9c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/3f3d6205432086.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3336-3532-4164-b463-666339643433/media-022.webp",
+      "source_sha256": "f1d158296eeab944feeaf407e0d4e11464d0a35b6c4106735fe0abdfab69ccab",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/3f75aae5b7d23a.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3661-3831-4634-b930-383931393932/media-023.webp",
+      "source_sha256": "4620ed6d1fdeaf29d0c47df1c6467fb6a36e0df935679b33f4ec4331ad26a6ec",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/429e6e8897e5e0.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3432-3038-4064-b734-306137643139/media-024.webp",
+      "source_sha256": "92dcbe11ae128d6e425117e9e80c6d7d0a24ee903ece73ef35c87a1e191891e2",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/44aa907147cf09.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3463-3439-4038-b965-303862323231/media-025.webp",
+      "source_sha256": "0a7391b5cfea63ce9cbfedaecaab1fb3a75dc267112defb5c83e73d0c2b7be09",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/549d68c9737c40.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6333-3264-4164-a136-323264366132/media-026.webp",
+      "source_sha256": "5f1977116dfa6080a4991d7a0cbd07f51631740a78b5cf62a80f8e0cbf85ad6c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/57411e7dcc8f0e.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3461-3366-4236-b163-333338383230/media-027.webp",
+      "source_sha256": "9de8bd4770a964e4cd1283a8c65b9cc182145011d82f5e3fc709e0a7c5526fae",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/5aa94a2e5a6912.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3239-6232-4538-b339-633532323632/media-028.webp",
+      "source_sha256": "5e4fdb9f0a3be6e013224117f6d9d00a38859e5dbe5da5ea6e8c507b8e2d5957",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/5e85fdf737d856.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6630-3062-4532-a136-626662313638/media-029.webp",
+      "source_sha256": "89efdcbff1ed69022fc8e2d04dc21d00347485d796f4d5e5bec85e909165842a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/60962cce2fdcfa.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6261-3063-4931-a461-303635636439/media-030.webp",
+      "source_sha256": "10ed06eb1167bd7e6aa2b11bc4ce10db9a44796a0fa44db6ff4b67c62c1a1374",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/6f9b732f110aa1.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6662-3665-4666-b962-333765363665/media-031.webp",
+      "source_sha256": "0f325ca64788925f1ba5aadf7b2c64dfc0ad94ddbe3a74736f73ba32fc6827d5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/70f162bafcbab1.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3732-3034-4233-a136-366666653232/media-032.webp",
+      "source_sha256": "28fc2e8ffda25bccb577b9f106655b7bddc0a355cbcd35d87f64f62d35e25580",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/71dafaa9ebe0b0.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6332-6132-4962-b761-383235353732/media-033.webp",
+      "source_sha256": "c2e161ff74e1e60bcc8d32cfa904d385b33590ffd1e59bc313453f6b0eeb5d03",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/7433750e126da9.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3466-6434-4565-b161-666261343661/media-034.webp",
+      "source_sha256": "7e06b20e4f847cd59fffcd88a17d2d8144838eca981ff2104bc369b24b2a343b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/77f9e2b2a8c4cc.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6130-6362-4466-b236-306364306336/media-035.webp",
+      "source_sha256": "d3abe547d0b2542e01fd63f92c8dbc35649b1a5778befb6d70585147329552e4",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/78a8e885620015.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3838-3335-4138-b436-353965663364/media-036.webp",
+      "source_sha256": "8f6f5b8eb93ab7119e42bc87a5bb4fb5877f21970f06a10e94d4af702f071211",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/796b752a7308d0.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3539-6231-4161-b266-636238323865/media-037.webp",
+      "source_sha256": "39d884fd36523eabefd8b495c1f8c60b13276fc1fb0778c49fbbf5007b1fe1a2",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/796f92834179c6.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6136-3362-4564-b161-666364353039/media-038.webp",
+      "source_sha256": "b018cb4d35fd537e908052a424ad1ba518b7fdc3f9ce56da13fe95f971706c47",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/7b935c3227e029.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3530-6234-4237-b732-633130393662/media-039.webp",
+      "source_sha256": "71ed433bbb3d4ba8de883418aa5f62100ab853b3ecd60f7031709c2a5ef7c9bb",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/7caf11e22ed666.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6266-3262-4439-a633-323661303031/media-040.webp",
+      "source_sha256": "d6e67a20022b2991ac8c0a8a459a89f72c30b4473a880cc366557331bb7fb02b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/7cdce262f40c04.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3131-3230-4430-b031-386636623464/media-041.webp",
+      "source_sha256": "3b243358061b700a93b35ee0956e0190f3b60b81fb3c1aa22ba9313fc1d4799f",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/84b5bc245399cc.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3863-3161-4165-a363-346235306430/media-042.webp",
+      "source_sha256": "c1bb8a0372db42eb6cd97930c933fb94bfc32457aff64ace963170f155878f68",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/8b80a5d184200a.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3562-3130-4365-a463-303435336235/media-043.webp",
+      "source_sha256": "4e648ac2b8db9bbfdf5f391d7e80764730f8989bd7bb1fdfe5fa3c4d7269a7ce",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/8ea5cec30f9335.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3233-3534-4730-a265-343234373131/media-044.webp",
+      "source_sha256": "c7596400e0d9043497b4e4283bac37d9c20704a57591cb28522b5842dc3777cd",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/91dff8088702ae.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3762-3436-4166-a435-396639303362/media-045.webp",
+      "source_sha256": "74f09743cc61a9f8bf4cbbefcbcbd36bea0a9a23be715706da604eaf0ee556df",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/924bf721e39a64.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3137-6533-4231-b134-636434316531/media-046.webp",
+      "source_sha256": "19f68a34cc366bef547ced9e076ba9dfa0f51edeb8010c9d8a22bce99f1b517c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/935c79f1626579.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3764-6437-4864-a437-393962666637/media-047.webp",
+      "source_sha256": "e5d1c8cf66e172c4cae588cc94d814b8fe8b2e1dc880888be717945e636144b3",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9630c685cf012e.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3062-3861-4438-b037-356534333635/media-048.webp",
+      "source_sha256": "04dde141f034ab35db4b3997e60c52498d701f8fbb2ac145aa10b206629a6de7",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9660c75e5aadc4.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3638-3465-4261-a666-393162666165/media-049.webp",
+      "source_sha256": "7e720f7e419c6038f07104902ea13b25baaa1d7cce7cf142a2bc6557ec280952",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/99a17eb91f7a28.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3932-3831-4636-b333-336430353431/media-050.webp",
+      "source_sha256": "a932b0193db083285196ced994fcdc562487a3f70faac7748ada73c56781193c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9d09c64011c341.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3864-3731-4736-b434-333061363738/media-051.webp",
+      "source_sha256": "72698bf3939cd2b901dd0179ee5bacec74e372f594b27e0b8f2477cfe6fa1ca6",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9e9c8002c1032e.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3332-6533-4430-b765-653866626337/media-052.webp",
+      "source_sha256": "92d0dc26d5d516dcda6d919cc8aaacd65ba8a519e47215547a0430e42a11711a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/9f618de61f2243.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3432-3535-4935-b234-316336626262/media-053.webp",
+      "source_sha256": "fa33cbcfe8b2f07aa22cb4206589c545a9769e5fa9fd55f273ada20eeac382f1",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/a35458f88ac55d.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6435-3766-4464-b839-653562633261/media-054.webp",
+      "source_sha256": "b946d06ebc3696ae0aebf100955eb62e26efbce417d0d1533859d3c14949ed90",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/a44257b13ecc68.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3365-6361-4731-b631-313261643036/media-055.webp",
+      "source_sha256": "80a57ba781e73c35a48e4fc4ec85ca5b8f7bc949f635c03460a6462f42e7aa9e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ac59d3867b076b.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3232-3133-4165-b532-393932363433/media-056.webp",
+      "source_sha256": "e29b195e2fc8e6c9bdab2843171090ac7b6c7b3a572b059d50ece0038db849da",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/acb08ceeb804c0.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6163-3539-4830-b966-376632656435/media-057.webp",
+      "source_sha256": "3eabbafc425b766654e7c511c36e7924373103ce7247b36db3922b951300a66b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/afc54b9b787028.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3530-6334-4635-a434-336263386561/media-058.webp",
+      "source_sha256": "5ca9b23b44638ad8e26767c6a8865212455346f2397873a08a39afc796563b35",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/b463e56ec363c9.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6165-3764-4433-b637-636131366433/media-059.webp",
+      "source_sha256": "24118503d8009684cc1a7cb134a9fbdcc7413e2b2c4a38085378cf94f243b692",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/baa1c107afaaf4.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3732-3962-4662-a665-326431316563/media-060.webp",
+      "source_sha256": "01900ad2eaf02fb33506c5b4ebab510385ad5c49c1285252f8d183ba7e328d3f",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c0619ef2fe596c.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3839-6133-4338-b265-306266396232/media-061.webp",
+      "source_sha256": "836578733bf8d48fb9a75165b89ba8854c91af9753fc94a58ecfd4938b95d5db",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c17291c56affa9.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6361-6335-4561-b838-623937663562/media-062.webp",
+      "source_sha256": "378f5ca899ddf30a8d0e8772ecfd928a5b72dd7341bb0c5bf5a1e7812c6a615e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c3807e1e9ef3b0.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6561-6432-4630-b839-653263633039/media-063.webp",
+      "source_sha256": "2536c32246b94b5539b8faa603912f84b1b597d5e263421660ace6c7c500b737",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c3abba27cd0831.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3338-6333-4531-a366-383935383861/media-064.webp",
+      "source_sha256": "55617b7ce18fc5d18990a4d1e077d3614138206eac4507e78e344e3ecf7d3cc0",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c3ba7f37197970.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6337-3834-4537-b733-623839373731/media-065.webp",
+      "source_sha256": "1756f388a8546fbfaa496aeb0d5ef3afe8009447a8586a142a944763bc0419ae",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c42f0224991204.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3861-3734-4134-b765-643639363337/media-066.webp",
+      "source_sha256": "1ee0be1c8b416baeef77fa6999ce7824a478930617a21b0c24ac7bcecf143e8a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c5223672b251c5.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6362-3836-4238-b236-343530396337/media-067.webp",
+      "source_sha256": "c4fa24de0aa89c9b8881f59aa4d8c14621d5ef1a9abf755c71871d3d9ccda71c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/c657d170985d83.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3036-3531-4434-a466-393937303362/media-068.webp",
+      "source_sha256": "d47f3caf2be83103407c7912e14490c4e3d772501d1f3f1bcc1d9f68c3bfcc28",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/cc750befb7d4f5.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3037-6633-4633-a463-383937343865/media-069.webp",
+      "source_sha256": "0f90a5cc54c894833bfcb05aafcf97aa842b46b1f5441902840a299ad3c08dcb",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ccccd3611f5f2b.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6136-6436-4735-a138-376164336166/media-070.webp",
+      "source_sha256": "8a18a1b7081d6499a81146ab4bcc8db5b89e2de62c811712cf6f891f3a6aaa20",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/d2b0fe428d6a37.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6365-3835-4630-b634-353563633638/media-071.webp",
+      "source_sha256": "03c3adb7e7221806cf96519a3a1f3af9ca56bcc76781c08c091567ff4c67f7c4",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/d662b0c380e767.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3730-6331-4035-a235-313735616132/media-072.webp",
+      "source_sha256": "fdd59045373f0fce8f84825b1f06f00043b1a0814b7ce51f3752b6c99e743c56",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/d90882101686b3.png",
+      "cdn_url": "https://static.tildacdn.com/tild6364-3733-4130-a664-366539303333/media-073.png",
+      "source_sha256": "c3bd2681aebad76a6e8489745d1e0016e62d65b32325172d44fd08f038c5aea5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/da2346161ba1cb.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3564-3539-4462-a565-383036373866/media-074.webp",
+      "source_sha256": "9d90b23b1ce30e691520d98e94fa3dd363adcdcca29cc35329b1e0f736ae5f4c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/db06d68f71b025.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3836-3663-4562-b663-653733366339/media-075.webp",
+      "source_sha256": "07e2655a82411957f363f5ce34d224844c48047fecdeceddd3cc56e1d3010868",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/e80f9c53e381e9.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6430-3134-4666-b333-303066336163/media-076.webp",
+      "source_sha256": "e59b18522d506d013c589b34ee379e618129080955aa35fabf933dd2e846c66a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/e898a9b984c741.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3263-3331-4535-b430-366562366231/media-077.webp",
+      "source_sha256": "a50a370f200ab990a09a596d34ced1e5eb1dff6e348f88df097c339d62695321",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/e8da4753c38629.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6537-3134-4730-b535-316133656464/media-078.webp",
+      "source_sha256": "8bc5517c78423929be8dd06e5dd809f7cd432bc1d0f4a18ee85342299ef57766",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ea0b79931f4e1b.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3662-3166-4535-b662-313730616437/media-079.webp",
+      "source_sha256": "cbad0cb8f2b1ea0473df9d3bad401de9b2816f4ab9063e4702cba509b92da7c8",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/eb14a1bf35eeb6.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3164-6434-4363-b561-616636633232/media-080.webp",
+      "source_sha256": "8cc8a9c7d8cb8cbe4c758bd5a8d10f875acff982940493385768bed89f77adf6",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/ebbba42ec0a788.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6235-3336-4436-b730-393334393034/media-081.webp",
+      "source_sha256": "4e9b8793e338c3a67cb8adc6ada6e13a44a6f80b2ff3ff46535b64d4c4825535",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/efff5a86759313.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6131-6532-4130-b761-326364643431/media-082.webp",
+      "source_sha256": "16d520c654e19507f2d959ef346fcecce1062c1f07942514626774ceaf586693",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f1c4bd137f3797.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3237-3037-4237-a134-323464353638/media-083.webp",
+      "source_sha256": "b85f0c493b23f25a46fb5f729a8100f2fcdfdea3d4d4159521281835fa80b310",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f3dab8e611f966.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3965-3736-4035-b935-623135636564/media-084.webp",
+      "source_sha256": "4e56aa799b0d65c0b5b62c1d8301fe00bce96c837aeca32dec52da3d2f1687fe",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f64a18fda3a216.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6635-3034-4636-b339-356338313632/media-085.webp",
+      "source_sha256": "1f5878d712385711e146b88e2cc7e8664f4adc516841ae503632b3a90a6b3005",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f6fbd1b1814377.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6339-6336-4436-b465-653034316631/media-086.webp",
+      "source_sha256": "70611803ef645aae5016ee4f2696c11b364c8e23468b4bd59e1a8855e866d99c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/f810a4ac8e139e.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3733-3739-4364-b639-643966626135/media-087.webp",
+      "source_sha256": "827d3f8b7ac0d78550679b7af929aa4ad8267af32f3cb2e57a3ce8afa98fbcc2",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/fc4bad090816d5.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3736-3134-4137-b236-303234353530/media-088.webp",
+      "source_sha256": "b07b362943e93a6ecafe90361969e407c17f4a411c017813eb9bd3521a1bcda7",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/fc52ced22e24f7.jpg.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6338-3036-4235-b338-326165343935/media-089.webp",
+      "source_sha256": "d5154120dc12f1e18bc9fca9de34e8bea1180dd3201c965f3a57281db3e982fb",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/asx/assets/fd76957d1014f4.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3036-3031-4966-a261-636637663733/media-090.webp",
+      "source_sha256": "221853b6701d81aeaa66086c0065d36c3b43f73d229bdda3ccec38960296296f",
+      "type": "image"
+    },
+    {
+      "original_url": "http://www.habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/search-icon.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild3232-3133-4165-b532-393932363433/media-056.webp",
+      "source_sha256": "e29b195e2fc8e6c9bdab2843171090ac7b6c7b3a572b059d50ece0038db849da",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/018b1d9e858d22.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3962-3530-4564-a530-353931393265/media-091.webp",
+      "source_sha256": "f9c6a0cb16a07e7f47fe5eddff96b084264b2a12cc76fa2146c223fdea4fc7d5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/05d08435f054f0.png.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3065-3664-4534-a131-333463356566/media-003.webp",
+      "source_sha256": "af9b6e25c52f45b4f3001e6c261a2434f27eb29d374b25b63ae4f23b5ebf888a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/35d93912565d56.mp4",
+      "cdn_url": "https://static.tildacdn.com/vide3465-3862-4164-b663-306138366231/media-092.mp4",
+      "source_sha256": "9c9090b03e42e63027545c39720b10395c043054b15dd7451c677e40f2d9670b",
+      "type": "video"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/4e5d32f01565c3.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3130-3465-4162-b730-653536333663/media-093.webp",
+      "source_sha256": "19f7c156c3c87e9fb9157184b87bdb5585595f457bbb9c8a4edfd3b46572594c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/5ca050adf9f209.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3131-6334-4339-a436-343134626630/media-094.webp",
+      "source_sha256": "c1bba0e17d91ff846c7abd11784c62b2f404535a7877f3e089f5ff1d92a3de32",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/6d81af5d25888f.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3239-6235-4836-b233-613665376164/media-095.webp",
+      "source_sha256": "dfaa2461af1cdb88fe9e8bf62f27aa755a1dc28d1afa7305568efc9e3cb989a4",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/9b14ed96b568bd.webp.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6132-3639-4939-b163-643862653562/media-096.webp",
+      "source_sha256": "4b0a3ac7d5b8d0c17c5bf00fdcac8a2d4c512116d39997505ab9519bd5e55c04",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/d54c943114f14b.svg",
+      "cdn_url": "https://static.tildacdn.com/tild3262-6565-4534-a165-616639636436/media-097.svg",
+      "source_sha256": "42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/f098383e3a2a86.svg",
+      "cdn_url": "https://static.tildacdn.com/tild3763-3465-4363-b763-336264646532/media-098.svg",
+      "source_sha256": "030adae2678c97e57751ecff8aeb96a26fb502ea3d6ab43f7ab5a7bdfd2eca35",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/specs/eclipse/02.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild6361-3361-4330-a631-396365326361/media-099.webp",
+      "source_sha256": "f8280d307bcb01073ec34281530cf3c5df71bd1a4dc41e7878f72de2877528b5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_01.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3466-6265-4130-a637-666461313461/media-100.webp",
+      "source_sha256": "279e47405621773e0f568746d912690e79b77a48c2dc9cd46a7417c67850c61b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_013.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3661-3237-4231-a265-346136366230/media-101.webp",
+      "source_sha256": "bfc25edd62a97ae8beed36633e4734b2b5bff0f7e22f1c740dc258a0b6c36ed2",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_014_v2.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6434-3463-4165-b234-303766366337/media-102.webp",
+      "source_sha256": "e7c0bc42e0c80db8f5b02d9150bc00a1d072cd34afac5a0c61210b83bb07b818",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_02.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6161-3436-4364-b865-643736353561/media-103.webp",
+      "source_sha256": "6c66a57624e2e03b77f9a3cd409bbfaf9d8959b64b331d80458663f34da1f6b7",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_03.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6631-3030-4038-a664-643738653863/media-104.webp",
+      "source_sha256": "c125c4a0ac63852324f125faf923922bb612b4c8a63a1db4b07e0f21689768a0",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_04.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6136-6564-4939-a131-623263316333/media-105.webp",
+      "source_sha256": "c9772bbb5326ab0e166bdbf36179becf43f68418fe182f2427a8c93328a3e96a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_05.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6532-3230-4635-b037-623538623032/media-106.webp",
+      "source_sha256": "fe190b2700a631db709b9765c95e8db68dd96be733152467a841494b59b15b7d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_06.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6233-6565-4830-b233-623133666330/media-107.webp",
+      "source_sha256": "2543b8f89899fdcb592fed8d17f6b2a06383204cc3557fe5ebe01e2588b45c75",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_HL_01.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3536-6235-4435-a532-353635616235/media-108.webp",
+      "source_sha256": "1be57439a2244147d78f608f188f475150dbfbeb739734cac4752ba4a679d2c7",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E01.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3636-3963-4262-b337-366464303864/media-109.webp",
+      "source_sha256": "64220b7faf6fd33d394451cd9209f5c77c39d97ee0dc80f8e5f5e4e65f5a1973",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E02.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3062-6238-4261-b534-353030366436/media-110.webp",
+      "source_sha256": "1bd3d74fb1fd9735997afaa885aed853474ea631305c67299892453f54d50451",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E03.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3932-3364-4138-a639-616633613939/media-111.webp",
+      "source_sha256": "16313b5d3a916d519e36ae48e7edbb9c1847db4b8ab9a13a8b42f1aa2de45657",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E04.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3964-6264-4066-a264-643138653230/media-112.webp",
+      "source_sha256": "3b60408152010647e41df6781651cfcf0cab5f1f44e6a7c1bad70251b097457c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E05.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3131-6334-4339-a436-343134626630/media-094.webp",
+      "source_sha256": "c1bba0e17d91ff846c7abd11784c62b2f404535a7877f3e089f5ff1d92a3de32",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E06.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3538-6665-4264-b061-363361646438/media-113.webp",
+      "source_sha256": "575a3e9f4ce2a473819a26e8a478f00a3840782ff8720d6357776cc47594d683",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E07.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3432-3462-4631-b630-356536356136/media-114.webp",
+      "source_sha256": "566c74c8b8ddbc64003ab7ed19f3f1914f36ea8a2687b82e1536b0e933756f06",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E08.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3239-6135-4563-b039-383837383962/media-115.webp",
+      "source_sha256": "f063e097c92a191cfd553f84f2f72e811fdfe1202844547994f2d551afc0938d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E3.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3063-3532-4134-a236-613034316431/media-116.webp",
+      "source_sha256": "d0545457a73e085c7eeaea2716373d9a5ce450434cdadcacbb09a4e3c142a910",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E6.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3466-3839-4535-b766-613334343361/media-117.webp",
+      "source_sha256": "31f2d9862ea51dfe64a68f709b9905f2b1e85d96293ce6d99b8ff8b16d92b9ed",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES010.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3439-3165-4666-b230-636362613861/media-118.webp",
+      "source_sha256": "8c1cf89facc5594ce50b86cc41294b3f689d5d979f14acb9f0c37d842beea806",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES011.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3666-6435-4330-b332-653337323835/media-119.webp",
+      "source_sha256": "908f28e63779b190df8f5c87775554f9f991afa3c8c3ddba921cb2ab840480df",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES2.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3665-6634-4139-b966-336361623737/media-120.webp",
+      "source_sha256": "dfaf433c94d1dfa321958288070ab62a210ab48ef155e69e225d46e11695ce76",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES3.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3364-6138-4135-b364-363965633966/media-121.webp",
+      "source_sha256": "b6f063d0c672e29aa2e043ff848fad6dbe0bcc1bdda638ef292ebbf9fd3a4e48",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES4.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3533-3431-4634-a537-363134326166/media-122.webp",
+      "source_sha256": "f72be64801fb09793259f9eaea78c00a9fdc8287658b268252a3f2d37931c41c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES5.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3131-3462-4365-b333-353963363365/media-123.webp",
+      "source_sha256": "eed6d76854cd6de971eb87cfe287e05b46209b8a71dc71d51fbdd26af1845986",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES7.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6532-6239-4036-a634-383832316634/media-124.webp",
+      "source_sha256": "245aeb40c84428f1cfcf2e2f542f1935045d5ea2226317f57c49c2dd1e5aca54",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES8.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3239-6332-4466-a636-313665663562/media-125.webp",
+      "source_sha256": "ed0c000d32f5f924a593bdce5d90a4e14ff44bfd7ce96ce3c754ef2aa87aef9b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES9.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3239-6331-4063-b266-393563363665/media-126.webp",
+      "source_sha256": "1034f9e005ad70aee4b392a3f7155f938579a432efba2feef1c0873f8471368d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_01.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6538-6336-4631-a339-343932326232/media-127.webp",
+      "source_sha256": "0d0f6a955af205e1a425e90caf12bf7ee88da6e31fe57337e0fe339066fee89e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_02.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6330-3533-4133-a630-396566663136/media-128.webp",
+      "source_sha256": "0f2cc5db8869cf7658c6b799f6568fd6d5dfa1bbdc606dfc5ade2556c3926d7e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_05.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6361-3765-4430-a463-393162636365/media-129.webp",
+      "source_sha256": "e63d4128ea7449732395a42cc32301bdc14a1847276687e05a139dc0518a3ce3",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_07.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3266-3637-4762-b937-313633643033/media-130.webp",
+      "source_sha256": "86ce24a4ed211b19397ef252338b43b6a52c75d732964ae699d1d308115cc0f5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_09.webp",
+      "cdn_url": "https://static.tildacdn.com/tild6136-3065-4630-a263-396432336363/media-131.webp",
+      "source_sha256": "ce81fb37c351fbe69b99d239c9cf9aa1b45e578fff2e0723ec9bf59cb987d074",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/gravel_mode.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3935-3365-4332-a537-393332313463/media-132.webp",
+      "source_sha256": "f566f84ac2bc2c6a284901c8b799eab3516ef4e2ca84e0cc2e72d0cacb6ab5e5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/normal_mode.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3161-3934-4037-b930-316338616637/media-133.webp",
+      "source_sha256": "3d68109034fb5ae396de6f4ed6d9c6e3a71015f578c6c67d591d3efea169e3e1",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/snow_mode.webp",
+      "cdn_url": "https://static.tildacdn.com/tild3933-3738-4836-a261-626662396532/media-134.webp",
+      "source_sha256": "03aa690c6df300bd2fb7dde133e82f483d4fa97f71b7ca58a5e60840f122e8d8",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/about/page-bg.png",
+      "cdn_url": "https://static.tildacdn.com/tild6164-3030-4633-b462-613731363665/media-135.png",
+      "source_sha256": "25625fc344c7ae005327bf60e10e28303a31d4efdafc741c7ed51773712d9788",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/footer-bg-pattern.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild3530-3032-4761-a163-396265373165/media-136.jpg",
+      "source_sha256": "90511c54923e795ed597511c8ba520bcabe36916db57da9d0f0b39171480aeb1",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/info.png",
+      "cdn_url": "https://static.tildacdn.com/tild6262-3539-4761-b236-313433383463/media-137.png",
+      "source_sha256": "bd28635d7f18878ce3fc891c19c9ec37b91925d3e8d171cc64c3aeb20babcb96",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/li-before.png",
+      "cdn_url": "https://static.tildacdn.com/tild6237-6433-4831-b731-616365313666/media-138.png",
+      "source_sha256": "55e4b4bcdb1d05843875804d024e7656fc5eef0f8b42b3268767a29fbb7f77ed",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_00.png",
+      "cdn_url": "https://static.tildacdn.com/tild6363-3361-4637-b663-323861393630/media-139.png",
+      "source_sha256": "02a573a083b1468a7f05ee6493f25ce00d6e7a5d7c92d0a96383392feb701290",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_01.png",
+      "cdn_url": "https://static.tildacdn.com/tild3763-6630-4464-b638-646235623432/media-140.png",
+      "source_sha256": "4a169da0e3b779ca2c3c2d52bdedda2d73b5a4c3e93f8b25a2e6ec37bab85746",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_02.png",
+      "cdn_url": "https://static.tildacdn.com/tild3137-3365-4934-a437-303062313036/media-141.png",
+      "source_sha256": "01c439ebe80bdec0d1327e465b3d1c5891735b98ede94a13b84baee77b48144e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_03.png",
+      "cdn_url": "https://static.tildacdn.com/tild3764-6135-4530-a666-333932653239/media-142.png",
+      "source_sha256": "100b307eaec75748e8b5c84cedfaeb43530cabcd3438adcbf54984ada7e41b7c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_04.png",
+      "cdn_url": "https://static.tildacdn.com/tild6563-3664-4132-b932-656638353932/media-143.png",
+      "source_sha256": "12d896ac7ef027386f6b9b02569df0512bf71be9c436d73a440c143c25c95703",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/models/l200_new/color_thumb_05.png",
+      "cdn_url": "https://static.tildacdn.com/tild3832-6630-4839-b737-306265383337/media-144.png",
+      "source_sha256": "2028d528510d0c8bd68d72b93a83b98be736f2b34736e4c793f37264b97541bc",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/phone-icon.png",
+      "cdn_url": "https://static.tildacdn.com/tild3039-3838-4530-a262-346434653563/media-145.png",
+      "source_sha256": "947131150fa32a3fe0aff8cda808d0ec473c83f83486ce3b0bedd346d38a156d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/prmotions/promotion-title1.png",
+      "cdn_url": "https://static.tildacdn.com/tild3230-6433-4636-a134-373961366365/media-146.png",
+      "source_sha256": "79a608cc458c5091e0c1c660617ab1bee5e8a813b59846eee089b62f13cdb3d5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/rotate.png",
+      "cdn_url": "https://static.tildacdn.com/tild3264-3431-4034-b966-616462623062/media-147.png",
+      "source_sha256": "a3005bad9ecd24bc7792b799fd555b06b6844361d8b24a63ee4dc1cb5888514e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/slider/arrow-off.png",
+      "cdn_url": "https://static.tildacdn.com/tild3634-3932-4165-b765-663339623435/media-148.png",
+      "source_sha256": "78f3678fe4c29670ce1ac6f6a214313353c0bffe120ebd0ee0b2e8d15ebaaef8",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/slider/arrow-on.png",
+      "cdn_url": "https://static.tildacdn.com/tild6364-3733-4130-a664-366539303333/media-073.png",
+      "source_sha256": "c3bd2681aebad76a6e8489745d1e0016e62d65b32325172d44fd08f038c5aea5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/01.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild6637-3061-4531-a438-613535386135/media-149.jpg",
+      "source_sha256": "0bb1639530fe479697f4bf9f12d49a1ffae5f40308dafead87fa3ba678d47623",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/02.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild6266-3631-4430-b130-356132373035/media-150.jpg",
+      "source_sha256": "95e4b4fa70f064b96fb88271f4b9b13b9ca9147f2ae317f41f92631e9051e38b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/03.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild3166-6232-4164-b762-323837383635/media-151.jpg",
+      "source_sha256": "15417378ca9c1cc44e7fdef52942c9732e1850f758e58458fb037596f856b284",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/04.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild6437-6330-4139-b563-643530646463/media-152.jpg",
+      "source_sha256": "c68ef59a377eb954719001ea910c594371b4196e901af94804c56a5c5fc260a9",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/05.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild3133-6539-4531-b661-363362383931/media-153.jpg",
+      "source_sha256": "070222ec3dccafcbb39e6ee24eba745f35f3f816dcc90f0014b49fe755052c06",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/whats-more/06.jpg",
+      "cdn_url": "https://static.tildacdn.com/tild6338-3266-4633-a437-343461363535/media-154.jpg",
+      "source_sha256": "fdcf6511c2a08fe53780c0cd5efe0660acb00252ec1383ef72465db5d2aeb85c",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_01.png",
+      "cdn_url": "https://static.tildacdn.com/tild6234-6232-4164-b261-383739326431/media-155.png",
+      "source_sha256": "28ff3cf78e2afa7b3618e996e27f95b0ed4062727f6b1097408e6da1127a7b3a",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_02.png",
+      "cdn_url": "https://static.tildacdn.com/tild6130-6632-4334-b035-643431313465/media-156.png",
+      "source_sha256": "be6f0fb96566ceac6d0b10053d8f24e4c1742fdbbcc33dd940ee5e7553e0e35d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_03.png",
+      "cdn_url": "https://static.tildacdn.com/tild3234-3439-4839-a136-313061653862/media-157.png",
+      "source_sha256": "7ad53f5c4d90b7ab6e299f0b234147a6d555d225d4946233c673dd3dd9f7e2b8",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_04.png",
+      "cdn_url": "https://static.tildacdn.com/tild6230-3630-4435-b634-653033653830/media-158.png",
+      "source_sha256": "2db4a2a75a94a16f99bbe52a32d82b5352cdafac01db21f3e87c7477e059614d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_05.png",
+      "cdn_url": "https://static.tildacdn.com/tild6365-6338-4264-b535-303831613864/media-159.png",
+      "source_sha256": "3bd81c7afd1ba8965b2d0509d0b163802abb90659403bb4c755aeb8accbc8e10",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_06.png",
+      "cdn_url": "https://static.tildacdn.com/tild3030-3931-4632-b336-386465336361/media-160.png",
+      "source_sha256": "14b04e1c59481da38d15710813c4ad249d9b6d6225f7da6f29cec9afc5d63610",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/asx/design/colors/color_thumb_07.png",
+      "cdn_url": "https://static.tildacdn.com/tild3036-3534-4661-b835-646430343831/media-161.png",
+      "source_sha256": "ab5c55dc08b8443cb8d519a73f4885432ba5c5618410c2dbad058b8924c4f33f",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_00.png",
+      "cdn_url": "https://static.tildacdn.com/tild3632-3461-4636-b766-383961343765/media-162.png",
+      "source_sha256": "dbb0ce3fd5e6a25eb556e24f8ae96b1d85a05a1b7faa593d6e8f8c4b724b5cc7",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_01.png",
+      "cdn_url": "https://static.tildacdn.com/tild3664-3434-4032-b035-626234326331/media-163.png",
+      "source_sha256": "37eda4f565fe5d87b014db9d6c4a13cd3cc006eb37c1248fb6f636bf4ddf0436",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_02.png",
+      "cdn_url": "https://static.tildacdn.com/tild3933-3336-4235-a235-633032633430/media-164.png",
+      "source_sha256": "bef947ef6d4923c714c2815b97be70e29ab9ea62e06a4b1b4d0dcb832c6b3c84",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_03.png",
+      "cdn_url": "https://static.tildacdn.com/tild6432-6662-4733-a361-633362643433/media-165.png",
+      "source_sha256": "d8a3cdfde5bc2e716248c8f25106f26c97b24c236c247d2a2543cfdce01f2c2d",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_04.png",
+      "cdn_url": "https://static.tildacdn.com/tild6230-6437-4062-a335-316134383230/media-166.png",
+      "source_sha256": "6586d391460dda7856bde33805b5e7dc62de08de2ef68ca3e7755b6a21f70927",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_05.png",
+      "cdn_url": "https://static.tildacdn.com/tild3938-6338-4430-b737-386136626263/media-167.png",
+      "source_sha256": "95748bc81bb3ba6ab1f8660ddc3f20b1b3a22be68a99e2a12e522233acd9f629",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_06.png",
+      "cdn_url": "https://static.tildacdn.com/tild3537-3134-4530-a339-633938663439/media-168.png",
+      "source_sha256": "5552d9630a8852c8b1424b82977c1330392e7c3e4ea21b932ce1e275dd86936e",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/montero/design/colors/color_thumb_07.png",
+      "cdn_url": "https://static.tildacdn.com/tild3334-6437-4263-b139-326366633339/media-169.png",
+      "source_sha256": "2d77ebc1048de63bc6b949a622243d3581b78a983fae4fc8ca27eff9469b9c81",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_00.png",
+      "cdn_url": "https://static.tildacdn.com/tild3666-3763-4533-b035-653464366633/media-170.png",
+      "source_sha256": "c824fbb72ff1229bfa65eadddb04fe9c2c6299e5bd1e2bec6d612930c6799869",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_01.png",
+      "cdn_url": "https://static.tildacdn.com/tild3131-3363-4765-a166-386439383433/media-171.png",
+      "source_sha256": "c130852a25558445dfb3e5653f0c8a8ba4d9da38fda42b7244ff4c77c4f693b1",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_02.png",
+      "cdn_url": "https://static.tildacdn.com/tild6432-3262-4636-b561-333361646631/media-172.png",
+      "source_sha256": "397a8fd4b5a950ce5c3f0aacaeb5941f9ff8277e8eea851d3be6a8f2c555a2ea",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_03.png",
+      "cdn_url": "https://static.tildacdn.com/tild6563-3432-4665-b836-303336653431/media-173.png",
+      "source_sha256": "906debf1d31b8b5102ebd67e27a125b7f1115876dd24a95d57d1630bab1561a0",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_04.png",
+      "cdn_url": "https://static.tildacdn.com/tild3364-6638-4862-b765-383362643231/media-174.png",
+      "source_sha256": "d471c9fc0219ca4b04949f06ee1cba05d2b0faaf88679b4aa646a625fdbc77a5",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_05.png",
+      "cdn_url": "https://static.tildacdn.com/tild3964-3531-4661-a538-653864346434/media-175.png",
+      "source_sha256": "833089f7056f4a05ea41f0ac644baac02fd834bc4950be58e6ac215429b3f346",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_06.png",
+      "cdn_url": "https://static.tildacdn.com/tild6563-3163-4336-b761-366262633564/media-176.png",
+      "source_sha256": "2181cb4f850781f224ca39bf64414f83ff1010859c76d731ed91d6a87b06ead2",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_07.png",
+      "cdn_url": "https://static.tildacdn.com/tild3861-6266-4665-a532-363961356530/media-177.png",
+      "source_sha256": "1cabe45602eb4f11dbf3ebd8fe3af841fe01c7fe087fa884e9e518d8d0dc2f27",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_08.png",
+      "cdn_url": "https://static.tildacdn.com/tild6533-6530-4831-b165-623135666165/media-178.png",
+      "source_sha256": "e18b01dce6ed1109644cc75a180829bb7b64db3e22fc8f119781c0b63921844b",
+      "type": "image"
+    },
+    {
+      "original_url": "https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/images/cars/outlander-phev/design/colors/color_thumb_09.png",
+      "cdn_url": "https://static.tildacdn.com/tild3566-3030-4361-b237-386130313565/media-179.png",
+      "source_sha256": "d2dc3ed7c24a9edd67e72b087eae24d7cf21a5454249e6beb983e1108e39faa9",
+      "type": "image"
+    }
+  ]
+}

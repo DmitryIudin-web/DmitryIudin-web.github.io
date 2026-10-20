@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="mitsubishi_eclipse_cross"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ECLIPSE CROSS</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
+<link rel="stylesheet" href="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/tilda-scoped.css?v=20261020-cdn1"><div id="ast-mitsubishi-oem" data-model="mitsubishi_eclipse_cross"><header class="ast-oem-head"><a class="ast-logo" href="https://avtonds.ru/">AST</a><strong>MITSUBISHI ECLIPSE CROSS</strong><a class="ast-oem-phone" href="tel:+79991583458">+7 999 158-34-58</a><a class="ast-oem-cta" href="#ast-request">Получить расчёт</a></header><div class="container-flud cars-top-bar">
 <div class="container-wrap">
 <ul class="fadeInUp">
 <li><a class="current" href="#index" data-oem-tab="index">Обзор</a></li>
@@ -16,28 +16,28 @@
 <section data-oem-panel="index">
 <div class="container-fluid cars-first-div all-cars-home video_bg">
 <video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
-<source src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/35d93912565d56.mp4" type="video/mp4"></source>Ваш браузер не поддерживает видео HTML5.</video>
+<source src="https://static.tildacdn.com/vide3465-3862-4164-b663-306138366231/media-092.mp4" type="video/mp4"></source>Ваш браузер не поддерживает видео HTML5.</video>
 <h1 class="attrage_video_lay" style="font-size: 46px; color: white;">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/f098383e3a2a86.svg">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3763-3465-4363-b763-336264646532/media-098.svg">
 <span>Купе-кроссовер, готовый к действию</span>
 <span class="small_text_on_video">Элегантность. Спортивный характер. Новое поколение Eclipse Cross.</span>
 </h1>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/6d81af5d25888f.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3239-6235-4836-b233-613665376164/media-095.webp">
 <p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;">
 <span class="red">ДИНАМИКА</span>Точная управляемость и удовольствие за рулём<span class="normal-text new_font">Передовые технологии полного привода обеспечивают спортивную управляемость и новые ощущения за рулём.</span>
 <a class="learn-more-transparent" href="#drive" data-oem-tab="drive">ПОДРОБНЕЕ О ДИНАМИКЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/9b14ed96b568bd.webp.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6132-3639-4939-b163-643862653562/media-096.webp">
 <p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;"><span class="red">ЭКСТЕРЬЕР</span>Элегантный купе-кроссовер<span class="normal-text new_font">Смелые линии и выразительные поверхности создают характер Eclipse Cross — купе-кроссовера для дорог и новых маршрутов.</span>
 <a class="learn-more-transparent" href="#exterior" data-oem-tab="exterior">ПОДРОБНЕЕ ОБ ЭКСТЕРЬЕРЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
 </div>
 <div class="container-fluid cars-first-div all-cars-home">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/018b1d9e858d22.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3962-3530-4564-a530-353931393265/media-091.webp">
 <p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;"><span class="red">ИНТЕРЬЕР</span>Элегантность и спортивный характер<span class="normal-text new_font">Горизонтальная архитектура передней панели Eclipse Cross размещает приборы и органы управления в пределах удобной досягаемости.</span>
 <a class="learn-more-transparent" href="#interior" data-oem-tab="interior">ПОДРОБНЕЕ ОБ ИНТЕРЬЕРЕ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
@@ -46,7 +46,7 @@
 <p class="heading-cars top-20-left-10 animate-fade-in" style="color: #000; font-family: MMC-Bold;"><span class="red">БЕЗОПАСНОСТЬ</span>Безопасность без компромиссов<span class="normal-text new_font">Современные системы помощи делают Eclipse Cross уверенным выбором для безопасных поездок.</span>
 <a class="learn-more-transparent" href="#safety" data-oem-tab="safety">ПОДРОБНЕЕ О БЕЗОПАСНОСТИ<span class="glyphicon glyphicon-chevron-right"></span></a>
 </p>
-<img alt="Mitsubishi Eclipse Cross" class="imge_float_right" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/4e5d32f01565c3.webp">
+<img alt="Mitsubishi Eclipse Cross" class="imge_float_right" loading="lazy" src="https://static.tildacdn.com/tild3130-3465-4162-b730-653536333663/media-093.webp">
 </div>
 <div class="disclaimer container">
 <span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
@@ -57,7 +57,7 @@
 <p>Турбодвигатель с непосредственным впрыском обеспечивает живые реакции, а постоянный полный привод — устойчивость и уверенное прохождение поворотов.</p>
 </div>
 <div class="container-fluid">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_01.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3466-6265-4130-a637-666461313461/media-100.webp">
 </div>
 <div class="container main_title_new" style="padding-top: 50px;">
 <p>СИСТЕМА ПОЛНОГО ПРИВОДА S-AWC</p>
@@ -65,7 +65,7 @@
 <p style="max-width: 100%;">Система постоянного полного привода управляет тягой и тормозным усилием каждого колеса. Для точного прохождения поворотов и устойчивости она объединяет AYC, ASC и ABS.</p>
 </div>
 <div class="container-fluid">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_02.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6161-3436-4364-b865-643736353561/media-103.webp">
 </div>
 <div class="container main_title_new" style="padding-top: 50px;">
 <h2>Подробнее о Super All Wheel Control</h2>
@@ -73,19 +73,19 @@
 <div class="container-fluid">
 <div class="equal_columns_black white_bg technolog_div" style="align-items: normal;">
 <div class="col-lg-4">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_03.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6631-3030-4038-a664-643738653863/media-104.webp">
 <p class="specs_detail1">ЛУЧШЕЕ СЦЕПЛЕНИЕ С ДОРОГОЙ</p>
 <h2 class="specs_headline">Активное управление разворачивающим моментом (AYC)</h2>
 <p class="specs_detail">Разработанная Mitsubishi система AYC улучшает прохождение поворотов, управляя тормозными усилиями на левых и правых колёсах. Это помогает сохранять контроль при резком торможении и ускорении.</p>
 </div>
 <div class="col-lg-4">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_04.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6136-6564-4939-a131-623263316333/media-105.webp">
 <p class="specs_detail1">УСТОЙЧИВОСТЬ В РАЗНЫХ УСЛОВИЯХ</p>
 <h2 class="specs_headline">Система курсовой устойчивости (ASC)</h2>
 <p class="specs_detail">Датчики ASC анализируют движение автомобиля. При потере устойчивости система перераспределяет тягу и тормозное усилие между колёсами для сохранения контроля.</p>
 </div>
 <div class="col-lg-4">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_05.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6532-3230-4635-b037-623538623032/media-106.webp">
 <p class="specs_detail1">КОНТРОЛЬ ТОРМОЖЕНИЯ</p>
 <h2 class="specs_headline">Антиблокировочная система (ABS)</h2>
 <p class="specs_detail">Антиблокировочная система предотвращает блокировку колёс при торможении, помогая сохранять сцепление с дорогой и управляемость.</p>
@@ -102,7 +102,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_06.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6233-6565-4830-b233-623133666330/media-107.webp">
 </div>
 </div>
 </div>
@@ -132,17 +132,17 @@
 <div class="container_new">
 <div class="equal_columns_black white_bg technolog_div" style="align-items: normal;">
 <div class="col-lg-4">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/normal_mode.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3161-3934-4037-b930-316338616637/media-133.webp">
 <h2 class="specs_headline">Режим Normal</h2>
 <p class="specs_detail">Для уверенной работы полного привода на разных дорогах.</p>
 </div>
 <div class="col-lg-4">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/gravel_mode.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3935-3365-4332-a537-393332313463/media-132.webp">
 <h2 class="specs_headline">Режим Gravel</h2>
 <p class="specs_detail">Для плавного и устойчивого движения по грунтовым дорогам.</p>
 </div>
 <div class="col-lg-4">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/snow_mode.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3933-3738-4836-a261-626662396532/media-134.webp">
 <h2 class="specs_headline">Режим Snow</h2>
 <p class="specs_detail">Для устойчивости и уверенности на скользкой дороге.</p>
 </div>
@@ -159,20 +159,20 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_014_v2.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6434-3463-4165-b234-303766366337/media-102.webp">
 </div>
 </div>
 </div>
 <div class="container-fluid">
 <div class="container_new">
 <div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_HL_01.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3536-6235-4435-a532-353635616235/media-108.webp">
 <p class="small_txt">ПРОЕКЦИОННЫЙ ДИСПЛЕЙ (HUD)</p>
 <h2 class="specs_headline">Важная информация под рукой</h2>
 <p class="specs_detail">Проекционный дисплей HUD расположен над рулевым колесом. Скорость, навигация и предупреждения остаются перед глазами, позволяя следить за дорогой.</p>
 </div>
 <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/D_eclipse_013.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3661-3237-4231-a265-346136366230/media-101.webp">
 <p class="small_txt">МНОГОФУНКЦИОНАЛЬНЫЙ ДИСПЛЕЙ</p>
 <h2 class="specs_headline">Важные предупреждения вовремя</h2>
 <p class="specs_detail">Цветной информационный ЖК-дисплей между спидометром и тахометром показывает режим движения и предупреждения систем безопасности. Его расположение позволяет быстро считывать данные и следить за дорогой.</p>
@@ -188,7 +188,7 @@
 <p>Новое поколение Eclipse Cross продолжает развитие дизайна Mitsubishi, объединяя смелые решения и внимание к качеству.</p>
 </div>
 <div class="container-fluid">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E01.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3636-3963-4262-b337-366464303864/media-109.webp">
 </div>
 <div class="container-fluid">
 <div class="equal_columns_black white_bg">
@@ -200,13 +200,13 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E02.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3062-6238-4261-b534-353030366436/media-110.webp">
 </div>
 </div>
 </div>
 <div class="container-fluid diff_strip">
 <div class="container_new text_right_strip">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E03.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3932-3364-4138-a639-616633613939/media-111.webp">
 <div class="strip_black">
 <p class="small_txt">DYNAMIC SHIELD</p>
 <h2 class="specs_headline">Сочетание защиты и динамики</h2>
@@ -224,7 +224,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E04.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3964-6264-4066-a264-643138653230/media-112.webp" style="width: 100%;">
 </div>
 </div>
 </div>
@@ -232,7 +232,7 @@
 <div class="container_new">
 <div class="equal_columns_black white_bg">
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E05.webp">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild3131-6334-4339-a436-343134626630/media-094.webp">
 </div>
 <div class="col-lg-6">
 <div class="container_new">
@@ -255,7 +255,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E06.webp">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild3538-6665-4264-b061-363361646438/media-113.webp">
 </div>
 </div>
 </div>
@@ -263,13 +263,13 @@
 <div class="container-fluid">
 <div class="container_new">
 <div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E07.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3432-3462-4631-b630-356536356136/media-114.webp">
 <p class="small_txt">ПАНОРАМНАЯ КРЫША С ЭЛЕКТРОПРИВОДОМ</p>
 <h2 class="specs_headline">Наслаждайтесь каждым пейзажем</h2>
 <p class="specs_detail">Панорамная крыша наполняет салон светом и ощущением простора, открывая виды во время путешествий.</p>
 </div>
 <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E08.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3239-6135-4563-b039-383837383962/media-115.webp">
 <p class="small_txt">НОВЫЙ ЦВЕТ WHITE DIAMOND</p>
 <h2 class="specs_headline">Глубокий и насыщенный белый</h2>
 <p class="specs_detail">Палитра Eclipse Cross включает новый четырёхслойный White Diamond. Глубина и блеск покрытия подчёркивают линии кузова.</p>
@@ -286,7 +286,7 @@
 </div>
 <div class="container-fluid diff_strip">
 <div class="container_new text_right_strip">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_01.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6538-6336-4631-a339-343932326232/media-127.webp">
 <div class="strip_black">
 <p class="small_txt">ГОРИЗОНТАЛЬНАЯ АРХИТЕКТУРА</p>
 <h2 class="specs_headline">Всё подчинено водителю</h2>
@@ -304,7 +304,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_02.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6330-3533-4133-a630-396566663136/media-128.webp" style="width: 100%;">
 </div>
 </div>
 </div>
@@ -318,7 +318,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E3.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3063-3532-4134-a236-613034316431/media-116.webp">
 </div>
 </div>
 </div>
@@ -326,7 +326,7 @@
 <div class="container_new">
 <div class="equal_columns_black white_bg">
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/assets/5ca050adf9f209.webp">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild3131-6334-4339-a436-343134626630/media-094.webp">
 </div>
 <div class="col-lg-6">
 <div class="container_new">
@@ -351,14 +351,14 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_05.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6361-3765-4430-a463-393162636365/media-129.webp" style="width: 100%;">
 </div>
 </div>
 </div>
 <div class="container-fluid">
 <div class="equal_columns_black white_bg">
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/E6.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3466-3839-4535-b766-613334343361/media-117.webp" style="width: 100%;">
 </div>
 <div class="col-lg-6">
 <div class="container_new">
@@ -371,7 +371,7 @@
 </div>
 <div class="container-fluid diff_strip">
 <div class="container_new text_right_strip">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_07.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3266-3637-4762-b937-313633643033/media-130.webp">
 <div class="strip_black">
 <p class="small_txt">ПРОСТОРНЫЙ БАГАЖНИК</p>
 <h2 class="specs_headline">Багажник объёмом 331 литр</h2>
@@ -389,7 +389,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/Ei_09.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6136-3065-4630-a263-396432336363/media-131.webp">
 </div>
 </div>
 </div>
@@ -411,20 +411,20 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES2.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3665-6634-4139-b966-336361623737/media-120.webp" style="width: 100%;">
 </div>
 </div>
 </div>
 <div class="container-fluid">
 <div class="container_new">
 <div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES3.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3364-6138-4135-b364-363965633966/media-121.webp">
 <p class="small_txt">ПРЕДУПРЕЖДЕНИЕ О ВЫХОДЕ ИЗ ПОЛОСЫ (LDW)</p>
 <h2 class="specs_headline">Предупреждение о выходе из полосы</h2>
 <p class="specs_detail">Если автомобиль смещается из полосы без включённого указателя поворота, система подаёт звуковое и визуальное предупреждение.</p>
 </div>
 <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES4.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3533-3431-4634-a537-363134326166/media-122.webp">
 <p class="small_txt">КОНТРОЛЬ СЛЕПЫХ ЗОН (BSW)</p>
 <h2 class="specs_headline">Контроль слепых зон</h2>
 <p class="specs_detail">Радарные датчики в заднем бампере обнаруживают автомобили в слепых зонах. Индикатор в зеркале и звуковой сигнал предупреждают водителя об опасности.</p>
@@ -441,7 +441,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES5.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3131-3462-4365-b333-353963363365/media-123.webp" style="width: 100%;">
 </div>
 </div>
 </div>
@@ -455,7 +455,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES7.webp">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild6532-6239-4036-a634-383832316634/media-124.webp">
 </div>
 </div>
 </div>
@@ -463,7 +463,7 @@
 <div class="container_new">
 <div class="equal_columns_black white_bg">
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES8.webp">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild3239-6332-4466-a636-313665663562/media-125.webp">
 </div>
 <div class="col-lg-6">
 <div class="container_new">
@@ -478,13 +478,13 @@
 <div class="container-fluid">
 <div class="container_new">
 <div class="col-lg-7 col-md-8 col-sm-8 col-xs-12 new_content_type">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES9.webp">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild3239-6331-4063-b266-393563363665/media-126.webp">
 <p class="small_txt">СЕМЬ ПОДУШЕК БЕЗОПАСНОСТИ SRS</p>
 <h2 class="specs_headline">Защита всех пассажиров</h2>
 <p class="specs_detail">Фронтальные и боковые подушки, шторки и коленная подушка водителя помогают защитить пассажиров при столкновении.</p>
 </div>
 <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 new_content_type top_margin_extra">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES010.webp">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild3439-3165-4666-b230-636362613861/media-118.webp">
 <p class="small_txt">ЗАЩИТНАЯ КОНСТРУКЦИЯ КУЗОВА RISE</p>
 <h2 class="specs_headline">Поглощение энергии удара</h2>
 <p class="specs_detail">Кузов RISE эффективно поглощает энергию удара и помогает сохранять целостность пассажирского салона при столкновении.</p>
@@ -501,7 +501,7 @@
 </div>
 </div>
 <div class="col-lg-6">
-<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/page-templates/eclipse_new/ES011.webp" style="width: 100%;">
+<img alt="Mitsubishi Eclipse Cross" class="" loading="lazy" src="https://static.tildacdn.com/tild3666-6435-4330-b332-653337323835/media-119.webp" style="width: 100%;">
 </div>
 </div>
 </div>
@@ -511,10 +511,10 @@
 </section><section data-oem-panel="specifications" hidden>
 <div class="container-fluid specifications">
 <div class="specs-img container">
-<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://habtoormotors.com/mitsubishi/wp-content/themes/mitsubishi/images/specs/eclipse/02.jpg">
+<img alt="Mitsubishi Eclipse Cross" loading="lazy" src="https://static.tildacdn.com/tild6361-3361-4330-a631-396365326361/media-099.webp">
 </div>
 </div>
 <div class="disclaimer container">
 <span>Изображения, оснащение и характеристики могут различаться в зависимости от рынка и комплектации.</span>
 </div>
-</section><section class="ast-oem-request" id="ast-request"><h2>Рассчитать под мою комплектацию</h2><p>Оставьте контакт. Подготовим расчёт Mitsubishi Eclipse Cross с доставкой в ваш город и проверим доступные комплектации.</p><form class="ast-oem-form" data-ast-lead-form data-model-id="mitsubishi_eclipse_cross" aria-label="Расчёт Mitsubishi Eclipse Cross"><input type="hidden" name="model" value="Mitsubishi Eclipse Cross"><input type="hidden" name="model_id" value="mitsubishi_eclipse_cross"><input type="hidden" name="brand" value="Mitsubishi"><input type="hidden" name="market" value="UAE GCC"><input type="hidden" name="landing_variant" value="oem"><input type="hidden" name="source" value="avtonds_site"><input type="hidden" name="site_source" value="avtonds.ru"><input type="hidden" name="source_detail" value="mitsubishi_eclipse_cross_oem"><input type="hidden" name="policy_url" value="https://avtonds.ru/privacy"><input type="hidden" name="consent_version" value="privacy-2026-05-12"><input type="hidden" name="comment" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign_id" value=""><input type="hidden" name="utm_group_id" value=""><input type="hidden" name="utm_source_type" value=""><input type="hidden" name="utm_position_type" value=""><input type="hidden" name="utm_device" value=""><input type="hidden" name="utm_retargeting" value=""><input type="hidden" name="yclid" value=""><label for="ast-contact">Телефон или Telegram</label><input id="ast-contact" name="contact" placeholder="+7… или @username" autocomplete="tel" required><details><summary>Указать комплектацию и пожелания</summary><div class="ast-oem-options"><div><label for="ast-trim">Комплектация</label><input id="ast-trim" name="trim" placeholder="Нужная версия или помогите выбрать"></div><div><label for="ast-color">Цвет кузова</label><input id="ast-color" name="exterior_color" placeholder="Желаемый цвет"></div><div><label for="ast-city">Город доставки</label><input id="ast-city" name="city" autocomplete="address-level2" placeholder="Ваш город"></div><div><label for="ast-deal">Формат покупки</label><select id="ast-deal" name="deal_format"><option>Частная покупка</option><option>Юрлицо с НДС</option><option>Лизинг</option></select></div></div><label for="ast-wishes">Дополнительные пожелания</label><textarea id="ast-wishes" name="oem_wishes" rows="2" placeholder="Цвет салона, бюджет, срок покупки"></textarea></details><label class="ast-oem-consent"><input type="checkbox" name="consent" value="yes" required><span>Согласен на обработку персональных данных по <a href="https://avtonds.ru/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>. ООО «АСТ», ИНН 6313553773.</span></label><button type="submit">Получить расчёт</button><p data-ast-unified-status role="status" aria-live="polite"></p></form></section><footer class="ast-oem-contacts"><div><strong>AST · Поставка автомобилей</strong><small>ООО «АСТ» · ИНН 6313553773 · ОГРН 1176313080239</small></div><div><a href="tel:+79991583458">+7 999 158-34-58</a><br><a href="mailto:zakaz@avtonds.ru">zakaz@avtonds.ru</a></div><div><a href="https://t.me/ASTavtomoto" target="_blank" rel="noopener">Telegram AST</a><br><a href="https://avtonds.ru/contacts">Все контакты</a> · <a href="https://avtonds.ru/privacy">Политика</a></div></footer><div class="ast-oem-mobile-cta"><a href="tel:+79991583458">Позвонить</a><a href="#ast-request">Получить расчёт</a></div></div><script src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/tilda-interactions.js?v=20261020-4"></script>
+</section><section class="ast-oem-request" id="ast-request"><h2>Рассчитать под мою комплектацию</h2><p>Оставьте контакт. Подготовим расчёт Mitsubishi Eclipse Cross с доставкой в ваш город и проверим доступные комплектации.</p><form class="ast-oem-form" data-ast-lead-form data-model-id="mitsubishi_eclipse_cross" aria-label="Расчёт Mitsubishi Eclipse Cross"><input type="hidden" name="model" value="Mitsubishi Eclipse Cross"><input type="hidden" name="model_id" value="mitsubishi_eclipse_cross"><input type="hidden" name="brand" value="Mitsubishi"><input type="hidden" name="market" value="UAE GCC"><input type="hidden" name="landing_variant" value="oem"><input type="hidden" name="source" value="avtonds_site"><input type="hidden" name="site_source" value="avtonds.ru"><input type="hidden" name="source_detail" value="mitsubishi_eclipse_cross_oem"><input type="hidden" name="policy_url" value="https://avtonds.ru/privacy"><input type="hidden" name="consent_version" value="privacy-2026-05-12"><input type="hidden" name="comment" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign_id" value=""><input type="hidden" name="utm_group_id" value=""><input type="hidden" name="utm_source_type" value=""><input type="hidden" name="utm_position_type" value=""><input type="hidden" name="utm_device" value=""><input type="hidden" name="utm_retargeting" value=""><input type="hidden" name="yclid" value=""><label for="ast-contact">Телефон или Telegram</label><input id="ast-contact" name="contact" placeholder="+7… или @username" autocomplete="tel" required><details><summary>Указать комплектацию и пожелания</summary><div class="ast-oem-options"><div><label for="ast-trim">Комплектация</label><input id="ast-trim" name="trim" placeholder="Нужная версия или помогите выбрать"></div><div><label for="ast-color">Цвет кузова</label><input id="ast-color" name="exterior_color" placeholder="Желаемый цвет"></div><div><label for="ast-city">Город доставки</label><input id="ast-city" name="city" autocomplete="address-level2" placeholder="Ваш город"></div><div><label for="ast-deal">Формат покупки</label><select id="ast-deal" name="deal_format"><option>Частная покупка</option><option>Юрлицо с НДС</option><option>Лизинг</option></select></div></div><label for="ast-wishes">Дополнительные пожелания</label><textarea id="ast-wishes" name="oem_wishes" rows="2" placeholder="Цвет салона, бюджет, срок покупки"></textarea></details><label class="ast-oem-consent"><input type="checkbox" name="consent" value="yes" required><span>Согласен на обработку персональных данных по <a href="https://avtonds.ru/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>. ООО «АСТ», ИНН 6313553773.</span></label><button type="submit">Получить расчёт</button><p data-ast-unified-status role="status" aria-live="polite"></p></form></section><footer class="ast-oem-contacts"><div><strong>AST · Поставка автомобилей</strong><small>ООО «АСТ» · ИНН 6313553773 · ОГРН 1176313080239</small></div><div><a href="tel:+79991583458">+7 999 158-34-58</a><br><a href="mailto:zakaz@avtonds.ru">zakaz@avtonds.ru</a></div><div><a href="https://t.me/ASTavtomoto" target="_blank" rel="noopener">Telegram AST</a><br><a href="https://avtonds.ru/contacts">Все контакты</a> · <a href="https://avtonds.ru/privacy">Политика</a></div></footer><div class="ast-oem-mobile-cta"><a href="tel:+79991583458">Позвонить</a><a href="#ast-request">Получить расчёт</a></div></div><script src="https://dmitryiudin-web.github.io/mitsubishi-oem-media/eclipse-cross/tilda-interactions.js?v=20261020-cdn1"></script>
