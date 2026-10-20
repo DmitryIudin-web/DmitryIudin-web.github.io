@@ -62,6 +62,8 @@ def scope_css(text):
         out.append(pre+'{'+body+'}');pos=i
     return ''.join(out)
 
+ASX_ANNOTATION_CSS='''#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control span,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{font:400 13px/1.55 Arial,Helvetica,sans-serif!important;color:#555!important;letter-spacing:normal!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control{display:flex!important;align-items:flex-start;gap:10px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__indicator{flex-shrink:0;margin:2px 0 0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{text-decoration:underline!important}#ast-mitsubishi-oem #bx-pager01 a:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}#ast-mitsubishi-oem #bx-pager01 a:focus-visible{outline:2px solid #333!important;outline-offset:3px}'''
+
 FORM_CSS='''
 body:has(#ast-mitsubishi-oem) [aria-label="Быстрая связь"]{display:none!important}
 #ast-mitsubishi-oem{font-family:Arial,Helvetica,sans-serif;color:#151515;overflow-x:clip;background:#fff}
@@ -109,6 +111,10 @@ for slug,(model,pages) in MODELS.items():
             if node.get('style'):
                 node.set('style',re.sub(r'url\(([^)]+)\)',lambda m:'url('+absolute_url(m.group(1).strip('\"\''),f,slug)+')',node.get('style')))
         for notice in main.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," vat-notice ")]'):notice.getparent().remove(notice)
+        # User annotation 2026-10-20: remove the first ASX video hero, preserve its photo hero.
+        if slug == 'asx' and stem == 'index':
+            for hero in main.xpath('.//*[contains(concat(" ", normalize-space(@class), " "), " video_bg ")]'):
+                hero.getparent().remove(hero)
         for h1 in main.xpath('.//h1'):h1.tag='h2'
         if stem=='index':
             headings=main.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," attrage_video_lay ")]') or main.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," heading-cars ")]')
@@ -135,6 +141,8 @@ for slug,(model,pages) in MODELS.items():
     script+='\n'+(ROOT/'scripts/mitsubishi-native-form-adapter.js').read_text()
     (directory/'tilda-interactions.js').write_text(script)
     fragment=f'<link rel="stylesheet" href="{HOST}/{slug}/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="{fields["model_id"]}">'+header+nav+''.join(panels)+form+footer+'</div>'+f'<script src="{HOST}/{slug}/tilda-interactions.js?v=20261020-4"></script>'
+    if slug == 'asx':
+        fragment = '<style data-ast-asx-annotation="20261020">'+ASX_ANNOTATION_CSS+'</style>'+fragment
     (directory/'tilda-fragment.txt').write_text(fragment)
     out=ROOT/('mitsubishi-'+slug);out.mkdir(exist_ok=True)
     canonical='https://avtonds.ru/mitsubishi-'+slug
