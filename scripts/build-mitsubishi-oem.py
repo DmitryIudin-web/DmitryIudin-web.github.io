@@ -77,6 +77,8 @@ ASX_ANNOTATION_CSS='''#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-
 # Mobile OEM floats must stay inside their panel so the following form cannot cover media.
 MOBILE_LAYOUT_CSS = '#ast-mitsubishi-oem{display:flow-root}#ast-mitsubishi-oem>[data-oem-panel]:not([hidden]){display:flow-root;clear:both}#ast-mitsubishi-oem>.cars-top-bar{float:none;clear:both;width:100%}#ast-mitsubishi-oem>.ast-oem-request,#ast-mitsubishi-oem>.ast-oem-contacts{clear:both}@media(max-width:991px){#ast-mitsubishi-oem>[data-oem-panel]:not([hidden]){display:block!important;float:none!important;clear:both;width:100%}#ast-mitsubishi-oem [data-oem-panel]>.all-cars-home,#ast-mitsubishi-oem [data-oem-panel]>.cars-first-div{float:none!important;clear:both;width:100%}#ast-mitsubishi-oem [data-oem-panel]::after{content:"";display:table;clear:both}#ast-mitsubishi-oem .cars-first-div>img{float:none!important}#ast-mitsubishi-oem>.ast-oem-request{float:none!important;clear:both!important;display:flow-root}}'
 
+ASX_MOBILE_POLISH_CSS = '@media(max-width:700px){#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .cars-top-bar{min-height:0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .cars-top-bar ul{gap:0!important;min-height:48px;padding:4px!important;scrollbar-width:none}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .cars-top-bar ul::-webkit-scrollbar{display:none}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .cars-top-bar ul li a{padding:11px 10px!important;font-size:11px!important;letter-spacing:.4px;border:0}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] [data-oem-panel="index"] .cars-first-div>p.heading-cars{position:static!important;float:none!important;display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:none;width:100%;padding:16px 5%;margin:0!important;background:#fff!important;color:#151515!important;border-bottom:1px solid #e8e8e8}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] [data-oem-panel="index"] p.heading-cars>.red{font:400 clamp(16px,5vw,19px)/1.25 Arial,Helvetica,sans-serif;margin:0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] [data-oem-panel="index"] p.heading-cars>.learn-more-transparent{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:44px;margin:0!important;padding:11px 13px;background:#e60012!important;color:#fff!important;border:0;font:400 12px/1.2 Arial,Helvetica,sans-serif}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] [data-oem-panel="index"] .learn-more-transparent .glyphicon{display:inline-block;margin-left:5px;font-size:11px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-mobile-cta{padding:8px 4%;padding-bottom:max(8px,env(safe-area-inset-bottom))}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-mobile-cta a{min-height:44px;padding:12px 8px;font-size:14px;line-height:20px}}'
+
 FORM_CSS='''
 body:has(#ast-mitsubishi-oem) [aria-label="Быстрая связь"]{display:none!important}
 #ast-mitsubishi-oem{font-family:Arial,Helvetica,sans-serif;color:#151515;overflow-x:clip;background:#fff}
@@ -143,7 +145,7 @@ for slug,(model,pages) in MODELS.items():
         elif href.startswith('assets/'):a.set('href',absolute_url(href,directory/'index.html',slug))
     nav=etree.tostring(nav_doc,encoding='unicode',method='html')
     stylesheet=scope_css('\n'.join(css))+FORM_CSS+'\n'+(ROOT/'scripts/mitsubishi-native-form.css').read_text()
-    stylesheet = on_tilda_cdn(stylesheet) + MOBILE_LAYOUT_CSS
+    stylesheet = on_tilda_cdn(stylesheet) + MOBILE_LAYOUT_CSS + (ASX_MOBILE_POLISH_CSS if slug == 'asx' else '')
     (directory/'tilda-scoped.css').write_text(stylesheet)
     fields={'model':'Mitsubishi '+model,'model_id':'mitsubishi_'+slug.replace('-','_'),'brand':'Mitsubishi','market':'UAE GCC','landing_variant':'oem','source':'avtonds_site','site_source':'avtonds.ru','source_detail':'mitsubishi_'+slug.replace('-','_')+'_oem','policy_url':'https://avtonds.ru/privacy','consent_version':'privacy-2026-05-12','comment':''}
     fields.update({k:'' for k in ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_campaign_id','utm_group_id','utm_source_type','utm_position_type','utm_device','utm_retargeting','yclid']})
@@ -158,12 +160,14 @@ for slug,(model,pages) in MODELS.items():
     if slug == 'asx':
         fragment = '<style data-ast-asx-annotation="20261020">'+ASX_ANNOTATION_CSS+'</style>'+fragment
     fragment = '<style data-ast-mobile-layout="20261021b">'+MOBILE_LAYOUT_CSS+'</style>'+fragment
+    if slug == 'asx':
+        fragment = '<style data-ast-asx-mobile-polish="20261021">'+ASX_MOBILE_POLISH_CSS+'</style>'+fragment
     fragment = on_tilda_cdn(fragment)
     storage = CDN_MANIFEST.get('storage_records', {}).get(slug, [])
     if storage:
         fragment = '<style>'+','.join('#'+record for record in storage)+'{display:none!important}</style>'+fragment
     if CDN_URLS:
-        fragment = fragment.replace('v=20261020-4', 'v=20261021-mobile2')
+        fragment = fragment.replace('v=20261020-4', 'v=20261021-asx3' if slug == 'asx' else 'v=20261021-mobile2')
     (directory/'tilda-fragment.txt').write_text(fragment)
     out=ROOT/('mitsubishi-'+slug);out.mkdir(exist_ok=True)
     canonical='https://avtonds.ru/mitsubishi-'+slug
