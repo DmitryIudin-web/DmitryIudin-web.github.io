@@ -75,7 +75,7 @@ def scope_css(text):
 ASX_ANNOTATION_CSS='''#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control span,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{font:400 13px/1.55 Arial,Helvetica,sans-serif!important;color:#555!important;letter-spacing:normal!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control{display:flex!important;align-items:flex-start;gap:10px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__indicator{flex-shrink:0;margin:2px 0 0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{text-decoration:underline!important}#ast-mitsubishi-oem #bx-pager01 a:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}#ast-mitsubishi-oem #bx-pager01 a:focus-visible{outline:2px solid #333!important;outline-offset:3px}'''
 
 # Mobile OEM floats must stay inside their panel so the following form cannot cover media.
-MOBILE_LAYOUT_CSS = '#ast-mitsubishi-oem{display:flow-root}#ast-mitsubishi-oem>[data-oem-panel]:not([hidden]){display:flow-root;clear:both}#ast-mitsubishi-oem>.cars-top-bar{float:none;clear:both;width:100%}#ast-mitsubishi-oem>.ast-oem-request,#ast-mitsubishi-oem>.ast-oem-contacts{clear:both}'
+MOBILE_LAYOUT_CSS = '#ast-mitsubishi-oem{display:flow-root}#ast-mitsubishi-oem>[data-oem-panel]:not([hidden]){display:flow-root;clear:both}#ast-mitsubishi-oem>.cars-top-bar{float:none;clear:both;width:100%}#ast-mitsubishi-oem>.ast-oem-request,#ast-mitsubishi-oem>.ast-oem-contacts{clear:both}@media(max-width:991px){#ast-mitsubishi-oem>[data-oem-panel]:not([hidden]){display:block!important;float:none!important;clear:both;width:100%}#ast-mitsubishi-oem [data-oem-panel]>.all-cars-home,#ast-mitsubishi-oem [data-oem-panel]>.cars-first-div{float:none!important;clear:both;width:100%}#ast-mitsubishi-oem [data-oem-panel]::after{content:"";display:table;clear:both}#ast-mitsubishi-oem .cars-first-div>img{float:none!important}#ast-mitsubishi-oem>.ast-oem-request{float:none!important;clear:both!important;display:flow-root}}'
 
 FORM_CSS='''
 body:has(#ast-mitsubishi-oem) [aria-label="Быстрая связь"]{display:none!important}
@@ -143,7 +143,7 @@ for slug,(model,pages) in MODELS.items():
         elif href.startswith('assets/'):a.set('href',absolute_url(href,directory/'index.html',slug))
     nav=etree.tostring(nav_doc,encoding='unicode',method='html')
     stylesheet=scope_css('\n'.join(css))+FORM_CSS+'\n'+(ROOT/'scripts/mitsubishi-native-form.css').read_text()
-    stylesheet = on_tilda_cdn(stylesheet)
+    stylesheet = on_tilda_cdn(stylesheet) + MOBILE_LAYOUT_CSS
     (directory/'tilda-scoped.css').write_text(stylesheet)
     fields={'model':'Mitsubishi '+model,'model_id':'mitsubishi_'+slug.replace('-','_'),'brand':'Mitsubishi','market':'UAE GCC','landing_variant':'oem','source':'avtonds_site','site_source':'avtonds.ru','source_detail':'mitsubishi_'+slug.replace('-','_')+'_oem','policy_url':'https://avtonds.ru/privacy','consent_version':'privacy-2026-05-12','comment':''}
     fields.update({k:'' for k in ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_campaign_id','utm_group_id','utm_source_type','utm_position_type','utm_device','utm_retargeting','yclid']})
@@ -157,13 +157,13 @@ for slug,(model,pages) in MODELS.items():
     fragment=f'<link rel="stylesheet" href="{HOST}/{slug}/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="{fields["model_id"]}">'+header+nav+''.join(panels)+form+footer+'</div>'+f'<script src="{HOST}/{slug}/tilda-interactions.js?v=20261020-4"></script>'
     if slug == 'asx':
         fragment = '<style data-ast-asx-annotation="20261020">'+ASX_ANNOTATION_CSS+'</style>'+fragment
-    fragment = '<style data-ast-mobile-layout="20261021">'+MOBILE_LAYOUT_CSS+'</style>'+fragment
+    fragment = '<style data-ast-mobile-layout="20261021b">'+MOBILE_LAYOUT_CSS+'</style>'+fragment
     fragment = on_tilda_cdn(fragment)
     storage = CDN_MANIFEST.get('storage_records', {}).get(slug, [])
     if storage:
         fragment = '<style>'+','.join('#'+record for record in storage)+'{display:none!important}</style>'+fragment
     if CDN_URLS:
-        fragment = fragment.replace('v=20261020-4', 'v=20261020-cdn1')
+        fragment = fragment.replace('v=20261020-4', 'v=20261021-mobile2')
     (directory/'tilda-fragment.txt').write_text(fragment)
     out=ROOT/('mitsubishi-'+slug);out.mkdir(exist_ok=True)
     canonical='https://avtonds.ru/mitsubishi-'+slug
