@@ -74,6 +74,9 @@ def scope_css(text):
 
 ASX_ANNOTATION_CSS='''#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control span,#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{font:400 13px/1.55 Arial,Helvetica,sans-serif!important;color:#555!important;letter-spacing:normal!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control{display:flex!important;align-items:flex-start;gap:10px}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__indicator{flex-shrink:0;margin:2px 0 0!important}#ast-mitsubishi-oem[data-model="mitsubishi_asx"] .ast-oem-native-form .t-checkbox__control a{text-decoration:underline!important}#ast-mitsubishi-oem #bx-pager01 a:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}#ast-mitsubishi-oem #bx-pager01 a:focus-visible{outline:2px solid #333!important;outline-offset:3px}'''
 
+# Mobile OEM floats must stay inside their panel so the following form cannot cover media.
+MOBILE_LAYOUT_CSS = '#ast-mitsubishi-oem{display:flow-root}#ast-mitsubishi-oem>[data-oem-panel]:not([hidden]){display:flow-root;clear:both}#ast-mitsubishi-oem>.cars-top-bar{float:none;clear:both;width:100%}#ast-mitsubishi-oem>.ast-oem-request,#ast-mitsubishi-oem>.ast-oem-contacts{clear:both}'
+
 FORM_CSS='''
 body:has(#ast-mitsubishi-oem) [aria-label="Быстрая связь"]{display:none!important}
 #ast-mitsubishi-oem{font-family:Arial,Helvetica,sans-serif;color:#151515;overflow-x:clip;background:#fff}
@@ -154,6 +157,7 @@ for slug,(model,pages) in MODELS.items():
     fragment=f'<link rel="stylesheet" href="{HOST}/{slug}/tilda-scoped.css?v=20261020-4"><div id="ast-mitsubishi-oem" data-model="{fields["model_id"]}">'+header+nav+''.join(panels)+form+footer+'</div>'+f'<script src="{HOST}/{slug}/tilda-interactions.js?v=20261020-4"></script>'
     if slug == 'asx':
         fragment = '<style data-ast-asx-annotation="20261020">'+ASX_ANNOTATION_CSS+'</style>'+fragment
+    fragment = '<style data-ast-mobile-layout="20261021">'+MOBILE_LAYOUT_CSS+'</style>'+fragment
     fragment = on_tilda_cdn(fragment)
     storage = CDN_MANIFEST.get('storage_records', {}).get(slug, [])
     if storage:
