@@ -1,0 +1,320 @@
+<!--
+  Вставить в: блок T123 «HTML-код» на странице Tilda.
+  Собрано скриптом scripts/build-tilda-gpu-b300.py из gpu-server-hgx-b300/index.html —
+  вручную не править, правь исходную страницу и пересобери.
+
+  Внутри размечены границы нашей шапки и подвала. Если страница показывает
+  общие шапку и подвал сайта — удали наши блоки; если общие не нужны —
+  отключи их в настройках страницы Tilda.
+
+  Атрибуты страницы (data-offer, data-ast-message, data-ast-phone…) со снятого
+  тега <body> перенесены на обёртку <div id="ast-gpu-b300">: рантайм
+  assets/ast-conversion.js читает их с body, поэтому на Tilda их нужно
+  продублировать в поле «Атрибуты тега body» (Настройки страницы → Дополнительно)
+  или оставить как есть — тогда общая липкая панель покажет общий номер сайта.
+-->
+<div id="ast-gpu-b300" data-page-kind="offer" data-offer="gpu-server-hgx-b300" data-ast-message="Здравствуйте! Интересует сервер NVIDIA HGX B300 8-GPU (SYS-822GS-NB3RT), нужно КП и сроки" data-ast-phone="+79170115218" data-ast-phone-display="+7 917 011-52-18" data-ast-whatsapp="79170115218">
+<!-- НАЧАЛО НАШЕЙ ШАПКИ -->
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="/">AST <small>серверы и оборудование под заказ</small></a>
+      <div class="top__links">
+        <a class="top__phone" href="tel:+79170115218">+7 917 011-52-18</a>
+        <a class="btn btn--primary top__cta" href="#lead" data-gpu-goal="header_cta">Запросить КП</a>
+      </div>
+    </div>
+  </header>
+  <!-- КОНЕЦ НАШЕЙ ШАПКИ -->
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <div class="eyebrow">Под заказ • По спецификации • Договор и документы</div>
+          <h1>Сервер <em>NVIDIA HGX B300</em> на 8 GPU Blackwell — поставка под заказ</h1>
+          <p class="lead">Платформа Supermicro 8U SYS-822GS-NB3RT: HGX B300 NVL8, два Intel Xeon 6768P, 3 ТБ DDR5-6400 ECC, гарантия 3 года и NVIDIA Enterprise Support на 3 года. Конфигурация зафиксирована в спецификации — ниже полный состав.</p>
+          <div class="actions">
+            <a class="btn btn--primary" href="#lead" data-gpu-goal="hero_primary">Запросить КП и сроки</a>
+            <a class="btn" href="https://t.me/ASTavtomoto" rel="noopener" data-gpu-goal="hero_telegram">Написать в Telegram</a>
+          </div>
+          <p class="micro">Цена и срок поставки — в коммерческом предложении под вашу задачу и количество. Без предоплаты за расчёт.</p>
+        </div>
+        <div class="chassis" aria-label="Схема состава сервера">
+          <div class="chassis__head"><strong>SYS-822GS-NB3RT</strong><span>8U • X14DBG-LC • CSE-GP807TS</span></div>
+          <div class="gpus" aria-hidden="true">
+            <div class="gpu">GPU 0</div><div class="gpu">GPU 1</div><div class="gpu">GPU 2</div><div class="gpu">GPU 3</div>
+            <div class="gpu">GPU 4</div><div class="gpu">GPU 5</div><div class="gpu">GPU 6</div><div class="gpu">GPU 7</div>
+          </div>
+          <div class="rails">
+            <div class="rail"><span>GPU</span><span>NVIDIA HGX B300 NVL8, AC</span><span>8</span></div>
+            <div class="rail"><span>CPU</span><span>Intel Xeon 6768P (GNR-SP)</span><span>2</span></div>
+            <div class="rail"><span>RAM</span><span>128 ГБ DDR5-6400 ECC RDIMM</span><span>24</span></div>
+            <div class="rail"><span>NVMe</span><span>960 ГБ M.2 SSD</span><span>2</span></div>
+            <div class="rail"><span>NIC</span><span>2×200G QSFP112 Gen5, ConnectX-7</span><span>—</span></div>
+          </div>
+          <div class="chassis__foot"><span>TPM 2.0 • SDDC Monitor • Call-Home Key</span><span>Сборка включена</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts">
+      <div class="wrap facts__grid">
+        <div class="fact"><strong>8 GPU</strong><span>NVIDIA Blackwell B300, HGX NVL8</span></div>
+        <div class="fact"><strong>3 072 ГБ</strong><span>24 × 128 ГБ DDR5-6400 ECC RDIMM</span></div>
+        <div class="fact"><strong>2 × Xeon 6768P</strong><span>Intel Granite Rapids-SP</span></div>
+        <div class="fact"><strong>3 года</strong><span>гарантия и NVIDIA Enterprise Support</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="spec">
+      <div class="wrap">
+        <h2>Полный состав поставки</h2>
+        <p class="intro">Позиции и количество на один сервер — как в спецификации поставщика. Артикулы указаны, чтобы ваш инженер мог сверить состав до запроса КП.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>№</th><th>Артикул</th><th>Описание</th><th class="qty">Кол-во</th><th>Категория</th><th class="price">Цена в РФ, ₽/шт</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td class="sku">SYS-822GS-NB3RT</td><td>Платформа 8U HGX B300 8-GPU, материнская плата X14DBG-LC, корпус CSE-GP807TS</td><td class="qty">1</td><td><span class="tag">Compute</span></td><td class="price">по запросу<br><em>не продаётся отдельно от сервера</em></td></tr>
+              <tr><td>2</td><td class="sku">GPU-NVHGX-B300-NVL8</td><td>NVIDIA Blackwell GPU Baseboard, HGX B300 NVL8, 8-GPU, AC</td><td class="qty">1</td><td><span class="tag">GPU</span></td><td class="price">по запросу<br><em>не продаётся отдельно от сервера</em></td></tr>
+              <tr><td>3</td><td class="sku">P4X-GNR6768P-SRVSP-XCC</td><td>Процессор Intel Xeon 6768P (GNR-SP)</td><td class="qty">2</td><td><span class="tag">CPU</span></td><td class="price">по запросу</td></tr>
+              <tr><td>4</td><td class="sku">MEM-DR512L-CL01-ER64</td><td>128 ГБ DDR5-6400 ECC RDIMM</td><td class="qty">24</td><td><span class="tag">Memory</span></td><td class="price">по запросу</td></tr>
+              <tr><td>5</td><td class="sku">HDS-MMN-MTFDKBG960TF<small>или HDS-MMT-MTFDDA7960TGA1BC, или HDS-SMNO-MZ1L2960HCJRA7</small></td><td>960 ГБ NVMe M.2 SSD — Micron 7450 PRO / Micron 5400 PRO / Samsung PM9A3 (на выбор)</td><td class="qty">2</td><td><span class="tag">Storage</span></td><td class="price">12 000–27 700<br><em>рыночная цена в РФ</em></td></tr>
+              <tr><td>6</td><td class="sku">AOC-CX7AH0078-DTZ</td><td>Сетевой адаптер 2×200G QSFP112 Gen5 (NVIDIA ConnectX-7)</td><td class="qty">уточняется</td><td><span class="tag">Network</span></td><td class="price">93 600–173 600<br><em>рыночная цена в РФ, по аналогу</em></td></tr>
+              <tr><td>7</td><td class="sku">SVC-SUP-ADPTR-CX7-3S</td><td>NVIDIA Enterprise Support, 3 года</td><td class="qty">2</td><td><span class="tag">Support</span></td><td class="price">по запросу</td></tr>
+              <tr><td>8</td><td class="sku">AOM-TPM-9672V-P</td><td>Модуль TPM 2.0</td><td class="qty">1</td><td><span class="tag">Security</span></td><td class="price">по запросу</td></tr>
+              <tr><td>9</td><td class="sku">SFT-SDDC-SINGLE</td><td>Лицензия SDDC Monitor</td><td class="qty">1</td><td><span class="tag">Software</span></td><td class="price">по запросу</td></tr>
+              <tr><td>10</td><td class="sku">SFT-DCMS-SYC-REY</td><td>Datacenter Management Call-Home Key</td><td class="qty">1</td><td><span class="tag">Software</span></td><td class="price">по запросу</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Количество сетевых адаптеров ConnectX-7 в спецификации не зафиксировано и согласуется под вашу сеть. Даташиты на платформу и HGX B300 отправим вместе с КП.</p>
+        <div class="market-note">
+          <strong>Рыночная цена по России, сентябрь 2026</strong>
+          <p>Цены в таблице — розничные предложения российских поставщиков комплектующих на дату публикации.</p>
+          <p>Готовые серверы Supermicro SYS-822GS-NB3RT с HGX B300 NVL8 в комплектациях, близких к этой спецификации, у российских поставщиков стоят ориентировочно от 67 до 81 млн ₽ — это рыночная цена по России на похожий, не идентичный товар. Точную цену на вашу конфигурацию считаем в коммерческом предложении.</p>
+        </div>
+        <details class="foreign-note">
+          <summary>Цены за рубежом по позициям «по запросу» — не цена по России</summary>
+          <div class="foreign-note__body">
+            <p>Ниже — что нашлось у зарубежных продавцов по пяти позициям без публичной цены в России. Это цены США, ЕС и Австралии в валюте продавца — не рыночная цена по России и не цена АСТ, для справки и сравнения масштаба.</p>
+            <ul>
+              <li><strong>GPU-NVHGX-B300-NVL8</strong> (плата 8×GPU) — <em>393 839,70 €, Ahead-IT, ЕС</em></li>
+              <li><strong>Xeon 6768P</strong> — <em>≈16 000–17 920 USD, рекомендованная цена Intel; 14 819,80 €, Ahead-IT, ЕС</em></li>
+              <li><strong>MEM-DR512L-CL01-ER64</strong> (128 ГБ DDR5-6400 ECC) — <em>≈5 895–6 500 USD, ServerSupply / CDW, США</em></li>
+              <li><strong>SVC-SUP-ADPTR-CX7-3S</strong> (Enterprise Support на адаптер) — <em>≈653,87 USD, зарубежный прайс</em></li>
+              <li><strong>SFT-SDDC-SINGLE</strong> (лицензия SDDC Monitor) — <em>296,98–328,73 €, без НДС, магазин Supermicro в ЕС</em></li>
+            </ul>
+          </div>
+        </details>
+        <div class="actions">
+          <a class="btn btn--primary" href="#lead" data-gpu-goal="spec_cta">Получить КП по этой спецификации</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="tasks">
+      <div class="wrap">
+        <h2>Для каких задач берут такую конфигурацию</h2>
+        <p class="intro">Восемь GPU Blackwell в одном шасси с 3 ТБ системной памяти и двумя 200G-портами на адаптер — узел для нагрузок, где ключевой ресурс — память GPU и скорость обмена между ними.</p>
+        <div class="cols">
+          <article class="col"><h3>Инференс больших языковых моделей</h3><p>Обслуживание LLM и мультимодальных моделей в продуктиве: чат-ассистенты, поиск, генерация — с запасом по памяти под контекст и батчи.</p></article>
+          <article class="col"><h3>Обучение и дообучение моделей</h3><p>Fine-tuning и обучение собственных моделей на своих данных внутри контура компании, без передачи данных внешним облакам.</p></article>
+          <article class="col"><h3>HPC и научные расчёты</h3><p>Моделирование, обработка больших массивов данных, вычисления для исследовательских центров и вузов.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <h2>Как проходит поставка</h2>
+        <p class="intro">Порядок действий от запроса до отгрузки. Каждый этап подтверждается документами, чтобы вы видели, за что платите.</p>
+        <div class="steps">
+          <div class="step"><strong>Запрос</strong><p>Вы отправляете задачу, количество серверов и контакт — через форму, Telegram или по телефону.</p></div>
+          <div class="step"><strong>Коммерческое предложение</strong><p>Готовим КП по спецификации: состав, цена, срок, условия оплаты и комплект документов.</p></div>
+          <div class="step"><strong>Договор и спецификация</strong><p>Заключаем договор поставки. Состав фиксируется приложением-спецификацией.</p></div>
+          <div class="step"><strong>Сборка и отгрузка</strong><p>Сервер собирается по конфигурации, затем отгружается с гарантийными документами и поддержкой NVIDIA.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="lead">
+      <div class="wrap leadbox">
+        <div>
+          <div class="eyebrow">Запрос КП</div>
+          <h2>Получить коммерческое предложение</h2>
+          <p class="intro" style="margin-bottom:0">Что вернём в ответ:</p>
+          <ul>
+            <li>КП по спецификации SYS-822GS-NB3RT с HGX B300 NVL8</li>
+            <li>цену и срок под ваше количество серверов</li>
+            <li>условия оплаты и комплект документов по договору</li>
+            <li>даташиты на платформу и GPU-плату</li>
+          </ul>
+          <div class="contacts">
+            <a href="tel:+79170115218"><span>Телефон</span>+7 917 011-52-18</a>
+            <a href="mailto:zakaz@avtonds.ru?subject=%D0%9A%D0%9F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20HGX%20B300"><span>Почта</span>zakaz@avtonds.ru</a>
+          </div>
+        </div>
+        <form id="gpu-form" action="https://api.avtonds.ru/api/max-page/order" method="post">
+          <input type="hidden" name="consent_version" value="privacy-2026-05-06">
+          <div class="row">
+            <label><span>Компания</span>
+              <input name="company" required autocomplete="organization" placeholder="ООО «Название» или проект">
+            </label>
+            <label><span>Задача</span>
+              <select name="workload">
+                <option value="Инференс LLM">Инференс LLM</option>
+                <option value="Обучение / дообучение">Обучение / дообучение</option>
+                <option value="HPC / расчёты">HPC / расчёты</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label><span>Количество серверов</span>
+              <select name="quantity">
+                <option value="1">1</option>
+                <option value="2–4">2–4</option>
+                <option value="5+">5 и больше</option>
+                <option value="Не определено">Пока не определено</option>
+              </select>
+            </label>
+            <label><span>Срок</span>
+              <select name="timeline">
+                <option value="Как можно скорее">Как можно скорее</option>
+                <option value="В этом квартале">В этом квартале</option>
+                <option value="Планируем бюджет">Планируем бюджет</option>
+              </select>
+            </label>
+          </div>
+          <label><span>Телефон, Telegram или e-mail</span>
+            <input name="contact" required autocomplete="tel" placeholder="+7… , @username или почта">
+          </label>
+          <label><span>Имя, необязательно</span>
+            <input name="name" autocomplete="name" placeholder="Как к вам обращаться">
+          </label>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>Согласен на обработку данных по <a href="/privacy">политике конфиденциальности</a>.</span></label>
+          <button class="btn btn--primary" type="submit">Запросить КП и сроки</button>
+          <p class="status" id="gpu-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2>Вопросы по поставке</h2>
+        <div class="faq">
+          <details><summary>Можно ли изменить конфигурацию?</summary><p>Вариант NVMe-накопителя выбирается из трёх позиций спецификации: Micron 7450 PRO, Micron 5400 PRO или Samsung PM9A3. Другие изменения состава обсуждаются при подготовке КП.</p></details>
+          <details><summary>Сервер поставляется собранным?</summary><p>Да, сборка сервера входит в поставку: платформа приходит собранной по конфигурации.</p></details>
+          <details><summary>Как оформляется покупка?</summary><p>Договор поставки с полным комплектом документов. Состав спецификации фиксируется приложением к договору.</p></details>
+          <details><summary>Что нужно, чтобы получить КП?</summary><p>Название компании, задача (инференс, обучение, HPC), количество серверов и контакт. Менеджер уточнит детали и подготовит коммерческое предложение.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- НАЧАЛО НАШЕГО ПОДВАЛА -->
+  <footer>
+    <div class="wrap">
+      <div>ООО «АСТ» • +7 917 011-52-18 • zakaz@avtonds.ru</div>
+      <div>Информация на странице не является публичной офертой. Цена и срок поставки указываются в коммерческом предложении. NVIDIA, Supermicro, Intel, Micron и Samsung — товарные знаки их владельцев.</div>
+    </div>
+  </footer>
+  <!-- КОНЕЦ НАШЕГО ПОДВАЛА -->
+
+  
+  
+  <script>
+    (function(){
+      var form=document.getElementById('gpu-form');
+      var status=document.getElementById('gpu-status');
+      var MODEL='Сервер NVIDIA HGX B300 8-GPU (Supermicro SYS-822GS-NB3RT)';
+      var WA='79170115218', TG='ASTavtomoto';
+      var SOURCE_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term',
+        'utm_campaign_id','utm_group_id','utm_source_type','utm_position_type','utm_device','utm_retargeting'];
+
+      function goal(name,params){
+        try{if(typeof ym==='function')ym(106049767,'reachGoal',name,params||{});}catch(e){}
+        window.dataLayer=window.dataLayer||[];
+        window.dataLayer.push(Object.assign({event:name},params||{}));
+      }
+      // Источник: первое касание из рантайма (sessionStorage), иначе текущий URL.
+      function sourceParams(){
+        var out={};
+        try{ if(window.ASTConversion&&window.ASTConversion.sourceParams) out=window.ASTConversion.sourceParams()||{}; }catch(e){}
+        var qs=new URLSearchParams(location.search);
+        SOURCE_KEYS.forEach(function(k){ if(!out[k]) out[k]=qs.get(k)||''; });
+        return out;
+      }
+      function summary(data){
+        return [
+          'Интересует '+MODEL+'.',
+          'Компания: '+(data.company||'—')+'.',
+          'Задача: '+(data.workload||'—')+'.',
+          'Серверов: '+(data.quantity||'—')+'.',
+          'Срок: '+(data.timeline||'—')+'.',
+          'Контакт: '+(data.contact||'—')+'.',
+          data.name?'Имя: '+data.name+'.':'',
+          'Источник: '+location.href
+        ].filter(Boolean).join(' ');
+      }
+
+      document.querySelectorAll('[data-gpu-goal]').forEach(function(el){
+        el.addEventListener('click',function(){ goal('gpu_b300_cta',{action:el.dataset.gpuGoal||'click'}); });
+      });
+      form.addEventListener('focusin',function(){ goal('ast_form_start',{page:location.pathname,offer:'gpu-server-hgx-b300'}); },{once:true});
+
+      form.addEventListener('submit',async function(ev){
+        ev.preventDefault();
+        if(!form.reportValidity())return;
+        var data=Object.fromEntries(new FormData(form).entries());
+        var src=sourceParams();
+        var payload=Object.assign({
+          request_id:'gpu-b300-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),
+          created_at:new Date().toISOString(),
+          name:data.name||'',
+          contact:data.contact,
+          company:data.company,
+          model:MODEL,
+          sku:'SYS-822GS-NB3RT',
+          workload:data.workload,
+          quantity:data.quantity,
+          timeline:data.timeline,
+          page_url:location.href,
+          channel:'site_form',
+          source:'avtonds_site',
+          site_source:'avtonds.ru',
+          source_detail:'gpu_server_hgx_b300',
+          landing_variant:'gpu_b300_spec',
+          cta:'request_kp_hgx_b300',
+          segment:'it_hardware',
+          business_line:'server_supply',
+          consent:'yes',
+          consent_version:data.consent_version,
+          policy_url:location.origin+'/privacy',
+          comment:summary(data),
+          lead_next_step:'Подготовить КП по спецификации SYS-822GS-NB3RT / HGX B300 NVL8',
+          lead_risk_note:'Цену и срок не подтверждать до КП и договора'
+        },src);
+        goal('gpu_b300_form_submit_attempt',{workload:data.workload,quantity:data.quantity});
+        var button=form.querySelector('button[type=submit]');
+        button.disabled=true;status.textContent='Передаём запрос…';
+        try{
+          var response=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},credentials:'omit',body:JSON.stringify(payload)});
+          if(!response.ok)throw new Error('transport_'+response.status);
+          goal('gpu_b300_form_submit_ok',{workload:data.workload,quantity:data.quantity});
+          goal('ast_form_submit',{page:location.pathname,offer:'gpu-server-hgx-b300',channel:'form'});
+          window.dataLayer.push({event:'form_submit_success',form:'gpu_b300_spec'});
+          status.textContent='Запрос принят. Подготовим КП по спецификации и свяжемся по указанному контакту.';
+          form.reset();
+        }catch(e){
+          // Приёмный API недоступен — заявка уходит менеджеру сообщением в WhatsApp, данные не теряются.
+          goal('gpu_b300_form_submit_fallback',{workload:data.workload,quantity:data.quantity});
+          goal('ast_form_submit',{page:location.pathname,offer:'gpu-server-hgx-b300',channel:'form_whatsapp_fallback'});
+          var text=encodeURIComponent(summary(data));
+          status.innerHTML='Отправляем запрос в WhatsApp… Если окно не открылось — <a href="https://wa.me/'+WA+'?text='+text+'" rel="noopener">нажмите сюда</a> или напишите в <a href="https://t.me/'+TG+'?text='+text+'" rel="noopener">Telegram</a>.';
+          location.href='https://wa.me/'+WA+'?text='+text;
+        }finally{button.disabled=false;}
+      });
+    })();
+  </script>
+</div>
