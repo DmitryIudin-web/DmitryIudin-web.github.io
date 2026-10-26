@@ -1208,9 +1208,9 @@
   'use strict';
   var paths=["/bmw-x5-import","/gle-oem","/porsche-cayenne-import","/lx-oem","/zeekr-8x","/x6-oem","/bmw-x7","/gls-oem","/s-class-oem","/g63-oem","/911-oem","/porsche-911-dakar","/panamera-oem","/land-cruiser-300-oem","/range-rover-original","/li-auto-l9-oem","/li-auto-l6-oem","/zeekr-9x","/voyah-taishan","/mazda-cx-5","/toyota-bz3x","/toyota-rav4-oem","/toyota-highlander-china","/audi-q5l","/bmw-x3-oem","/volkswagen-tiguan-l-pro","/gx-oem","/prado-250-oem","/dbx707-oem","/bentley-bentayga","/bentley-torcal","/continental-gt-oem","/purosangue-oem","/urus-oem","/rolls-royce-cullinan","/mercedes-benz-gle-import","/lexus-lx","/bmw-x6","/mercedes-benz-gls-import","/mercedes-benz-s-class-import","/mercedes-amg-g63","/porsche-911","/porsche-panamera-import","/toyota-land-cruiser-300","/range-rover","/li-auto-l9","/li-auto-l6","/toyota-rav4","/bmw-x3","/lexus-gx","/toyota-prado-250","/aston-martin-dbx707","/bentley-continental-gt","/ferrari-purosangue","/lamborghini-urus","/bmw-x5-import-podbor","/bmw-x7-legacy","/x7-oem","/zeekr-8x-podbor","/rolls-royce-cullinan-podbor","/cullinan-oem","/bentley-bentayga-podbor","/bentayga-oem","/range-rover-oem","/zeekr-9x-podbor","/mazda-cx-5-podbor","/audi-q5l-podbor","/volkswagen-tiguan-l-pro-podbor","/toyota-bz3x-podbor","/xiaomi-n90","/volkswagen-tavendor-2026","/volkswagen-tiguan-l-china","/changan-qiyuan-q05","/unimog-offroad-oem"];
   if (paths.indexOf(location.pathname.replace(/\/+$/, '')) < 0) return;
-  if (document.querySelector('script[src*="ast-market-numeric-20261012.js"]')) return;
+  if (document.querySelector('script[src*="ast-market-numeric-20261026.js"]')) return;
   var script = document.createElement('script');
-  script.src = 'https://dmitryiudin-web.github.io/assets/ast-market-numeric-20261012.js';
+  script.src = 'https://dmitryiudin-web.github.io/assets/ast-market-numeric-20261026.js';
   script.defer = true;
   document.head.appendChild(script);
 })();
