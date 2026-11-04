@@ -1307,8 +1307,44 @@
     }
   }
 
+  function simplifyAudiQuoteForm() {
+    var form = document.getElementById('a5l-form-bottom');
+    if (!form || form.dataset.quoteCopy === '1') return;
+    var role = form.querySelector('select[name="a5l_role"]');
+    var button = form.querySelector('[type="submit"]');
+    if (!role || !button) return;
+    form.dataset.quoteCopy = '1';
+    var field = role.closest('label');
+    if (field) { field.hidden = true; field.style.display = 'none'; }
+    role.required = false;
+    role.replaceChildren(new Option('Получить КП', 'partner', true, true));
+    role.value = 'partner';
+    var title = document.getElementById('lead-title');
+    if (title) title.textContent = 'Получить КП на Audi A5L';
+    var grid = form.querySelector('.oem-form-grid');
+    if (grid) grid.style.gridTemplateColumns = '1fr';
+    function label() {
+      if (button.textContent !== 'Получить КП') button.textContent = 'Получить КП';
+    }
+    function intent() {
+      role.value = 'partner';
+      form.elements.cta.value = 'get_quote';
+      form.elements.scenario.value = 'a5l_quote';
+      form.elements.comment.value = 'Запрос коммерческого предложения на Audi A5L.';
+      label();
+    }
+    intent();
+    // Existing role/reset handlers may update the button after this setup.
+    new MutationObserver(label).observe(button, {childList:true,subtree:true,characterData:true});
+    window.addEventListener('submit', function (event) {
+      if (event.target === form) intent();
+    }, true);
+    form.addEventListener('reset', function () { setTimeout(intent, 0); });
+  }
+
   function enhancePages() {
     var p = path();
+    if (p === '/audi-a5l') simplifyAudiQuoteForm();
     var entry = OFFER_MAP[p] || {};
     try {
       if (p === '/') enhanceHome();
