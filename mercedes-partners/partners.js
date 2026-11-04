@@ -13,18 +13,41 @@
     }
   }
   var consentText = 'Даю <a href="#data-consent">согласие на обработку персональных данных</a> для рассмотрения обращения.';
+  var generalModel = 'Партнёрская поставка новых Mercedes';
+  var generalOffer = 'mercedes-partners';
   var dialogWasOpen = false;
   function adaptForms() {
     document.querySelectorAll('.ast-quote-form').forEach(function (form) {
-      if (form.dataset.partnerAdapted) return;
-      form.dataset.partnerAdapted = '1';
-      form.setAttribute('aria-label', 'Получить условия агентского сотрудничества с AST');
-      var label = form.querySelector('.ast-quote-consent span');
-      if (label) label.innerHTML = consentText;
+      if (!form.dataset.partnerAdapted) {
+        form.dataset.partnerAdapted = '1';
+        form.setAttribute('aria-label', 'Получить условия агентского сотрудничества с AST');
+        var label = form.querySelector('.ast-quote-consent span');
+        if (label) label.innerHTML = consentText;
+      }
       var model = form.querySelector('[name="model"]');
-      var offer = form.querySelector('[name="offer_id"]');
-      if (model) model.value = 'Партнёрская поставка новых Mercedes';
-      if (offer) offer.value = 'mercedes-partners';
+      var offerId = form.querySelector('[name="offer_id"]');
+      var offer = form.querySelector('[name="offer"]');
+      // Keep the shared form's selected context; only fill missing values.
+      if (model && !model.value.trim()) model.value = generalModel;
+      if (offerId && !offerId.value.trim()) offerId.value = generalOffer;
+      if (offer && !offer.value.trim()) offer.value = offerId ? offerId.value : generalOffer;
+
+      var modelName = model ? model.value.trim() : '';
+      var context = form.querySelector('[data-partner-context]');
+      if (modelName && modelName !== generalModel) {
+        if (!context) {
+          context = document.createElement('p');
+          context.className = 'partner-form-context';
+          context.setAttribute('data-partner-context', '');
+          context.setAttribute('aria-live', 'polite');
+          form.insertBefore(context, form.firstChild);
+        }
+        var contextText = 'Вы предлагаете: ' + modelName;
+        // Updating only changed text keeps the MutationObserver idempotent.
+        if (context.textContent !== contextText) context.textContent = contextText;
+      } else if (context) {
+        context.remove();
+      }
     });
     var title = document.getElementById('ast-quote-dialog-title');
     if (title && title.textContent !== 'Условия сотрудничества с AST') title.textContent = 'Условия сотрудничества с AST';
