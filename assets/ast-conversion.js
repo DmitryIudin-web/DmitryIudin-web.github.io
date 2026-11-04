@@ -339,7 +339,7 @@
     function scan() {
       var boxes = document.querySelectorAll('.js-successbox, .t-form__successbox');
       Array.prototype.forEach.call(boxes, function (box) {
-        if (seen.indexOf(box) > -1) return;
+        if (seen.indexOf(box) > -1 || box.closest('#ast-quote-native-record')) return;
         var visible = box.offsetParent !== null && box.style.display !== 'none';
         if (visible) {
           seen.push(box);
@@ -694,6 +694,7 @@
   }
 
   function openQuiz(options) {
+    if (window.__astUniversalQuote) { window.__astUniversalQuote.open(options || {}); return; }
     options = options || {};
     var overlay = document.querySelector('.ast-quiz-overlay');
     if (!overlay) {
@@ -827,6 +828,7 @@
   // The old #order workaround captures clicks on document before card handlers.
   // Capture on window, limited to homepage offer cards, including late renders.
   window.addEventListener('click', function (event) {
+    if (window.__astUniversalQuote) return;
     if (path() !== '/' || event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     var trigger = event.target && event.target.closest ? event.target.closest('[data-ast-offer-action="order"]') : null;
     var card = trigger && trigger.closest('.ast-related-offer');
@@ -1147,7 +1149,7 @@
   }
 
   function enhanceSafeDeal() {
-    if (path() === '/bezopasnaya-sdelka' && mountSafeQuickForm()) return;
+    if (window.__astUniversalQuote) return;
     var msg = 'Здравствуйте! Интересует безопасная сделка, хочу обсудить условия';
     var hero = document.querySelector('.ast-safe-hero .ast-actions, .ast-hero .ast-actions');
     if (hero && !hero.querySelector('[data-ast-safe-tg]')) {
@@ -1342,9 +1344,160 @@
     form.addEventListener('reset', function () { setTimeout(intent, 0); });
   }
 
+  // Shared phone-only quote form. Native receiver bindings are copied from
+  // the Audi A5L Tilda twin whose delivery the owner confirmed.
+  function installUniversalQuoteForm() {
+    if (window.__astUniversalQuote) { window.__astUniversalQuote.mount(); return; }
+    var bindings = ['7276e623a45a50dd178179e21426028e','c72bf547c9097a2f8ebc4c382f5942ac','f0b3ef2e0259fbb3e9a3d8b69e12c83d','94faeba672cf847b6b5818c51163a1bd','210e33c45a404507cadd487eaf0595a8'];
+    var record, nativeForm, modal, lastFocus, active = null, loading = null, serial = 0;
+    var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market'];
+    var marketing = 'form[data-oem-ast-form],form[data-ast-lead-form],form[data-ast-model-lead-form],form.ast-launch-form,form[data-ast-static-mini-form],form#tavendor-form,form.ast-oem-form,form.rrc-form,form.ast-pg-price-form,form#x7-request,form.qf#qf,form#lead,form.t-form';
+    function field(form, name, value) {
+      var el = form.querySelector('[name="' + name + '"]');
+      if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
+      el.value = String(value == null ? '' : value);
+    }
+    function context(source, trigger) {
+      var result = {};
+      sourceKeys.forEach(function (key) { var el = source && source.querySelector('[name="' + key + '"]'); if (el && el.value) result[key] = el.value; });
+      if (trigger) {
+        var card = trigger.closest('[data-offer-id],[data-ast-offer-card],.ast-related-offer');
+        result.model = trigger.getAttribute('data-order-model') || trigger.getAttribute('data-ast-set-model') || trigger.getAttribute('data-ast-quiz-model-preset') || result.model;
+        result.offer_id = trigger.getAttribute('data-ast-offer-id') || trigger.getAttribute('data-offer-id') || (card && card.getAttribute('data-offer-id')) || result.offer_id;
+        if (card && !result.model) { var title = card.querySelector('h2,h3'); if (title) result.model = title.textContent.trim(); }
+      }
+      if (!result.model) result.model = pageModel() || '';
+      result.page_url = location.href.split('#')[0]; result.page = path(); result.offer = result.offer_id || (path() === '/' ? 'generic' : pageOffer());
+      return result;
+    }
+    function makeForm(info) {
+      var form = document.createElement('form');
+      form.className = 'ast-quote-form'; form.setAttribute('data-ast-standard-form', '1');
+      form.setAttribute('aria-label','Получить коммерческое предложение');
+      var id = 'ast-quote-phone-' + (++serial);
+      form.innerHTML = '<label class="ast-quote-field" for="' + id + '">Ваш телефон</label><input id="' + id + '" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 999 123-45-67" required>' +
+        '<label class="ast-quote-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>' +
+        '<button type="submit">Получить КП</button><p class="ast-quote-status" role="status" aria-live="polite"></p>';
+      sourceKeys.concat(['page_url','page','offer']).forEach(function (key) { field(form,key,info[key] || ''); });
+      return form;
+    }
+    function setStatus(form, text, retry) {
+      var status = form.querySelector('.ast-quote-status'); status.textContent = text;
+      if (retry) { var a = document.createElement('a'); a.href = 'tel:' + CONFIG.phone; a.textContent = 'Позвонить в АСТ'; status.appendChild(document.createTextNode(' ')); status.appendChild(a); }
+    }
+    function show(trigger, source) {
+      lastFocus = trigger;
+      var old = modal.querySelector('form'), info = context(source,trigger);
+      if (active && active.form === old) { modal.showModal(); old.elements.phone.focus(); return; }
+      var form = makeForm(info); old.replaceWith(form);
+      modal.showModal(); form.elements.phone.focus();
+    }
+    function mount() {
+      // Native receiver forms remain in place, untouched. Only replace the
+      // site's known marketing UI; never newsletter/payment/account/referral forms.
+      if (/^\/referal\/?$/.test(location.pathname)) return;
+      document.querySelectorAll(marketing).forEach(function (source) {
+        if (source.dataset.astQuoteReplaced || source.matches('[data-ast-standard-form]') || source.closest('#ast-quote-native-record,.ast-ev-panel')) return;
+        if (!source.querySelector('[name="Phone"],[name="phone"],[name="contact"]')) return;
+        if (source.hidden || source.getAttribute('aria-hidden') === 'true' || getComputedStyle(source).display === 'none') return;
+        if (source.querySelector('input[type="file"],input[type="password"],[name="referral_code"],[name="agent_id"],[name="inn"],[name="truck_count"]')) return;
+        var form = makeForm(context(source));
+        form.__astQuoteSource = source;
+        source.dataset.astQuoteReplaced = '1'; source.hidden = true; source.style.setProperty('display','none','important');
+        source.insertAdjacentElement('afterend',form);
+      });
+    }
+    function buildNative() {
+      if (nativeForm) return;
+      record = document.createElement('div'); record.id = 'ast-quote-native-record'; record.className = 'r t-rec'; record.dataset.recordType = '123';
+      // Keep the native inputs rendered for Tilda validation; only the UI is offscreen.
+      record.style.cssText = 'position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden';
+      record.innerHTML = '<form id="ast-quote-native-form" class="t-form js-form-proccess" data-formactiontype="2" data-inputbox=".t-input-group" action="#" novalidate aria-hidden="true">' +
+        bindings.map(function (id) { return '<input type="hidden" name="formservices[]" value="' + id + '" class="js-formaction-services">'; }).join('') +
+        '<div class="js-successbox t-form__successbox" style="display:none"></div><div class="t-form__inputsbox">' +
+        [['Name','nm'],['Phone','ph'],['Email','em'],['comment','ta']].map(function (spec) { return '<div class="t-input-group t-input-group_' + spec[1] + '" data-input-lid="quote_' + spec[0] + '" data-field-type="' + spec[1] + '" data-field-name="' + spec[0] + '"><div class="t-input-block">' + (spec[0] === 'comment' ? '<textarea name="comment" class="t-input t-input-ta js-tilda-rule" tabindex="-1"></textarea>' : '<input type="text" name="' + spec[0] + '" class="t-input js-tilda-rule" ' + (spec[0] === 'Phone' ? 'data-tilda-req="1" ' : '') + 'tabindex="-1">') + '</div><div class="t-input-error"></div></div>'; }).join('') +
+        '</div><div class="t-form__errorbox-middle"><div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none"><div class="t-form__errorbox-text"><p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p><p class="t-form__errorbox-item js-rule-error js-rule-error-empty"></p><p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p></div></div></div><div class="t-form__submit"><button type="submit" class="t-submit" tabindex="-1">send</button></div></form>';
+      var all = document.getElementById('allrecords'); (all || document.body).appendChild(record); nativeForm = record.querySelector('form');
+      nativeForm.addEventListener('tildaform:aftersuccess', function () { finish(true); });
+      nativeForm.addEventListener('tildaform:aftererror', function () { finish(false); });
+    }
+    function ready() {
+      if (loading) return loading;
+      loading = new Promise(function (resolve,reject) {
+        buildNative();
+        if (!document.querySelector('script[src*="tilda-forms-1.0"]')) { var script = document.createElement('script'); script.src = 'https://static.tildacdn.com/js/tilda-forms-1.0.min.js'; script.async = true; document.head.appendChild(script); }
+        var tries = 0, interval = setInterval(function () {
+          if (typeof window.t_forms__initForms === 'function' && window.tildaForm) {
+            try { window.t_forms__initForms(); if (!window.initForms || !window.initForms[record.id]) throw new Error('not_initialized'); clearInterval(interval); resolve(); } catch (e) { clearInterval(interval); loading = null; reject(e); }
+          } else if (++tries >= 80) { clearInterval(interval); loading = null; reject(new Error('native_library_unavailable')); }
+        },150);
+      });
+      return loading;
+    }
+    function finish(ok) {
+      if (!active) return;
+      var request = active; clearTimeout(request.timer); if (request.observer) request.observer.disconnect(); active = null;
+      var form = request.form; form.querySelector('[type="submit"]').disabled = false;
+      if (!ok) { setStatus(form,'Не удалось отправить заявку. Повторите отправку или свяжитесь с АСТ.',true); return; }
+      setStatus(form,'Спасибо! Заявка принята.');
+      var safe = {form:'standard_quote',request_id:request.id,delivered:'tilda',page_path:path()};
+      track('ast_form_submit_success',safe); track('ast_form_submit',safe); trackContact('form',{form:'standard_quote'});
+      form.reset(); delete form.dataset.requestId;
+    }
+    function submit(form) {
+      if (active) { setStatus(form,'Предыдущая заявка ещё обрабатывается. Дождитесь подтверждения.',true); return; }
+      var phone = form.elements.phone, digits = phone.value.replace(/\D/g,'');
+      phone.setCustomValidity(/^\+?[\d\s()-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15 ? '' : 'Введите номер телефона с кодом города или оператора.');
+      if (!form.reportValidity()) return;
+      form.querySelector('[type="submit"]').disabled = true; setStatus(form,'Отправляем заявку…');
+      var request = {form:form,id:form.dataset.requestId || ('quote_' + Date.now() + '_' + Math.random().toString(36).slice(2,10)),timer:null,observer:null};
+      form.dataset.requestId = request.id; active = request;
+      ready().then(function () {
+        if (active !== request) return;
+        if (form.__astQuoteSource) { var latest = context(form.__astQuoteSource); sourceKeys.forEach(function (key) { field(form,key,latest[key] || ''); }); }
+        var values = {Name:'Заявка с сайта',Phone:phone.value.trim(),Email:'',comment:'Запрос коммерческого предложения. Страница: ' + location.href.split('#')[0],request_id:request.id,created_at:new Date().toISOString(),channel:'site_form',source:'avtonds_site',site_source:'avtonds.ru',source_detail:'standard_quote',consent:'yes',consent_version:pageConsentVersion() || 'privacy-2026-05-12',policy_url:location.origin + '/privacy',scenario:'get_quote',cta:'get_quote',via:'ast_confirmed_tilda_quote'};
+        sourceKeys.concat(['page_url','page','offer']).forEach(function (key) { values[key] = form.elements[key] ? form.elements[key].value : ''; });
+        SOURCE_KEYS.concat(['yclid']).forEach(function (key) { values[key] = new URLSearchParams(location.search).get(key) || sessionGet('ast_' + key) || ''; });
+        values.ym_client_id = sessionGet('ast_ym_client_id') || '';
+        Object.keys(values).forEach(function (key) { field(nativeForm,key,values[key]); });
+        nativeForm.querySelectorAll('.js-errorbox-all,.js-successbox').forEach(function (el) { el.style.display = 'none'; });
+        request.observer = new MutationObserver(function () { var error = nativeForm.querySelector('.js-errorbox-all'); if (active === request && error && getComputedStyle(error).display !== 'none' && error.textContent.trim()) finish(false); });
+        request.observer.observe(nativeForm,{subtree:true,childList:true,attributes:true,attributeFilter:['class','style']});
+        request.timer = setTimeout(function () {
+          if (active !== request) return;
+          // Keep the channel occupied until native acknowledgement/error arrives.
+          // A late response must never be attributed to a second submission.
+          request.timedOut = true;
+          setStatus(form,'Подтверждение задерживается. Заявка может ещё обрабатываться. Свяжитесь с АСТ.',true);
+        },45000);
+        track('ast_form_submit_attempt',{form:'standard_quote',request_id:request.id,page_path:path()});
+        nativeForm.querySelector('[type="submit"]').click();
+      }).catch(function () { if (active === request) finish(false); });
+    }
+    var style = document.createElement('style'); style.textContent = '.ast-quote-form{box-sizing:border-box;width:100%;max-width:520px;padding:24px;border:1px solid #4b4e52;border-radius:18px;background:#24272b;color:#fff;text-align:left;font:16px/1.45 Arial,sans-serif}.ast-quote-form .ast-quote-field{display:block;color:#d3d5d7;font-size:14px;margin:0 0 7px}.ast-quote-form input[type=tel]{box-sizing:border-box;width:100%;min-height:48px;padding:12px;border:1px solid #73767a;border-radius:8px;background:#36393d;color:#fff;font:16px Arial,sans-serif}.ast-quote-form .ast-quote-consent{display:flex;gap:9px;align-items:flex-start;margin:18px 0;color:#d3d5d7;font-size:13px}.ast-quote-form .ast-quote-consent input{width:18px;height:18px;margin:2px 0;flex-shrink:0}.ast-quote-form a{color:inherit;text-decoration:underline}.ast-quote-form button{border:0;border-radius:28px;padding:14px 23px;background:#e0001b;color:white;font:bold 17px Arial,sans-serif;cursor:pointer;min-height:48px}.ast-quote-form button:disabled{opacity:.6;cursor:wait}.ast-quote-status{margin:12px 0 0;font-size:14px}.ast-quote-status:empty{display:none}.ast-quote-dialog{max-width:540px;width:calc(100% - 32px);padding:18px;border:1px solid #555;border-radius:20px;background:#24272b;color:white;box-sizing:border-box}.ast-quote-dialog::backdrop{background:#000a}.ast-quote-dialog h2{font:700 26px/1.2 Arial,sans-serif;margin:10px 34px 18px 6px;color:white}.ast-quote-dialog .ast-quote-close{position:absolute;right:12px;top:10px;border:0;background:none;color:white;font-size:28px;cursor:pointer}.ast-quote-dialog .ast-quote-form{padding:8px;border:0}'; document.head.appendChild(style);
+    modal = document.createElement('dialog'); modal.id = 'ast-quote-dialog'; modal.className = 'ast-quote-dialog'; modal.setAttribute('aria-labelledby','ast-quote-dialog-title'); modal.innerHTML = '<button type="button" class="ast-quote-close" aria-label="Закрыть">×</button><h2 id="ast-quote-dialog-title">Получить КП</h2>'; modal.appendChild(makeForm(context())); document.body.appendChild(modal);
+    modal.querySelector('.ast-quote-close').addEventListener('click',function () { modal.close(); });
+    modal.addEventListener('close',function () { if (lastFocus && lastFocus.isConnected) lastFocus.focus({preventScroll:true}); });
+    window.addEventListener('submit',function (event) { var form = event.target; if (!form.matches || !form.matches('[data-ast-standard-form]')) return; event.preventDefault(); event.stopImmediatePropagation(); submit(form); },true);
+    window.addEventListener('input',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) event.target.setCustomValidity(''); },true);
+    window.addEventListener('click',function (event) {
+      if (event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      var trigger = event.target.closest && event.target.closest('a,button'); if (!trigger || trigger.closest('.ast-quote-form,.ast-quote-dialog')) return;
+      var href = trigger.getAttribute('href') || ''; if (/^(tel:|mailto:|sms:|tg:|https?:\/\/(?:t\.me|wa\.me|max\.ru)\/)/i.test(href)) return;
+      var known = trigger.matches('[data-ast-quiz-open],[data-order-model],[data-ast-set-model],[data-ast-offer-action="order"],[data-ast-hero-calc],[data-ast-prot-calc],[data-a5l-jump],[data-a5l-choose]') ||
+        /^(Получить КП|Оставить заявку|Заявка|Перейти к заявке|Рассчитать стоимость|Рассчитать под ключ|Получить расчёт|Обсудить автомобиль)$/.test(trigger.textContent.trim()) || /^#(?:lead|ast-safe-deal-form|order|request)(?:$|-)/.test(href);
+      if (!known || /^\/referal\/?$/.test(location.pathname)) return;
+      event.preventDefault(); event.stopImmediatePropagation();
+      var source = trigger.closest('section,article'); source = source && source.querySelector('form:not([data-ast-standard-form])'); show(trigger,source);
+    },true);
+    var scheduled = false;
+    new MutationObserver(function () { if (!scheduled) { scheduled = true; setTimeout(function () { scheduled = false; mount(); },100); } }).observe(document.body,{childList:true,subtree:true});
+    window.__astUniversalQuote = {mount:mount,open:function (options) { show(document.activeElement,null); var f = modal.querySelector('form'); if (options.model) field(f,'model',options.model); if (options.offerId) field(f,'offer_id',options.offerId); }}; mount();
+  }
+
   function enhancePages() {
     var p = path();
-    if (p === '/audi-a5l') simplifyAudiQuoteForm();
+
     var entry = OFFER_MAP[p] || {};
     try {
       if (p === '/') enhanceHome();
@@ -1365,6 +1518,7 @@
   fetchClientId();
 
   onReady(function () {
+    installUniversalQuoteForm();
     normalizeLegacyPhone();
     enhancePages();
     watchOfferPrices();
