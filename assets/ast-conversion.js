@@ -1319,14 +1319,14 @@
     var field = role.closest('label');
     if (field) { field.hidden = true; field.style.display = 'none'; }
     role.required = false;
-    role.replaceChildren(new Option('Получить КП', 'partner', true, true));
+    role.replaceChildren(new Option('Узнать цену', 'partner', true, true));
     role.value = 'partner';
     var title = document.getElementById('lead-title');
-    if (title) title.textContent = 'Получить КП на Audi A5L';
+    if (title) title.textContent = 'Узнать цену';
     var grid = form.querySelector('.oem-form-grid');
     if (grid) grid.style.gridTemplateColumns = '1fr';
     function label() {
-      if (button.textContent !== 'Получить КП') button.textContent = 'Получить КП';
+      if (button.textContent !== 'Отправить заявку') button.textContent = 'Отправить заявку';
     }
     function intent() {
       role.value = 'partner';
@@ -1350,6 +1350,7 @@
     if (window.__astUniversalQuote) { window.__astUniversalQuote.mount(); return; }
     var bindings = ['7276e623a45a50dd178179e21426028e','c72bf547c9097a2f8ebc4c382f5942ac','f0b3ef2e0259fbb3e9a3d8b69e12c83d','94faeba672cf847b6b5818c51163a1bd','210e33c45a404507cadd487eaf0595a8'];
     var record, nativeForm, modal, lastFocus, active = null, loading = null, serial = 0;
+    var priceLabel = 'Узнать цену';
     var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market'];
     var marketing = 'form[data-oem-ast-form],form[data-ast-lead-form],form[data-ast-model-lead-form],form.ast-launch-form,form[data-ast-static-mini-form],form#tavendor-form,form.ast-oem-form,form.rrc-form,form.ast-pg-price-form,form#x7-request,form.qf#qf,form#lead,form.t-form';
     function field(form, name, value) {
@@ -1373,11 +1374,11 @@
     function makeForm(info) {
       var form = document.createElement('form');
       form.className = 'ast-quote-form'; form.setAttribute('data-ast-standard-form', '1');
-      form.setAttribute('aria-label','Получить коммерческое предложение');
+      form.setAttribute('aria-label', priceLabel);
       var id = 'ast-quote-phone-' + (++serial);
       form.innerHTML = '<label class="ast-quote-field" for="' + id + '">Ваш телефон</label><input id="' + id + '" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 999 123-45-67" required>' +
         '<label class="ast-quote-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку данных по <a href="/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</span></label>' +
-        '<button type="submit">Получить КП</button><p class="ast-quote-status" role="status" aria-live="polite"></p>';
+        '<button type="submit">Отправить заявку</button><p class="ast-quote-status" role="status" aria-live="polite"></p>';
       sourceKeys.concat(['page_url','page','offer']).forEach(function (key) { field(form,key,info[key] || ''); });
       return form;
     }
@@ -1392,6 +1393,41 @@
       var form = makeForm(info); old.replaceWith(form);
       modal.showModal(); form.elements.phone.focus();
     }
+    // Tilda pages and the shared header add lead buttons at different times.
+    // Remember text-only openers after relabelling, so their click path stays the same.
+    function isQuoteOpener(el) {
+      if (el.closest('form,dialog')) return false;
+      if (el.tagName === 'A' && el.hasAttribute('href') && el.origin !== location.origin) return false;
+      var href = el.getAttribute('href') || '';
+      return el.matches('[data-ast-quote-open],[data-ast-quiz-open],[data-order-model],[data-ast-set-model],[data-ast-offer-action="order"],[data-ast-hero-calc],[data-ast-prot-calc],[data-a5l-jump],[data-a5l-choose]') ||
+        /^#(?:lead|ast-safe-deal-form|order|request)(?:$|-)/.test(href) ||
+        /^(Получить КП|Получить коммерческое предложение|Оставить заявку|Заявка|Перейти к заявке|Рассчитать стоимость|Рассчитать под ключ|Получить расчёт|Обсудить автомобиль)$/.test(el.textContent.trim());
+    }
+    function linksToInlineQuote(el) {
+      var href = el.getAttribute('href') || '';
+      if (href.charAt(0) !== '#' || !/^(?:Получить|Запросить|Рассчитать|Узнать|Оставить|Открыть форму заявки|К форме заявки|Заказать$)/i.test(el.textContent.trim())) return false;
+      var target = document.getElementById(href.slice(1));
+      return !!(target && (target.matches('[data-ast-quote-replaced]') || target.querySelector('[data-ast-standard-form]')));
+    }
+    function labelOpener(el) {
+      var opensDialog = isQuoteOpener(el);
+      if (!opensDialog && !linksToInlineQuote(el)) return;
+      if (opensDialog && !el.hasAttribute('data-ast-quote-open')) el.setAttribute('data-ast-quote-open', '');
+      var model = el.getAttribute('data-order-model') || el.getAttribute('data-ast-set-model');
+      var accessibleLabel = model ? priceLabel + ' — ' + model : priceLabel;
+      if (el.hasAttribute('aria-label') && el.getAttribute('aria-label') !== accessibleLabel) el.setAttribute('aria-label', accessibleLabel);
+      if (el.hasAttribute('title') && el.title !== priceLabel) el.title = priceLabel;
+      // Keep icons, styled spans, and the contents of linked vehicle cards.
+      if (el.querySelector('picture,img,h2,h3,h4,small')) return;
+      var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      var node, label;
+      while ((node = walker.nextNode())) {
+        if (!node.textContent.trim() || node.parentElement.closest('svg,style,script,[aria-hidden="true"]')) continue;
+        if (label) return;
+        label = node;
+      }
+      if (label && label.textContent !== priceLabel) label.textContent = priceLabel;
+    }
     function mount() {
       // Native receiver forms remain in place, untouched. Only replace the
       // site's known marketing UI; never newsletter/payment/account/referral forms.
@@ -1405,6 +1441,13 @@
         form.__astQuoteSource = source;
         source.dataset.astQuoteReplaced = '1'; source.hidden = true; source.style.setProperty('display','none','important');
         source.insertAdjacentElement('afterend',form);
+      });
+      document.querySelectorAll('a,button').forEach(labelOpener);
+      document.querySelectorAll('#lead,#gr-order').forEach(function (section) {
+        var heading = section.querySelector('#lead-title,h2');
+        if (heading && (section.id === 'gr-order' || section.querySelector('[data-ast-standard-form]')) && heading.textContent !== priceLabel) {
+          heading.textContent = priceLabel;
+        }
       });
     }
     function buildNative() {
@@ -1474,19 +1517,27 @@
         nativeForm.querySelector('[type="submit"]').click();
       }).catch(function () { if (active === request) finish(false); });
     }
-    var style = document.createElement('style'); style.textContent = '.ast-quote-form{box-sizing:border-box;width:100%;max-width:520px;padding:24px;border:1px solid #4b4e52;border-radius:18px;background:#24272b;color:#fff;text-align:left;font:16px/1.45 Arial,sans-serif}.ast-quote-form .ast-quote-field{display:block;color:#d3d5d7;font-size:14px;margin:0 0 7px}.ast-quote-form input[type=tel]{box-sizing:border-box;width:100%;min-height:48px;padding:12px;border:1px solid #73767a;border-radius:8px;background:#36393d;color:#fff;font:16px Arial,sans-serif}.ast-quote-form .ast-quote-consent{display:flex;gap:9px;align-items:flex-start;margin:18px 0;color:#d3d5d7;font-size:13px}.ast-quote-form .ast-quote-consent input{width:18px;height:18px;margin:2px 0;flex-shrink:0}.ast-quote-form a{color:inherit;text-decoration:underline}.ast-quote-form button{border:0;border-radius:28px;padding:14px 23px;background:#e0001b;color:white;font:bold 17px Arial,sans-serif;cursor:pointer;min-height:48px}.ast-quote-form button:disabled{opacity:.6;cursor:wait}.ast-quote-status{margin:12px 0 0;font-size:14px}.ast-quote-status:empty{display:none}.ast-quote-dialog{max-width:540px;width:calc(100% - 32px);padding:18px;border:1px solid #555;border-radius:20px;background:#24272b;color:white;box-sizing:border-box}.ast-quote-dialog::backdrop{background:#000a}.ast-quote-dialog h2{font:700 26px/1.2 Arial,sans-serif;margin:10px 34px 18px 6px;color:white}.ast-quote-dialog .ast-quote-close{position:absolute;right:12px;top:10px;border:0;background:none;color:white;font-size:28px;cursor:pointer}.ast-quote-dialog .ast-quote-form{padding:8px;border:0}'; document.head.appendChild(style);
-    modal = document.createElement('dialog'); modal.id = 'ast-quote-dialog'; modal.className = 'ast-quote-dialog'; modal.setAttribute('aria-labelledby','ast-quote-dialog-title'); modal.innerHTML = '<button type="button" class="ast-quote-close" aria-label="Закрыть">×</button><h2 id="ast-quote-dialog-title">Получить КП</h2>'; modal.appendChild(makeForm(context())); document.body.appendChild(modal);
+    var style = document.createElement('style'); style.textContent = '.ast-quote-form{box-sizing:border-box;width:100%;max-width:520px;padding:24px;border:1px solid #4b4e52;border-radius:18px;background:#24272b;color:#fff;text-align:left;font:16px/1.45 Arial,sans-serif}.ast-quote-form .ast-quote-field{display:block;color:#d3d5d7;font-size:14px;margin:0 0 7px}.ast-quote-form input[type=tel]{box-sizing:border-box;width:100%;min-height:48px;padding:12px;border:1px solid #73767a;border-radius:8px;background:#36393d;color:#fff;font:16px Arial,sans-serif}.ast-quote-form .ast-quote-consent{display:flex;gap:9px;align-items:flex-start;margin:18px 0;color:#d3d5d7;font-size:13px}.ast-quote-form .ast-quote-consent input{width:18px;height:18px;margin:2px 0;flex-shrink:0}.ast-quote-form a{color:inherit;text-decoration:underline}.ast-quote-form button{border:0;border-radius:28px;padding:14px 23px;background:#e0001b;color:white;font:bold 17px Arial,sans-serif;cursor:pointer;min-height:48px}.ast-quote-form button:disabled{opacity:.6;cursor:wait}.ast-quote-status{margin:12px 0 0;font-size:14px}.ast-quote-status:empty{display:none}.ast-quote-dialog{max-width:540px;width:calc(100% - 32px);padding:18px;border:1px solid #555;border-radius:20px;background:#24272b;color:white;box-sizing:border-box}.ast-quote-dialog::backdrop{background:#000a}.ast-quote-dialog h2{font:700 26px/1.2 Arial,sans-serif;margin:10px 34px 18px 6px;color:white}.ast-quote-dialog .ast-quote-close{position:absolute;right:12px;top:10px;border:0;background:none;color:white;font-size:28px;cursor:pointer}.ast-quote-dialog .ast-quote-form{padding:8px;border:0}#oem-audi-a5l .a5l-actions [data-a5l-choose][data-ast-quote-open] + [data-a5l-choose][data-ast-quote-open]{display:none}'; document.head.appendChild(style);
+    modal = document.createElement('dialog'); modal.id = 'ast-quote-dialog'; modal.className = 'ast-quote-dialog'; modal.setAttribute('aria-labelledby','ast-quote-dialog-title'); modal.innerHTML = '<button type="button" class="ast-quote-close" aria-label="Закрыть">×</button><h2 id="ast-quote-dialog-title">' + priceLabel + '</h2>'; modal.appendChild(makeForm(context())); document.body.appendChild(modal);
     modal.querySelector('.ast-quote-close').addEventListener('click',function () { modal.close(); });
     modal.addEventListener('close',function () { if (lastFocus && lastFocus.isConnected) lastFocus.focus({preventScroll:true}); });
     window.addEventListener('submit',function (event) { var form = event.target; if (!form.matches || !form.matches('[data-ast-standard-form]')) return; event.preventDefault(); event.stopImmediatePropagation(); submit(form); },true);
     window.addEventListener('input',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) event.target.setCustomValidity(''); },true);
     window.addEventListener('click',function (event) {
       if (event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      var trigger = event.target.closest && event.target.closest('a,button'); if (!trigger || trigger.closest('.ast-quote-form,.ast-quote-dialog')) return;
-      var href = trigger.getAttribute('href') || ''; if (/^(tel:|mailto:|sms:|tg:|https?:\/\/(?:t\.me|wa\.me|max\.ru)\/)/i.test(href)) return;
-      var known = trigger.matches('[data-ast-quiz-open],[data-order-model],[data-ast-set-model],[data-ast-offer-action="order"],[data-ast-hero-calc],[data-ast-prot-calc],[data-a5l-jump],[data-a5l-choose]') ||
-        /^(Получить КП|Оставить заявку|Заявка|Перейти к заявке|Рассчитать стоимость|Рассчитать под ключ|Получить расчёт|Обсудить автомобиль)$/.test(trigger.textContent.trim()) || /^#(?:lead|ast-safe-deal-form|order|request)(?:$|-)/.test(href);
-      if (!known || /^\/referal\/?$/.test(location.pathname)) return;
+      var trigger = event.target.closest && event.target.closest('a,button');
+      if (!trigger || /^\/referal\/?$/.test(location.pathname)) return;
+      if (!isQuoteOpener(trigger)) {
+        // Some configurators link to the original form's ID and set a trim in their own click handlers.
+        var href = trigger.getAttribute('href') || '';
+        var original = href.charAt(0) === '#' && document.getElementById(href.slice(1));
+        var inline = original && original.hasAttribute('data-ast-quote-replaced') && original.nextElementSibling;
+        if (inline && inline.matches('[data-ast-standard-form]')) {
+          event.preventDefault();
+          requestAnimationFrame(function () { inline.scrollIntoView({block:'center'}); inline.elements.phone.focus({preventScroll:true}); });
+        }
+        return;
+      }
       event.preventDefault(); event.stopImmediatePropagation();
       var source = trigger.closest('section,article'); source = source && source.querySelector('form:not([data-ast-standard-form])'); show(trigger,source);
     },true);
