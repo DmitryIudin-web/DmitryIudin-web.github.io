@@ -990,7 +990,103 @@
 
   // C2. /bezopasnaya-sdelka: primary — «Обсудить мою сделку» в Telegram,
   // повтор после этапов оплаты, квиз внизу. FAQ и FAQPage уже есть на странице.
+  // Keep the existing Tilda form, receiver bindings and native acknowledgement.
+  // Its submit handler is delegated to the Tilda record, so stay in that record.
+  function mountSafeQuickForm() {
+    var form = document.getElementById('ast-safe-deal-form');
+    var hero = document.querySelector('.ast-safe-hero__copy');
+    if (!form || !hero || !form.closest('.t-rec') || form.closest('.t-rec') !== hero.closest('.t-rec')) return false;
+    if (form.dataset.quickRequest === '1') return true;
+    var contact = form.elements.Phone;
+    var consent = form.elements.consent;
+    var send = form.querySelector('[type="submit"]');
+    if (!contact || !consent || !send || !form.querySelector('.js-formaction-services')) return false;
+
+    form.dataset.quickRequest = '1';
+    Array.from(form.querySelectorAll('.t-input-group')).forEach(function (group) {
+      if (!group.contains(contact) && !group.contains(consent)) group.remove();
+    });
+    var model = ensureHidden(form, 'model');
+    form.elements.source_detail.value = 'safe_deal_quick';
+    var meta = form.querySelector('.ast-formmeta');
+    if (meta) meta.remove();
+    contact.type = 'tel';
+    contact.required = true;
+    contact.placeholder = '+7 999 123-45-67';
+    var label = form.querySelector('label[for="' + contact.id + '"]');
+    if (label) label.textContent = 'Ваш телефон';
+    consent.defaultChecked = consent.checked = false;
+    consent.required = true;
+    send.textContent = 'Оставить заявку';
+    form.setAttribute('aria-label', 'Быстрая заявка на безопасную сделку');
+    form.style.setProperty('display', 'block', 'important');
+    form.style.cssText += ';color:#17191c;background:#fff;max-width:480px;box-sizing:border-box;margin:16px 0;scroll-margin-top:90px';
+    form.querySelector('.t-form__inputsbox').style.gridTemplateColumns = '1fr';
+    var heading = document.createElement('h2');
+    heading.textContent = 'Быстрая заявка';
+    heading.style.cssText = 'color:#17191c;font-size:22px;line-height:1.2;margin:0 0 12px';
+    form.prepend(heading);
+    var status = document.createElement('p');
+    status.setAttribute('role', 'status');
+    status.style.cssText = 'color:#222;margin:10px 0 0';
+    form.appendChild(status);
+    hero.appendChild(form);
+    var leadCopy = document.querySelector('#lead .ast-leadbox p');
+    if (leadCopy) leadCopy.textContent = 'Оставьте телефон. Менеджер уточнит модель и условия сделки при звонке.';
+    var leadActions = document.querySelector('#lead .ast-leadbox .ast-actions');
+    if (leadActions) {
+      var link = htmlToEl('<a class="ast-btn" href="#ast-safe-deal-form">Оставить заявку</a>');
+      leadActions.replaceChildren(link);
+    }
+    function check(event) {
+      var digits = contact.value.replace(/\D/g, '');
+      contact.setCustomValidity(digits.length >= 10 && digits.length <= 15 && /^\+?[\d\s()-]+$/.test(contact.value.trim()) ? '' : 'Введите номер телефона с кодом города или оператора.');
+      var valid = form.reportValidity();
+      if (!valid || !window.tildaForm || !window.initForms || !window.initForms[form.closest('.t-rec').id]) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (valid) status.textContent = 'Не удалось подключить форму. Повторите отправку или позвоните в АСТ: ' + CONFIG.phoneDisplay;
+        return;
+      }
+      contact.setCustomValidity('');
+      status.textContent = '';
+      fillFormSources();
+      var yclid = new URLSearchParams(location.search).get('yclid');
+      if (yclid) ensureHidden(form, 'yclid').value = yclid;
+    }
+    contact.addEventListener('input', function () { contact.setCustomValidity(''); });
+    send.addEventListener('click', check, true);
+    form.addEventListener('submit', check, true);
+    var lastReceipt = '';
+    form.addEventListener('tildaform:aftersuccess', function () {
+      var receipt = String(form.tildaTranId || form.tildaOrderId || '');
+      if (receipt && receipt === lastReceipt) return;
+      if (status.dataset.accepted === '1' && !receipt) return;
+      lastReceipt = receipt;
+      status.dataset.accepted = '1';
+      status.textContent = 'Спасибо! АСТ приняла заявку на обратный звонок.';
+      track('ast_form_submit_success', {form: 'safe_deal_quick', delivered: 'tilda'});
+    });
+    // Some page-level scripts add their own quiz buttons after DOMContentLoaded.
+    // Intercept only lead actions on this page, including the mobile request link.
+    window.addEventListener('click', function (e) {
+      var el = e.target.closest && e.target.closest('a,button');
+      if (!el || form.contains(el) || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      var isLead = el.matches('[data-order-model],[data-ast-quiz-open],[data-ast-hero-calc],[data-ast-prot-calc],a[href="#ast-safe-deal-form"],a[href="#lead"]') ||
+        ((el.closest('.ast-actions,.ast-menu,.ast-sticky-cta,.ast-nav,header') || (el.tagName === 'A' && el.origin === location.origin && el.pathname === '/contacts')) &&
+          /^(Рассчитать стоимость|Оставить заявку|Заявка|Перейти к заявке|Проверить условия аккредитива)$/.test(el.textContent.trim()));
+      if (!isLead || /^(https?:\/\/t\.me\/|tg:|tel:|mailto:)/i.test(el.getAttribute('href') || '')) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      model.value = el.getAttribute('data-order-model') || '';
+      form.scrollIntoView({block:'center'});
+      contact.focus({preventScroll:true});
+    }, true);
+    return true;
+  }
+
   function enhanceSafeDeal() {
+    if (path() === '/bezopasnaya-sdelka' && mountSafeQuickForm()) return;
     var msg = 'Здравствуйте! Интересует безопасная сделка, хочу обсудить условия';
     var hero = document.querySelector('.ast-safe-hero .ast-actions, .ast-hero .ast-actions');
     if (hero && !hero.querySelector('[data-ast-safe-tg]')) {
