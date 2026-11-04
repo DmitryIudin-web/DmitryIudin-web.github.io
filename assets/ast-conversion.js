@@ -610,46 +610,87 @@
       quiz_timeline: s.timeline || '',
       quiz_contact: 'phone'
     };
-    track('ast_quiz_submit', payload);
-    trackContact('quiz', { position: payload.position });
-
-    // Передача в CRM: используем скрытую Tilda-форму страницы, как это уже
-    // делает мини-форма (см. critical mini form bridge в инлайн-скриптах).
-    var form = document.querySelector('[data-ast-lead-form], #ast-lead-form, form.t-form.js-form-proccess, form.t-form');
-    if (form) {
-      var set = function (name, value) {
-        var inp = ensureHidden(form, name);
-        inp.value = value || '';
-        try {
-          inp.dispatchEvent(new Event('input', { bubbles: true }));
-          inp.dispatchEvent(new Event('change', { bubbles: true }));
-        } catch (e) {}
-      };
-      set('Name', 'Квиз: расчёт стоимости');
-      set('Phone', phoneValue);
-      set('phone', phoneValue);
-      set('contact', phoneValue);
-      set('model', s.model || '');
-      if (path() === '/' || s.offerId) {
-        set('offer_id', s.offerId || '');
-        set('quoteId', s.offerId || '');
-      }
-      set('scenario', 'quiz');
-      set('client_type', s.clientType || '');
-      set('timeline', s.timeline || '');
-      set('source_detail', 'ast_quiz');
-      set('comment', 'Квиз avtonds.ru\nАвтомобиль: ' + (s.model || '—') +
-        (s.offerId ? '\nПредложение: ' + s.offerId : '') +
-        '\nОформление: ' + (s.clientType || '—') +
-        '\nСрок: ' + (s.timeline || '—') +
-        '\nТелефон: ' + phoneValue);
-      fillFormSources();
+    // Prefer the existing native receiver used by the site's working forms.
+    // Do not report a conversion until this particular form is accepted.
+    var form = Array.from(document.querySelectorAll('form.js-form-proccess')).find(function (f) {
+      return f.querySelector('input[name="formservices[]"]') &&
+        f.querySelector('[name="Phone"],[name="tildaspec-phone-part[]"]') &&
+        f.querySelector('[type="submit"]');
+    });
+    if (!form || !window.tildaForm) return Promise.reject(new Error('native_form_unavailable'));
+    var button = form.querySelector('[type="submit"]');
+    if (form.dataset.astQuizBusy === '1' || button.tildaSendingStatus === '1') return Promise.reject(new Error('native_form_busy'));
+    var set = function (name, value) {
+      var inp = ensureHidden(form, name);
+      inp.value = value || '';
       try {
-        var submit = form.querySelector('button[type="submit"],input[type="submit"],.t-submit');
-        if (submit) submit.click();
-        else if (form.requestSubmit) form.requestSubmit();
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+        inp.dispatchEvent(new Event('change', { bubbles: true }));
       } catch (e) {}
+    };
+    set('Name', 'Квиз: расчёт стоимости');
+    var mask = form.querySelector('input[name="tildaspec-phone-part[]"]');
+    if (mask) {
+      var digits = phoneValue.replace(/\D/g, '');
+      if (digits.length === 11 && digits.charAt(0) === '8') digits = '7' + digits.slice(1);
+      if (digits.length === 10) digits = '7' + digits;
+      if (typeof window.t_form_phonemask__setValue !== 'function') return Promise.reject(new Error('phone_mask_not_ready'));
+      window.t_form_phonemask__setValue(mask.parentNode, '+' + digits, null, {noFocus:true});
+    } else set('Phone', phoneValue);
+    // The caller has checked the explicit consent in the quiz.
+    form.querySelectorAll('input[type="checkbox"][data-tilda-req="1"]').forEach(function (el) {
+      if (/^(Checkbox|consent)$/i.test(el.name)) {
+        el.checked = true;
+        el.dispatchEvent(new Event('change', {bubbles:true}));
+      }
+    });
+    set('phone', phoneValue);
+    set('contact', phoneValue);
+    set('model', s.model || '');
+    if (path() === '/' || s.offerId) {
+      set('offer_id', s.offerId || '');
+      set('quoteId', s.offerId || '');
     }
+    set('scenario', 'quiz');
+    set('client_type', s.clientType || '');
+    set('timeline', s.timeline || '');
+    set('source_detail', 'ast_quiz');
+    set('comment', 'Квиз avtonds.ru\nАвтомобиль: ' + (s.model || '—') +
+      (s.offerId ? '\nПредложение: ' + s.offerId : '') +
+      '\nОформление: ' + (s.clientType || '—') +
+      '\nСрок: ' + (s.timeline || '—') +
+      '\nТелефон: ' + phoneValue);
+    fillFormSources();
+
+    return new Promise(function (resolve, reject) {
+      var done = false;
+      form.dataset.astQuizBusy = '1';
+      var timer = setTimeout(function () { finish(false); }, 45000);
+      var observer = new MutationObserver(function () {
+        var errorBox = form.querySelector('.js-errorbox-all');
+        if (errorBox && getComputedStyle(errorBox).display !== 'none' && errorBox.textContent.trim()) finish(false);
+      });
+      function finish(ok) {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        observer.disconnect();
+        form.removeEventListener('tildaform:aftersuccess', accepted);
+        form.removeEventListener('tildaform:aftererror', failed);
+        delete form.dataset.astQuizBusy;
+        if (ok) {
+          track('ast_quiz_submit', payload);
+          trackContact('quiz', {position:payload.position});
+          resolve();
+        } else reject(new Error('native_form_not_accepted'));
+      }
+      function accepted() { finish(true); }
+      function failed() { finish(false); }
+      form.addEventListener('tildaform:aftersuccess', accepted);
+      form.addEventListener('tildaform:aftererror', failed);
+      observer.observe(form, {subtree:true, childList:true, attributes:true, attributeFilter:['class','style']});
+      try { button.click(); } catch (error) { finish(false); }
+    });
   }
 
   function openQuiz(options) {
@@ -722,9 +763,29 @@
             if (error) error.textContent = 'Нужно согласие на обработку персональных данных.';
             return;
           }
-          quizSubmitPhone(value);
-          quizState.step = 5;
-          quizRender();
+          if (phoneSubmit.disabled) return;
+          phoneSubmit.disabled = true;
+          error.textContent = 'Отправляем заявку…';
+          var submittingState = quizState;
+          quizSubmitPhone(value).then(function () {
+            if (quizState !== submittingState) return;
+            quizState.step = 5;
+            quizRender();
+          }).catch(function () {
+            error.textContent = 'Приём заявки не подтверждён. ';
+            var retry = document.createElement('a');
+            var target = new URL('/contacts', location.origin);
+            SOURCE_KEYS.forEach(function (key) {
+              var saved = sessionGet('ast_' + key);
+              if (saved) target.searchParams.set(key, saved);
+            });
+            if (submittingState.model) target.searchParams.set('model', submittingState.model);
+            target.hash = 'lead';
+            retry.href = target.href;
+            retry.textContent = 'Открыть форму заявки';
+            error.appendChild(retry);
+            error.appendChild(document.createTextNode(' или позвоните ' + CONFIG.phoneDisplay + '.'));
+          }).finally(function () { phoneSubmit.disabled = false; });
         }
       });
       document.addEventListener('keydown', function (event) {
