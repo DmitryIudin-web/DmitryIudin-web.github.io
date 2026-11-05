@@ -74,6 +74,8 @@
     '/aston-martin-dbx707': { model: 'Aston Martin DBX707' },
     '/bentley-bentayga': { model: 'Bentley Bentayga' },
     '/bentley-continental-gt': { model: 'Bentley Continental GT' },
+    '/bentley-continental-gt-mulliner': {model:'Bentley Continental GT Mulliner'},
+    '/audi-a5l': {model:'Audi A5L',offer:'audi-a5l'},
     '/bmw-x5-import': { offer: 'bmw-x5', model: 'BMW X5' },
     '/bmw-x6': { model: 'BMW X6' },
     '/bmw-x7': { model: 'BMW X7' },
@@ -101,7 +103,7 @@
   // Параметры шаблонов Яндекс.Директа из URL объявлений (аудит 14.05.2026).
   // Метрика не считает их UTM и никуда не выводит: без явной передачи отказы
   // по utm_source_type (автотаргетинг vs. поиск) сегментировать нечем.
-  var DIRECT_KEYS = ['utm_campaign_id', 'utm_group_id', 'utm_source_type',
+  var DIRECT_KEYS = ['yclid', 'utm_campaign_id', 'utm_group_id', 'utm_source_type',
     'utm_position_type', 'utm_device', 'utm_retargeting'];
   var SOURCE_KEYS = UTM_KEYS.concat(DIRECT_KEYS);
 
@@ -321,6 +323,7 @@
       if (el.type === 'hidden') return;
       var quiz = el.closest('.ast-quiz');
       if (quiz) { trackFormStart('quiz'); return; }
+      if (el.closest('[data-ast-standard-form],#ast-quote-native-record')) return;
       if (!el.closest('form.t-form, form.ast-launch-form, form[data-ast-lead-form]')) return;
       trackFormStart(positionOf(el));
     }, true);
@@ -1350,8 +1353,9 @@
     if (window.__astUniversalQuote) { window.__astUniversalQuote.mount(); return; }
     var bindings = ['7276e623a45a50dd178179e21426028e','c72bf547c9097a2f8ebc4c382f5942ac','f0b3ef2e0259fbb3e9a3d8b69e12c83d','94faeba672cf847b6b5818c51163a1bd','210e33c45a404507cadd487eaf0595a8'];
     var record, nativeForm, modal, lastFocus, active = null, loading = null, serial = 0;
+    var lastAccepted = null;
     var priceLabel = 'Узнать цену';
-    var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market'];
+    var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market','a5l_role'];
     var marketing = 'form[data-oem-ast-form],form[data-ast-lead-form],form[data-ast-model-lead-form],form.ast-launch-form,form[data-ast-static-mini-form],form#tavendor-form,form.ast-oem-form,form.rrc-form,form.ast-pg-price-form,form#x7-request,form.qf#qf,form#lead,form.t-form';
     function field(form, name, value) {
       var el = form.querySelector('[name="' + name + '"]');
@@ -1371,9 +1375,38 @@
       result.page_url = location.href.split('#')[0]; result.page = path(); result.offer = result.offer_id || (path() === '/' ? 'generic' : pageOffer());
       return result;
     }
+    function quoteTestMode() {
+      return new URLSearchParams(location.search).get('utm_source') === 'ast_test' || sessionGet('ast_utm_source') === 'ast_test';
+    }
+    function quoteRequestId(form) {
+      if (!form.dataset.requestId) form.dataset.requestId = 'quote_' + Date.now() + '_' + Math.random().toString(36).slice(2,10);
+      return form.dataset.requestId;
+    }
+    function quoteMeta(form, extra) {
+      var out = {form:'standard_quote',form_id:form.id,request_id:quoteRequestId(form),page:path(),page_path:path(),is_test:quoteTestMode() ? 1 : 0};
+      ['model','offer','a5l_role'].forEach(function (key) { var input = form.elements[key]; if (input && input.value) out[key] = input.value; });
+      SOURCE_KEYS.forEach(function (key) { var value = new URLSearchParams(location.search).get(key) || sessionGet('ast_' + key); if (value) out[key] = value; });
+      return Object.assign(out,extra || {});
+    }
+    function quoteTrack(goal, form, extra) {
+      var info = quoteMeta(form,extra);
+      var key = info.request_id + ':' + goal + ':' + (info.attempt || 0);
+      form.__astQuoteEvents = form.__astQuoteEvents || {};
+      if (form.__astQuoteEvents[key]) return;
+      form.__astQuoteEvents[key] = true;
+      form.dataset.astQuoteLastEvent = goal;
+      form.dataset.astQuoteEventCount = String(Object.keys(form.__astQuoteEvents).length);
+      if (goal === 'ast_form_submit_success') form.dataset.astAcceptedRequestId = info.request_id;
+      track(quoteTestMode() ? goal.replace(/^ast_/, 'ast_test_') : goal,info);
+    }
+    function quoteStart(form) {
+      if (!form.elements.phone.value.trim()) return;
+      quoteTrack('ast_form_start',form,{position:positionOf(form),channel:'form'});
+    }
     function makeForm(info) {
       var form = document.createElement('form');
       form.className = 'ast-quote-form'; form.setAttribute('data-ast-standard-form', '1');
+      form.id = 'ast-quote-form-' + (serial + 1); form.dataset.attempt = '0';
       form.setAttribute('aria-label', priceLabel);
       var id = 'ast-quote-phone-' + (++serial);
       form.innerHTML = '<label class="ast-quote-field" for="' + id + '">Ваш телефон</label><input id="' + id + '" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 999 123-45-67" required>' +
@@ -1391,7 +1424,7 @@
       var old = modal.querySelector('form'), info = context(source,trigger);
       if (active && active.form === old) { modal.showModal(); old.elements.phone.focus(); return; }
       var form = makeForm(info); old.replaceWith(form);
-      modal.showModal(); form.elements.phone.focus();
+      modal.showModal(); quoteTrack('ast_form_open',form,{position:positionOf(trigger || form),channel:'form'}); form.elements.phone.focus();
     }
     // Tilda pages and the shared header add lead buttons at different times.
     // Remember text-only openers after relabelling, so their click path stays the same.
@@ -1477,30 +1510,38 @@
       });
       return loading;
     }
-    function finish(ok) {
+    function finish(ok, reason) {
       if (!active) return;
       var request = active; clearTimeout(request.timer); if (request.observer) request.observer.disconnect(); active = null;
       var form = request.form; form.querySelector('[type="submit"]').disabled = false;
-      if (!ok) { setStatus(form,'Не удалось отправить заявку. Повторите отправку или свяжитесь с АСТ.',true); return; }
+      if (!ok) { quoteTrack('ast_form_submit_error',form,{reason:reason || 'native_rejected',attempt:request.attempt}); setStatus(form,'Не удалось отправить заявку. Повторите отправку или свяжитесь с АСТ.',true); return; }
       setStatus(form,'Спасибо! Заявка принята.');
-      var safe = {form:'standard_quote',request_id:request.id,delivered:'tilda',page_path:path()};
-      track('ast_form_submit_success',safe); track('ast_form_submit',safe); trackContact('form',{form:'standard_quote'});
-      form.reset(); delete form.dataset.requestId;
+      var receipt = String(nativeForm.tildaTranId || nativeForm.tildaOrderId || '');
+      var safe = {delivered:'tilda',receipt_id:receipt};
+      quoteTrack('ast_form_submit_success',form,safe); quoteTrack('ast_form_submit',form,safe);
+      if (!quoteTestMode()) trackContact('form',{form:'standard_quote',request_id:request.id});
+      lastAccepted = {fingerprint:request.fingerprint,time:Date.now()};
+      form.reset(); delete form.dataset.requestId; form.dataset.attempt = '0';
     }
     function submit(form) {
       if (active) { setStatus(form,'Предыдущая заявка ещё обрабатывается. Дождитесь подтверждения.',true); return; }
       var phone = form.elements.phone, digits = phone.value.replace(/\D/g,'');
       phone.setCustomValidity(/^\+?[\d\s()-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15 ? '' : 'Введите номер телефона с кодом города или оператора.');
       if (!form.reportValidity()) return;
+      var fingerprint = digits + '|' + path() + '|' + ((form.elements.model && form.elements.model.value) || '');
+      if (lastAccepted && lastAccepted.fingerprint === fingerprint && Date.now() - lastAccepted.time < 120000) { setStatus(form,'Заявка уже принята. Мы свяжемся с вами.'); return; }
+      quoteStart(form);
+      form.dataset.attempt = String(Number(form.dataset.attempt || 0) + 1);
       form.querySelector('[type="submit"]').disabled = true; setStatus(form,'Отправляем заявку…');
-      var request = {form:form,id:form.dataset.requestId || ('quote_' + Date.now() + '_' + Math.random().toString(36).slice(2,10)),timer:null,observer:null};
+      var request = {form:form,id:quoteRequestId(form),attempt:Number(form.dataset.attempt),fingerprint:fingerprint,timer:null,observer:null};
+      quoteTrack('ast_form_submit_attempt',form,{attempt:request.attempt});
       form.dataset.requestId = request.id; active = request;
       ready().then(function () {
         if (active !== request) return;
         if (form.__astQuoteSource) { var latest = context(form.__astQuoteSource); sourceKeys.forEach(function (key) { field(form,key,latest[key] || ''); }); }
-        var values = {Name:'Заявка с сайта',Phone:phone.value.trim(),Email:'',comment:'Запрос коммерческого предложения. Страница: ' + location.href.split('#')[0],request_id:request.id,created_at:new Date().toISOString(),channel:'site_form',source:'avtonds_site',site_source:'avtonds.ru',source_detail:'standard_quote',consent:'yes',consent_version:pageConsentVersion() || 'privacy-2026-05-12',policy_url:location.origin + '/privacy',scenario:'get_quote',cta:'get_quote',via:'ast_confirmed_tilda_quote'};
+        var values = {Name:quoteTestMode() ? 'TEST AST — не звонить' : 'Заявка с сайта',Phone:phone.value.trim(),Email:'',comment:(quoteTestMode() ? 'TEST AST — проверка формы, не звонить. ' : '') + 'Заявка с сайта. Страница: ' + location.href.split('#')[0],request_id:request.id,created_at:new Date().toISOString(),channel:'site_form',source:'avtonds_site',site_source:'avtonds.ru',source_detail:'standard_quote',consent:'yes',consent_version:pageConsentVersion() || 'privacy-2026-05-12',policy_url:location.origin + '/privacy',scenario:'get_quote',cta:'get_quote',via:'ast_confirmed_tilda_quote',is_test:quoteTestMode() ? 'yes' : 'no'};
         sourceKeys.concat(['page_url','page','offer']).forEach(function (key) { values[key] = form.elements[key] ? form.elements[key].value : ''; });
-        SOURCE_KEYS.concat(['yclid']).forEach(function (key) { values[key] = new URLSearchParams(location.search).get(key) || sessionGet('ast_' + key) || ''; });
+        SOURCE_KEYS.forEach(function (key) { values[key] = new URLSearchParams(location.search).get(key) || sessionGet('ast_' + key) || ''; });
         values.ym_client_id = sessionGet('ast_ym_client_id') || '';
         Object.keys(values).forEach(function (key) { field(nativeForm,key,values[key]); });
         nativeForm.querySelectorAll('.js-errorbox-all,.js-successbox').forEach(function (el) { el.style.display = 'none'; });
@@ -1511,18 +1552,19 @@
           // Keep the channel occupied until native acknowledgement/error arrives.
           // A late response must never be attributed to a second submission.
           request.timedOut = true;
+          quoteTrack('ast_form_submit_pending',form,{reason:'ack_timeout',attempt:request.attempt});
           setStatus(form,'Подтверждение задерживается. Заявка может ещё обрабатываться. Свяжитесь с АСТ.',true);
         },45000);
-        track('ast_form_submit_attempt',{form:'standard_quote',request_id:request.id,page_path:path()});
         nativeForm.querySelector('[type="submit"]').click();
-      }).catch(function () { if (active === request) finish(false); });
+      }).catch(function () { if (active === request) finish(false,'native_unavailable'); });
     }
     var style = document.createElement('style'); style.textContent = '.ast-quote-form{box-sizing:border-box;width:100%;max-width:520px;padding:24px;border:1px solid #4b4e52;border-radius:18px;background:#24272b;color:#fff;text-align:left;font:16px/1.45 Arial,sans-serif}.ast-quote-form .ast-quote-field{display:block;color:#d3d5d7;font-size:14px;margin:0 0 7px}.ast-quote-form input[type=tel]{box-sizing:border-box;width:100%;min-height:48px;padding:12px;border:1px solid #73767a;border-radius:8px;background:#36393d;color:#fff;font:16px Arial,sans-serif}.ast-quote-form .ast-quote-consent{display:flex;gap:9px;align-items:flex-start;margin:18px 0;color:#d3d5d7;font-size:13px}.ast-quote-form .ast-quote-consent input{width:18px;height:18px;margin:2px 0;flex-shrink:0}.ast-quote-form a{color:inherit;text-decoration:underline}.ast-quote-form button{border:0;border-radius:28px;padding:14px 23px;background:#e0001b;color:white;font:bold 17px Arial,sans-serif;cursor:pointer;min-height:48px}.ast-quote-form button:disabled{opacity:.6;cursor:wait}.ast-quote-status{margin:12px 0 0;font-size:14px}.ast-quote-status:empty{display:none}.ast-quote-dialog{max-width:540px;width:calc(100% - 32px);padding:18px;border:1px solid #555;border-radius:20px;background:#24272b;color:white;box-sizing:border-box}.ast-quote-dialog::backdrop{background:#000a}.ast-quote-dialog h2{font:700 26px/1.2 Arial,sans-serif;margin:10px 34px 18px 6px;color:white}.ast-quote-dialog .ast-quote-close{position:absolute;right:12px;top:10px;border:0;background:none;color:white;font-size:28px;cursor:pointer}.ast-quote-dialog .ast-quote-form{padding:8px;border:0}#oem-audi-a5l .a5l-actions [data-a5l-choose][data-ast-quote-open] + [data-a5l-choose][data-ast-quote-open]{display:none}'; document.head.appendChild(style);
     modal = document.createElement('dialog'); modal.id = 'ast-quote-dialog'; modal.className = 'ast-quote-dialog'; modal.setAttribute('aria-labelledby','ast-quote-dialog-title'); modal.innerHTML = '<button type="button" class="ast-quote-close" aria-label="Закрыть">×</button><h2 id="ast-quote-dialog-title">' + priceLabel + '</h2>'; modal.appendChild(makeForm(context())); document.body.appendChild(modal);
     modal.querySelector('.ast-quote-close').addEventListener('click',function () { modal.close(); });
     modal.addEventListener('close',function () { if (lastFocus && lastFocus.isConnected) lastFocus.focus({preventScroll:true}); });
     window.addEventListener('submit',function (event) { var form = event.target; if (!form.matches || !form.matches('[data-ast-standard-form]')) return; event.preventDefault(); event.stopImmediatePropagation(); submit(form); },true);
-    window.addEventListener('input',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) event.target.setCustomValidity(''); },true);
+    window.addEventListener('focusin',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) quoteTrack('ast_form_open',event.target.form,{position:positionOf(event.target),channel:'form'}); },true);
+    window.addEventListener('input',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) { event.target.setCustomValidity(''); quoteStart(event.target.form); } },true);
     window.addEventListener('click',function (event) {
       if (event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       var trigger = event.target.closest && event.target.closest('a,button');
@@ -1534,12 +1576,13 @@
         var inline = original && original.hasAttribute('data-ast-quote-replaced') && original.nextElementSibling;
         if (inline && inline.matches('[data-ast-standard-form]')) {
           event.preventDefault();
-          requestAnimationFrame(function () { inline.scrollIntoView({block:'center'}); inline.elements.phone.focus({preventScroll:true}); });
+          requestAnimationFrame(function () { inline.scrollIntoView({block:'center'}); quoteTrack('ast_form_open',inline,{position:positionOf(trigger),channel:'form'}); inline.elements.phone.focus({preventScroll:true}); });
         }
         return;
       }
       event.preventDefault(); event.stopImmediatePropagation();
       var source = trigger.closest('section,article'); source = source && source.querySelector('form:not([data-ast-standard-form])'); show(trigger,source);
+      quoteTrack('ast_cta_click',modal.querySelector('form'),{position:positionOf(trigger),channel:'form'});
     },true);
     var scheduled = false;
     new MutationObserver(function () { if (!scheduled) { scheduled = true; setTimeout(function () { scheduled = false; mount(); },100); } }).observe(document.body,{childList:true,subtree:true});
@@ -1612,3 +1655,4 @@
   script.defer = true;
   document.head.appendChild(script);
 })();
+

@@ -30,3 +30,9 @@ jobs:
           ALLOW_FROZEN: ${{ contains(github.event.pull_request.labels.*.name, 'allow-frozen') && '--allow-frozen' || '' }}
           ALLOW_REWRITE: ${{ contains(github.event.pull_request.labels.*.name, 'allow-rewrite') && '--allow-rewrite' || '' }}
         run: python3 scripts/check.py --base "origin/${{ github.base_ref }}" $ALLOW_FROZEN $ALLOW_REWRITE
+
+      - name: Verify shared quote lifecycle
+        run: |
+          node --check assets/ast-conversion.js
+          node scripts/test_quote_funnel.cjs
+
