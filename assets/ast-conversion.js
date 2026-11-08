@@ -1353,7 +1353,9 @@
     if (window.__astUniversalQuote) { window.__astUniversalQuote.mount(); return; }
     var bindings = ['7276e623a45a50dd178179e21426028e','c72bf547c9097a2f8ebc4c382f5942ac','f0b3ef2e0259fbb3e9a3d8b69e12c83d','94faeba672cf847b6b5818c51163a1bd','210e33c45a404507cadd487eaf0595a8'];
     var record, nativeForm, modal, lastFocus, active = null, loading = null, serial = 0;
-    var lastAccepted = null;
+    var acceptedQuotes = new Map();
+    var acceptedReceipts = new Set();
+    var repeatWindow = 120000;
     var priceLabel = 'Узнать цену';
     var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market','a5l_role'];
     var marketing = 'form[data-oem-ast-form],form[data-ast-lead-form],form[data-ast-model-lead-form],form.ast-launch-form,form[data-ast-static-mini-form],form#tavendor-form,form.ast-oem-form,form.rrc-form,form.ast-pg-price-form,form#x7-request,form.qf#qf,form#lead,form.t-form';
@@ -1512,15 +1514,23 @@
     }
     function finish(ok, reason) {
       if (!active) return;
+      var receipt = '';
+      if (ok) {
+        if (!active.dispatched) return;
+        receipt = String(nativeForm.tildaTranId || '');
+        if (!receipt || receipt === '0') receipt = String(nativeForm.tildaOrderId || '');
+        if (receipt === '0') receipt = '';
+        if (receipt && acceptedReceipts.has(receipt)) return;
+        if (receipt) acceptedReceipts.add(receipt);
+      }
       var request = active; clearTimeout(request.timer); if (request.observer) request.observer.disconnect(); active = null;
       var form = request.form; form.querySelector('[type="submit"]').disabled = false;
       if (!ok) { quoteTrack('ast_form_submit_error',form,{reason:reason || 'native_rejected',attempt:request.attempt}); setStatus(form,'Не удалось отправить заявку. Повторите отправку или свяжитесь с АСТ.',true); return; }
       setStatus(form,'Спасибо! Заявка принята.');
-      var receipt = String(nativeForm.tildaTranId || nativeForm.tildaOrderId || '');
       var safe = {delivered:'tilda',receipt_id:receipt};
       quoteTrack('ast_form_submit_success',form,safe); quoteTrack('ast_form_submit',form,safe);
       if (!quoteTestMode()) trackContact('form',{form:'standard_quote',request_id:request.id});
-      lastAccepted = {fingerprint:request.fingerprint,time:Date.now()};
+      acceptedQuotes.set(request.fingerprint, Date.now());
       form.reset(); delete form.dataset.requestId; form.dataset.attempt = '0';
     }
     function submit(form) {
@@ -1528,8 +1538,26 @@
       var phone = form.elements.phone, digits = phone.value.replace(/\D/g,'');
       phone.setCustomValidity(/^\+?[\d\s()-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15 ? '' : 'Введите номер телефона с кодом города или оператора.');
       if (!form.reportValidity()) return;
-      var fingerprint = digits + '|' + path() + '|' + ((form.elements.model && form.elements.model.value) || '');
-      if (lastAccepted && lastAccepted.fingerprint === fingerprint && Date.now() - lastAccepted.time < 120000) { setStatus(form,'Заявка уже принята. Мы свяжемся с вами.'); return; }
+      // Read the current selection once, before deduplication or async Tilda setup.
+      var submittedPhone = phone.value.trim();
+      var latest = form.__astQuoteSource && context(form.__astQuoteSource);
+      var selection = {};
+      sourceKeys.concat(['page_url','page','offer']).forEach(function (key) {
+        if (latest) field(form,key,latest[key] || '');
+        var input = form.elements[key];
+        selection[key] = input ? input.value : '';
+      });
+      var pagePath = path();
+      if (pagePath === '/offers' && !selection.offer_id && !selection.quoteId) {
+        selection.quoteId = new URLSearchParams(location.search).get('quoteId') || '';
+      }
+      var offerId = selection.offer_id.trim() || selection.quoteId.trim();
+      var fingerprint = JSON.stringify([digits, pagePath, selection.model, offerId]);
+      var now = Date.now();
+      acceptedQuotes.forEach(function (time, key) {
+        if (now - time >= repeatWindow) acceptedQuotes.delete(key);
+      });
+      if (acceptedQuotes.has(fingerprint)) { setStatus(form,'Заявка уже принята. Мы свяжемся с вами.'); return; }
       quoteStart(form);
       form.dataset.attempt = String(Number(form.dataset.attempt || 0) + 1);
       form.querySelector('[type="submit"]').disabled = true; setStatus(form,'Отправляем заявку…');
@@ -1538,9 +1566,8 @@
       form.dataset.requestId = request.id; active = request;
       ready().then(function () {
         if (active !== request) return;
-        if (form.__astQuoteSource) { var latest = context(form.__astQuoteSource); sourceKeys.forEach(function (key) { field(form,key,latest[key] || ''); }); }
-        var values = {Name:quoteTestMode() ? 'TEST AST — не звонить' : 'Заявка с сайта',Phone:phone.value.trim(),Email:'',comment:(quoteTestMode() ? 'TEST AST — проверка формы, не звонить. ' : '') + 'Заявка с сайта. Страница: ' + location.href.split('#')[0],request_id:request.id,created_at:new Date().toISOString(),channel:'site_form',source:'avtonds_site',site_source:'avtonds.ru',source_detail:'standard_quote',consent:'yes',consent_version:pageConsentVersion() || 'privacy-2026-05-12',policy_url:location.origin + '/privacy',scenario:'get_quote',cta:'get_quote',via:'ast_confirmed_tilda_quote',is_test:quoteTestMode() ? 'yes' : 'no'};
-        sourceKeys.concat(['page_url','page','offer']).forEach(function (key) { values[key] = form.elements[key] ? form.elements[key].value : ''; });
+        var values = {Name:quoteTestMode() ? 'TEST AST — не звонить' : 'Заявка с сайта',Phone:submittedPhone,Email:'',comment:(quoteTestMode() ? 'TEST AST — проверка формы, не звонить. ' : '') + 'Заявка с сайта. Страница: ' + location.href.split('#')[0],request_id:request.id,created_at:new Date().toISOString(),channel:'site_form',source:'avtonds_site',site_source:'avtonds.ru',source_detail:'standard_quote',consent:'yes',consent_version:pageConsentVersion() || 'privacy-2026-05-12',policy_url:location.origin + '/privacy',scenario:'get_quote',cta:'get_quote',via:'ast_confirmed_tilda_quote',is_test:quoteTestMode() ? 'yes' : 'no'};
+        Object.assign(values, selection);
         SOURCE_KEYS.forEach(function (key) { values[key] = new URLSearchParams(location.search).get(key) || sessionGet('ast_' + key) || ''; });
         values.ym_client_id = sessionGet('ast_ym_client_id') || '';
         Object.keys(values).forEach(function (key) { field(nativeForm,key,values[key]); });
@@ -1555,6 +1582,7 @@
           quoteTrack('ast_form_submit_pending',form,{reason:'ack_timeout',attempt:request.attempt});
           setStatus(form,'Подтверждение задерживается. Заявка может ещё обрабатываться. Свяжитесь с АСТ.',true);
         },45000);
+        request.dispatched = true;
         nativeForm.querySelector('[type="submit"]').click();
       }).catch(function () { if (active === request) finish(false,'native_unavailable'); });
     }
