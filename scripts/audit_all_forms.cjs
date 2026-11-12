@@ -2,6 +2,7 @@
 const fs = require('fs');
 const { chromium } = require('playwright');
 
+// The production domain is hosted by Tilda; its live sitemap.xml is distinct from the GitHub Pages snapshot.
 const ROOT = 'https://avtonds.ru';
 const out = 'sitewide-form-audit.json';
 const rows = [];
@@ -102,11 +103,12 @@ async function main() {
     await page.close();
   }
   try{await Promise.all(Array.from({length:2},worker));}finally{write();await context.close();await browser.close();}
-  const flagged=rows.filter(r=>r.error||r.runtimeNotReady||r.wizard||r.forms?.some(f=>!f.standard)||r.actions.some(a=>a.wizard||a.forms?.some(f=>!f.standard)));
+  const noOutcome=a=>!a.error&&!a.navigated&&!a.wizard&&!(a.forms||[]).length;
+  const flagged=rows.filter(r=>r.error||r.runtimeNotReady||r.wizard||r.forms?.some(f=>!f.standard)||r.actions.some(a=>a.wizard||a.forms?.some(f=>!f.standard)||noOutcome(a)));
   const incomplete=rows.filter(r=>r.candidateCount>r.actions.length||r.actions.some(a=>a.error));
   const totalActions=rows.reduce((n,r)=>n+r.actions.filter(a=>!a.error).length,0);
   console.log('SUMMARY',JSON.stringify({pages:rows.length,expected:urls.length,rateLimited,withErrors:rows.filter(x=>x.error).length,runtimeNotReady:rows.filter(x=>x.runtimeNotReady).length,flagged:flagged.length,incomplete:incomplete.length,actions:totalActions}));
-  console.log('FLAGGED',JSON.stringify(flagged.map(r=>({url:r.url,error:r.error,runtimeNotReady:r.runtimeNotReady,wizard:r.wizard,forms:r.forms,actions:r.actions.filter(a=>a.wizard||a.forms?.some(f=>!f.standard))})).slice(0,100)));
+  console.log('FLAGGED',JSON.stringify(flagged.map(r=>({url:r.url,error:r.error,runtimeNotReady:r.runtimeNotReady,wizard:r.wizard,forms:r.forms,actions:r.actions.filter(a=>a.wizard||a.forms?.some(f=>!f.standard)||noOutcome(a))})).slice(0,100)));
   if(rateLimited||rows.length!==urls.length)process.exitCode=1;
   console.log('INCOMPLETE',JSON.stringify(incomplete.map(r=>({url:r.url,candidateCount:r.candidateCount,actions:r.actions})).slice(0,50)));
 }
