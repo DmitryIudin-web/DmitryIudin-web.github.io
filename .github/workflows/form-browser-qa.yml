@@ -10,13 +10,21 @@ on:
       - 'scripts/inventory_live_forms.cjs'
       - '.github/workflows/form-browser-qa.yml'
 
+  push:
+    branches: [main]
+    paths:
+      - 'assets/ast-conversion.js'
+      - 'scripts/test_model_forms_live.cjs'
+      - 'scripts/wait_for_live_runtime.cjs'
+      - '.github/workflows/form-browser-qa.yml'
+
 permissions:
   contents: read
 
 jobs:
   browser-qa:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,7 +36,12 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
+      - name: Wait for the published runtime
+        if: github.event_name == 'push'
+        run: node scripts/wait_for_live_runtime.cjs
       - name: Check desktop and mobile against real page markup without sending inquiries
+        env:
+          AST_USE_DEPLOYED: ${{ github.event_name == 'push' && '1' || '0' }}
         run: node scripts/test_model_forms_live.cjs
       - name: Save screenshots from the test
         if: always()
@@ -38,6 +51,7 @@ jobs:
           path: zeekr-form-*.png
           if-no-files-found: ignore
   sitemap-inventory:
+    if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

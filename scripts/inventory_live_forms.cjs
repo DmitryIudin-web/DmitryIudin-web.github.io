@@ -18,12 +18,14 @@ async function main(){
         const r=await fetchText(urls[i]);
         rows[i]={url:urls[i],finalUrl:r.url,status:r.status,sharedRuntime:/ast-conversion\.js/i.test(r.body),iframe:/<iframe\b/i.test(r.body),possibleForm:/<form\b/i.test(r.body)};
       }catch(e){rows[i]={url:urls[i],error:String(e)};}
+      await new Promise(resolve=>setTimeout(resolve,400));
     }
   }
-  await Promise.all(Array.from({length:4},worker));
+  await Promise.all(Array.from({length:2},worker));
   const summary={checkedAt:new Date().toISOString(),method:'HTTP HTML only; no claim about interactive forms, runtime-rendered links or delivery',total:rows.length,ok:rows.filter(x=>x.status>=200&&x.status<400).length,fail:rows.filter(x=>x.error||x.status>=400).length,withRuntime:rows.filter(x=>x.sharedRuntime).length,withoutRuntime:rows.filter(x=>!x.sharedRuntime).length,withIframe:rows.filter(x=>x.iframe).length};
   fs.writeFileSync('form-inventory.json',JSON.stringify({summary,rows},null,2));
   console.log(JSON.stringify(summary,null,2));
+  console.log('Iframe pages:',JSON.stringify(rows.filter(x=>x.iframe).map(x=>x.url)));
   console.log('Failed URLs:',JSON.stringify(rows.filter(x=>x.error||x.status>=400).slice(0,40)));
   console.log('No runtime, first 40:',JSON.stringify(rows.filter(x=>!x.sharedRuntime).slice(0,40)));
 }

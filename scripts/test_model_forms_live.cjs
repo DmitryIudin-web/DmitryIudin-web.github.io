@@ -24,7 +24,7 @@ async function main() {
       await context.route('**/*', async route => {
         const request = route.request();
         if (!['GET','HEAD'].includes(request.method())) return route.abort();
-        if (/\/assets\/ast-conversion\.js(?:\?|$)/.test(request.url())) {
+        if (process.env.AST_USE_DEPLOYED !== '1' && /\/assets\/ast-conversion\.js(?:\?|$)/.test(request.url())) {
           return route.fulfill({status:200,contentType:'application/javascript; charset=utf-8',body:runtime});
         }
         if (['image','media','font'].includes(request.resourceType())) return route.abort();
