@@ -19,6 +19,7 @@ async function main(){
   });
   try{
     const cases=[
+      {name:'zeekr-9x',url:'/zeekr-9x?utm_source=ast_test',open:async p=>p.locator('a:visible,button:visible').filter({hasText:/^Узнать цену$/}).first().click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'ZEEKR 9X',page:'/zeekr-9x'},
       {name:'zeekr',url:'/zeekr-8x?view=specifications&version=shadow&trim=Shadow&utm_source=ast_test',open:async p=>p.locator('#ast-oem-root article').filter({has:p.getByRole('heading',{name:'Shadow',exact:true})}).getByRole('button',{name:'Рассчитать поставку'}).click(),form:'#ast-oem-root [role=dialog].ast-inquiry form[data-ast-standard-form]',model:'ZEEKR 8X',trim:'Shadow'},
       {name:'tiguan',url:'/volkswagen-tiguan-l-pro?utm_source=ast_test',open:async p=>p.locator('a[data-trim-label="380TSI Люкс"]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Volkswagen Tiguan L Pro',trim:'380TSI Люкс (380TSI 豪华版)'},
       {name:'nissan',url:'/nissan-qashqai-china?utm_source=ast_test',open:async p=>p.locator('button[data-open][data-ast-quote-open]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Nissan Qashqai'},
