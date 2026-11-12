@@ -52,7 +52,7 @@ const { chromium } = require('playwright');
       return {hasIframe:!!iframe,corsStatus,runtime:!!window.__astUniversalQuote,
         buttons:[...document.querySelectorAll('a,button')].filter(e=>{let r=e.getBoundingClientRect();return !!(r.width&&r.height)}).map(e=>(e.textContent||'').trim()).filter(Boolean).slice(0,25)};
     });
-    await oem.getByText('Узнать цену',{exact:true}).first().click();
+    await oem.locator('a:visible,button:visible').filter({hasText:/^Узнать цену$/}).first().click();
     const form=oem.locator('form[data-ast-standard-form]:visible').first();
     await form.waitFor({state:'visible',timeout:10000});
     const standard=await form.evaluate(f=>({model:f.elements.model?.value||'',page:f.elements.page?.value||'',visibleFields:[...f.querySelectorAll('input:not([type=hidden])')].map(e=>e.name)}));
