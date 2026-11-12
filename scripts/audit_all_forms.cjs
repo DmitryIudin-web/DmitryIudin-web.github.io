@@ -6,6 +6,7 @@ const ROOT = 'https://avtonds.ru';
 const out = 'sitewide-form-audit.json';
 const rows = [];
 let next = 0;
+let rateLimited = false;
 function write() { fs.writeFileSync(out, JSON.stringify({checkedAt:new Date().toISOString(),scope:'Desktop browser: sitemap pages, visible lead forms and up to three distinct lead buttons per page. POST requests blocked; no CRM delivery test.',rows},null,2)); }
 
 async function snapshot(page) {
@@ -69,7 +70,7 @@ async function main() {
       try{
         const response=await page.goto(url.href,{waitUntil:'domcontentloaded',timeout:25000});
         row.http=response&&response.status();
-        if(row.http>=400){row.error='HTTP '+row.http;rows.push(row);write();continue;}
+        if(row.http>=400){row.error='HTTP '+row.http;if(row.http===429){rateLimited=true;next=urls.length;}rows.push(row);write();continue;}
         try{await page.waitForFunction(()=>!!window.__astUniversalQuote,{timeout:6000});}catch(e){row.runtimeNotReady=true;}
         await page.waitForTimeout(600);
         const initial=await snapshot(page);
@@ -96,16 +97,17 @@ async function main() {
           }catch(error){row.actions.push({text:candidate.text,error:String(error).slice(0,200)});await page.keyboard.press('Escape').catch(()=>{});}
         }
       }catch(error){row.error=String(error).slice(0,250);}
-      rows.push(row);if(rows.length%20===0){write();console.log('PROGRESS',rows.length,'/',urls.length);}
+      rows.push(row);if(rows.length%20===0){write();console.log('PROGRESS',rows.length,'/',urls.length);} await page.waitForTimeout(800);
     }
     await page.close();
   }
-  try{await Promise.all(Array.from({length:3},worker));}finally{write();await context.close();await browser.close();}
+  try{await Promise.all(Array.from({length:2},worker));}finally{write();await context.close();await browser.close();}
   const flagged=rows.filter(r=>r.error||r.runtimeNotReady||r.wizard||r.forms?.some(f=>!f.standard)||r.actions.some(a=>a.wizard||a.forms?.some(f=>!f.standard)));
   const incomplete=rows.filter(r=>r.candidateCount>r.actions.length||r.actions.some(a=>a.error));
   const totalActions=rows.reduce((n,r)=>n+r.actions.filter(a=>!a.error).length,0);
-  console.log('SUMMARY',JSON.stringify({pages:rows.length,expected:urls.length,withErrors:rows.filter(x=>x.error).length,runtimeNotReady:rows.filter(x=>x.runtimeNotReady).length,flagged:flagged.length,incomplete:incomplete.length,actions:totalActions}));
+  console.log('SUMMARY',JSON.stringify({pages:rows.length,expected:urls.length,rateLimited,withErrors:rows.filter(x=>x.error).length,runtimeNotReady:rows.filter(x=>x.runtimeNotReady).length,flagged:flagged.length,incomplete:incomplete.length,actions:totalActions}));
   console.log('FLAGGED',JSON.stringify(flagged.map(r=>({url:r.url,error:r.error,runtimeNotReady:r.runtimeNotReady,wizard:r.wizard,forms:r.forms,actions:r.actions.filter(a=>a.wizard||a.forms?.some(f=>!f.standard))})).slice(0,100)));
+  if(rateLimited||rows.length!==urls.length)process.exitCode=1;
   console.log('INCOMPLETE',JSON.stringify(incomplete.map(r=>({url:r.url,candidateCount:r.candidateCount,actions:r.actions})).slice(0,50)));
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
