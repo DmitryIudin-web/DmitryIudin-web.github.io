@@ -1536,9 +1536,23 @@
       });
     }
     function mount() {
-      // Native receiver forms remain in place, untouched. Only replace the
-      // site's known marketing UI; never newsletter/payment/account/referral forms.
-      if (/^\/referal\/?$/.test(location.pathname)) return;
+      // Keep the agent programme's navigation and copy intact while replacing
+      // its mail-client form with the same phone-and-consent enquiry.
+      if (/^\/referal\/?$/.test(location.pathname)) {
+        document.querySelectorAll('form').forEach(function (source) {
+          if (source.dataset.astQuoteReplaced || source.matches('[data-ast-standard-form]') ||
+              !source.querySelector('[name="contact"]') || !source.querySelector('[name="scenario"]') ||
+              !source.querySelector('[name="source"]') || !source.querySelector('[name="comment"]')) return;
+          if (source.hidden || getComputedStyle(source).display === 'none') return;
+          var form = makeForm(context(source));
+          form.__astQuoteSource = source;
+          source.dataset.astReferralInquiry = '1'; source.dataset.astQuoteReplaced = '1';
+          source.hidden = true; source.style.setProperty('display','none','important');
+          source.insertAdjacentElement('afterend',form);
+        });
+        return;
+      }
+      // Native receiver forms remain in place; do not replace payment, account, or carrier-registration forms.
       document.querySelectorAll(marketing).forEach(function (source) {
         if (source.dataset.astQuoteReplaced || source.matches('[data-ast-standard-form]') || source.closest('#ast-quote-native-record') || (source.closest('.ast-ev-panel') && !source.matches('form[data-ast-ev-final-form]'))) return;
         if (!source.querySelector('[name="Phone"],[name="phone"],[name="contact"]')) return;
