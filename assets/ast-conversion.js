@@ -87,6 +87,7 @@
     '/mercedes-benz-gle-import': { offer: 'mercedes-gle', model: 'Mercedes-Benz GLE' },
     '/mercedes-benz-gls-import': { offer: 'mercedes-gls', model: 'Mercedes-Benz GLS' },
     '/mercedes-benz-s-class-import': { offer: 'mercedes-s-class', model: 'Mercedes-Benz S-Class' },
+    '/nissan-qashqai-china': { model: 'Nissan Qashqai' },
     '/porsche-911': { model: 'Porsche 911' },
     '/porsche-cayenne-import': { offer: 'porsche-cayenne', model: 'Porsche Cayenne' },
     '/porsche-panamera-import': { offer: 'porsche-panamera', model: 'Porsche Panamera' },
@@ -95,6 +96,7 @@
     '/rolls-royce-cullinan': { model: 'Rolls-Royce Cullinan' },
     '/toyota-land-cruiser-300': { offer: 'toyota-lc300', model: 'Toyota Land Cruiser 300' },
     '/toyota-prado-250': { model: 'Toyota Prado 250' },
+    '/volkswagen-tiguan-l-pro': { model: 'Volkswagen Tiguan L Pro' },
     '/zeekr-8x': { model: 'Zeekr 8X' }
   };
 
@@ -1371,6 +1373,37 @@
         result.offer_id = trigger.getAttribute('data-ast-offer-id') || trigger.getAttribute('data-offer-id') || (card && card.getAttribute('data-offer-id')) || result.offer_id;
         if (card && !result.model) { var title = card.querySelector('h2,h3'); if (title) result.model = title.textContent.trim(); }
       }
+      // ZEEKR's React configurator keeps its selections in the rendered inquiry
+      // and swatches, not in input fields. Read the active UI without changing it.
+      if (path() === '/zeekr-8x' && document.querySelector('#ast-oem-root[data-ast-oem-model="zeekr-8x"]')) {
+        var inquiry = source && source.closest('.ast-inquiry');
+        var description = inquiry && inquiry.querySelector('.ast-inquiry-model');
+        var chosen = inquiry && inquiry.querySelector('.ast-chosen-colors');
+        var colors = chosen && chosen.textContent.trim().split(/\s*·\s*/);
+        var desc = description ? description.textContent.replace(chosen ? chosen.textContent : '', '').trim() : '';
+        var trim = desc.replace(/^ZEEKR\s+8X\s*/i, '').trim();
+        var article = trigger && trigger.closest('article');
+        if (!trim && article) { var heading = article.querySelector('h2,h3'); trim = heading ? heading.textContent.trim() : ''; }
+        if (!trim) trim = new URLSearchParams(location.search).get('trim') || '';
+        var outside = document.querySelector('[role="tablist"][aria-label="Цвет кузова"] [role="tab"][aria-selected="true"]');
+        var inside = document.querySelector('[role="tablist"][aria-label="Цвет салона"] [role="tab"][aria-selected="true"]');
+        result.model = 'ZEEKR 8X';
+        result.market = 'Китай';
+        if (/^(Max|Ultra\+|Ultra|Shadow)$/i.test(trim)) result.trim = trim;
+        if (outside) result.exterior_color = outside.getAttribute('aria-label') || outside.textContent.trim();
+        else if (colors && colors[0]) result.exterior_color = colors[0];
+        if (inside) result.interior_color = inside.getAttribute('aria-label') || inside.textContent.trim();
+        else if (colors && colors[1]) result.interior_color = colors[1];
+      }
+      if (path() === '/nissan-qashqai-china') {
+        result.model = 'Nissan Qashqai'; result.brand = 'Nissan'; result.generation = 'III'; result.market = 'Китай';
+      }
+      if (path() === '/volkswagen-tiguan-l-pro') {
+        result.model = 'Volkswagen Tiguan L Pro'; result.brand = 'Volkswagen'; result.market = 'Китай';
+        var trimCode = trigger && trigger.getAttribute('data-trim');
+        var trimLabel = trigger && trigger.getAttribute('data-trim-label');
+        if (trimCode) result.trim = trimLabel ? trimLabel + ' (' + trimCode + ')' : trimCode;
+      }
       if (!result.model) result.model = pageModel() || '';
       result.page_url = location.href.split('#')[0]; result.page = path(); result.offer = result.offer_id || (path() === '/' ? 'generic' : pageOffer());
       return result;
@@ -1432,6 +1465,8 @@
       if (el.closest('form,dialog')) return false;
       if (el.tagName === 'A' && el.hasAttribute('href') && el.origin !== location.origin) return false;
       var href = el.getAttribute('href') || '';
+      if (path() === '/nissan-qashqai-china' && el.matches('button[data-open]') && el.textContent.trim() === 'Рассчитать стоимость под ключ') return true;
+      if (path() === '/volkswagen-tiguan-l-pro' && el.matches('a[data-lead-open][href="#ast-request"]')) return true;
       return el.matches('[data-ast-quote-open],[data-ast-quiz-open],[data-order-model],[data-ast-set-model],[data-ast-offer-action="order"],[data-ast-hero-calc],[data-ast-prot-calc],[data-a5l-jump],[data-a5l-choose]') ||
         /^#(?:lead|ast-safe-deal-form|order|request)(?:$|-)/.test(href) ||
         /^(Получить КП|Получить коммерческое предложение|Оставить заявку|Заявка|Перейти к заявке|Рассчитать стоимость|Рассчитать под ключ|Получить расчёт|Обсудить автомобиль)$/.test(el.textContent.trim());
@@ -1461,6 +1496,20 @@
       }
       if (label && label.textContent !== priceLabel) label.textContent = priceLabel;
     }
+    function mountZeekrInquiry() {
+      if (path() !== '/zeekr-8x') return;
+      document.querySelectorAll('#ast-oem-root[data-ast-oem-model="zeekr-8x"] #ast-model-inquiry, #ast-oem-root[data-ast-oem-model="zeekr-8x"] [role="dialog"].ast-inquiry').forEach(function (inquiry) {
+        if (inquiry.querySelector(':scope > .ast-unified-entry')) return;
+        var wrapper = document.createElement('div');
+        wrapper.className = 'ast-unified-entry';
+        var form = makeForm(context(inquiry));
+        form.__astQuoteSource = inquiry;
+        wrapper.appendChild(form);
+        inquiry.setAttribute('data-ast-unified-inquiry', '1');
+        inquiry.appendChild(wrapper);
+        if (inquiry.getAttribute('role') === 'dialog') form.elements.phone.focus({preventScroll:true});
+      });
+    }
     function mount() {
       // Native receiver forms remain in place, untouched. Only replace the
       // site's known marketing UI; never newsletter/payment/account/referral forms.
@@ -1475,6 +1524,7 @@
         source.dataset.astQuoteReplaced = '1'; source.hidden = true; source.style.setProperty('display','none','important');
         source.insertAdjacentElement('afterend',form);
       });
+      mountZeekrInquiry();
       document.querySelectorAll('a,button').forEach(labelOpener);
       document.querySelectorAll('#lead,#gr-order').forEach(function (section) {
         var heading = section.querySelector('#lead-title,h2');
@@ -1528,7 +1578,8 @@
       var phone = form.elements.phone, digits = phone.value.replace(/\D/g,'');
       phone.setCustomValidity(/^\+?[\d\s()-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15 ? '' : 'Введите номер телефона с кодом города или оператора.');
       if (!form.reportValidity()) return;
-      var fingerprint = digits + '|' + path() + '|' + ((form.elements.model && form.elements.model.value) || '');
+      if (form.__astQuoteSource) { var latest = context(form.__astQuoteSource); sourceKeys.forEach(function (key) { field(form,key,latest[key] || ''); }); }
+      var fingerprint = [digits, path()].concat(['model','offer_id','quoteId','trim','exterior_color','interior_color'].map(function (key) { return (form.elements[key] && form.elements[key].value) || ''; })).join('|');
       if (lastAccepted && lastAccepted.fingerprint === fingerprint && Date.now() - lastAccepted.time < 120000) { setStatus(form,'Заявка уже принята. Мы свяжемся с вами.'); return; }
       quoteStart(form);
       form.dataset.attempt = String(Number(form.dataset.attempt || 0) + 1);
@@ -1558,7 +1609,7 @@
         nativeForm.querySelector('[type="submit"]').click();
       }).catch(function () { if (active === request) finish(false,'native_unavailable'); });
     }
-    var style = document.createElement('style'); style.textContent = '.ast-quote-form{box-sizing:border-box;width:100%;max-width:520px;padding:24px;border:1px solid #4b4e52;border-radius:18px;background:#24272b;color:#fff;text-align:left;font:16px/1.45 Arial,sans-serif}.ast-quote-form .ast-quote-field{display:block;color:#d3d5d7;font-size:14px;margin:0 0 7px}.ast-quote-form input[type=tel]{box-sizing:border-box;width:100%;min-height:48px;padding:12px;border:1px solid #73767a;border-radius:8px;background:#36393d;color:#fff;font:16px Arial,sans-serif}.ast-quote-form .ast-quote-consent{display:flex;gap:9px;align-items:flex-start;margin:18px 0;color:#d3d5d7;font-size:13px}.ast-quote-form .ast-quote-consent input{width:18px;height:18px;margin:2px 0;flex-shrink:0}.ast-quote-form a{color:inherit;text-decoration:underline}.ast-quote-form button{border:0;border-radius:28px;padding:14px 23px;background:#e0001b;color:white;font:bold 17px Arial,sans-serif;cursor:pointer;min-height:48px}.ast-quote-form button:disabled{opacity:.6;cursor:wait}.ast-quote-status{margin:12px 0 0;font-size:14px}.ast-quote-status:empty{display:none}.ast-quote-dialog{max-width:540px;width:calc(100% - 32px);padding:18px;border:1px solid #555;border-radius:20px;background:#24272b;color:white;box-sizing:border-box}.ast-quote-dialog::backdrop{background:#000a}.ast-quote-dialog h2{font:700 26px/1.2 Arial,sans-serif;margin:10px 34px 18px 6px;color:white}.ast-quote-dialog .ast-quote-close{position:absolute;right:12px;top:10px;border:0;background:none;color:white;font-size:28px;cursor:pointer}.ast-quote-dialog .ast-quote-form{padding:8px;border:0}#oem-audi-a5l .a5l-actions [data-a5l-choose][data-ast-quote-open] + [data-a5l-choose][data-ast-quote-open]{display:none}'; document.head.appendChild(style);
+    var style = document.createElement('style'); style.textContent = '.ast-quote-form{box-sizing:border-box;width:100%;max-width:520px;padding:24px;border:1px solid #4b4e52;border-radius:18px;background:#24272b;color:#fff;text-align:left;font:16px/1.45 Arial,sans-serif}.ast-quote-form .ast-quote-field{display:block;color:#d3d5d7;font-size:14px;margin:0 0 7px}.ast-quote-form input[type=tel]{box-sizing:border-box;width:100%;min-height:48px;padding:12px;border:1px solid #73767a;border-radius:8px;background:#36393d;color:#fff;font:16px Arial,sans-serif}.ast-quote-form .ast-quote-consent{display:flex;gap:9px;align-items:flex-start;margin:18px 0;color:#d3d5d7;font-size:13px}.ast-quote-form .ast-quote-consent input{width:18px;height:18px;margin:2px 0;flex-shrink:0}.ast-quote-form a{color:inherit;text-decoration:underline}.ast-quote-form button{border:0;border-radius:28px;padding:14px 23px;background:#e0001b;color:white;font:bold 17px Arial,sans-serif;cursor:pointer;min-height:48px}.ast-quote-form button:disabled{opacity:.6;cursor:wait}.ast-quote-status{margin:12px 0 0;font-size:14px}.ast-quote-status:empty{display:none}.ast-quote-dialog{max-width:540px;width:calc(100% - 32px);padding:18px;border:1px solid #555;border-radius:20px;background:#24272b;color:white;box-sizing:border-box}.ast-quote-dialog::backdrop{background:#000a}.ast-quote-dialog h2{font:700 26px/1.2 Arial,sans-serif;margin:10px 34px 18px 6px;color:white}.ast-quote-dialog .ast-quote-close{position:absolute;right:12px;top:10px;border:0;background:none;color:white;font-size:28px;cursor:pointer}.ast-quote-dialog .ast-quote-form{padding:8px;border:0}#ast-oem-root [data-ast-unified-inquiry] > :not(.ast-inquiry-close):not(.ast-inquiry-title):not(.ast-inquiry-model):not(.ast-unified-entry){display:none!important}#ast-oem-root [data-ast-unified-inquiry] > .ast-unified-entry{display:block!important}#oem-audi-a5l .a5l-actions [data-a5l-choose][data-ast-quote-open] + [data-a5l-choose][data-ast-quote-open]{display:none}'; document.head.appendChild(style);
     modal = document.createElement('dialog'); modal.id = 'ast-quote-dialog'; modal.className = 'ast-quote-dialog'; modal.setAttribute('aria-labelledby','ast-quote-dialog-title'); modal.innerHTML = '<button type="button" class="ast-quote-close" aria-label="Закрыть">×</button><h2 id="ast-quote-dialog-title">' + priceLabel + '</h2>'; modal.appendChild(makeForm(context())); document.body.appendChild(modal);
     modal.querySelector('.ast-quote-close').addEventListener('click',function () { modal.close(); });
     modal.addEventListener('close',function () { if (lastFocus && lastFocus.isConnected) lastFocus.focus({preventScroll:true}); });
@@ -1655,4 +1706,5 @@
   script.defer = true;
   document.head.appendChild(script);
 })();
+
 
