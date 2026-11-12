@@ -57,7 +57,13 @@ async function main() {
       console.log('PASS ZEEKR modal and inline: '+viewport.width);
 
       await page.goto(base+'/volkswagen-tiguan-l-pro?utm_source=ast_test',{waitUntil:'domcontentloaded',timeout:60000});
-      await page.locator('a[data-trim-label="380TSI Люкс"]').click();
+      try {
+        await page.locator('a[data-trim-label="380TSI Люкс"]').click({timeout:20000});
+      } catch (error) {
+        console.log('TIGUAN DIAGNOSTIC', JSON.stringify({url:page.url(),title:await page.title(),html:(await page.locator('body').innerText()).slice(0,1600),links:await page.locator('a[data-lead-open]').count()}));
+        await page.screenshot({path:'zeekr-form-tiguan-diagnostic.png'});
+        throw error;
+      }
       const tiguan=page.locator('#ast-quote-dialog[open] form[data-ast-standard-form]');
       await standard(tiguan,'Volkswagen Tiguan L Pro','380TSI Люкс (380TSI 豪华版)');
       assert.equal(await page.locator('#ast-request').evaluate(el=>el.open),false,'legacy wizard stays closed');
