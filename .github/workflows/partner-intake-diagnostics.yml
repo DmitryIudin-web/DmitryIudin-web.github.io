@@ -1,0 +1,25 @@
+name: Partner intake diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/inspect_partner_forms.cjs'
+      - '.github/workflows/partner-intake-diagnostics.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Inspect partner forms without sending requests
+        run: node scripts/inspect_partner_forms.cjs
