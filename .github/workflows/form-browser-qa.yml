@@ -1,0 +1,70 @@
+name: Vehicle inquiry browser checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'assets/ast-conversion.js'
+      - 'scripts/test_model_forms_live.cjs'
+      - 'scripts/test_model_form_adapters.cjs'
+      - 'scripts/inventory_live_forms.cjs'
+      - '.github/workflows/form-browser-qa.yml'
+
+  push:
+    branches: [main]
+    paths:
+      - 'assets/ast-conversion.js'
+      - 'scripts/test_model_forms_live.cjs'
+      - 'scripts/wait_for_live_runtime.cjs'
+      - '.github/workflows/form-browser-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check inquiry logic
+        run: node scripts/test_model_form_adapters.cjs
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Wait for the published runtime
+        if: github.event_name == 'push'
+        run: node scripts/wait_for_live_runtime.cjs
+      - name: Check desktop and mobile against real page markup without sending inquiries
+        env:
+          AST_USE_DEPLOYED: ${{ github.event_name == 'push' && '1' || '0' }}
+        run: node scripts/test_model_forms_live.cjs
+      - name: Save screenshots from the test
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-form-screenshots
+          path: zeekr-form-*.png
+          if-no-files-found: ignore
+  sitemap-inventory:
+    if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Inventory live sitemap HTML
+        run: node scripts/inventory_live_forms.cjs
+      - name: Save inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-form-inventory
+          path: form-inventory.json
+          if-no-files-found: ignore

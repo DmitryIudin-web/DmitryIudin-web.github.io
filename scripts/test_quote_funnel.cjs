@@ -32,6 +32,15 @@ vm.runInContext('submit(f)',env);await flush();assert.equal(events.filter(e=>e.g
 console.log('PASS failure preserves phone; retry retains request identity and reports one eventual success');
 env.lastAccepted=null;events=[];f=form();env.f=f;vm.runInContext('submit(f)',env);await flush();timers.at(-1)();assert.ok(env.active,'timeout keeps transport occupied');vm.runInContext('submit(f)',env);assert.equal(events.filter(e=>e.goal==='ast_form_submit_attempt').length,1);vm.runInContext('finish(true)',env);assert.equal(events.filter(e=>e.goal==='ast_form_submit_success').length,1);
 console.log('PASS delayed acknowledgement keeps the request isolated and permits late success');
+// Distinct offers and vehicle selections must not be discarded as double clicks.
+env.lastAccepted=null;events=[];let before=sendCount;
+f=form();f.elements.offer_id={value:'offer-1'};f.elements.quoteId={value:'quote-1'};f.elements.trim={value:'Max'};env.f=f;
+vm.runInContext('submit(f)',env);await flush();vm.runInContext('finish(true)',env);
+f=form();f.elements.offer_id={value:'offer-2'};f.elements.quoteId={value:'quote-2'};f.elements.trim={value:'Ultra'};env.f=f;
+vm.runInContext('submit(f)',env);await flush();assert.equal(sendCount,before+2,'different offer/trim must be delivered');vm.runInContext('finish(true)',env);
+f=form();f.elements.offer_id={value:'offer-2'};f.elements.quoteId={value:'quote-2'};f.elements.trim={value:'Ultra'};env.f=f;
+vm.runInContext('submit(f)',env);await flush();assert.equal(sendCount,before+2,'exact duplicate still blocked');
+console.log('PASS different offers and trims are delivered while an exact repeat is blocked');
 env.lastAccepted=null;env.location.search='?utm_source=ast_test&utm_campaign=qa_audi_20261105';events=[];f=form();env.f=f;vm.runInContext('quoteStart(f);submit(f)',env);await flush();vm.runInContext('finish(true)',env);assert.equal(fields.is_test,'yes');assert.match(fields.Name,/TEST/);assert.match(fields.comment,/не звонить/);assert.ok(events.every(e=>e.goal.startsWith('ast_test_')));
 console.log('PASS TEST requests are labelled in receiver and do not emit production success/start goals');
 env.lastAccepted=null;env.ready=()=>Promise.reject(new Error('unavailable'));events=[];f=form();env.f=f;vm.runInContext('submit(f)',env);await flush();await flush();assert.equal(events.filter(e=>e.goal==='ast_test_form_submit_error').length,1);assert.ok(!events.some(e=>e.goal.includes('success')));
