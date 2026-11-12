@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
   const browser=await chromium.launch({headless:true});
   const context=await browser.newContext({viewport:{width:1365,height:900}});
   let phase=false,requests=[];
-  await context.addInitScript(()=>{window.open=()=>null;});
+  await context.addInitScript(()=>{window.__testOpen=[];window.open=(url)=>{try{let u=new URL(url,location.href);window.__testOpen.push({host:u.hostname,protocol:u.protocol});}catch(e){} return null;};});
   await context.route('**/*',async route=>{
     const r=route.request();
     if(r.method()!=='GET' && r.method()!=='HEAD' || phase && (r.resourceType()==='fetch'||r.resourceType()==='xhr'||r.isNavigationRequest())) {
@@ -32,11 +32,11 @@ const { chromium } = require('playwright');
         if(o.required||o.name==='contact')await el.fill(o.name==='contact'?'+70000000000':'TEST');
       }
       const invalid=await form.evaluate(f=>[...f.elements].filter(e=>e.willValidate&&!e.validity.valid).map(e=>({name:e.name,type:e.type})));
-      phase=true;
+      requests=[];phase=true;
       const submit=form.locator('button[type=submit],input[type=submit],button:not([type])').last();
       await submit.click({timeout:5000});
       await page.waitForTimeout(2500);
-      results.push({path,http:response.status(),...meta,invalid,requests});
+      results.push({path,http:response.status(),...meta,invalid,requests,opened:await page.evaluate(()=>window.__testOpen)});
     }catch(e){results.push({path,error:String(e).slice(0,180),requests});}
     await page.close();
   }
