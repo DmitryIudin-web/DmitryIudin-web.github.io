@@ -1529,7 +1529,7 @@
         var button = calculator.querySelector('button[type="submit"],button[data-ast-ev-unified-open]');
         if (!contact || !button) return;
         var label = contact.closest('label');
-        if (label) label.hidden = true;
+        if (label) { label.hidden = true; label.style.setProperty('display','none','important'); }
         contact.required = false;
         button.type = 'button';
         button.setAttribute('data-ast-ev-unified-open','1');

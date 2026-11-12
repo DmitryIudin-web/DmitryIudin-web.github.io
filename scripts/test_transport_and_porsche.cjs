@@ -22,7 +22,7 @@ async function main(){
       {name:'nissan',url:'/nissan-qashqai-china?utm_source=ast_test',open:async p=>p.locator('button[data-open][data-ast-quote-open]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Nissan Qashqai'},
       {name:'porsche',url:'/porsche-cayenne-import?utm_source=ast_test',open:async p=>{await p.locator('form[data-lead-form][data-ast-quote-replaced]').waitFor({state:'attached'});assert.equal(await p.locator('form[data-lead-form]').isVisible(),false);},form:'form[data-lead-form]+form[data-ast-standard-form]',model:'Porsche Cayenne'},
       {name:'ev-final',url:'/ev?utm_source=ast_test',open:async p=>{await p.locator('form[data-ast-ev-final-form][data-ast-quote-replaced]').waitFor({state:'attached'});assert.equal(await p.locator('form[data-ast-ev-final-form]').isVisible(),false);},form:'form[data-ast-ev-final-form]+form[data-ast-standard-form]'},
-      {name:'ev-calculator',url:'/ev?utm_source=ast_test',open:async p=>{await p.locator('form[data-ast-ev-lead-form] select[name=target_model]').selectOption('li-auto-l9');assert.equal(await p.locator('form[data-ast-ev-lead-form] input[name=contact]').isVisible(),false);await p.locator('form[data-ast-ev-lead-form] button[data-ast-ev-unified-open]').click();},form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Li Auto L9',ev:true},
+      {name:'ev-calculator',url:'/ev?utm_source=ast_test',open:async p=>{await p.locator('form[data-ast-ev-lead-form] button[data-ast-ev-unified-open]').waitFor({state:'attached'});await p.locator('form[data-ast-ev-lead-form] select[name=target_model]').selectOption('li-auto-l9');assert.equal(await p.locator('form[data-ast-ev-lead-form] input[name=contact]').isVisible(),false);await p.locator('form[data-ast-ev-lead-form] button[data-ast-ev-unified-open]').click();},form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Li Auto L9',ev:true},
     ];
     for(const item of cases){
       const page=await context.newPage(); page.setDefaultTimeout(20000);
@@ -43,7 +43,7 @@ async function main(){
         });
         let payload=req?.postData()||'';
         for(let i=0;i<2;i++){try{payload=decodeURIComponent(payload.replace(/\+/g,' '));}catch(e){break;}}
-        const result={name:item.name,postObserved:!!req,requestHost:req?new URL(req.url()).hostname:null,recordDisplay:details.recordDisplay,model:details.model,trim:details.trim,market:details.market,test:details.test,payloadHasModel:!item.model||payload.includes(item.model),payloadHasTrim:!item.trim||payload.includes(item.trim),evDataPresent:!item.ev||details.ev_calculation.includes('li-auto-l9')};
+        const result={name:item.name,postObserved:!!req,requestHost:req?new URL(req.url()).hostname:null,recordDisplay:details.recordDisplay,model:details.model,trim:details.trim,market:details.market,test:details.test,payloadHasModel:!item.model||payload.includes(item.model),payloadHasTrim:!item.trim||payload.includes(item.trim),evDataPresent:!item.ev||(details.ev_calculation.includes('li-auto-l9')&&payload.includes('li-auto-l9'))};
         results.push(result);
         assert.ok(req,'native Tilda request must be generated');
         assert.equal(details.recordDisplay,'block','offscreen receiver must remain rendered');
