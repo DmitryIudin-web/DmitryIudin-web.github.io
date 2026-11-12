@@ -52,7 +52,14 @@ const { chromium } = require('playwright');
       return {hasIframe:!!iframe,corsStatus,runtime:!!window.__astUniversalQuote,
         buttons:[...document.querySelectorAll('a,button')].filter(e=>{let r=e.getBoundingClientRect();return !!(r.width&&r.height)}).map(e=>(e.textContent||'').trim()).filter(Boolean).slice(0,25)};
     });
-    console.log('ZEEKR_9X',JSON.stringify({root:root.status(),frameStatus:frameResponse&&frameResponse.status(),...data}));
+    await oem.getByText('Узнать цену',{exact:true}).first().click();
+    const form=oem.locator('form[data-ast-standard-form]:visible').first();
+    await form.waitFor({state:'visible',timeout:10000});
+    const standard=await form.evaluate(f=>({model:f.elements.model?.value||'',page:f.elements.page?.value||'',visibleFields:[...f.querySelectorAll('input:not([type=hidden])')].map(e=>e.name)}));
+    await form.locator('input[type=tel]').fill('+70000000000');await form.locator('input[name=consent]').check();
+    requests=[];phase=true;const outbound=oem.waitForRequest(r=>r.method()==='POST'&&/forms\\.tilda/i.test(r.url()),{timeout:15000}).catch(()=>null);
+    await form.locator('button[type=submit]').click();const req=await outbound;phase=false;
+    console.log('ZEEKR_9X',JSON.stringify({root:root.status(),frameStatus:frameResponse&&frameResponse.status(),...data,standard,requestObserved:!!req}));
   }catch(e){console.log('ZEEKR_9X',JSON.stringify({error:String(e).slice(0,200)}));}
   await oem.close();
   await context.close();await browser.close();
