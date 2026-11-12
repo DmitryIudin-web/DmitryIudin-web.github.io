@@ -6,7 +6,10 @@ const ROOT='https://avtonds.ru';
 const runtime=fs.readFileSync('assets/ast-conversion.js','utf8');
 async function main(){
   const browser=await chromium.launch({headless:true});
-  const context=await browser.newContext({viewport:{width:1365,height:900}});
+  const results=[];
+  try {
+  for (const width of [1365,390]) {
+  const context=await browser.newContext({viewport:{width,height:width===390?844:900}});
   await context.route('**/*',async route=>{
     const r=route.request();
     if(!['GET','HEAD'].includes(r.method()))return route.abort();
@@ -14,7 +17,6 @@ async function main(){
     if(['image','media','font'].includes(r.resourceType())||/mc\.yandex\.|googletagmanager\.|google-analytics\./i.test(r.url()))return route.abort();
     return route.continue();
   });
-  const results=[];
   try{
     const cases=[
       {name:'zeekr',url:'/zeekr-8x?view=specifications&version=shadow&trim=Shadow&utm_source=ast_test',open:async p=>p.locator('#ast-oem-root article').filter({has:p.getByRole('heading',{name:'Shadow',exact:true})}).getByRole('button',{name:'Рассчитать поставку'}).click(),form:'#ast-oem-root [role=dialog].ast-inquiry form[data-ast-standard-form]',model:'ZEEKR 8X',trim:'Shadow'},
@@ -31,6 +33,7 @@ async function main(){
         if(response.status()>=400)throw Error('HTTP '+response.status());
         await item.open(page);
         const form=page.locator(item.form);await form.waitFor({state:'visible'});
+        const box=await form.boundingBox();assert.ok(box&&box.x>=-1&&box.x+box.width<=width+1,'form must fit the viewport');
         assert.equal(await form.locator('input[type=tel]').count(),1);
         assert.equal(await form.locator('input[name=consent]').count(),1);
         await form.locator('input[type=tel]').fill('+70000000000');await form.locator('input[name=consent]').check();
@@ -43,7 +46,7 @@ async function main(){
         });
         let payload=req?.postData()||'';
         for(let i=0;i<2;i++){try{payload=decodeURIComponent(payload.replace(/\+/g,' '));}catch(e){break;}}
-        const result={name:item.name,postObserved:!!req,requestHost:req?new URL(req.url()).hostname:null,recordDisplay:details.recordDisplay,model:details.model,trim:details.trim,market:details.market,test:details.test,payloadHasModel:!item.model||payload.includes(item.model),payloadHasTrim:!item.trim||payload.includes(item.trim),evDataPresent:!item.ev||(details.ev_calculation.includes('li-auto-l9')&&payload.includes('li-auto-l9'))};
+        const result={name:item.name,viewport:width,postObserved:!!req,requestHost:req?new URL(req.url()).hostname:null,recordDisplay:details.recordDisplay,model:details.model,trim:details.trim,market:details.market,test:details.test,payloadHasModel:!item.model||payload.includes(item.model),payloadHasTrim:!item.trim||payload.includes(item.trim),evDataPresent:!item.ev||(details.ev_calculation.includes('li-auto-l9')&&payload.includes('li-auto-l9'))};
         results.push(result);
         assert.ok(req,'native Tilda request must be generated');
         assert.equal(details.recordDisplay,'block','offscreen receiver must remain rendered');
@@ -51,10 +54,12 @@ async function main(){
         if(item.model){assert.equal(details.model,item.model);assert.ok(result.payloadHasModel,'model must be in outgoing request');}
         if(item.trim){assert.equal(details.trim,item.trim);assert.ok(result.payloadHasTrim,'trim must be in outgoing request');}
         if(item.ev)assert.ok(result.evDataPresent,'EV calculation must be retained');
-      }catch(e){results.push({name:item.name,error:String(e).slice(0,500)});}
+      }catch(e){results.push({name:item.name,viewport:width,error:String(e).slice(0,500)});}
       await page.close();
     }
-  }finally{await context.close();await browser.close();}
+  }finally{await context.close();}
+  }
+  }finally{await browser.close();}
   fs.writeFileSync('transport-form-diagnostics.json',JSON.stringify(results,null,2));
   console.log('RESULTS',JSON.stringify(results));
   if(results.some(x=>x.error||!x.postObserved))process.exitCode=1;
