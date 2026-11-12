@@ -2,6 +2,7 @@ name: Sitewide inquiry UI audit
 
 on:
   pull_request:
+    types: [opened, reopened]
     branches: [main]
     paths:
       - 'scripts/audit_all_forms.cjs'
