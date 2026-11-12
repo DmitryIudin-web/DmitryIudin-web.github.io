@@ -40,6 +40,21 @@ const { chromium } = require('playwright');
     }catch(e){results.push({path,error:String(e).slice(0,180),requests});}
     await page.close();
   }
+  phase=false;
+  const oem=await context.newPage();
+  try {
+    const responsePromise=oem.waitForResponse(r=>r.url().includes('/zeekr-9x-oem-20261003/'),{timeout:15000}).catch(()=>null);
+    const root=await oem.goto('https://avtonds.ru/zeekr-9x?utm_source=ast_test',{waitUntil:'domcontentloaded',timeout:25000});
+    const frameResponse=await responsePromise; await oem.waitForTimeout(2000);
+    const data=await oem.evaluate(async()=>{
+      const iframe=document.querySelector('iframe[src*="zeekr-9x"]');let corsStatus=null;
+      if(iframe){try{let res=await fetch(iframe.src,{cache:'no-store'});corsStatus=String(res.status);}catch(e){corsStatus='blocked';}}
+      return {hasIframe:!!iframe,corsStatus,runtime:!!window.__astUniversalQuote,
+        buttons:[...document.querySelectorAll('a,button')].filter(e=>{let r=e.getBoundingClientRect();return !!(r.width&&r.height)}).map(e=>(e.textContent||'').trim()).filter(Boolean).slice(0,25)};
+    });
+    console.log('ZEEKR_9X',JSON.stringify({root:root.status(),frameStatus:frameResponse&&frameResponse.status(),...data}));
+  }catch(e){console.log('ZEEKR_9X',JSON.stringify({error:String(e).slice(0,200)}));}
+  await oem.close();
   await context.close();await browser.close();
   console.log('PARTNER_DIAGNOSTICS',JSON.stringify(results));
 })().catch(e=>{console.error(e);process.exit(1)});
