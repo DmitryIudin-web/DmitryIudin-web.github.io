@@ -1,0 +1,47 @@
+name: Inquiry transport and focused diagnostics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/test_transport_and_porsche.cjs'
+      - '.github/workflows/transport-form-qa.yml'
+  workflow_dispatch:
+
+  push:
+    branches: [main]
+    paths:
+      - 'assets/ast-conversion.js'
+      - 'scripts/test_transport_and_porsche.cjs'
+      - '.github/workflows/transport-form-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Wait for published runtime
+        if: github.event_name == 'push'
+        run: node scripts/wait_for_live_runtime.cjs
+      - name: Inspect real transport with requests intercepted
+        env:
+          AST_USE_DEPLOYED: ${{ github.event_name == 'push' && '1' || '0' }}
+        run: node scripts/test_transport_and_porsche.cjs
+      - name: Save diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: transport-form-diagnostics
+          path: transport-form-diagnostics.json
+          if-no-files-found: warn

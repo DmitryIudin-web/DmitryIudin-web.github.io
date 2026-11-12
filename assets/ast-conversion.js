@@ -1357,8 +1357,9 @@
     var record, nativeForm, modal, lastFocus, active = null, loading = null, serial = 0;
     var lastAccepted = null;
     var priceLabel = 'Узнать цену';
-    var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market','a5l_role'];
-    var marketing = 'form[data-oem-ast-form],form[data-ast-lead-form],form[data-ast-model-lead-form],form.ast-launch-form,form[data-ast-static-mini-form],form#tavendor-form,form.ast-oem-form,form.rrc-form,form.ast-pg-price-form,form#x7-request,form.qf#qf,form#lead,form.t-form';
+    var sourceKeys = ['model','offer_id','quoteId','trim','exterior_color','interior_color','brand','generation','market','a5l_role','ev_calculation'];
+    var marketing = 'form[data-oem-ast-form],form[data-ast-lead-form],form[data-ast-model-lead-form],form.ast-launch-form,form[data-ast-static-mini-form],form#tavendor-form,form.ast-oem-form,form.rrc-form,form.ast-pg-price-form,form#x7-request,form.qf#qf,form#lead,form.t-form,form[data-ast-ev-final-form]';
+    if (path() === '/porsche-cayenne-import') marketing += ',form[data-lead-form]';
     function field(form, name, value) {
       var el = form.querySelector('[name="' + name + '"]');
       if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
@@ -1403,6 +1404,15 @@
         var trimCode = trigger && trigger.getAttribute('data-trim');
         var trimLabel = trigger && trigger.getAttribute('data-trim-label');
         if (trimCode) result.trim = trimLabel ? trimLabel + ' (' + trimCode + ')' : trimCode;
+      }
+      if (path() === '/ev' && source && source.matches('form[data-ast-ev-lead-form]')) {
+        var evValue = function (name) { var input = source.querySelector('[name="' + name + '"]'); return input ? input.value : ''; };
+        result.ev_calculation = JSON.stringify({
+          target_model:evValue('target_model'),km_year:evValue('km_year'),
+          ice_consumption_l100:evValue('ice_consumption_l100'),fuel_price_rub_l:evValue('fuel_price_rub_l'),
+          electricity_rub_kwh:evValue('electricity_rub_kwh'),ev_saving_rub_year:evValue('ev_saving_rub_year'),
+          util_track:evValue('util_track'),util_fee_rub:evValue('util_fee_rub')
+        });
       }
       if (!result.model) result.model = pageModel() || '';
       result.page_url = location.href.split('#')[0]; result.page = path(); result.offer = result.offer_id || (path() === '/' ? 'generic' : pageOffer());
@@ -1457,11 +1467,13 @@
       var old = modal.querySelector('form'), info = context(source,trigger);
       if (active && active.form === old) { modal.showModal(); old.elements.phone.focus(); return; }
       var form = makeForm(info); old.replaceWith(form);
+      if (source && source.matches('form[data-ast-ev-lead-form]')) form.__astQuoteSource = source;
       modal.showModal(); quoteTrack('ast_form_open',form,{position:positionOf(trigger || form),channel:'form'}); form.elements.phone.focus();
     }
     // Tilda pages and the shared header add lead buttons at different times.
     // Remember text-only openers after relabelling, so their click path stays the same.
     function isQuoteOpener(el) {
+      if (path() === '/ev' && el.matches('[data-ast-ev-unified-open]')) return true;
       if (el.closest('form,dialog')) return false;
       if (el.tagName === 'A' && el.hasAttribute('href') && el.origin !== location.origin) return false;
       var href = el.getAttribute('href') || '';
@@ -1510,12 +1522,25 @@
         if (inquiry.getAttribute('role') === 'dialog') form.elements.phone.focus({preventScroll:true});
       });
     }
+    function mountEvCalculator() {
+      if (path() !== '/ev') return;
+      document.querySelectorAll('form[data-ast-ev-lead-form]').forEach(function (calculator) {
+        var contact = calculator.querySelector('[name="contact"]');
+        var button = calculator.querySelector('button[type="submit"],button[data-ast-ev-unified-open]');
+        if (!contact || !button) return;
+        var label = contact.closest('label');
+        if (label) { label.hidden = true; label.style.setProperty('display','none','important'); }
+        contact.required = false;
+        button.type = 'button';
+        button.setAttribute('data-ast-ev-unified-open','1');
+      });
+    }
     function mount() {
       // Native receiver forms remain in place, untouched. Only replace the
       // site's known marketing UI; never newsletter/payment/account/referral forms.
       if (/^\/referal\/?$/.test(location.pathname)) return;
       document.querySelectorAll(marketing).forEach(function (source) {
-        if (source.dataset.astQuoteReplaced || source.matches('[data-ast-standard-form]') || source.closest('#ast-quote-native-record,.ast-ev-panel')) return;
+        if (source.dataset.astQuoteReplaced || source.matches('[data-ast-standard-form]') || source.closest('#ast-quote-native-record') || (source.closest('.ast-ev-panel') && !source.matches('form[data-ast-ev-final-form]'))) return;
         if (!source.querySelector('[name="Phone"],[name="phone"],[name="contact"]')) return;
         if (source.hidden || source.getAttribute('aria-hidden') === 'true' || getComputedStyle(source).display === 'none') return;
         if (source.querySelector('input[type="file"],input[type="password"],[name="referral_code"],[name="agent_id"],[name="inn"],[name="truck_count"]')) return;
@@ -1525,6 +1550,7 @@
         source.insertAdjacentElement('afterend',form);
       });
       mountZeekrInquiry();
+      mountEvCalculator();
       document.querySelectorAll('a,button').forEach(labelOpener);
       document.querySelectorAll('#lead,#gr-order').forEach(function (section) {
         var heading = section.querySelector('#lead-title,h2');
@@ -1538,6 +1564,7 @@
       record = document.createElement('div'); record.id = 'ast-quote-native-record'; record.className = 'r t-rec'; record.dataset.recordType = '123';
       // Keep the native inputs rendered for Tilda validation; only the UI is offscreen.
       record.style.cssText = 'position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden';
+      record.style.setProperty('display','block','important');
       record.innerHTML = '<form id="ast-quote-native-form" class="t-form js-form-proccess" data-formactiontype="2" data-inputbox=".t-input-group" action="#" novalidate aria-hidden="true">' +
         bindings.map(function (id) { return '<input type="hidden" name="formservices[]" value="' + id + '" class="js-formaction-services">'; }).join('') +
         '<div class="js-successbox t-form__successbox" style="display:none"></div><div class="t-form__inputsbox">' +
@@ -1579,7 +1606,7 @@
       phone.setCustomValidity(/^\+?[\d\s()-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15 ? '' : 'Введите номер телефона с кодом города или оператора.');
       if (!form.reportValidity()) return;
       if (form.__astQuoteSource) { var latest = context(form.__astQuoteSource); sourceKeys.forEach(function (key) { field(form,key,latest[key] || ''); }); }
-      var fingerprint = [digits, path()].concat(['model','offer_id','quoteId','trim','exterior_color','interior_color'].map(function (key) { return (form.elements[key] && form.elements[key].value) || ''; })).join('|');
+      var fingerprint = [digits, path()].concat(['model','offer_id','quoteId','trim','exterior_color','interior_color','ev_calculation'].map(function (key) { return (form.elements[key] && form.elements[key].value) || ''; })).join('|');
       if (lastAccepted && lastAccepted.fingerprint === fingerprint && Date.now() - lastAccepted.time < 120000) { setStatus(form,'Заявка уже принята. Мы свяжемся с вами.'); return; }
       quoteStart(form);
       form.dataset.attempt = String(Number(form.dataset.attempt || 0) + 1);
@@ -1613,7 +1640,14 @@
     modal = document.createElement('dialog'); modal.id = 'ast-quote-dialog'; modal.className = 'ast-quote-dialog'; modal.setAttribute('aria-labelledby','ast-quote-dialog-title'); modal.innerHTML = '<button type="button" class="ast-quote-close" aria-label="Закрыть">×</button><h2 id="ast-quote-dialog-title">' + priceLabel + '</h2>'; modal.appendChild(makeForm(context())); document.body.appendChild(modal);
     modal.querySelector('.ast-quote-close').addEventListener('click',function () { modal.close(); });
     modal.addEventListener('close',function () { if (lastFocus && lastFocus.isConnected) lastFocus.focus({preventScroll:true}); });
-    window.addEventListener('submit',function (event) { var form = event.target; if (!form.matches || !form.matches('[data-ast-standard-form]')) return; event.preventDefault(); event.stopImmediatePropagation(); submit(form); },true);
+    window.addEventListener('submit',function (event) {
+      var form = event.target;
+      if (path() === '/ev' && form.matches && form.matches('form[data-ast-ev-lead-form]')) {
+        event.preventDefault(); event.stopImmediatePropagation(); show(form.querySelector('[data-ast-ev-unified-open]'),form); return;
+      }
+      if (!form.matches || !form.matches('[data-ast-standard-form]')) return;
+      event.preventDefault(); event.stopImmediatePropagation(); submit(form);
+    },true);
     window.addEventListener('focusin',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) quoteTrack('ast_form_open',event.target.form,{position:positionOf(event.target),channel:'form'}); },true);
     window.addEventListener('input',function (event) { if (event.target.matches('.ast-quote-form input[type="tel"]')) { event.target.setCustomValidity(''); quoteStart(event.target.form); } },true);
     window.addEventListener('click',function (event) {
@@ -1632,7 +1666,9 @@
         return;
       }
       event.preventDefault(); event.stopImmediatePropagation();
-      var source = trigger.closest('section,article'); source = source && source.querySelector('form:not([data-ast-standard-form])'); show(trigger,source);
+      var source = trigger.closest('form[data-ast-ev-lead-form]') || trigger.closest('section,article');
+      if (source && source.tagName !== 'FORM') source = source.querySelector('form:not([data-ast-standard-form])');
+      show(trigger,source);
       quoteTrack('ast_cta_click',modal.querySelector('form'),{position:positionOf(trigger),channel:'form'});
     },true);
     var scheduled = false;

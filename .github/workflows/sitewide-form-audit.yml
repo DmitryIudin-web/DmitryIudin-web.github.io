@@ -1,0 +1,36 @@
+name: Sitewide inquiry UI audit
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches: [main]
+    paths:
+      - 'scripts/audit_all_forms.cjs'
+      - '.github/workflows/sitewide-form-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sitewide:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Audit sitemap pages without submitting customer requests
+        run: node scripts/audit_all_forms.cjs
+      - name: Save audit results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitewide-form-audit
+          path: sitewide-form-audit.json
+          if-no-files-found: warn
