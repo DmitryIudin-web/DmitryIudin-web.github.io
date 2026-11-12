@@ -26,6 +26,8 @@ jobs:
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
       - name: Audit sitemap pages without submitting customer requests
+        env:
+          AST_AUDIT_START: '140'
         run: node scripts/audit_all_forms.cjs
       - name: Save audit results
         if: always()
