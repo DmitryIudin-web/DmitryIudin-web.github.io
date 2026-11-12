@@ -22,6 +22,7 @@ async function main(){
       {name:'zeekr',url:'/zeekr-8x?view=specifications&version=shadow&trim=Shadow&utm_source=ast_test',open:async p=>p.locator('#ast-oem-root article').filter({has:p.getByRole('heading',{name:'Shadow',exact:true})}).getByRole('button',{name:'Рассчитать поставку'}).click(),form:'#ast-oem-root [role=dialog].ast-inquiry form[data-ast-standard-form]',model:'ZEEKR 8X',trim:'Shadow'},
       {name:'tiguan',url:'/volkswagen-tiguan-l-pro?utm_source=ast_test',open:async p=>p.locator('a[data-trim-label="380TSI Люкс"]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Volkswagen Tiguan L Pro',trim:'380TSI Люкс (380TSI 豪华版)'},
       {name:'nissan',url:'/nissan-qashqai-china?utm_source=ast_test',open:async p=>p.locator('button[data-open][data-ast-quote-open]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Nissan Qashqai'},
+      {name:'referral',url:'/referal?utm_source=ast_test',open:async p=>{await p.locator('form[data-ast-referral-inquiry][data-ast-quote-replaced]').waitFor({state:'attached'});assert.equal(await p.locator('form[data-ast-referral-inquiry]').isVisible(),false);},form:'form[data-ast-referral-inquiry]+form[data-ast-standard-form]',page:'/referal'},
       {name:'porsche',url:'/porsche-cayenne-import?utm_source=ast_test',open:async p=>{await p.locator('form[data-lead-form][data-ast-quote-replaced]').waitFor({state:'attached'});assert.equal(await p.locator('form[data-lead-form]').isVisible(),false);},form:'form[data-lead-form]+form[data-ast-standard-form]',model:'Porsche Cayenne'},
       {name:'ev-final',url:'/ev?utm_source=ast_test',open:async p=>{await p.locator('form[data-ast-ev-final-form][data-ast-quote-replaced]').waitFor({state:'attached'});assert.equal(await p.locator('form[data-ast-ev-final-form]').isVisible(),false);},form:'form[data-ast-ev-final-form]+form[data-ast-standard-form]'},
       {name:'ev-calculator',url:'/ev?utm_source=ast_test',open:async p=>{await p.locator('form[data-ast-ev-lead-form] button[data-ast-ev-unified-open]').waitFor({state:'attached'});await p.locator('form[data-ast-ev-lead-form] select[name=target_model]').selectOption('li-auto-l9');assert.equal(await p.locator('form[data-ast-ev-lead-form] input[name=contact]').isVisible(),false);await p.locator('form[data-ast-ev-lead-form] button[data-ast-ev-unified-open]').click();},form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Li Auto L9',ev:true},
@@ -42,15 +43,16 @@ async function main(){
         const details=await page.evaluate(()=>{
           const rec=document.querySelector('#ast-quote-native-record'),native=document.querySelector('#ast-quote-native-form');
           const val=n=>native?.querySelector('[name="'+n+'"]')?.value||'';
-          return {recordDisplay:rec?getComputedStyle(rec).display:'absent',model:val('model'),trim:val('trim'),market:val('market'),test:val('is_test'),ev_calculation:val('ev_calculation'),formStatus:[...document.querySelectorAll('form[data-ast-standard-form] .ast-quote-status')].map(x=>x.textContent).filter(Boolean)};
+          return {recordDisplay:rec?getComputedStyle(rec).display:'absent',model:val('model'),trim:val('trim'),market:val('market'),test:val('is_test'),page:val('page'),ev_calculation:val('ev_calculation'),formStatus:[...document.querySelectorAll('form[data-ast-standard-form] .ast-quote-status')].map(x=>x.textContent).filter(Boolean)};
         });
         let payload=req?.postData()||'';
         for(let i=0;i<2;i++){try{payload=decodeURIComponent(payload.replace(/\+/g,' '));}catch(e){break;}}
-        const result={name:item.name,viewport:width,postObserved:!!req,requestHost:req?new URL(req.url()).hostname:null,recordDisplay:details.recordDisplay,model:details.model,trim:details.trim,market:details.market,test:details.test,payloadHasModel:!item.model||payload.includes(item.model),payloadHasTrim:!item.trim||payload.includes(item.trim),evDataPresent:!item.ev||(details.ev_calculation.includes('li-auto-l9')&&payload.includes('li-auto-l9'))};
+        const result={name:item.name,viewport:width,postObserved:!!req,requestHost:req?new URL(req.url()).hostname:null,recordDisplay:details.recordDisplay,model:details.model,trim:details.trim,market:details.market,test:details.test,page:details.page,payloadHasPage:!item.page||payload.includes(item.page),payloadHasModel:!item.model||payload.includes(item.model),payloadHasTrim:!item.trim||payload.includes(item.trim),evDataPresent:!item.ev||(details.ev_calculation.includes('li-auto-l9')&&payload.includes('li-auto-l9'))};
         results.push(result);
         assert.ok(req,'native Tilda request must be generated');
         assert.equal(details.recordDisplay,'block','offscreen receiver must remain rendered');
         assert.equal(details.test,'yes');
+        if(item.page){assert.equal(details.page,item.page);assert.ok(result.payloadHasPage,'source page must be in outgoing request');}
         if(item.model){assert.equal(details.model,item.model);assert.ok(result.payloadHasModel,'model must be in outgoing request');}
         if(item.trim){assert.equal(details.trim,item.trim);assert.ok(result.payloadHasTrim,'trim must be in outgoing request');}
         if(item.ev)assert.ok(result.evDataPresent,'EV calculation must be retained');
