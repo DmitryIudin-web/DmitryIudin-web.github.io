@@ -1,6 +1,7 @@
 // Validate Tilda request construction while blocking every non-GET request.
 const fs=require('fs');
 const assert=require('assert/strict');
+const path=require('path');
 const {chromium}=require('playwright');
 const ROOT='https://avtonds.ru';
 const runtime=fs.readFileSync('assets/ast-conversion.js','utf8');
@@ -13,13 +14,37 @@ async function main(){
   await context.route('**/*',async route=>{
     const r=route.request();
     if(!['GET','HEAD'].includes(r.method()))return route.abort();
+    const url=new URL(r.url());
+    if(process.env.AST_USE_DEPLOYED!=='1' && url.origin===ROOT && url.pathname.replace(/\/$/,'')==='/zeekr-9x'){
+      const response=await route.fetch();
+      if(!response.ok())return route.fulfill({response});
+      const original=await response.text();
+      const fragment=fs.readFileSync('zeekr-9x/tilda-fragment.txt','utf8');
+      const oldBlock=/<!-- ZEEKR 9X OEM release 20261003; page-only -->[\s\S]*?(?=<script data-ast-oem-tracking>)/;
+      assert.ok(oldBlock.test(original)||original.includes('id="zeekr-9x-review"'),'expected Tilda review block');
+      return route.fulfill({response,body:original.replace(oldBlock,()=>fragment)});
+    }
+    if(process.env.AST_USE_DEPLOYED!=='1' && url.origin==='https://dmitryiudin-web.github.io' && url.pathname.startsWith('/zeekr-9x/')){
+      return route.fulfill({path:path.join(process.cwd(),url.pathname)});
+    }
     if(process.env.AST_USE_DEPLOYED!=='1'&&/\/assets\/ast-conversion\.js(?:\?|$)/.test(r.url()))return route.fulfill({status:200,contentType:'application/javascript; charset=utf-8',body:runtime});
     if(['image','media','font'].includes(r.resourceType())||/mc\.yandex\.|googletagmanager\.|google-analytics\./i.test(r.url()))return route.abort();
     return route.continue();
   });
   try{
     const cases=[
-      {name:'zeekr-9x',url:'/zeekr-9x?utm_source=ast_test',open:async p=>{if(p.viewportSize().width>=980){await p.locator('.ast-sticky-cta--desktop.ast-sticky-cta--visible .ast-sticky-cta__fab').click();await p.locator('.ast-sticky-cta--desktop .ast-sticky-cta__item--request').click();}else{await p.locator('.ast-sticky-cta--mobile.ast-sticky-cta--visible .ast-sticky-cta__btn--request').click();}},form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'ZEEKR 9X',page:'/zeekr-9x'},
+      {name:'zeekr-9x',url:'/zeekr-9x?utm_source=ast_test',open:async p=>{
+        if(await p.locator('#zeekr-9x-review').count()){
+          const review=p.frameLocator('#zeekr-9x-review');
+          await review.getByRole('heading',{name:'ZEEKR 9X',exact:true}).waitFor();
+          await review.getByRole('link',{name:'Рассчитать ZEEKR 9X'}).click();
+        }else if(p.viewportSize().width>=980){
+          await p.locator('.ast-sticky-cta--desktop.ast-sticky-cta--visible .ast-sticky-cta__fab').click();
+          await p.locator('.ast-sticky-cta--desktop .ast-sticky-cta__item--request').click();
+        }else{
+          await p.locator('.ast-sticky-cta--mobile.ast-sticky-cta--visible .ast-sticky-cta__btn--request').click();
+        }
+      },form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'ZEEKR 9X',page:'/zeekr-9x'},
       {name:'zeekr',url:'/zeekr-8x?view=specifications&version=shadow&trim=Shadow&utm_source=ast_test',open:async p=>p.locator('#ast-oem-root article').filter({has:p.getByRole('heading',{name:'Shadow',exact:true})}).getByRole('button',{name:'Рассчитать поставку'}).click(),form:'#ast-oem-root [role=dialog].ast-inquiry form[data-ast-standard-form]',model:'ZEEKR 8X',trim:'Shadow'},
       {name:'tiguan',url:'/volkswagen-tiguan-l-pro?utm_source=ast_test',open:async p=>p.locator('a[data-trim-label="380TSI Люкс"]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Volkswagen Tiguan L Pro',trim:'380TSI Люкс (380TSI 豪华版)'},
       {name:'nissan',url:'/nissan-qashqai-china?utm_source=ast_test',open:async p=>p.locator('button[data-open][data-ast-quote-open]').click(),form:'#ast-quote-dialog[open] form[data-ast-standard-form]',model:'Nissan Qashqai'},
