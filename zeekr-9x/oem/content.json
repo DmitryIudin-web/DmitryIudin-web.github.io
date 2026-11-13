@@ -1,0 +1,1963 @@
+{
+  "sections": [
+    {
+      "type": 1,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "theme": "white",
+        "videoUrl": "./media/b7aece15837f37cf.mp4",
+        "bgUrl": "./media/999f1ced5975b12c.webp",
+        "bannerTitle": "ZEEKR 9X",
+        "bannerDesc": "Новый флагман мира сверхроскошных SUV",
+        "bannerSecDesc": "",
+        "bannerBottomTip": "",
+        "buttonList": [
+          {
+            "buttonClassName": "theme-1",
+            "buttonText": "Запись на тест-драйв",
+            "path": "/consult",
+            "query": {
+              "modelInfoId": 10,
+              "modelYearCode": "GMY_9X_01"
+            }
+          },
+          {
+            "buttonClassName": "theme-2",
+            "buttonText": "Заказать сейчас",
+            "query": {
+              "modelInfoId": 10,
+              "modelYearCode": "GMY_9X_01"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "anchor zeekr9x-anchor-1",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "Самобытная эстетика флагмана",
+        "chapterTitle": "Сила от природы. Уверенность во всём",
+        "chapterDesc": "Powerful Elegance",
+        "bgUrl": "./media/ef49a92465430bee.webp"
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "p1080",
+        "topStyle": "top:0.4166666666666667rem",
+        "style": "padding-top: 0;",
+        "list": [
+          {
+            "bgUrl": "./media/a49d3bde0626bfc2.webp",
+            "videoUrl": "",
+            "subTitle": "",
+            "subStyle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "configList": [
+          {
+            "key": "Длина кузова",
+            "value": "5239 mm",
+            "style": "color:#FFF4E2;",
+            "keyStyle": "color:#FFF4E2;"
+          },
+          {
+            "key": "Ширина кузова",
+            "value": "2029 mm",
+            "style": "color:#FFF4E2;",
+            "keyStyle": "color:#FFF4E2;"
+          },
+          {
+            "key": "Высота кузова",
+            "value": "1819 mm",
+            "style": "color:#FFF4E2;",
+            "keyStyle": "color:#FFF4E2;"
+          },
+          {
+            "key": "Колёсная база",
+            "value": "3169 mm",
+            "style": "color:#FFF4E2;",
+            "keyStyle": "color:#FFF4E2;"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Величие в каждом измерении",
+        "titleStyle": "color:#FFF4E2;",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white",
+        "style": "height:6.557291666666667rem;max-height: fit-content;overflow: hidden;margin:0 0.125rem;padding:0",
+        "tabStyle": "bottom:0.484375rem;color:#FFF4E2;",
+        "list": [
+          {
+            "bgUrl": "./media/1047923b330f9ed4.webp",
+            "contentImgUrl": "./media/1047923b330f9ed4.webp",
+            "videoUrl": "",
+            "bgStyle": "filter: blur(240px);-webkit-filter: blur(240px);transform: translate3d(0, 0, 0);",
+            "subStyle": "",
+            "subTitle": "Крупная цельная решётка радиатора",
+            "subDesc": "Расширенная нижняя решётка<br/>Дизайн, вдохновлённый основаниями древних дворцов, подчёркивает величественный облик.",
+            "subTips": ""
+          },
+          {
+            "bgUrl": "./media/8a475ca12468bd3f.webp",
+            "contentImgUrl": "./media/8a475ca12468bd3f.webp",
+            "videoUrl": "",
+            "bgStyle": "filter: blur(240px);-webkit-filter: blur(240px);transform: translate3d(0, 0, 0);",
+            "subStyle": "",
+            "subTitle": "Капот с охватом боковин",
+            "subDesc": "Капот площадью 2,15 м² продолжает объёмную форму цельной решётки радиатора.<br/>Без лишних стыков — цельный и гармоничный силуэт.",
+            "subTips": ""
+          }
+        ],
+        "configList": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "<div style=\"color: #FFF4E2 !important;\">Свобода неба и океана</div>",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white",
+        "list": [],
+        "style": "background: #EBE8E3",
+        "topStyle": "position: absolute;z-index: 1;",
+        "list5": [
+          {
+            "name": "Крыша в стиле флайбриджа яхты",
+            "desc": "Цельный С-образный контур соединяет крышу и кузов, напоминая флайбридж роскошной яхты.",
+            "bgUrl": "./media/419b5791cfae6ec9.webp"
+          },
+          {
+            "name": "Широкие двери второго ряда",
+            "desc": "Широкие двери второго ряда облегчают посадку и делают пропорции кузова ещё гармоничнее.",
+            "bgUrl": "./media/2d4115e6ad7ab6a3.webp"
+          },
+          {
+            "name": "22-дюймовые кованые диски с зеркальной полировкой",
+            "desc": "Безупречная зеркальная поверхность — выразительная и благородная.",
+            "bgUrl": "./media/c89f0896b31841bc.webp"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Свет звёзд. Отражение характера",
+        "titleStyle": "color:#FFF4E2 !important;",
+        "topStyle": "position: absolute;z-index: 8;padding-top:0.4166666666666667rem;",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white p1080",
+        "style": "padding-top: 0;color:#FFF4E2;",
+        "list5": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/d3f2633d8ad0a067.mp4",
+            "name": "Матричная оптика «Haohan Star Diamond»",
+            "desc": "42 242 грани с алмазной огранкой<br/>Тысячи граней создают сияние звёздного неба."
+          },
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/422813e18288a18a.mp4",
+            "name": "Две интеллектуальные проекционные фары мегапиксельного класса",
+            "desc": "Язык света, освещающий путь<br/>1,3 млн пикселей в фаре | Световой поток 1800 лм | Проекция 150 дюймов"
+          }
+        ],
+        "list2": [],
+        "list3": [],
+        "list4": [],
+        "configList": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 5,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Цвет, раскрывающий характер",
+        "desc": "",
+        "style": "background:#F5F6F7;",
+        "bottomTips": "* Материалы представлены для ознакомления. Ориентируйтесь на фактически поставляемый автомобиль.",
+        "jumpButton": {
+          "buttonWord": "Обзор кузова на 360° и выбор комплектации",
+          "buttonIcon": "./media/1a42763d67522705.webp",
+          "routePath": "/toReserve?modelInfoId=10&modelYearCode=GMY_9X_01",
+          "url": ""
+        },
+        "ossUrl": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026",
+        "frameIndex": 0,
+        "imgData": [
+          {
+            "name": "Коричневый «Дикая природа»",
+            "desc": "Насыщенный коричневый оттенок воплощает силу земли. Спокойный и уверенный, он выражает сдержанное достоинство.",
+            "color": "brown",
+            "icon": "./media/5263c26fc7dafbe1.webp",
+            "imgNumber": 36
+          },
+          {
+            "name": "Чёрный «Полярная ночь»",
+            "desc": "Глубокий и спокойный, словно полуночное небо. Цвет, в котором внутренняя сила приобретает видимую форму.",
+            "color": "black",
+            "icon": "./media/fb670bd70c583b5a.webp",
+            "imgNumber": 36
+          },
+          {
+            "name": "Белый «Полярный день»",
+            "desc": "Цвет вечного света к северу от 66,5° северной широты. Чистое, величественное сияние полярного дня.",
+            "color": "white",
+            "icon": "./media/b89348ad47f68a2a.webp",
+            "imgNumber": 36
+          },
+          {
+            "name": "Серебристый «Ледник»",
+            "desc": "Холодное серебряное сияние ледников Аляски. Игра света и тени подчёркивает выразительные линии.",
+            "color": "sliver",
+            "icon": "./media/dec9cb70eea6c79f.webp",
+            "imgNumber": 36
+          },
+          {
+            "name": "Серый «Звёздное небо»",
+            "desc": "Ночное небо Сахары: звёзды на сером полотне, хранящем глубину и тайны Вселенной.",
+            "color": "grey",
+            "icon": "./media/c86ac6db80d51577.webp",
+            "imgNumber": 36
+          },
+          {
+            "name": "Фиолетовый «Сумерки»",
+            "desc": "Последний отблеск заката в сумерках. Естественная глубина фиолетового выражает сдержанную роскошь.",
+            "color": "purple",
+            "icon": "./media/b6898ce8495bc734.webp",
+            "imgNumber": 36
+          }
+        ]
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Природные оттенки. Особая атмосфера",
+        "desc": "",
+        "bottomTips": "* Материалы представлены для ознакомления. Ориентируйтесь на фактически поставляемый автомобиль.",
+        "jumpButton": {
+          "buttonWord": "Обзор салона на 360° и выбор комплектации",
+          "buttonIcon": "./media/1a42763d67522705.webp",
+          "routePath": "/toReserve?modelInfoId=10&modelYearCode=GMY_9X_01",
+          "url": ""
+        },
+        "theme": "white",
+        "list": [],
+        "list2": [],
+        "list3": [],
+        "list4": [
+          {
+            "bgUrl": "./media/8ef6ff11586c23d5.webp",
+            "icon": "./media/2979d0cf8618efe7.webp",
+            "name": "Бургундский красный",
+            "desc": "Глубокий, насыщенный красный хранит очарование времени. Торжественный и тёплый оттенок благородства, которое не теряет своей ценности."
+          },
+          {
+            "bgUrl": "./media/1c5723886cf3a9f7.webp",
+            "icon": "./media/959c23935a204ece.webp",
+            "name": "Полярный белый",
+            "desc": "Чистое сияние солнечных лучей на тающем арктическом снегу. Воздушный белый, наполненный спокойствием."
+          },
+          {
+            "bgUrl": "./media/642a8e35c3bae17c.webp",
+            "icon": "./media/403f5a883b655e8b.webp",
+            "name": "Синий «Лунная тень»",
+            "desc": "Таинственная глубина океана в лунном свете. За спокойной поверхностью скрывается мощь глубоких течений."
+          },
+          {
+            "bgUrl": "./media/473f904bab4863a0.webp",
+            "icon": "./media/6edb19d17cb0db07.webp",
+            "name": "Янтарный коричневый",
+            "desc": "Благородный коричневый цвет янтаря — тёплый дар земли. Мягкий оттенок с ощущением вневременной гармонии."
+          },
+          {
+            "bgUrl": "./media/02596135c3f8f669.webp",
+            "icon": "./media/8954e9a2da79f8d1.webp",
+            "name": "Ночное золото",
+            "desc": "Глубина ночи соединяется с текучим золотым сиянием, подчёркивая исключительный характер и рождая свет даже в полной темноте."
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "anchor zeekr9x-anchor-2",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "",
+        "chapterTitle": "Haohan Super Hybrid",
+        "chapterDesc": "Масштаб возможностей. Уверенность в дальнем пути",
+        "bgUrl": "./media/f4aa3e5cccbeb10d.webp"
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "theme": "white",
+        "title": "Полностью интегрированная высоковольтная гибридная архитектура 900 В",
+        "desc": "",
+        "style": "padding-top: 0;color:#FFF4E2;height: 8.677083333333334rem;max-height: 8.677083333333334rem;",
+        "list": [
+          {
+            "bgUrl": "./media/573d1000337b1532.webp",
+            "subStyle": "",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Мощная энергия. Уверенный контроль",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background: #EBE8E3;",
+        "list": [
+          {
+            "bgUrl": "./media/a8d0bc2ed6fb3b3f.webp",
+            "videoUrl": "",
+            "subTitle": "Разгон до 100 км/ч в пределах трёх секунд с небольшим во всех версиях",
+            "configListTitle": "Гибрид с тремя электромоторами и мегаваттным электроприводом",
+            "subDesc": "",
+            "subTips": "* Данные получены в ходе инженерных испытаний. Результаты могут различаться в зависимости от места испытаний, погоды, состояния дороги, заряда аккумулятора, нагрузки, шин и других условий.",
+            "isRight": false,
+            "style": "background: #F5F6F7;",
+            "configList": [
+              {
+                "value": "3.1 s",
+                "key": "Минимальное время разгона 0–100 км/ч*"
+              },
+              {
+                "value": "1030 kW",
+                "key": "Суммарная пиковая мощность"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "padding-top:0;background: #EBE8E3;",
+        "list": [
+          {
+            "bgUrl": "./media/124d049292920b02.webp",
+            "videoUrl": "",
+            "subTitle": "Уверенная динамика даже при низком заряде",
+            "configListTitle": "Двигатель 2.0T, разработанный для Super Hybrid",
+            "subDesc": "",
+            "subTips": "",
+            "isRight": true,
+            "style": "background: #F5F6F7;",
+            "configList": [
+              {
+                "value": "205 kW",
+                "key": "Пиковая мощность"
+              },
+              {
+                "value": "46%+",
+                "key": "Тепловой КПД"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "anchor zeekr9x-anchor-3",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "",
+        "chapterTitle": "Цифровое шасси Haohan с ИИ",
+        "chapterDesc": "Свобода направлений. Спокойствие в пути",
+        "bgUrl": "./media/f4aa3e5cccbeb10d.webp"
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Шасси уровня автомобилей стоимостью миллион юаней",
+        "titleStyle": "color:#FFF4E2;",
+        "desc": "",
+        "bottomTips": "* При съёмке этого видео природной среде, диким животным и растениям не был причинён ущерб.<br/>* Показанные действия требуют сопровождения специалистов. Не повторяйте их самостоятельно.<br/>* Показанные функции и состояние автомобиля приведены для ознакомления. Ориентируйтесь на автомобиль, фактически поступивший в продажу. Право окончательного толкования в пределах, установленных законом, принадлежит ZEEKR.",
+        "bottomTipsStyle": "color:#000;text-align: left;bottom:-0.40625rem;left:0",
+        "jumpButton": "",
+        "theme": "white",
+        "style": "padding-bottom:0.40625rem;",
+        "list": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/2cb647452a2c6057.mp4",
+            "subStyle": "",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "configList": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "contentStyle": "",
+        "list": [
+          {
+            "class": "content33w",
+            "bgUrl": "./media/1ed929a9e60aa406.webp",
+            "mediaStyle": "width: 6.171875rem;height: 3.958333333rem;",
+            "videoUrl": "",
+            "subTitle": "Замкнутая система с двумя камерами и двумя клапанами<br/>Комплекс пневматической подвески",
+            "subDesc": "Баланс управляемости, комфорта и внедорожных возможностей",
+            "configListStyle": "margin-bottom:0.25rem; grid-template-columns: repeat(2, auto);",
+            "subTips": "",
+            "isRight": true,
+            "style": "height: 3.958333333rem;",
+            "configListArray": [
+              {
+                "configListTitle": "Замкнутая двухкамерная пневмоподвеска",
+                "configListDesc": "Меньше шума, быстрее подъём кузова, стабильная работа на большой высоте.",
+                "configList": [
+                  {
+                    "value": "110 mm ",
+                    "key": "Максимальный диапазон регулировки"
+                  }
+                ]
+              },
+              {
+                "configListTitle": "Двухклапанные электронноуправляемые амортизаторы CCD",
+                "configListDesc": "Независимое управление сжатием и отбоем<br/>Диапазон демпфирования в 2–3 раза шире, чем у одноклапанных амортизаторов CCD."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "padding-top:0;",
+        "contentStyle": "",
+        "list": [
+          {
+            "class": "content33w",
+            "bgUrl": "./media/825f688387a5125a.webp",
+            "videoUrl": "",
+            "subTitle": "Активные стабилизаторы поперечной устойчивости",
+            "subDesc": "Почти нулевой крен в скоростных поворотах и устойчивость на неровной дороге.",
+            "configListTitle": "",
+            "configListDesc": "",
+            "configListStyle": "margin-bottom:0.25rem; grid-template-columns: repeat(2, auto);",
+            "subTips": "",
+            "isRight": false,
+            "style": "height: 3.958333333rem;",
+            "mediaStyle": "width: 6.171875rem;height: 3.958333333rem;",
+            "configList": [
+              {
+                "value": "0.2 s ",
+                "key": "Время реакции"
+              },
+              {
+                "value": "1400 N·m",
+                "key": "Крутящий момент подъёма"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Интеллектуальный центр Dinghai",
+        "desc": "В реальном времени использует вычислительные ресурсы и данные датчиков системы помощи водителю, координируя исполнительные устройства шасси, силовой установки, салона и других систем.",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white",
+        "style": "padding-top:0;color:#FFF4E2;",
+        "list": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/c2ed67cb8a51f126.mp4",
+            "subStyle": "",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "configList": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background:#F5F6F7;",
+        "contentStyle": "padding: 0.4166666666666667rem 0.6927083333333334rem 0 0.953125rem ;",
+        "list": [
+          {
+            "class": "content33w",
+            "bgUrl": "./media/51c4c3e983ec9dc3.webp",
+            "videoUrl": "",
+            "subTitle": "<span style=\"font-size: 0.24rem;\">Адаптация к любому рельефу</span>",
+            "subDesc": "Уверенность в любую погоду, на любом рельефе и в любой ситуации.",
+            "subTips": "",
+            "isRight": true,
+            "style": "height: 3.958333333rem;",
+            "mediaStyle": "width: 6.171875rem;height: 3.958333333rem;",
+            "configList3": [
+              {
+                "title": "3 стандартных режима",
+                "iconList": [
+                  {
+                    "icon": "./media/43854b800974f8d9.webp",
+                    "desc": "Комфорт"
+                  },
+                  {
+                    "icon": "./media/839bc11d3b7c5bed.webp",
+                    "desc": "Экономичный"
+                  },
+                  {
+                    "icon": "./media/705bd0f62799d6ea.webp",
+                    "desc": "Спорт"
+                  }
+                ]
+              },
+              {
+                "title": "7 адаптивных режимов",
+                "iconList": [
+                  {
+                    "icon": "./media/a43c1a3413bca07c.webp",
+                    "desc": "Трава / гравий"
+                  },
+                  {
+                    "icon": "./media/44b3221afd6c8d69.webp",
+                    "desc": "Неглубокий снег"
+                  },
+                  {
+                    "icon": "./media/9602b66087419c3d.webp",
+                    "desc": "Глубокий снег"
+                  },
+                  {
+                    "icon": "./media/83140247134bee81.webp",
+                    "desc": "Грязь"
+                  },
+                  {
+                    "icon": "./media/d7c044034c2f6991.webp",
+                    "desc": "Песок"
+                  },
+                  {
+                    "icon": "./media/7a279ca08a634e24.webp",
+                    "desc": "Камни"
+                  },
+                  {
+                    "icon": "./media/a754289ee1cd338a.webp",
+                    "desc": "Горная дорога"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "padding-top:0;background:#F5F6F7;",
+        "list": [
+          {
+            "childType": 5,
+            "childList": [
+              {
+                "subTitle": "Интеллектуальная компенсация бокового ветра",
+                "subDesc": "Боковой ветер силой 11 баллов, скорость автомобиля 150 км/ч<br/>Смещение кузова менее 1 м*: компенсация ветра помогает сохранить контроль.",
+                "bottomTips": "* Система компенсации бокового ветра испытана по национальному стандарту Китая. Это вспомогательная функция: водитель должен постоянно следить за дорожной обстановкой и в любой момент сохранять активное управление автомобилем.",
+                "shortVideo": "./media/5d7454701c8f6106.mp4",
+                "bgUrl": "./media/d08394b8044595cd.webp"
+              },
+              {
+                "subTitle": "Контроль автомобиля при разрыве шин",
+                "subDesc": "Одновременный разрыв двух шин с одной стороны на покрытии с разным коэффициентом сцепления\nПлавная остановка со скорости 120 км/ч — сохранение контроля в критической ситуации.",
+                "shortVideo": "./media/76af5784d0a9e40b.mp4",
+                "bgUrl": "./media/102cd7ab828f4009.webp"
+              },
+              {
+                "subTitle": "Активный подъём кузова перед боковым столкновением",
+                "subDesc": "Если система обнаруживает неизбежное боковое столкновение, она экстренно поднимает кузов, чтобы удар пришёлся на наиболее прочную балку порога. Это помогает максимально уменьшить проникновение деформации в пассажирский салон.",
+                "shortVideo": "./media/4a321333523f72fe.mp4",
+                "bgUrl": "./media/3e5feeef20497d2b.webp"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "anchor zeekr9x-anchor-4",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "",
+        "chapterTitle": "Просторный салон — целый мир комфорта",
+        "chapterDesc": "Масштаб мысли. Свобода путешествий",
+        "bgUrl": "./media/ef49a92465430bee.webp"
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white",
+        "style": "padding-top: 0;",
+        "list": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/7dfddc3bf4d9e7d2.mp4",
+            "subTitle": "",
+            "subStyle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "configList": []
+      }
+    },
+    {
+      "type": 2,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "chapterTitle": "Пятиместный флагман. Простор для комфорта",
+        "chapterDesc": "",
+        "style": "background: #f5f6f7; margin-bottom: -1.2rem;"
+      }
+    },
+    {
+      "type": 14,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Два ряда, пять мест — простор первого класса",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background:#F5F6F7; padding-bottom: 0;position: relative;z-index: 1;",
+        "list": [
+          {
+            "bgUrl": "./media/ce3cee4a082f6039.webp",
+            "subTitle": "Роскошный простор второго ряда",
+            "subDesc": "Продуманная компоновка салона: пространство для ног во втором ряду достигает 1,4 м."
+          },
+          {
+            "bgUrl": "./media/a315ec23e1bf8439.webp",
+            "subTitle": "Два кресла с режимом невесомости",
+            "subDesc": "Инновационная конструкция с наклоном кресла целиком снижает давление на поясницу при изменении положения и помогает расслабиться в долгой поездке.",
+            "subTips": "* Режим невесомости разрешён только на стоянке. Не используйте его во время движения автомобиля."
+          },
+          {
+            "bgUrl": "./media/7d6e0d39de30b299.webp",
+            "subTitle": "Два кресла в стиле Eames",
+            "subDesc": "Согласованная работа опор для голеней и стоп позволяет удобно вытянуть ноги."
+          },
+          {
+            "bgUrl": "./media/f3c4ae06d7894297.webp",
+            "subTitle": "Центральный подлокотник второго ряда с электроприводом",
+            "subDesc": "Открывается и закрывается одним нажатием, фиксируется в любом положении — удобное управление для задних пассажиров."
+          },
+          {
+            "bgUrl": "./media/342fbe4ddc33622f.webp",
+            "subTitle": "Два деловых столика во втором ряду",
+            "subDesc": "Удобство для работы в дороге и отдыха."
+          },
+          {
+            "bgUrl": "./media/8f39b0d3e640cd5f.webp",
+            "subTitle": "Раздельные сиденья с компоновкой 4/2/4",
+            "subDesc": "Продуманная компоновка салона создаёт ощущение роскоши более высокого класса."
+          },
+          {
+            "bgUrl": "./media/a2ce52167692dd8f.webp",
+            "subTitle": "Скрытая укладка ремня безопасности центрального сиденья второго ряда",
+            "subDesc": "Баланс эстетики и практичности, в котором детали задают стиль."
+          },
+          {
+            "bgUrl": "./media/917966f5e52b692f.webp",
+            "subTitle": "Закрытый отсек объёмом 6,5 л во втором ряду",
+            "subDesc": "Электрическое открывание и защита паролем."
+          }
+        ]
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Простор багажника для больших планов",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background:#F5F6F7;",
+        "containerStyle": "",
+        "list5": [
+          {
+            "name": "Багажник объёмом 1082 л",
+            "desc": "Просторный багажник объёмом 1082 л вмещает сумку для гольфа и всё необходимое на каждый день.",
+            "tips": "* Данные получены при инженерных измерениях. Объём может отличаться в зависимости от комплектации; уточняйте значения по официальной информации.",
+            "bgUrl": "./media/3afac1a783c693e6.webp"
+          },
+          {
+            "name": "До 2473 л при расширении багажного пространства",
+            "desc": "Максимальная глубина расширенного пространства — более 2,2 м.",
+            "tips": "* Данные получены при инженерных измерениях. Объём может отличаться в зависимости от комплектации; уточняйте значения по официальной информации.",
+            "bgUrl": "./media/fda32f75170bbcec.webp"
+          },
+          {
+            "name": "Четырёхсекционная складная перегородка багажника",
+            "desc": "Складная перегородка закрывает багаж от обзора через заднее стекло и разделяет хранение на верхний и нижний уровни, сохраняя аккуратный вид и удобство загрузки.",
+            "bgUrl": "./media/d050de75d928939c.webp"
+          },
+          {
+            "name": "Двухстворчатая дверь багажника",
+            "desc": "Нагрузка до 300 кг — можно удобно сидеть или лежать.",
+            "bgUrl": "./media/9d4aeb25d7a1abc4.webp"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 2,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "chapterTitle": "Шестиместный флагман. Комфорт для каждого",
+        "chapterDesc": "",
+        "children": [],
+        "style": "margin-bottom: -1.2rem;"
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Три ряда, шесть мест — роскошь на каждом сиденье",
+        "titleStyle": "",
+        "topStyle": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "list": [
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "subTitle": "Салон с театральной посадкой",
+                "subDesc": "Ступенчатое расположение рядов: каждый следующий ряд выше предыдущего.",
+                "subTips": "",
+                "videoUrl": "",
+                "bgUrl": "./media/9f7d587a387cb195.webp"
+              },
+              {
+                "subTitle": "Третий ряд для посадки и отдыха полулёжа",
+                "subDesc": "Электрическая продольная регулировка 140 мм | Максимальный угол наклона 135°",
+                "subTips": "",
+                "videoUrl": "",
+                "bgUrl": "./media/ea4259e26d826d15.webp"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Четыре положения для полного расслабления",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "list": [],
+        "style": "background: #F5F6F7;",
+        "list5": [
+          {
+            "name": "Режим невесомости",
+            "desc": "Ощущение невесомости, словно в космосе, помогает полностью расслабить тело и мысли.",
+            "bgUrl": "",
+            "videoUrl": "./media/42dd9df057335a92.mp4",
+            "tips": "* Режим невесомости разрешён только на стоянке. Не используйте его во время движения автомобиля."
+          },
+          {
+            "name": "Режим кресла Eames",
+            "desc": "Можно полностью вытянуть ноги и наслаждаться отдыхом.",
+            "bgUrl": "",
+            "videoUrl": "./media/347268c5886f41a5.mp4"
+          },
+          {
+            "name": "Режим поворота кресла",
+            "desc": "Место для отдыха и развлечений, чаепития или деловой беседы.",
+            "bgUrl": "",
+            "videoUrl": "./media/d778bcb6da05b064.mp4"
+          },
+          {
+            "name": "Режим массажного кресла",
+            "desc": "Точечное воздействие на поясницу, спину, ягодицы и ноги помогает снять усталость.",
+            "bgUrl": "",
+            "videoUrl": "./media/80c0b9e3753a9cb6.mp4"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Плавный поворот кресел. Свобода сценариев",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "bottomTips": "* В этом разделе показано оборудование шестиместной версии ZEEKR 9X. Ориентируйтесь на комплектацию конкретного автомобиля.",
+        "list": [
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "bgUrl": "./media/a6ddf47bea560add.webp",
+                "subTitle": "Удобная посадка и выход",
+                "subDesc": ""
+              },
+              {
+                "bgUrl": "./media/a942662e7db511bc.webp",
+                "subTitle": "Деловая встреча",
+                "subDesc": ""
+              }
+            ]
+          },
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "bgUrl": "./media/ae609d5c7784257d.webp",
+                "subTitle": "Общение с семьёй",
+                "subDesc": ""
+              },
+              {
+                "bgUrl": "./media/1c96e7b6f42c5259.webp",
+                "subTitle": "Большая кровать в путешествии",
+                "subDesc": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 2,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "chapterTitle": "Разные варианты комфорта. Единый флагманский стандарт",
+        "chapterDesc": "",
+        "children": [],
+        "style": "background: #EFE4DA"
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Роскошные материалы. Внимание к каждой детали",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background: #EFE4DA;margin-top: -1.2rem; z-index: 1;position: relative;",
+        "list": [
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "bgUrl": "./media/0e9ff1fd67ee44e2.webp",
+                "innerTitle": "Натуральная полнозернистая кожа Soft NAPPA",
+                "innerStyle": "color:#FFF4E2",
+                "bottomTips": "<span style=\"color: #000; opacity: 0.35; \">* Полнозернистая натуральная кожа Soft NAPPA используется на контактирующих с телом поверхностях сидений, центральных подлокотниках, отдельных участках дверных панелей и в других зонах.<span></span></span>"
+              },
+              {
+                "childList": [
+                  {
+                    "bgUrl": "./media/bb30492c85edf529.webp",
+                    "innerTitle": "Отделка натуральным скандинавским деревом",
+                    "innerStyle": "color:#FFF4E2"
+                  },
+                  {
+                    "bgUrl": "./media/e16827741f1dc65f.webp",
+                    "innerTitle": "Хрустальные поворотные регуляторы",
+                    "innerStyle": "color:#FFF4E2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Мягкая опора для долгих поездок без усталости",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background: #f5f6f7;",
+        "list": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/cd0e5a24683c5b50.mp4",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "list2": [],
+        "list3": [],
+        "list4": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "margin-top: -80px; padding-bottom: 0;",
+        "list": [
+          {
+            "childType": 5,
+            "childList": [
+              {
+                "bgUrl": "./media/59a2f8a73b3a81d4.webp",
+                "subTitle": "Простор и роскошный комфорт",
+                "subDesc": "12 слоёв в конструкции сиденья | Упругая пена толщиной 10 мм | Поддержка в 10 зонах"
+              },
+              {
+                "bgUrl": "./media/5e084c7fd1b3ce0c.webp",
+                "subTitle": "Адаптивная поясничная поддержка в четырёх направлениях",
+                "subDesc": "Интеллектуальная пневматическая регулировка с реакцией за 0,1 с помогает уменьшить усталость при длительном сидении."
+              },
+              {
+                "bgUrl": "./media/881581a6d80abd85.webp",
+                "subTitle": "Постукивающий и разминающий массаж в 22 точках",
+                "subDesc": "22 массажные точки и 8 техник массажа для расслабления тела и отдыха.",
+                "subTips": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 13,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "tips": "* Упругая пена, постукивающий и разминающий массаж в 22 точках, четырёхнаправленная адаптивная поясничная поддержка и указанное оборудование предусмотрены в пятиместной версии для передних и двух крайних сидений второго ряда, кроме центрального. В шестиместной версии — для первого и второго рядов, кроме третьего ряда.",
+        "style": "text-align: left;align-items: flex-start;padding-bottom:0;"
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "",
+        "chapterTitle": "Мир звука и изображения. Наслаждение для чувств",
+        "chapterDesc": "",
+        "bgUrl": ""
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "white",
+        "list": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/b07d633c4b75fb32.mp4",
+            "subTitle": "Сдвижной экран с крыловидным креплением",
+            "subDesc": "17-дюймовый OLED-экран 3K | Электрическое перемещение вперёд и назад | 5 положений наклона от 95° до 115°",
+            "subTips": ""
+          },
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/b07d633c4b75fb32.mp4",
+            "subTitle": "Открывающийся панорамный люк",
+            "subDesc": "Развлекательный экран для задних пассажиров и панорамный люк: развлечения и естественный свет доступны одновременно.",
+            "subTips": ""
+          }
+        ],
+        "list2": []
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "padding-bottom: 0.625rem",
+        "list": [
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "bgUrl": "./media/d2ed4a4b74174263.webp",
+                "subTitle": "6,3-дюймовый OLED-пульт управления",
+                "subDesc": "Быстросъёмное магнитное крепление и дистанционное управление.",
+                "subTips": ""
+              },
+              {
+                "bgUrl": "./media/47122715a2394ba1.webp",
+                "subTitle": "Атмосферная подсветка с 16,8 млн оттенков",
+                "subDesc": "Точная настройка спектра 256 цветов | Выбор из 16,8 млн оттенков | Питание постоянным током устраняет мерцание",
+                "subTips": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Аудиосистема Naim с концертным звучанием",
+        "titleStyle": "color:#FFF4E2;",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white",
+        "tabStyle": "bottom:0.3125rem;color:#FFF4E2",
+        "style": "padding-top:0;",
+        "list": [
+          {
+            "bgUrl": "./media/3e8f379fb237ae52.webp",
+            "videoUrl": "./media/e3fe6d979ea82a43.mp4",
+            "subStyle": "",
+            "subTitle": "Мощность",
+            "subDesc": "Пиковая мощность 3868 Вт",
+            "subTips": ""
+          },
+          {
+            "bgUrl": "./media/3e8f379fb237ae52.webp",
+            "videoUrl": "./media/e3fe6d979ea82a43.mp4",
+            "subStyle": "",
+            "subTitle": "Точность звучания",
+            "subDesc": "Широкий частотный диапазон 20–40 000 Гц",
+            "subTips": ""
+          },
+          {
+            "bgUrl": "./media/3e8f379fb237ae52.webp",
+            "videoUrl": "./media/12703b87f996fa35.mp4",
+            "subStyle": "",
+            "subTitle": "Погружение",
+            "subDesc": "Объёмное звуковое поле формата 9.2.4.8*",
+            "subTips": "* Пятиместная версия ZEEKR 9X оснащена системой объёмного звучания 7.2.4.8 с 30 высококлассными динамиками."
+          },
+          {
+            "bgUrl": "./media/3e8f379fb237ae52.webp",
+            "videoUrl": "./media/12703b87f996fa35.mp4",
+            "subStyle": "",
+            "subTitle": "Запатентованная М-образная конструкция",
+            "subDesc": "Титановые высокочастотные динамики значительно повышают детализацию высоких частот.",
+            "subTips": ""
+          }
+        ],
+        "configList": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Исключительная тишина. Высочайший уровень NVH",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "list": [],
+        "style": "",
+        "list5": [
+          {
+            "name": "Тишина салона, подтверждённая пятью сертификациями",
+            "desc": "Тишина в автомобиле | Низкий дорожный шум | Низкий шум ветра | Незаметное включение двигателя | Тихий электропривод",
+            "bgUrl": "",
+            "videoUrl": "./media/d2e2539a19354180.mp4"
+          },
+          {
+            "name": "Система активного шумоподавления",
+            "desc": "ENC — подавление шума двигателя | RNC — подавление дорожного шума",
+            "bgUrl": "",
+            "videoUrl": "./media/d2e2539a19354180.mp4"
+          },
+          {
+            "name": "11 стёкол с шумоизоляционной прослойкой PVB",
+            "desc": "Входит в стандартное оснащение автомобиля",
+            "bgUrl": "",
+            "videoUrl": "./media/d2e2539a19354180.mp4"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 14,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Ваши желания. Интеллектуальное управление",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background: #F5F6F7;",
+        "list": [
+          {
+            "subTitle": "47-дюймовый проекционный дисплей AR-HUD",
+            "subDesc": "Максимальная яркость 20 000 нит — чёткое изображение в разных условиях.",
+            "subTips": "",
+            "bgUrl": "./media/3f3b11735f4c9bb8.webp",
+            "videoUrl": ""
+          },
+          {
+            "subTitle": "Два 16-дюймовых OLED-экрана 3,5K: центральный и пассажирский",
+            "subDesc": "Объединённое пространство экранов: вся информация перед глазами.",
+            "subTips": "",
+            "bgUrl": "./media/00d01bf290e27fe4.webp",
+            "videoUrl": ""
+          },
+          {
+            "subTitle": "Активная боковая поддержка водительского кресла",
+            "subDesc": "Отслеживает движение автомобиля в реальном времени и адаптируется за 0,1 с.",
+            "subTips": "",
+            "bgUrl": "./media/7fc3319807d423be.webp",
+            "videoUrl": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Zeekr AI OS7",
+        "desc": "Операционная система салона со встроенным ИИ<br/>Новая эстетика. Новое взаимодействие. Новый интеллект",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "list": [
+          {
+            "name": "",
+            "desc": "",
+            "bgUrl": "",
+            "videoUrl": "./media/5464c366bb76c48e.mp4"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 13,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "tips": "* Рекламная визуализация. Изображения представлены для ознакомления.<br/>* Внешний вид, интерьер, интерфейс мультимедийной системы, функции автомобиля и другие параметры определяются условиями на момент оформления заказа и фактической поставкой.<br/>* Некоторые функции станут доступны после обновления OTA. Ориентируйтесь на официальные уведомления об обновлениях.",
+        "style": "text-align: left;align-items: flex-start;padding-bottom:0;line-height:1.3;"
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "titleStyle": "",
+        "topStyle": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "list": [
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "subTitle": "Вычислительная платформа салона с двумя чипами 8295",
+                "subDesc": "Мощность двух чипов обеспечивает исключительную плавность работы.",
+                "subTips": "",
+                "videoUrl": "",
+                "bgUrl": "./media/f4ef2e95cac435a2.webp"
+              },
+              {
+                "subTitle": "Super Eva",
+                "subDesc": "Больше возможностей общения, легче путешествия — настоящий помощник с ИИ.",
+                "subTips": "",
+                "videoUrl": "",
+                "bgUrl": "./media/7de8cffac8fcdd7d.webp"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 14,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Роскошь в каждой детали",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "background:#F5F6F7",
+        "list": [
+          {
+            "bgUrl": "./media/8cd8712af2a3785a.webp",
+            "subTitle": "Выдвижные подножки с электроприводом",
+            "subDesc": ""
+          },
+          {
+            "bgUrl": "./media/ed4e026e4f4c655e.webp",
+            "subTitle": "Электрические двери с интеллектуальными датчиками",
+            "subDesc": ""
+          },
+          {
+            "bgUrl": "./media/4b0acee017b66fa4.webp",
+            "subTitle": "9-литровый термобокс с охлаждением, подогревом и поддержанием температуры",
+            "subDesc": ""
+          },
+          {
+            "bgUrl": "./media/4ef59b02156e4e0b.webp",
+            "subTitle": "Солнцезащитные шторки для приватности",
+            "subDesc": ""
+          },
+          {
+            "bgUrl": "./media/58670a95d51820f7.webp",
+            "subTitle": "Скрытый отсек в двери с электроприводом",
+            "subDesc": ""
+          },
+          {
+            "bgUrl": "./media/a2569f87a661b57f.webp",
+            "subTitle": "Выдвижной кабель быстрой зарядки",
+            "subDesc": ""
+          },
+          {
+            "bgUrl": "./media/097e1acda24cc969.webp",
+            "subTitle": "Физические кнопки управления",
+            "subDesc": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "anchor zeekr9x-anchor-5",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "",
+        "chapterTitle": "Защитная броня Haohan",
+        "chapterDesc": "Прочный каркас. Всесторонняя защита",
+        "bgUrl": "./media/f4aa3e5cccbeb10d.webp"
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "bg3 white pdt0",
+        "contentStyle": "color:#FFF4E2;right:0;padding-top: 0.8333333333333334rem;padding-right:0.8229166666666666rem;width:2.34375rem;",
+        "list": [
+          {
+            "class": "content33w",
+            "bgUrl": "./media/7e5ed31de22bc6be.webp",
+            "videoUrl": "",
+            "subTitle": "«Дорожный танк ZEEKR»",
+            "subDesc": "",
+            "subTips": "",
+            "isBackground": true,
+            "isRight": false,
+            "style": "height:5.484375rem;",
+            "configList2": [
+              {
+                "value": " <span style='font-size: 0.20833333333333334rem;'>41600 N·m /deg</span>",
+                "key": "Жёсткость кузова на кручение"
+              },
+              {
+                "value": " <span style='font-size: 0.20833333333333334rem;'>91%</span>",
+                "key": "Доля высокопрочной стали и алюминиевых сплавов"
+              },
+              {
+                "value": " <span style='font-size: 0.20833333333333334rem;'>2000MPa</span>",
+                "key": "Сверхвысокопрочная сталь горячей штамповки"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 4,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Четыре цельные силовые структуры для всесторонней защиты",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "topStyle": "position: absolute;z-index: 2;",
+        "list2": [
+          {
+            "bgUrl": "./media/d7a2100279cd0216.webp",
+            "subTitle": "Цельное дверное кольцо из стали горячей штамповки прочностью 2000 МПа",
+            "subDesc": "",
+            "tabsItemStyle": "width: 100%;margin-bottom:0.5208333333333334rem;"
+          },
+          {
+            "bgUrl": "./media/d7a2100279cd0216.webp",
+            "subTitle": "Цельная литая алюминиевая усиливающая структура стоек C и D",
+            "subDesc": "",
+            "tabsItemStyle": "width: 100%;margin-bottom:0.5208333333333334rem;"
+          },
+          {
+            "bgUrl": "./media/d7a2100279cd0216.webp",
+            "subTitle": "Цельное усиливающее кольцо люка горячей штамповки",
+            "subDesc": "",
+            "tabsItemStyle": "width: 100%;margin-bottom:0.5208333333333334rem;"
+          },
+          {
+            "bgUrl": "./media/d7a2100279cd0216.webp",
+            "subTitle": "Цельная литая алюминиевая задняя часть кузова",
+            "subDesc": "",
+            "tabsItemStyle": "width: 100%;margin-bottom:0.5208333333333334rem;"
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 6,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Специальная защита гибридной системы. Оригинальные решения безопасности",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "",
+        "list": [
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "bgUrl": "./media/da58cce41fa71037.webp",
+                "subTitle": "Третий энергопоглощающий элемент",
+                "subDesc": "При столкновении с перекрытием 40% деформация моторного щита уменьшена на 20%.",
+                "subTips": ""
+              },
+              {
+                "bgUrl": "./media/00c9d35f8a5e3016.webp",
+                "subTitle": "Восемь поперечных, девять продольных элементов и десять защитных ячеек",
+                "subDesc": "Защита аккумулятора",
+                "subTips": ""
+              }
+            ]
+          },
+          {
+            "childType": 7,
+            "childList": [
+              {
+                "bgUrl": "./media/13d5ac870789b385.webp",
+                "subTitle": "Ограничивающий блок для защиты при столкновении",
+                "subDesc": "Защита топливного бака от прокола",
+                "subTips": ""
+              },
+              {
+                "bgUrl": "./media/b3997033ef735fb9.webp",
+                "subTitle": "Технология активного поворота высоковольтного распределительного блока",
+                "subDesc": "Помогает предотвратить риски, связанные с деформацией при столкновении.",
+                "subTips": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "chapter-9x",
+      "className": "anchor zeekr9x-anchor-6",
+      "isClearSpacing": false,
+      "source": {
+        "topDesc": "",
+        "chapterTitle": "Система помощи водителю Qianli Haohan H9",
+        "chapterDesc": "Видеть больше. Двигаться разумно",
+        "bgUrl": "./media/f4aa3e5cccbeb10d.webp"
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Высокая вычислительная мощность двух чипов",
+        "titleStyle": "margin-bottom: 0.08333333333333333rem;",
+        "desc": "",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "height:6.151041666666667rem;max-height: fit-content;overflow: hidden;margin:0.125rem;padding:0;",
+        "tabStyle": "bottom:0.59375rem;",
+        "descList": [
+          {
+            "value": "",
+            "key": "Два чипа NVIDIA DRIVE Thor-U"
+          },
+          {
+            "value": "",
+            "key": "Вычислительная мощность чипов — 1400 TOPS",
+            "keyStyle": "margin-right: 0.375rem;"
+          }
+        ],
+        "list": [
+          {
+            "bgUrl": "./media/65ff996e0905b482.webp",
+            "videoUrl": "",
+            "bgStyle": "",
+            "contentImgStyle": "position: absolute;bottom: 0.4166666666666667rem;margin-bottom: 0;",
+            "subStyle": "",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 7,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "",
+        "desc": "",
+        "jumpButton": "",
+        "theme": "",
+        "style": "padding-top:0;",
+        "contentStyle": "width: 2.7552083333333335rem;padding-top: 0.8333333333333334rem;",
+        "list": [
+          {
+            "class": "content33w",
+            "bgUrl": "./media/2c1ef49979039616.webp",
+            "videoUrl": "",
+            "subTitle": "Везде. Во всех направлениях. Постоянно<br/>Восприятие без слепых зон",
+            "subDesc": "",
+            "configListTitle": "Система восприятия с пятью лидарами",
+            "configListStyle": "margin-bottom:0.25rem; grid-template-columns: repeat(2, auto);",
+            "subTips": "",
+            "isBackground": true,
+            "style": "padding-top:0;height:5.484375rem;",
+            "configList": [
+              {
+                "value": "1 лидар",
+                "key": "520-линейный лидар сверхдальнего действия"
+              },
+              {
+                "value": "4 лидара",
+                "key": "Высокоточные твердотельные лидары"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": true,
+      "source": {
+        "title": "Двойное резервирование всей цепочки и восемь уровней резервирования безопасности",
+        "desc": "",
+        "bottomTips": "* Изображения представлены для ознакомления. Ориентируйтесь на автомобиль, фактически поступивший в продажу. Соблюдайте безопасность движения, правила дорожного движения и законодательство.",
+        "jumpButton": "",
+        "theme": "white",
+        "style": "padding-top:0;color:#FFF4E2; margin-top: -0.5rem;",
+        "list": [
+          {
+            "bgUrl": "",
+            "videoUrl": "./media/074a1a5b076044d2.mp4",
+            "subStyle": "",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "configList": [],
+        "ponitList": []
+      }
+    },
+    {
+      "type": 3,
+      "className": "",
+      "isClearSpacing": false,
+      "source": {
+        "title": "Система помощи водителю Qianli Haohan G-ASD 4.0",
+        "desc": "Вождение ближе к человеческому | Более плавное движение | Вызов автомобиля с парковки жестом",
+        "bottomTips": "",
+        "jumpButton": "",
+        "theme": "white",
+        "style": "color:#FFF4E2;",
+        "list": [
+          {
+            "bgUrl": "./media/27f32810184e11f4.webp",
+            "videoUrl": "",
+            "subStyle": "",
+            "subTitle": "",
+            "subDesc": "",
+            "subTips": ""
+          }
+        ],
+        "configList": [],
+        "ponitList": []
+      }
+    }
+  ],
+  "sequence": {
+    "title": "Цвет, раскрывающий характер",
+    "desc": "",
+    "style": "background:#F5F6F7;",
+    "bottomTips": "* Материалы представлены для ознакомления. Ориентируйтесь на фактически поставляемый автомобиль.",
+    "jumpButton": {
+      "buttonWord": "Обзор кузова на 360° и выбор комплектации",
+      "buttonIcon": "./media/1a42763d67522705.webp",
+      "routePath": "/toReserve?modelInfoId=10&modelYearCode=GMY_9X_01",
+      "url": ""
+    },
+    "ossUrl": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026",
+    "frameIndex": 0,
+    "imgData": [
+      {
+        "name": "Коричневый «Дикая природа»",
+        "desc": "Насыщенный коричневый оттенок воплощает силу земли. Спокойный и уверенный, он выражает сдержанное достоинство.",
+        "color": "brown",
+        "icon": "./media/5263c26fc7dafbe1.webp",
+        "imgNumber": 36
+      },
+      {
+        "name": "Чёрный «Полярная ночь»",
+        "desc": "Глубокий и спокойный, словно полуночное небо. Цвет, в котором внутренняя сила приобретает видимую форму.",
+        "color": "black",
+        "icon": "./media/fb670bd70c583b5a.webp",
+        "imgNumber": 36
+      },
+      {
+        "name": "Белый «Полярный день»",
+        "desc": "Цвет вечного света к северу от 66,5° северной широты. Чистое, величественное сияние полярного дня.",
+        "color": "white",
+        "icon": "./media/b89348ad47f68a2a.webp",
+        "imgNumber": 36
+      },
+      {
+        "name": "Серебристый «Ледник»",
+        "desc": "Холодное серебряное сияние ледников Аляски. Игра света и тени подчёркивает выразительные линии.",
+        "color": "sliver",
+        "icon": "./media/dec9cb70eea6c79f.webp",
+        "imgNumber": 36
+      },
+      {
+        "name": "Серый «Звёздное небо»",
+        "desc": "Ночное небо Сахары: звёзды на сером полотне, хранящем глубину и тайны Вселенной.",
+        "color": "grey",
+        "icon": "./media/c86ac6db80d51577.webp",
+        "imgNumber": 36
+      },
+      {
+        "name": "Фиолетовый «Сумерки»",
+        "desc": "Последний отблеск заката в сумерках. Естественная глубина фиолетового выражает сдержанную роскошь.",
+        "color": "purple",
+        "icon": "./media/b6898ce8495bc734.webp",
+        "imgNumber": 36
+      }
+    ]
+  },
+  "frames": {
+    "brown_0": "./media/2c7880d693efaf31.webp",
+    "brown_1": "./media/be6f3b1a467b68b0.webp",
+    "brown_2": "./media/332ce72794ad8cfd.webp",
+    "brown_3": "./media/3bf7c9b89b20f8d4.webp",
+    "brown_4": "./media/d05220f7b6498222.webp",
+    "brown_5": "./media/f40bc1218c59123f.webp",
+    "brown_6": "./media/7b0be8161b712838.webp",
+    "brown_7": "./media/5cfb07e6801ebcc8.webp",
+    "brown_8": "./media/967587657f9dd591.webp",
+    "brown_9": "./media/912286f514c34299.webp",
+    "brown_10": "./media/63326ab73f189ad3.webp",
+    "brown_11": "./media/85aa401a4d2d9048.webp",
+    "brown_12": "./media/063b5d12876406e3.webp",
+    "brown_13": "./media/a2cfa9f6c7b42e38.webp",
+    "brown_14": "./media/6758dbc530c1f5c9.webp",
+    "brown_15": "./media/bcfda5b8c2a8cfdf.webp",
+    "brown_16": "./media/cfae37f74fe8fc43.webp",
+    "brown_17": "./media/0f3415c9a81608d4.webp",
+    "brown_18": "./media/1ff63da4d914597d.webp",
+    "brown_19": "./media/0c97de593f1c2ceb.webp",
+    "brown_20": "./media/ccaa1c2558e027f0.webp",
+    "brown_21": "./media/b9cf2452b639746c.webp",
+    "brown_22": "./media/c457479f8d9761a3.webp",
+    "brown_23": "./media/146e140d33bd8791.webp",
+    "brown_24": "./media/2930135c78c3128f.webp",
+    "brown_25": "./media/b24caa3952c1d92b.webp",
+    "brown_26": "./media/57c925fa77af8791.webp",
+    "brown_27": "./media/63d40387064e4627.webp",
+    "brown_28": "./media/dc7147d2a4371bc5.webp",
+    "brown_29": "./media/c8df3d26e51eb9ed.webp",
+    "brown_30": "./media/61d3048769f30ead.webp",
+    "brown_31": "./media/2df609c59a7c8502.webp",
+    "brown_32": "./media/28511f25419f0a2b.webp",
+    "brown_33": "./media/438be0accfd5c8e5.webp",
+    "brown_34": "./media/705f8acece39e36b.webp",
+    "brown_35": "./media/941e7967ac11faef.webp",
+    "black_0": "./media/35b88f4fd54ba423.webp",
+    "black_1": "./media/ce501590fc8a76d7.webp",
+    "black_2": "./media/003301bba2f2aa2f.webp",
+    "black_3": "./media/c989bc530a50b211.webp",
+    "black_4": "./media/d2a4371600bed229.webp",
+    "black_5": "./media/d77b389c13c0dca1.webp",
+    "black_6": "./media/da43d37b1aa321ed.webp",
+    "black_7": "./media/35af1e88864ef131.webp",
+    "black_8": "./media/da40a1fbdea8f46d.webp",
+    "black_9": "./media/546f3d2159e20e75.webp",
+    "black_10": "./media/98afc62b2f54fdaa.webp",
+    "black_11": "./media/39c9a9fd22b695a6.webp",
+    "black_12": "./media/35680f0da272f018.webp",
+    "black_13": "./media/a9bf5e9c6dcb3632.webp",
+    "black_14": "./media/7eaef99d5a96c92b.webp",
+    "black_15": "./media/c6bf65836b1e5783.webp",
+    "black_16": "./media/a406fd2f392e8107.webp",
+    "black_17": "./media/fa0e5ecb41a02989.webp",
+    "black_18": "./media/b13d15ffd60d269d.webp",
+    "black_19": "./media/e0ebb66d54406320.webp",
+    "black_20": "./media/7bc57cd7569cf1bf.webp",
+    "black_21": "./media/0b6bd043cf322fd4.webp",
+    "black_22": "./media/c93348fda1cbdcbb.webp",
+    "black_23": "./media/de41784a1460a781.webp",
+    "black_24": "./media/f57eb8d5459b7a32.webp",
+    "black_25": "./media/ce9052a64e363d8f.webp",
+    "black_26": "./media/8ac1451717e397b9.webp",
+    "black_27": "./media/61074e7c1e623e63.webp",
+    "black_28": "./media/dfd5559a1cefdd9d.webp",
+    "black_29": "./media/2988d8353402c6a8.webp",
+    "black_30": "./media/1584c561dcfc5247.webp",
+    "black_31": "./media/3419ff52f7db7fae.webp",
+    "black_32": "./media/dfe19fe8b2e0004c.webp",
+    "black_33": "./media/0b598fdd901fbf08.webp",
+    "black_34": "./media/4a2d084205919b23.webp",
+    "black_35": "./media/bdc53316908f1d07.webp",
+    "white_0": "./media/61c6c4496f63be8d.webp",
+    "white_1": "./media/e5c8f7f120cc85c3.webp",
+    "white_2": "./media/9bb1f960260ca261.webp",
+    "white_3": "./media/78c4db3e8750ce33.webp",
+    "white_4": "./media/d14982e7a3b9b22f.webp",
+    "white_5": "./media/94daebeaf517ba5d.webp",
+    "white_6": "./media/5a4645546bc4d7be.webp",
+    "white_7": "./media/e01966d431f9d4aa.webp",
+    "white_8": "./media/63f03edf1588b13e.webp",
+    "white_9": "./media/f0dd47964db80294.webp",
+    "white_10": "./media/c6a9d343c1c96ef0.webp",
+    "white_11": "./media/7a70cdea22f95783.webp",
+    "white_12": "./media/ee179dc78f192dcf.webp",
+    "white_13": "./media/47f4cd3264ff15e4.webp",
+    "white_14": "./media/64e66accbf9f17eb.webp",
+    "white_15": "./media/10281d9a6c724c7d.webp",
+    "white_16": "./media/9236c896916caa34.webp",
+    "white_17": "./media/b8283c8d9ec32a1a.webp",
+    "white_18": "./media/803c4f42ba02e8ef.webp",
+    "white_19": "./media/7831df2833d58bbf.webp",
+    "white_20": "./media/3bba08706184271a.webp",
+    "white_21": "./media/d8878d859c436fd2.webp",
+    "white_22": "./media/06af26e6f33d0fac.webp",
+    "white_23": "./media/fe94c5d458220801.webp",
+    "white_24": "./media/0219ef7d0c4dbee0.webp",
+    "white_25": "./media/23324bf380d11f01.webp",
+    "white_26": "./media/bbe38840a8ff0c04.webp",
+    "white_27": "./media/e121a96d8b0cd591.webp",
+    "white_28": "./media/95fa0bd83df4a98e.webp",
+    "white_29": "./media/47a2fc15ac1e16bd.webp",
+    "white_30": "./media/77780efd4a192548.webp",
+    "white_31": "./media/93f4ac62f8c0d194.webp",
+    "white_32": "./media/9bcec94db3f61443.webp",
+    "white_33": "./media/9e5bfda63ae74cc9.webp",
+    "white_34": "./media/ba0bb3b939fdeb88.webp",
+    "white_35": "./media/ebc94a6c18f0d7c4.webp",
+    "sliver_0": "./media/4f34b41e2bf86839.webp",
+    "sliver_1": "./media/b1f6165cc1c5d9ca.webp",
+    "sliver_2": "./media/a196144e961b5792.webp",
+    "sliver_3": "./media/b524fdba30cba54a.webp",
+    "sliver_4": "./media/c991882675dbf64e.webp",
+    "sliver_5": "./media/cf504f27d34f2db5.webp",
+    "sliver_6": "./media/d5e0f0b81325fc22.webp",
+    "sliver_7": "./media/e817b91547db4e1f.webp",
+    "sliver_8": "./media/e29872e3a0171063.webp",
+    "sliver_9": "./media/b801eae3bc37ea21.webp",
+    "sliver_10": "./media/7a7083b7f8b6ce4c.webp",
+    "sliver_11": "./media/774d51ab9b194422.webp",
+    "sliver_12": "./media/ddbfdcafc9208544.webp",
+    "sliver_13": "./media/da5144c9087b411e.webp",
+    "sliver_14": "./media/5f5727a348d3de87.webp",
+    "sliver_15": "./media/614f63f22d606184.webp",
+    "sliver_16": "./media/6c511c62b2dc72d1.webp",
+    "sliver_17": "./media/d243478f6978f739.webp",
+    "sliver_18": "./media/819b93d40db4bd83.webp",
+    "sliver_19": "./media/4aa4c2f3acc1d737.webp",
+    "sliver_20": "./media/b701d7f681edfa40.webp",
+    "sliver_21": "./media/31fab6c7b1ed6bd1.webp",
+    "sliver_22": "./media/0692c24e5df10876.webp",
+    "sliver_23": "./media/03c20d315471a7c8.webp",
+    "sliver_24": "./media/01fe4b944baa6aa1.webp",
+    "sliver_25": "./media/5da0a60ebc6eddfc.webp",
+    "sliver_26": "./media/0a0a75fed0a81479.webp",
+    "sliver_27": "./media/20db02bdb6b403eb.webp",
+    "sliver_28": "./media/bf566de90bbe5313.webp",
+    "sliver_29": "./media/79fff821b1d397c3.webp",
+    "sliver_30": "./media/b47cabe1dd7b22fd.webp",
+    "sliver_31": "./media/6d90c6cd75cee68f.webp",
+    "sliver_32": "./media/420a5adcb106f4fc.webp",
+    "sliver_33": "./media/259c2534c4c374ee.webp",
+    "sliver_34": "./media/e2ae4bcba54d1288.webp",
+    "sliver_35": "./media/ba6d25f2e6d5ce2c.webp",
+    "grey_0": "./media/32539e3c2893c6d8.webp",
+    "grey_1": "./media/d1d710e66debf8e7.webp",
+    "grey_2": "./media/7195a3cd21fa0ea5.webp",
+    "grey_3": "./media/61f25e827986d0bd.webp",
+    "grey_4": "./media/d5e9a2e8d286cd21.webp",
+    "grey_5": "./media/edec2a8e0dea6371.webp",
+    "grey_6": "./media/3cd65b97c7c42950.webp",
+    "grey_7": "./media/2514f7a1a81182f2.webp",
+    "grey_8": "./media/c0d502b34cc6601d.webp",
+    "grey_9": "./media/69d5995b9c7b66f3.webp",
+    "grey_10": "./media/ef66691828741fc0.webp",
+    "grey_11": "./media/70fa877e9a43713e.webp",
+    "grey_12": "./media/cfe233f7fa5fb162.webp",
+    "grey_13": "./media/2c78f81afe0d056d.webp",
+    "grey_14": "./media/f3da6ac8394579d9.webp",
+    "grey_15": "./media/6f84c90fe1d94f5f.webp",
+    "grey_16": "./media/5814f077569f9829.webp",
+    "grey_17": "./media/8803b43a0acc60d6.webp",
+    "grey_18": "./media/9009f6608e925573.webp",
+    "grey_19": "./media/9f2f7a2ef008d040.webp",
+    "grey_20": "./media/090f64ce52a17b8c.webp",
+    "grey_21": "./media/30adc5cacf75edc8.webp",
+    "grey_22": "./media/db4ece07d5a7c15e.webp",
+    "grey_23": "./media/4bb520be5d5bf6f4.webp",
+    "grey_24": "./media/aea913cfdcb780d7.webp",
+    "grey_25": "./media/0bbe5b4979f8cfd9.webp",
+    "grey_26": "./media/f4f215b8dd75891b.webp",
+    "grey_27": "./media/9ea6fd518b0948a1.webp",
+    "grey_28": "./media/7d16b6d7ede04ceb.webp",
+    "grey_29": "./media/150c6b12fe1dd94b.webp",
+    "grey_30": "./media/c7c35d4193168cb3.webp",
+    "grey_31": "./media/a2533d75d1ed84f6.webp",
+    "grey_32": "./media/10086c518923be64.webp",
+    "grey_33": "./media/71549d0e52ed3b99.webp",
+    "grey_34": "./media/a46918badf4a2981.webp",
+    "grey_35": "./media/a2460986b0ee8dd8.webp",
+    "purple_0": "./media/fda477f00dcffe06.webp",
+    "purple_1": "./media/969326c688510afc.webp",
+    "purple_2": "./media/3bb948450327c19e.webp",
+    "purple_3": "./media/68f00b78f98e90dc.webp",
+    "purple_4": "./media/87de716b0e8df6ce.webp",
+    "purple_5": "./media/84ef1eff3cdaaea4.webp",
+    "purple_6": "./media/6ef51fba3c638ae6.webp",
+    "purple_7": "./media/b7d39321e79939e9.webp",
+    "purple_8": "./media/ef2ea42b3a640fb9.webp",
+    "purple_9": "./media/f3841b5f65b79de7.webp",
+    "purple_10": "./media/28d41133edca244e.webp",
+    "purple_11": "./media/57e49a562141d090.webp",
+    "purple_12": "./media/5a9d79b28c0dd582.webp",
+    "purple_13": "./media/d603c83addb6953b.webp",
+    "purple_14": "./media/cbcca6778561688d.webp",
+    "purple_15": "./media/6c7cc6ae8039d5f6.webp",
+    "purple_16": "./media/3de847df9ee49205.webp",
+    "purple_17": "./media/c171e88dd8de3b22.webp",
+    "purple_18": "./media/7d709bb71c30661b.webp",
+    "purple_19": "./media/82c537e16368e30b.webp",
+    "purple_20": "./media/c8c93449d0003e8b.webp",
+    "purple_21": "./media/2fb1d6dfc38c4b4b.webp",
+    "purple_22": "./media/37b75e1d294cbc25.webp",
+    "purple_23": "./media/3464247004fb251d.webp",
+    "purple_24": "./media/c3b7a5b207062bb9.webp",
+    "purple_25": "./media/d04ba79ee332467a.webp",
+    "purple_26": "./media/cec6dbbd0f049ce2.webp",
+    "purple_27": "./media/1941e7a4e8a8cb68.webp",
+    "purple_28": "./media/0e8b3309646d7cef.webp",
+    "purple_29": "./media/937057f388468fff.webp",
+    "purple_30": "./media/72d645cf6e7a5fbc.webp",
+    "purple_31": "./media/a41689c2be081582.webp",
+    "purple_32": "./media/fc435fb5351a3f83.webp",
+    "purple_33": "./media/7ae6980cb4e5a362.webp",
+    "purple_34": "./media/5d1329bfa1b7393f.webp",
+    "purple_35": "./media/71f2788b379bbec1.webp"
+  },
+  "videoPosters": {
+    "./media/074a1a5b076044d2.mp4": "./posters/074a1a5b076044d2.webp",
+    "./media/12703b87f996fa35.mp4": "./posters/12703b87f996fa35.webp",
+    "./media/2cb647452a2c6057.mp4": "./posters/2cb647452a2c6057.webp",
+    "./media/347268c5886f41a5.mp4": "./posters/347268c5886f41a5.webp",
+    "./media/422813e18288a18a.mp4": "./posters/422813e18288a18a.webp",
+    "./media/42dd9df057335a92.mp4": "./posters/42dd9df057335a92.webp",
+    "./media/4a321333523f72fe.mp4": "./posters/4a321333523f72fe.webp",
+    "./media/5464c366bb76c48e.mp4": "./posters/5464c366bb76c48e.webp",
+    "./media/5d7454701c8f6106.mp4": "./posters/5d7454701c8f6106.webp",
+    "./media/76af5784d0a9e40b.mp4": "./posters/76af5784d0a9e40b.webp",
+    "./media/7dfddc3bf4d9e7d2.mp4": "./posters/7dfddc3bf4d9e7d2.webp",
+    "./media/80c0b9e3753a9cb6.mp4": "./posters/80c0b9e3753a9cb6.webp",
+    "./media/b07d633c4b75fb32.mp4": "./posters/b07d633c4b75fb32.webp",
+    "./media/b7aece15837f37cf.mp4": "./posters/b7aece15837f37cf.webp",
+    "./media/c2ed67cb8a51f126.mp4": "./posters/c2ed67cb8a51f126.webp",
+    "./media/cd0e5a24683c5b50.mp4": "./posters/cd0e5a24683c5b50.webp",
+    "./media/d2e2539a19354180.mp4": "./posters/d2e2539a19354180.webp",
+    "./media/d3f2633d8ad0a067.mp4": "./posters/d3f2633d8ad0a067.webp",
+    "./media/d778bcb6da05b064.mp4": "./posters/d778bcb6da05b064.webp",
+    "./media/e3fe6d979ea82a43.mp4": "./posters/e3fe6d979ea82a43.webp"
+  }
+}
