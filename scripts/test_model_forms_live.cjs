@@ -81,6 +81,32 @@ async function main() {
       const audi=page.locator('form[data-ast-standard-form]').filter({visible:true}).first();
       await standard(audi,'Audi A5L');
       console.log('PASS Audi A5L canary: '+viewport.width);
+      const priceRows = [
+        ['premium-auto-moskva', '.ast-actions:has([data-ast-hero-telegram])'],
+        ['premium-auto-s-nds', '.ast-actions:has([data-ast-hero-telegram])'],
+        ['bezopasnaya-sdelka', '.ast-actions:has([data-ast-source-section="final"])'],
+        ['rolls-royce-cullinan-podbor', '.rrc-actions:has([data-cta="cullinan_hero_primary"])'],
+        ['volkswagen-tavendor-2026', '.actions:has(a[data-ast-message]):not(:has([data-tavendor-goal="request"]))']
+      ];
+      if (viewport.width > 1000) priceRows.push(['bmw-x3', '.rrc-hdr__right']);
+      for (const [slug, selector] of priceRows) {
+        await page.goto(base+'/'+slug+'?utm_source=ast_test',{waitUntil:'domcontentloaded',timeout:60000});
+        const row = page.locator(selector);
+        const quote = row.locator('[data-ast-quote-open]:visible');
+        await quote.first().waitFor({state:'visible'});
+        assert.equal(await quote.count(), 1, slug+' has one visible quote action');
+        await quote.click();
+        const dialog = page.locator('#ast-quote-dialog[open]');
+        if (await dialog.isVisible()) {
+          await standard(dialog.locator('form[data-ast-standard-form]'));
+          await dialog.locator('.ast-quote-close').click();
+        } else {
+          const anchor = new URL(page.url()).hash;
+          assert.ok(['#request','#lead'].includes(anchor), slug+' opens its inline form');
+          await standard(page.locator(anchor+' form[data-ast-standard-form]:visible'));
+        }
+        console.log('PASS single quote action and form: '+slug+' '+viewport.width);
+      }
       await context.close();
     }
   } finally { await browser.close(); }
