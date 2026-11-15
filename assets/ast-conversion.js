@@ -1508,6 +1508,38 @@
       }
       if (label && label.textContent !== priceLabel) label.textContent = priceLabel;
     }
+    function reconcileQuoteButtons() {
+      var rows = '.rrc-hdr__right,.rrc-actions,.ast-actions,.ast-sticky-cta__menu';
+      if (path() === '/volkswagen-tavendor-2026') rows += ',.actions';
+      document.querySelectorAll(rows).forEach(function (row) {
+        var previous = row.querySelectorAll(':scope > [data-ast-quote-duplicate]');
+        var candidates = Array.from(row.children).filter(function (el) {
+          return el.matches('a[data-ast-quote-open],button[data-ast-quote-open]') &&
+            el.textContent.trim() === priceLabel && isQuoteOpener(el);
+        });
+        if (!previous.length && candidates.length < 2) return;
+        // Measure each sibling with its native responsive styles before choosing a button.
+        previous.forEach(function (el) { el.removeAttribute('data-ast-quote-duplicate'); });
+        var keep = new Map();
+        var rowHidden = getComputedStyle(row).visibility === 'hidden';
+        candidates.filter(function (el) {
+          var css = getComputedStyle(el);
+          return !el.matches('[hidden],[aria-hidden="true"],:disabled,[aria-disabled="true"]') &&
+            css.display !== 'none' && (rowHidden || css.visibility !== 'hidden');
+        }).forEach(function (el) {
+          // Siblings have the same source form. Model, trim and offer presets can still differ.
+          var key = JSON.stringify(context(null, el));
+          var primary = keep.get(key);
+          if (!primary) { keep.set(key, el); return; }
+          if (el.matches('.rrc-btn--red,.ast-sticky-cta__item--request,[data-ast-safe-cta="primary"]')) {
+            keep.set(key, el);
+            el = primary;
+          }
+          if (el === document.activeElement) keep.get(key).focus({preventScroll:true});
+          el.setAttribute('data-ast-quote-duplicate', '');
+        });
+      });
+    }
     function mountZeekrInquiry() {
       if (path() !== '/zeekr-8x') return;
       document.querySelectorAll('#ast-oem-root[data-ast-oem-model="zeekr-8x"] #ast-model-inquiry, #ast-oem-root[data-ast-oem-model="zeekr-8x"] [role="dialog"].ast-inquiry').forEach(function (inquiry) {
@@ -1566,6 +1598,7 @@
       mountZeekrInquiry();
       mountEvCalculator();
       document.querySelectorAll('a,button').forEach(labelOpener);
+      reconcileQuoteButtons();
       document.querySelectorAll('#lead,#gr-order').forEach(function (section) {
         var heading = section.querySelector('#lead-title,h2');
         if (heading && (section.id === 'gr-order' || section.querySelector('[data-ast-standard-form]')) && heading.textContent !== priceLabel) {
@@ -1685,6 +1718,12 @@
       show(trigger,source);
       quoteTrack('ast_cta_click',modal.querySelector('form'),{position:positionOf(trigger),channel:'form'});
     },true);
+    style.sheet.insertRule('[data-ast-quote-duplicate]{display:none!important}', 0);
+    var resizeFrame = 0;
+    window.addEventListener('resize', function () {
+      if (resizeFrame) return;
+      resizeFrame = requestAnimationFrame(function () { resizeFrame = 0; reconcileQuoteButtons(); });
+    });
     var scheduled = false;
     new MutationObserver(function () { if (!scheduled) { scheduled = true; setTimeout(function () { scheduled = false; mount(); },100); } }).observe(document.body,{childList:true,subtree:true});
     window.__astUniversalQuote = {mount:mount,open:function (options) { show(document.activeElement,null); var f = modal.querySelector('form'); if (options.model) field(f,'model',options.model); if (options.offerId) field(f,'offer_id',options.offerId); }}; mount();
