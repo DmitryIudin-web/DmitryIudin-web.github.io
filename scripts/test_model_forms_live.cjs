@@ -96,8 +96,15 @@ async function main() {
         await quote.first().waitFor({state:'visible'});
         assert.equal(await quote.count(), 1, slug+' has one visible quote action');
         await quote.click();
-        await standard(page.locator('#ast-quote-dialog[open] form[data-ast-standard-form]'));
-        await page.locator('#ast-quote-dialog[open] .ast-quote-close').click();
+        const dialog = page.locator('#ast-quote-dialog[open]');
+        if (await dialog.isVisible()) {
+          await standard(dialog.locator('form[data-ast-standard-form]'));
+          await dialog.locator('.ast-quote-close').click();
+        } else {
+          const anchor = new URL(page.url()).hash;
+          assert.ok(['#request','#lead'].includes(anchor), slug+' opens its inline form');
+          await standard(page.locator(anchor+' form[data-ast-standard-form]:visible'));
+        }
         console.log('PASS single quote action and form: '+slug+' '+viewport.width);
       }
       await context.close();
