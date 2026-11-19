@@ -165,12 +165,12 @@
  .mobile-spec-picker select{width:100%;min-height:52px;border:1px solid #b8bec7;border-radius:8px;background:#fff;padding:10px 12px;color:#1e2329;font:16px Arial,sans-serif}
  .mobile-spec-tools{display:block;min-height:44px;width:100%;margin:0 0 16px;border:1px solid #d3d7dd;border-radius:8px;background:#f6f7f8;color:#28303b;font:15px/1.4 Arial,sans-serif;padding:10px 12px;text-align:left}
  .specs-dialog .spec-scroll{width:100%;max-height:none;overflow:visible}
- .specs-dialog .spec-scroll .config{width:100%!important;min-width:0!important;font-size:16px}
+ .specs-dialog .spec-scroll .config{display:block!important;width:100%!important;min-width:0!important;max-width:100%;font-size:16px}
  .specs-dialog .spec-scroll .config > .container{display:block!important;width:100%;padding:0!important}
- .specs-dialog .spec-scroll .config-left{display:none!important;position:static!important;top:auto!important;width:100%!important;height:auto!important;max-height:none!important;overflow:visible!important;padding:0 0 20px!important}
+ .specs-dialog .spec-scroll .config-left{display:none!important;position:static!important;top:auto!important;width:100%!important;min-width:0;max-width:100%;height:auto!important;max-height:none!important;overflow:visible!important;padding:0 0 20px!important}
  .specs-dialog.specs-tools-open .spec-scroll .config-left{display:block!important}
  .specs-dialog .spec-scroll .config-right{width:100%!important;padding:0!important}
- .specs-dialog .spec-scroll .point{display:flex!important;gap:8px;overflow-x:auto;padding:0 0 12px!important}
+ .specs-dialog .spec-scroll .point{display:flex!important;gap:8px;min-width:0;max-width:100%;overflow-x:auto;padding:0 0 12px!important}
  .specs-dialog .spec-scroll .point-item{display:flex;align-items:center;flex:0 0 190px;min-height:44px;padding:10px 12px;margin:0!important;border:1px solid #d3d7dd;border-radius:8px;font-size:14px!important;line-height:1.45!important}
  .specs-dialog .spec-scroll .point-item .line{display:none}
  .specs-dialog .spec-scroll .screenner-title{font-size:14px!important;line-height:1.45!important}
@@ -179,7 +179,7 @@
  .specs-dialog .spec-scroll .version-wrapper,.specs-dialog .spec-scroll .model{display:none!important}
  .specs-dialog .spec-scroll .model-wrapper{display:block!important}
  .specs-dialog .spec-scroll .model-wrapper .tips{display:flex!important;flex-wrap:wrap;gap:8px 16px;width:100%!important;max-width:100%;padding:0 0 20px!important}
- .specs-dialog .spec-scroll .tips-item{display:flex;align-items:center;gap:6px;min-width:0;font-size:14px!important;line-height:1.45!important}
+ .specs-dialog .spec-scroll .tips-item{display:flex;align-items:center;gap:6px;min-width:0;font-size:14px!important;line-height:1.45!important;color:#616873!important}
  .specs-dialog .spec-scroll .tips-item > div{font-size:14px!important;line-height:1.45!important}
  .specs-dialog .spec-scroll .tips-item svg{flex:0 0 18px;width:18px!important;height:18px!important}
  .specs-dialog .spec-scroll .first-level-title{min-height:52px;padding:14px 0!important;gap:8px;border-bottom:2px solid #272e38;font-size:20px!important;line-height:1.35}

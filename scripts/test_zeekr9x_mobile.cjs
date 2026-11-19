@@ -426,6 +426,8 @@ async function candidate(browser, width) {
       const filters = specs.getByRole('button', { name: 'Разделы и фильтры', exact: true });
       await filters.click();
       assert.equal(await filters.getAttribute('aria-expanded'), 'true');
+      const filterFit = await specs.evaluate(el => ({ width: el.clientWidth, scrollWidth: el.scrollWidth }));
+      assert.ok(filterFit.scrollWidth <= filterFit.width + 2, 'expanded mobile specification filters have no horizontal overflow');
       await shot(page, prefix, 'specifications-filters');
       await filters.click();
       assert.equal(await filters.getAttribute('aria-expanded'), 'false');
