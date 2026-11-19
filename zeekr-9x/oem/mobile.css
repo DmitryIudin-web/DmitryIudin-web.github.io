@@ -17,14 +17,14 @@
  #app.oem-9x .ast-oem-bar .ast-back{display:flex;align-items:center;min-height:44px;text-decoration:none!important}
  #app.oem-9x .navigation #mobile-menu{display:inline-flex!important;position:static!important;align-items:center;justify-content:center;min-width:96px;min-height:44px;padding:8px 14px;border:1px solid #51555b;border-radius:8px;color:#fff;background:#292d33;font-size:15px!important}
  #app.oem-9x .navigation-car:not(.mobile-open){display:none!important}
- #app.oem-9x .navigation .navigation-car.mobile-open,#app.oem-9x .navigation.scrolled .navigation-car.mobile-open{display:block!important;position:absolute!important;inset:100% 0 auto!important;width:100%!important;max-height:calc(100dvh - 72px);padding:20px;background:#fff!important;color:#1e2329!important;overflow-y:auto;overscroll-behavior:contain;box-shadow:0 14px 24px #0002;transform:none!important}
+ #app.oem-9x .navigation .navigation-car.mobile-open,#app.oem-9x .navigation.scrolled .navigation-car.mobile-open{display:block!important;position:absolute!important;inset:100% 0 auto!important;width:100%!important;height:auto!important;max-height:calc(100dvh - 72px);padding:20px;background:#fff!important;color:#1e2329!important;overflow-y:auto;overscroll-behavior:contain;box-shadow:0 14px 24px #0002;transform:none!important}
  #app.oem-9x .navigation-car-container,#app.oem-9x .navigation-car-main{display:block!important;min-height:0!important;width:100%!important;height:auto!important;padding:0!important;margin:0!important}
  #app.oem-9x .navigation-car .title{font-size:20px!important;font-weight:700;margin:0 0 16px}
  #app.oem-9x .navigation-car .line{display:none}
  #app.oem-9x .navigation-car .anchorlist{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important;margin:0 0 16px;padding:0}
  #app.oem-9x .navigation .anchorlist-item{display:flex;align-items:center;min-width:0;min-height:48px;padding:10px 12px!important;border:1px solid #dfe2e6;border-radius:8px;color:#282e36!important;opacity:1!important;font-size:15px!important;line-height:1.35;margin:0!important}
  #app.oem-9x .navigation .anchorlist-item.active{background:#eee7de;border-color:#b99874}
- #app.oem-9x .navigation-car-toolbar{display:grid!important;grid-template-columns:1fr;gap:8px}
+ #app.oem-9x .navigation-car-toolbar{display:grid!important;grid-template-columns:1fr;height:auto!important;gap:8px}
  #app.oem-9x .navigation-car-toolbar .toolbar-item{min-height:48px;height:auto!important;margin:0!important;padding:0!important;border:1px solid #c9cdd2;border-radius:8px}
  #app.oem-9x .navigation-car-toolbar .toolbar-item:empty{display:none}
  #app.oem-9x .navigation-car-toolbar .toolbar-item-link{display:flex;justify-content:center;align-items:center;min-height:48px;padding:10px 16px;line-height:1.4;font-size:16px!important;opacity:1!important;color:#1e2329!important}

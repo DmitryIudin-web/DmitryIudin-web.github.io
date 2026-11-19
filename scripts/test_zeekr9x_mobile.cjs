@@ -18,6 +18,10 @@ const overrides = new Set([
 fs.mkdirSync(OUT, { recursive: true });
 const results = [];
 const expectedModels = JSON.parse(fs.readFileSync('zeekr-9x/oem/specification-data.json', 'utf8')).modelList.length;
+const heroSource = fs.readFileSync('zeekr-9x/oem/index.html', 'utf8')
+  .match(/class="banner\b[^"]*"[\s\S]*?<video\b[\s\S]*?<source\b[^>]*\bsrc="([^"]+)"/);
+assert.ok(heroSource, 'the hero video source must be identifiable in the checked-in markup');
+const HERO_VIDEO = new URL(heroSource[1], PAGES + '/zeekr-9x/oem/index.html').href;
 
 async function waitForPublication() {
   if (!DEPLOYED) return;
@@ -55,9 +59,15 @@ async function makeContext(browser, width, candidate) {
     reducedMotion: 'reduce',
     serviceWorkers: 'block',
   });
-  const network = { blockedMutations: 0, failedOwnResources: [] };
-  let allowedVideo;
+  const network = { blockedMutations: 0, failedOwnResources: [], allowedVideo: HERO_VIDEO, mediaRequests: [], blockedMedia: [], failedMedia: [], mediaResponses: [] };
+  context.on('requestfailed', req => {
+    if (req.resourceType() === 'media') network.failedMedia.push({ url: req.url(), reason: req.failure()?.errorText });
+  });
   context.on('response', response => {
+    if (response.request().resourceType() === 'media') {
+      const headers = response.headers();
+      network.mediaResponses.push({ url: response.url(), status: response.status(), type: headers['content-type'], range: headers['content-range'] });
+    }
     if (response.status() >= 400 && response.url().startsWith(PAGES + '/zeekr-9x/')) {
       network.failedOwnResources.push({ status: response.status(), url: response.url() });
     }
@@ -76,8 +86,11 @@ async function makeContext(browser, width, candidate) {
     }
     if (/mc\.yandex\.|googletagmanager\.|google-analytics\./i.test(req.url())) return route.abort();
     if (req.resourceType() === 'media') {
-      if (!allowedVideo) allowedVideo = url.origin + url.pathname;
-      if (url.origin + url.pathname !== allowedVideo) return route.abort();
+      network.mediaRequests.push({ url: req.url(), range: req.headers()['range'] || null });
+      if (url.origin + url.pathname !== HERO_VIDEO) {
+        network.blockedMedia.push(req.url());
+        return route.abort();
+      }
     }
     return route.continue();
   });
@@ -234,6 +247,23 @@ async function candidate(browser, width) {
       await menu.click();
       assert.equal(await menu.getAttribute('aria-expanded'), 'true');
       await shot(page, prefix, 'menu');
+      result.menu = await frame.locator('.navigation-car').evaluate(panel => {
+        const b = panel.getBoundingClientRect();
+        const viewport = { left: Math.max(0, b.left), right: Math.min(innerWidth, b.right), top: Math.max(0, b.top), bottom: Math.min(innerHeight, b.bottom) };
+        const links = [...panel.querySelectorAll('[data-anchor]')].slice(0, 3).map(el => {
+          const r = el.getBoundingClientRect();
+          const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+          return { text: el.textContent.trim(), x: r.x, y: r.y, width: r.width, height: r.height,
+            insideMenuViewport: r.left >= viewport.left - 1 && r.right <= viewport.right + 1 &&
+              r.top >= viewport.top - 1 && r.bottom <= viewport.bottom + 1,
+            hittable: !!hit && (el === hit || el.contains(hit)) };
+        });
+        return { height: b.height, width: b.width, viewport, links };
+      });
+      assert.ok(result.menu.height >= 180, `expanded mobile menu must have usable height: ${result.menu.height}`);
+      assert.equal(result.menu.links.length, 3, 'mobile menu has at least three section links');
+      assert.ok(result.menu.links.every(link => link.width > 0 && link.height >= 43 && link.insideMenuViewport && link.hittable),
+        `first mobile menu links must be readable and reachable inside the menu: ${JSON.stringify(result.menu.links)}`);
       const design = frame.locator('[data-anchor="1"]');
       await design.click();
       await frame.waitForFunction(() => document.querySelector('#mobile-menu')?.getAttribute('aria-expanded') === 'false');
@@ -243,14 +273,42 @@ async function candidate(browser, width) {
     }
 
     const video = frame.locator('.banner video').first();
-    await video.scrollIntoViewIfNeeded();
-    await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click();
-    await frame.waitForFunction(() => {
-      const v = document.querySelector('.banner video');
-      return v && !v.paused && v.readyState >= 2;
-    }, null, { timeout: 30000 });
-    result.heroVideoPlayable = true;
-    await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click();
+    const videoState = () => video.evaluate(v => {
+      const b = v.getBoundingClientRect();
+      return { currentSrc: v.currentSrc, source: v.querySelector('source')?.getAttribute('src'),
+        readyState: v.readyState, networkState: v.networkState, paused: v.paused,
+        currentTime: v.currentTime, error: v.error ? { code: v.error.code, message: v.error.message } : null,
+        buffered: Array.from({ length: v.buffered.length }, (_, i) => [v.buffered.start(i), v.buffered.end(i)]),
+        reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, documentHidden: document.hidden,
+        viewport: { width: innerWidth, height: innerHeight },
+        navigation: (() => { const n = document.querySelector('.navigation')?.getBoundingClientRect(); return n ? { x: n.x, y: n.y, width: n.width, height: n.height } : null; })(),
+        bbox: { x: b.x, y: b.y, width: b.width, height: b.height } };
+    });
+    try {
+      await video.scrollIntoViewIfNeeded();
+      result.videoBefore = await videoState();
+      await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click();
+      await frame.waitForFunction(() => {
+        const v = document.querySelector('.banner video');
+        return v && !v.paused && v.readyState >= 2;
+      }, null, { timeout: 30000 });
+      result.heroVideoPlayable = true;
+    } catch (error) {
+      result.heroVideoPlayable = false;
+      result.heroVideoFailure = String(error).slice(0, 1200);
+      await shot(page, prefix, 'video-failure').catch(() => {});
+    } finally {
+      result.videoAfter = await videoState().catch(error => ({ inspectionError: String(error) }));
+      result.videoParent = await page.evaluate(() => {
+        const f = document.querySelector('#zeekr-9x-review')?.getBoundingClientRect();
+        return { scrollY, viewport: { width: innerWidth, height: innerHeight }, iframe: f ? { x: f.x, y: f.y, width: f.width, height: f.height } : null };
+      });
+      if (result.videoAfter.paused === false) {
+        await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click()
+          .catch(error => { result.videoPauseError = String(error); });
+      }
+    }
+    // Continue the remaining UI checks and screenshots even when video playback failed.
 
     if (width === 390) {
       for (const section of [3, 4, 5, 18, 29, 44]) {
@@ -314,7 +372,8 @@ async function candidate(browser, width) {
     const outer = await page.evaluate(() => ({ width: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
     assert.ok(outer.scrollWidth <= outer.width + 2, 'parent Tilda page has no horizontal overflow');
     assert.deepEqual(result.errors.filter(error => error.fromReview), [], 'review must not raise uncaught JavaScript errors');
-    result.ok = true;
+    result.ok = result.heroVideoPlayable === true;
+    if (!result.ok) result.failure = 'Hero video: ' + result.heroVideoFailure;
   } catch (error) {
     result.ok = false;
     result.failure = String(error).slice(0, 1800);
@@ -338,7 +397,7 @@ async function main() {
     await browser.close();
     fs.writeFileSync(path.join(OUT, 'results.json'), JSON.stringify(results, null, 2));
   }
-  console.log('MOBILE_RESULTS', JSON.stringify(results.map(({ name, width, ok, failure, form, heroVideoPlayable, rotation, specificationRows, specificationVersions, fullReviewQuote }) => ({ name, width, ok, failure, form, heroVideoPlayable, rotation, specificationRows, specificationVersions, fullReviewQuote }))));
+  console.log('MOBILE_RESULTS', JSON.stringify(results.map(({ name, width, ok, failure, form, heroVideoPlayable, heroVideoFailure, videoAfter, rotation, specificationRows, specificationVersions, fullReviewQuote }) => ({ name, width, ok, failure, form, heroVideoPlayable, heroVideoFailure, videoAfter, rotation, specificationRows, specificationVersions, fullReviewQuote }))));
   if (results.some(result => result.assertions !== false && !result.ok)) process.exitCode = 1;
 }
 main().catch(error => {
