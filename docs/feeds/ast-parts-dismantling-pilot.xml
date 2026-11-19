@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ads formatVersion="3" target="Avito.ru">
+  <Ad>
+    <Id>ast-service-dismantling</Id>
+    <Title>Запчасти с разборки с проверкой применимости</Title>
+    <Description>Подберём деталь с проверенной разборки по VIN, OEM или фото. Запросим состояние, фото и условия возврата, затем предложим подходящие варианты. Цена и наличие — по запросу.</Description>
+    <Category>Запчасти и аксессуары</Category>
+    <GoodsType>Запчасти</GoodsType>
+    <AdType>Товар приобретен на продажу</AdType>
+    <ProductType>Для автомобилей</ProductType>
+    <SparePartType>Кузов</SparePartType>
+    <BodySparePartType>Кузов по частям</BodySparePartType>
+    <Condition>Б/у</Condition>
+    <Originality>Оригинал</Originality>
+    <Availability>Под заказ</Availability>
+    <ContactPhone>89991583458</ContactPhone>
+    <ManagerName>AST Parts</ManagerName>
+    <Address>Санкт-Петербург, улица Комсомола, 1-3М</Address>
+    <ContactMethod>По телефону</ContactMethod>
+    <CompatibleCars><CompatibleCar><Make>Mercedes-Benz</Make><Model>Vito</Model><Generation>W447 рестайлинг (2018—2023)</Generation></CompatibleCar></CompatibleCars>
+    <Images><Image url="https://40.img.avito.st/image/1/1.KRbso7aSkf_aFAfysp9BcvADx8hjMeTNbjS2mW5m4clpZrHEPDGwyWM05s9jMrDNYzjl_VgIhQ.1QBiljTKIbXE3V91tw-8TgA8DK2UcdZyGkc_kVpeWhA?" /></Images>
+  </Ad>
+</Ads>

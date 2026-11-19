@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ads formatVersion="3" target="Avito.ru">
+  <Ad>
+    <Id>ast-service-oem-vin</Id>
+    <Title>Оригинальные автозапчасти по VIN под заказ</Title>
+    <Description>Подберём оригинальную деталь по VIN, артикулу или фото. Проверим применимость, предложим варианты поставки и сообщим цену и срок после подтверждения поставщика. Работаем с Mercedes-Benz, BMW, Porsche, Audi, Land Rover и другими марками. Цена и наличие — по запросу.</Description>
+    <Price>0</Price>
+    <Category>Запчасти и аксессуары</Category>
+    <GoodsType>Запчасти</GoodsType>
+    <AdType>Товар приобретен на продажу</AdType>
+    <ProductType>Для автомобилей</ProductType>
+    <SparePartType>Автосвет</SparePartType>
+    <Condition>Новое</Condition>
+    <Originality>Оригинал</Originality>
+    <Availability>Под заказ</Availability>
+    <ContactPhone>89991583458</ContactPhone>
+    <ManagerName>AST Parts</ManagerName>
+    <Address>Санкт-Петербург, улица Комсомола, 1-3М</Address>
+    <ContactMethod>По телефону</ContactMethod>
+    <CompatibleCars>
+      <CompatibleCar>
+        <Make>Mercedes-Benz</Make>
+        <Model>Vito</Model>
+        <Generation>W447 рестайлинг (2018—2023)</Generation>
+      </CompatibleCar>
+    </CompatibleCars>
+    <Images>
+      <Image url="https://70.img.avito.st/image/1/1.Suvt47aS8gLbVGQP9aItj_FDpDdrcYFhbCLVM2h1gTRvItJhOXfSNGh212VrIYc1byTUAFlI5g.lWfArh73_rCecjy4HnNbF3l6Tmx1SO0GIthG_kXC5wU?" />
+    </Images>
+  </Ad>
+  <Ad>
+    <Id>ast-service-analogues</Id>
+    <Title>Проверенные аналоги автозапчастей с подбором по VIN</Title>
+    <Description>Найдём заменители оригинальной детали и сравним варианты по бренду, цене, сроку и риску применимости. OEM не придумываем: каждый номер проверяем по каталогу и источнику поставки. Цена и наличие — по запросу.</Description>
+    <Price>0</Price>
+    <Category>Запчасти и аксессуары</Category>
+    <GoodsType>Запчасти</GoodsType>
+    <AdType>Товар приобретен на продажу</AdType>
+    <ProductType>Для автомобилей</ProductType>
+    <SparePartType>Двигатель</SparePartType>
+    <Condition>Новое</Condition>
+    <Originality>Аналог</Originality>
+    <Availability>Под заказ</Availability>
+    <ContactPhone>89991583458</ContactPhone>
+    <ManagerName>AST Parts</ManagerName>
+    <Address>Санкт-Петербург, улица Комсомола, 1-3М</Address>
+    <ContactMethod>По телефону</ContactMethod>
+    <EngineSparePartType>Прокладки и ремкомплекты</EngineSparePartType>
+    <CompatibleCars>
+      <CompatibleCar>
+        <Make>Mercedes-Benz</Make>
+        <Model>Vito</Model>
+        <Generation>W447 рестайлинг (2018—2023)</Generation>
+      </CompatibleCar>
+    </CompatibleCars>
+    <Images>
+      <Image url="https://20.img.avito.st/image/1/1.dUo13raSzaMDaVuuU7cRLSl-m5GxT7mU4U29wrtEv5WxSe_Duk3uw-ZOuZS1SLrEsBi5oYF12Q.Iys319KhoSls6qiMKNYB0u4fmB0-Ic7bpDhpxs-5vvk?cqp=2.xPF46L25VJSiI2NxpEvFPKg4ZeQOA_nK0E7V97ijNCYI-GqiuFwktxZAaKI=" />
+    </Images>
+  </Ad>
+  <Ad>
+    <Id>ast-service-dismantling</Id>
+    <Title>Запчасти с разборки с проверкой применимости</Title>
+    <Description>Подберём деталь с проверенной разборки по VIN, OEM или фото. Запросим состояние, фото и условия возврата, затем предложим подходящие варианты. Цена и наличие — по запросу.</Description>
+    <Price>0</Price>
+    <Category>Запчасти и аксессуары</Category>
+    <GoodsType>Запчасти</GoodsType>
+    <AdType>Товар приобретен на продажу</AdType>
+    <ProductType>Для автомобилей</ProductType>
+    <SparePartType>Кузов</SparePartType>
+    <Condition>Б/у</Condition>
+    <Originality>Оригинал</Originality>
+    <Availability>Под заказ</Availability>
+    <ContactPhone>89991583458</ContactPhone>
+    <ManagerName>AST Parts</ManagerName>
+    <Address>Санкт-Петербург, улица Комсомола, 1-3М</Address>
+    <ContactMethod>По телефону</ContactMethod>
+    <BodySparePartType>Кузов по частям</BodySparePartType>
+    <CompatibleCars>
+      <CompatibleCar>
+        <Make>Mercedes-Benz</Make>
+        <Model>Vito</Model>
+        <Generation>W447 рестайлинг (2018—2023)</Generation>
+      </CompatibleCar>
+    </CompatibleCars>
+    <Images>
+      <Image url="https://40.img.avito.st/image/1/1.KRbso7aSkf_aFAfysp9BcvADx8hjMeTNbjS2mW5m4clpZrHEPDGwyWM05s9jMrDNYzjl_VgIhQ.1QBiljTKIbXE3V91tw-8TgA8DK2UcdZyGkc_kVpeWhA?" />
+    </Images>
+  </Ad>
+  <Ad>
+    <Id>ast-service-china</Id>
+    <Title>Заказ автозапчастей из Китая по VIN и артикулу</Title>
+    <Description>Проверим доступность детали у поставщика в Китае, сопоставим VIN и артикул, рассчитаем стоимость и срок поставки. До подтверждения наличия заказ не принимаем. Цена и наличие — по запросу.</Description>
+    <Price>0</Price>
+    <Category>Запчасти и аксессуары</Category>
+    <GoodsType>Запчасти</GoodsType>
+    <AdType>Товар приобретен на продажу</AdType>
+    <ProductType>Для автомобилей</ProductType>
+    <SparePartType>Электрооборудование</SparePartType>
+    <Condition>Новое</Condition>
+    <Originality>Аналог</Originality>
+    <Availability>Под заказ</Availability>
+    <ContactPhone>89991583458</ContactPhone>
+    <ManagerName>AST Parts</ManagerName>
+    <Address>Санкт-Петербург, улица Комсомола, 1-3М</Address>
+    <ContactMethod>По телефону</ContactMethod>
+    <CompatibleCars>
+      <CompatibleCar>
+        <Make>Mercedes-Benz</Make>
+        <Model>Vito</Model>
+        <Generation>W447 рестайлинг (2018—2023)</Generation>
+      </CompatibleCar>
+    </CompatibleCars>
+    <Images>
+      <Image url="https://00.img.avito.st/image/1/1.mOe-zraSIA6IebYDgpz-gKJudj9tWw80blsFbW1dADg_XwU1MQ5TOD9UAW1pWANpOg9VDAplNA.RrqpJya2Fk5XKejVD2q4cFPTiYCoKDJnPNHr28dUBzQ?cqp=2.xPF46L25VJSiI2NxpEvFPKg4ZeQOA_nK0E7V97ijNCYI-GqiuFwktxZAaKI=" />
+    </Images>
+  </Ad>
+</Ads>
