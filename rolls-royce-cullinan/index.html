@@ -700,6 +700,7 @@ html{scroll-behavior:auto}
         consent_timestamp: consentTs ? consentTs.value : ""
       };
       var payload = Object.assign({}, analyticsPayload, {
+        request_id: (function(){var s=JSON.stringify(Array.from(data.entries()).filter(function(e){return e[0]!=="consent_timestamp";}));if(form.dataset.astReqSig!==s){form.dataset.astReqSig=s;form.dataset.astReqId="model_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,10);}return form.dataset.astReqId;})(),
         phone: orderPhoneValue(contact),
         contact: contact,
         name: "Заявка по " + MODEL,
