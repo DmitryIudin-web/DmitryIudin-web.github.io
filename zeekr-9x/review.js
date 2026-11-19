@@ -4,6 +4,7 @@
   const embedded = window.parent !== window;
   const parentOrigin = location.ancestorOrigins?.[0] || site;
   const siteParent = parentOrigin === site || parentOrigin === 'https://www.avtonds.ru';
+  document.documentElement.classList.toggle('is-embedded', embedded && siteParent);
   const overview = new URL('zeekr-9x', site);
   overview.hash = 'request-9x';
   for (const [key, value] of new URLSearchParams(location.search)) {

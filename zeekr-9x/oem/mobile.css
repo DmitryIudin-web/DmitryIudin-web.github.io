@@ -1,0 +1,196 @@
+/* Mobile composition for the existing OEM sections. Desktop keeps its source layout. */
+.mobile-spec-picker,.mobile-spec-tools,.mobile-rotation-hint,.spec-help-mobile,.media-controls .control-label-short{display:none}
+@media(max-width:800px){
+ html{scroll-padding-top:72px}
+ html.is-embedded body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+ #app.oem-9x{width:100%;max-width:100%;font:16px/1.55 Arial,sans-serif;color:#1e2329;background:#fff}
+ #app.oem-9x *,#app.oem-9x *::before,#app.oem-9x *::after{box-sizing:border-box;letter-spacing:normal!important}
+ #app.oem-9x *{font-size:inherit!important;line-height:inherit}
+ #app.oem-9x img,#app.oem-9x video,#app.oem-9x canvas{max-width:100%}
+ #app.oem-9x [data-section]{width:100%;max-width:100%;margin:0!important;scroll-margin-top:72px}
+ #app.oem-9x [role=button],#app.oem-9x button{touch-action:manipulation}
+ #app.oem-9x [role=button]:focus-visible,#app.oem-9x button:focus-visible{outline:3px solid #aa7847;outline-offset:3px}
+
+ /* One compact header; the opened menu does not move the document. */
+ #app.oem-9x > .navigation{position:sticky!important;top:0!important;left:0!important;width:100%!important;z-index:50;background:#17191c!important;transform:none!important}
+ #app.oem-9x .ast-oem-bar{min-height:64px;padding:8px 16px;gap:12px;font-size:15px!important}
+ #app.oem-9x .ast-oem-bar .ast-back{display:flex;align-items:center;min-height:44px;text-decoration:none!important}
+ #app.oem-9x .navigation #mobile-menu{display:inline-flex!important;position:static!important;align-items:center;justify-content:center;min-width:96px;min-height:44px;padding:8px 14px;border:1px solid #51555b;border-radius:8px;color:#fff;background:#292d33;font-size:15px!important}
+ #app.oem-9x .navigation-car:not(.mobile-open){display:none!important}
+ #app.oem-9x .navigation .navigation-car.mobile-open,#app.oem-9x .navigation.scrolled .navigation-car.mobile-open{display:block!important;position:absolute!important;inset:100% 0 auto!important;width:100%!important;max-height:calc(100dvh - 72px);padding:20px;background:#fff!important;color:#1e2329!important;overflow-y:auto;overscroll-behavior:contain;box-shadow:0 14px 24px #0002;transform:none!important}
+ #app.oem-9x .navigation-car-container,#app.oem-9x .navigation-car-main{display:block!important;min-height:0!important;width:100%!important;height:auto!important;padding:0!important;margin:0!important}
+ #app.oem-9x .navigation-car .title{font-size:20px!important;font-weight:700;margin:0 0 16px}
+ #app.oem-9x .navigation-car .line{display:none}
+ #app.oem-9x .navigation-car .anchorlist{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important;margin:0 0 16px;padding:0}
+ #app.oem-9x .navigation .anchorlist-item{display:flex;align-items:center;min-width:0;min-height:48px;padding:10px 12px!important;border:1px solid #dfe2e6;border-radius:8px;color:#282e36!important;opacity:1!important;font-size:15px!important;line-height:1.35;margin:0!important}
+ #app.oem-9x .navigation .anchorlist-item.active{background:#eee7de;border-color:#b99874}
+ #app.oem-9x .navigation-car-toolbar{display:grid!important;grid-template-columns:1fr;gap:8px}
+ #app.oem-9x .navigation-car-toolbar .toolbar-item{min-height:48px;height:auto!important;margin:0!important;padding:0!important;border:1px solid #c9cdd2;border-radius:8px}
+ #app.oem-9x .navigation-car-toolbar .toolbar-item:empty{display:none}
+ #app.oem-9x .navigation-car-toolbar .toolbar-item-link{display:flex;justify-content:center;align-items:center;min-height:48px;padding:10px 16px;line-height:1.4;font-size:16px!important;opacity:1!important;color:#1e2329!important}
+ #app.oem-9x .navigation-car-toolbar .button{background:#17191c;border-color:#17191c}
+ #app.oem-9x .navigation-car-toolbar .button .toolbar-item-link{color:#fff!important}
+
+ /* The first video retains its full frame; the heading and CTA have their own space. */
+ #app.oem-9x .banner{display:flex;flex-direction:column;width:100%;height:auto!important;min-height:0;max-height:none;background:#17191c}
+ #app.oem-9x .banner > .bg{width:100%;height:auto!important;position:relative}
+ #app.oem-9x .banner > .bg video,#app.oem-9x .banner > .bg img{display:block;width:100%;height:auto!important;aspect-ratio:16/9;object-fit:cover}
+ #app.oem-9x .banner > .mask{display:none}
+ #app.oem-9x .banner .middle-content{position:static!important;inset:auto!important;transform:none!important;width:100%;padding:26px 20px 32px;align-items:flex-start;text-align:left;color:#fff4e2}
+ #app.oem-9x .banner .title{font-size:44px!important;line-height:1.05;letter-spacing:-.04em!important}
+ #app.oem-9x .banner .desc{font-size:16px!important;line-height:1.5;margin:12px 0 0;max-width:none}
+ #app.oem-9x .banner .button-group{display:block!important;width:100%!important;margin:22px 0 0!important}
+ #app.oem-9x .banner .button-group > div:empty,#app.oem-9x .banner .secDesc:empty,#app.oem-9x .banner .slogan:empty,#app.oem-9x .banner .secSlogan:empty,#app.oem-9x .banner .config-group:empty{display:none}
+ #app.oem-9x .banner .button-item{display:flex;justify-content:center;align-items:center;width:100%!important;max-width:none!important;min-height:52px!important;padding:12px 18px!important;border-radius:8px;border:1px solid #fff4e2!important;background:#fff4e2!important;color:#17191c!important;font-size:16px!important;font-weight:700}
+
+ /* Section hierarchy uses readable sizes, independent of the original rem canvas. */
+ #app.oem-9x :is(.image-txt-a,.image-txt-b,.image-grid-a,.image-grid-b,.swiper-a,.sequence-frames){width:100%!important;max-width:100%;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:28px 0!important;overflow:visible!important;letter-spacing:normal}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b,.image-grid-a,.image-grid-b,.swiper-a,.sequence-frames) > .top-content{position:static!important;width:100%;padding:0 20px 22px!important;margin:0!important;transform:none!important;color:#1e2329!important;text-align:left}
+ #app.oem-9x .top-content .title,#app.oem-9x .chapter .title,#app.oem-9x .chapter-9x .title{font-size:clamp(26px,6.7vw,32px)!important;font-weight:600;line-height:1.18;text-align:left;overflow-wrap:break-word;color:#1e2329!important}
+ #app.oem-9x .top-content .title,#app.oem-9x .top-content .title *{-webkit-text-fill-color:#1e2329!important}
+ #app.oem-9x .top-content .desc{margin:12px 0 0!important;color:#505861!important;text-align:left}
+ #app.oem-9x :is(.sub-title,.sub-title1,.content-title,.inner-title){font-size:22px!important;font-weight:600;line-height:1.25;overflow-wrap:break-word}
+ #app.oem-9x :is(.sub-desc,.content-desc,.desc,.inner-desc,.children-key,.config-list-desc,.config-list-tile,.params-value){font-size:16px!important;line-height:1.55;overflow-wrap:break-word}
+ #app.oem-9x :is(.sub-tips,.sub-tips-1,.content-tips,.bottom-tips,.inner-tips,.tips,.spec-footnote){font-size:14px!important;line-height:1.5;opacity:1!important;color:#606874!important;overflow-wrap:break-word}
+ #app.oem-9x :is(.sub-tips,.bottom-tips,.content-tips) span{opacity:1!important}
+ #app.oem-9x .top-content .children-wrapper{display:grid;gap:8px;margin-top:16px}
+ #app.oem-9x .top-content .children{margin:0!important}
+ #app.oem-9x .activity-text{width:100%!important;max-width:none;padding:16px 20px 28px!important;margin:0!important}
+ #app.oem-9x .chapter,#app.oem-9x .chapter-9x{width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:36px 20px!important;overflow:hidden;position:relative;background:#eee8df!important}
+ #app.oem-9x .chapter .container,#app.oem-9x .chapter-9x .container{width:100%!important;max-width:100%;margin:0!important;padding:0!important;background:none!important;-webkit-text-fill-color:currentColor!important;text-align:left;position:relative;z-index:2}
+ #app.oem-9x .chapter-9x .bg{opacity:.16;object-fit:cover}
+ #app.oem-9x .chapter :is(.desc,.topDesc),#app.oem-9x .chapter-9x :is(.desc,.topDesc){font-size:16px!important;line-height:1.5;margin:12px 0 0!important;color:#5b4b3d!important}
+ #app.oem-9x .chapter-9x .topDesc{margin:0 0 12px!important}
+
+ /* Media stays in its original tab group. Text follows it in normal document flow. */
+ #app.oem-9x .image-txt-a > .container,#app.oem-9x .image-txt-b > .container{display:grid!important;grid-template-columns:minmax(0,1fr);align-items:start;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;background:transparent}
+ #app.oem-9x .image-txt-a > .container > .bg,#app.oem-9x .image-txt-b > .container > .bg{grid-area:1/1;position:relative!important;inset:auto!important;width:100%!important;height:auto!important;min-height:0;opacity:1;overflow:hidden;transform:none!important}
+ #app.oem-9x .image-txt-a > .container > .bg:not(.active),#app.oem-9x .image-txt-b > .container > .bg:not(.active){display:none!important}
+ #app.oem-9x .image-txt-a > .container > .bg.active,#app.oem-9x .image-txt-b > .container > .bg.active{display:block!important}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) > .container > .bg :is(img,video){display:block;position:static!important;inset:auto!important;width:100%!important;height:auto!important;max-height:none;object-fit:contain}
+ #app.oem-9x [data-section="3"] .container > .bg{filter:none!important}
+ #app.oem-9x .image-txt-a > .container > .content-bg{grid-area:1/1;position:relative!important;inset:auto!important;align-self:start;width:100%;height:auto!important;z-index:1;pointer-events:none}
+ #app.oem-9x .image-txt-a > .container > .content-bg:empty{display:none}
+ #app.oem-9x .content-bg img{display:block;width:100%!important;height:auto!important;object-fit:contain}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) :is(.tabs-1,.tabs-2,.tabs-3,.tabs-4,.tabs-5,.bottom-content){position:static!important;inset:auto!important;transform:none!important;display:flex;flex-direction:column;align-items:stretch;width:100%!important;max-width:none;min-width:0!important;height:auto!important;margin:0!important;padding:22px 20px!important;background:#fff!important;color:#1e2329!important;text-align:left;border:0!important}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .bottom-content:empty{display:none}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .tabs-content{width:100%;max-width:none!important;margin:16px 0 0;text-align:left}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .tabs-content :is(.sub-desc,.sub-title,.sub-tips){text-align:left!important;color:#1e2329!important;margin:0 0 12px!important}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .tabs{display:flex;flex-wrap:wrap;justify-content:flex-start!important;align-items:stretch;gap:8px!important;min-width:0!important;width:100%;padding:0!important;margin:0!important;border:0!important}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .tabs-item:not(img){display:flex;align-items:center;justify-content:flex-start;width:auto!important;max-width:100%!important;min-height:44px;min-width:0;flex:1 1 130px;padding:12px!important;margin:0!important;border:1px solid #cdd2d8;border-radius:8px;background:#f6f7f8;color:#2e343b!important;font-size:15px!important;line-height:1.4;text-align:left;opacity:1!important;white-space:normal}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .tabs-item.active:not(img){border-color:#a78258;background:#eee6dc}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .tabs-item::after{display:none!important}
+ #app.oem-9x .image-txt-b .tabs-2{gap:8px}
+ #app.oem-9x .image-txt-b .tabs-2 .tabs-item{flex:auto}
+ #app.oem-9x .image-txt-b .tabs-2 .sub-title{font-size:16px!important;font-weight:400}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .container > .bottom-tips{position:static!important;inset:auto!important;grid-column:1;padding:16px 20px!important;margin:0!important;width:100%;background:#f6f7f8;text-align:left!important}
+ #app.oem-9x :is(.image-txt-a,.image-txt-b) .container > .config{position:static!important;inset:auto!important;grid-column:1;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px!important;width:100%!important;padding:22px 20px!important;background:#17191c;color:#fff}
+ #app.oem-9x .config .config-item{min-width:0;margin:0!important;padding:0!important}
+ #app.oem-9x .config .value{font-size:24px!important;line-height:1.2;white-space:normal}
+ #app.oem-9x .config .key{font-size:14px!important;line-height:1.45;margin-top:6px;opacity:1!important}
+ #app.oem-9x .config2,#app.oem-9x .params-wrapper{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:20px!important;width:100%!important}
+ #app.oem-9x .config2 .config-item,#app.oem-9x .params-wrapper .params-item{padding:0!important;margin:0!important;min-width:0}
+ #app.oem-9x .config2 .config-item::after{display:none}
+
+ /* Full width editorial cards replace the narrow desktop grids. */
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) > .container{width:100%!important;max-width:none!important;padding:0 20px;display:block}
+ #app.oem-9x .image-grid-a .child-list{display:grid!important;grid-template-columns:minmax(0,1fr);gap:28px;width:100%!important;margin:0 0 28px!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .list-item{display:flex!important;flex-direction:column!important;width:100%!important;min-width:0!important;height:auto!important;max-height:none!important;margin:0!important;padding:0!important;gap:0}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .media{position:relative;width:100%!important;height:auto!important;min-height:0;max-height:none!important;margin:0!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .media :is(img,video){display:block;width:100%!important;height:auto!important;max-height:none;object-fit:contain}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) :is(.content,.txt,.content33w){position:static!important;inset:auto!important;width:100%!important;min-width:0;height:auto!important;margin:0!important;padding:22px 0!important;color:#1e2329!important;background:transparent!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .content33w *{overflow-wrap:break-word!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) :is(.content,.txt):empty{display:none!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) :is(.sub-desc,.sub-tips,.sub-tips-1){margin-top:12px!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .inner-content{position:static!important;inset:auto!important;padding:16px 0!important;width:100%;color:#1e2329!important;background:transparent!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .inner-content:empty{display:none}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .container-background{display:block!important;width:100%!important;height:auto!important}
+ #app.oem-9x .image-grid-a-child-list-item{display:grid!important;grid-template-columns:1fr;gap:24px;width:100%!important;height:auto!important}
+ #app.oem-9x .image-grid-a-child-list-item-children,#app.oem-9x .grid-a-list-item{width:100%!important;height:auto!important}
+ #app.oem-9x :is(.image-grid-a,.image-grid-b) .bottom-tips{width:100%!important;padding:0!important;margin:12px 0 0!important}
+ #app.oem-9x .config-list,#app.oem-9x .config-list-2{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important;width:100%!important;margin-top:20px}
+ #app.oem-9x .config-list-item{min-width:0!important;margin:0!important;padding:0!important}
+ #app.oem-9x :is(.config-list,.config-list-2) .value,#app.oem-9x :is(.config-list,.config-list-2) .value span{font-size:22px!important;font-weight:600;line-height:1.25}
+ #app.oem-9x :is(.config-list,.config-list-2) .key{font-size:14px!important;line-height:1.5;opacity:1!important;margin-top:6px}
+ #app.oem-9x .config-list-item-icon{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px!important;margin-top:16px}
+ #app.oem-9x .config-list-item-icon > div{width:auto!important;min-width:0!important;max-width:none!important;text-align:center}
+ #app.oem-9x .config-list-item-icon img{width:44px!important;height:44px!important;margin:auto;object-fit:contain}
+ #app.oem-9x .config-list-item-icon .desc{font-size:14px!important;margin-top:8px}
+ #app.oem-9x .media:has(.shortVideo) > img,#app.oem-9x .media:has(.shortVideo) .icon{display:none!important}
+ #app.oem-9x .media .shortVideo{display:block!important;position:relative!important;inset:auto!important;width:100%!important;height:auto!important;opacity:1!important;visibility:visible!important}
+
+ /* 360° and interior swatches have a separate, reachable control area. */
+ #app.oem-9x .sequence-frames > .container{display:grid!important;grid-template-columns:minmax(0,1fr);width:100%!important;height:auto!important;min-height:0;position:relative;background:#f6f7f8}
+ #app.oem-9x .sequence-frames canvas{grid-area:1/1;width:100%!important;height:auto!important;aspect-ratio:16/10;display:block}
+ #app.oem-9x .sequence-frames .hover_area_top{grid-area:1/1;position:relative!important;inset:auto!important;width:100%!important;height:100%!important;min-height:220px;z-index:2}
+ #app.oem-9x .sequence-frames .mobile-rotation-hint{display:block;grid-column:1;margin:0;padding:12px 20px;font-size:14px!important;line-height:1.4;color:#606874;background:#f6f7f8}
+ #app.oem-9x .sequence-frames .bottom-content{position:static!important;inset:auto!important;display:flex;flex-direction:column;align-items:flex-start;width:100%;max-width:none!important;padding:20px;background:#fff;text-align:left}
+ #app.oem-9x .sequence-frames .sub-desc{max-width:none!important;text-align:left;margin-top:10px}
+ #app.oem-9x .sequence-frames .tabs,#app.oem-9x .image-txt-b .c-tabs{display:flex!important;flex-wrap:wrap;justify-content:flex-start;gap:12px!important;margin:20px 0 0!important;padding:0!important}
+ #app.oem-9x .sequence-frames .tabs{gap:8px!important}
+ #app.oem-9x .sequence-frames .tabs .tabs-item,#app.oem-9x .image-txt-b .c-tabs .c-tabs-item{display:block;flex:0 0 44px;width:44px!important;height:44px!important;min-width:44px;min-height:44px;max-width:none!important;margin:0!important;padding:4px;border:2px solid #d6d9de!important;border-radius:50%;background:#fff;opacity:1!important;object-fit:cover}
+ #app.oem-9x .sequence-frames .tabs .tabs-item.active,#app.oem-9x .image-txt-b .c-tabs .c-tabs-item.active{border-color:#876441!important;outline:2px solid #876441;outline-offset:2px}
+ #app.oem-9x .sequence-frames .bottom-tips{position:static!important;grid-column:1;inset:auto!important;width:100%;padding:16px 20px;margin:0;text-align:left;background:#f6f7f8}
+
+ /* Galleries keep swipe and keyboard navigation, with visible 44px buttons. */
+ #app.oem-9x .swiper-a > .container{width:100%!important;height:auto!important;min-height:0!important;padding:0 20px}
+ #app.oem-9x .swiper-a .swiper{width:100%!important;max-width:100%;overflow:hidden;--slide-offset-before:0px;--slide-offset-after:0px;touch-action:pan-y}
+ #app.oem-9x .swiper-a .swiper-wrapper{display:flex;align-items:flex-start;width:100%!important;height:auto!important}
+ #app.oem-9x .swiper-a .swiper-slide{flex:0 0 calc(100vw - 40px)!important;width:calc(100vw - 40px)!important;max-width:calc(100vw - 40px);margin-left:0!important;margin-right:16px!important;opacity:1!important}
+ #app.oem-9x .swiper-a .swiper-slide .media{width:100%!important;height:auto!important}
+ #app.oem-9x .swiper-a .swiper-slide .media :is(img,video){display:block;width:100%;height:auto!important;object-fit:contain}
+ #app.oem-9x .swiper-a .swiper-slide .content{height:auto!important;min-height:0!important;padding:20px 0 0}
+ #app.oem-9x .swiper-a .swiper-slide .content > div{margin:0 0 12px!important}
+ #app.oem-9x .swiper-a .container > div:has(> .icon-left){display:flex;justify-content:flex-end;gap:12px;margin-top:16px}
+ #app.oem-9x .swiper-a .container :is(.icon-left,.icon-right,.gallery-next){position:static!important;inset:auto!important;transform:none!important;width:44px!important;height:44px!important;min-width:44px;min-height:44px;padding:8px;border:1px solid #cdd2d8;border-radius:50%;background:#fff;object-fit:contain}
+
+ #app.oem-9x .media-controls{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;opacity:1!important;width:100%;max-width:none;padding:8px;background:#17191c;z-index:5}
+ #app.oem-9x .media-controls button{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:8px;border:1px solid #555b64;border-radius:7px;background:#292e35;color:#fff;font-size:14px!important;line-height:1.3}
+ #app.oem-9x .media-controls .control-label-long{display:none}
+ #app.oem-9x .media-controls .control-label-short{display:inline}
+ #app.oem-9x .media-controls[data-error]::before{grid-column:1/-1;max-width:none;font-size:14px;padding:12px}
+ .ast-oem-footer{font-size:14px;line-height:1.6;padding:28px 20px}
+ .ast-oem-footer .ast-back{display:inline-flex;align-items:center;min-height:44px}
+ .expanded-player{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:16px}
+ .expanded-player button{min-height:44px;font-size:16px}
+
+ /* All seven versions remain accessible; a phone shows one readable value column. */
+ .specs-dialog{width:100vw!important;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:16px 20px 32px!important;border:0;overflow:auto;font:16px/1.5 Arial,sans-serif;color:#1e2329;background:#fff}
+ .specs-dialog::backdrop{background:#0008}
+ .specs-dialog .dialog-close{position:sticky;top:0;z-index:30;min-height:44px;width:100%;border-radius:8px;margin:0 0 20px;padding:10px 14px;font-size:16px}
+ .specs-dialog h2{font-size:26px;line-height:1.2;margin:0 0 12px}
+ .specs-dialog > p{font-size:14px;color:#616873;margin:0 0 20px}
+ .spec-help-desktop{display:none}.spec-help-mobile{display:inline}
+ .mobile-spec-picker{display:grid;gap:8px;margin:0 0 20px;font-size:14px;font-weight:600}
+ .mobile-spec-picker select{width:100%;min-height:52px;border:1px solid #b8bec7;border-radius:8px;background:#fff;padding:10px 12px;color:#1e2329;font:16px Arial,sans-serif}
+ .mobile-spec-tools{display:block;min-height:44px;width:100%;margin:0 0 16px;border:1px solid #d3d7dd;border-radius:8px;background:#f6f7f8;color:#28303b;font:15px/1.4 Arial,sans-serif;padding:10px 12px;text-align:left}
+ .specs-dialog .spec-scroll{width:100%;max-height:none;overflow:visible}
+ .specs-dialog .spec-scroll .config{width:100%!important;min-width:0!important;font-size:16px}
+ .specs-dialog .spec-scroll .config > .container{display:block!important;width:100%;padding:0!important}
+ .specs-dialog .spec-scroll .config-left{display:none!important;width:100%!important;padding:0 0 20px!important}
+ .specs-dialog.specs-tools-open .spec-scroll .config-left{display:block!important}
+ .specs-dialog .spec-scroll .config-right{width:100%!important;padding:0!important}
+ .specs-dialog .spec-scroll .point{display:flex!important;gap:8px;overflow-x:auto;padding:0 0 12px!important}
+ .specs-dialog .spec-scroll .point-item{display:flex;align-items:center;flex:0 0 190px;min-height:44px;padding:10px 12px;margin:0!important;border:1px solid #d3d7dd;border-radius:8px;font-size:14px}
+ .specs-dialog .spec-scroll .point-item .line{display:none}
+ .specs-dialog .spec-scroll .screenner-item{display:flex;align-items:center;gap:10px;min-height:44px;margin:8px 0!important;padding:10px!important;border:1px solid #d3d7dd;border-radius:8px}
+ .specs-dialog .spec-scroll .screenner-item img{width:22px;height:22px}
+ .specs-dialog .spec-scroll .version-wrapper,.specs-dialog .spec-scroll .model{display:none!important}
+ .specs-dialog .spec-scroll .model-wrapper{display:block!important}
+ .specs-dialog .spec-scroll .model-wrapper .tips{display:flex!important;flex-wrap:wrap;gap:8px 16px;width:100%!important;max-width:100%;padding:0 0 20px!important}
+ .specs-dialog .spec-scroll .tips-item{display:flex;align-items:center;gap:6px;min-width:0;font-size:14px}
+ .specs-dialog .spec-scroll .tips-item svg{flex:0 0 18px;width:18px;height:18px}
+ .specs-dialog .spec-scroll .first-level-title{min-height:52px;padding:14px 0!important;gap:8px;border-bottom:2px solid #272e38;font-size:20px!important;line-height:1.35}
+ .specs-dialog .spec-scroll .first-level-title .el-tooltip{font-size:20px!important;font-weight:600;min-width:0}
+ .specs-dialog .spec-scroll .first-level-title .icon_collapse_expand{width:44px;height:44px;min-width:44px;font-size:24px}
+ .specs-dialog .spec-scroll .parameterList-item{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:6px;min-height:0!important;padding:16px 0!important;border-bottom:1px solid #e2e5e9}
+ .specs-dialog .spec-scroll .parameterList-item .name{position:static!important;min-width:0;width:100%!important;padding:0!important;font-size:14px!important;color:#5d6673}
+ .specs-dialog .spec-scroll .parameterList-item .name .desc{margin-top:6px;font-size:14px!important}
+ .specs-dialog .spec-scroll .parameterList-item .value{display:block!important;width:100%!important;padding:0!important;font-size:16px!important}
+ .specs-dialog .spec-scroll .parameterList-item .value-item{display:block!important;width:100%!important;padding:0!important;min-width:0;font-size:16px!important;color:#1e2329}
+ .specs-dialog .spec-scroll .parameterList-item .value-item > div{font-size:16px!important;line-height:1.5}
+ .specs-dialog .spec-scroll .parameterList-item .value-item.mobile-spec-hidden{display:none!important}
+ .specs-dialog .spec-scroll .spec-option-images{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .specs-dialog .spec-scroll .spec-option-images :is(.spec-image-name,.spec-image-description){font-size:14px!important;line-height:1.45}
+ .specs-dialog .spec-scroll .spec-footnotes{padding:20px 0;font-size:14px}
+}
