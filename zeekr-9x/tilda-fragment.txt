@@ -1,0 +1,26 @@
+<!-- Replace the ZEEKR 9X overview in T123 record 4456625201, keeping the shared site scripts. -->
+<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">ZEEKR 9X</h1>
+<iframe id="zeekr-9x-review" title="Обзор ZEEKR 9X от АСТ"
+  src="https://dmitryiudin-web.github.io/zeekr-9x/index.html"
+  allow="autoplay; fullscreen" allowfullscreen
+  style="display:block;width:100%;height:100vh;height:100dvh;border:0;background:#15171a"></iframe>
+<button type="button" id="zeekr-9x-quote" data-ast-quote-open hidden>Рассчитать ZEEKR 9X</button>
+<noscript><a href="https://dmitryiudin-web.github.io/zeekr-9x/index.html">Открыть обзор ZEEKR 9X</a></noscript>
+<script>
+(() => {
+  const frame = document.getElementById('zeekr-9x-review');
+  const reviewOrigin = new URL(frame.src).origin;
+  const quote = document.getElementById('zeekr-9x-quote');
+  function openQuote() {
+    if (window.__astUniversalQuote) quote.click();
+  }
+  window.addEventListener('message', event => {
+    if (event.source === frame.contentWindow && event.origin === reviewOrigin &&
+        event.data === 'ast:zeekr-9x:quote') openQuote();
+  });
+  if (location.hash === '#request-9x') {
+    if (document.readyState === 'complete') openQuote();
+    else window.addEventListener('load', openQuote, {once:true});
+  }
+})();
+</script>

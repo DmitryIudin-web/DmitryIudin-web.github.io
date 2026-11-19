@@ -1396,6 +1396,7 @@
         if (inside) result.interior_color = inside.getAttribute('aria-label') || inside.textContent.trim();
         else if (colors && colors[1]) result.interior_color = colors[1];
       }
+      if (path() === '/zeekr-9x') { result.model = 'ZEEKR 9X'; }
       if (path() === '/nissan-qashqai-china') {
         result.model = 'Nissan Qashqai'; result.brand = 'Nissan'; result.generation = 'III'; result.market = 'Китай';
       }

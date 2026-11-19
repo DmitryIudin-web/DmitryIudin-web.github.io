@@ -1,0 +1,2132 @@
+[
+  {
+    "path": "media/1a42763d67522705.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1728698680355/icon-f0c97f3035c89bf341f0492c6b42038f.png?x-oss-process=image/format,webp",
+    "size": 1086,
+    "sha256": "a1afb12e92f9278a42ba3c83749b4c9438747ade90bd0be759888f53f67ee5d0"
+  },
+  {
+    "path": "media/5464c366bb76c48e.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%20Pc%20OS7-b8256c2a56b02d5e3685a317af00e645.mp4",
+    "size": 11027327,
+    "sha256": "31cfa879561a65ed7c41d988e0781037b1bd322f680267e83b2a7ba6da5abdcd"
+  },
+  {
+    "path": "media/d7a2100279cd0216.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A4%C2%B8%C2%80%C3%A4%C2%BD%C2%93%C3%A5%C2%BC%C2%8F-4d835f6074ee091d7cf29da1334db04e.png?x-oss-process=image/format,webp",
+    "size": 209148,
+    "sha256": "e066896e10d22d5b6222986d962da5d74956b52e82268715c105461d24e318cf"
+  },
+  {
+    "path": "media/a6ddf47bea560add.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A4%C2%B8%C2%8A%C3%A4%C2%B8%C2%8B%C3%A8%C2%87%C2%AA%C3%A5%C2%A6%C2%82-84ae05a3147e7b1b69f0a03f8e531395.png?x-oss-process=image/format,webp",
+    "size": 77608,
+    "sha256": "98f4ef6b9bd3525f387d5b8183c41f503a5449f25e1cba82138b111a4fba080e"
+  },
+  {
+    "path": "media/f3c4ae06d7894297.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A4%C2%B8%C2%AD%C3%A5%C2%A4%C2%AE%C3%A7%C2%94%C2%B5%C3%A5%C2%8A%C2%A8%C3%A6%C2%89%C2%B6%C3%A6%C2%89%C2%8B-39e2c6e64c5b1aeffa722e25f5432000.jpg?x-oss-process=image/format,webp",
+    "size": 68602,
+    "sha256": "fb357fac6d2f980d46e4265515bd526ff123bd58c329624abb3bef9568a3fa27"
+  },
+  {
+    "path": "media/7fc3319807d423be.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A4%C2%B8%C2%BB%C3%A9%C2%A9%C2%BE%C3%A5%C2%BA%C2%A7%C3%A6%C2%A4%C2%85%C3%A4%C2%B8%C2%BB%C3%A5%C2%8A%C2%A8%C3%A4%C2%BE%C2%A7%C3%A7%C2%BF%C2%BC%C3%A6%C2%94%C2%AF%C3%A6%C2%92%C2%91-0dd30d8fee7ab40122999d3e18332d02.jpg?x-oss-process=image/format,webp",
+    "size": 71102,
+    "sha256": "b59611afa5666a512d542836c441eadb37f64808c48ad7966af59a81d5a798c8"
+  },
+  {
+    "path": "media/a2ce52167692dd8f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A4%C2%BA%C2%8C%C3%A6%C2%8E%C2%92%C3%A4%C2%B8%C2%AD%C3%A5%C2%A4%C2%AE%C3%A5%C2%BA%C2%A7%C3%A6%C2%A4%C2%85%C3%A5%C2%AE%C2%89%C3%A5%C2%85%C2%A8%C3%A5%C2%B8%C2%A6%C3%A9%C2%9A%C2%90%C3%A8%C2%97%C2%8F%C3%A6%C2%94%C2%B6%C3%A7%C2%BA%C2%B3%C3%A8%C2%AE%C2%BE%C3%A8%C2%AE%C2%A1-e2b0d14be901803e5b0c98b4e084d9df.jpg?x-oss-process=image/format,webp",
+    "size": 131442,
+    "sha256": "8e7741274f345adf284e69fa4f18c063d0165035872fd8e5882661f8fdf16a99"
+  },
+  {
+    "path": "media/342fbe4ddc33622f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A4%C2%BA%C2%8C%C3%A6%C2%8E%C2%92%C3%A5%C2%8F%C2%8C%C3%A8%C2%A1%C2%8C%C3%A6%C2%94%C2%BF%C3%A6%C2%A1%C2%8C%C3%A6%C2%9D%C2%BF-7b0606a6a8558f05731987aa3fc2b52a.jpg?x-oss-process=image/format,webp",
+    "size": 76920,
+    "sha256": "d82909f45449725d969f4225f655c2588a47ec6aafc2ecf84d6070e15fd58d08"
+  },
+  {
+    "path": "media/573d1000337b1532.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%85%C2%A8%C3%A6%C2%A0%C2%88900V%C3%A6%C2%B7%C2%B7%C3%A5%C2%8A%C2%A8%C3%A9%C2%AB%C2%98%C3%A5%C2%8E%C2%8B%C3%A6%C2%9E%C2%B6%C3%A6%C2%9E%C2%841-076cf728338fa7d6c9aca0d6b8de636f.jpg?x-oss-process=image/format,webp",
+    "size": 305566,
+    "sha256": "1fc9a87f184568acbc5be5186b021d8ba0f2aad3c7d2d87f31e0269bea1a6ac0"
+  },
+  {
+    "path": "media/4ef59b02156e4e0b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%85%C2%A8%C3%A8%C2%BD%C2%A6%C3%A9%C2%9A%C2%90%C3%A7%C2%A7%C2%81%C3%A9%C2%81%C2%AE%C3%A9%C2%98%C2%B3%C3%A5%C2%B8%C2%98-08e9fba0fefb69d29d7fd1e7047447c9.jpg?x-oss-process=image/format,webp",
+    "size": 161560,
+    "sha256": "49c6bcf1ecbf92e8f5e8ac93fa460c946dde6fbbf1be2435af0076932cdac5bd"
+  },
+  {
+    "path": "media/00c9d35f8a5e3016.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%85%C2%AB%C3%A6%C2%A8%C2%AA-0242f90024716139889097cc39f5b7fc.png?x-oss-process=image/format,webp",
+    "size": 96438,
+    "sha256": "41fcd4241483e06f31cefcf376316ea5f4a8f2fc4ca92340dec0295218aab2d2"
+  },
+  {
+    "path": "media/9f7d587a387cb195.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%89%C2%A7%C3%A9%C2%99%C2%A2%C3%A5%C2%BC%C2%8F%C3%A5%C2%BA%C2%A7%C3%A8%C2%88%C2%B1-85778e8380963f56d629b474af681196.jpg?x-oss-process=image/format,webp",
+    "size": 49534,
+    "sha256": "6315120c9bc8c02a398549358c99c9ccf1a69a1b8083ba67649a688aae7a2c8c"
+  },
+  {
+    "path": "media/bb30492c85edf529.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%8C%C2%97%C3%A6%C2%AC%C2%A7%C3%A5%C2%A4%C2%A9%C3%A7%C2%84%C2%B6%C3%A7%C2%9C%C2%9F%C3%A6%C2%9C%C2%A8%C3%A9%C2%A5%C2%B0%C3%A6%C2%9D%C2%BF-b0f8eec6a96aa7bd7d3609e1c14672bf.jpg?x-oss-process=image/format,webp",
+    "size": 20458,
+    "sha256": "f5d2ae22e363bd5ceaa79df1f0b3699f9b0fee0afcad961964f353bdbc988f26"
+  },
+  {
+    "path": "media/2c1ef49979039616.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%8D%C2%83%C3%A9%C2%87%C2%8C%C3%A6%C2%99%C2%BA%C3%A9%C2%A9%C2%BE-8929e9d3a98c3df8e0c2e3309ef97cdd.png?x-oss-process=image/format,webp",
+    "size": 82030,
+    "sha256": "46764b8a97ff5ab5fd6f82ef0e775017212ee26d23eece81da329abceebf8d17"
+  },
+  {
+    "path": "media/27f32810184e11f4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%8D%C2%83%C3%A9%C2%87%C2%8C%C3%A6%C2%B5%C2%A9%C3%A7%C2%80%C2%9AG-ASD%204.0%C3%A8%C2%BE%C2%85%C3%A5%C2%8A%C2%A9%C3%A9%C2%A9%C2%BE%C3%A9%C2%A9%C2%B6%C3%A7%C2%B3%C2%BB%C3%A7%C2%BB%C2%9F-efe29096e857d59b14de6bdfb32079c5.jpg?x-oss-process=image/format,webp",
+    "size": 109362,
+    "sha256": "22f2e3bcd6cc65c88bbc243e5da490a5af8cd831404a97726e488483820378b8"
+  },
+  {
+    "path": "media/7d6e0d39de30b299.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%8F%C2%8C%C3%A4%C2%BC%C2%8A%C3%A5%C2%A7%C2%86%C3%A6%C2%96%C2%AF%C3%A8%C2%BA%C2%BA%C3%A6%C2%A4%C2%85-49a6ce108cd63728151e13f843d77556.jpg?x-oss-process=image/format,webp",
+    "size": 125498,
+    "sha256": "ba9e60bfc09f4e82658dff819723cad2a54623d8f7f642dd2e7cd8cbc06d3822"
+  },
+  {
+    "path": "media/a315ec23e1bf8439.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%8F%C2%8C%C3%A9%C2%9B%C2%B6%C3%A9%C2%87%C2%8D%C3%A5%C2%8A%C2%9B%C3%A5%C2%BA%C2%A7%C3%A6%C2%A4%C2%85-906f58edb865d87e8dc39437493b92f2.jpg?x-oss-process=image/format,webp",
+    "size": 110836,
+    "sha256": "368af1b4a9be8b712bfbbe9a02feea718ac98cc5ae142902aeef50880dab7561"
+  },
+  {
+    "path": "media/f4ef2e95cac435a2.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%8F%C2%8C8295%C3%A6%C2%99%C2%BA%C3%A8%C2%83%C2%BD%C3%A5%C2%BA%C2%A7%C3%A8%C2%88%C2%B1%C3%A8%C2%AE%C2%A1%C3%A7%C2%AE%C2%97%C3%A5%C2%B9%C2%B3%C3%A5%C2%8F%C2%B0-cdc7135f3760838a928a844f726c29f7.jpg?x-oss-process=image/format,webp",
+    "size": 128306,
+    "sha256": "69910cf1d4779067d7090ff7894cf4875ddb9f052de1be74555ab2bc1dc896e6"
+  },
+  {
+    "path": "media/a942662e7db511bc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%95%C2%86%C3%A5%C2%8A%C2%A1%C3%A4%C2%BC%C2%9A%C3%A5%C2%AE%C2%A2-bae365586404b692dbd02ad37cdf4d3d.png?x-oss-process=image/format,webp",
+    "size": 91886,
+    "sha256": "6b01b2e06a0fc3c221bc590546705ac72f0c2caffe4c9b7a9d727f6fa6ddd24f"
+  },
+  {
+    "path": "media/5e084c7fd1b3ce0c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%9B%C3%A5%C2%90%C2%91%C3%A8%C2%87%C2%AA%C3%A9%C2%80%C2%82%C3%A5%C2%BA%C2%94%C3%A8%C2%85%C2%B0%C3%A6%C2%89%C2%98-c27411bd82665b7204d4aa8681db5f63.jpg?x-oss-process=image/format,webp",
+    "size": 84086,
+    "sha256": "08e502c93a362eb8233da0aefc104a587091a1d69bfaae4d16a8145cf6adf6dc"
+  },
+  {
+    "path": "media/d050de75d928939c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%9B%C3%A6%C2%8A%C2%98%C3%A5%C2%8F%C2%A0%C3%A9%C2%9A%C2%90%C3%A7%C2%A7%C2%81%C3%A5%C2%88%C2%86%C3%A8%C2%88%C2%B1%C3%A6%C2%9D%C2%BF-2629749d95d5d9d09fef9cff012c4a76.jpg?x-oss-process=image/format,webp",
+    "size": 144046,
+    "sha256": "0df2663d29c94c01708f42f614f0e23eefe17aba4075d01d4571a3545b18ef50"
+  },
+  {
+    "path": "media/839bc11d3b7c5bed.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-1-1726001f464a3f7010d1fa3e0e9df1f1.png?x-oss-process=image/format,webp",
+    "size": 2032,
+    "sha256": "4088904630772c16a07a38188e5315e87d9ec7b1419b1bde41a564b08e05e5b5"
+  },
+  {
+    "path": "media/705bd0f62799d6ea.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-2-eda9ec46dccf75b51b636fd8ba15711d.png?x-oss-process=image/format,webp",
+    "size": 1936,
+    "sha256": "703d3dcd99706bdcba96b5bb74eb8be310cb98d0a1762c22b59c3754a635e963"
+  },
+  {
+    "path": "media/a43c1a3413bca07c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-3-2e42042ba0d83fa7f1fae09d9efbe852.png?x-oss-process=image/format,webp",
+    "size": 2670,
+    "sha256": "15ab383fea832c8e3bf722a0b1f10dab9f6c6b2204e7a304e148d7aff69f91f2"
+  },
+  {
+    "path": "media/44b3221afd6c8d69.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-4-f2d38a46970ffd4e337b4f37607b1773.png?x-oss-process=image/format,webp",
+    "size": 2632,
+    "sha256": "e628f6f23dae3acca9901da27d302423004f05f562a4d0bdbc6774aba0be7c1b"
+  },
+  {
+    "path": "media/9602b66087419c3d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-5-9189c33680239f55333eab4edab9214b.png?x-oss-process=image/format,webp",
+    "size": 3172,
+    "sha256": "a72b5c460bc2bd34f56caa926ee4058006dc81e47d3c4cf7d5f7fc45c63cf0d0"
+  },
+  {
+    "path": "media/83140247134bee81.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-6-119f66991998c4542a1376e0f666aeb1.png?x-oss-process=image/format,webp",
+    "size": 2516,
+    "sha256": "22489c4b1437ea5be5ae35c113a8d952f95a0592a3ce30ecdd19b91a75b4b85c"
+  },
+  {
+    "path": "media/43854b800974f8d9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-6d3cf8c0771a7b7e88c1325b185e4ac9.png?x-oss-process=image/format,webp",
+    "size": 2326,
+    "sha256": "ff0452d02ae67ae51652d226195ca2722d31018d8838d2868be4f86bebbca477"
+  },
+  {
+    "path": "media/d7c044034c2f6991.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-7-d11bfe209da379b24adee86222776573.png?x-oss-process=image/format,webp",
+    "size": 1520,
+    "sha256": "97fedd5d8c5edb7c7f7082b72a7d39b2fe76d6ead121da685036a9afc6386b40"
+  },
+  {
+    "path": "media/7a279ca08a634e24.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-8-d854ee6d1d1635b25dba6ed06bc5418d.png?x-oss-process=image/format,webp",
+    "size": 1934,
+    "sha256": "2d6eb073040bb5ba75774cc8c1cc5f066e7b023f3f031007273336ab6b7aca95"
+  },
+  {
+    "path": "media/a754289ee1cd338a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%9B%C2%BE%C3%A6%C2%A0%C2%87-9-6ff498828db6680683c008760df9c0d8.png?x-oss-process=image/format,webp",
+    "size": 1986,
+    "sha256": "6580159318461fa7817b45d00ae93a004d5a33336edf3aa80bb9bc3c365936a9"
+  },
+  {
+    "path": "media/ce3cee4a082f6039.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%A5%C2%A2%C3%A9%C2%98%C2%94%C3%A4%C2%BA%C2%8C%C3%A6%C2%8E%C2%92%C3%A7%C2%A9%C2%BA%C3%A9%C2%97%C2%B4-3ad1338486c897109063a12cb155c1d7.jpg?x-oss-process=image/format,webp",
+    "size": 81134,
+    "sha256": "504d013d3550b999194715a018256cd1c80b183a04332fb016209e3deda46d8e"
+  },
+  {
+    "path": "media/2d4115e6ad7ab6a3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%A5%C2%A2%C3%A9%C2%98%C2%94%C3%A8%C2%BD%C2%A6%C3%A8%C2%BA%C2%AB%C3%A6%C2%AF%C2%94%C3%A4%C2%BE%C2%8B-79e2821544ef3bcf7b3978c21e208671.jpg?x-oss-process=image/format,webp",
+    "size": 118564,
+    "sha256": "12f7c7e91456c4a5484383533ca76f9fbe603ed6f74c81299fd1fbce406413d1"
+  },
+  {
+    "path": "media/097e1acda24cc969.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%AE%C2%9E%C3%A4%C2%BD%C2%93%C3%A5%C2%8A%C2%9F%C3%A8%C2%83%C2%BD%C3%A6%C2%8C%C2%89%C3%A9%C2%94%C2%AE-5c195d81a06fd7055f9b0ba8ea89eaa0.jpg?x-oss-process=image/format,webp",
+    "size": 86830,
+    "sha256": "a5832f397f9e4104ca3ea7472fc4b096d20a7fceaa1f8c7f89b594dcb5e609e5"
+  },
+  {
+    "path": "media/ae609d5c7784257d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%AE%C2%B6%C3%A4%C2%BA%C2%BA%C3%A6%C2%AC%C2%A2%C3%A8%C2%81%C2%9A-bf354d05a94fce00f7984477bbe69a3d.png?x-oss-process=image/format,webp",
+    "size": 115976,
+    "sha256": "a3b33971b3a20cf13a8bde62b046952b97749d271c4efed500be76e6aa0c1713"
+  },
+  {
+    "path": "media/59a2f8a73b3a81d4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%AE%C2%BD%C3%A5%C2%A5%C2%A2%C3%A4%C2%B9%C2%98%C3%A5%C2%9D%C2%90-3d0770f5feeab96b753c9ad042f06e6c.jpg?x-oss-process=image/format,webp",
+    "size": 13608,
+    "sha256": "56bb577d0d3b48a53f6df65eff8ae3024b5f0d95f247c9d5fbc5455efe6c4040"
+  },
+  {
+    "path": "media/9d4aeb25d7a1abc4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%AF%C2%B0%C3%A5%C2%AE%C2%87%C3%A5%C2%A4%C2%A9%C3%A5%C2%9C%C2%B0%C3%A9%C2%97%C2%A8-6c72e73f368fcbff984f5a7949f47576.jpg?x-oss-process=image/format,webp",
+    "size": 454600,
+    "sha256": "21680f80f8a22f724c063099bc879845498634948512446a68c589e15a3f8554"
+  },
+  {
+    "path": "media/a49d3bde0626bfc2.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%B0%C2%BA%C3%A5%C2%AF%C2%B8-158e43a74086fe0ef6413a19fddd8d80.jpg?x-oss-process=image/format,webp",
+    "size": 156472,
+    "sha256": "038e1351bac16bb0222c882f1de6b6fdcaae26c6bbdb23c532b472d3e064f1de"
+  },
+  {
+    "path": "media/a2569f87a661b57f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A5%C2%BF%C2%AB%C3%A5%C2%85%C2%85%C3%A4%C2%BC%C2%B8%C3%A7%C2%BC%C2%A9%C3%A7%C2%BA%C2%BF-645ef9e98bb128a9f4f1f5bd2bbb6603.jpg?x-oss-process=image/format,webp",
+    "size": 161586,
+    "sha256": "cc0b68111d210915573e5c355e7f726b0ac60aea47c0a938154b7b9ab0fae318"
+  },
+  {
+    "path": "media/1c96e7b6f42c5259.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%97%C2%85%C3%A5%C2%B1%C2%85%C3%A5%C2%A4%C2%A7%C3%A5%C2%BA%C2%8A-5d31d0e9683454cd0a5db21040107b91.png?x-oss-process=image/format,webp",
+    "size": 106144,
+    "sha256": "c170c6e56cd102465d8682775fbeb2f821306f8b22d4f46daa1764aa3414cc18"
+  },
+  {
+    "path": "media/ed4e026e4f4c655e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%99%C2%BA%C3%A8%C2%83%C2%BD%C3%A6%C2%84%C2%9F%C3%A5%C2%BA%C2%94%C3%A7%C2%94%C2%B5%C3%A5%C2%8A%C2%A8%C3%A9%C2%97%C2%A8-3a43f459f0d275b0ed9ce549276d6318.jpg?x-oss-process=image/format,webp",
+    "size": 53184,
+    "sha256": "7a488ba9908342a637a29cff416ef1bcb05eec337be9af457501e8b662a65ec1"
+  },
+  {
+    "path": "media/8954e9a2da79f8d1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%9B%C2%9C%C3%A5%C2%A4%C2%9C%C3%A9%C2%8E%C2%8F%C3%A9%C2%87%C2%91-318b83b66f101eaef9b49ac152e73f3d.png?x-oss-process=image/format,webp",
+    "size": 498,
+    "sha256": "f7ccbae7ec330daa95985847453e6b203d658f0224d55c2f569f506d18f52732"
+  },
+  {
+    "path": "media/403f5a883b655e8b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%9C%C2%88%C3%A5%C2%BD%C2%B1%C3%A8%C2%93%C2%9D-37ea4e615b112cfc10f1da3651f16532.png?x-oss-process=image/format,webp",
+    "size": 644,
+    "sha256": "b1422ff7c7e369425635ed914f7fcf7dd5dba04d58548f6a0698d40d4e9fd213"
+  },
+  {
+    "path": "media/959c23935a204ece.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%9E%C2%81%C3%A5%C2%9C%C2%B0%C3%A7%C2%99%C2%BD-2a2ed4ba7878fdd0e0aa1fa3fa62e93a.png?x-oss-process=image/format,webp",
+    "size": 470,
+    "sha256": "defa326fde7dbf45b029db930c5368e4bdf23871c1539f65d6ab6eb665398b30"
+  },
+  {
+    "path": "media/1047923b330f9ed4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%A0%C2%BC%C3%A6%C2%A0%C2%85-d1d913f782c782df739fad1eedeb44d0.jpg?x-oss-process=image/format,webp",
+    "size": 127282,
+    "sha256": "65ca7df8f9f3a81ae3441a16a4eed6891e87fed21666cfa307822bad1482908c"
+  },
+  {
+    "path": "media/51c4c3e983ec9dc3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%A8%C2%A1%C3%A5%C2%BC%C2%8F1-c60bb68239c1052b2f30982d6b49b18a.png?x-oss-process=image/format,webp",
+    "size": 324014,
+    "sha256": "024214ba53ac2e71b3ba42ce4cd559e9bd65ad80ec6f6c1e50128a8501d33fb8"
+  },
+  {
+    "path": "media/e16827741f1dc65f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A6%C2%B0%C2%B4%C3%A6%C2%99%C2%B6%C3%A6%C2%97%C2%8B%C3%A9%C2%92%C2%AE-abaee190b42467ada4717c1481aae7e5.jpg?x-oss-process=image/format,webp",
+    "size": 88756,
+    "sha256": "7c600f60a7583ab5ff4d5fc0c3244b0394bcba5a5517c90d5ed24758ad7ffbd0"
+  },
+  {
+    "path": "media/c86ac6db80d51577.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%86%C2%94%C3%A5%C2%B2%C2%A9%C3%A7%C2%81%C2%B0-8057f0ec72df2a8ec1f4905295b010db.png?x-oss-process=image/format,webp",
+    "size": 1002,
+    "sha256": "29ed7af1f906278264fd3975c83ee4268757386e437891f525d68eb24f33d940"
+  },
+  {
+    "path": "media/6edb19d17cb0db07.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%90%C2%A5%C3%A7%C2%8F%C2%80%C3%A6%C2%A3%C2%95-ad338f1a27b4e3c975c269a984dd558d.png?x-oss-process=image/format,webp",
+    "size": 904,
+    "sha256": "9b17298705135b7c45676f31120d64f4dc44d76c0a9801f3e6ccbc8e47daa0e5"
+  },
+  {
+    "path": "media/7e5ed31de22bc6be.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%94%C2%A8%C3%A6%C2%96%C2%99%C3%A7%C2%A1%C2%AC-fce56e0863e2192ee8a5859f36a3abba.png?x-oss-process=image/format,webp",
+    "size": 274524,
+    "sha256": "1160c94144d48264087605a01a849d9514dcf70b61044cfaa8d0ba6f0fed8b1f"
+  },
+  {
+    "path": "media/8cd8712af2a3785a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%94%C2%B5%C3%A5%C2%8A%C2%A8%C3%A8%C2%B8%C2%8F%C3%A6%C2%9D%C2%BF-4bc308f4355ba3d1e937d1966307ceb3.jpg?x-oss-process=image/format,webp",
+    "size": 27314,
+    "sha256": "b04e792259cfd5def5ed00427f8988233fb2f65190b9685712a9a318e8752c10"
+  },
+  {
+    "path": "media/58670a95d51820f7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%94%C2%B5%C3%A5%C2%8A%C2%A8%C3%A9%C2%97%C2%A8%C3%A6%C2%9D%C2%BF%C3%A9%C2%9A%C2%90%C3%A8%C2%97%C2%8F%C3%A5%C2%BC%C2%8F%C3%A5%C2%82%C2%A8%C3%A7%C2%89%C2%A9%C3%A7%C2%9B%C2%92-13aca02ef4c22559c1b02d3f3b2449b8.jpg?x-oss-process=image/format,webp",
+    "size": 70200,
+    "sha256": "0dfaf1eb86b6a824194c7f90bb2bbfed78ff6d4aca4ce9b24e29068619ce412d"
+  },
+  {
+    "path": "media/825f688387a5125a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%A8%C2%B3%C3%A5%C2%AE%C2%9A%C3%A6%C2%9D%C2%86-a4cc7803c5af65ffb553f17719b1f3b7.png?x-oss-process=image/format,webp",
+    "size": 456048,
+    "sha256": "9acd98011d0d096c7b377940e31ca1048d1fc752532061a0533bba8f207480f0"
+  },
+  {
+    "path": "media/1ed929a9e60aa406.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%A9%C2%BA%C3%A6%C2%82%C2%AC-b96dab48391f4c0dcf14f1ef02650711.png?x-oss-process=image/format,webp",
+    "size": 257354,
+    "sha256": "182cbadec4101262910bf22ece24c8919da1f6a0c6e6f0feacbc35d5bb589aea"
+  },
+  {
+    "path": "media/da58cce41fa71037.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%AC%C2%AC%C3%A4%C2%B8%C2%89%C3%A5%C2%90%C2%B8%C3%A8%C2%83%C2%BD%C3%A7%C2%9B%C2%92-8e72fb93593b71ea14d18cfc745e857b.png?x-oss-process=image/format,webp",
+    "size": 87592,
+    "sha256": "d911cf2787a30ea1921a9ae9d76205e23a24bc9a481f1458c74bb68680c019cb"
+  },
+  {
+    "path": "media/ea4259e26d826d15.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%AC%C2%AC%C3%A4%C2%B8%C2%89%C3%A6%C2%8E%C2%92%C3%A5%C2%8F%C2%AF%C3%A5%C2%9D%C2%90%C3%A5%C2%8F%C2%AF%C3%A8%C2%BA%C2%BA-582cf7a71c532841076684248b9f4539.jpg?x-oss-process=image/format,webp",
+    "size": 54072,
+    "sha256": "993d1cf0f3b82c4b3f75b007927ed26d6311ecf5c25cb6b7d4605793288d5d53"
+  },
+  {
+    "path": "media/ef49a92465430bee.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%AC%C2%AC1%C3%A4%C2%B8%C2%AA%C3%A7%C2%AB%C2%A0%C3%A8%C2%8A%C2%82-27532e12653612bce63cb480a9f60c7a.png?x-oss-process=image/format,webp",
+    "size": 13850,
+    "sha256": "aa2c06003f2c231cdd1dc6a699e0c670644067a6dde290e8c979e0c17e2a5342"
+  },
+  {
+    "path": "media/f4aa3e5cccbeb10d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A7%C2%AC%C2%AC2%C3%A4%C2%B8%C2%AA%C3%A7%C2%AB%C2%A0%C3%A8%C2%8A%C2%82-9893c4b4a6e31b4d8282392726abb794.png?x-oss-process=image/format,webp",
+    "size": 12436,
+    "sha256": "0ef6c35903aa59a167d5c8103f2a8629823605c833fc7d381f0e925163ff6bfa"
+  },
+  {
+    "path": "media/8a475ca12468bd3f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A8%C2%9A%C2%8C%C3%A5%C2%BC%C2%8F%C3%A6%C2%9C%C2%BA%C3%A8%C2%88%C2%B1%C3%A7%C2%9B%C2%96-41ecd6309794e000a170a4a9bb8e3d6e.jpg?x-oss-process=image/format,webp",
+    "size": 109380,
+    "sha256": "53e8c659a8e066e6d09929a5162be58d4c507dd7c5b6a5625f6295fdc0c4d958"
+  },
+  {
+    "path": "media/052deb93db41cd6d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A8%C2%AF%C2%95%C3%A9%C2%A9%C2%BE-d5f7b74ac45e1a8e2afc963d35ab5d90.jpg?x-oss-process=image/format,webp",
+    "size": 162352,
+    "sha256": "2f6c0f0092263dd7209265ec9e911bb71da0e9276af5d667df638889800c6e51"
+  },
+  {
+    "path": "media/124d049292920b02.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A8%C2%B6%C2%85%C3%A7%C2%BA%C2%A7%C3%A7%C2%94%C2%B5%C3%A6%C2%B7%C2%B7%C3%A5%C2%8F%C2%91%C3%A5%C2%8A%C2%A8%C3%A6%C2%9C%C2%BA-5bb8137eadd0e5ecb20de5b63570efad.png?x-oss-process=image/format,webp",
+    "size": 116016,
+    "sha256": "3f7d081f80093b51472cea8cc4a2e4ad7daeb536c3221d86607ee8836cc9232b"
+  },
+  {
+    "path": "media/7de8cffac8fcdd7d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A8%C2%B6%C2%85%C3%A7%C2%BA%C2%A7Eva-76919a288dc802a24d452ea975f7d1ad.jpg?x-oss-process=image/format,webp",
+    "size": 59742,
+    "sha256": "94799377a7ee91da0915c7e7d6b9bb5e99eb82112a3a1efbd9ac54b831811fa4"
+  },
+  {
+    "path": "media/c89f0896b31841bc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A8%C2%BD%C2%AE%C3%A6%C2%AF%C2%82-b600365754e6cf8d0f7d5cef9abd9035.png?x-oss-process=image/format,webp",
+    "size": 233536,
+    "sha256": "8a21cfb714a77d9e775b9121c5b2c15287090a89a4e2767542a490db1bc2be14"
+  },
+  {
+    "path": "media/fb670bd70c583b5a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%92%C2%A2%C3%A7%C2%90%C2%B4%C3%A6%C2%BC%C2%86%C3%A9%C2%BB%C2%91%C3%A8%C2%89%C2%B2%C3%A8%C2%BF%C2%90%C3%A5%C2%8A%C2%A8%C3%A7%C2%BB%C2%84%C3%A4%C2%BB%C2%B6-1-46c49d0aa64ab132df09b384343aa43a.png?x-oss-process=image/format,webp",
+    "size": 980,
+    "sha256": "49627dbd3488ab13e5ddffc04b2f97ebe3aa185552be4e05e4c7e99def0756b1"
+  },
+  {
+    "path": "media/dec9cb70eea6c79f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%92%C2%A2%C3%A7%C2%90%C2%B4%C3%A6%C2%BC%C2%86%C3%A9%C2%BB%C2%91%C3%A8%C2%89%C2%B2%C3%A8%C2%BF%C2%90%C3%A5%C2%8A%C2%A8%C3%A7%C2%BB%C2%84%C3%A4%C2%BB%C2%B6-2-683c566e06703b276f0f830800805743.png?x-oss-process=image/format,webp",
+    "size": 998,
+    "sha256": "53ab859e92d8c019ab118bd57dbed5abd24bab759baf692cff14828ac54bc6a1"
+  },
+  {
+    "path": "media/b6898ce8495bc734.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%92%C2%A2%C3%A7%C2%90%C2%B4%C3%A6%C2%BC%C2%86%C3%A9%C2%BB%C2%91%C3%A8%C2%89%C2%B2%C3%A8%C2%BF%C2%90%C3%A5%C2%8A%C2%A8%C3%A7%C2%BB%C2%84%C3%A4%C2%BB%C2%B6-3-ed9abb03740d64aafd10b96870c6d2d0.png?x-oss-process=image/format,webp",
+    "size": 1018,
+    "sha256": "cd845d4632fd903e6075dd70db0b5c68a1acf0c7ed5b0c02720b925250ded383"
+  },
+  {
+    "path": "media/b89348ad47f68a2a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%92%C2%A2%C3%A7%C2%90%C2%B4%C3%A6%C2%BC%C2%86%C3%A9%C2%BB%C2%91%C3%A8%C2%89%C2%B2%C3%A8%C2%BF%C2%90%C3%A5%C2%8A%C2%A8%C3%A7%C2%BB%C2%84%C3%A4%C2%BB%C2%B6-ceea42f62666256d9883aaeb0a2becda.png?x-oss-process=image/format,webp",
+    "size": 976,
+    "sha256": "a9b2af6a6d2f139b89eb3b41377f9f3e113758a5a463d7bfa5cf07697e9d3ac0"
+  },
+  {
+    "path": "media/13d5ac870789b385.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%98%C2%B2%C3%A6%C2%92%C2%9E%C3%A5%C2%87%C2%BB%C3%A9%C2%98%C2%BB%C3%A6%C2%AD%C2%A2%C3%A5%C2%9D%C2%97-acf0a1c733fd6ed668c78a57edc0cbe7.png?x-oss-process=image/format,webp",
+    "size": 23316,
+    "sha256": "0c2151d69b8757d9ca9b6e520483f076b18242eab9be8d6c245e6ea5c5dc9f92"
+  },
+  {
+    "path": "media/3e8f379fb237ae52.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%9F%C2%B3%C3%A5%C2%93%C2%8D-d4187d992fc551c677ef4f3f33c43a8e.png?x-oss-process=image/format,webp",
+    "size": 440486,
+    "sha256": "8f6eaa866a52d5fd026df547f820fe9ccfed9f9e8e7982ead99104e885abcb3e"
+  },
+  {
+    "path": "media/419b5791cfae6ec9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%A3%C2%9E%C3%A6%C2%A1%C2%A5%C3%A6%C2%B8%C2%B8%C3%A8%C2%89%C2%87%C3%A5%C2%BC%C2%8F%C3%A8%C2%BD%C2%A6%C3%A9%C2%A1%C2%B6-57ee9dd971c4a8243f5e177d66d8d32c.jpg?x-oss-process=image/format,webp",
+    "size": 197044,
+    "sha256": "30d47d459b9c9c1e3ac35894983f506e5c0689531f2b03b9d5132aaa0f2849b1"
+  },
+  {
+    "path": "media/b3997033ef735fb9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/%C3%A9%C2%AB%C2%98%C3%A5%C2%8E%C2%8B%C3%A9%C2%85%C2%8D%C3%A7%C2%94%C2%B5%C3%A7%C2%9B%C2%92%C3%A4%C2%B8%C2%BB%C3%A5%C2%8A%C2%A8%C3%A7%C2%BF%C2%BB%C3%A8%C2%BD%C2%AC%C3%A6%C2%8A%C2%80%C3%A6%C2%9C%C2%AF-89a9e4beab478b820978dcc0739872c3.png?x-oss-process=image/format,webp",
+    "size": 89378,
+    "sha256": "0f3db7728379cc8820da2c1a04afb243d087452503fa6c8b2df8cd1bbb9fd1c3"
+  },
+  {
+    "path": "media/5d7454701c8f6106.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/1%C3%A6%C2%A8%C2%AA%C3%A9%C2%A3%C2%8E-1181622a1fb3ec7bc2f51b8fd0a8ab67.mp4",
+    "size": 11330169,
+    "sha256": "c365ba082929bff8f14600b024137f739fc019d6412d2f6232b069c962210ea3"
+  },
+  {
+    "path": "media/3afac1a783c693e6.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/1082L%C3%A5%C2%90%C2%8E%C3%A5%C2%A4%C2%87%C3%A5%C2%8E%C2%A2%C3%A7%C2%A9%C2%BA%C3%A9%C2%97%C2%B4-9da432e50e25c9dce7c9f9ecd6229e6b.jpg?x-oss-process=image/format,webp",
+    "size": 314054,
+    "sha256": "d1f5ca92d007357b4a779600e94fe733a13177b5e4e2178b740298bdb48456ac"
+  },
+  {
+    "path": "media/00d01bf290e27fe4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/16%C3%A8%C2%8B%C2%B1%C3%A5%C2%AF%C2%B83.5K%20OLED%C3%A4%C2%B8%C2%AD%C3%A6%C2%8E%C2%A7%C3%A3%C2%80%C2%81%C3%A5%C2%89%C2%AF%C3%A9%C2%A9%C2%BE%C3%A5%C2%8F%C2%8C%C3%A8%C2%81%C2%94%C3%A5%C2%B1%C2%8F-66cfb69ac9d7c1201ceec63278c2303e.jpg?x-oss-process=image/format,webp",
+    "size": 63492,
+    "sha256": "deddddcd43a0fca03ff75ca115bb3478b672e47e99203def9fc27e8da2dc22c8"
+  },
+  {
+    "path": "media/47122715a2394ba1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/1680%C3%A4%C2%B8%C2%87%C3%A8%C2%89%C2%B2%C3%A6%C2%B5%C2%81%C3%A5%C2%85%C2%89%C3%A6%C2%BA%C2%A2%C3%A5%C2%BD%C2%A9%C3%A6%C2%B0%C2%9B%C3%A5%C2%9B%C2%B4%C3%A7%C2%81%C2%AF-7f320cc16ec9ad3ea5d084165e0f376d.jpg?x-oss-process=image/format,webp",
+    "size": 72050,
+    "sha256": "82f83c9ece0473e0ecaa750a5fc088d8d743d3ad503c77b6e4997969712e05b8"
+  },
+  {
+    "path": "media/a8d0bc2ed6fb3b3f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/2.0t%C3%A5%C2%8F%C2%91%C3%A5%C2%8A%C2%A8%C3%A6%C2%9C%C2%BA-cf25955292ab0793bd1d2859b5e9ac4b.png?x-oss-process=image/format,webp",
+    "size": 78444,
+    "sha256": "8417d166a9ceaa64d3bea8e58ef6b0206c2c966b4c6126f5d1dab8ba0590efd2"
+  },
+  {
+    "path": "media/76af5784d0a9e40b.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/2%C3%A7%C2%88%C2%86%C3%A8%C2%83%C2%8E-73bc9c81b99781cc487324bb57fd4941.mp4",
+    "size": 11976772,
+    "sha256": "08b354268e4c0384c3f4b386af4005b596d5f396afe728279ea9449901e1e135"
+  },
+  {
+    "path": "media/881581a6d80abd85.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/22%C3%A7%C2%82%C2%B9%C3%A4%C2%BD%C2%8D%C3%A6%C2%95%C2%B2%C3%A5%C2%87%C2%BB%26%C3%A6%C2%8F%C2%89%C3%A6%C2%8D%C2%8F%C3%A6%C2%8C%C2%89%C3%A6%C2%91%C2%A9-08e365f71ca43d055b00ac69d3beba31.jpg?x-oss-process=image/format,webp",
+    "size": 89764,
+    "sha256": "ff8233f47c94fc55df70f2e267d493ce7b139a6a4572c9b5da984eac0691ff7b"
+  },
+  {
+    "path": "media/fda32f75170bbcec.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/2473L%20%C3%A8%C2%B6%C2%85%C3%A5%C2%A4%C2%A7%C3%A6%C2%89%C2%A9%C3%A5%C2%B1%C2%95%C3%A7%C2%A9%C2%BA%C3%A9%C2%97%C2%B4-1c8278d1f93365a2943c9853e4275b18.jpg?x-oss-process=image/format,webp",
+    "size": 504254,
+    "sha256": "aad2daf84874272cec7356c408f39f552e7f9bf74be41f54c16bb2bc774eee7f"
+  },
+  {
+    "path": "media/4a321333523f72fe.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/3%C3%A4%C2%BE%C2%A7%C3%A7%C2%A2%C2%B0-1e4226a5d6a5403bb0df40a32a91099a.mp4",
+    "size": 9732304,
+    "sha256": "731f5d774e37c9b6f951ad5c102c143da2ed7ac20b8a0077f5ae427f6fe17486"
+  },
+  {
+    "path": "media/8f39b0d3e640cd5f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/4%C3%A8%C2%B1%C2%AA%C3%A5%C2%8D%C2%8E%C3%A7%C2%8B%C2%AC%C3%A7%C2%AB%C2%8B%C3%A5%C2%88%C2%86%C3%A5%C2%8C%C2%BA-9e57fee2553e2cddc81c8069e8598703.jpg?x-oss-process=image/format,webp",
+    "size": 79842,
+    "sha256": "e5b69025a1efc2a2f766473c3829c5edc0703d3f30e72a44ea382cc4007a2cc0"
+  },
+  {
+    "path": "media/d2ed4a4b74174263.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/6.3%C3%A8%C2%8B%C2%B1%C3%A5%C2%AF%C2%B8OLED%C3%A5%C2%A6%C2%99%C3%A6%C2%8E%C2%A7%C3%A5%C2%B1%C2%8F-3b5f7e7c895202daa6e9c22970594762.jpg?x-oss-process=image/format,webp",
+    "size": 27402,
+    "sha256": "b26647a21253176b1a59c738781fb11cc26d80fc04d1390deadbfe3309fd5e79"
+  },
+  {
+    "path": "media/917966f5e52b692f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/6.5L%C3%A4%C2%BA%C2%8C%C3%A6%C2%8E%C2%92%C3%A9%C2%9A%C2%90%C3%A7%C2%A7%C2%81%C3%A6%C2%94%C2%B6%C3%A7%C2%BA%C2%B3%C3%A7%C2%9B%C2%92-8849e7b8375d46858e7d0ddd7d32fe89.jpg?x-oss-process=image/format,webp",
+    "size": 141074,
+    "sha256": "0c4a197d9785e8a997019fbd35e1ee69461267f154a72b67958aa7a6b9a517b3"
+  },
+  {
+    "path": "media/4b0acee017b66fa4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/9L%C3%A6%C2%99%C2%BA%C3%A8%C2%83%C2%BD%C3%A5%C2%86%C2%B7%C3%A6%C2%9A%C2%96%C3%A6%C2%81%C2%92%C3%A6%C2%B8%C2%A9%C3%A5%C2%86%C2%B0%C3%A7%C2%AE%C2%B1-86f8663b9202a3cb99d656018e866b85.jpg?x-oss-process=image/format,webp",
+    "size": 112484,
+    "sha256": "eaa4a2d4d16a986dded1ce43dcc60f83d4d4dc31601f3ff7cf901266585a9666"
+  },
+  {
+    "path": "media/999f1ced5975b12c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Banner2-a319e6f62f9e9ff781ef230eab1c1234.jpg?x-oss-process=image/format,webp",
+    "size": 284182,
+    "sha256": "ad9fe335501803354a875440aa0fda1566ee3f977b3315b46dc9942e8b38394a"
+  },
+  {
+    "path": "media/02596135c3f8f669.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/black-4c30c0a46e1498e0cd33d7b307ad3aea.jpg?x-oss-process=image/format,webp",
+    "size": 193786,
+    "sha256": "32a2d6f6b7f9ceef6860ed6f8025fab5f4cd7b23bcf16b24d6fcd490c2f441c1"
+  },
+  {
+    "path": "media/642a8e35c3bae17c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/blue-db70a5d349da3c27c5b33085b82bf5a1.jpg?x-oss-process=image/format,webp",
+    "size": 178580,
+    "sha256": "472ed466d540c8dba1afd89393c2332ae76821a307bb83cbde502a0612671651"
+  },
+  {
+    "path": "media/473f904bab4863a0.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/brown-1df64e71015c83153c1c4b2927b10c50.jpg?x-oss-process=image/format,webp",
+    "size": 196956,
+    "sha256": "55c2bc680c3111832846929257feafd985bb1cac8114ef66155d94de4a718dbe"
+  },
+  {
+    "path": "media/5263c26fc7dafbe1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/brown-cce19293af1f6ca195cb804926483e5f.png?x-oss-process=image/format,webp",
+    "size": 828,
+    "sha256": "d586606dabf5bbc038f2baa76368f6ed170c537506ed03c05777cae97f97d298"
+  },
+  {
+    "path": "media/3f3b11735f4c9bb8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Frame%201739331950-c0bc650070b6aa9a48b947e0d00e4523.jpg?x-oss-process=image/format,webp",
+    "size": 24530,
+    "sha256": "de32a1f2b0f107241e3f18c4171929763f4d5c2f473ecc7ae0791d4f8df45f41"
+  },
+  {
+    "path": "media/65ff996e0905b482.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Frame%201739331974-5570bdcb3be128c72ffd4486df25fcc4.png?x-oss-process=image/format,webp",
+    "size": 187618,
+    "sha256": "df781359b8ce9a67cfe2e3326da3ca2cad82a0962a5d170f8c34a50e47521479"
+  },
+  {
+    "path": "media/d3f2633d8ad0a067.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/PC-%C3%A3%C2%80%C2%8C%C3%A6%C2%B5%C2%A9%C3%A7%C2%80%C2%9A%C3%A6%C2%98%C2%9F%C3%A9%C2%92%C2%BB%20%C3%A3%C2%80%C2%8D%C3%A7%C2%9F%C2%A9%C3%A9%C2%98%C2%B5%C3%A7%C2%81%C2%AF%C3%A7%C2%BB%C2%84-da6bc3fdfdc212e611eb96f6aa462743.mp4",
+    "size": 12280576,
+    "sha256": "f5ffd55c852cbc7c52539635610918efbe1d1d8c497331f5b4af2105821b13c1"
+  },
+  {
+    "path": "media/80c0b9e3753a9cb6.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A4%C2%B8%C2%93%C3%A4%C2%B8%C2%9A%C3%A6%C2%8C%C2%89%C3%A6%C2%91%C2%A9%C3%A6%C2%A4%C2%85-f29b4871e00d5c596cf6fed2061f0a80.mp4",
+    "size": 9686964,
+    "sha256": "72fb9fcc9782aca031496581025f44844e2b39266de11cee20c2faca73b97ded"
+  },
+  {
+    "path": "media/347268c5886f41a5.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A4%C2%BC%C2%8A%C3%A5%C2%A7%C2%86%C3%A6%C2%96%C2%AF%C3%A8%C2%BA%C2%BA%C3%A6%C2%A4%C2%85-315282bb56bd5ffccb478c2294e6d12c.mp4",
+    "size": 7972101,
+    "sha256": "fba054f548047d3f98ab4d7cc42e5f6590be9662a48f92e80e26140bed81dc8b"
+  },
+  {
+    "path": "media/d2e2539a19354180.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A5%C2%85%C2%A8%C3%A8%C2%BD%C2%A6%C3%A5%C2%B0%C2%8A%C3%A4%C2%BA%C2%AB%C3%A6%C2%A0%C2%87%C3%A9%C2%85%C2%8D-8046ddbef90fb0c9b0af87062689b86c.mp4",
+    "size": 16108874,
+    "sha256": "7df88bcead16f72639c9645dd212c380a15b0bf7307297212498985b8f9c1de0"
+  },
+  {
+    "path": "media/422813e18288a18a.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A5%C2%8F%C2%8C%C3%A7%C2%99%C2%BE%C3%A4%C2%B8%C2%87%C3%A5%C2%83%C2%8F%C3%A7%C2%B4%C2%A0%C3%A6%C2%99%C2%BA%C3%A8%C2%83%C2%BD%C3%A6%C2%8A%C2%95%C3%A5%C2%BD%C2%B1%C3%A5%C2%A4%C2%A7%C3%A7%C2%81%C2%AF-11047c23962a41d9ab2db94f79ec1bd5.mp4",
+    "size": 5776546,
+    "sha256": "d50737eecfbff2e9ba3c5df74aadb3e6d041a60d7d3eacfaf9899ebe1f0fa37f"
+  },
+  {
+    "path": "media/cd0e5a24683c5b50.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A5%C2%8F%C2%8C%C3%A9%C2%9B%C2%B6%C3%A9%C2%87%C2%8D%C3%A5%C2%8A%C2%9B-1fab89e687c14f82ac2c87bc4f44cc01.mp4",
+    "size": 4989747,
+    "sha256": "36aeb9af961adab782205b24ee31cdd1cc2ef3a96d7edd80ab7f6d3984dce688"
+  },
+  {
+    "path": "media/c2ed67cb8a51f126.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A5%C2%AE%C2%9A%C3%A6%C2%B5%C2%B7%C3%A6%C2%99%C2%BA%C3%A8%C2%83%C2%BD%C3%A4%C2%B8%C2%AD%C3%A6%C2%9E%C2%A2-081c4b90d3432de06eb098b85b0bd9d5.mp4",
+    "size": 13076150,
+    "sha256": "ec2671aaa1e05d73da728c20c734845e43453c7801716b435d315db95947da16"
+  },
+  {
+    "path": "media/7dfddc3bf4d9e7d2.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A5%C2%AE%C2%BD%C3%A4%C2%BA%C2%AB%C3%A5%C2%AF%C2%B0%C3%A5%C2%AE%C2%87%C3%A5%C2%BA%C2%A7%C3%A8%C2%88%C2%B1-f169afcad6b84ff5e777441735e2bf3f.mp4",
+    "size": 13860513,
+    "sha256": "6e5e17cb266eb9c5189ff69473b1dd6ae74070cc722e2439be091190cbf41252"
+  },
+  {
+    "path": "media/d778bcb6da05b064.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A6%C2%97%C2%8B%C3%A8%C2%BD%C2%AC%C3%A5%C2%BA%C2%A7%C3%A6%C2%A4%C2%85-d80a631bd8810063e7a077d96bb8ab02.mp4",
+    "size": 8635674,
+    "sha256": "184722fb180128343fafcae4f9ee2d6b88132ce57c7487a76b943f08cc5e0326"
+  },
+  {
+    "path": "media/2cb647452a2c6057.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A7%C2%99%C2%BE%C3%A4%C2%B8%C2%87%C3%A7%C2%BA%C2%A7%C3%A8%C2%B1%C2%AA%C3%A5%C2%8D%C2%8E%C3%A5%C2%BA%C2%95%C3%A7%C2%9B%C2%98-685beb0798534610128d8a6876b74dda.mp4",
+    "size": 14629836,
+    "sha256": "ff9e676ccfae80fdb2cf60e8ea4ce0d6a6dd43c8439aecd1074e31c4b9ea7256"
+  },
+  {
+    "path": "media/e3fe6d979ea82a43.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A7%C2%AB%C2%AF%C3%A9%C2%9F%C2%B3%C3%A5%C2%93%C2%8D-1c0b47fb16eee4261731f0c1ff5a9d6d.mp4",
+    "size": 18017007,
+    "sha256": "410f2ddfd37436dbd0e36d13c41fd68e2d321cb0612fd3ad1d8d6ec35e423a5d"
+  },
+  {
+    "path": "media/42dd9df057335a92.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A9%C2%9B%C2%B6%C3%A9%C2%87%C2%8D%C3%A5%C2%8A%C2%9B-daefe30d48ddcc8fcbf71f9b7dde8119.mp4",
+    "size": 9020291,
+    "sha256": "dede39213d472dac964228b3e6de893a7cd0d2fc411fafb80c706adf5225a2e3"
+  },
+  {
+    "path": "media/12703b87f996fa35.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A9%C2%9F%C2%B3%C3%A5%C2%93%C2%8D-cd7b6a557ca5439910cb57da37e866f8.mp4",
+    "size": 11196609,
+    "sha256": "42d7b3351eb0cf9fbe4f8c23efd1bd6e3f79b31b5707fe62da77b1ea0f98f054"
+  },
+  {
+    "path": "media/b07d633c4b75fb32.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A9%C2%A3%C2%9E%C3%A7%C2%BF%C2%BC%C3%A5%C2%B1%C2%8F-b8c57cc7d03642d286b52cd3a7b18f39.mp4",
+    "size": 6683058,
+    "sha256": "23dbde5620d4188ecc2ec121d7b4230e493e462767953669ed5335bed4621fa6"
+  },
+  {
+    "path": "media/b7aece15837f37cf.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc%C3%A9%C2%A6%C2%96%C3%A5%C2%B1%C2%8F-095aa23fa4b316a3390ddc300d361954.mp4",
+    "size": 14593727,
+    "sha256": "6566ca642e5457533d3b802ac97516fc776ca26daead88a233f8a6b95bf31da5"
+  },
+  {
+    "path": "media/074a1a5b076044d2.mp4",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Pc8%C3%A5%C2%A4%C2%A7%C3%A5%C2%AE%C2%89%C3%A5%C2%85%C2%A8%C3%A5%C2%86%C2%97%C3%A4%C2%BD%C2%99-6494b338505d23005fc8c598c80d8638.mp4",
+    "size": 13845463,
+    "sha256": "903e7924cac53232c530342afb99a19934aee49bb3f55f66d1da802d113eb445"
+  },
+  {
+    "path": "media/8ef6ff11586c23d5.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/red-c251082f5f17dd112565e960c6ff9c1f.jpg?x-oss-process=image/format,webp",
+    "size": 174566,
+    "sha256": "de33437ed122b456fb390101f363366a25f5a28e95fb5e55b1e88a1fce2a6446"
+  },
+  {
+    "path": "media/2979d0cf8618efe7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/red-icon-5a05acd6f02ee5f2ba9c9aac31f36e24.png?x-oss-process=image/format,webp",
+    "size": 566,
+    "sha256": "6bbbbb48c34df342e8d9f2ef1bf273f11e5a4a07b1fe07642c5615eecd787f01"
+  },
+  {
+    "path": "media/0e9ff1fd67ee44e2.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/Soft%20NAPPA%20%C3%A5%C2%85%C2%A8%C3%A7%C2%B2%C2%92%C3%A9%C2%9D%C2%A2%C3%A5%C2%A4%C2%B4%C3%A5%C2%B1%C2%82%C3%A7%C2%9C%C2%9F%C3%A7%C2%9A%C2%AE-054e6f2fa006c8c9fa07ad2bfe069982.jpg?x-oss-process=image/format,webp",
+    "size": 136290,
+    "sha256": "ed810c1701306f47225ba689d9e4029de77c0752f0fff8a1b416d3bb9e5769d8"
+  },
+  {
+    "path": "media/d08394b8044595cd.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/wecom-temp-298337-4e44a5a0bd64eeb83f41e4c804e808fa%201-f8858765a919e446074052293a1316e6.png?x-oss-process=image/format,webp",
+    "size": 41602,
+    "sha256": "659c8917ee1361775ced5090fc0d62437a4c16fbb0bea79f52493d2ab406fab7"
+  },
+  {
+    "path": "media/102cd7ab828f4009.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/wecom-temp-353835-65b0281c4c22c534dd2573cede029dbf%201-8a9f635ff875ffec4bd8a246d9d7bdba.png?x-oss-process=image/format,webp",
+    "size": 61680,
+    "sha256": "2425ea0eb6970f483af87b5c9ccae3c1765389cdd36662f32f0f60c5e615639a"
+  },
+  {
+    "path": "media/3e5feeef20497d2b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/wecom-temp-421555-8b23f8b37c4ed450e5dba45e897e59b6%201-6b86eadb83a4a036d9bf1bb60e31b2db.png?x-oss-process=image/format,webp",
+    "size": 57082,
+    "sha256": "cf8668848d082b58475e2b20143c4dc185a80e9c614beb68ade4f5a341f03af2"
+  },
+  {
+    "path": "media/1c5723886cf3a9f7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-1745306191548/white-10a20e5646d26026f6c8370e66ffbff5.jpg?x-oss-process=image/format,webp",
+    "size": 221608,
+    "sha256": "8640cdbafb1d4c1165b6277967087b7f288442261f0fbe9d9d7a957c24b15d3e"
+  },
+  {
+    "path": "media/35b88f4fd54ba423.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_0.jpg?x-oss-process=image/format,webp",
+    "size": 107578,
+    "sha256": "6e8eeb3b691d5b0ca3028ca8749aa173cac23b44771272a97928878b429e25c8"
+  },
+  {
+    "path": "media/ce501590fc8a76d7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_1.jpg?x-oss-process=image/format,webp",
+    "size": 106034,
+    "sha256": "ce15f22b675c02fcfa793b4263f3c90034f4f6614e0fb87496eb6f7be665c45c"
+  },
+  {
+    "path": "media/98afc62b2f54fdaa.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_10.jpg?x-oss-process=image/format,webp",
+    "size": 108860,
+    "sha256": "989c3b11d822ceeaefeb5067684cfa939756fed4e53de720c7b22908b1243632"
+  },
+  {
+    "path": "media/39c9a9fd22b695a6.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_11.jpg?x-oss-process=image/format,webp",
+    "size": 95934,
+    "sha256": "73fc44ec7c9b7eeec86e9b6d3cc3f6b3adb7ba214858f9e32b66038b307edb90"
+  },
+  {
+    "path": "media/35680f0da272f018.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_12.jpg?x-oss-process=image/format,webp",
+    "size": 82858,
+    "sha256": "de63faf2781973116b7ab2ae77ce3fe14bd081b28d09b157385b3709dfa10185"
+  },
+  {
+    "path": "media/a9bf5e9c6dcb3632.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_13.jpg?x-oss-process=image/format,webp",
+    "size": 64836,
+    "sha256": "4ef096284caf6a3471c33db83c38299c8253727c9bcb3b84c912fbb5ce147155"
+  },
+  {
+    "path": "media/7eaef99d5a96c92b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_14.jpg?x-oss-process=image/format,webp",
+    "size": 68350,
+    "sha256": "0a58ecd635c792c68defaadd811685a8b675441e1b394870a97137943460e38c"
+  },
+  {
+    "path": "media/c6bf65836b1e5783.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_15.jpg?x-oss-process=image/format,webp",
+    "size": 83486,
+    "sha256": "4ff195ea130c826134ba6f6ea736e017b14a3061c9a8c533d0e7fdc3c90ba2e6"
+  },
+  {
+    "path": "media/a406fd2f392e8107.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_16.jpg?x-oss-process=image/format,webp",
+    "size": 92238,
+    "sha256": "f88c6bc90f6fa59978321092537e5c17093e786bf132edab9218aa3fbf49795f"
+  },
+  {
+    "path": "media/fa0e5ecb41a02989.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_17.jpg?x-oss-process=image/format,webp",
+    "size": 98244,
+    "sha256": "cca85ca2d126969574840877602833011d8c153b06e42ed36fbcc502798240bb"
+  },
+  {
+    "path": "media/b13d15ffd60d269d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_18.jpg?x-oss-process=image/format,webp",
+    "size": 99766,
+    "sha256": "d4462dcfa44d3c67b2637a72984da133998b25e16f991eec9b2b494aa80664e8"
+  },
+  {
+    "path": "media/e0ebb66d54406320.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_19.jpg?x-oss-process=image/format,webp",
+    "size": 97986,
+    "sha256": "d48ed6b3f9e9e2be38dd6c12639c0c6cb869abf9e453d36581352e691c80f753"
+  },
+  {
+    "path": "media/003301bba2f2aa2f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_2.jpg?x-oss-process=image/format,webp",
+    "size": 102374,
+    "sha256": "12a589d9b9f21018361832dbdea311ac0907234825175b160eb6c0fa7ea9dd7f"
+  },
+  {
+    "path": "media/7bc57cd7569cf1bf.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_20.jpg?x-oss-process=image/format,webp",
+    "size": 93140,
+    "sha256": "08e7facdf0a68524bcc5e8d1e8fa7d7024a15f21d7429e837f82fceda75059c6"
+  },
+  {
+    "path": "media/0b6bd043cf322fd4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_21.jpg?x-oss-process=image/format,webp",
+    "size": 87830,
+    "sha256": "1d11afd44e1979750de6ceb8a48569e455549db03c8b607f99c9ec3da4d5044b"
+  },
+  {
+    "path": "media/c93348fda1cbdcbb.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_22.jpg?x-oss-process=image/format,webp",
+    "size": 80980,
+    "sha256": "b5b58b7a0d5ef3f8c77ce9478c72c5ac96dc6b725c0e1e22381637674aa5e0db"
+  },
+  {
+    "path": "media/de41784a1460a781.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_23.jpg?x-oss-process=image/format,webp",
+    "size": 84296,
+    "sha256": "94d0cdeeb98f05b054da5aebc34428b4405972999bb3cb93c5fa053beee40c76"
+  },
+  {
+    "path": "media/f57eb8d5459b7a32.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_24.jpg?x-oss-process=image/format,webp",
+    "size": 95646,
+    "sha256": "2eaad25a0f4400132742389f60fa94c6a96917702facd9785d05bb7b7041411c"
+  },
+  {
+    "path": "media/ce9052a64e363d8f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_25.jpg?x-oss-process=image/format,webp",
+    "size": 108216,
+    "sha256": "73e781f441ed92799531ff5915c2e80df5c9d27b91602490b51a803f11b64c7f"
+  },
+  {
+    "path": "media/8ac1451717e397b9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_26.jpg?x-oss-process=image/format,webp",
+    "size": 114622,
+    "sha256": "6aab7027123bcd1c2deb5a8ad35f974a822708ac82d32d2be460980452b444a4"
+  },
+  {
+    "path": "media/61074e7c1e623e63.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_27.jpg?x-oss-process=image/format,webp",
+    "size": 114238,
+    "sha256": "878afbe187575eeeb0f39d9323ad871cc64db45d3530246f3b66cc0977d4c09a"
+  },
+  {
+    "path": "media/dfd5559a1cefdd9d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_28.jpg?x-oss-process=image/format,webp",
+    "size": 109190,
+    "sha256": "f7f9d81934f84893316aa4541b32f502620a55dc246881b96f628cabf8141259"
+  },
+  {
+    "path": "media/2988d8353402c6a8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_29.jpg?x-oss-process=image/format,webp",
+    "size": 101688,
+    "sha256": "54326c1a30efa1b07b1b95a7d7187e504f13a2cc9561c75d15e7f66dd669a571"
+  },
+  {
+    "path": "media/c989bc530a50b211.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_3.jpg?x-oss-process=image/format,webp",
+    "size": 94006,
+    "sha256": "a683a2c751e67b745ccaacf5c23765aa393434ba2fe906661ae7250cabdebc3b"
+  },
+  {
+    "path": "media/1584c561dcfc5247.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_30.jpg?x-oss-process=image/format,webp",
+    "size": 91752,
+    "sha256": "5b2a5c865d52d9a843eeaa03cadb75e0d6b83ff0326d46fcad35eee0573728cc"
+  },
+  {
+    "path": "media/3419ff52f7db7fae.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_31.jpg?x-oss-process=image/format,webp",
+    "size": 75188,
+    "sha256": "b7c1fd4bca9bbc36d3c76609e78725c8bdbd4f0aad6be3325a5b79979adf1821"
+  },
+  {
+    "path": "media/dfe19fe8b2e0004c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_32.jpg?x-oss-process=image/format,webp",
+    "size": 71798,
+    "sha256": "23b59435e4ab5f80a5d4dcf03aa5bccf15e24d9e0df084088fad653852fb1971"
+  },
+  {
+    "path": "media/0b598fdd901fbf08.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_33.jpg?x-oss-process=image/format,webp",
+    "size": 88972,
+    "sha256": "d67228d8f6cae85c6c43e6aa03b42559598c9aa577afb91a3d15618965e82689"
+  },
+  {
+    "path": "media/4a2d084205919b23.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_34.jpg?x-oss-process=image/format,webp",
+    "size": 99916,
+    "sha256": "b491e25228ab8b14b331ebd47ce57f95f03799810a2e29c45c754028e66c79ba"
+  },
+  {
+    "path": "media/bdc53316908f1d07.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_35.jpg?x-oss-process=image/format,webp",
+    "size": 105290,
+    "sha256": "1f1be48fe8fb530b1295dbcc84ef20b3291f429e601232ac0c49fa00200c225b"
+  },
+  {
+    "path": "media/d2a4371600bed229.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_4.jpg?x-oss-process=image/format,webp",
+    "size": 85054,
+    "sha256": "86b2efe11ace4140d187bbaf4e6cc6df32dc406640ad3cb3caa4a4735f63d0f6"
+  },
+  {
+    "path": "media/d77b389c13c0dca1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_5.jpg?x-oss-process=image/format,webp",
+    "size": 85692,
+    "sha256": "532ffc86a8a54f649d2bb70c6751912ccc792444a68e32457e58deb0a3529711"
+  },
+  {
+    "path": "media/da43d37b1aa321ed.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_6.jpg?x-oss-process=image/format,webp",
+    "size": 97520,
+    "sha256": "500e74077c8b698228b690275fa5c46c00408c15ef8d865295757c42f710d0bc"
+  },
+  {
+    "path": "media/35af1e88864ef131.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_7.jpg?x-oss-process=image/format,webp",
+    "size": 106392,
+    "sha256": "ba3913907ad268de06cbd4739e50ec972657dc0083f70687de10909cd5b162af"
+  },
+  {
+    "path": "media/da40a1fbdea8f46d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_8.jpg?x-oss-process=image/format,webp",
+    "size": 113370,
+    "sha256": "10966c4dd6e1b419cf87ac868389f4e2741397f03a4cc26c6908f58cfcc23f99"
+  },
+  {
+    "path": "media/546f3d2159e20e75.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/black_9.jpg?x-oss-process=image/format,webp",
+    "size": 116242,
+    "sha256": "81704228e79bd99b2c8eb99b0bdadc1130b28cbcdd7ef6d3221469d863ab6495"
+  },
+  {
+    "path": "media/2c7880d693efaf31.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_0.jpg?x-oss-process=image/format,webp",
+    "size": 109672,
+    "sha256": "3f7fedba6eb20f9b9f0e22e8f7d70a0fa2146c5b3fdccb2c0b63f8c9658d28e3"
+  },
+  {
+    "path": "media/be6f3b1a467b68b0.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_1.jpg?x-oss-process=image/format,webp",
+    "size": 106944,
+    "sha256": "6bd5d95b15b055da8cb9bdcb1a960c18713e48cea508a0ea5d95dea310119a9a"
+  },
+  {
+    "path": "media/63326ab73f189ad3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_10.jpg?x-oss-process=image/format,webp",
+    "size": 110172,
+    "sha256": "2c987ec75ccf038cc12cd6a8bf6dadb59f0d6867a96c5aaac1f256a842b70d47"
+  },
+  {
+    "path": "media/85aa401a4d2d9048.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_11.jpg?x-oss-process=image/format,webp",
+    "size": 98696,
+    "sha256": "99626e1ef3c7a4a318129a08c53112a729aa95c6e7eb73d9288fd4c18f816c74"
+  },
+  {
+    "path": "media/063b5d12876406e3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_12.jpg?x-oss-process=image/format,webp",
+    "size": 85866,
+    "sha256": "8e32b5d6ea2671a7b790700994ec61a65fd840fc03ea05d94ddcb516109054bc"
+  },
+  {
+    "path": "media/a2cfa9f6c7b42e38.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_13.jpg?x-oss-process=image/format,webp",
+    "size": 67442,
+    "sha256": "c5ac02aa5e90ccafbe9990603c8a9199e2b25df8a9e98f72f93f28258955bec5"
+  },
+  {
+    "path": "media/6758dbc530c1f5c9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_14.jpg?x-oss-process=image/format,webp",
+    "size": 71488,
+    "sha256": "9be8ed9a983a84d0a503d81df1d2bc3aff495b35aff87979a450659f7aa58220"
+  },
+  {
+    "path": "media/bcfda5b8c2a8cfdf.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_15.jpg?x-oss-process=image/format,webp",
+    "size": 87514,
+    "sha256": "cbd5901cbf425142477eaf015484ff2a2fab9d563e8a260cf6ac1280d4100493"
+  },
+  {
+    "path": "media/cfae37f74fe8fc43.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_16.jpg?x-oss-process=image/format,webp",
+    "size": 95500,
+    "sha256": "f7ce4146890c1d1bb4b7c92460769387bbf8704d1a53c9849c5267c4dada4723"
+  },
+  {
+    "path": "media/0f3415c9a81608d4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_17.jpg?x-oss-process=image/format,webp",
+    "size": 100562,
+    "sha256": "b44449ceaf30f69e4a3dc77858c6e1943802758a7e6d49fb90bdd4d9e9615539"
+  },
+  {
+    "path": "media/1ff63da4d914597d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_18.jpg?x-oss-process=image/format,webp",
+    "size": 101126,
+    "sha256": "b832c7a25177b56458950f082d75074ff17f67f343ae4712f68bba66c4078742"
+  },
+  {
+    "path": "media/0c97de593f1c2ceb.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_19.jpg?x-oss-process=image/format,webp",
+    "size": 98786,
+    "sha256": "9d440bbb34686d84681f9c71516414510a46e70f8c85166fad4ad4e070629efe"
+  },
+  {
+    "path": "media/332ce72794ad8cfd.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_2.jpg?x-oss-process=image/format,webp",
+    "size": 105222,
+    "sha256": "746b2e3f546d8fdeb70e462bb3b33ff1627d16b889d8503e0f55da6b94f7fb83"
+  },
+  {
+    "path": "media/ccaa1c2558e027f0.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_20.jpg?x-oss-process=image/format,webp",
+    "size": 96046,
+    "sha256": "8817e60e9a188f1c0872a49c5fc361e150ed60e17e34a4d649f59628fe8004b1"
+  },
+  {
+    "path": "media/b9cf2452b639746c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_21.jpg?x-oss-process=image/format,webp",
+    "size": 91358,
+    "sha256": "444f087c61ced07332eef8b3830f4ac519e6b6d329822c7f51ba73f2102882f6"
+  },
+  {
+    "path": "media/c457479f8d9761a3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_22.jpg?x-oss-process=image/format,webp",
+    "size": 85214,
+    "sha256": "410fc8ffed4452ea32e946a548c62c3a709f797a299b9d52537fbd8dc66f16b7"
+  },
+  {
+    "path": "media/146e140d33bd8791.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_23.jpg?x-oss-process=image/format,webp",
+    "size": 87840,
+    "sha256": "a770e762c81ba982464719581f7fb2c53fd49127090fe4f4625acb0f11ddd21a"
+  },
+  {
+    "path": "media/2930135c78c3128f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_24.jpg?x-oss-process=image/format,webp",
+    "size": 98964,
+    "sha256": "89d9a316665c5853a66151d66194f4f964d4690d19dc1013348f9140ff1c7570"
+  },
+  {
+    "path": "media/b24caa3952c1d92b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_25.jpg?x-oss-process=image/format,webp",
+    "size": 110712,
+    "sha256": "11f5ca22672bf2b7923e9f32f838813ba4e6b252c4e76e03f6c127e3527272f4"
+  },
+  {
+    "path": "media/57c925fa77af8791.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_26.jpg?x-oss-process=image/format,webp",
+    "size": 115296,
+    "sha256": "0f6602e7405ed3c8dd0c8d85f3f694fd9d7c6cd817b69f0476bbb16a48638e82"
+  },
+  {
+    "path": "media/63d40387064e4627.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_27.jpg?x-oss-process=image/format,webp",
+    "size": 117042,
+    "sha256": "7441d104aed83645fe51fdb6ded9fc72689541444703d078fd0f05ca6ed8e331"
+  },
+  {
+    "path": "media/dc7147d2a4371bc5.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_28.jpg?x-oss-process=image/format,webp",
+    "size": 111426,
+    "sha256": "50bd7935558e614cbd71a749a1a85d5556bf6c2bc0caa0b9eb3aba25edb45d04"
+  },
+  {
+    "path": "media/c8df3d26e51eb9ed.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_29.jpg?x-oss-process=image/format,webp",
+    "size": 105330,
+    "sha256": "79f0632a8321ec894ccead0a571f19d0607ba435b175f85367d40a330bd45e59"
+  },
+  {
+    "path": "media/3bf7c9b89b20f8d4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_3.jpg?x-oss-process=image/format,webp",
+    "size": 96966,
+    "sha256": "50fd9e0ad82f56f87d31d0bada8e69fc94be558bdb9aa80141fbb77315361afa"
+  },
+  {
+    "path": "media/61d3048769f30ead.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_30.jpg?x-oss-process=image/format,webp",
+    "size": 94016,
+    "sha256": "3e81f9266ef6dcd369754f0516fb0b0d2ee0823ec1d8b25793b2a70f1c8f0cc6"
+  },
+  {
+    "path": "media/2df609c59a7c8502.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_31.jpg?x-oss-process=image/format,webp",
+    "size": 77092,
+    "sha256": "a662efbb9e560de7a0dcdaf3bf832cbe487c4f67bd5d679ded0435a00afcef84"
+  },
+  {
+    "path": "media/28511f25419f0a2b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_32.jpg?x-oss-process=image/format,webp",
+    "size": 74002,
+    "sha256": "fb9be4bd104cee27fede78dd6aa500f94a86ceed5cf52cccc36ed0d1adb623fc"
+  },
+  {
+    "path": "media/438be0accfd5c8e5.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_33.jpg?x-oss-process=image/format,webp",
+    "size": 90678,
+    "sha256": "099da989962c4cebf7b841829632cf8557e4a54ff6f1517c07ceb866d28c4f06"
+  },
+  {
+    "path": "media/705f8acece39e36b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_34.jpg?x-oss-process=image/format,webp",
+    "size": 102870,
+    "sha256": "80f859d23b239aba46b8a36be9d67ecb963282d0a86de2a775c5219f8dd19998"
+  },
+  {
+    "path": "media/941e7967ac11faef.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_35.jpg?x-oss-process=image/format,webp",
+    "size": 109192,
+    "sha256": "ccea11bc38832d84c6ecfc974d38a7151a8389a93d7a27c9df35572583a44ec6"
+  },
+  {
+    "path": "media/d05220f7b6498222.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_4.jpg?x-oss-process=image/format,webp",
+    "size": 90038,
+    "sha256": "86f590537909bfcdfe0fee2a5f66ead20f10b66bcb1da9e64231a416bd72aaf9"
+  },
+  {
+    "path": "media/f40bc1218c59123f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_5.jpg?x-oss-process=image/format,webp",
+    "size": 90416,
+    "sha256": "7d1785594a8ef7f3f631b46f90c32a6975aaadfd7c3157d2fc4bbd81812358f2"
+  },
+  {
+    "path": "media/7b0be8161b712838.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_6.jpg?x-oss-process=image/format,webp",
+    "size": 101102,
+    "sha256": "4ce9346ca88cce1b5f74ee4cfc6290f8bddcf5fdb68d0b0abb41edc7f47839c3"
+  },
+  {
+    "path": "media/5cfb07e6801ebcc8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_7.jpg?x-oss-process=image/format,webp",
+    "size": 109740,
+    "sha256": "eace018ffad7eac71e20cf6fe2ca2509f8a8d98e1db74cb80a760dc5bf820026"
+  },
+  {
+    "path": "media/967587657f9dd591.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_8.jpg?x-oss-process=image/format,webp",
+    "size": 114920,
+    "sha256": "8e9fb2f9ef26b595b0408abc4395d82da08d4254ed23520c4e4bfe533299a1fc"
+  },
+  {
+    "path": "media/912286f514c34299.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/brown_9.jpg?x-oss-process=image/format,webp",
+    "size": 116832,
+    "sha256": "4225848bc5222aabfd33674c808921a22fdceb0c45b2bfae53bfe91cb5b7f2dc"
+  },
+  {
+    "path": "media/32539e3c2893c6d8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_0.jpg?x-oss-process=image/format,webp",
+    "size": 105390,
+    "sha256": "3ee4e8f8bec52b0ff2916db084ebfa7f732c2b2629ac9f72e5594938623751c9"
+  },
+  {
+    "path": "media/d1d710e66debf8e7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_1.jpg?x-oss-process=image/format,webp",
+    "size": 101998,
+    "sha256": "10d560f60c5247567a99f5e1e3a76671e35229d8bcf7bc876dd78cb95faf9240"
+  },
+  {
+    "path": "media/ef66691828741fc0.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_10.jpg?x-oss-process=image/format,webp",
+    "size": 105616,
+    "sha256": "2b4e12f505b50c7d22d08fa11ea22073c521d6df1da44dbd6832e201526732e6"
+  },
+  {
+    "path": "media/70fa877e9a43713e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_11.jpg?x-oss-process=image/format,webp",
+    "size": 94142,
+    "sha256": "16a291652f200e61b77488ea68d8ea656aa4567c7522e37d9923b7c38dd3e61a"
+  },
+  {
+    "path": "media/cfe233f7fa5fb162.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_12.jpg?x-oss-process=image/format,webp",
+    "size": 81552,
+    "sha256": "4c12b4ad9a6bf93714a272f90c8e6f2df4c36dc465d903b104383bea5cbf627d"
+  },
+  {
+    "path": "media/2c78f81afe0d056d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_13.jpg?x-oss-process=image/format,webp",
+    "size": 63562,
+    "sha256": "6de379de9a556b593c24a78efc185d6f70d0eb71a5a5fcb344cc474c2fcf1982"
+  },
+  {
+    "path": "media/f3da6ac8394579d9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_14.jpg?x-oss-process=image/format,webp",
+    "size": 67652,
+    "sha256": "f9ee93ac9dea34f7a7765803c1e0e65c6fa92f4dcc1a17b0e256f99bb8928155"
+  },
+  {
+    "path": "media/6f84c90fe1d94f5f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_15.jpg?x-oss-process=image/format,webp",
+    "size": 82494,
+    "sha256": "97bca7a3240a19da3cde005f13f0e04da807e5ec4604ffe6940c0d9ba9c01f2a"
+  },
+  {
+    "path": "media/5814f077569f9829.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_16.jpg?x-oss-process=image/format,webp",
+    "size": 90010,
+    "sha256": "b5268e845f62470af440886577e1c4136e9d49150b789bc06fd9f002ec6b11e9"
+  },
+  {
+    "path": "media/8803b43a0acc60d6.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_17.jpg?x-oss-process=image/format,webp",
+    "size": 96004,
+    "sha256": "e2b94a7e707db4396031c460cf0a3d3bf34cc8e9b287fbc9e0f3d7191dbbd3fb"
+  },
+  {
+    "path": "media/9009f6608e925573.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_18.jpg?x-oss-process=image/format,webp",
+    "size": 97448,
+    "sha256": "bd62cb5378a39dba80e07ee3dec4ec610debd282d68acb7d52a8eeef5643bab9"
+  },
+  {
+    "path": "media/9f2f7a2ef008d040.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_19.jpg?x-oss-process=image/format,webp",
+    "size": 95228,
+    "sha256": "c9afa63c627413e877a68f836d81698b532195bb6baaf06d0609ccb780dd9957"
+  },
+  {
+    "path": "media/7195a3cd21fa0ea5.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_2.jpg?x-oss-process=image/format,webp",
+    "size": 100244,
+    "sha256": "ef81b8aea3f46ea8c9f95c50f7c48e808d3050df09c6bb9c280faf6fa616c8b7"
+  },
+  {
+    "path": "media/090f64ce52a17b8c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_20.jpg?x-oss-process=image/format,webp",
+    "size": 91048,
+    "sha256": "7a0876b2c08431671cb956b6b2c87281defd578e1dfb89ffbaa82d5a981e5f31"
+  },
+  {
+    "path": "media/30adc5cacf75edc8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_21.jpg?x-oss-process=image/format,webp",
+    "size": 86138,
+    "sha256": "1853056a55863810625f896d383910ae436977d67afad70c2ec377dfd092ee13"
+  },
+  {
+    "path": "media/db4ece07d5a7c15e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_22.jpg?x-oss-process=image/format,webp",
+    "size": 80326,
+    "sha256": "9a4262569c839f9ff11603feaeda5f1563572eb1f2b4c0b575e23be68212f539"
+  },
+  {
+    "path": "media/4bb520be5d5bf6f4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_23.jpg?x-oss-process=image/format,webp",
+    "size": 82092,
+    "sha256": "e6806f6dfaea508f934217fb3148dcdc387c044de371b46952c606210f0c7443"
+  },
+  {
+    "path": "media/aea913cfdcb780d7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_24.jpg?x-oss-process=image/format,webp",
+    "size": 93674,
+    "sha256": "39922d25e96765fea0233011a36d68091e8e2bc3947518a68d071bd909cb7e35"
+  },
+  {
+    "path": "media/0bbe5b4979f8cfd9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_25.jpg?x-oss-process=image/format,webp",
+    "size": 105246,
+    "sha256": "622fdf19e9fdac938e0cd9dacbbe8f03d05eefd6ce39f9f600d70400d93a8a56"
+  },
+  {
+    "path": "media/f4f215b8dd75891b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_26.jpg?x-oss-process=image/format,webp",
+    "size": 110770,
+    "sha256": "427a90cb9d0fec8867115c1ffecfdd2c016b95aa850703ed2fd93003ee949ca9"
+  },
+  {
+    "path": "media/9ea6fd518b0948a1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_27.jpg?x-oss-process=image/format,webp",
+    "size": 111680,
+    "sha256": "04e89f9dd4a6ae7412597e8140e16141aa192f0d32cfa63c914c81006a1829f8"
+  },
+  {
+    "path": "media/7d16b6d7ede04ceb.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_28.jpg?x-oss-process=image/format,webp",
+    "size": 109288,
+    "sha256": "146ef3c94fc220599ff4d93328fcd8f488a1744a50b9d6855c6b9352e38b2e44"
+  },
+  {
+    "path": "media/150c6b12fe1dd94b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_29.jpg?x-oss-process=image/format,webp",
+    "size": 100134,
+    "sha256": "74a4d7daa44b9d19dcd2d18475739bbcbed472eb6af8269d79a561e54517dc1d"
+  },
+  {
+    "path": "media/61f25e827986d0bd.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_3.jpg?x-oss-process=image/format,webp",
+    "size": 92618,
+    "sha256": "686e600e2efd80e640e3623d3695c08e32b97a4c26dcac54eee8e4c50c3c6366"
+  },
+  {
+    "path": "media/c7c35d4193168cb3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_30.jpg?x-oss-process=image/format,webp",
+    "size": 90110,
+    "sha256": "f9c78ae666c80786e38c9b10a3ccc36cb3f910f54c4ea0ea6a74ef790f179063"
+  },
+  {
+    "path": "media/a2533d75d1ed84f6.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_31.jpg?x-oss-process=image/format,webp",
+    "size": 73950,
+    "sha256": "ab166e705090c8d374e03a8808b8d2f65d56107b681ccd5fc2aab194e3f1bee4"
+  },
+  {
+    "path": "media/10086c518923be64.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_32.jpg?x-oss-process=image/format,webp",
+    "size": 72350,
+    "sha256": "746645c8f13d468478cb9169476e1297e9b17b907a16ca1db43ec7a199a5cc0f"
+  },
+  {
+    "path": "media/71549d0e52ed3b99.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_33.jpg?x-oss-process=image/format,webp",
+    "size": 87556,
+    "sha256": "2d925d0368b7d6a55138a4049021259c28900e2fcca12279340a8b2c1570a743"
+  },
+  {
+    "path": "media/a46918badf4a2981.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_34.jpg?x-oss-process=image/format,webp",
+    "size": 98392,
+    "sha256": "24009284bc47767ca3716ffdaf1bde9f2c9595fad083a06f34285ad4f3d04078"
+  },
+  {
+    "path": "media/a2460986b0ee8dd8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_35.jpg?x-oss-process=image/format,webp",
+    "size": 103446,
+    "sha256": "028b93b32eb48dbf2e78c42ab5b78688af3d660d8d17f4314316b22331efa53b"
+  },
+  {
+    "path": "media/d5e9a2e8d286cd21.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_4.jpg?x-oss-process=image/format,webp",
+    "size": 83946,
+    "sha256": "680b46fea407c4d424d93fdd0c310ed2b4248a04a6e78764313da6e4cf3df810"
+  },
+  {
+    "path": "media/edec2a8e0dea6371.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_5.jpg?x-oss-process=image/format,webp",
+    "size": 85066,
+    "sha256": "cb9d861e5678c96bb3e9bde89fde8ced2022eb422950f389de65d4be819b1794"
+  },
+  {
+    "path": "media/3cd65b97c7c42950.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_6.jpg?x-oss-process=image/format,webp",
+    "size": 95122,
+    "sha256": "7cf6f9080df649089bf1575ce0ab6641ea1562f1cd1a4909302a1767d13ea12e"
+  },
+  {
+    "path": "media/2514f7a1a81182f2.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_7.jpg?x-oss-process=image/format,webp",
+    "size": 104086,
+    "sha256": "0c4251a573140e17c2c65693c694849568aa429a70e212b43d5b7dbbc00ff38f"
+  },
+  {
+    "path": "media/c0d502b34cc6601d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_8.jpg?x-oss-process=image/format,webp",
+    "size": 108576,
+    "sha256": "62010f062b2683f3d78ea945d3899ea7f3a043662b99fe54556d67ef11e3b796"
+  },
+  {
+    "path": "media/69d5995b9c7b66f3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/gray_9.jpg?x-oss-process=image/format,webp",
+    "size": 113302,
+    "sha256": "4d48649bd2470be2a5e827fe2b71d820cadf70eaed5544b5c0aa21c1b3d918d3"
+  },
+  {
+    "path": "media/fda477f00dcffe06.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_0.jpg?x-oss-process=image/format,webp",
+    "size": 109240,
+    "sha256": "0912f159c82b6a61008f8b955ac7466ab20e2a0e43cbd97d50b0521dd7080262"
+  },
+  {
+    "path": "media/969326c688510afc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_1.jpg?x-oss-process=image/format,webp",
+    "size": 104918,
+    "sha256": "bee67d95d3d140d2e60191bde6f87bbe91240673555b384cdd36748afdb10115"
+  },
+  {
+    "path": "media/28d41133edca244e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_10.jpg?x-oss-process=image/format,webp",
+    "size": 109244,
+    "sha256": "86ef4a7f8d29fe633886b597b89600ffd8b74624a130b7a4f234ee50a2db5eb4"
+  },
+  {
+    "path": "media/57e49a562141d090.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_11.jpg?x-oss-process=image/format,webp",
+    "size": 98032,
+    "sha256": "93da39991a1eb897763693a2603ca9690f1ff8f38d3a2d649b6520ee2d46ed41"
+  },
+  {
+    "path": "media/5a9d79b28c0dd582.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_12.jpg?x-oss-process=image/format,webp",
+    "size": 83904,
+    "sha256": "beed9073a1cdfe971b907a0f8b217dc99a4abb105c5efd591b32134555eccba2"
+  },
+  {
+    "path": "media/d603c83addb6953b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_13.jpg?x-oss-process=image/format,webp",
+    "size": 64934,
+    "sha256": "5c09ce66a58a8132ef1a9a8dfa4e15e61dee8b4bb4e64ef29119e924fbafe7c2"
+  },
+  {
+    "path": "media/cbcca6778561688d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_14.jpg?x-oss-process=image/format,webp",
+    "size": 68776,
+    "sha256": "b649a5137de24c00ff38e1cb0497cf676c935b5af961bf33bbc935c589b7ec1b"
+  },
+  {
+    "path": "media/6c7cc6ae8039d5f6.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_15.jpg?x-oss-process=image/format,webp",
+    "size": 84740,
+    "sha256": "63422fbd07ab826ea5921d6c31bb33ce8667a58c4bdfb0bec0407a895ca2a402"
+  },
+  {
+    "path": "media/3de847df9ee49205.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_16.jpg?x-oss-process=image/format,webp",
+    "size": 92670,
+    "sha256": "669e7d740b878a9e17bfa728fabc15e5618ac1c2ec3344ec86ef44d40d7fb49d"
+  },
+  {
+    "path": "media/c171e88dd8de3b22.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_17.jpg?x-oss-process=image/format,webp",
+    "size": 98210,
+    "sha256": "a0600cf2a320dac82657e34ae38c07ba5bf78346c98064649134bdc33b1b0be5"
+  },
+  {
+    "path": "media/7d709bb71c30661b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_18.jpg?x-oss-process=image/format,webp",
+    "size": 100382,
+    "sha256": "f023c8dda8f4c0643f5259129f19b718dfd65751a4071a62376f8224f5d8ed5f"
+  },
+  {
+    "path": "media/82c537e16368e30b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_19.jpg?x-oss-process=image/format,webp",
+    "size": 98010,
+    "sha256": "0b614060acbd28ec8cca72125cff94bad146763a02074b38396e83c9e5c4aeb5"
+  },
+  {
+    "path": "media/3bb948450327c19e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_2.jpg?x-oss-process=image/format,webp",
+    "size": 102560,
+    "sha256": "f0c86d9f7eb8d4783a3e0250c3d35e26b5203f936ec8317464547803ff68547c"
+  },
+  {
+    "path": "media/c8c93449d0003e8b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_20.jpg?x-oss-process=image/format,webp",
+    "size": 93412,
+    "sha256": "06357ee871c29fee148e4be94441e7fd8ff75ac6996f54ec55509b7f01da703a"
+  },
+  {
+    "path": "media/2fb1d6dfc38c4b4b.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_21.jpg?x-oss-process=image/format,webp",
+    "size": 88376,
+    "sha256": "2e68a77df518da51ae7b468076dfcc0264f9889f7d8496d0c56e8e06d45518cd"
+  },
+  {
+    "path": "media/37b75e1d294cbc25.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_22.jpg?x-oss-process=image/format,webp",
+    "size": 81934,
+    "sha256": "17f80581e9e898165256dec42fd1ccb30db3b675392179e0592fe696a6199215"
+  },
+  {
+    "path": "media/3464247004fb251d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_23.jpg?x-oss-process=image/format,webp",
+    "size": 84382,
+    "sha256": "8e46c1661392af4869cd0957b96f3bbe8d7a19a70acaa0dd1ad487f31f63d059"
+  },
+  {
+    "path": "media/c3b7a5b207062bb9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_24.jpg?x-oss-process=image/format,webp",
+    "size": 95906,
+    "sha256": "cd169fce4fc8aa70537ed69184c555e74c55f4d8f6a9ef12c3c81b4d488bf5ca"
+  },
+  {
+    "path": "media/d04ba79ee332467a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_25.jpg?x-oss-process=image/format,webp",
+    "size": 107360,
+    "sha256": "57d9a9ab5698f299defbe4bf2d90333c92696aa5fd6d6af86ca4c17dc6b24274"
+  },
+  {
+    "path": "media/cec6dbbd0f049ce2.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_26.jpg?x-oss-process=image/format,webp",
+    "size": 113396,
+    "sha256": "ca9f536781451ab870e4e5e0536ca0a8dabf523dbbfc95d5b9c7547b134931a7"
+  },
+  {
+    "path": "media/1941e7a4e8a8cb68.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_27.jpg?x-oss-process=image/format,webp",
+    "size": 114666,
+    "sha256": "7ca5ab514c23e6760ba5c6ecc46ed28bf26f08721e5500ec6cff3fa550240f29"
+  },
+  {
+    "path": "media/0e8b3309646d7cef.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_28.jpg?x-oss-process=image/format,webp",
+    "size": 111478,
+    "sha256": "51c681510c3e66aa990b587e7c5e2e9f6006aa1417ec8b4fcd5e6a5a3b72383e"
+  },
+  {
+    "path": "media/937057f388468fff.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_29.jpg?x-oss-process=image/format,webp",
+    "size": 102682,
+    "sha256": "489c11c25410553d139a517ba8cf27c22ef8e2fd1a85c32c3bdcf056476ed223"
+  },
+  {
+    "path": "media/68f00b78f98e90dc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_3.jpg?x-oss-process=image/format,webp",
+    "size": 93954,
+    "sha256": "847e79e762e72f7ee9c756e52039b37cdbacacb3a3968ebbb7a78c0e51618878"
+  },
+  {
+    "path": "media/72d645cf6e7a5fbc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_30.jpg?x-oss-process=image/format,webp",
+    "size": 92456,
+    "sha256": "1da5a4aad15c8e05bf46a15ce0399e420982eb486a6f0f449c3320adc5c211cc"
+  },
+  {
+    "path": "media/a41689c2be081582.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_31.jpg?x-oss-process=image/format,webp",
+    "size": 75444,
+    "sha256": "9bb2188b041c02634b38ad01200227df209704735b1b3c7b2f78a0222d825665"
+  },
+  {
+    "path": "media/fc435fb5351a3f83.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_32.jpg?x-oss-process=image/format,webp",
+    "size": 71504,
+    "sha256": "b828277806df97f444a4cf9cb0e083303c34f842321bb3fcb0c720e4a7de152d"
+  },
+  {
+    "path": "media/7ae6980cb4e5a362.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_33.jpg?x-oss-process=image/format,webp",
+    "size": 88576,
+    "sha256": "c803702108bbc79c18ba72cdc68a6dc59548e491059c26cffb0e7869bf60aa41"
+  },
+  {
+    "path": "media/5d1329bfa1b7393f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_34.jpg?x-oss-process=image/format,webp",
+    "size": 100172,
+    "sha256": "bf76743ab246174e94f8c62b4223bc5b6996e87c3d1e8e2e24857519ce2f50ee"
+  },
+  {
+    "path": "media/71f2788b379bbec1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_35.jpg?x-oss-process=image/format,webp",
+    "size": 105710,
+    "sha256": "dd77c23a728e2c19cf25566762a76ad9073d01763e8ef6067e7a7db35bb666be"
+  },
+  {
+    "path": "media/87de716b0e8df6ce.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_4.jpg?x-oss-process=image/format,webp",
+    "size": 86454,
+    "sha256": "74ee0490fa7a87fbc05e75109d8937037b1df786c94b6e2135e854e6707a3504"
+  },
+  {
+    "path": "media/84ef1eff3cdaaea4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_5.jpg?x-oss-process=image/format,webp",
+    "size": 86958,
+    "sha256": "873bb2a92d4b962bfc29a65f749e89b55aa4d2a9265844164e566d1d37398f81"
+  },
+  {
+    "path": "media/6ef51fba3c638ae6.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_6.jpg?x-oss-process=image/format,webp",
+    "size": 95876,
+    "sha256": "4073d55e731e35092147d48a6989d02354ab8e19dfd1d2c32804bcd06cb0d625"
+  },
+  {
+    "path": "media/b7d39321e79939e9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_7.jpg?x-oss-process=image/format,webp",
+    "size": 106176,
+    "sha256": "85cde28d2b1dd0d1ebfb33ff090cc17f1382b8a333b78a93c2037ef4f2744fb1"
+  },
+  {
+    "path": "media/ef2ea42b3a640fb9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_8.jpg?x-oss-process=image/format,webp",
+    "size": 111098,
+    "sha256": "267208e344a42a5e0642bffdbf4a1ccbddc417f7a8a778397eb2b80083b9db19"
+  },
+  {
+    "path": "media/f3841b5f65b79de7.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/purple_9.jpg?x-oss-process=image/format,webp",
+    "size": 114794,
+    "sha256": "fd3bcb147621dcb732449b80c2fdbc4970283f3fab907047396dda8e72cd45d8"
+  },
+  {
+    "path": "media/4f34b41e2bf86839.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_0.jpg?x-oss-process=image/format,webp",
+    "size": 106318,
+    "sha256": "cd623fb17c416ce9d0d21a8e1e4ab7cc8756c15724ad7e1ae7a147357238f857"
+  },
+  {
+    "path": "media/b1f6165cc1c5d9ca.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_1.jpg?x-oss-process=image/format,webp",
+    "size": 105398,
+    "sha256": "c6ac618a5668ddf57fd7a8fdd91e1701d447ad29ca6ad451da9dc2e0781b9f2b"
+  },
+  {
+    "path": "media/7a7083b7f8b6ce4c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_10.jpg?x-oss-process=image/format,webp",
+    "size": 102966,
+    "sha256": "11dbc999b7ad48a02868aa82dc2efcce10508a0f1e64115d368d8e2be59d21eb"
+  },
+  {
+    "path": "media/774d51ab9b194422.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_11.jpg?x-oss-process=image/format,webp",
+    "size": 94800,
+    "sha256": "c66d2fb2b75e3b99b00aa1c9c108f45e887a34ac711f3ee4fe7b2875ff25d914"
+  },
+  {
+    "path": "media/ddbfdcafc9208544.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_12.jpg?x-oss-process=image/format,webp",
+    "size": 82866,
+    "sha256": "6ee2c26e96ca61aa841ce18120c9917593d04660215cce84b9506c34ae69711f"
+  },
+  {
+    "path": "media/da5144c9087b411e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_13.jpg?x-oss-process=image/format,webp",
+    "size": 65996,
+    "sha256": "b18c0f74faf11b055c3750cb3697dff126613a5529c416c973ff45fae0523943"
+  },
+  {
+    "path": "media/5f5727a348d3de87.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_14.jpg?x-oss-process=image/format,webp",
+    "size": 69608,
+    "sha256": "1a1dca31362ae91e2ec842268de91cffd83ecef548f2c7e3cbb1dae5bfa6648e"
+  },
+  {
+    "path": "media/614f63f22d606184.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_15.jpg?x-oss-process=image/format,webp",
+    "size": 83950,
+    "sha256": "e13aa79dde19bb147ad50e692f2125569161c9c39ab6d1662c6b02faa19d5f54"
+  },
+  {
+    "path": "media/6c511c62b2dc72d1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_16.jpg?x-oss-process=image/format,webp",
+    "size": 90458,
+    "sha256": "6bf7e9bf8979a38cd2a9312f98f9983f52703e741888845e6ac8cae9f4c5f015"
+  },
+  {
+    "path": "media/d243478f6978f739.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_17.jpg?x-oss-process=image/format,webp",
+    "size": 95086,
+    "sha256": "4f4897e67663cbf7b7c98ee6a97ec8b6d4097b925c89136ce2a36c10f3c21600"
+  },
+  {
+    "path": "media/819b93d40db4bd83.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_18.jpg?x-oss-process=image/format,webp",
+    "size": 96898,
+    "sha256": "6336e4129f917c6972d0de99d8906353edc29bcb13a970263425f0b0deb790b9"
+  },
+  {
+    "path": "media/4aa4c2f3acc1d737.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_19.jpg?x-oss-process=image/format,webp",
+    "size": 95248,
+    "sha256": "d7a0fd1ae8cbe0c294d77298a8ca778640e4f2f4aba43b57498512a0cb568214"
+  },
+  {
+    "path": "media/a196144e961b5792.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_2.jpg?x-oss-process=image/format,webp",
+    "size": 102734,
+    "sha256": "755aa9f681385fcebdeb7617ebdf69ce164c19e2339b366235881af93f46f60b"
+  },
+  {
+    "path": "media/b701d7f681edfa40.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_20.jpg?x-oss-process=image/format,webp",
+    "size": 94100,
+    "sha256": "0f500d36b517e96019a651cd8244e6c3375f6aa232cdd3459aa449a8778d7fc2"
+  },
+  {
+    "path": "media/31fab6c7b1ed6bd1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_21.jpg?x-oss-process=image/format,webp",
+    "size": 89486,
+    "sha256": "d2909727916bc66df4cbfb977303cb8d53bba50ece612eff3de277772b915f94"
+  },
+  {
+    "path": "media/0692c24e5df10876.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_22.jpg?x-oss-process=image/format,webp",
+    "size": 82878,
+    "sha256": "42bb222ef4b444fe65cdb07702487a761099cd493740b3d252ba25d27eb0ed00"
+  },
+  {
+    "path": "media/03c20d315471a7c8.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_23.jpg?x-oss-process=image/format,webp",
+    "size": 84294,
+    "sha256": "32088580899e1037bafc60c4fd4e86dd9217197232162b883a9373e705fc3108"
+  },
+  {
+    "path": "media/01fe4b944baa6aa1.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_24.jpg?x-oss-process=image/format,webp",
+    "size": 94616,
+    "sha256": "4878be45539e9d4e5be6a920f33ed5828e798583decaa0dbd05ba4fb7c44142d"
+  },
+  {
+    "path": "media/5da0a60ebc6eddfc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_25.jpg?x-oss-process=image/format,webp",
+    "size": 103528,
+    "sha256": "36e5d4a26e1ff1f86695f60863ec352133b1f0c8f14e718157389c99fc152e26"
+  },
+  {
+    "path": "media/0a0a75fed0a81479.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_26.jpg?x-oss-process=image/format,webp",
+    "size": 107270,
+    "sha256": "922965d8081699c08fdda067e7088f7d6a03be72a92cec584827c34319ac6b95"
+  },
+  {
+    "path": "media/20db02bdb6b403eb.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_27.jpg?x-oss-process=image/format,webp",
+    "size": 108512,
+    "sha256": "1c85a8f39c4a9ad9b6ef70adecb504988ca2767a68dc3fe564c9f75cb7e2d47b"
+  },
+  {
+    "path": "media/bf566de90bbe5313.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_28.jpg?x-oss-process=image/format,webp",
+    "size": 105542,
+    "sha256": "27133534b88e479e7b9db510d10ae9ad5b7abc4a1a0933c3bc8118775962494b"
+  },
+  {
+    "path": "media/79fff821b1d397c3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_29.jpg?x-oss-process=image/format,webp",
+    "size": 98350,
+    "sha256": "998ecfd81b65dba8ce9385d127d971236adaf4c02459284e86c14fc2f105e49c"
+  },
+  {
+    "path": "media/b524fdba30cba54a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_3.jpg?x-oss-process=image/format,webp",
+    "size": 95082,
+    "sha256": "16546feaaceec35abb2cd8e6d14397ba8c77a01f2753b41caf059cd4564d9fc7"
+  },
+  {
+    "path": "media/b47cabe1dd7b22fd.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_30.jpg?x-oss-process=image/format,webp",
+    "size": 88888,
+    "sha256": "6f32db22d5c9caf0c48a1460c142d1392de4784c4da57919b31eaca51ea92ac3"
+  },
+  {
+    "path": "media/6d90c6cd75cee68f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_31.jpg?x-oss-process=image/format,webp",
+    "size": 74658,
+    "sha256": "8d2248f2c2265728b907d9798e24900af0062dfa8df7b1914b41f538df860997"
+  },
+  {
+    "path": "media/420a5adcb106f4fc.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_32.jpg?x-oss-process=image/format,webp",
+    "size": 69862,
+    "sha256": "83bfe80a9bdc8f39e0d2d502bf3c547f1a9772c6418f57dd041bd95df2a8b2f2"
+  },
+  {
+    "path": "media/259c2534c4c374ee.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_33.jpg?x-oss-process=image/format,webp",
+    "size": 88184,
+    "sha256": "8d6c2c7b47e0d6c5b3a3710c799f7784c6b324d64a1699496bee018c971872e2"
+  },
+  {
+    "path": "media/e2ae4bcba54d1288.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_34.jpg?x-oss-process=image/format,webp",
+    "size": 99132,
+    "sha256": "6a330461d56143585de5f2642fe1e20ea443bf3844db5cf5066ce63b3dbe4d2f"
+  },
+  {
+    "path": "media/ba6d25f2e6d5ce2c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_35.jpg?x-oss-process=image/format,webp",
+    "size": 103710,
+    "sha256": "2ba5dae0644f1e61768cda5a9ba3dfc79f71d5f418cf9304407541260eb9d28f"
+  },
+  {
+    "path": "media/c991882675dbf64e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_4.jpg?x-oss-process=image/format,webp",
+    "size": 87904,
+    "sha256": "401fb5ca804e93f9a6c380a1fac7b268de8b0dc0d421a3af10c12a3e14d3ecce"
+  },
+  {
+    "path": "media/cf504f27d34f2db5.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_5.jpg?x-oss-process=image/format,webp",
+    "size": 87826,
+    "sha256": "42f94f81053c802e6fd228e2291d8452e50827ab9c1f17bc5529c82bdf9dc64a"
+  },
+  {
+    "path": "media/d5e0f0b81325fc22.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_6.jpg?x-oss-process=image/format,webp",
+    "size": 97352,
+    "sha256": "e8f820f1c1b64c385f086c59a25c534e93a7bfc99b0fb1a0fe8e83733cd1b824"
+  },
+  {
+    "path": "media/e817b91547db4e1f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_7.jpg?x-oss-process=image/format,webp",
+    "size": 103230,
+    "sha256": "2eb9e61e1047e06041cc5d0e7b5a0d0e6a837097520feb28cf2b4318f5c9610f"
+  },
+  {
+    "path": "media/e29872e3a0171063.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_8.jpg?x-oss-process=image/format,webp",
+    "size": 107936,
+    "sha256": "fba8e320b2f3cdd7df0375573a815c03c2cfebed42215a53723b150a16ec9790"
+  },
+  {
+    "path": "media/b801eae3bc37ea21.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/silver_9.jpg?x-oss-process=image/format,webp",
+    "size": 108696,
+    "sha256": "b8641c0e38db460532d4d840891069d016ecbf4b624f1bc0c1ff533041256d4f"
+  },
+  {
+    "path": "media/61c6c4496f63be8d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_0.jpg?x-oss-process=image/format,webp",
+    "size": 109898,
+    "sha256": "cb755f2b91fb8f90b5ae6b01d8dd72d3c29e57b54b1d6bcafb25ac50e61fcc09"
+  },
+  {
+    "path": "media/e5c8f7f120cc85c3.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_1.jpg?x-oss-process=image/format,webp",
+    "size": 109730,
+    "sha256": "919c2619a5506977df76e135b797d5856ffcf8f018fa4efa55cc5605033e8365"
+  },
+  {
+    "path": "media/c6a9d343c1c96ef0.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_10.jpg?x-oss-process=image/format,webp",
+    "size": 104502,
+    "sha256": "89ce911423e18740c1694488a47960ed8f8376800f841e1ec95d09a8a75d4d15"
+  },
+  {
+    "path": "media/7a70cdea22f95783.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_11.jpg?x-oss-process=image/format,webp",
+    "size": 94774,
+    "sha256": "987592a3aac1ed2d1f3018bf5f66b1fdc50791fbd2729b550b102f2f282abbf2"
+  },
+  {
+    "path": "media/ee179dc78f192dcf.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_12.jpg?x-oss-process=image/format,webp",
+    "size": 84684,
+    "sha256": "01af3578d0b8904c5f0b07fc5310a21d4708ebeed50dde99d65d7ec41cd7fd9c"
+  },
+  {
+    "path": "media/47f4cd3264ff15e4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_13.jpg?x-oss-process=image/format,webp",
+    "size": 67928,
+    "sha256": "d436097ba63d78d87e91ffba9584c9582974cda81c6beb45863615f60ffd4870"
+  },
+  {
+    "path": "media/64e66accbf9f17eb.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_14.jpg?x-oss-process=image/format,webp",
+    "size": 70816,
+    "sha256": "0fea61303c307bf883c6036c7ee7545722498ef6e40f6d8c98561e0d222adf8a"
+  },
+  {
+    "path": "media/10281d9a6c724c7d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_15.jpg?x-oss-process=image/format,webp",
+    "size": 85424,
+    "sha256": "e0ce6bedc900854af680c5b3decf1e28aaf469bed8dfe13eb6363ad80ead8bb8"
+  },
+  {
+    "path": "media/9236c896916caa34.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_16.jpg?x-oss-process=image/format,webp",
+    "size": 92244,
+    "sha256": "22cb7153a3e897081e73541cbba1cd3b364fd356a6c50e22ffbacb11024e09ac"
+  },
+  {
+    "path": "media/b8283c8d9ec32a1a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_17.jpg?x-oss-process=image/format,webp",
+    "size": 98052,
+    "sha256": "bfb6264090694a3d8821b41fe32f8cd98e6f3c91ce5e78dc37824f2087f14b1a"
+  },
+  {
+    "path": "media/803c4f42ba02e8ef.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_18.jpg?x-oss-process=image/format,webp",
+    "size": 101754,
+    "sha256": "be18219f7d6e3ee93b332b8f896a451a173ba7bb9f97354dfd99879779e0c8a4"
+  },
+  {
+    "path": "media/7831df2833d58bbf.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_19.jpg?x-oss-process=image/format,webp",
+    "size": 101316,
+    "sha256": "e39a7e5ed68960e2617a8a219b0b25f294eb8c5e7b6952688f25e6a1dfa48796"
+  },
+  {
+    "path": "media/9bb1f960260ca261.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_2.jpg?x-oss-process=image/format,webp",
+    "size": 110152,
+    "sha256": "88ee358742b95d3258f0a94e6964b69b39f81da3d555c1c209dbab646ee14620"
+  },
+  {
+    "path": "media/3bba08706184271a.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_20.jpg?x-oss-process=image/format,webp",
+    "size": 101468,
+    "sha256": "d1db2482ed4beb719f2a2df7711c7fd602c88a5f83df8868f2a12fa53a926d43"
+  },
+  {
+    "path": "media/d8878d859c436fd2.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_21.jpg?x-oss-process=image/format,webp",
+    "size": 96988,
+    "sha256": "9383b3553ee622f5f4cf60cc47f95a9b8ffa4846bbd3ab42a3fe8d57bfa7e198"
+  },
+  {
+    "path": "media/06af26e6f33d0fac.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_22.jpg?x-oss-process=image/format,webp",
+    "size": 88990,
+    "sha256": "8aa7ab3d691861193d4f219f8ce9681dbe3a7d84f91e8c30b440bc33202de770"
+  },
+  {
+    "path": "media/fe94c5d458220801.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_23.jpg?x-oss-process=image/format,webp",
+    "size": 88212,
+    "sha256": "6c4c24c57b3ea0f97087420a48eca660f0db918c4d49c9c65a58d497d9c5cd6d"
+  },
+  {
+    "path": "media/0219ef7d0c4dbee0.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_24.jpg?x-oss-process=image/format,webp",
+    "size": 94874,
+    "sha256": "443ac9eb4a34e1c4d41ce1747822bd9049b497f18384f714ef9c2564295d5bb7"
+  },
+  {
+    "path": "media/23324bf380d11f01.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_25.jpg?x-oss-process=image/format,webp",
+    "size": 103980,
+    "sha256": "3465c797ae80a670b6b8a03d78f95ad137f03b058f53724412b11a16535ab707"
+  },
+  {
+    "path": "media/bbe38840a8ff0c04.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_26.jpg?x-oss-process=image/format,webp",
+    "size": 107766,
+    "sha256": "b0afd960ed54522dda66c028ecd71a253afa725a3099f925a7e70c8d0002319f"
+  },
+  {
+    "path": "media/e121a96d8b0cd591.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_27.jpg?x-oss-process=image/format,webp",
+    "size": 108950,
+    "sha256": "c21857d762f4fdfc7c0ac47e9e7a0cc66ff36e630b2e858f1a4a0eb7814dd950"
+  },
+  {
+    "path": "media/95fa0bd83df4a98e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_28.jpg?x-oss-process=image/format,webp",
+    "size": 104632,
+    "sha256": "387c4e041fd47e370742574bb9552318af9575e8cfe0cb7d45befb566d785c50"
+  },
+  {
+    "path": "media/47a2fc15ac1e16bd.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_29.jpg?x-oss-process=image/format,webp",
+    "size": 97734,
+    "sha256": "1c48fd05cd8bc50c7c275d220288caa22fc0ad6d3ec364a6a57d3df57b02ce9d"
+  },
+  {
+    "path": "media/78c4db3e8750ce33.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_3.jpg?x-oss-process=image/format,webp",
+    "size": 103000,
+    "sha256": "e28000e03f72c13898f4fb7cf87b7006a6081dc7708b8d3e01d75728bc06191e"
+  },
+  {
+    "path": "media/77780efd4a192548.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_30.jpg?x-oss-process=image/format,webp",
+    "size": 88538,
+    "sha256": "4a3c37e89c5ba40fedd1ab60e440a7279eb4d7c6e1400ff26885f6d5b514859f"
+  },
+  {
+    "path": "media/93f4ac62f8c0d194.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_31.jpg?x-oss-process=image/format,webp",
+    "size": 74588,
+    "sha256": "e2c49fe53cc1b01ff67d3ab6a179a9d7bfdb8dd8e61ce66cb26d1f368fb0fe29"
+  },
+  {
+    "path": "media/9bcec94db3f61443.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_32.jpg?x-oss-process=image/format,webp",
+    "size": 71638,
+    "sha256": "b0e469ebc0f64b9f279ba5b2dfa85bb59666a803d5e4e48869e08e9254c5f129"
+  },
+  {
+    "path": "media/9e5bfda63ae74cc9.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_33.jpg?x-oss-process=image/format,webp",
+    "size": 88124,
+    "sha256": "48db5dbd3759d99c8ab90d3fffa7edd96447df2c5ea28d41b2c202705565054d"
+  },
+  {
+    "path": "media/ba0bb3b939fdeb88.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_34.jpg?x-oss-process=image/format,webp",
+    "size": 100078,
+    "sha256": "7013ad05d4188f49f48fb874f0de151ed5a87d059cf4401ee0ecc8672d50bb35"
+  },
+  {
+    "path": "media/ebc94a6c18f0d7c4.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_35.jpg?x-oss-process=image/format,webp",
+    "size": 106750,
+    "sha256": "1e13b8927b81b79d09d19d015a2beeca372ec1484031c3664a9c4d68bacc20f0"
+  },
+  {
+    "path": "media/d14982e7a3b9b22f.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_4.jpg?x-oss-process=image/format,webp",
+    "size": 94702,
+    "sha256": "31746cbecb206f7db948a64d98cb989c12e01338fe8eae54007d5cf11a81b544"
+  },
+  {
+    "path": "media/94daebeaf517ba5d.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_5.jpg?x-oss-process=image/format,webp",
+    "size": 92838,
+    "sha256": "1b9580d5379e5b1226a544804122c7ab9a9fe3e4b264b0bf5ed301eabfb0040b"
+  },
+  {
+    "path": "media/5a4645546bc4d7be.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_6.jpg?x-oss-process=image/format,webp",
+    "size": 97942,
+    "sha256": "059f59baa46aafec2204eed99fc794f4411c4bd3a9ad6de4011730e7d6449c1d"
+  },
+  {
+    "path": "media/e01966d431f9d4aa.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_7.jpg?x-oss-process=image/format,webp",
+    "size": 104686,
+    "sha256": "8e2144811e41c87635742a1cc342a7fcadacb1f6785244a1a77c648751bb43c5"
+  },
+  {
+    "path": "media/63f03edf1588b13e.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_8.jpg?x-oss-process=image/format,webp",
+    "size": 108116,
+    "sha256": "8b7f4915bf9c175abf44dca52a013807d7cd0f7b86e20d32e5be088900675464"
+  },
+  {
+    "path": "media/f0dd47964db80294.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/zeekr9x/modelCar/2026/white_9.jpg?x-oss-process=image/format,webp",
+    "size": 109590,
+    "sha256": "414b04a0f16ed03ae32ec5a72f93838ad5311df0ec443ad4c467bf58c2e26357"
+  },
+  {
+    "path": "media/b4a09dbc02a027f5.png",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/config/icon/icon_screenner.png",
+    "size": 711,
+    "sha256": "1586fc9b4bbfa5c74effce0f16ac8930e6d113e7e7e9eb4bcb75e0ccc60c76e0"
+  },
+  {
+    "path": "media/e1d66f499a5539dc.png",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/config/icon/icon_screenner_active.png",
+    "size": 1139,
+    "sha256": "c34a9308e77ad9bfd4c266a7b373276580dac87eef795c4a4f774437f56368f8"
+  },
+  {
+    "path": "media/e117acaf18865ce3.png",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/config/icon/icon_collapse.png",
+    "size": 291,
+    "sha256": "12a18781395d1c980d40ec516247ce24b15ef741438c3ec86ef3b3615ecf29ad"
+  },
+  {
+    "path": "media/7e894424e8b82a35.png",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/zeekrlife-official-pc/image/config/icon/icon_expand.png",
+    "size": 551,
+    "sha256": "9ea823c3cc5821ce977f383b92886c3b20df68586c00e4f83a4ee9f4606c899e"
+  },
+  {
+    "path": "media/5c8b47cb1599ee12.png",
+    "url": "https://zeekrlife-oss.zeekrlife.com/IMAGE/1/manage/6076/zeekrlife-mp-osp/20260930/b72b1ea4a86146608ffab64e3306208f.png",
+    "size": 5049974,
+    "sha256": "12708c4ec469ff27a0b0a73940c4e0e1dbba6556d1a4278e11881fd4e792065f"
+  },
+  {
+    "path": "media/b4d1885325a437f7.png",
+    "url": "https://ud-static-0.zeekrlife.com/emVla3JsaWZlLW5ldy1vZmZpY2lhbC1wYw==/-187/img/swiper_toLeft.62e4ed5c.png",
+    "size": 4164,
+    "sha256": "ef1b06d107900b29a453b67a74f2e0799eb3375908ad51c97d2972645cb46ab7"
+  },
+  {
+    "path": "media/abf76af0cf2a3b88.png",
+    "url": "https://ud-static-0.zeekrlife.com/emVla3JsaWZlLW5ldy1vZmZpY2lhbC1wYw==/-187/img/swiper_toRight.8f782b5a.png",
+    "size": 4152,
+    "sha256": "c72b789e83abbae66a7eb565d29a9e8395727a4a295543b5464847b21b24189b"
+  },
+  {
+    "path": "media/927e428aed82caf1.png",
+    "url": "https://ud-static-0.zeekrlife.com/emVla3JsaWZlLW5ldy1vZmZpY2lhbC1wYw==/-187/img/play.3252c3fe.png",
+    "size": 7538,
+    "sha256": "ebefcc70fc9fbd3e65a3fd1c08babed5df80f80e6eaba121ae56629a9c4ecb86"
+  },
+  {
+    "path": "media/3667e979e4c438cf.TTF",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/fonts/FZLTHJW.TTF",
+    "size": 2228576,
+    "sha256": "46fc959dfd59381edc714a48925a8db82a628728b0369c0b749b7fc5e5e6a586"
+  },
+  {
+    "path": "media/13192299f17ba3c5.TTF",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/fonts/FZLTZHUNHJW.TTF",
+    "size": 2218576,
+    "sha256": "e66417a4d2c8236ac206d520c1098d213e185ee0041dcd368f63e25c0941de07"
+  },
+  {
+    "path": "media/56441151b93bb024.ttf",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/fonts/ZeekrText-Regular.ttf",
+    "size": 63572,
+    "sha256": "e858b0d87f1d9689bf6bd8c9d57ad6eca193694c7c518eccf841adc4a973eab9"
+  },
+  {
+    "path": "media/6d044c4e379b6fea.ttf",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/fonts/ZeekrLanTingHei-Light.ttf",
+    "size": 2026960,
+    "sha256": "1a2271e8e877548315c2beca54450a3dd7e43420113b1d7cce33989380e3940e"
+  },
+  {
+    "path": "media/d4e0b6fd435403c3.ttf",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/fonts/ZeekrLanTingHei-Regular.ttf",
+    "size": 2007904,
+    "sha256": "c615a8f46b4e4b523d124d5378daec788815227442618dbb1af5eeabb2d4c3d1"
+  },
+  {
+    "path": "media/07819a73c7d84983.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A6%C2%98%C2%9F%C3%A8%C2%84%C2%89-2ae1b97ac4ca84f5358fad0dde43bf37.png?x-oss-process=image/format,webp",
+    "size": 29042,
+    "sha256": "7db421cd7c8a726fddae2d10bbb07860918a0359209cdd31da1942ee1766d26c"
+  },
+  {
+    "path": "media/190b8b1cd7c93b05.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A6%C2%98%C2%9F%C3%A6%C2%BA%C2%90-73f4d8575dc1ffcc283e36cd23fa4604.png?x-oss-process=image/format,webp",
+    "size": 47332,
+    "sha256": "7cba0d7b8b55c0ca0b48e0d4bf998cce9c538fbb45044804b7c618f5e3aa0555"
+  },
+  {
+    "path": "media/fe729577233d5120.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A6%C2%9B%C2%9C%C3%A9%C2%BB%C2%91-97c19e083007a38cd14b8cb5f7b0482d.png?x-oss-process=image/format,webp",
+    "size": 35670,
+    "sha256": "6eb848e38daabb206e990f29bd182a610344dda067e7cc2adb609cf7a5bb613f"
+  },
+  {
+    "path": "media/fdec6b129a8bfdcb.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A9%C2%95%C2%9C%C3%A9%C2%9D%C2%A2-391872815cba4f5de68aeacf3db9e950.png?x-oss-process=image/format,webp",
+    "size": 25736,
+    "sha256": "eebe0ec36b5481ee26adbc3766ea7a5d796a7aa627a574f6b7aa7bfea004e6b5"
+  },
+  {
+    "path": "media/e588d39f7494407c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A9%C2%93%C2%B6-14ee05bc99779b798f749d3cc719a248.png?x-oss-process=image/format,webp",
+    "size": 89468,
+    "sha256": "774d6f1f356f02641cbb01000b22327dd15894e8580afb2db4a502d47319546d"
+  },
+  {
+    "path": "media/12d65cbb94f39731.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A9%C2%BB%C2%91-3b38a55973e307b25139d42cb01f97bf.png?x-oss-process=image/format,webp",
+    "size": 89412,
+    "sha256": "b4c320756ba16da05671cf08667935213835a833439b5b118ed99a20deffd879"
+  },
+  {
+    "path": "media/ec7b22eda69e2baa.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A7%C2%81%C2%B0-3d0f0a9da88fcb8a4c3d768fab228329.png?x-oss-process=image/format,webp",
+    "size": 88818,
+    "sha256": "c3a1f643c88cc2c1049de3294a733a97e0237dcc82cfc625b0e5a50ca2e15543"
+  },
+  {
+    "path": "media/371448f9c41fd203.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A7%C2%B4%C2%AB-85b41b76a5c7feadcc85ec9a8abde510.png?x-oss-process=image/format,webp",
+    "size": 89628,
+    "sha256": "4b3274a9cac67687ecde061f910bb6b37301370cf83f958125b88f4c02280d63"
+  },
+  {
+    "path": "media/1f902468b5ad1723.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/%C3%A7%C2%99%C2%BD-d9c69a95dfe3e0abb1b854528ae49437.png?x-oss-process=image/format,webp",
+    "size": 89252,
+    "sha256": "0b9ebbdbaf3127cdaa52f5769ebc94593878c1b62712b0fe7516b7b67a657bf2"
+  },
+  {
+    "path": "media/c40d690446846e4c.webp",
+    "url": "https://zeekrlife-oss.zeekrlife.com/frontend/atom/atom_json/JSON-abf7fd914770f33e121dcf1862f82eb2/brown-f543e129cd4504c1a3d9e25a3755ffeb.png?x-oss-process=image/format,webp",
+    "size": 56510,
+    "sha256": "3b569dc4c1ccc2b45f0a8799434ac2d6fbed99b37da610d6609fed7e01023f01"
+  },
+  {
+    "path": "media/1c255a957f10e19e.png",
+    "url": "https://ud-static-0.zeekrlife.com/emVla3JsaWZlLW5ldy1vZmZpY2lhbC1wYw==/-187/img/close.c3c43967.png",
+    "size": 4355,
+    "sha256": "ee84d205039cd10ece785e0204ec8871a4ac73f5760ea4f01c2d8560f43a495f"
+  },
+  {
+    "path": "media/339c32d4d741a6b1.png",
+    "url": "https://ud-static-0.zeekrlife.com/emVla3JsaWZlLW5ldy1vZmZpY2lhbC1wYw==/-187/img/captcha_close.c3c43967.png",
+    "size": 4355,
+    "sha256": "ee84d205039cd10ece785e0204ec8871a4ac73f5760ea4f01c2d8560f43a495f"
+  }
+]

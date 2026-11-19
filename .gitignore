@@ -1,2 +1,5 @@
 __pycache__/
 build/
+
+# Rebuilt from the verified ZEEKR archive before Pages upload.
+/zeekr-9x/oem/media/
