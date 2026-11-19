@@ -127,10 +127,20 @@ function currentFrame(page, oem) {
 
 async function shot(page, prefix, name) {
   // Flush the review and outer document paints before capturing the compositor.
-  const nextPaint = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  const nextPaint = () => new Promise(resolve => {
+    let raf = 0;
+    const finish = timedOut => {
+      clearTimeout(timer);
+      cancelAnimationFrame(raf);
+      resolve(timedOut);
+    };
+    const timer = setTimeout(() => finish(true), 500);
+    raf = requestAnimationFrame(() => { raf = requestAnimationFrame(() => finish(false)); });
+  });
   const review = page.frames().find(frame => frame.url().startsWith(PAGES + '/zeekr-9x/'));
-  if (review) await review.evaluate(nextPaint);
-  await page.evaluate(nextPaint);
+  const quoteOpen = await page.locator('#ast-quote-dialog[open]').count() > 0;
+  if (review && !quoteOpen && await review.evaluate(nextPaint)) console.log('PAINT_TIMEOUT', prefix, name, 'review');
+  if (await page.evaluate(nextPaint)) console.log('PAINT_TIMEOUT', prefix, name, 'parent');
   await page.screenshot({ path: path.join(OUT, `${prefix}-${name}.png`), fullPage: false });
 }
 
