@@ -16,11 +16,73 @@ async function standard(form, name, trim) {
   if (trim) assert.equal(await form.locator('[name=trim]').inputValue(), trim);
 }
 
+async function checkSafeDeal(page) {
+  const path = '/bezopasnaya-sdelka';
+  const tags = {
+    utm_source: 'ast_test', utm_medium: 'cpc', utm_campaign: 'safe_deal_qa',
+    utm_content: 'final_cta', utm_term: 'аккредитив', yclid: '1234500006789'
+  };
+  const width = page.viewportSize().width;
+  const row = page.locator('.ast-actions:has([data-ast-source-section="final"])');
+  const quote = row.locator('[data-ast-quote-open]:visible');
+  const responses = [];
+  const recordResponse = response => {
+    const url = new URL(response.url());
+    if (response.request().isNavigationRequest() || url.pathname.endsWith('/assets/ast-conversion.js')) {
+      responses.push({url: url.origin + url.pathname, status: response.status()});
+    }
+  };
+  page.on('response', recordResponse);
+  try {
+    // Revisit without query parameters so a value echoed from the URL cannot pass.
+    for (const query of ['?' + new URLSearchParams(tags), '']) {
+      const response = await page.goto(base + path + query, {waitUntil:'domcontentloaded', timeout:60000});
+      assert.ok(response && response.ok(), 'safe-deal document HTTP ' + response?.status());
+      await quote.first().waitFor({state:'visible'});
+      assert.equal(await quote.count(), 1, 'one visible final safe-deal quote action');
+      assert.equal(await quote.getAttribute('data-ast-safe-cta'), 'primary');
+    }
+    await quote.click();
+    const form = page.locator('#ast-quote-dialog[open] form[data-ast-standard-form]');
+    await standard(form);
+    await form.locator('input[type=tel]').fill('+70000000000');
+    await form.locator('input[name=consent]').check();
+    // The context route aborts this POST. Inspect its fields before any server receives it.
+    const [request] = await Promise.all([
+      page.waitForRequest(req => req.method() === 'POST' &&
+        /^https:\/\/forms2?\.tilda(?:cdn\.com|api\.[a-z]+)\/procces\//.test(req.url()), {timeout:20000}),
+      form.locator('button[type=submit]').click()
+    ]);
+    const fields = request.postDataJSON();
+    const expected = {...tags, Phone:'+70000000000', consent:'yes', is_test:'yes', page:path, offer:'safe-deal'};
+    for (const [key, value] of Object.entries(expected)) {
+      assert.equal(fields[key], value, 'safe-deal outgoing field ' + key);
+    }
+    assert.ok(fields.request_id, 'safe-deal request ID');
+    const pageUrl = new URL(fields.page_url);
+    assert.equal(pageUrl.pathname.replace(/\/$/, ''), path);
+    assert.equal(pageUrl.search, '', 'outgoing attribution came from the earlier visit');
+    console.log('PASS safe-deal final form, blocked Tilda POST and retained UTM/yclid: ' + width);
+  } catch (error) {
+    const actions = await row.locator('a,button').evaluateAll(elements => elements.map(el => ({
+      label: el.textContent.trim(), href: el.getAttribute('href'), opener: el.hasAttribute('data-ast-quote-open'),
+      duplicate: el.hasAttribute('data-ast-quote-duplicate'), display: getComputedStyle(el).display,
+      visibility: getComputedStyle(el).visibility, width: el.getBoundingClientRect().width
+    })));
+    console.error('SAFE DEAL DIAGNOSTIC', {width, url:page.url(), title:await page.title(), responses,
+      finalMarkers:await page.locator('[data-ast-source-section="final"]').count(), rows:await row.count(),
+      quoteDialog:await page.locator('#ast-quote-dialog').count(), actions});
+    throw error;
+  } finally {
+    page.off('response', recordResponse);
+  }
+}
+
 async function main() {
   const browser = await chromium.launch({headless:true});
   try {
     for (const viewport of [{width:1440,height:900},{width:390,height:844}]) {
-      const context = await browser.newContext({viewport});
+      const context = await browser.newContext({viewport, serviceWorkers:'block'});
       await context.route('**/*', async route => {
         const request = route.request();
         if (!['GET','HEAD'].includes(request.method())) return route.abort();
@@ -81,10 +143,10 @@ async function main() {
       const audi=page.locator('form[data-ast-standard-form]').filter({visible:true}).first();
       await standard(audi,'Audi A5L');
       console.log('PASS Audi A5L canary: '+viewport.width);
+      await checkSafeDeal(page);
       const priceRows = [
         ['premium-auto-moskva', '.ast-actions:has([data-ast-hero-telegram])'],
         ['premium-auto-s-nds', '.ast-actions:has([data-ast-hero-telegram])'],
-        ['bezopasnaya-sdelka', '.ast-actions:has([data-ast-source-section="final"])'],
         ['rolls-royce-cullinan-podbor', '.rrc-actions:has([data-cta="cullinan_hero_primary"])'],
         ['volkswagen-tavendor-2026', '.actions:has(a[data-ast-message]):not(:has([data-tavendor-goal="request"]))']
       ];
