@@ -1,0 +1,500 @@
+// Responsive UI regression for the published Tilda shell and its ZEEKR 9X frame.
+// Run in CI. Every non-GET/HEAD request is aborted before it can leave the browser.
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const { chromium, request } = require('playwright');
+
+const SITE = 'https://avtonds.ru';
+const PAGES = 'https://dmitryiudin-web.github.io';
+const DEPLOYED = process.env.AST_USE_DEPLOYED === '1';
+const OUT = path.resolve('artifacts/zeekr9x-mobile');
+const overrides = new Set([
+  '/assets/ast-conversion.css',
+  '/zeekr-9x/index.html', '/zeekr-9x/review.css', '/zeekr-9x/review.js',
+  '/zeekr-9x/oem/index.html', '/zeekr-9x/oem/ru.css', '/zeekr-9x/oem/mobile.css',
+  '/zeekr-9x/oem/app.js', '/zeekr-9x/oem/content.json',
+  '/zeekr-9x/oem/specifications.html', '/zeekr-9x/oem/specification-data.json',
+]);
+fs.mkdirSync(OUT, { recursive: true });
+const results = [];
+const expectedModels = JSON.parse(fs.readFileSync('zeekr-9x/oem/specification-data.json', 'utf8')).modelList.length;
+const heroSource = fs.readFileSync('zeekr-9x/oem/index.html', 'utf8')
+  .match(/class="banner\b[^"]*"[\s\S]*?<video\b[\s\S]*?<source\b[^>]*\bsrc="([^"]+)"/);
+assert.ok(heroSource, 'the hero video source must be identifiable in the checked-in markup');
+const HERO_VIDEO = new URL(heroSource[1], PAGES + '/zeekr-9x/oem/index.html').href;
+
+async function waitForPublication() {
+  if (!DEPLOYED) return;
+  const files = [
+    'assets/ast-conversion.css',
+    'zeekr-9x/index.html', 'zeekr-9x/review.css', 'zeekr-9x/review.js',
+    'zeekr-9x/oem/index.html', 'zeekr-9x/oem/mobile.css', 'zeekr-9x/oem/app.js',
+  ];
+  const api = await request.newContext({ timeout: 20000 });
+  let pending = files;
+  try {
+    const deadline = Date.now() + 6 * 60 * 1000;
+    while (pending.length && Date.now() < deadline) {
+      const checks = await Promise.all(files.map(async file => {
+        try {
+          const response = await api.get(PAGES + '/' + file + '?mobile_qa=' + Date.now());
+          return response.ok() && (await response.body()).equals(fs.readFileSync(file)) ? null : file;
+        } catch { return file; }
+      }));
+      pending = checks.filter(Boolean);
+      if (pending.length) {
+        console.log('Waiting for published files:', pending.join(', '));
+        await new Promise(resolve => setTimeout(resolve, 15000));
+      }
+    }
+    assert.deepEqual(pending, [], 'published code must match this commit before live UI checks');
+  } finally { await api.dispose(); }
+}
+
+async function makeContext(browser, width, candidate) {
+  const context = await browser.newContext({
+    viewport: { width, height: width < 800 ? 844 : 900 },
+    isMobile: width < 800,
+    hasTouch: width < 800,
+    deviceScaleFactor: 1,
+    reducedMotion: 'reduce',
+    serviceWorkers: 'block',
+  });
+  const network = { blockedMutations: 0, failedOwnResources: [], allowedVideo: HERO_VIDEO, mediaRequests: [], blockedMedia: [], failedMedia: [], mediaResponses: [] };
+  context.on('requestfailed', req => {
+    if (req.resourceType() === 'media') network.failedMedia.push({ url: req.url(), reason: req.failure()?.errorText });
+  });
+  context.on('response', response => {
+    if (response.request().resourceType() === 'media') {
+      const headers = response.headers();
+      network.mediaResponses.push({ url: response.url(), status: response.status(), type: headers['content-type'], range: headers['content-range'] });
+    }
+    if (response.status() >= 400 && response.url().startsWith(PAGES + '/zeekr-9x/')) {
+      network.failedOwnResources.push({ status: response.status(), url: response.url() });
+    }
+  });
+  await context.route('**/*', async route => {
+    const req = route.request();
+    if (!['GET', 'HEAD'].includes(req.method())) {
+      network.blockedMutations++;
+      return route.abort();
+    }
+    const url = new URL(req.url());
+    let pathname = url.pathname;
+    if (pathname === '/zeekr-9x/') pathname += 'index.html';
+    const ownOverride = overrides.has(pathname) && (url.origin === PAGES ||
+      (url.origin === SITE && pathname === '/assets/ast-conversion.css'));
+    if (candidate && !DEPLOYED && ownOverride) {
+      return route.fulfill({ path: path.resolve('.' + pathname) });
+    }
+    if (/mc\.yandex\.|googletagmanager\.|google-analytics\./i.test(req.url())) return route.abort();
+    if (req.resourceType() === 'media') {
+      network.mediaRequests.push({ url: req.url(), range: req.headers()['range'] || null });
+      if (url.origin + url.pathname !== HERO_VIDEO) {
+        network.blockedMedia.push(req.url());
+        return route.abort();
+      }
+    }
+    return route.continue();
+  });
+  return { context, network };
+}
+
+async function open(page) {
+  const response = await page.goto(SITE + '/zeekr-9x?utm_source=ast_test&utm_campaign=mobile_qa', {
+    waitUntil: 'domcontentloaded', timeout: 60000,
+  });
+  assert.ok(response && response.ok(), 'Tilda page must load successfully');
+  const overview = page.frameLocator('#zeekr-9x-review');
+  await overview.locator('.hero h1').waitFor({ state: 'visible' });
+  await overview.locator('.hero-photo').evaluate(image => {
+    if (image.complete && image.naturalWidth) return;
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error('Hero image did not load')), 15000);
+      image.addEventListener('load', () => { clearTimeout(timer); resolve(); }, { once: true });
+      image.addEventListener('error', () => { clearTimeout(timer); reject(new Error('Hero image failed')); }, { once: true });
+    });
+  });
+  return overview;
+}
+
+function currentFrame(page, oem) {
+  const frame = page.frames().find(f => f.url().startsWith(PAGES + '/zeekr-9x/') && f.url().includes('/oem/') === oem);
+  assert.ok(frame, 'expected ZEEKR review frame');
+  return frame;
+}
+
+async function shot(page, prefix, name) {
+  // Flush the review and outer document paints before capturing the compositor.
+  const nextPaint = () => new Promise(resolve => {
+    let raf = 0;
+    const finish = timedOut => {
+      clearTimeout(timer);
+      cancelAnimationFrame(raf);
+      resolve(timedOut);
+    };
+    const timer = setTimeout(() => finish(true), 500);
+    raf = requestAnimationFrame(() => { raf = requestAnimationFrame(() => finish(false)); });
+  });
+  const review = page.frames().find(frame => frame.url().startsWith(PAGES + '/zeekr-9x/'));
+  const quoteOpen = await page.locator('#ast-quote-dialog[open]').count() > 0;
+  if (review && !quoteOpen && await review.evaluate(nextPaint)) console.log('PAINT_TIMEOUT', prefix, name, 'review');
+  if (await page.evaluate(nextPaint)) console.log('PAINT_TIMEOUT', prefix, name, 'parent');
+  await page.screenshot({ path: path.join(OUT, `${prefix}-${name}.png`), fullPage: false });
+}
+
+async function sectionShot(page, frame, prefix, section, result) {
+  await frame.locator(`[data-section="${section}"]`).evaluate(el => {
+    el.scrollIntoView({ behavior: 'instant', block: 'start', inline: 'nearest' });
+  });
+  const position = await frame.waitForFunction(section => {
+    const el = document.querySelector(`[data-section="${section}"]`);
+    if (!el) return false;
+    const b = el.getBoundingClientRect();
+    const scroller = document.scrollingElement;
+    const paddingTop = parseFloat(getComputedStyle(scroller).scrollPaddingTop) || 0;
+    const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    const documentTop = b.top + scrollY;
+    const maxScroll = Math.max(0, scroller.scrollHeight - innerHeight);
+    const expectedScroll = Math.min(maxScroll, Math.max(0, documentTop - paddingTop - marginTop));
+    const expectedTop = documentTop - expectedScroll;
+    if (Math.abs(b.top - expectedTop) > 2) return false;
+    return { section: el.dataset.section,
+      title: el.querySelector('.title,.sub-title')?.textContent.trim().slice(0, 180) || null,
+      rect: { x: b.x, y: b.y, width: b.width, height: b.height },
+      scrollY, paddingTop, marginTop, expectedTop };
+  }, section, { timeout: 5000 });
+  const geometry = await position.jsonValue();
+  await position.dispose();
+  await shot(page, prefix, `section-${section}`);
+  (result.sectionScreenshots ||= []).push(geometry);
+}
+
+async function metrics(frame) {
+  return frame.evaluate(() => {
+    const visible = el => !!el.getClientRects().length && getComputedStyle(el).display !== 'none' &&
+      getComputedStyle(el).visibility !== 'hidden' && el.getBoundingClientRect().width > 0;
+    const rect = el => {
+      const b = el.getBoundingClientRect();
+      return { x: b.x, y: b.y, width: b.width, height: b.height };
+    };
+    const text = [...document.querySelectorAll('.lead,.sub-desc,.content-desc')]
+      .filter(el => visible(el) && el.textContent.trim().length > 15)
+      .map(el => ({ selector: el.className, text: el.textContent.trim().slice(0, 90), fontSize: parseFloat(getComputedStyle(el).fontSize), ...rect(el) }));
+    const controls = [...document.querySelectorAll('.hero .primary,.hero .secondary,#mobile-menu,[data-action="quote"],.media-controls button,.sequence-frames .tabs-item,.c-tabs-item')]
+      .filter(visible).map(el => ({ text: el.getAttribute('aria-label') || el.textContent.trim().slice(0, 70), ...rect(el) }));
+    const canvas = document.querySelector('#canvas-car');
+    const colors = [...document.querySelectorAll('.sequence-frames .tabs-item')].filter(visible);
+    const canvasBox = canvas && rect(canvas);
+    const colorOverlap = !!canvasBox && colors.some(el => {
+      const b = rect(el);
+      return b.y < canvasBox.y + canvasBox.height - 1 && b.y + b.height > canvasBox.y + 1;
+    });
+    return {
+      viewport: { width: innerWidth, height: innerHeight },
+      clientWidth: document.documentElement.clientWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+      text, controls, canvas: canvasBox, colorOverlap,
+      images: [...document.images].filter(visible).map(el => ({ src: el.getAttribute('src'), loaded: el.complete && el.naturalWidth > 0 })).slice(0, 12),
+    };
+  });
+}
+
+function assertResponsive(data, mobile, label) {
+  assert.ok(data.scrollWidth <= data.clientWidth + 2, `${label}: horizontal page overflow ${data.scrollWidth}/${data.clientWidth}`);
+  if (!mobile) return;
+  assert.ok(data.text.length > 0, `${label}: readable paragraph content exists`);
+  const tiny = data.text.filter(t => t.fontSize < 15);
+  assert.equal(tiny.length, 0, `${label}: undersized main text ${JSON.stringify(tiny.slice(0, 3))}`);
+  for (const button of data.controls) {
+    assert.ok(button.width >= 43 && button.height >= 43, `${label}: tap target too small ${JSON.stringify(button)}`);
+  }
+  assert.equal(data.colorOverlap, false, `${label}: color selectors must sit below the 360 image`);
+}
+
+async function sampleParent(page, result, stage) {
+  result.parentStages[stage] = await page.evaluate(() => {
+    const b = document.querySelector('#zeekr-9x-review').getBoundingClientRect();
+    return { scrollY, viewport: { width: innerWidth, height: innerHeight },
+      scrollHeight: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight),
+      bodyPaddingBottom: getComputedStyle(document.body).paddingBottom,
+      iframe: { x: b.x, y: b.y, width: b.width, height: b.height } };
+  });
+}
+
+async function fullOverview(page, overview) {
+  await overview.getByRole('link', { name: 'Полный обзор', exact: true }).click();
+  await overview.locator('.oem-9x [data-action="quote"][role="button"]').first().waitFor({ state: 'attached' });
+  return currentFrame(page, true);
+}
+
+async function baseline(browser) {
+  const { context, network } = await makeContext(browser, 390, false);
+  const page = await context.newPage();
+  page.setDefaultTimeout(20000);
+  const result = { name: 'baseline', width: 390, assertions: false, stages: {} };
+  try {
+    const overview = await open(page);
+    result.stages.short = await metrics(currentFrame(page, false));
+    await shot(page, 'baseline-390', 'short');
+    const frame = await fullOverview(page, overview);
+    result.stages.full = await metrics(frame);
+    await shot(page, 'baseline-390', 'full');
+    for (const section of [3, 4, 5, 18, 29, 44]) {
+      await sectionShot(page, frame, 'baseline-390', section, result);
+    }
+    await frame.locator('.sequence-frames').scrollIntoViewIfNeeded();
+    await shot(page, 'baseline-390', 'colors');
+    if (await frame.locator('#mobile-menu').isVisible()) {
+      await frame.locator('#mobile-menu').click();
+      await shot(page, 'baseline-390', 'menu');
+    }
+  } catch (error) {
+    result.error = String(error).slice(0, 800);
+    await shot(page, 'baseline-390', 'error').catch(() => {});
+  } finally {
+    result.network = network;
+    results.push(result);
+    await context.close();
+  }
+}
+
+async function candidate(browser, width) {
+  const mobile = width < 800;
+  const prefix = `${DEPLOYED ? 'live' : 'candidate'}-${width}`;
+  const { context, network } = await makeContext(browser, width, true);
+  const page = await context.newPage();
+  page.setDefaultTimeout(20000);
+  const result = { name: DEPLOYED ? 'live' : 'candidate', width, browser: browser.version(), stages: {}, parentStages: {}, errors: [] };
+  page.on('pageerror', error => {
+    const stack = String(error.stack || error);
+    result.errors.push({ message: String(error).slice(0, 400), stack: stack.slice(0, 1800), fromReview: stack.includes(PAGES + '/zeekr-9x/') });
+  });
+  try {
+    const overview = await open(page);
+    const shortFrame = currentFrame(page, false);
+    result.stages.short = await metrics(shortFrame);
+    assertResponsive(result.stages.short, mobile, `${prefix} short`);
+    await shot(page, prefix, 'short');
+    await sampleParent(page, result, 'short');
+
+    await overview.locator('.hero').getByRole('link', { name: 'Рассчитать ZEEKR 9X', exact: true }).click();
+    const form = page.locator('#ast-quote-dialog[open] form[data-ast-standard-form]');
+    await form.waitFor({ state: 'visible' });
+    const formBox = await form.boundingBox();
+    assert.ok(formBox && formBox.x >= -1 && formBox.x + formBox.width <= width + 1 &&
+      formBox.y >= -1 && formBox.y + formBox.height <= page.viewportSize().height + 1, 'quote form fits the screen');
+    assert.equal(await form.locator('input[name="model"]').inputValue(), 'ZEEKR 9X');
+    assert.equal(await form.locator('input[name="page"]').inputValue(), '/zeekr-9x');
+    const phoneFont = await form.locator('input[type="tel"]').evaluate(el => parseFloat(getComputedStyle(el).fontSize));
+    if (mobile) assert.ok(phoneFont >= 16, 'phone field must avoid small text and mobile input zoom');
+    result.form = { model: 'ZEEKR 9X', page: '/zeekr-9x', phoneFont, submitted: false };
+    await shot(page, prefix, 'quote');
+    await page.locator('#ast-quote-dialog').getByRole('button', { name: 'Закрыть', exact: true }).click();
+
+    const frame = await fullOverview(page, overview);
+    result.stages.full = await metrics(frame);
+    assertResponsive(result.stages.full, mobile, `${prefix} full`);
+    await shot(page, prefix, 'full');
+    await sampleParent(page, result, 'full');
+
+    if (mobile) {
+      const menu = frame.locator('#mobile-menu');
+      await menu.click();
+      assert.equal(await menu.getAttribute('aria-expanded'), 'true');
+      await shot(page, prefix, 'menu');
+      result.menu = await frame.locator('.navigation-car').evaluate(panel => {
+        const b = panel.getBoundingClientRect();
+        const viewport = { left: Math.max(0, b.left), right: Math.min(innerWidth, b.right), top: Math.max(0, b.top), bottom: Math.min(innerHeight, b.bottom) };
+        const links = [...panel.querySelectorAll('[data-anchor]')].slice(0, 3).map(el => {
+          const r = el.getBoundingClientRect();
+          const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+          return { text: el.textContent.trim(), x: r.x, y: r.y, width: r.width, height: r.height,
+            insideMenuViewport: r.left >= viewport.left - 1 && r.right <= viewport.right + 1 &&
+              r.top >= viewport.top - 1 && r.bottom <= viewport.bottom + 1,
+            hittable: !!hit && (el === hit || el.contains(hit)) };
+        });
+        return { height: b.height, width: b.width, viewport, links };
+      });
+      assert.ok(result.menu.height >= 180, `expanded mobile menu must have usable height: ${result.menu.height}`);
+      assert.equal(result.menu.links.length, 3, 'mobile menu has at least three section links');
+      assert.ok(result.menu.links.every(link => link.width > 0 && link.height >= 43 && link.insideMenuViewport && link.hittable),
+        `first mobile menu links must be readable and reachable inside the menu: ${JSON.stringify(result.menu.links)}`);
+      const design = frame.locator('[data-anchor="1"]');
+      await design.click();
+      await frame.waitForFunction(() => document.querySelector('#mobile-menu')?.getAttribute('aria-expanded') === 'false');
+      await frame.waitForFunction(() => {
+        const b = document.querySelector('#section-1')?.getBoundingClientRect();
+        return b && b.y >= -2 && b.y < 180;
+      }, null, { timeout: 5000 });
+      const anchor = await frame.locator('#section-1').boundingBox();
+      result.designAnchor = anchor;
+      assert.ok(anchor && anchor.y >= -2 && anchor.y < 180, 'closed-menu anchor lands near the visible section heading');
+      result.navigationAfterAnchor = await frame.locator('.navigation').boundingBox();
+      assert.ok(result.navigationAfterAnchor && Math.abs(result.navigationAfterAnchor.y) <= 2 &&
+        result.navigationAfterAnchor.height >= 44, 'mobile navigation remains visible at the top after the section jump');
+      await shot(page, prefix, 'design');
+      await sampleParent(page, result, 'design');
+    }
+
+    const video = frame.locator('.banner video').first();
+    const videoState = () => video.evaluate(v => {
+      const b = v.getBoundingClientRect();
+      return { currentSrc: v.currentSrc, source: v.querySelector('source')?.getAttribute('src'),
+        readyState: v.readyState, networkState: v.networkState, paused: v.paused,
+        currentTime: v.currentTime, error: v.error ? { code: v.error.code, message: v.error.message } : null,
+        codecs: { h264: v.canPlayType('video/mp4; codecs="avc1.4D4028"'),
+          aac: v.canPlayType('audio/mp4; codecs="mp4a.40.2"'),
+          h264Aac: v.canPlayType('video/mp4; codecs="avc1.4D4028, mp4a.40.2"') },
+        buffered: Array.from({ length: v.buffered.length }, (_, i) => [v.buffered.start(i), v.buffered.end(i)]),
+        reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, documentHidden: document.hidden,
+        viewport: { width: innerWidth, height: innerHeight },
+        navigation: (() => { const n = document.querySelector('.navigation')?.getBoundingClientRect(); return n ? { x: n.x, y: n.y, width: n.width, height: n.height } : null; })(),
+        bbox: { x: b.x, y: b.y, width: b.width, height: b.height } };
+    });
+    try {
+      await video.scrollIntoViewIfNeeded();
+      result.videoBefore = await videoState();
+      await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click();
+      await frame.waitForFunction(() => {
+        const v = document.querySelector('.banner video');
+        return v && !v.paused && v.readyState >= 2 && v.currentTime > 0.05;
+      }, null, { timeout: 30000 });
+      result.heroVideoPlayable = true;
+    } catch (error) {
+      result.heroVideoPlayable = false;
+      result.heroVideoFailure = String(error).slice(0, 1200);
+      await shot(page, prefix, 'video-failure').catch(() => {});
+    } finally {
+      result.videoAfter = await videoState().catch(error => ({ inspectionError: String(error) }));
+      result.videoParent = await page.evaluate(() => {
+        const f = document.querySelector('#zeekr-9x-review')?.getBoundingClientRect();
+        return { scrollY, viewport: { width: innerWidth, height: innerHeight }, iframe: f ? { x: f.x, y: f.y, width: f.width, height: f.height } : null };
+      });
+      if (result.videoAfter.paused === false) {
+        await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click()
+          .catch(error => { result.videoPauseError = String(error); });
+      }
+    }
+    // Continue the remaining UI checks and screenshots even when video playback failed.
+
+    if (width === 390) {
+      for (const section of [3, 4, 5, 18, 29, 44]) {
+        await sectionShot(page, frame, prefix, section, result);
+      }
+    }
+
+    const colors = frame.locator('.sequence-frames .tabs-item');
+    assert.equal(await colors.count(), 6, 'all exterior colors retained');
+    await colors.nth(1).click();
+    await frame.waitForFunction(() => document.querySelector('#canvas-car')?.dataset.color === 'black');
+    const canvas = frame.locator('#canvas-car');
+    const previousFrame = await canvas.getAttribute('data-frame');
+    await frame.getByRole('slider', { name: '360° кузова: стрелки влево и вправо', exact: true }).press('ArrowRight');
+    await frame.waitForFunction(before => document.querySelector('#canvas-car')?.dataset.frame !== before, previousFrame);
+    result.rotation = { color: await canvas.getAttribute('data-color'), frame: await canvas.getAttribute('data-frame') };
+    result.stages.colors = await metrics(frame);
+    assertResponsive(result.stages.colors, mobile, `${prefix} colors`);
+    await shot(page, prefix, 'colors');
+    await sampleParent(page, result, 'colors');
+    await colors.nth(0).click();
+    await frame.waitForFunction(() => document.querySelector('#canvas-car')?.dataset.color === 'brown');
+
+    if (mobile) await frame.locator('#mobile-menu').click();
+    await frame.locator('[data-action="specs"]').click();
+    const specs = frame.locator('dialog.specs-dialog[open]');
+    await specs.waitFor({ state: 'visible' });
+    const row = specs.locator('.parameterList-item').first();
+    await row.waitFor({ state: 'visible' });
+    result.specificationRows = await specs.locator('.parameterList-item').count();
+    assert.ok(result.specificationRows >= 200, 'full specification content is retained');
+    if (mobile) {
+      const select = specs.locator('select[data-spec-version]');
+      await select.waitFor({ state: 'visible' });
+      assert.equal(await select.locator('option').count(), expectedModels, 'every model version is available');
+      const firstRowValues = await row.locator('.value-item').allTextContents();
+      for (let i = 0; i < expectedModels; i++) {
+        await select.selectOption({ index: i });
+        assert.equal(await row.locator('.value-item:visible').count(), 1, 'mobile specs show one value for the chosen version');
+        assert.equal((await row.locator('.value-item:visible').textContent()).trim(), firstRowValues[i].trim(), 'selected specification value must match its version');
+        const wrongColumns = await specs.locator('.parameterList-item').evaluateAll((rows, selected) => rows
+          .map((r, rowIndex) => ({ row: rowIndex, visible: [...r.querySelectorAll('.value-item')]
+            .map((el, index) => getComputedStyle(el).display !== 'none' ? index : -1).filter(index => index >= 0) }))
+          .filter(r => r.visible.length !== 1 || r.visible[0] !== selected), i);
+        assert.deepEqual(wrongColumns, [], `every specification row must display column ${i}, not an equal value from another version`);
+      }
+      await select.selectOption({ index: 0 });
+      const fit = await specs.evaluate(el => ({ width: el.clientWidth, scrollWidth: el.scrollWidth }));
+      assert.ok(fit.scrollWidth <= fit.width + 2, 'mobile specification dialog has no horizontal overflow');
+      result.specificationVersions = expectedModels;
+    } else {
+      assert.equal(await row.locator('.value-item:visible').count(), expectedModels, 'desktop comparison keeps all seven versions');
+    }
+    await shot(page, prefix, 'specifications');
+    if (width === 390) {
+      const filters = specs.getByRole('button', { name: 'Разделы и фильтры', exact: true });
+      await filters.click();
+      assert.equal(await filters.getAttribute('aria-expanded'), 'true');
+      const filterFit = await specs.evaluate(el => ({ width: el.clientWidth, scrollWidth: el.scrollWidth }));
+      assert.ok(filterFit.scrollWidth <= filterFit.width + 2, 'expanded mobile specification filters have no horizontal overflow');
+      await shot(page, prefix, 'specifications-filters');
+      await filters.click();
+      assert.equal(await filters.getAttribute('aria-expanded'), 'false');
+    }
+    await specs.getByRole('button', { name: 'Закрыть характеристики', exact: true }).click();
+    await sampleParent(page, result, 'specifications');
+
+    // The full review must open the same parent form after the new menu closes.
+    if (mobile && await frame.locator('#mobile-menu').getAttribute('aria-expanded') !== 'true') {
+      await frame.locator('#mobile-menu').click();
+    }
+    await frame.locator('.navigation [data-action="quote"]').click();
+    await form.waitFor({ state: 'visible' });
+    assert.equal(await form.locator('input[name="model"]').inputValue(), 'ZEEKR 9X');
+    result.fullReviewQuote = true;
+    await page.locator('#ast-quote-dialog').getByRole('button', { name: 'Закрыть', exact: true }).click();
+    await sampleParent(page, result, 'final');
+    const outer = await page.evaluate(() => ({ width: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
+    assert.ok(outer.scrollWidth <= outer.width + 2, 'parent Tilda page has no horizontal overflow');
+    assert.deepEqual(result.errors.filter(error => error.fromReview), [], 'review must not raise uncaught JavaScript errors');
+    const shiftedParent = Object.entries(result.parentStages).filter(([, g]) => Math.abs(g.scrollY) > 1 ||
+      Math.abs(g.iframe.y) > 1 || Math.abs(g.iframe.height - g.viewport.height) > 2 ||
+      g.scrollHeight > g.viewport.height + 2);
+    assert.deepEqual(shiftedParent, [], 'Tilda shell must not create a second vertical scroll or shift the full-height iframe');
+    result.ok = result.heroVideoPlayable === true;
+    if (!result.ok) result.failure = 'Hero video: ' + result.heroVideoFailure;
+  } catch (error) {
+    result.ok = false;
+    result.failure = String(error).slice(0, 1800);
+    result.urls = page.frames().map(frame => frame.url());
+    await shot(page, prefix, 'failure').catch(() => {});
+  } finally {
+    result.network = network;
+    results.push(result);
+    fs.writeFileSync(path.join(OUT, `${prefix}-metrics.json`), JSON.stringify(result, null, 2));
+    await context.close();
+  }
+}
+
+async function main() {
+  await waitForPublication();
+  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  const environment = { channel: 'chrome', version: browser.version(), deployed: DEPLOYED, commit: process.env.GITHUB_SHA || null };
+  fs.writeFileSync(path.join(OUT, 'environment.json'), JSON.stringify(environment, null, 2));
+  console.log('BROWSER', JSON.stringify(environment));
+  try {
+    if (!DEPLOYED) await baseline(browser);
+    for (const width of [360, 390, 430, 1365]) await candidate(browser, width);
+  } finally {
+    await browser.close();
+    fs.writeFileSync(path.join(OUT, 'results.json'), JSON.stringify(results, null, 2));
+  }
+  console.log('MOBILE_RESULTS', JSON.stringify(results.map(({ name, width, ok, failure, form, heroVideoPlayable, heroVideoFailure, videoAfter, rotation, specificationRows, specificationVersions, fullReviewQuote }) => ({ name, width, ok, failure, form, heroVideoPlayable, heroVideoFailure, videoAfter, rotation, specificationRows, specificationVersions, fullReviewQuote }))));
+  if (results.some(result => result.assertions !== false && !result.ok)) process.exitCode = 1;
+}
+main().catch(error => {
+  fs.writeFileSync(path.join(OUT, 'fatal.txt'), String(error.stack || error));
+  console.error(error);
+  process.exitCode = 1;
+});

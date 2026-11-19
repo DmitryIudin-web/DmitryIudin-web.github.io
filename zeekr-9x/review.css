@@ -30,11 +30,33 @@ figcaption {margin-top:8px}
 footer {border-top:1px solid #383b40;color:#c2c4ca;font-size:13px}
 .foot-inner {padding-block:22px 32px;flex-wrap:wrap}
 @media (max-width:740px) {
- .hero {grid-template-columns:1fr;gap:20px}
- .hero-photo {grid-row:1}
- .gallery {grid-template-columns:1fr}
- .stats {gap:8px;padding-block:16px}
- .stats dt {font-size:12px}
- .stats dd {font-size:clamp(23px,6vw,38px)}
- .mast-inner {min-height:56px}
+ .wrap {width:calc(100% - 40px)}
+ .mast-inner {min-height:64px;gap:12px}
+ .mast .brand {font-size:17px;gap:8px}
+ .brand img {width:32px;height:32px}
+ .mast a {font-size:13px;min-height:44px;display:inline-flex;align-items:center}
+ .hero {grid-template-columns:minmax(0,1fr);grid-template-areas:"eyebrow" "title" "photo" "lead" "actions";gap:0;padding-block:24px 32px}
+ .intro {display:contents}
+ .eyebrow {grid-area:eyebrow;font-size:12px;line-height:1.5;margin-bottom:8px}
+ h1 {grid-area:title;font-size:clamp(44px,12.5vw,58px);line-height:1.05;letter-spacing:-.045em;margin:0 0 20px}
+ .hero-photo {grid-area:photo;aspect-ratio:16/10;object-fit:cover;border-radius:14px;margin-bottom:20px}
+ .lead {grid-area:lead;font-size:16px;line-height:1.55}
+ .actions {grid-area:actions;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:20px}
+ .primary,.secondary {min-height:52px;justify-content:center;text-align:center;font-size:16px;line-height:1.35;padding:13px 16px;border-radius:10px}
+ .secondary {border:1px solid #696d75;text-decoration:none;background:#1b1e23}
+ .stats {grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-block:20px}
+ .stats > div {min-width:0}
+ .stats dt {min-height:36px;font-size:13px;line-height:1.4}
+ .stats dd {font-size:clamp(25px,7vw,32px);line-height:1.3;white-space:nowrap}
+ .cabin {padding-block:36px}
+ h2 {font-size:30px;line-height:1.15;letter-spacing:-.035em;margin-bottom:16px}
+ .cabin p {font-size:16px;line-height:1.6}
+ .gallery {grid-template-columns:minmax(0,1fr);gap:24px;margin-top:24px}
+ .gallery img {border-radius:14px;aspect-ratio:16/10;object-fit:cover}
+ figcaption {font-size:14px;line-height:1.45;margin-top:10px}
+ .cabin-actions {margin-top:28px}
+ .foot-inner {display:grid;gap:8px;padding-block:24px}
+ .foot-inner a {display:inline-flex;align-items:center;min-height:44px}
+ .is-embedded body {padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 }
+@media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto}}

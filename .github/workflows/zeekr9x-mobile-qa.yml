@@ -1,0 +1,60 @@
+name: ZEEKR 9X mobile UI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'assets/ast-conversion.css'
+      - 'zeekr-9x/**'
+      - 'scripts/test_zeekr9x_mobile.cjs'
+      - '.github/workflows/zeekr9x-mobile-qa.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/ast-conversion.css'
+      - 'zeekr-9x/**'
+      - 'scripts/test_zeekr9x_mobile.cjs'
+      - '.github/workflows/zeekr9x-mobile-qa.yml'
+  workflow_dispatch:
+    inputs:
+      deployed:
+        description: 'Check the published page without substituting checkout files'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zeekr9x-mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  responsive-ui:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependency
+        run: npm install --no-save --no-package-lock playwright@1.56.1
+      - name: Verify official Chrome for H.264 and AAC playback
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            npx playwright install chrome
+          fi
+          google-chrome --version
+      - name: Compare mobile UI and verify interactions
+        env:
+          AST_USE_DEPLOYED: ${{ (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.deployed)) && '1' || '0' }}
+        run: node scripts/test_zeekr9x_mobile.cjs
+      - name: Save responsive screenshots and metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zeekr9x-mobile-ui-${{ github.run_attempt }}
+          path: artifacts/zeekr9x-mobile/
+          if-no-files-found: warn
+          retention-days: 14

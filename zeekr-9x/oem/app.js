@@ -22,14 +22,27 @@ function renderSpecifications(dialog,data){
  const footnotes=node('div','spec-footnotes',destination);for(const tip of data.tipsList||[])heading(footnotes,'spec-footnote',tip);
  dialog.dataset.specificationRows=String(rowIndex);dialog.dataset.specificationGroups=String(data.configList.length);
 }
+function configureMobileSpecifications(dialog,data){
+ const label=document.createElement('label');label.className='mobile-spec-picker';label.textContent='Версия автомобиля';
+ const select=document.createElement('select');select.setAttribute('data-spec-version','');select.setAttribute('aria-label','Версия автомобиля');
+ const groups=data.versionList.flatMap(group=>Array(Number(group.column)).fill(group.title.replace(/^9X\s*—\s*/,'')));
+ data.modelList.forEach((model,index)=>{const option=document.createElement('option');option.value=String(index);option.textContent=groups[index]+' · '+model.title;select.append(option);});
+ const choose=()=>{const index=Number(select.value);qa('.parameterList-item',dialog).forEach(row=>qa('.value-item',row).forEach((cell,i)=>cell.classList.toggle('mobile-spec-hidden',i!==index)));dialog.dataset.specVersion=String(index);};
+ select.addEventListener('change',choose);label.append(select);q('.spec-scroll',dialog).before(label);choose();
+ const tools=document.createElement('button');tools.type='button';tools.className='mobile-spec-tools';tools.textContent='Разделы и фильтры';tools.setAttribute('aria-expanded','false');tools.setAttribute('aria-controls','mobile-spec-filters');
+ const filters=q('.config-left',dialog);filters.id='mobile-spec-filters';
+ tools.addEventListener('click',()=>{const open=dialog.classList.toggle('specs-tools-open');tools.setAttribute('aria-expanded',String(open));});
+ filters.before(tools);
+}
 async function prepareSpecifications(){
  if(!specsDialog){
   const read=url=>fetch(url).then(r=>{if(!r.ok)throw Error('Missing specification resource: '+url);return r;});
   const [markup,data]=await Promise.all([read('./specifications.html').then(r=>r.text()),read('./specification-data.json').then(r=>r.json())]);
   specsDialog=document.createElement('dialog');specsDialog.className='specs-dialog';
-  specsDialog.innerHTML='<button class="dialog-close" type="button">Закрыть характеристики</button><h2>Характеристики ZEEKR 9X</h2><p>Рынок Китая · данные производителя на 3 октября 2026 года. Для сравнения версий прокрутите таблицу по горизонтали.</p><div class="spec-scroll">'+markup+'</div>';
+  specsDialog.innerHTML='<button class="dialog-close" type="button">Закрыть характеристики</button><h2>Характеристики ZEEKR 9X</h2><p>Рынок Китая · данные производителя на 3 октября 2026 года. <span class="spec-help-desktop">Для сравнения версий прокрутите таблицу по горизонтали.</span><span class="spec-help-mobile">Выберите версию, чтобы посмотреть её оснащение.</span></p><div class="spec-scroll">'+markup+'</div>';
   document.body.append(specsDialog);q('.dialog-close',specsDialog).addEventListener('click',()=>specsDialog.close());
   renderSpecifications(specsDialog,data);
+  configureMobileSpecifications(specsDialog,data);
   const rows=qa('.parameterList-item',specsDialog),filters=qa('.screenner-item',specsDialog);let filter=0;
   rows.forEach(row=>{const values=qa('.value-item',row);row.dataset.same=String(values.every(v=>v.innerHTML===values[0].innerHTML));});
   const applyFilter=n=>{filter=filter===n?0:n;filters.forEach((f,i)=>{f.setAttribute('aria-pressed',String(filter===i+1));f.classList.toggle('selected',filter===i+1);});
@@ -66,8 +79,11 @@ const actions = {
  specs: openSpecifications
 };
 qa('[data-action]').forEach(el=>actionable(el,actions[el.dataset.action]));
-qa('[data-anchor]').forEach(el=>actionable(el,()=>q('#section-'+el.dataset.anchor)?.scrollIntoView({behavior:reduced.matches?'instant':'smooth'})));
+qa('[data-anchor]').forEach(el=>actionable(el,()=>{closeMobileMenu();requestAnimationFrame(()=>q('#section-'+el.dataset.anchor)?.scrollIntoView({block:'start',behavior:reduced.matches?'instant':'smooth'}));}));
 const nav=q('.navigation');
+const mobileMenu=document.querySelector('#mobile-menu');
+const sectionMenu=q('.navigation-car');sectionMenu.id='oem-sections-menu';mobileMenu.setAttribute('aria-controls',sectionMenu.id);
+function closeMobileMenu(){sectionMenu.classList.remove('mobile-open');mobileMenu.setAttribute('aria-expanded','false');}
 let scheduled=false;
 const updateNav=()=>{scheduled=false;nav.classList.toggle('scrolled',scrollY>innerWidth/192);for(const el of qa('[data-anchor]')){const box=q('#section-'+el.dataset.anchor)?.getBoundingClientRect();el.classList.toggle('active',box&&box.top<innerHeight*.4&&box.bottom>0);}};
 addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateNav);}}, {passive:true});updateNav();
@@ -92,31 +108,30 @@ for(const section of qa('[data-section]')){
   const move=(direction)=>{index=Math.max(0,Math.min(slides.length-1,index+direction));const offset=index===0?0:slides[index].offsetLeft-slides[0].offsetLeft;wrapper.style.transform=`translate3d(${-offset}px,0,0)`;slides.forEach((s,i)=>{s.classList.toggle('swiper-slide-active',i===index);s.setAttribute('aria-current',String(i===index));});};
   let left=q('.icon-left',swiper),right=q('.icon-right',swiper);
   if(!right){right=document.createElement('button');right.className='gallery-next';right.textContent='›';q('.container',swiper).append(right);}
-  actionable(left,()=>move(-1),'Предыдущий кадр');actionable(right,()=>move(1),'Следующий кадр');container.tabIndex=0;container.addEventListener('keydown',e=>{if(['ArrowRight','ArrowLeft'].includes(e.key)){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});
+  actionable(left,()=>move(-1),'Предыдущий кадр');actionable(right,()=>move(1),'Следующий кадр');container.tabIndex=0;container.addEventListener('keydown',e=>{if(['ArrowRight','ArrowLeft'].includes(e.key)){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});addEventListener('resize',()=>move(0));
   let x;container.addEventListener('pointerdown',e=>{x=e.clientX;});container.addEventListener('pointerup',e=>{if(x!==undefined&&Math.abs(e.clientX-x)>35)move(e.clientX<x?1:-1);x=undefined;});move(0);
  }
 }
 const sequence=q('.sequence-frames');
 if(sequence){const canvas=q('canvas',sequence),ctx=canvas.getContext('2d'),area=q('.hover_area_top',sequence);let color=0,frame=content.sequence.frameIndex||0,request=0;const cache=new Map();
  const draw=()=>{const key=content.sequence.imgData[color].color+'_'+frame,src=content.frames[key];const id=++request;if(!src){canvas.dataset.sourceGap='OEM frame unavailable';ctx.clearRect(0,0,canvas.width,canvas.height);return;}let image=cache.get(key);if(!image){image=new Image();image.src=src;cache.set(key,image);}const paint=()=>{if(id!==request)return;delete canvas.dataset.sourceGap;canvas.width=Math.round(canvas.clientWidth*devicePixelRatio);canvas.height=Math.round(canvas.clientHeight*devicePixelRatio);const ratio=Math.max(canvas.width/image.width,canvas.height/image.height);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(image,(canvas.width-image.width*ratio)/2,(canvas.height-image.height*ratio)/2,image.width*ratio,image.height*ratio);canvas.dataset.color=content.sequence.imgData[color].color;canvas.dataset.frame=String(frame);};if(image.complete&&image.naturalWidth)paint();else image.onload=paint;};
- qa('.tabs-item',sequence).forEach((el,i)=>actionable(el,()=>{color=i;qa('.tabs-item',sequence).forEach((e,j)=>e.classList.toggle('active',i===j));rich(q('.sub-title',sequence),content.sequence.imgData[i].name);rich(q('.sub-desc',sequence),content.sequence.imgData[i].desc);draw();},content.sequence.imgData[i].name));
+ qa('.tabs-item',sequence).forEach((el,i)=>{el.setAttribute('aria-pressed',String(i===color));actionable(el,()=>{color=i;qa('.tabs-item',sequence).forEach((e,j)=>{e.classList.toggle('active',i===j);e.setAttribute('aria-pressed',String(i===j));});rich(q('.sub-title',sequence),content.sequence.imgData[i].name);rich(q('.sub-desc',sequence),content.sequence.imgData[i].desc);draw();},content.sequence.imgData[i].name);});
+ const rotateHint=document.createElement('p');rotateHint.className='mobile-rotation-hint';rotateHint.textContent='Проведите по автомобилю, чтобы повернуть';q('.bottom-content',sequence).before(rotateHint);
  let dragX;area.style.touchAction='pan-y';area.addEventListener('pointerdown',e=>{dragX=e.clientX;area.setPointerCapture(e.pointerId);});area.addEventListener('pointermove',e=>{if(dragX===undefined)return;const delta=e.clientX-dragX;if(Math.abs(delta)>=20){const count=content.sequence.imgData[color].imgNumber;frame=(frame+(delta>0?-1:1)+count)%count;dragX=e.clientX;draw();}});area.addEventListener('pointerup',()=>dragX=undefined);area.addEventListener('pointercancel',()=>dragX=undefined);area.tabIndex=0;area.setAttribute('role','slider');area.setAttribute('aria-label','360° кузова: стрелки влево и вправо');area.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();frame=(frame+(e.key==='ArrowRight'?1:-1)+36)%36;draw();}});addEventListener('resize',draw);draw();
 }
 const videos=qa('video').filter(v=>v.querySelector('source[src]'));
 const inView=new Set(),manualPaused=new WeakSet();
 videos.forEach(v=>{v.muted=true;v.defaultMuted=true;v.playsInline=true;v.preload='none';if(!v.poster&&content.videoPosters[v.querySelector('source')?.getAttribute('src')])v.poster=content.videoPosters[v.querySelector('source')?.getAttribute('src')];
- const controls=document.createElement('div');controls.className='media-controls';for(const [label,fn] of [['Воспроизвести / пауза',()=>{if(v.paused){manualPaused.delete(v);v.play().catch(()=>{controls.dataset.error='Видео не удалось запустить';});}else{manualPaused.add(v);v.pause();}}],['Звук',()=>v.muted=!v.muted],['На весь экран',()=>expandVideo(v)]]){const b=document.createElement('button');b.type='button';b.textContent=label;actionable(b,fn);controls.append(b);}v.parentElement.append(controls);v.addEventListener('error',()=>{controls.dataset.error='source_gap: ошибка воспроизведения OEM-видео';});
+ const controls=document.createElement('div');controls.className='media-controls';for(const [label,fn,short] of [['Воспроизвести / пауза',()=>{if(v.paused){manualPaused.delete(v);v.play().catch(()=>{controls.dataset.error='Видео не удалось запустить';});}else{manualPaused.add(v);v.pause();}},'Смотреть'],['Звук',()=>v.muted=!v.muted,'Звук'],['На весь экран',()=>expandVideo(v),'Экран']]){const b=document.createElement('button');b.type='button';const full=document.createElement('span');full.className='control-label-long';full.textContent=label;const compact=document.createElement('span');compact.className='control-label-short';compact.textContent=short;b.append(full,compact);actionable(b,fn,label);if(short==='Смотреть'){const sync=()=>compact.textContent=v.paused?'Смотреть':'Пауза';v.addEventListener('play',sync);v.addEventListener('pause',sync);}controls.append(b);}v.parentElement.append(controls);v.addEventListener('error',()=>{controls.dataset.error='Видео не удалось загрузить';});
 });
-const videoObserver=new IntersectionObserver(entries=>{for(const entry of entries){const v=entry.target;if(entry.isIntersecting)inView.add(v);else inView.delete(v);const panel=v.closest('.bg');const visible=entry.isIntersecting&&(!panel||panel.classList.contains('active'))&&!document.hidden;if(visible&&!reduced.matches&&!manualPaused.has(v))v.play().catch(()=>{});else v.pause();}},{threshold:.25});videos.forEach(v=>videoObserver.observe(v));
+const videoObserver=new IntersectionObserver(entries=>{for(const entry of entries){const v=entry.target;if(entry.isIntersecting)inView.add(v);else inView.delete(v);const panel=v.closest('.bg');const visible=entry.isIntersecting&&(!panel||panel.classList.contains('active'))&&!document.hidden;if(!visible)v.pause();else if(!reduced.matches&&!manualPaused.has(v))v.play().catch(()=>{});}},{threshold:.25});videos.forEach(v=>videoObserver.observe(v));
 const stateObserver=new MutationObserver(()=>{videos.forEach(v=>{const p=v.closest('.bg');if(p&&!p.classList.contains('active'))v.pause();else if(inView.has(v)&&!manualPaused.has(v)&&!reduced.matches&&!document.hidden)v.play().catch(()=>{});});});stateObserver.observe(root,{attributes:true,subtree:true,attributeFilter:['class']});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)videos.forEach(v=>v.pause());});
-document.querySelector('#mobile-menu').addEventListener('click', event => {
- const menu = q('.navigation-car');
- const open = menu.classList.toggle('mobile-open');
+mobileMenu.addEventListener('click', event => {
+ const open = sectionMenu.classList.toggle('mobile-open');
  event.currentTarget.setAttribute('aria-expanded', String(open));
 });
-qa('[data-anchor]').forEach(el => el.addEventListener('click', () => {
- q('.navigation-car').classList.remove('mobile-open');
- document.querySelector('#mobile-menu').setAttribute('aria-expanded', 'false');
-}));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&sectionMenu.classList.contains('mobile-open')){closeMobileMenu();mobileMenu.focus();}});
+document.addEventListener('click',event=>{if(!nav.contains(event.target))closeMobileMenu();});
+qa('[data-action]',nav).forEach(el=>el.addEventListener('click',closeMobileMenu));
 qa('img').forEach(img=>{if(!img.alt)img.alt=img.closest('[data-section]')?.querySelector('.title,.top-desc')?.textContent.trim()||'ZEEKR 9X';});
