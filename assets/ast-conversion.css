@@ -69,6 +69,10 @@ html.ast-sticky-cta-active body {
 html.ast-sticky-cta-active body:has(#zeekr-9x-review) {
   padding-bottom: 0 !important;
 }
+/* Keep the archived market-price gate independent of script load order. */
+body:has(#zeekr-9x-review) #ast-market-reference-20261012:has(.amr-expired) {
+  display: none !important;
+}
 
 /* Desktop: плавающая кнопка справа внизу, раскрывается при наведении */
 .ast-sticky-cta--desktop {
