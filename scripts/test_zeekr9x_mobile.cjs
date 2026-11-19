@@ -126,7 +126,39 @@ function currentFrame(page, oem) {
 }
 
 async function shot(page, prefix, name) {
+  // Flush the review and outer document paints before capturing the compositor.
+  const nextPaint = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  const review = page.frames().find(frame => frame.url().startsWith(PAGES + '/zeekr-9x/'));
+  if (review) await review.evaluate(nextPaint);
+  await page.evaluate(nextPaint);
   await page.screenshot({ path: path.join(OUT, `${prefix}-${name}.png`), fullPage: false });
+}
+
+async function sectionShot(page, frame, prefix, section, result) {
+  await frame.locator(`[data-section="${section}"]`).evaluate(el => {
+    el.scrollIntoView({ behavior: 'instant', block: 'start', inline: 'nearest' });
+  });
+  const position = await frame.waitForFunction(section => {
+    const el = document.querySelector(`[data-section="${section}"]`);
+    if (!el) return false;
+    const b = el.getBoundingClientRect();
+    const scroller = document.scrollingElement;
+    const paddingTop = parseFloat(getComputedStyle(scroller).scrollPaddingTop) || 0;
+    const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    const documentTop = b.top + scrollY;
+    const maxScroll = Math.max(0, scroller.scrollHeight - innerHeight);
+    const expectedScroll = Math.min(maxScroll, Math.max(0, documentTop - paddingTop - marginTop));
+    const expectedTop = documentTop - expectedScroll;
+    if (Math.abs(b.top - expectedTop) > 2) return false;
+    return { section: el.dataset.section,
+      title: el.querySelector('.title,.sub-title')?.textContent.trim().slice(0, 180) || null,
+      rect: { x: b.x, y: b.y, width: b.width, height: b.height },
+      scrollY, paddingTop, marginTop, expectedTop };
+  }, section, { timeout: 5000 });
+  const geometry = await position.jsonValue();
+  await position.dispose();
+  await shot(page, prefix, `section-${section}`);
+  (result.sectionScreenshots ||= []).push(geometry);
 }
 
 async function metrics(frame) {
@@ -200,8 +232,7 @@ async function baseline(browser) {
     result.stages.full = await metrics(frame);
     await shot(page, 'baseline-390', 'full');
     for (const section of [3, 4, 5, 18, 29, 44]) {
-      await frame.locator(`[data-section="${section}"]`).scrollIntoViewIfNeeded();
-      await shot(page, 'baseline-390', `section-${section}`);
+      await sectionShot(page, frame, 'baseline-390', section, result);
     }
     await frame.locator('.sequence-frames').scrollIntoViewIfNeeded();
     await shot(page, 'baseline-390', 'colors');
@@ -340,8 +371,7 @@ async function candidate(browser, width) {
 
     if (width === 390) {
       for (const section of [3, 4, 5, 18, 29, 44]) {
-        await frame.locator(`[data-section="${section}"]`).scrollIntoViewIfNeeded();
-        await shot(page, prefix, `section-${section}`);
+        await sectionShot(page, frame, prefix, section, result);
       }
     }
 
@@ -392,6 +422,14 @@ async function candidate(browser, width) {
       assert.equal(await row.locator('.value-item:visible').count(), expectedModels, 'desktop comparison keeps all seven versions');
     }
     await shot(page, prefix, 'specifications');
+    if (width === 390) {
+      const filters = specs.getByRole('button', { name: 'Разделы и фильтры', exact: true });
+      await filters.click();
+      assert.equal(await filters.getAttribute('aria-expanded'), 'true');
+      await shot(page, prefix, 'specifications-filters');
+      await filters.click();
+      assert.equal(await filters.getAttribute('aria-expanded'), 'false');
+    }
     await specs.getByRole('button', { name: 'Закрыть характеристики', exact: true }).click();
     await sampleParent(page, result, 'specifications');
 
