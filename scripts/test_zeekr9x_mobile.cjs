@@ -223,6 +223,34 @@ async function sampleParent(page, result, stage) {
   });
 }
 
+async function assertArchivedMarket(page, result) {
+  const ids = { gate: 'ast-market-price-gate-20261026', legacy: 'ast-market-reference-style-20261012', block: 'ast-market-reference-20261012' };
+  await page.waitForFunction(ids => document.head.querySelector(`style#${ids.gate}`) &&
+    document.head.querySelector(`style#${ids.legacy}`) && document.getElementById(ids.block)?.querySelector('.amr-expired'),
+  ids, { timeout: 20000 });
+  const sample = appendLegacy => page.evaluate(({ ids, appendLegacy }) => {
+    // Reuse the actual rule to reproduce its arriving after the archive gate.
+    if (appendLegacy) document.head.append(document.getElementById(ids.legacy));
+    const block = document.getElementById(ids.block);
+    const b = block.getBoundingClientRect();
+    return {
+      styleOrder: [...document.head.querySelectorAll('style')].map((style, index) => ({ id: style.id, index }))
+        .filter(style => style.id === ids.gate || style.id === ids.legacy),
+      id: block.id, archived: !!block.querySelector('.amr-expired'), display: getComputedStyle(block).display,
+      rect: { x: b.x, y: b.y, width: b.width, height: b.height },
+      viewportHeight: innerHeight, scrollY,
+      scrollHeight: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight),
+    };
+  }, { ids, appendLegacy });
+  result.market = { initial: await sample(false), legacyLast: await sample(true) };
+  assert.equal(result.market.legacyLast.styleOrder.at(-1).id, ids.legacy, 'legacy market rule must be tested after the archive gate');
+  for (const [order, state] of Object.entries(result.market)) {
+    assert.equal(state.display, 'none', `${order}: archived market block stays hidden`);
+    assert.ok(Math.abs(state.scrollHeight - state.viewportHeight) <= 2,
+      `${order}: archived market block must not extend the parent page: ${state.scrollHeight}/${state.viewportHeight}`);
+  }
+}
+
 async function fullOverview(page, overview) {
   await overview.getByRole('link', { name: 'Полный обзор', exact: true }).click();
   await overview.locator('.oem-9x [data-action="quote"][role="button"]').first().waitFor({ state: 'attached' });
@@ -273,6 +301,7 @@ async function candidate(browser, width) {
   });
   try {
     const overview = await open(page);
+    await assertArchivedMarket(page, result);
     const shortFrame = currentFrame(page, false);
     result.stages.short = await metrics(shortFrame);
     assertResponsive(result.stages.short, mobile, `${prefix} short`);
