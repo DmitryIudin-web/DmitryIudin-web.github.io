@@ -87,7 +87,8 @@ body{margin:0;font-family:ZeekrText-Regular,ZeekrLanTingHei-Regular,Arial,sans-s
 .ast-back {color:inherit!important;text-decoration:underline!important;text-underline-offset:4px}
 .ast-oem-footer {padding-block:30px}
 .ast-oem-footer p {margin:0 0 12px}
-.oem-9x .navigation {position:sticky!important;top:0!important;transform:none!important}
+.oem-9x .navigation {position:sticky!important;top:0!important;transform:none!important;--theme-background-color:#fff!important;--theme-color:#222!important}
+.oem-9x .navigation .anchorlist-item:not(.active):not(:hover) {opacity:.7}
 .oem-9x .navigation.scrolled {position:sticky!important}
 .oem-9x .navigation #mobile-menu {position:static!important;display:none}
 .oem-9x .navigation:not(.scrolled) .navigation-car {display:block}
