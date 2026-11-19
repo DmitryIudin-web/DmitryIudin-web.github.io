@@ -8,6 +8,11 @@ on:
       - 'scripts/audit_all_forms.cjs'
       - '.github/workflows/sitewide-form-audit.yml'
   workflow_dispatch:
+    inputs:
+      start_index:
+        description: 'Номер первой страницы в карте сайта (начиная с 0)'
+        required: false
+        default: '0'
 
 permissions:
   contents: read
@@ -26,6 +31,8 @@ jobs:
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
       - name: Audit sitemap pages without submitting customer requests
+        env:
+          AST_AUDIT_START: ${{ inputs.start_index || '0' }}
         run: node scripts/audit_all_forms.cjs
       - name: Save audit results
         if: always()
