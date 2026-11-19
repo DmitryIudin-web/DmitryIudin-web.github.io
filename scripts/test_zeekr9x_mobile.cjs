@@ -10,6 +10,7 @@ const PAGES = 'https://dmitryiudin-web.github.io';
 const DEPLOYED = process.env.AST_USE_DEPLOYED === '1';
 const OUT = path.resolve('artifacts/zeekr9x-mobile');
 const overrides = new Set([
+  '/assets/ast-conversion.css',
   '/zeekr-9x/index.html', '/zeekr-9x/review.css', '/zeekr-9x/review.js',
   '/zeekr-9x/oem/index.html', '/zeekr-9x/oem/ru.css', '/zeekr-9x/oem/mobile.css',
   '/zeekr-9x/oem/app.js', '/zeekr-9x/oem/content.json',
@@ -26,6 +27,7 @@ const HERO_VIDEO = new URL(heroSource[1], PAGES + '/zeekr-9x/oem/index.html').hr
 async function waitForPublication() {
   if (!DEPLOYED) return;
   const files = [
+    'assets/ast-conversion.css',
     'zeekr-9x/index.html', 'zeekr-9x/review.css', 'zeekr-9x/review.js',
     'zeekr-9x/oem/index.html', 'zeekr-9x/oem/mobile.css', 'zeekr-9x/oem/app.js',
   ];
@@ -81,7 +83,9 @@ async function makeContext(browser, width, candidate) {
     const url = new URL(req.url());
     let pathname = url.pathname;
     if (pathname === '/zeekr-9x/') pathname += 'index.html';
-    if (candidate && !DEPLOYED && url.origin === PAGES && overrides.has(pathname)) {
+    const ownOverride = overrides.has(pathname) && (url.origin === PAGES ||
+      (url.origin === SITE && pathname === '/assets/ast-conversion.css'));
+    if (candidate && !DEPLOYED && ownOverride) {
       return route.fulfill({ path: path.resolve('.' + pathname) });
     }
     if (/mc\.yandex\.|googletagmanager\.|google-analytics\./i.test(req.url())) return route.abort();
@@ -167,6 +171,16 @@ function assertResponsive(data, mobile, label) {
   assert.equal(data.colorOverlap, false, `${label}: color selectors must sit below the 360 image`);
 }
 
+async function sampleParent(page, result, stage) {
+  result.parentStages[stage] = await page.evaluate(() => {
+    const b = document.querySelector('#zeekr-9x-review').getBoundingClientRect();
+    return { scrollY, viewport: { width: innerWidth, height: innerHeight },
+      scrollHeight: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight),
+      bodyPaddingBottom: getComputedStyle(document.body).paddingBottom,
+      iframe: { x: b.x, y: b.y, width: b.width, height: b.height } };
+  });
+}
+
 async function fullOverview(page, overview) {
   await overview.getByRole('link', { name: 'Полный обзор', exact: true }).click();
   await overview.locator('.oem-9x [data-action="quote"][role="button"]').first().waitFor({ state: 'attached' });
@@ -211,7 +225,7 @@ async function candidate(browser, width) {
   const { context, network } = await makeContext(browser, width, true);
   const page = await context.newPage();
   page.setDefaultTimeout(20000);
-  const result = { name: DEPLOYED ? 'live' : 'candidate', width, stages: {}, errors: [] };
+  const result = { name: DEPLOYED ? 'live' : 'candidate', width, browser: browser.version(), stages: {}, parentStages: {}, errors: [] };
   page.on('pageerror', error => {
     const stack = String(error.stack || error);
     result.errors.push({ message: String(error).slice(0, 400), stack: stack.slice(0, 1800), fromReview: stack.includes(PAGES + '/zeekr-9x/') });
@@ -222,6 +236,7 @@ async function candidate(browser, width) {
     result.stages.short = await metrics(shortFrame);
     assertResponsive(result.stages.short, mobile, `${prefix} short`);
     await shot(page, prefix, 'short');
+    await sampleParent(page, result, 'short');
 
     await overview.locator('.hero').getByRole('link', { name: 'Рассчитать ZEEKR 9X', exact: true }).click();
     const form = page.locator('#ast-quote-dialog[open] form[data-ast-standard-form]');
@@ -241,6 +256,7 @@ async function candidate(browser, width) {
     result.stages.full = await metrics(frame);
     assertResponsive(result.stages.full, mobile, `${prefix} full`);
     await shot(page, prefix, 'full');
+    await sampleParent(page, result, 'full');
 
     if (mobile) {
       const menu = frame.locator('#mobile-menu');
@@ -267,9 +283,18 @@ async function candidate(browser, width) {
       const design = frame.locator('[data-anchor="1"]');
       await design.click();
       await frame.waitForFunction(() => document.querySelector('#mobile-menu')?.getAttribute('aria-expanded') === 'false');
+      await frame.waitForFunction(() => {
+        const b = document.querySelector('#section-1')?.getBoundingClientRect();
+        return b && b.y >= -2 && b.y < 180;
+      }, null, { timeout: 5000 });
       const anchor = await frame.locator('#section-1').boundingBox();
+      result.designAnchor = anchor;
       assert.ok(anchor && anchor.y >= -2 && anchor.y < 180, 'closed-menu anchor lands near the visible section heading');
+      result.navigationAfterAnchor = await frame.locator('.navigation').boundingBox();
+      assert.ok(result.navigationAfterAnchor && Math.abs(result.navigationAfterAnchor.y) <= 2 &&
+        result.navigationAfterAnchor.height >= 44, 'mobile navigation remains visible at the top after the section jump');
       await shot(page, prefix, 'design');
+      await sampleParent(page, result, 'design');
     }
 
     const video = frame.locator('.banner video').first();
@@ -278,6 +303,9 @@ async function candidate(browser, width) {
       return { currentSrc: v.currentSrc, source: v.querySelector('source')?.getAttribute('src'),
         readyState: v.readyState, networkState: v.networkState, paused: v.paused,
         currentTime: v.currentTime, error: v.error ? { code: v.error.code, message: v.error.message } : null,
+        codecs: { h264: v.canPlayType('video/mp4; codecs="avc1.4D4028"'),
+          aac: v.canPlayType('audio/mp4; codecs="mp4a.40.2"'),
+          h264Aac: v.canPlayType('video/mp4; codecs="avc1.4D4028, mp4a.40.2"') },
         buffered: Array.from({ length: v.buffered.length }, (_, i) => [v.buffered.start(i), v.buffered.end(i)]),
         reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, documentHidden: document.hidden,
         viewport: { width: innerWidth, height: innerHeight },
@@ -290,7 +318,7 @@ async function candidate(browser, width) {
       await frame.locator('.banner .media-controls').getByRole('button', { name: 'Воспроизвести / пауза', exact: true }).click();
       await frame.waitForFunction(() => {
         const v = document.querySelector('.banner video');
-        return v && !v.paused && v.readyState >= 2;
+        return v && !v.paused && v.readyState >= 2 && v.currentTime > 0.05;
       }, null, { timeout: 30000 });
       result.heroVideoPlayable = true;
     } catch (error) {
@@ -329,6 +357,7 @@ async function candidate(browser, width) {
     result.stages.colors = await metrics(frame);
     assertResponsive(result.stages.colors, mobile, `${prefix} colors`);
     await shot(page, prefix, 'colors');
+    await sampleParent(page, result, 'colors');
     await colors.nth(0).click();
     await frame.waitForFunction(() => document.querySelector('#canvas-car')?.dataset.color === 'brown');
 
@@ -349,6 +378,11 @@ async function candidate(browser, width) {
         await select.selectOption({ index: i });
         assert.equal(await row.locator('.value-item:visible').count(), 1, 'mobile specs show one value for the chosen version');
         assert.equal((await row.locator('.value-item:visible').textContent()).trim(), firstRowValues[i].trim(), 'selected specification value must match its version');
+        const wrongColumns = await specs.locator('.parameterList-item').evaluateAll((rows, selected) => rows
+          .map((r, rowIndex) => ({ row: rowIndex, visible: [...r.querySelectorAll('.value-item')]
+            .map((el, index) => getComputedStyle(el).display !== 'none' ? index : -1).filter(index => index >= 0) }))
+          .filter(r => r.visible.length !== 1 || r.visible[0] !== selected), i);
+        assert.deepEqual(wrongColumns, [], `every specification row must display column ${i}, not an equal value from another version`);
       }
       await select.selectOption({ index: 0 });
       const fit = await specs.evaluate(el => ({ width: el.clientWidth, scrollWidth: el.scrollWidth }));
@@ -359,6 +393,7 @@ async function candidate(browser, width) {
     }
     await shot(page, prefix, 'specifications');
     await specs.getByRole('button', { name: 'Закрыть характеристики', exact: true }).click();
+    await sampleParent(page, result, 'specifications');
 
     // The full review must open the same parent form after the new menu closes.
     if (mobile && await frame.locator('#mobile-menu').getAttribute('aria-expanded') !== 'true') {
@@ -369,9 +404,14 @@ async function candidate(browser, width) {
     assert.equal(await form.locator('input[name="model"]').inputValue(), 'ZEEKR 9X');
     result.fullReviewQuote = true;
     await page.locator('#ast-quote-dialog').getByRole('button', { name: 'Закрыть', exact: true }).click();
+    await sampleParent(page, result, 'final');
     const outer = await page.evaluate(() => ({ width: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
     assert.ok(outer.scrollWidth <= outer.width + 2, 'parent Tilda page has no horizontal overflow');
     assert.deepEqual(result.errors.filter(error => error.fromReview), [], 'review must not raise uncaught JavaScript errors');
+    const shiftedParent = Object.entries(result.parentStages).filter(([, g]) => Math.abs(g.scrollY) > 1 ||
+      Math.abs(g.iframe.y) > 1 || Math.abs(g.iframe.height - g.viewport.height) > 2 ||
+      g.scrollHeight > g.viewport.height + 2);
+    assert.deepEqual(shiftedParent, [], 'Tilda shell must not create a second vertical scroll or shift the full-height iframe');
     result.ok = result.heroVideoPlayable === true;
     if (!result.ok) result.failure = 'Hero video: ' + result.heroVideoFailure;
   } catch (error) {
@@ -389,7 +429,10 @@ async function candidate(browser, width) {
 
 async function main() {
   await waitForPublication();
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  const environment = { channel: 'chrome', version: browser.version(), deployed: DEPLOYED, commit: process.env.GITHUB_SHA || null };
+  fs.writeFileSync(path.join(OUT, 'environment.json'), JSON.stringify(environment, null, 2));
+  console.log('BROWSER', JSON.stringify(environment));
   try {
     if (!DEPLOYED) await baseline(browser);
     for (const width of [360, 390, 430, 1365]) await candidate(browser, width);

@@ -7,7 +7,7 @@
  #app.oem-9x *,#app.oem-9x *::before,#app.oem-9x *::after{box-sizing:border-box;letter-spacing:normal!important}
  #app.oem-9x *{font-size:inherit!important;line-height:inherit}
  #app.oem-9x img,#app.oem-9x video,#app.oem-9x canvas{max-width:100%}
- #app.oem-9x [data-section]{width:100%;max-width:100%;margin:0!important;scroll-margin-top:72px}
+ #app.oem-9x [data-section]{width:100%;max-width:100%;margin:0!important;scroll-margin-top:0}
  #app.oem-9x [role=button],#app.oem-9x button{touch-action:manipulation}
  #app.oem-9x [role=button]:focus-visible,#app.oem-9x button:focus-visible{outline:3px solid #aa7847;outline-offset:3px}
 
